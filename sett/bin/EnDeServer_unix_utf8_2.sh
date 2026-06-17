@@ -1,0 +1,5 @@
+# java -Du=sbmiddle -DcorpInfoFile=../conf/corpInfoFile.properties -classpath .:../lib/log4j-1.2.8.jar:../lib/seed.jar:../lib/jce1_2_2.jar:../lib/local_policy.jar:../lib/sunjce_provider.jar:../lib/US_export_policy.jar EnDeServer
+# 0 12 * * * cd /some/dir && /path/to/script args
+# java -Dfile.encoding=EUC-KR -Du=sbmiddle -DcorpInfoFile=../conf/corpInfoFile.properties -classpath .:../lib/log4j-1.2.8.jar:../lib/seed.jar:../lib/jce1_2_2.jar:../lib/local_policy.jar:../lib/sunjce_provider.jar:../lib/US_export_policy.jar EnDeServer
+# exec /home/crowdfund/public_html/sett/bin/EnDeServer_unix_utf8_2.sh > /dev/null  &
+java -Dfile.encoding=EUC-KR -Du=sbmiddle -DcorpInfoFile=/home/crowdfund/public_html/sett/conf/corpInfoFile.properties -classpath /home/crowdfund/public_html/sett/bin:/home/crowdfund/public_html/sett/lib/log4j-1.2.8.jar:/home/crowdfund/public_html/sett/lib/seed.jar:/home/crowdfund/public_html/sett/lib/jce1_2_2.jar:/home/crowdfund/public_html/sett/lib/local_policy.jar:/home/crowdfund/public_html/sett/lib/sunjce_provider.jar:/home/crowdfund/public_html/sett/lib/US_export_policy.jar EnDeServer

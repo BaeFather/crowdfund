@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>법인투자안내</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+		
+
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+		<script defer src="./assets/js/app/wow.min.js"></script>
+		<script defer src="./assets/js/app/jquery.counterup.min.js"></script>
+		<script defer src="./assets/js/app/jquery.waypoints.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/company.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+		
+
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="care-service">	
+			<div class="container-fluid">
+				<div class="top-visual">
+					<h4>법인 투자 안내</h4>
+					<p>한도제한 없이 투자 가능한 법인 투자! 상담 신청하세요</p>
+					<button class="btn" onclick="bt('1')">무료상담 신청하기</button>
+				</div>
+				<div class="content-wrap">
+					<div class="point">
+						<div class="point_01">
+							<img src="assets/images/company/picto_01.png" alt="투자 한도 무제한">
+							<p>투자 한도 무제한</p>
+							<span>한도 제한 없이 모든 상품에 투자 가능 <br class="br">(개인회원 : 업권 전체 3천만원)</span>
+						</div>
+						<div class="point_02">
+							<img src="assets/images/company/picto_02.png" alt="세금 절감 혜택">
+							<p>세금 절감 혜택</p>
+							<span>법인세율 적용으로 세금 절감이 가능 <br class="br">(대부법인은 원천징수 면제)</span>
+						</div>
+						<div class="point_03">
+							<img src="assets/images/company/picto_03.png" alt="세무법인 세무 상담">
+							<p>세무법인 세무 상담</p>
+							<span>P2P 전문 세무 법인을 통한<br class="br"> 세무 상담 가능</span>
+						</div>
+					</div>
+					<div class="data">
+						<h5>법인 투자 현황</h5>
+						<p>헬로펀딩의 안정적인 상품 투자로 많은 법인이 이자수익을 얻고 있습니다.</p>
+						<div class="contents">
+							<div class="graph-wrap">
+								<ul>
+									<li>
+										<div class="graph-data">
+											<p>213</p>
+										</div>
+										<p class="graph-year">2017</p>
+									</li>
+									<li>
+										<div class="graph-data">
+											<p>522</p>
+										</div>
+										<p class="graph-year">2018</p>
+									</li>
+									<li>
+										<div class="graph-data">
+											<p>1,011</p>
+										</div>
+										<p class="graph-year">2019</p>
+									</li>
+									<li>
+										<div class="graph-data">
+											<p>1,808</p>
+										</div>
+										<p class="graph-year">2020</p>
+									</li>
+									<li class="active">
+										<div class="graph-data">
+											<p>2,394</p>
+										</div>
+										<p class="graph-year">2021</p>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="detail">
+							 	<div class="black">
+									<p>법인 누적 투자금액</p>
+									<p><span class="counter">2,394</span>억원</p>
+								</div>
+								<div class="brown">
+									<p>법인 재투자율</p>
+									<p><span class="counter">83</span>%</p>
+								</div>
+								<div class="brown">
+									<p>연 평균 수익률</p>
+									<p><span class="counter">12.72</span>%</p>
+								</div>
+								<div class="black">
+									<p>법인 투자 상환율</p>
+									<p><span class="counter">95</span>%</p>
+								</div>
+								<span class="date">2021.11 기준</span>
+								
+							</div>
+						</div>
+					</div>
+					<div class="qa">
+						<h5>자주 하는 질문</h5>
+						<div class="accordion" id="accordionNotice">
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<h2 class="clearfix">
+										<a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">법인회원 등록절차가 어떻게 되나요?<i class="mdi mdi-chevron-down accordion-arrow"></i></a>									
+									</h2>
+								</div>
+								<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>헬로펀딩 홈페이지를 통해 회원가입 후 법인확인 절차를 완료해 주시면 됩니다. <br><br><a href="https://www.hellofunding.co.kr/bbs/board.php?bo_table=notice&wr_id=998">고객확인 안내 바로가기</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">법인 투자한도는 업종 제한이 없나요?<i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>법인투자자의 경우 업종 제한 없이 무제한(상품당 모집금액의 40%까지)으로 투자가 가능합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">법인의 투자세율은 어떻게 되나요?<i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>헬로펀딩은 법인세법 제 73조에 의해 소득세 25%에 주민세 2.5%가 추가되어 총 27.5%의 세금을 원천징수하며<br class="br"> 추후 법인세율 과세표준 구간에 따라 추가 납부된 세금은 환급받을 수 있습니다.<br><br>
+										 *과세표준구간별 세율 <br>
+										- 이익금액 2억 원 이하 : 11%(소득세 10% 지방세 1%)<br>
+										- 이익금액 200억 원 이하 : 22%(소득세 20% 지방세 2%)</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form_box"  id="request1">
+                      <h5>법인 투자 무료상담 신청</h5>
+                      <p>법인 투자 안내를 원하시면 지금 바로 상담 신청해주세요.</p>
+                      <div class="contents">
+                          <form id="counsel_request" name="counsel_request">
+							  <div class="form-group">                                     
+                                  <label for="name" class="form-label">성명</label>
+                                  <input class="form-control" type="text" name="name" value="<?=$member['mb_name']?>" placeholder="예: 홍길동">
+                              </div>
+							  <div class="form-group">
+								  <label for="phone" class="form-label">연락처</label>
+								  <input class="form-control" type="text" name="phone" placeholder="‘-’을 제외하고 입력해주세요" maxlength="12">
+							  </div>
+							  <div class="form-group">                                     
+                                  <label for="email" class="form-label">이메일</label>
+                                  <input class="form-control" type="text"  name="email">
+                              </div>
+							  <div class="form-group">   
+								  <p>법인 설립여부</p>
+								  <div class="input-wrap">
+                                  	<input type="radio" id="est_n" name="est" value="N"><label for="est_n">설립예정</label>
+                                  	<input type="radio" id="est_y" name="est" value="Y"><label for="est_y">설립완료</label>
+								  </div>
+                              </div>
+							  <div class="form-group">                                     
+                                  <label for="content" class="form-label">문의내용</label>
+								  <textarea name="content" class="cont_area"></textarea>
+                              </div>
+
+                              <div class="agree-chk">
+                                  <input type="checkbox" id="is_agree" value="1"><label for="is_agree">개인 정보 수집 및 이용에 동의합니다.</label>
+                              </div>
+                              <ul class="agree-txt">
+                                  <li>개인정보의 수집 및 이용목적 : 투자상담 서비스 제공</li>
+                                  <li>수집 및 이용할 개인정보의 내용 : 성명, 연락처, 이메일</li>
+                                  <li>개인정보의 보유 및 이용기간 : 서비스 목적 달성시 까지</li>
+                              </ul>
+                              <a class="apply-btn" onclick="formSubmit();">무료상담 신청하기</a>
+                          </form>
+                      </div>
+                  </div>
+				</div>
+
+				
+			</div>
+		</section>
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+		
+
+
+    </body>
+
+	<script>
+
+		// 자주하는질문 아코디언
+        $(document).ready(function(){
+            $(".collapse.show").each(function(){
+                $(this).prev(".card-header").addClass("highlight");
+            });
+
+            $(".card-header .btn").click(function(){
+                $(".card-header").not($(this).parents()).removeClass("highlight");
+                $(this).parents(".card-header").toggleClass("highlight");
+            });
+        });
+
+			
+
+		$(document).ready(function() {
+			// 숫자 자동 증가 카운트
+			$('.counter').counterUp({ delay: 10, time: 2000 });
+
+			// 그래프 효과
+			$(window).scroll(function() {
+				var ofs = $(".data").offset();
+
+				if(ofs) {
+					$('.graph-data').each(function(i) {
+						$('.graph-data:eq(0)').css({'transition':'all ease 0.5s', 'height':'3vh'}).find('p').css('opacity','1');
+						$('.graph-data:eq(1)').css({'transition':'all ease 0.8s', 'height':'6vh'}).find('p').css('opacity','1');
+						$('.graph-data:eq(2)').css({'transition':'all ease 1.1s', 'height':'10vh'}).find('p').css('opacity','1');
+						$('.graph-data:eq(3)').css({'transition':'all ease 1.4s', 'height':'16vh'}).find('p').css('opacity','1');
+						$('.graph-data:eq(4)').css({'transition':'all ease 1.7s', 'height':'20vh'}).find('p').css('opacity','1');
+					});
+				}
+
+
+
+			});
+		});
+
+
+		// 버튼 클릭시 스크롤 속도
+		function bt(seq){
+			var offset = $("#request" + seq).offset();
+			$('html, body').animate({scrollTop : offset.top}, 400);
+		}
+
+		// 이메일 형식 체크
+		function email_check(email) {
+			var regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+			return (email != '' && email != 'undefined' && regex.test(email));
+		}
+
+	</script>
+</html>

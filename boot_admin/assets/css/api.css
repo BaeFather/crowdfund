@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+  /********************************데이터테이블 css !!!!!!!!!!!!!!!!개발진행시 삭제!!!!!!!!!!!!!!!!!!!!!!!!*******************************************/
+  .datatable {margin-top:50px; padding:0 30px;}
+  .datatable table {width:100%; border:1px solid #ddd;}
+  .datatable table thead tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; text-align: center; font-size:.8rem; line-height: 30px; height: 30px;}	
+  .datatable table tbody tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; text-align: center; font-size:.8rem; line-height: 30px; height: 30px;}
+  .datatable table tbody tr td a{color:#555; border-bottom:1px solid #aaa;}
+  .datatable table tbody tr td a:hover{color:#ee321f; border-bottom:1px solid #ee321f;}
+  .datatable table tbody tr td button {margin:5px; padding:0 1rem; font-size:.78rem;}
+  .datatable table tbody tr td .basic {border:none; border:1px solid #aaa; color:#555; background-color:#fff; }
+
+
+  @media (max-width:992px){
+  .datatable {padding:0; overflow:auto; white-space: nowrap;}	
+  }
+
+
+
+
+
+
+   /********************************API관리 - 제휴사관리 *******************************************/
+
+  .wrapper .content-page .container-fluid .api-affiliate {padding:0 30px;}	
+  .wrapper .content-page .container-fluid .api-affiliate .search_button {text-align: center; margin-top:10px;}
+  .wrapper .content-page .container-fluid .api-affiliate table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+  .wrapper .content-page .container-fluid .api-affiliate table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+  .wrapper .content-page .container-fluid .api-affiliate table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+  /*검색어*/
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap .custom-select {width:180px;}	
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+  /*등록버튼*/
+  .wrapper .content-page .container-fluid .api-affiliate .regi_button {padding-left:10px;}
+  .wrapper .content-page .container-fluid .api-affiliate .regi_button .basic-bt {margin-right:5px;}
+
+
+  /*수정 모달 커스텀*/
+  .modify-pop .modal-dialog {max-width:700px;}	
+  .modify-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+  .modify-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+  .modify-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+  .modify-pop .modal-content .modal-body table tr td{width:35%; padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;}
+  .modify-pop .modal-content .modal-body table tr th{width:15%; padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px; background-color:#f8f8f8; font-weight: 600;}
+  .modify-pop .modal-content .modal-body textarea {display: block; width:100%;  margin:.5rem 0; padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: .25rem; }
+  .modify-pop .modal-content .modal-body .form-control-file {line-height: calc(1.5rem);}
+  .modify-pop .modal-content .modal-body .radio-type-wrap	{display: flex;}		
+  .modify-pop .modal-content .modal-body .radio-type-wrap div {margin-right:1.5rem;}		
+  .modify-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+  .modify-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+  .modify-pop .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+  .modify-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+	/*라디오버튼 커스텀*/
+   .modify-pop .modal-content .modal-body input[type="radio"] {display: none;}
+   .modify-pop .modal-content .modal-body input[type="radio"] + label:before { content: ""; display: inline-block; width: 1.112em; height: 1.112em; padding:3px;
+		  background-clip: content-box; border: 1px solid #dee2e6; background-color: #fff; border-radius: 50%; margin-right:5px; margin-bottom:4px; line-height: 50px; vertical-align:middle;}
+   .modify-pop .modal-content .modal-body input[type="radio"]:checked + label:before { background-color: #fa5c7c; border: 1px solid #fa5c7c;}			
+
+
+
+
+
+
+
+  @media (max-width:900px){
+  .wrapper .content-page .container-fluid .api-affiliate {padding:0;}
+  .wrapper .content-page .container-fluid .api-affiliate table {border-top: none; margin-top:0;}	
+  .wrapper .content-page .container-fluid .api-affiliate table tr td{border-bottom: none; height:0;}	
+  .wrapper .content-page .container-fluid .api-affiliate table tr td:first-child {display:none;}
+
+
+  /*검색어*/	
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap {padding-left:0;}
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap .custom-select {width:50%; margin-bottom:5px;}
+  .wrapper .content-page .container-fluid .api-affiliate .word-search .word-search-wrap .input-group {margin-left:1%; width:49%;}	
+
+
+  /*등록버튼*/
+  .wrapper .content-page .container-fluid .api-affiliate .regi_button {padding-left:0;}
+  .wrapper .content-page .container-fluid .api-affiliate .regi_button .basic-bt {width:100%; text-align: center;}
+
+
+  /*수정 모달 커스텀*/
+  .modify-pop .modal-content .modal-body table {border-bottom: 1px solid #e0e0e0; border-top:none;} 
+  .modify-pop .modal-content .modal-body table tr{display: flex;  flex-wrap: wrap; }
+  .modify-pop .modal-content .modal-body table tr td{display: flex;  align-items: center; width:65%; padding:0 .7rem; border:1px solid #e0e0e0; border-bottom:none; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px;}
+  .modify-pop .modal-content .modal-body table tr th{display: flex; align-items: center; width:35%; padding:0 .7rem; border:1px solid #e0e0e0; border-bottom:none; border-right:none; height:auto; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;  }
+
+
+  }

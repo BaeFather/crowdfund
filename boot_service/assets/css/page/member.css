@@ -1,0 +1,489 @@
+/*********************************
+font SET
+**********************************/
+.mb-modify p, .mb-modify a, .mb-modify span , .mb-modify th , .mb-modify td , .mb-modify div, .mb-modify button, .mb-modify h2, .mb-modify h3, .mb-modify h4, .mb-modify h5, .mb-modify ul li , .mb-modify label , .mb-modify input , .mb-modify .active{font-family:NotoSansKR, sans-serif; }
+
+
+
+/* Change the color to your own background color , 인풋태그 작성시 특정 칼라가 입혀지는 것 방지*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-transition: background-color 9999s ease-out; }
+
+
+
+
+/************************************************************ 회원가입 *****************************************************************************/
+
+
+.join .container .row .card {box-shadow: none; width:100%; background-color: #fff; margin: 0; }
+.join .container .row .card .card-body {padding:50px 25px; border-radius: .25rem; }
+.join .container .row .card .card-body .head-title {display: flex; justify-content: space-between; }
+.join .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.5rem; color:#222; font-weight: 500; margin:0 0 50px; }
+.join .container .row .card .card-body .head-title ul {display:flex; margin-top:3px;}
+.join .container .row .card .card-body .head-title ul li:first-child::after {content:'|'; padding:0 10px; color:#999; font-size:1rem;}
+.join .container .row .card .card-body .head-title ul li a {font-size:1rem; color:#999;}
+.join .container .row .card .card-body .head-title ul .on a {color:#ee321f;}
+.join .container .row .card .card-body form .form-group {margin-bottom:30px;}
+.join .container .row .card .card-body form .form-group label {font-size:1rem; font-weight: 500; color:#333; margin-bottom: 0.3rem;}
+.join .container .row .card .card-body form .form-group label span{font-size:0.9rem; font-weight: 400; color:#777; letter-spacing: -0.5px; }
+.join .container .row .card .card-body form .form-group .input-group button {margin-left:5px; border-radius:.25rem; box-shadow: none; font-size:.9rem; background-color: #444; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.join .container .row .card .card-body form .form-group .input-group .mb-id {border-top-right-radius:.25rem; border-bottom-right-radius:.25rem;}
+.join .container .row .card .card-body form .form-group .input-group .co-id {border-top-right-radius:.25rem; border-bottom-right-radius:.25rem;}
+.join .container .row .card .card-body form .form-group input:focus {border-color: #999; }
+.join .container .row .card .card-body form .form-group .form-control {height: calc(3rem + 1px); color:#222; border:1px solid #ddd;}
+.join .container .row .card .card-body form .form-group .btn-primary {box-shadow: none; width:100%; background-color: #f64e60; border:none; font-size:1rem; margin:0 0 10px; padding:.8rem 0;}
+.join .container .row .card .card-body form .form-group .btn-secondary {box-shadow: none; width:100%; background-color: #6c757d; border:none; font-size:.85rem; padding:.7rem 0;}
+.join .container .row .card .card-body form .form-group .investment-manual label {color:#333; font-weight: 400; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.82rem;}
+.join .container .row .card .card-body .signup {margin-top:50px;}
+.join .container .row .card .card-body .signup p {color:#999; font-size:0.875rem; margin-bottom: 0; }
+.join .container .row .card .card-body .signup span a{float:right; color:#222; border-bottom: 1px solid #222; font-size:0.875rem;}
+
+
+
+
+/*약관동의*/
+.join .container .row .card .card-body form .form-group .agree-box {border:1px solid #ddd; border-radius: .25rem;}
+.join .container .row .card .card-body form .form-group .agree-box label span {color:#333; font-weight: 400; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.82rem; }
+.join .container .row .card .card-body form .form-group .agree-box .agree-all {margin-bottom:0;}
+.join .container .row .card .card-body form .form-group .agree-box .agree-all li {padding:12px 20px 12px 10px;}
+.join .container .row .card .card-body form .form-group .agree-box .agree-all li label {margin-bottom:0; font-size:.9rem;}
+.join .container .row .card .card-body form .form-group .agree-box .agree-all li a {float: right; cursor: pointer; color:#555; font-size:.75rem; padding-top:2px; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.join .container .row .card .card-body form .form-group .agree-box .agree {display:none; border-top: 1px solid #ddd; padding:20px 20px 0 5px;}
+
+.join .container .row .card .card-body form .form-group .agree-box .agree a {float:right; color:#555; font-size:.75rem; padding-top:2px; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; margin-right: 5px; }
+.join .container .row .card .card-body form .form-group .agree-box input[type="checkbox"] {opacity:0;}
+
+
+/*전체 약관동의 체크박스*/
+.join .container .row .card .card-body form .form-group .agree-box .agree-all input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-3px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.join .container .row .card .card-body form .form-group .agree-box .agree-all input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#f64e60; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+
+
+
+/*부분별 약관동의 체크박스*/
+.join .container .row .card .card-body form .form-group .agree-box .agree input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 14px; height: 14px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.join .container .row .card .card-body form .form-group .agree-box .agree input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#f64e60; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+.join .container .row .card .card-body form .form-group .agree-box .agree .marketingChk_box {margin-left: 1.2rem;}
+
+
+/*기본 체크박스*/
+.join .container .row .card .card-body form .form-group .checkbox input[type="checkbox"] {opacity:0;}
+.join .container .row .card .card-body form .form-group .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.join .container .row .card .card-body form .form-group .checkbox input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#f64e60; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+
+
+
+
+/*셀렉트박스*/
+.join .container .row .card .card-body form .form-group .form-select {height: calc(3rem + 1px); display: block; width: 100%; padding: .45rem 2.7rem .45rem .9rem; -moz-padding-start: calc(.9rem - 3px); font-size: .9rem; font-weight: 400;
+line-height: 1.5; color: #222; background-color: #fff;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .9rem center; background-size: 14px 10px;  border: 1px solid #ddd; border-radius: .25rem;
+-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;  -webkit-appearance: none;  -moz-appearance: none; appearance: none;}
+
+.join .container .row .card .card-body form .form-group .form-select:focus {border-color: #999!important;}
+
+
+
+
+
+/*인풋태그 설명 css */
+.join .container .row .card .card-body form .form-group input::placeholder {font-size:.95rem; letter-spacing: -0.5px; font-weight: 400; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+
+
+/*휴대폰번호*/
+.join .container .row .card .card-body form .form-group .mobile-number {display:flex; width:100%;}
+.join .container .row .card .card-body form .form-group .mobile-number select {width:33.3%;}
+.join .container .row .card .card-body form .form-group .mobile-number input {width:33.3%;}
+.join .container .row .card .card-body form .form-group .mobile-number .hp2 {margin:0 10px;}
+
+
+
+/*2열 input, select*/
+.join .container .row .card .card-body form .form-group .half-rate {display:flex; width:100%;}
+.join .container .row .card .card-body form .form-group .half-rate input {width:50%;}
+.join .container .row .card .card-body form .form-group .half-rate select {width:50%;}
+.join .container .row .card .card-body form .form-group .half-rate input:last-child {margin-left:10px;}
+.join .container .row .card .card-body form .form-group .half-rate select:last-child {margin-left:10px;}
+
+
+
+/*파일업로드*/
+.join .container .row .card .card-body form .form-group .custom-file {height: calc(3rem + 1px); margin-top:5px;}
+.join .container .row .card .card-body form .form-group .custom-file .custom-file-label {font-size:.95rem; color: #bbb; letter-spacing: -0.5px; font-weight: 400; height: calc(3rem + 1px); line-height: 2.1; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:1px solid #ddd;}
+.join .container .row .card .card-body form .form-group .custom-file .custom-file-label::after {content: "파일선택"; height: calc(3rem + 1px); line-height: 2.1; background-color: #fafafa; color:#444;}
+
+
+
+
+
+
+/************************************************************ 법인회원가입*****************************************************************************/
+
+
+/*페이지넘버*/
+.join-c .container .row .card .card-body form .join-wrap .join-step .page-num p{font-size:1.2rem; color:#222; letter-spacing: 0.2rem;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .page-num p span{font-size:1.2rem; color:#ee321f;}
+
+
+
+/* 페이지별 노출/비노출 */
+.join-c .container .row .card .card-body form .join-wrap .join-step:first-of-type {display: block;}
+.join-c .container .row .card .card-body form .join-wrap .join-step {display: none;}
+
+
+
+/*증빙서류 테이블*/
+.join-c .container .row .card .card-body form .join-wrap .join-step .document-info {border:1px solid #ddd;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .document-info tbody th {text-align: center; background-color: #fafafa; border-bottom: 1px solid #ddd; padding:.8rem 0; font-size:1rem; color:#222;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .document-info tbody td:first-child {width:30%; border-right: 1px solid #ddd; border-bottom:1px solid #ddd; font-size:.9rem; color:#222; padding:.6rem; }
+.join-c .container .row .card .card-body form .join-wrap .join-step .document-info tbody td:last-child {width:70%; border-bottom:1px solid #ddd; padding:.6rem; font-size:.85rem; color:#777; line-height: 1.3rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -0.2px;}
+
+
+
+
+/*양식파일 다운로드 버튼*/
+.join-c .container .row .card .card-body form .join-wrap .join-step .down-btn {margin:1rem 0; width:100%; display: inline-block;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .down-btn .btn {width:49%; border:1px solid #999; color:#222; font-weight:500; font-size:.95rem; letter-spacing: -0.5px;  font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500; padding:.5rem 0;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .down-btn .btn:hover { border:1px solid #ee321f; color:#ee321f;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .down-btn .btn i{margin-right:5px; font-size:.95rem; }
+
+
+
+/*추가설명*/
+.join-c .container .row .card .card-body form .join-wrap .join-step .point-info {margin-bottom: 2.5rem;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .point-info p {margin-bottom: 0;  font-size:.8rem; color:#333; font-weight: 400; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing:0px;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .point-info p::before {content: '·'; margin-right: 5px;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .point-info p span {color:#ee321f; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+
+/*사업자번호*/
+.join-c .container .row .card .card-body form .form-group .co-reg-num-wrap {display:flex; width:100%;}
+.join-c .container .row .card .card-body form .form-group .co-reg_num-wrap input {width:33.3%;}
+.join-c .container .row .card .card-body form .form-group .co-reg-num-wrap .co-reg-num2 {margin:0 10px;}
+
+
+
+/*법인주소*/
+.join-c .container .row .card .card-body form .form-group .co-add-zip-wrap button {width:40%; margin-left:5px; border-radius:.25rem; box-shadow: none; font-size:.9rem; background-color: #444; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom:5px; height: calc(3rem + 1px);}
+.join-c .container .row .card .card-body form .form-group .postcode{border-top-right-radius:.25rem; border-bottom-right-radius:.25rem; margin-bottom: 5px;}
+
+
+
+/*대표&담당자 동일체크*/
+.join .container .row .card .card-body form .form-group .is-info-same span{color:#333; font-weight: 400; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.82rem;}
+
+
+
+/*법인 이전,다음버튼*/
+.join-c .container .row .card .card-body form .form-group .btn-wrap {display: flex;}
+.join-c .container .row .card .card-body form .form-group .btn-wrap .btn-primary {width:50%; box-shadow: none; background-color: #f64e60; border:none; font-size:1rem; margin:0; padding:.8rem 0;}
+.join-c .container .row .card .card-body form .form-group .btn-wrap .btn-secondary {width:50%; box-shadow: none; background-color: #6c757d; border:none; font-size:1rem; padding:.8rem 0; margin-right: 10px;}
+
+.join-c .container .row .card .card-body form .c-join-step4 .form-group .btn-wrap .btn-primary {width:75%;}
+.join-c .container .row .card .card-body form .c-join-step4 .form-group .btn-wrap .btn-secondary {width:25%;}
+
+
+
+/*완료페이지*/
+.join-c .container .row .card .card-body form .join-wrap .join-step .completion h4 {font-size:1.4rem; font-weight: 500; color:#222; letter-spacing: -0.5px; padding:5rem 0 1rem;}
+.join-c .container .row .card .card-body form .join-wrap .join-step .completion p {font-size:1rem; font-weight: 400; color:#555; letter-spacing: -0.5px; padding-bottom:10rem; line-height: 1.5rem;}
+
+
+
+
+
+
+
+/************************************************************ 로그인 *****************************************************************************/
+
+
+.login {margin:100px 0 100px;}
+.login .container .row .card {box-shadow: none; width:100%; background-color: #fff;}
+.login .container .row .card .card-body {padding:35px; border-radius: .25rem;}
+.login .container .row .card .card-body h4 {text-align:left; font-size:1.5rem; color:#222; font-weight: 400; margin:0 0 20px;}
+.login .container .row .card .card-body form .form-group {margin-bottom:10px;}
+.login .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px); border:1px solid #ddd!important; background-color: #fff;}
+.login .container .row .card .card-body form .form-group .form-control:focus { border:1px solid #aaa;}
+.login .container .row .card .card-body form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400; font-family:"NotoSansKR", sans-serif;}.login .container .row .card .card-body form .form-group .btn-primary {height: calc(2.8rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; font-size:.9rem; font-weight: 400;  font-family:"NotoSansKR", sans-serif;}
+.login .container .row .card .card-body form .form-group .custom-checkbox {margin:10px 0 30px;}
+.login .container .row .card .card-body form .form-group .custom-checkbox .custom-control-label {color:#222; font-weight: 400; font-size:0.85rem; font-family:"NotoSansKR", sans-serif;}
+.login .container .row .card .card-body .id-pass-search {display:flex; margin-top:30px; }
+.login .container .row .card .card-body .id-pass-search a{color:#777; font-size:0.85rem; font-family:"NotoSansKR", sans-serif;}
+.login .container .row .card .card-body .id-pass-search div:nth-child(2){padding:0 20px; font-size:0.813rem; margin-top:1px; color:#999;}
+.login .container .row .card .card-body .signup {margin-top:50px;}
+.login .container .row .card .card-body .signup p {color:#999; font-size:0.85rem; font-family:"NotoSansKR", sans-serif; margin-bottom: 0; letter-spacing: -.3px;}
+.login .container .row .card .card-body .signup span a{float:right; color:#222; border-bottom: 1px solid #222; font-size:0.85rem; font-family:"NotoSansKR", sans-serif;}
+.login .container .row .card .card-body .id_save_check_input:checked~.id_save_check_label::before {border-color: #222; background-color: #222;}
+
+
+
+/************************************************************ 아이디찾기*****************************************************************************/
+.find-id {margin:100px 0 100px;}
+.find-id .container .row .card {box-shadow: none; width:100%;  background-color: #fff;}
+.find-id .container .row .card .card-body {padding:35px;}
+.find-id .container .row .card .card-body .head-title {display: flex; justify-content: space-between; align-items: flex-end; margin-bottom:25px;}
+.find-id .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.4rem; color:#222; font-weight: 400; margin:0; }
+.find-id .container .row .card .card-body .head-title ul {display:flex; margin-top:3px;}
+.find-id .container .row .card .card-body .head-title ul li:first-child::after {content:'|'; padding:0 10px; color:#999; font-size:.9rem;}
+.find-id .container .row .card .card-body .head-title ul li a {font-size:.9rem; color:#999;}	
+.find-id .container .row .card .card-body .head-title ul li .active {color:#ee321f;}	
+.find-id .container .row .card .card-body form .form-group {margin-bottom:10px;}
+.find-id .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px); border:1px solid #ddd!important; background-color: #fff;}
+.find-id .container .row .card .card-body form .form-group .form-control:focus { border:1px solid #aaa;}	
+.find-id .container .row .card .card-body form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400; font-family:"NotoSansKR", sans-serif;} 
+.find-id .container .row .card .card-body .btn-primary {height: calc(2.8rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; margin-top:20px; font-size:.9rem; font-weight: 400;  font-family:"NotoSansKR", sans-serif;}
+
+
+
+/************************************************************비번찾기*****************************************************************************/
+.find-pw {margin:100px 0 100px;}
+.find-pw .container .row .card {box-shadow: none; width:100%; background-color: #fff;}
+.find-pw .container .row .card .card-body {padding:35px;}
+.find-pw .container .row .card .card-body .head-title {display: flex; justify-content: space-between; align-items: flex-end; margin-bottom:25px;}
+.find-pw .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.4rem; color:#222; font-weight: 400; margin:0; }
+.find-pw .container .row .card .card-body .head-title ul {display:flex; margin-top:3px;}
+.find-pw .container .row .card .card-body .head-title ul li:first-child::after {content:'|'; padding:0 10px; color:#999; font-size:.9rem;}
+.find-pw .container .row .card .card-body .head-title ul li a {font-size:.9rem; color:#999;}	
+.find-pw .container .row .card .card-body .head-title ul li .active {color:#ee321f;}	
+.find-pw .container .row .card .card-body form .form-group {margin-bottom:10px;}
+.find-pw .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px); border:1px solid #ddd!important; background-color: #fff;}
+.find-pw .container .row .card .card-body form .form-group .form-control:focus { border:1px solid #aaa;}	
+.find-pw .container .row .card .card-body form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400; font-family:"NotoSansKR", sans-serif;} 
+.find-pw .container .row .card .card-body .btn-primary {height: calc(2.8rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; margin-top:20px; font-size:.9rem; font-weight: 400;  font-family:"NotoSansKR", sans-serif;}
+
+
+
+/************************************************************비번번호 변경(90일정책)*****************************************************************************/
+.pass-change {margin:100px 0 100px;}
+.pass-change .container .row .card {box-shadow: none; width:100%; background-color: #fff;}
+.pass-change .container .row .card .card-body {padding:35px;}
+.pass-change .container .row .card .card-body h4 {text-align:center; font-size:1.4rem; color:#222; font-weight: 400; margin-bottom:10px;}
+.pass-change .container .row .card .card-body p {font-size:.825rem; color:#555;  font-family:"NotoSansKR", sans-serif; line-height: 1.125rem; text-align:center; margin-bottom:30px;}	
+.pass-change .container .row .card .card-body form .form-group {margin-bottom:10px;}
+.pass-change .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px); border:1px solid #ddd!important; background-color: #fff;}
+.pass-change .container .row .card .card-body form .form-group .form-control:focus { border:1px solid #aaa;}	
+.pass-change .container .row .card .card-body form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400; font-family:"NotoSansKR", sans-serif;} 	
+.pass-change .container .row .card .card-body form .notice {display:flex; align-items: center; font-size:.725rem; color:#888; letter-spacing: -.3px; font-family: "Nunito",sans-serif; }
+.pass-change .container .row .card .card-body form .notice span {margin-right:3px; padding-top:2px;}	
+.pass-change .container .row .card .card-body .btn-wrap {text-align:center;}
+.pass-change .container .row .card .card-body .btn-wrap .btn-primary {height: calc(2.8rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; margin-top:20px; font-size:.9rem; font-weight: 400;  font-family:"NotoSansKR", sans-serif;}
+.pass-change .container .row .card .card-body .btn-wrap .btn-delay {color:#333; margin:20px auto; font-size:.85rem; font-family:"NotoSansKR", sans-serif; outline:none; box-shadow:none; text-decoration: underline;}
+.pass-change .container .row .card .card-body .btn-wrap p {font-size:.78rem; color:#888; font-family: "Nunito",sans-serif;  line-height: 1.15rem; font-weight:400; letter-spacing: -1px; }
+
+
+/* mobile footer display */
+.tail {display:none;}
+
+
+
+
+
+
+
+@media all and (min-width:768px) {
+
+.tail {display:block;}
+
+	
+
+/**************************** 회원가입 pc******************************************************************/
+.join {margin: 0; background-color: #fafafa;}
+.join .container .row .card {box-shadow: none; border:1px solid #ddd; width:500px; margin:40px 0 100px;}
+.join .container .row .card .card-body form .form-group label {font-size:.9rem;}
+.join .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px); }
+
+
+/*셀렉트박스*/
+.join .container .row .card .card-body form .form-group .form-select {height: calc(2.8rem + 1px); }
+
+/*파일업로드*/
+.join .container .row .card .card-body form .form-group .custom-file {height: calc(2.8rem + 1px); margin-bottom:5px;}
+
+/*법인주소버튼*/
+.join-c .container .row .card .card-body form .form-group .co-add-zip-wrap button {height: calc(2.8rem + 1px);}
+
+
+/**************************** 로그인 pc******************************************************************/
+.login {margin:80px 0 100px;}
+.login .container .row .card {box-shadow: none; border:1px solid #ddd; width:450px;}
+
+
+/**************************** 아이디찾기 pc******************************************************************/
+.find-id {margin:80px 0 100px;}
+.find-id .container .row .card {box-shadow: none; border:1px solid #ddd; width:450px;}
+
+
+/**************************** 비번찾기 pc******************************************************************/
+.find-pw {margin:80px 0 100px;}
+.find-pw .container .row .card {box-shadow: none; border:1px solid #ddd; width:450px;}
+
+	
+/**************************** 비번번호 변경(90일정책)******************************************************************/
+.pass-change {margin:80px 0 100px;}
+.pass-change .container .row .card {box-shadow: none; border:1px solid #ddd; width:450px;}
+
+}
+
+
+
+@media all and (min-width:900px) {
+.join {margin: 0; background-color: #fafafa;}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/************************************************************ 회원정보 수정 *****************************************************************************/
+
+
+.mb-modify .container .row .card {box-shadow: none; width:100%; background-color: #fff; margin:30px 0; }
+.mb-modify .container .row .card .card-body {padding:0;}
+.mb-modify .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.2rem; color:#222; font-weight: 500;  padding-left:1rem;  border-bottom:1px solid #ddd; padding-bottom:1rem;}
+.mb-modify .container .row .card .card-body div h5 {text-align:left; font-size:.95rem; color:#222; font-weight: 500;  margin-bottom:20px; }
+.mb-modify .container .row .card .card-body .id-info {border-bottom:10px solid #ededed; padding:.5rem 1rem 1.5rem;}
+.mb-modify .container .row .card .card-body .mb-info, .mb-modify .container .row .card .card-body .account-info {border-bottom:10px solid #ededed; padding:1.5rem 1.5rem 1.5rem;}
+.mb-modify .container .row .card .card-body .agree-info {padding:1.5rem 1rem 1.5rem;}
+.mb-modify .container .row .card .card-body .agree-info a {color:#222; text-decoration: underline; }
+.mb-modify .container .row .card .card-body .form-group .input-group button {height: calc(2.3rem); margin-left:.5rem; box-shadow: none; font-size:.8rem; border:1px solid #666; background-color: #666; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; padding:0 1rem; }
+
+
+/*인풋태그 및 라벨*/
+.mb-modify .container .row .card .card-body .form-group label {font-size:.8rem; font-weight: 500; color:#777; margin-bottom: 0.3rem;}
+.mb-modify .container .row .card .card-body .form-group .form-control {height: calc(2.3rem); color:#222; border:1px solid #ddd; font-size:.85rem; padding:.35rem .9rem .45rem; font-weight: 400;}
+.mb-modify .container .row .card .card-body .form-group input:read-only {color:#888; border-color:#eee; background-color: #f8f8f8!important; font-size:.85rem;}
+
+
+/*하단 버튼*/
+.mb-modify .container .row .card .card-body .modify-button {padding:0 1rem; text-align: center;}
+.mb-modify .container .row .card .card-body .modify-button .btn {width:100%; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.mb-modify .container .row .card .card-body .modify-button .out-btn { border:none; background-color: #fff; color:#999;  font-size:.85rem; padding:0; margin-top:1.5rem;  font-weight: 500; border-bottom: 1px solid #999; float: right;}
+
+
+
+/*기본 체크박스*/
+.mb-modify .container .row .card .card-body .form-group .checkbox input[type="checkbox"] {opacity:0;}
+.mb-modify .container .row .card .card-body .form-group .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.mb-modify .container .row .card .card-body .form-group .checkbox input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#ee321f; color: #fff; border: 1px solid #ee321f; box-sizing: border-box; }
+.mb-modify .container .row .card .card-body .form-group .checkbox .marketingChk_box {margin-left: 1.2rem;}
+.mb-modify .container .row .card .card-body .form-group .checkbox .marketingChk_box label {font-size: .8rem;}
+.mb-modify .container .row .card .card-body .form-group .checkbox .marketingChk_box label:first-of-type {margin-right: .5rem;}
+
+
+/*모달 커스텀 */
+.mb-modify-modal {padding-right: 0!important; }
+.mb-modify-modal .modal-dialog {max-width:420px!important; margin:0 auto; padding:.5rem; border-radius: 1rem;}
+.mb-modify-modal .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.mb-modify-modal .modal-content .modal-header h4 {font-size:.95rem; color:#333; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500; letter-spacing: -.5px; }
+.mb-modify-modal .modal-content .modal-header .close {font-size:1rem; color:#333;}
+.mb-modify-modal .modal-content .modal-body {margin:.5rem 0 0; }
+.mb-modify-modal .modal-content .modal-body .form-group label {font-size:.8rem; font-weight: 500; color:#555; margin-bottom: 0.3rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.mb-modify-modal .modal-content .modal-body .form-group input:focus {border-color: #999; }
+.mb-modify-modal .modal-content .modal-body .form-group textarea {display: block; width:100%; height:120px; padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#222; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem; outline:none; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.mb-modify-modal .modal-content .modal-body .form-group .form-control {height: calc(2.3rem); color:#555; border:1px solid #ddd; font-size:.85rem; padding:.35rem .9rem .45rem; font-weight: 400; }
+.mb-modify-modal .modal-content .modal-body p {display: flex; align-items:flex-start; font-size:.78rem; font-weight: 400; color:#555; font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -.3px; margin:1rem 0; line-height:1rem;}
+.mb-modify-modal .modal-content .modal-body p i {font-size:.95rem; margin-right:.2rem; margin-top:0rem;}
+.mb-modify-modal .modal-content .modal-body .notice { display:block; margin:0; font-size:.83rem; font-weight: 400; color:#333; font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; text-align: center; line-height: 1.1rem;}
+.mb-modify-modal .modal-content .modal-body .notice:first-child {margin:1rem 0 .4rem;}
+.mb-modify-modal .modal-content .modal-body .notice:last-child {margin:0 0 1rem;}
+
+
+.mb-modify-modal .modal-content .modal-footer {display:flex; justify-content:center; padding:0 1rem 2rem; border-top:none;}
+.mb-modify-modal .modal-content .modal-footer button {margin:0; padding:.42rem  0 .45rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.8rem; outline:none; box-shadow: none;}
+.mb-modify-modal .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:49%; }
+.mb-modify-modal .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:49%; margin-right:2%;}
+
+
+
+/*투자자유형 모달 커스텀 */
+.mb-modify-modal .modal-content .modal-body h5 {font-size:.9rem; color:#222; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500; margin-bottom:.5rem; }
+
+.mb-modify-modal .modal-content .modal-body .radio-type-wrap {margin-bottom:1.5rem;}
+.mb-modify-modal .modal-content .modal-body .radio-type-wrap label {font-size:.8rem; font-weight: 500; color:#555; margin-bottom: 0.3rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.mb-modify-modal .modal-content .modal-body .radio-type-wrap label span {font-size:.78rem; font-weight: 400; color:#777; margin-bottom: 0.3rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; margin-left:.2rem;}
+.mb-modify-modal .modal-content .modal-body table {width:100%; white-space: nowrap; margin-bottom:2rem;}
+.mb-modify-modal .modal-content .modal-body table tr th{width:20%; padding:.4rem 1rem; border:1px solid #e0e0e0; color:#333; font-size:.8rem; background-color:#f8f8f8; font-weight: 500; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;  vertical-align: middle;}
+.mb-modify-modal .modal-content .modal-body table tr td{width:80%; padding:.4rem 1rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; }
+
+.mb-modify-modal .modal-content .modal-body .add-docu input{font-size:.8rem; font-weight: 400; color:#555; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.mb-modify-modal .modal-content .modal-body .add-docu .custom-file {margin-bottom:.8rem;}
+.mb-modify-modal .modal-content .modal-body .add-docu .custom-file .file-control {border:1px solid #ddd; padding:.5rem 1rem; width:100%; height: auto; opacity: unset;}
+
+
+
+
+/*라디오버튼 커스텀*/
+.mb-modify-modal input[type="radio"] {display: none;}
+.mb-modify-modal input[type="radio"] + label:before {content: ""; display: inline-block; width:.8rem; height:.8rem; padding:.1rem; background-clip: content-box; border: 1px solid #dee2e6; background-color: #fff;
+  border-radius:50%; margin-right:.4rem;  vertical-align:middle; margin-bottom:.1rem;}
+.mb-modify-modal input[type="radio"]:checked + label:before {background-color: #fa5c7c; border: 1px solid #fa5c7c;}
+
+
+
+
+@media all and (min-width:500px) {
+
+.mb-modify {margin: 0; background-color: #fafafa;}
+.mb-modify .container .row .card {box-shadow: none; border:1px solid #ddd; width:500px; margin:40px 0 100px; border-radius: 0;}
+.mb-modify .container .row .card .card-body .head-title h4 {font-size:1.4rem; margin:40px 0 20px; border-bottom: none; padding-left:1.5rem;}
+.mb-modify .container .row .card .card-body div h5 { font-size:1rem;}
+.mb-modify .container .row .card .card-body .id-info {border-bottom:1px solid #ddd; padding:.5rem 1.5rem 1.5rem;}
+.mb-modify .container .row .card .card-body .mb-info, .mb-modify .container .row .card .card-body .account-info {border-bottom:1px solid #ddd; padding:1.5rem;}
+.mb-modify .container .row .card .card-body .agree-info {padding:1.5rem;}
+.mb-modify .container .row .card .card-body .form-group {margin-bottom:1.5rem;}
+
+
+/*하단 버튼*/
+.mb-modify .container .row .card .card-body .modify-button {padding:0 1.5rem;}
+.mb-modify .container .row .card .card-body .modify-button .out-btn { border:none; background-color: #fff; color:#999;  font-size:.85rem; padding:0; margin:1.5rem 0 2.5rem;  font-weight: 500; border-bottom: 1px solid #999; float: right;}
+
+
+
+}
+
+
+
+@media all and (min-width:900px) {
+.mb-modify {margin: 0; background-color: #fafafa;}
+
+
+/*인풋태그 및 라벨*/
+.mb-modify .container .row .card .card-body .form-group label {font-size:.85rem;}
+.mb-modify .container .row .card .card-body .form-group .form-control {height: calc(2.5rem); }
+.mb-modify .container .row .card .card-body .form-group .input-group button {height: calc(2.5rem); padding:0 2rem; margin-left:.7rem; }
+.mb-modify .container .row .card .card-body .form-group input:read-only {font-size:.9rem;}
+
+
+
+/*모달 커스텀 */
+.mb-modify-modal .modal-content .modal-header {padding:.7rem 1.5rem;}
+.mb-modify-modal .modal-content .modal-body {margin:.5rem .5rem 0;}
+
+.mb-modify-modal .modal-content .modal-footer { padding:0 1.5rem 2rem;}
+.mb-modify-modal .modal-content .modal-footer button {margin:0; padding:.42rem  0 .45rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.8rem; outline:none; box-shadow: none;}
+.mb-modify-modal .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:49%; }
+.mb-modify-modal .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:49%; margin-right:2%;}
+
+
+
+.tail {display:block;}
+
+
+}
+
+
+

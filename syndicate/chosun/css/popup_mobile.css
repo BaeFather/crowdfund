@@ -1,0 +1,122 @@
+/********* 비밀번호 / 아이디 찾기 / 회원탈퇴 / Q&A 레이어  *********/
+#complete { display:none; position:relative; width:100%; padding-bottom:20px; background-color:#fff;  }
+#complete .title { line-height:36px; text-indent:15px; text-align:left; color:#fff; font-size:15px; background-color:#284893; }
+#complete .close { position:absolute; right:15px; top:10px; width:16px; cursor:pointer; }
+#complete .text { padding:20px 10px 15px 10px; font-size:14px; line-height:18px; color:#202020; font-weight:bold;  }
+#complete .break {}
+
+/********* 예치금 투자진행표 *********/
+#complete2 { display:none; position:relative; padding-bottom:20px; background-color:#fff;  }
+#complete2 .title { line-height:42px; text-indent:20px; text-align:left; color:#fff; font-size:15px; background-color:#284893; }
+#complete2 .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#complete2 .text { padding:20px 10px 15px 10px; font-size:16px; line-height:20px; color:#202020; font-weight:bold;  }
+#complete2 .normal { display:inline-block; margin-top:5px; font-weight:normal; font-size:14px; color:#707070;  }
+#complete2 a { max-width:90px; }
+
+/********* 예치금내역 - 투자내역 상세보기 *********/
+#detail { display:none; position:relative; background-color:#fff;  }
+#detail .title { line-height:36px; text-indent:15px; text-align:left; color:#fff; font-size:15px; background-color:#284893; }
+#detail .close { position:absolute; right:15px; top:10px; width:16px; cursor:pointer; }
+#detail .con { padding:15px; }
+
+/********* 예치금 펀딩취소 *********/
+#complete3 .deposit {}
+#complete3 { display:none; padding-bottom:20px; }
+#complete3 .title { line-height:36px; text-indent:15px; text-align:left; color:#fff; font-size:15px; background-color:#284893; }
+#complete3 .close { position:absolute; right:15px; top:10px; width:16px; cursor:pointer; }
+#complete3 .text { padding:20px 10px 15px 10px; font-size:14px; line-height:18px; color:#202020; font-weight:bold;  }
+
+/********* 예치금 입금 *********/
+#charge { display:none; position:relative; width:99%; text-align:left; background-color:#fff;  }
+#charge > .title { line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893; }
+#charge .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#charge .con { padding:30px; font-size:14px; line-height:21px; color:#707070; }
+#charge .con .title { margin-bottom:5px; font-size:18px; color:#202020; font-family:'NGB'; }
+#charge .con table td b { color:#202020; }
+#charge .con .info { margin:3px 0 10px 0; font-size:13px; }
+#charge .con .box { padding:10px; border:1px solid #dfdfdf; font-size:13px; }
+
+/********* 빠른 예치금 충전 *********/
+#quick_charge { display:none; position:relative; width:99%; text-align:left; background-color:#fff;  }
+#quick_charge > .title { line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893; }
+#quick_charge .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#quick_charge .con { padding:30px; font-size:14px; line-height:21px; color:#707070; }
+#quick_charge .con .title { margin-bottom:5px; font-size:18px; color:#202020; font-family:'NGB'; }
+#quick_charge .con table td b { color:#202020; }
+#quick_charge .con .info { margin:3px 0 10px 0; font-size:13px; }
+#quick_charge .con .box { padding:10px; border:1px solid #dfdfdf; font-size:13px; }
+
+/********* 예치금 출금 *********/
+.popbluetheme { display:none; position:relative; width:100%; text-align:left; background-color:#fff;  }
+.popbluetheme > .title { line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893;font-family:'NGB'; }
+.popbluetheme .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+.popbluetheme .con { padding:15px; font-size:14px; line-height:21px; color:#707070; }
+.popbluetheme .con .notes { margin-bottom:20px; font-size:16px; color:#202020; font-family:'NGB'; text-align:center; }
+.popbluetheme .con .title { margin-bottom:5px; font-size:18px; color:#202020; font-family:'NGB'; }
+.popbluetheme .con table td b { color:#202020; }
+.popbluetheme .con .btnArea { margin:10px 0 10px 0; text-align:center; }
+.popbluetheme .con .box { padding:5px; font-size:13px; border:1px solid #dfdfdf; }
+
+/********* 투자 위험 고지 *********/
+#invest_warning_agree { display:none; position:relative; width:100%; text-align:left; background-color:#fff; }
+#invest_warning_agree .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#invest_warning_agree > .title { line-height:42px; text-indent:20px; color:#fff; font-size:15px; background-color:#284893; font-family:'NGB'; }
+#invest_warning_agree .con { padding:10px; font-size:14px; line-height:21px; color:#707070;text-align:left; }
+#invest_warning_agree .con .con1 { font-size:10pt;color:#000; }
+#invest_warning_agree .con .con2 { padding:10px 5px; border:1px solid #dfdfdf;margin-top:20px;font-size:14px; text-align:center; }
+#invest_warning_agree .con .con2 .text1 { width:180px;height:38px;line-height:38px;font-family:'NGB';font-size:12pt;color:#3366FF;border-radius:2px;border:1px solid #bbbbbb;text-align:center; ime-mode:active; }
+#invest_warning_agree .con .con3 { font-size:14px;color:#FF6600;padding-top:10px;font-family:'NGB'; text-align:center; }
+#invest_warning_agree .con .btnArea { margin:10px 0 10px 0; text-align:center; }
+#invest_warning_agree .con .btnArea .btn_big_blue2 { display:inline-block; min-width:146px; line-height:46px; text-align:center; font-family:'NGB'; font-size:16px; color:#fff; border-radius:3px; background-color:#284893; border:1px solid #052981; cursor:pointer; }
+#invest_warning_agree .con .btnArea .off { color:#fff; background-color:#C8CDD8;  border:1px solid #C8CDD8; }
+
+/********* 투자가이드 팝업 *********/
+#quick_guide { display:none; position:relative; width:99%; background-color:#fff; }
+#quick_guide .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#quick_guide .text { padding:20px 5px 5px 5px; font-size:18px; line-height:18px; color:#202020; font-weight:bold; }
+#quick_guide .tbl1 { margin:15px auto; width:100%; }
+#quick_guide .tbl1d1 { padding:4px 4px 4px 6px; text-align:left; border-bottom:1px solid #ccc; font-size:0.9em; font-weight:bold; }
+#quick_guide .tbl1d2 { padding:4px 6px 4px 0px; text-align:right; border-bottom:1px solid #ccc; }
+#quick_guide .sub_text { color:#555; font-weight:normal; }
+#quick_guide .btn_blue { min-width:64px; height:25px; line-height:25px; border-radius:3px; }
+
+/********* 문자 알림신청  팝업 *********/
+#alrim_sms_req { display:none; position:relative; width:100%; height:100%; background-color:#fff; margin:0 auto;}
+#alrim_sms_req .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#alrim_sms_req .title { line-height:42px; text-indent:20px; text-align:left; color:#284893; font-size:15px; background-color:#284893; }
+#alrim_sms_req .text { padding:40px 0 20px 0; font-size:20px; line-height:28px; color:#202020; font-family:'NGB'; }
+#alrim_sms_req .btn_blue { width:90%; height:36px; line-height:36px; border-radius:0px;}
+
+/********* 투자후기 팝업 *********/
+#epilogue_popup { display:none; position:relative; width:100%; height:100%; text-align:left; background-color:#fff;  }
+#epilogue_popup > .title { width:100%; line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893; }
+#epilogue_popup .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#epilogue_popup .gap { height:4px; }
+#epilogue_popup .con { height:84%; padding:10px; font-size:16px; line-height:20px; color:#707070; overflow-y:scroll; }
+#epilogue_popup .con .title { font-size:16px; color:#202020; text-indent:10px; font-family:'NGB'; }
+#epilogue_popup .con .writer { margin-bottom:2px; font-size:12px; color:#555; text-align:right; padding-right:10px; }
+#epilogue_popup .con .question { line-height:20px; font-family:'NGB'; color:#000; font-size:14px; }
+#epilogue_popup .con .answer { border:1px solid #CCC;background:#ffedbd;border-radius:3px; padding:8px; line-height:18px; font-family:'gulimche'; font-size:14px; }
+
+/********* 투자후기작성 팝업 *********/
+#epilogue_area { display:none; position:relative; background-color:#fff; }
+#epilogue_area .title { line-height:36px; text-indent:15px; text-align:left; color:#fff; font-size:15px; background-color:#284893; }
+#epilogue_area .close { position:absolute; right:15px; top:10px; width:16px; cursor:pointer; }
+#epilogue_area .type03 { border-top:2px solid #284893; }
+#epilogue_area .type03 table { width:100%; }
+#epilogue_area .type03 th { width:22%; font-weight:bold; color:#202020; background-color:#f7f7f7; }
+#epilogue_area .type03 td { height:20px; padding:7px 10px; font-size:13px; text-align:left; color:#707070;  border-bottom:1px solid #d6d6d6; }
+
+/********* 실시간 입금내역 안내 팝업 *********/
+#deposit_popup { display:none; z-index:1000000; position:relative; width:100%; height:190px; text-align:left; background-color:#fff; }
+#deposit_popup > .title { line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893; }
+#deposit_popup .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#deposit_popup .con { width:100%; padding:20px 0 20px 0; font-size:16px; line-height:30px; font-family:'NGB'; color:#284893; text-align:center; }
+#deposit_popup .btnArea { width:100%; height:50px; text-align:center; }
+
+/********* 환급계좌 등록안내 팝업 *********/
+#bank_account_popup { display:none; z-index:1000000; position:relative; width:100%; height:190px; text-align:left; background-color:#fff; }
+#bank_account_popup > .title { line-height:42px; text-indent:20px; color:#fff; font-size:18px; background-color:#284893; }
+#bank_account_popup .close { position:absolute; right:15px; top:12px; cursor:pointer; }
+#bank_account_popup .con { width:100%; padding:20px 0 20px 0; font-size:16px; line-height:30px; font-family:'NGB'; color:#284893; text-align:center; }
+#bank_account_popup .btnArea { width:100%; height:50px; text-align:center; }

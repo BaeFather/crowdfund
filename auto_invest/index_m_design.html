@@ -1,0 +1,321 @@
+<?
+include_once('../common.php');
+
+define('_INDEX_', true);
+if(!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
+$cookie_life_time = 60*60;
+if(!$_COOKIE[md5('ck_event_id')]) set_cookie('ck_event_id',   "100B",           $cookie_life_time);		// 접속정보 idx 저장
+
+$_CONF['theme_path'] = (G5_IS_MOBILE) ? G5_THEME_MOBILE_PATH : G5_THEME_PATH;
+
+$bank_acct_registered    = ($member['bank_code'] && $member['account_num'] && $member['bank_private_name']) ? true : false;
+$virtual_acct_registered = ($member['va_bank_code2'] && $member['virtual_account2']) ? true : false;
+
+if($member['member_type']=='2') {
+	$load_page = "/bank_account/bank_account_c.php";
+}
+else {
+	$load_page = "/bank_account/bank_account_p.php";
+}
+
+
+
+
+$head_title = "헬로펀딩 | 1000억 돌파 기념 1000만원 이벤트";
+$head_url = "https://www.hellofunding.co.kr/evnt/";
+
+include_once(G5_THEME_MOBILE_PATH.'/head.php');
+
+?>
+
+<link rel="stylesheet" type="text/css" href="/auto_invest/css/landing_m.css?ver=20190516">
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+	<form name="f_auto_inv" id="f_auto_inv">
+      <!-- Modal content -->
+      <div class="modal-content">
+            <p class="popup"></p>
+             <div style="position:relative;z-index:1000;cursor:pointer;padding:2px 0;text-align:right;" onClick="close_pop();">
+               <img src="/auto_invest/img/close_btn.png" height="18" alt="닫기"/>
+            </div>
+			<div style="width:100%;text-align:center;">
+				<p><img src="/auto_invest/img/tit01.jpg" height="21" alt=""/></p>
+				<ul class="tabs">
+					<li class="tab01 on" rel="auto_tab1"><a onclick="go_auto1();" style="cursor:pointer;">자동투자안내</a></li>
+					<li class="line">|</li>
+					<li class="tab02 off" rel="auto_tab2"><a onclick="go_auto2();" style="cursor:pointer;">상품선택</a></li>
+					<li class="line">|</li>
+					<li class="tab03 off" rel="auto_tab3"><a onclick="go_auto3();" style="cursor:pointer;">투자금액</a></li>
+					<li class="line">|</li>
+					<li class="tab04 off" rel="auto_tab4"><a onclick="go_auto4();" style="cursor:pointer;">자동투자요약</a></li>
+				</ul>
+
+				<!--자동투자안내-->
+				<div  class="auto01" id="auto_tab1" style="display:block;">
+					<p style="padding-top:20px;"><img src="/auto_invest/img/m/tab_cont01.jpg" alt=""/></p>
+					<p style="padding:20px 0 30px 0;"><img src="/auto_invest/img/m/btn001.jpg" alt="다음" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/></p>
+				</div>
+				<!--선호상품-->
+				<div  class="auto02" id="auto_tab2" style="display:none;">
+					<p style="padding-top:10px;font-size:14px;text-align:left;">※ 선호상품을 선택하세요. (중복선택 가능)</p>
+					<ul class="select_cont01">
+						<li style="border-bottom:2px solid #d8d8d8;">
+							<input type="checkbox" id="auto_inv[0][yn]" name="auto_inv[0][yn]" value="Y"><label for="auto_inv[0][yn]"></label>&nbsp;<span>모든상품</span>
+						</li>
+						<li>
+							<input type="checkbox" id="auto_inv[1][yn]" name="auto_inv[1][yn]" value="Y"><label for="auto_inv[1][yn]"></label>&nbsp;<span>부동산</span>
+							<span style="float:right;"><a href=""><img src="/auto_invest/img/detail_btn01.jpg" height="20" alt="자세히 보기"></a></span>
+						</li>
+						<li>
+							<input type="checkbox" id="auto_inv[2][yn]" name="auto_inv[2][yn]" value="Y"><label for="auto_inv[2][yn]"></label>&nbsp;<span>주택담보</span>
+							<span style="float:right;"><a href=""><img src="/auto_invest/img/detail_btn01.jpg" height="20" alt="자세히 보기"></a></span>
+						</li>
+						<li>
+							<input type="checkbox" id="auto_inv[3][yn]" name="auto_inv[3][yn]" value="Y"><label for="auto_inv[3][yn]"></label>&nbsp;<span>동산</span>
+							<span style="float:right;"><a href=""><img src="/auto_invest/img/detail_btn01.jpg" height="20" alt="자세히 보기"></a></span>
+						</li>
+						<li>
+							<input type="checkbox" id="auto_inv[4][yn]" name="auto_inv[4][yn]" value="Y"><label for="auto_inv[4][yn]"></label>&nbsp;<span>헬로페이 (소상공인 확정매출채권)</span>
+							<span style="float:right;"><a href=""><img src="/auto_invest/img/detail_btn01.jpg" height="20" alt="자세히 보기"></a></span>
+						</li>
+						<li>
+							<input type="checkbox" id="auto_inv[5][yn]" name="auto_inv[5][yn]" value="Y"><label for="auto_inv[5][yn]"></label>&nbsp;<span>헬로페이 (면세점 확정매출채권)</span>
+							<span style="float:right;"><a href=""><img src="/auto_invest/img/detail_btn01.jpg" height="20" alt="자세히 보기"></a></span>
+						</li>
+					</ul>
+					<p style="padding:20px 0 30px 0;"><img src="/auto_invest/img/m/btn001.jpg" alt="다음" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/></p>
+				</div>
+				<!--투자금액-->
+				<div  class="auto03" id="auto_tab3" style="display:none;">
+					<p style="padding-top:10px;font-size:14px;text-align:left;">※ 자동투자 금액을 설정하세요.</p>
+					<div class="select_cont02">
+						<input type="text" id="name" class="field" placeholder="자동투자 금액을 설정하세요." required/><strong class="txt02">&nbsp;&nbsp;만원</strong>
+					</div>
+					<p style="padding:10px 0 20px 0;">
+						<img src="/auto_invest/img/m/btn002.jpg" alt="이전" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/>&nbsp;&nbsp;
+						<img src="/auto_invest/img/m/btn001.jpg" alt="다음" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/>
+					</p>
+				</div>
+				<!--자동투자요약-->
+				<div  class="auto04" id="auto_tab4" style="display:none;">
+					<ul>
+						<li>
+							<p style="padding-bottom:5px;">선택한 상품</p>
+							<div>
+								<p>1. 부동산</p>
+								<p>2. 주택담보</p>
+								<p>3. 동산</p>
+								<p>4. 헬로페이 (소상공인 확정매출채권)</p>
+								<p>5. 헬로페이 (면세점 확정매출채권)</p>
+							</div>
+						</li>
+						<li>
+							<p style="padding:10px 0 5px 0;">자동투자 설정금액(건당)</p>
+							<div class="won"><span><img src="/auto_invest/img/m/won_icon.png" height="24"> 5,000,000 원</span></div>
+						</li>
+					</ul>
+					<p style="padding-top:10px;font-size:14px;clear:both;">※위와 같이 자동투자를 설정합니다.</p>
+					<p style="padding:5px 0 20px 0;">
+						<img src="/auto_invest/img/m/btn003.jpg" alt="처음으로" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/>&nbsp;&nbsp;
+						<img src="/auto_invest/img/m/btn001.jpg" alt="다음" height="38" onclick="go_auto_conf_save();" style="cursor:pointer;"/>
+					</p>
+					<div style="background-color:#f3f3f4;font-size:12px;text-align:left !important;padding:15px 22px;">
+						<div style="font-size:14px;font-weight:600;">자동투자 유의사항</div>
+						1. 투자상품의 구조와 투자위험을 충분히 숙지한 후 자동투자를 신청하시기 바랍니다.<br/>
+						2. 자동투자 신청 순번에 따라 자동으로 투자가 진행되며, 자동투자 신청자수, 신청금액이 많은 경우 본인의 순번이 
+						   돌아오기까지 다소 시간이 걸릴 수 있습니다.<br/>
+						3. 순번이 도래하지 않거나 예치금 잔액 부족 및 투자한도를 초과한 경우 투자가 진행되지 않을 수 있습니다.<br/>
+						4. 자동투자설정은 언제든 변경 가능하며, 설정 변경 시 순번이 가장 마지막으로 등록되므로 유의하시기 바랍니다.<br/>
+					</div>
+				</div>
+			</div>
+      </div>
+	</form>
+    </div>
+
+	 <script type="text/javascript">
+		function open_pop(flag) {
+             $('#myModal').show();
+        };
+        //팝업 Close 기능
+        function close_pop(flag) {
+             $('#myModal').hide();
+        };
+        
+    </script>
+	<script>
+		function go_auto1() {
+			$("#auto_tab1").css("display","");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto2() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto3() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto4() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","");
+		}
+		var beforeActiveTab = "";
+		var slideNo = false;
+		$(document).on("click", "ul.tabs li[rel]", function(e) {
+			var index = $(this).index();
+			var activeTab = $(this).attr("rel");
+			var tabs = $(this);
+			if(beforeActiveTab == activeTab) return false;
+
+			tabs.siblings().not('.line').removeClass("on").addClass("off");
+			if(beforeActiveTab == "" && $(this).hasClass("on")) {
+				return false;
+			}
+			else {
+				$(this).not('.line').toggleClass(function(){
+					if($(this).hasClass('on')){
+						tabs.removeClass('on');
+						return 'off';
+					}else{
+						tabs.removeClass('off');
+						return 'on';
+					}
+				});
+			}
+
+			if(activeTab.indexOf("product") != -1 && !slideNo) {
+				swiper_4.slideTo(activeTab.replace( /^\D+/g, '') - 1);
+			}
+			else {
+				tabs.siblings().not('.line').each(function(e){
+					var activeTab = $(this).attr("rel");
+					$("#"+activeTab).hide();
+				});
+				$("#"+activeTab).fadeIn();
+			}
+			beforeActiveTab = activeTab;
+			slideNo = false;
+		});
+	</script>
+ <!--End Modal-->
+
+
+<!-- 상단 시작 -->
+
+<div class="top_bg">
+	<div class="auto_btn" ><img src="./img/m/auto_invest_btn.png" alt="" onClick="open_pop();"/></div>
+</div>
+<div><img src="./img/m/img01.jpg" width="100%" alt=""/></div>
+<div class="qna">
+	<div class="qna_cont">
+		<p><img src="./img/m/img02.jpg" alt=""/></p>
+		<ul class="faq">
+			<li>
+				<a href="#">자동투자가 무엇인가요?</a>
+				<p style="display:none;">자동투자란 투자자가 <span>사전에 설정한 조건에 따라</span> 해당 조건에 맞는 투자상품 오픈 시 <span>투자시작 5분 전에 자동으로 투자에 
+				참여</span>하게 되는 서비스입니다. 자동투자 설정 후 <span>예치금 잔액만 있으면 자동으로 투자</span>되며, 상환받은 원리금으로 다른 상품에 
+				지속적으로 재투자가 가능합니다. </p>
+			</li>
+			<li>
+				<a href="#">자동투자는 어떻게 신청하나요?</a>
+				<p style="display:none;">자동투자는 헬로펀딩 회원 누구나 신청이 가능합니다. 로그인 후 <span>투자하기 > 자동투자</span> 메뉴 또는 우측 <span>마이페이지> 자동투자 설정하기</span> 메뉴를 통해 신청하실 수 있습니다.
+				자동투자 ‘ON’ 선택 시 1만원 단위로 투자금액 설정이 가능하며, 자동투자 설정 변경 시 자동투자 순번은 변경됩니다.
+				</p>
+			</li>
+			<li>
+				<a href="#">자동투자 순번은 어떻게 정해지나요?</a>
+				<p style="display:none;">자동투자 <span>순번은 서비스 신청 시간순으로 배정</span>되며, 자동투자 참여가 완료된 투자자는 가장 마지막 순번으로 변경됩니다.
+				만약 예치금 부족 및 투자한도 제한 등의 이유로 투자에 참여하지 못한 경우 다음 순번의 회원이 자동투자 기회를 갖게되며, 예치금 및 투자한도가 투자가능 상태로 변경 된 경우 다음 자동투자 시 우선 기회를 갖게됩니다.
+				</p>
+			</li>
+			<li>
+				<a href="#">자동투자를 설정했는데 투자가 왜 안되나요?</a>
+				<p style="display:none;">자동투자가 되지 않는 경우는 <span>본인의 순번이 오지 않은 경우</span>, 보유한 <span>예치금 잔액이 부족한 경우, 설정한 금액이 상품의 남은 자동투자 모집금액 보다 높은 경우, 투자한도를 초과한 경우 </span>등에는 자동투자가 진행되지 않습니다.
+				</p>
+			</li>
+			<li>
+				<a href="#">자동투자 가능한 상품이 정해져 있나요?</a>
+				<p style="display:none;">헬로펀딩의 <span>자동투자는 헬로페이</span>(소상공인 확정매출채권, 면세점 매출채권, 동산담보), 주택담보 <span>상품만 설정이 가능</span>합니다. 부동산 PF 상품의 경우 해당 상품의 상환재원 및 상환방식, 투자 기간 등의 이유로 투자자분들이 직접 상품 설명을 숙지하신 후 일반투자를 해주셔야합니다. 
+				</p>
+			</li>
+			<div style="font-size:12px;">※ 헬로페이 상품은 투자자 분들의 많은 참여를 위하여 지속적으로 추가 중입니다. </div>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+// faq
+$(".faq a").click(function() {
+	$(this).next().slideToggle("fast").parent().siblings().children("p").hide();
+	return false;
+});
+</script>
+<div class="notice"><img src="./img/m/img03.jpg" alt=""/></div>
+<div class="auto_btn2"><img src="./img/m/auto_invest_btn.png" alt="" onClick="open_pop();"/></div>
+<?
+include_once(G5_THEME_MOBILE_PATH.'/tail.php');
+?>
+
+
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    //Kakao.init('f1eb4daefea240a442ff34f76d22f24c');
+	Kakao.init('905ae13b8e648ce082bc6f9f66ac817b');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  function sendLink() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '헬로펀딩 이벤트',
+          description: '#헬로펀딩 #천만원이벤트 #천억펀딩',
+          imageUrl: 'https://www.hellofunding.co.kr/marketing/img/top_bg01.jpg',
+          link: {
+            mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+            webUrl: 'https://www.hellofunding.co.kr/evnt/'
+          }
+        },
+		/*
+        social: {
+          likeCount: 286,
+          commentCount: 45,
+          sharedCount: 845
+        },
+		*/
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+              webUrl: 'https://www.hellofunding.co.kr/evnt/'
+            }
+          },
+          {
+            title: '앱으로 보기',
+            link: {
+              mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+              webUrl: 'https://www.hellofunding.co.kr/evnt/'
+            }
+          }
+        ]
+      });
+    }
+  //]]>
+</script>
+
+
+

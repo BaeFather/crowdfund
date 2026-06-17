@@ -1,0 +1,167 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/******************시스템제어 페이지**********************/
+
+.system-check {width:100%; margin-top:30%; text-align: center; font-family:"Pretendard", sans-serif; padding:1.5rem; box-sizing: border-box;}
+.system-check .contents .web {display: none;}
+.system-check .contents h3 {font-size:1.6rem; font-weight:700; color:#222; margin:25px 0 20px; letter-spacing: -.5px;  }
+.system-check .contents p {font-weight:500; color:#333; font-size:.85rem; line-height: 1.3rem; }
+.system-check .contents .box { background-color: #f6f6f6; padding:1.5rem 1rem; margin:40px 0;  border:1px solid #eee;}
+.system-check .contents .box p {font-weight:600; color:#333; font-size:.925rem; line-height: 1.5rem; letter-spacing: -.3px; padding:0; margin-bottom:0;}
+
+
+@media all and (min-width:430px) {
+.system-check .contents h3 {font-size:1.8rem;  }
+.system-check .contents p {font-size:.925rem; line-height: 1.4rem;}	
+.system-check .contents .box { padding:1.5rem;  margin:30px 0;}	
+.system-check .contents .box p {font-size:1rem;  line-height: 1.8rem; }	
+	
+}
+
+	
+@media all and (min-width:580px) {
+.system-check {width:100%; margin:180px auto 0;}
+.system-check .contents .web {display: block; margin:0 auto;}
+.system-check .contents .mobile {display: none;}
+.system-check .contents h3 {font-size:2rem;  margin:30px 10px 30px;}
+.system-check .contents p {font-size:1rem; line-height:1.5rem;}
+.system-check .contents .box {padding:1.5rem 2rem; margin:30px 0; }
+.system-check .contents .box p {font-size:1.1rem; line-height: 2rem; letter-spacing: 0; }
+	
+	
+}
+
+
+
+/******************시스템제어 팝업**********************/
+
+
+.system-modal .modal-dialog {min-width:350px; margin:0 auto;}
+.system-modal .modal-content {border-radius:0;}
+.system-modal .modal-header {border-bottom:none; padding:0;}
+
+.system-modal .modal-body {padding:1rem; height:405px;}
+.system-modal .modal-body .carousel {height:100%;}
+.system-modal .modal-body .img-bn img {text-align:center; width:100%; }
+.system-modal .modal-body .txt-bn {padding:40px 2rem;  background-color: #fff;}
+.system-modal .modal-body .txt-bn h3 {font-size:1.35rem; color:#444; text-align: center; font-family:"Pretendard", sans-serif;  font-weight:800; margin:25px 0 20px;}
+.system-modal .modal-body .txt-bn p {font-size:.825rem; color:#555;  font-family:"NotoSansKR", sans-serif; line-height: 1.2rem; text-align: center; margin-bottom:0;}
+.system-modal .modal-body .txt-bn .box { background-color: #f6f6f6; padding:1rem .3rem; margin:20px 0 0; border:1px solid #eee; }
+.system-modal .modal-body .txt-bn .box p {font-weight:600; color:#333; font-size:.825rem; line-height: 1.7rem; padding:0; margin-bottom:0; font-family: "Pretendard",Sans-serif; letter-spacing: -.3px;}
+.system-modal .modal-footer {display: flex; align-items: center; margin:0; padding:0;  text-align: center; border-top:1px solid #ddd; z-index:100; background-color:#fff;}
+.system-modal .modal-footer p{width:50%; margin:0; font-family: "Pretendard",Sans-serif; font-size:.875rem; font-weight:500; padding:.7rem 1rem; color:#000; cursor: pointer;}
+.system-modal .modal-footer p:first-child {border-right:1px solid #ddd;}
+
+
+@media all and (min-width:360px) {
+.system-modal .modal-dialog {max-width:360px;}
+.system-modal .modal-body {height:417px;}
+.system-modal .modal-body .txt-bn {padding:45px 2.2rem 0; }
+.system-modal .modal-body .txt-bn .box { padding:1rem .5rem; margin:30px 0 0; }
+}
+
+@media all and (min-width:370px) {
+.system-modal .modal-dialog {max-width:370px;}
+.system-modal .modal-body {height:428px;}
+.system-modal .modal-body .txt-bn h3 {font-size:1.4rem;}
+.system-modal .modal-body .txt-bn .box p {font-size:.85rem;}
+}
+
+@media all and (min-width:380px) {
+.system-modal .modal-dialog {max-width:380px;}
+.system-modal .modal-body {height:440px;}
+.system-modal .modal-body .txt-bn {padding:45px 2.4rem 0; }
+.system-modal .modal-body .txt-bn p {font-size:.85rem; line-height: 1.3rem;}
+}
+
+@media all and (min-width:390px) {
+.system-modal .modal-dialog {max-width:390px;}
+.system-modal .modal-body {height:451px;}
+.system-modal .modal-body .txt-bn h3 {font-size:1.5rem;}
+.system-modal .modal-body .txt-bn .box p {font-size:.9rem; }
+}
+
+@media all and (min-width:400px) {
+.system-modal .modal-dialog {max-width:400px;}
+.system-modal .modal-body {height:463px;}
+.system-modal .modal-body .txt-bn {padding:50px 2.5rem 0; }
+.system-modal .modal-body .txt-bn h3 {font-size:1.55rem;}
+.system-modal .modal-body .txt-bn p {font-size:.875rem; line-height: 1.35rem;}
+.system-modal .modal-body .txt-bn .box p {font-size:.95rem; }
+}
+
+@media all and (min-width:410px) {
+.system-modal .modal-dialog {max-width:410px;}
+.system-modal .modal-body {height:475px;}
+}
+
+
+/******************시스템제어 슬라이드 팝업**********************/
+
+.system-slide-modal .modal-dialog {min-width:350px; margin:0 auto;}
+.system-slide-modal .modal-content {border-radius:0;}
+.system-slide-modal .modal-header {border-bottom:none; padding:0;}
+
+.system-slide-modal .modal-body {padding:0; height:405px;}
+.system-slide-modal .modal-body .swiper {width:100%; height:100%; }
+.system-slide-modal .modal-body .img-bn img {text-align:center; width:100%; }
+.system-slide-modal .modal-body .txt-bn {padding:40px 2rem;  background-color: #fff;}			
+.system-slide-modal .modal-body .txt-bn h3 {font-size:1.35rem; color:#444; text-align: center; font-family:"Pretendard", sans-serif;  font-weight:800; margin:25px 0 20px;}
+.system-slide-modal .modal-body .txt-bn p {font-size:.825rem; color:#555;  font-family:"NotoSansKR", sans-serif; line-height: 1.2rem; text-align: center; margin-bottom:0;}	
+.system-slide-modal .modal-body .txt-bn .box { background-color: #f6f6f6; padding:1rem .3rem; margin:20px 0 0; border:1px solid #eee; }
+.system-slide-modal .modal-body .txt-bn .box p {font-weight:600; color:#333; font-size:.825rem; line-height: 1.7rem; padding:0; margin-bottom:0; font-family: "Pretendard",Sans-serif; letter-spacing: -.3px;}
+.system-slide-modal .modal-footer {display: flex; align-items: center; margin:0; padding:0;  text-align: center; border-top:1px solid #ddd; z-index:100; background-color:#fff;}
+.system-slide-modal .modal-footer p,
+.system-slide-modal .modal-footer a {width:50%; margin:0; font-family: "Pretendard",Sans-serif; font-size:.875rem; font-weight:500; padding:.7rem 1rem; color:#000; cursor: pointer;}
+.system-slide-modal .modal-footer p:first-child {border-right:1px solid #ddd;}	
+
+					
+/*캐러셀 커스텀*/			
+.swiper-button-next, .swiper-button-prev {color:#999!important; }
+.swiper {--swiper-navigation-size:18px;}	
+.swiper-pagination-bullet-active {background-color:#222!important;}		
+			
+@media all and (min-width:360px) {
+.system-slide-modal .modal-dialog {max-width:360px;}	
+.system-slide-modal .modal-body {height:417px;}
+.system-slide-modal .modal-body .txt-bn {padding:45px 2.2rem 0; }		
+.system-slide-modal .modal-body .txt-bn .box { padding:1rem .5rem; margin:30px 0 0; }	
+}			
+	
+@media all and (min-width:370px) {
+.system-slide-modal .modal-dialog {max-width:370px;}	
+.system-slide-modal .modal-body {height:428px;}	
+.system-slide-modal .modal-body .txt-bn h3 {font-size:1.4rem;}	
+.system-slide-modal .modal-body .txt-bn .box p {font-size:.85rem;}	
+}			
+			
+@media all and (min-width:380px) {
+.system-slide-modal .modal-dialog {max-width:380px;}	
+.system-slide-modal .modal-body {height:440px;}	
+.system-slide-modal .modal-body .txt-bn {padding:45px 2.4rem 0; }	
+.system-slide-modal .modal-body .txt-bn p {font-size:.85rem; line-height: 1.3rem;}	
+}	
+
+@media all and (min-width:390px) {
+.system-slide-modal .modal-dialog {max-width:390px;}	
+.system-slide-modal .modal-body {height:451px;}
+.system-slide-modal .modal-body .txt-bn h3 {font-size:1.5rem;}
+.system-slide-modal .modal-body .txt-bn .box p {font-size:.9rem; }		
+}	
+			
+@media all and (min-width:400px) {
+.system-slide-modal .modal-dialog {max-width:400px;}	
+.system-slide-modal .modal-body {height:463px;}	
+.system-slide-modal .modal-body .txt-bn {padding:50px 2.5rem 0; }	
+.system-slide-modal .modal-body .txt-bn h3 {font-size:1.55rem;}	
+.system-slide-modal .modal-body .txt-bn p {font-size:.875rem; line-height: 1.35rem;}		
+.system-slide-modal .modal-body .txt-bn .box p {font-size:.95rem; }	
+}				
+			
+@media all and (min-width:410px) {
+.system-slide-modal .modal-dialog {max-width:410px;}	
+.system-slide-modal .modal-body {height:475px;}	
+}

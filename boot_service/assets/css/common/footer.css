@@ -1,0 +1,122 @@
+@import url("reset.css");
+
+
+/* CSS Document */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+
+/* footer */
+.tail {background-color:#32333b; width:100%;}
+.tail .container {padding:0;}
+.tail .container .row  {margin:0; }
+.tail .container .row .tail-nav-sns {width:100%; padding:0 3%; margin-top:7%;}
+.tail .container .row .tail-nav-sns .tail-nav {display:flex;}
+.tail .container .row .tail-nav-sns .tail-nav p{padding-right:5%; white-space: nowrap;}
+.tail .container .row .tail-nav-sns .tail-nav p a{font-size:0.9rem; color:#fff;}
+.tail .container .row .tail-nav-sns .tail-sns {display:flex;}
+.tail .container .row .tail-nav-sns .tail-sns p{padding-right:5%;}
+.tail .container .row .tail-nav-sns .tail-sns p img {width:auto;}
+.tail .container .row .tail-cs {width:100%; padding:4% 3% 0; border-bottom:1px solid #555;}
+.tail .container .row .tail-cs h5 {font-size:1.2rem; font-weight:400; color:#fff;}
+.tail .container .row .tail-cs h5 a span {font-size:1.3rem; font-weight:600; color:#fff;}
+.tail .container .row .tail-cs img { margin-left:3%; width:35px; margin-bottom:5px;}
+.tail .container .row .tail-cs p {font-size:0.8rem; font-weight:400; line-height:1rem; letter-spacing: -0.5px; margin-bottom:8%;}
+.tail .container .row .tail-cs p span {padding:0 5%;}
+.tail .container .row .tail-info {width:100%; padding:0 3%; margin-top:8%;}
+.tail .container .row .tail-info p {font-size:0.80rem; font-weight:400; line-height:1.20rem; letter-spacing: -0.5px;}
+.tail .container .row .tail-info p span {display:none;}
+.tail .container .row .tail-go-terms {margin-bottom:10%; width:100%; padding:0 3%; display:inline-flex; flex-wrap: wrap; }
+.tail .container .row .tail-go-terms p {padding-right:3%; font-size:0.75rem; font-weight:400; line-height:1.4rem; letter-spacing: -0.5px; margin-bottom:0; white-space: nowrap;}
+.tail .container .row .tail-go-terms .text-white a {color:#fff;}
+.tail .container .row .tail-go-terms .text-white-50 a {color:#99999d;}
+
+
+
+
+
+@media (min-width:410px){
+	
+
+/*푸터*/
+	
+.tail .container .row .tail-nav-sns {padding:0 5%; }
+.tail .container .row .tail-cs {padding:4% 5% 0;}
+.tail .container .row .tail-cs img {width:35px;}	
+.tail .container .row .tail-info {padding:0 5%;}
+.tail .container .row .tail-go-terms {padding:0 5%;}
+
+		
+	
+}
+
+
+
+
+
+@media (min-width:576px){
+
+	
+/*푸터*/
+.tail .container .row .tail-cs img {width:35px; margin-left:2%;}	
+.tail .container .row .tail-cs p {margin-bottom: 5%;}
+.tail .container .row .tail-info {margin-top:5%;}	
+	
+
+}
+
+
+
+@media (min-width:768px){
+
+	
+/*푸터*/
+.tail .container .row .tail-nav-sns {display: inline-flex; margin-top:5%;}
+.tail .container .row .tail-nav-sns .tail-nav {width:80%;}
+.tail .container .row .tail-nav-sns .tail-nav p {padding-right:10%;}	
+.tail .container .row .tail-nav-sns .tail-nav p a {font-size:1rem;}		
+.tail .container .row .tail-nav-sns .tail-sns {width:20%;  justify-content:flex-end;}
+.tail .container .row .tail-nav-sns .tail-sns p {padding-right:0; padding-left:20%;}	
+.tail .container .row .tail-cs {padding-top:2%;}	
+.tail .container .row .tail-cs h5 {font-size:1.4rem;} 	
+.tail .container .row .tail-cs h5 a span{font-size:1.4rem;} 
+.tail .container .row .tail-cs p {font-size:0.9rem;}	
+.tail .container .row .tail-cs br {display:none!important;}	
+.tail .container .row .tail-cs img {width:35px;}	
+.tail .container .row .tail-info p{font-size:0.9rem; line-height: 1.3rem;} 		
+.tail .container .row .tail-go-terms {margin-top:2%;}	
+	
+	
+}
+
+
+@media (min-width:990px){
+
+/*푸터*/
+.tail .container .row .tail-nav-sns {margin:30px 0 10px;}
+.tail .container .row .tail-nav-sns .tail-nav {width:80%; }
+.tail .container .row .tail-nav-sns .tail-sns p img {width:100%;}	
+.tail .container .row .tail-cs {padding:30px 5% 0; border-top:1px solid #555; border-bottom:none;} 
+.tail .container .row .tail-cs p {margin-bottom:0px;}	
+.tail .container .row .tail-cs br {display:none}	
+.tail .container .row .tail-cs img { margin-left:15px; width:35px; margin-bottom:5px;}
+.tail .container .row .tail-info br {display:none}
+.tail .container .row .tail-info {margin-top:40px!important;}	
+.tail .container .row .tail-info p {margin-bottom:0px;}		
+.tail .container .row .tail-info p span {margin:0 20px; display:inline-block;}	
+.tail .container .row .tail-go-terms  {margin-top:50px;}	
+}
+	
+
+@media (min-width:1080px){
+
+/*푸터*/
+.tail .container .row {max-width:1040px!important; margin:0 auto;}
+.tail .container .row .tail-nav-sns {display: inline-flex; padding:0;}
+.tail .container .row .tail-nav-sns .tail-sns p {padding-right:0; padding-left:20%; margin:0;}
+.tail .container .row .tail-cs {padding:30px 0 0;} 
+.tail .container .row .tail-info {padding:0;}	
+.tail .container .row .tail-go-terms  {padding:0;}
+	
+}
+	
+

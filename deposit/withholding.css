@@ -1,0 +1,38 @@
+.widthholding_title_area {width:100%;text-align:left;line-height:30px;}
+.widthholding_title_content {width:100%;text-align:center;}
+.widthholding_title_content .widthholding_table {width:95%;margin:0 auto;border-collapse:collapse;border-top:2px solid #284893}
+.widthholding_title_content .widthholding_table .th1 {color:#202020;font-size:15px;text-align:center;font-weight:500;border-bottom:1px solid #707580;padding:8px 0;width:15%;background-color:#f7f7f7}
+.widthholding_title_content .widthholding_table td {text-align:left;font-size:15px;border-bottom:1px solid #707580;padding:8px 15px;width:85%;}
+.widthholding_title_content .widthholding_txt {padding:8px 0;text-align:center;}
+.widthholding_title_btn {padding:20px 0;text-align:center;width:100%;}
+.input01 {width:200px;background-color:#f7f7f7;color:#333;font-size:15px;border:1px solid #CCC;border-radius:3px;padding:3px;}
+.input01::placeholder{color:#333;font-size:15px;}
+.input02 {width:100px;background-color:#FFF;color:#333;font-size:15px;border:1px solid #CCC;border-radius:3px;padding:3px;text-align:center;}
+.input02::placeholder{color:#333;font-size:15px;}
+.input03 {width:200px;background-color:#FFF;color:#333;font-size:15px;border:1px solid #CCC;border-radius:3px;padding:3px;}
+.input03::placeholder{color:#333;font-size:15px;}
+.text01 {width:100%;height:70px;background-color:#FFF;color:#333;font-size:15px;border:1px solid #CCC;border-radius:3px;padding:3px;resize:vertical;}
+.ui-datepicker-calendar { display: none; }
+.hiddenbr {display:none;}
+.btn_big_blue  { display:block; width:100%; line-height:38px; text-align:center; font-family:'NGB'; font-size:14px; color:#fff; border-radius:3px; background-color:#284893; border:1px solid #284893; cursor:pointer; height:40px;}
+
+/*.deposit .tab_type03 li {width:140px;font-size:16px;}*/
+
+@media all and (max-width: 900px) {
+.widthholding_title_content .widthholding_table .th1 {width:25%;font-size:12px;}
+.widthholding_title_content .widthholding_table td {width:75%;font-size:12px;}
+.input01 {width:100%;font-size:12px;}
+.input02 {width:40%;font-size:12px;}
+.input03 {width:100%;font-size:12px;}
+.input01::placeholder{font-size:11px;}
+.input02::placeholder{font-size:11px;}
+.input02::placeholder{font-size:11px;}
+.hiddenbr {display:block;}
+}
+
+@media all and (max-width: 340px) {
+.widthholding_title_content .widthholding_table .th1 {font-size:11px;}
+.widthholding_title_content .widthholding_table td {font-size:11px;}
+.input02 {width:40%;font-size:12px;}
+.widthholding_title_content .widthholding_txt {font-size:11px;}
+}

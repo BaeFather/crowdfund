@@ -1,0 +1,94 @@
+
+
+/************************************************************ 메인 공통*****************************************************************************/
+
+/* Change the color to your own background color , 인풋태그 작성시 특정 칼라가 입혀지는 것 방지*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-transition: background-color 9999s ease-out; }
+
+
+.invalid-feedback {margin-top:5px; font-size:.8rem!important; font-weight:500;}
+
+
+body[data-leftbar-compact-mode=condensed] .wrapper .content-page {margin-left:0;}
+body[data-leftbar-compact-mode=condensed] .wrapper .left-side-menu {display:none;}	
+.wrapper .navbar-custom {box-shadow:none; border-bottom:1px solid #ddd; left:0; height:60px; min-height:60px; padding:0 50px 0 30px; } 	
+.wrapper .navbar-custom ul { display:flex; align-items:center; justify-content:space-between; }	
+.wrapper .navbar-custom .nav-user {line-height:56px; min-height:60px; padding:0!important; text-align:center!important;  background-color:#fff; border:none; border-bottom:1px solid #eaeaea; margin:0 20px; font-weight:500!important; color:#333!important; font-size:1rem!important; font-family:"NotoSansKR", Sans-serif;}	
+.wrapper .navbar-custom .nav-user .corp{color:#888; font-size:.85rem; margin-right:5px; font-weight:400!important;}	
+.wrapper .navbar-custom .nav-user .corp{color:#888; font-size:.85rem; margin-right:5px; font-weight:400!important;}	
+.wrapper .navbar-custom .profile-dropdown {right:0!important; left:0!important;  border-radius:0; padding:.5rem;}	
+.wrapper .navbar-custom .profile-dropdown a {font-weight:400!important; font-size:.9rem!important; color:#555!important; font-family:"NotoSansKR", Sans-serif; display:flex; align-items:center; justify-content: center;}
+.wrapper .navbar-custom .profile-dropdown i {font-size:1rem!important; margin-right:3px;}	
+.wrapper .left-side-menu {top:60px; padding:0; background:#fff!important; border-right:1px solid #ddd; width:240px;}	
+.wrapper .left-side-menu ul li ul li{padding:0 50px;}	
+.wrapper .left-side-menu ul li a{font-size:.925rem; font-family: "NotoSansKR", Sans-serif; color:#888;}	
+.wrapper .left-side-menu ul li a:hover, .wrapper .left-side-menu ul li a.active, .wrapper .left-side-menu ul li a.active:hover {color:#f64e60; font-weight:500;}		
+.wrapper .left-side-menu ul li a.on	{color:#ee321f;}
+.wrapper .left-side-menu ul li p{ font-size:1rem; font-family: "Pretendard", Sans-serif; font-weight:600; padding:25px 30px 5px; margin:0; color:#222; display:flex; align-items: center;}	
+.wrapper .left-side-menu ul li p i {margin-right:3px; font-size:1.15rem; color:#333;}	
+.wrapper .left-side-menu ul h5 {font-size:1.15rem; font-family: "Pretendard", Sans-serif;  font-weight:500; padding:20px 30px; margin:0; color:#333; border-bottom:1px solid #eee; background-color:#fafafa;}	
+
+.wrapper .content-page {margin-left:240px; padding:0; margin-top:0;}	
+.wrapper .content-page .content-wrap {padding:70px 30px;}	
+.wrapper .content-page .content-wrap .container-fluid {padding:0px; max-width:1000px; margin-left:0;}	
+.wrapper .content-page .content-wrap .container-fluid .page-nav ol {margin-bottom:0;}	
+.wrapper .content-page .content-wrap .container-fluid .page-nav ol li {font-size:.85rem; color:#555; font-weight:600;}
+.wrapper .content-page .content-wrap .container-fluid .page-nav ol li a {font-size:.85rem; color:#777; font-weight:400;}	
+.wrapper .content-page .content-wrap .container-fluid .page-tit {display:flex; align-items:center; justify-content: space-between;}
+.wrapper .content-page .content-wrap .container-fluid .page-tit h1 {font-size:2rem; font-family: "Pretendard", Sans-serif;  color:#333;}	
+.wrapper .content-page .content-wrap .container-fluid .page-tit select {width:180px; border-radius:0; font-size:.85rem; color:#222; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");}
+.wrapper .content-page .content-wrap .container-fluid .contents {margin-top:40px;}
+
+
+			
+
+
+@media all and (max-width:1024px) {
+ body[data-leftbar-compact-mode="condensed"] .wrapper .left-side-menu {padding-top:0;}
+.wrapper .navbar-custom {left:0!important; height:70px; min-height:70px; padding:0 1rem 0 1rem; }
+.wrapper .navbar-custom .nav-user {border-bottom:0;}
+.wrapper .navbar-custom .nav-user .corp {display:none;}
+.wrapper .navbar-custom .topbar-right-menu .nav-link {margin:0;}
+.wrapper .navbar-custom .button-menu-mobile.disable-btn {display:inline-block!important; text-align:left;}
+.sidebar-enable .left-side-menu {display: block!important;}
+.wrapper .left-side-menu {top:70px; width:60%;}
+.wrapper .content-page .content-wrap {padding:70px 1rem;}
+.wrapper .content-page .content-wrap .container-fluid .page-tit {display:block;}
+
+
+}
+
+
+
+
+
+
+  /************************************************************ 내정보 *****************************************************************************/
+
+
+.wrapper .content-page .content-wrap .container-fluid .myinfo {margin:20px auto; border:1px solid #ddd; width:500px; padding:35px; border-radius:.25rem; }		
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group {margin-bottom:20px;}
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .form-control {height: calc(2.8rem); border:1px solid #ddd!important; background-color: #fff;}
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .form-control:focus { border:1px solid #aaa;}
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight:400;}	
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group label {font-size:.9rem; font-weight:500; color:#555; margin-bottom:2px; font-family:Pretendard, sans-serif;}
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group input {font-family:Pretendard, sans-serif; }	
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group input:focus {border-color: #999; }
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group input[type="text"]:disabled {background-color:#F0F0F0!important;}	
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .form-control {height: calc(3rem); color:#222; border:1px solid #ddd;}
+.wrapper .content-page .content-wrap .container-fluid .myinfo .btn-wrap {display:flex; margin-top:50px; }
+.wrapper .content-page .content-wrap .container-fluid .myinfo .btn-wrap button {font-family:Pretendard, sans-serif; height: calc(3rem); box-shadow:none!important; border:none; width:100%; font-size:1rem; margin-top:10px;}	
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .btn-primary {background-color:#f64e60; margin-left:1rem; }
+.wrapper .content-page .content-wrap .container-fluid .myinfo .form-group .btn-secondary {background-color:#999; }
+
+
+
+
+@media all and (max-width:768px) {
+.wrapper .content-page .content-wrap .container-fluid .myinfo {width:100%; border:none; padding:1rem;}
+
+
+}

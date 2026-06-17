@@ -1,0 +1,89 @@
+<?php include_once('/home/crowdfund/public_html/m2/inc/meta.php');?>
+<body>
+
+<div id="wrap">
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/header.php');?>
+
+	<div id="container">
+		<!-- 비주얼 -->
+		<img src="../images/member/sub_break.jpg" alt="회원가입 투자자가 작은 금액들을 모아서 함께 투자하는 새로운 투자 방식입니다." />
+
+		<div id="content">
+			<div class="location"><b class="blue">탈퇴안내</b></div>
+
+			<div class="content">
+				<!-- 탈퇴안내 -->
+				<div class="break">
+					<div class="title">헬로펀딩은 고객의 소리에 귀기울이겠습니다.</div>
+					<ul>
+						<li><span class="green">＊ </span>예치금잔액, 투자중인 상품이 있으면 탈퇴 불가합니다.</li>
+						<li><span class="green">＊ </span>대출 진행 건이 있으면 탈퇴 불가합니다.</li>
+					</ul>
+				</div>
+				<!-- 탈퇴안내 -->
+				<div class="type01">
+					<table>
+						<tbody>
+							<tr>
+								<td><b>현재비밀번호</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>탈퇴사유</b><textarea class="textArea"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="btnArea">
+					<a href="#" class="btn_big_blue" id="check">전송</a>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/footer.php');?>
+
+</div>
+
+<div id="complete" class="break">
+	<img src="../images/btn_close.gif" alt="close" class="close" />
+	<div class="title">회원탈퇴완료</div>
+	<div class="text pT50">회원탈퇴가 정상적으로 완료되었습니다.</div>
+	<a href="../index.html" class="btn_big_link">메인으로</a>
+</div>
+
+<script>
+$(document).ready(function(){
+
+	$('#check').click(function() {
+		$.blockUI({
+			message: $('#complete'),
+			css: { width:'280px',top:'30%',left:'50%',marginLeft:'-140px',border:0, cursor:'default' } });
+
+		/*
+		$.ajax({
+			url: 'wait.php',
+			cache: false,
+			complete: function() {
+				// unblock when remote call returns
+				$.unblockUI();
+			}
+		});
+		*/
+
+	});
+
+	$('#complete #yes, #complete .close').click(function() {
+		$.unblockUI();
+		return false;
+	});
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../fonts/NanumBarunGothic.eot);
+  src: local('Nanum Barun Gothic'),
+       local('NanumBarunGothic'),
+       url(../../fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+       url(../../fonts/NanumBarunGothic.woff2) format('woff2'),
+       url(../../fonts/NanumBarunGothic.woff) format('woff'),
+       url(../../fonts/NanumBarunGothic.ttf) format('truetype');
+}
+
+
+/* PC */
+body {margin:0 auto;}
+#event {width:100%; margin:-3px auto 0; padding:0; border: 0;}
+ul li {list-style:none;}
+#event ul {padding:0;}
+#event .box1 {background-color: #018f75; background-image: url(img/gr_bg.jpg); background-repeat: no-repeat; background-position: center; backgound-size:auto;}
+#event .box2 {background-color: #e8edf0; overflow:hidden;}
+#event .text {width:100%; background-color: #e8edf0; overflow:hidden;}
+#event .text ul {width:1200px; overflow:hidden; background-color: #fff; margin:0 auto; padding-left:40px; box-sizing: border-box;}
+#event .text ul li {float:left; text-align: left;}
+#event .text ul .sub {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-weight: bold; font-size:36px; margin-top: 60px; margin-left:20px;}
+#event .text ul .tx {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:30px; padding:60px 0 0 40px; line-height: 40px;width:100%;}
+#event .text ul .tx4 {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:30px; padding:60px 0 0 40px; line-height: 40px;}
+#event .text ul .tx3 {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:30px; padding:60px 0 0 40px; line-height: 40px;}
+#event .text ul .tx span {border-bottom:1px solid #bb3a28; color:#bb3a28; }
+#event .text ul .tx3 span {border-bottom:1px solid #018f75; color:#018f75; }
+
+
+#event .text ul .mb {font-family:'Nanum Barun Gothic', sans-serif; color:#bb3a28; font-size:28px; margin-top: 50px;}
+#event .text ul .mb span{font-family:'Nanum Barun Gothic', sans-serif; color:#bb3a28; font-size:10px;  vertical-align:8px;  margin-left:100px;}
+#event .text ul .tx2 {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:24px; margin:50px 0 0 30px; line-height: 34px; }
+#event .text ul .tx2 p {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:20px;}
+
+#event .text .new {margin-top:0px}
+#event .text .date {margin-top:0px}
+#event .text .use2 {margin-top:0px}
+#event .text .date2 {margin-top:0px}
+#event .text .use3 {height: 300px; margin-top:0px; background-image: url(img/c_bg.jpg); background-repeat: no-repeat; background-position: right; backgound-size:auto;}
+
+
+
+#event .box3{clear: both; background-color: #e8edf0; height: 524px;}
+#event .box4{background-color: #e8edf0;}
+#event .box4 p {margin:0px auto 0; width:1200px;  height: 210px; background-color: #fff;padding-top:80px;}
+#event .bg {height:100px; background-color: #e8edf0; }
+#event .box5 {background-color: #e8edf0; height: 356px;}
+
+
+#event .box6 {background-color: #e8edf0; width:100%; margin-top:0px; padding-top:50px;}
+#event .box6 ul {width:1200px; height: 750px; margin:0 auto;}
+#event .box6 li {margin-top:25px; text-align: left; font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-size: 18px; }
+#event .box6 li span {margin-left:13px;}
+#event .box6 .bold {font-weight:500; font-size: 28px; color:#222;}
+
+
+/* 모바일 */
+#m_event {width:100%; margin:0 auto; padding:0; border: 0; text-align: center;}
+#m_event img { width:100%;}
+#m_event ul {padding:0;}
+#m_event .mtext ul li {text-align: center; }
+#m_event .mtext ul .m_sub {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-weight: bold; font-size:28px; }
+#m_event .mtext ul .m_tx {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:23px; margin:20px 0 20px; line-height: 30px; letter-spacing:-1px;}
+#m_event .mtext ul .m_tx span {border-bottom:1px solid #bb3a28; color:#bb3a28; }
+
+#m_event .mtext2 {background-color: #eee; margin:10px 5% 30px 5%; text-align: left; padding-bottom: 20px; }
+
+#m_event .mtext2 ul .mb {font-family:'Nanum Barun Gothic', sans-serif; color:#bb3a28; font-size:20px; padding:20px 20px 0; line-height: 22px;}
+#m_event .mtext2 ul .tx2 {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:16px; margin:10px 0 0 10px; line-height: 18px; padding:0 12px 0; }
+#m_event .mtext2 ul .tx2 p{font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:14px;}
+
+#m_event .mtext ul .m_sub2 {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-weight: bold; font-size:28px; margin-top:50px;}
+#m_event .mtext ul .m_tx2 {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:22px; margin:20px 0 20px; line-height: 30px; letter-spacing:-1px; word-spacing: -1px; }
+#m_event .bt {margin:50px 0 ;}
+
+#m_event .mtext3 ul li {text-align: center; }
+#m_event .mtext3 ul .m_sub {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-weight: bold; font-size:28px; margin-top:50px;}
+#m_event .mtext3 ul .m_tx {font-family:'Nanum Barun Gothic', sans-serif; color:#333;  font-size:23px; margin:20px 0 20px; line-height: 30px; letter-spacing:-1px;}
+#m_event .mtext3 ul .m_tx span {border-bottom:1px solid #018f75; color:#018f75; }
+#m_event .bt2 {margin:30px 0 ;}
+#m_event .notice {text-align:left; font-size:16px; padding:0 3% 40px 3%; line-height: 20px;}
+#m_event .notice li {margin-top:20px;}
+#m_event .notice .lip {position: relative; padding-left:10px;}
+#m_event .notice .dot::before {width:4px; height: 4px; border-radius:4px; content:" "; position: absolute; left:0; top:8px;}
+#m_event .notice .color::before {background-color:#333;}
+#m_event .notice .bold {font-size:22px;}
+
+#content {display:block;     background-color: #e8edf0;}
+#content_m {display:none;}
+
+@media all and (max-width: 900px){
+	#content {display:none;}
+	#content_m {display:block;}
+}

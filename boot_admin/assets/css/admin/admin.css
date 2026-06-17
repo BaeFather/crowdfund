@@ -1,0 +1,55 @@
+
+/*********************************************
+ 로그인 및 회원가입
+ *********************************************/
+
+/* Login set */
+.login {margin:100px 0 100px;}
+.login .container .row .card {box-shadow: none; background-color: #fff; max-width: 100%; width: 100%; border: none;}
+.login .container .row .card .card-header {text-align: center; padding: 1.5rem; border-bottom: 0;}
+.login .container .row .card .card-body {padding:35px;}
+.login .container .row .card .card-body h4 {text-align:left; font-size:1.5rem; color:#222; font-weight: 500; margin:0 0 20px;}
+.login .container .row .card .card-body form .form-group {margin-bottom:10px;}
+.login .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px);}
+.login .container .row .card .card-body form .form-group .btn-primary {height: calc(3rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; font-size:1rem;}
+.login .container .row .card .card-body form .form-group .custom-checkbox {margin:10px 0 30px;}
+.login .container .row .card .card-body form .form-group .custom-checkbox .custom-control-label {font-size:0.875rem; color:#222; font-weight: 400;}
+.login .container .row .card .card-body .id-pass-search {display:flex; margin-top:30px; }
+.login .container .row .card .card-body .id-pass-search a{color:#999; font-size:0.875rem;}
+.login .container .row .card .card-body .id-pass-search div:nth-child(2){padding:0 20px; font-size:0.813rem; margin-top:1px; color:#999;}
+.login .container .row .card .card-body .signup {margin-top:50px;}
+.login .container .row .card .card-body .signup p {color:#999; font-size:0.875rem; margin-bottom: 0; }
+.login .container .row .card .card-body .signup span a{float:right; color:#222; border-bottom: 1px solid #222; font-size:0.875rem;}
+.login .container .row .card .card-body .id_save_check_input:checked~.id_save_check_label::before {border-color: #222; background-color: #222;}
+
+/* Join set */
+.join {margin:10px 0 50px;}
+.join .container .row .card {box-shadow: none; background-color: #fff; max-width: 100%; width: 100%;}
+.join .container .row .card .card-header {padding:15px 35px 15px; border-bottom:1px solid #ddd;   }
+.join .container .row .card .card-header img {width:100px; }
+.join .container .row .card .card-body {padding:30px 35px 35px 35px; border-radius: 3px;}
+.join .container .row .card .card-body h4 { font-size:1.3rem; font-weight:600; color:#333; margin-bottom:25px;}
+.join .container .row .card .card-body form .form-group {margin-bottom:20px;}
+.join .container .row .card .card-body form .form-group label {margin-bottom:2px;}
+.join .container .row .card .card-body form .form-group .form-control {height: calc(2.8rem + 1px);}
+.join .container .row .card .card-body form .form-group .btn-primary {height: calc(3rem + 1px); margin-top: 1rem; box-shadow: none; width:100%; background-color: #f64e60; border:none; font-size:1rem;}
+.join .container .row .card .card-body .signup {margin-top:45px;}
+.join .container .row .card .card-body .signup p {color:#999; font-size:0.875rem; margin-bottom: 0; }
+.join .container .row .card .card-body .signup span a{float:right; color:#222; border-bottom: 1px solid #222; font-size:0.875rem;}
+.form-control.is-invalid, .was-validated .form-control:invalid {background-image: none!important; border-color:#dee2e6!important;}
+
+
+
+
+
+
+@media all and (min-width:768px) {
+
+    /* login */
+    .login .container .row .card {border:1px solid #ddd; max-width: 500px;}
+
+    /* join */
+    .join {margin: 50px 0 50px;}
+    .join .container .row .card {border:1px solid #ddd; max-width: 500px;}
+}
+

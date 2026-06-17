@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>비밀번호 찾기</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/form.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" /> <!-- modal(popup) css -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <h2>비밀번호 찾기</h2>
+            <div class="close_btn">
+                <a href="#"><img src="img/close_icon.png" /></a>
+            </div>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### IdFind Start -->
+        <div id="IdFind">
+            <div class="title">
+                <h2>아래 정보를 입력해주세요.</h2>
+            </div>
+            <form>
+                <div class="form_wrap">
+                    <div class="label_box">아이디</div>
+                    <div class="form_box"><input type="text" placeholder="아이디를 입력해주세요" /></div>
+                    <div class="label_box">이름</div>
+                    <div class="form_box"><input type="text" placeholder="이름을 입력해주세요" /></div>
+                    <div class="label_box">휴대전화번호</div>
+                    <div class="form_box"><input type="text" placeholder="'-'를 제외한 휴대전화번호를 입력해주세요" /></div>
+                </div>
+            </form>
+        </div>
+        <!-- ### IdFind End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button class="md-trigger" data-modal="modal-3">비밀번호 찾기</button>
+        </div>
+        <!-- ### BottomBtn End -->
+
+        <!-- ### alertPopup Start-->
+        <div class="md-modal md-effect-3" id="modal-3">
+			<div class="md-content" id="alertPopup">
+                <div class="content">
+                    <P>입력하신 휴대전화번호로 임시비밀번호가 발송되었습니다.</P>
+                </div>
+                <div class="md-close txt_close_btn">확인</div>
+			</div>
+		</div>
+        <div class="md-overlay"></div><!-- the overlay element -->
+        <!-- ### alertPopup end-->
+
+        <!-- modal(popup) script -->
+        <script src="js/classie.js"></script>
+        <script src="js/modalEffects.js"></script>
+        <!-- jquery datepicker script -->
+    </body>
+</html>

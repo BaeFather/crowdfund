@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+
+@font-face{
+	font-family:"spoqahansans";
+	src:
+		local("Spoqa Han Sans Bold"),
+		local("Spoqa Han Sans Regular"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Regular.woff2") format("woff2"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Regular.woff") format("woff"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Regular.ttf") format("truetype");
+	font-weight:400;
+}
+@font-face{
+	font-family:"spoqahansans";
+	src:
+		local("Spoqa Han Sans Bold"),
+		local("Spoqa Han Sans Bold"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Bold.woff2") format("woff2"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Bold.woff") format("woff"),
+		url("/../../theme/2018/css/font/Spoqa Han Sans Bold.ttf") format("truetype");
+	font-weight:700;
+}
+*
+{
+    font-family: 'spoqahansans', sans-serif;
+    letter-spacing: 0.04rem;
+    font-weight: 400;
+}
+
+
+/* body {
+    background: url(../img/bg.jpg);
+    background-repeat: repeat;
+} */
+
+h2 {
+    /* color: #e7d5aa; */
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+
+
+button {
+    width: 100%;
+}
+
+.btn {
+    font-size: 16px;
+
+}
+
+.btn-price {
+    color: #fff;
+    background-color: #917e5b;
+    border-color: #917e5b;
+}
+
+.btn-price:hover {
+    color: #fff;
+    background-color: #aa936d;
+}

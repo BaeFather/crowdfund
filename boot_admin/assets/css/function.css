@@ -1,0 +1,980 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/********************************세금계산서 발행*******************************************/
+
+.wrapper .content-page .container-fluid .function-taxbill{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-taxbill .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-taxbill table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-taxbill table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-taxbill table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap .custom-select:first-child {width:150px; margin-right: .5rem;}	
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap .custom-select:last-child {width:100px;}	
+
+
+
+/*버튼*/
+.wrapper .content-page .container-fluid .function-taxbill .tax-bt {display:flex; justify-content: center; margin-top:10px; }
+.wrapper .content-page .container-fluid .function-taxbill .tax-bt .color-bt {background-color: #ee321f; border:1px solid #ee321f; margin-left:20px;}
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-taxbill {padding:0;}
+.wrapper .content-page .container-fluid .function-taxbill table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-taxbill table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-taxbill table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0; width:100%;}	
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap .custom-select:first-child {width:50%; margin:0;}
+.wrapper .content-page .container-fluid .function-taxbill .date-search .date-search-wrap .custom-select:last-child {width:49%; margin-left:1%;}	
+
+	
+/*버튼*/
+.wrapper .content-page .container-fluid .function-taxbill .tax-bt button {width:50%;}
+.wrapper .content-page .container-fluid .function-taxbill .tax-bt .color-bt {background-color: #ee321f; border:1px solid #ee321f; margin-left:1%;}
+
+
+}
+
+
+
+
+
+
+/********************************원천징수영수증*******************************************/
+
+
+.wrapper .content-page .container-fluid .function-withholding{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-withholding .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-withholding table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-withholding table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-withholding table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*상태 및 검색어*/
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap {display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .custom-control {padding-left:0;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .custom-checkbox {margin-right:1rem; margin-top:5px; margin-left:10px;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-withholding {padding:0;}
+.wrapper .content-page .container-fluid .function-withholding table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-withholding table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-withholding table tr td:first-child {display:none;}
+	
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap {padding-left:0; display: flex; flex-wrap:wrap;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .row  {width:100%; justify-content: center; margin:10px 0 15px;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .row .custom-checkbox {margin:0 1rem;}
+.wrapper .content-page .container-fluid .function-withholding .word-search .word-search-wrap .input-group { width:100%; margin-left:0;}	
+	
+
+
+}
+
+
+
+
+/********************************sms발송*******************************************/
+
+
+/*검색테이블*/
+.wrapper .content-page .container-fluid .function-sms{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-sms .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-sms .search-table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-sms .search-table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-sms .search-table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*발송테이블*/
+.wrapper .content-page .container-fluid .function-sms{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-sms .send_button {text-align: center; margin:10px 0 100px;}
+.wrapper .content-page .container-fluid .function-sms .send_button button {background-color:#ee321f; border:1px solid #ee321f;}
+.wrapper .content-page .container-fluid .function-sms .sms-table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td{border-bottom: 1px solid #ddd; }
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td:first-child {background-color: #f1f3fa; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:1rem 2rem 1rem 1rem; width:150px;}
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td:last-child {padding-left:10px; }
+
+
+
+
+/*중복체크*/
+.wrapper .content-page .container-fluid .function-sms .double-check .double-check-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-sms .double-check .double-check-wrap textarea{display: block; width:100%;  padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: .25rem; margin:10px 0;}
+.wrapper .content-page .container-fluid .function-sms .double-check .double-check-wrap textarea::placeholder {color:#bbb;}
+
+
+
+/*가입일,예치금*/
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .custom-control-inline {margin-right: 0;}
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .date-select {width:230px; }
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .deposit-input {width:300px; margin-left:1rem;}
+
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-select {width:120px; margin-right:.5rem;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-checkbox {padding-top:7px;} 
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap .custom-select {width:150px;}	
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap .input-group {width:250px; margin-left:.5rem; }	
+
+
+/*발송대상자*/
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb {border:1px solid #ddd; margin:10px 0; padding:10px; height: 150px; border-radius:.25rem; overflow-y:auto;  white-space: nowrap;}
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .all-send {margin:10px 0; }
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .all-send label {font-size:.8rem!important; color:#222!important;}
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div {width:12.5%; }
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div label {font-size:.75rem; color:#777;}
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div label::before {width:.9rem; height: .9rem; border-radius: .15rem; top:1px;}
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div label::after { width:.9rem; height: .9rem; border-radius: .15rem; top:1px; }
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div .custom-control-input:checked ~ .custom-control-label::before  {color:#777; border-color:#777; background-color: #777;}
+
+
+
+/*내용(sms)*/
+.wrapper .content-page .container-fluid .function-sms .sms-text div {display:flex; padding:10px 0; align-items: flex-end;}
+.wrapper .content-page .container-fluid .function-sms .sms-text div textarea {display: block; width:30%;  padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: .25rem; }
+.wrapper .content-page .container-fluid .function-sms .sms-text div textarea::placeholder {color:#bbb;}
+.wrapper .content-page .container-fluid .function-sms .sms-text div input {width:60px; margin:0 .5rem;}
+.wrapper .content-page .container-fluid .function-sms .sms-text div .sms-type {margin-left:.5rem;}
+
+
+
+/*발신번호*/
+.wrapper .content-page .container-fluid .function-sms .calling-number input {width:150px;}
+
+
+/*발송설정*/
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap {display:flex;}
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap select {width:150px;}
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap input {width:150px; margin-left:.5rem;}
+
+
+
+
+
+
+@media (max-width:992px){
+	
+/*서치테이블*/	
+.wrapper .content-page .container-fluid .function-sms {padding:0;}
+.wrapper .content-page .container-fluid .function-sms .search-table  {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-sms .search-table  tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-sms .search-table  tr td:first-child {display:none;}
+.wrapper .content-page .container-fluid .function-sms .search_button {text-align: center; margin-bottom:50px;}	
+	
+/*발송테이블*/
+.wrapper .content-page .container-fluid .function-sms .sms-table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td:first-child {display:none;}
+.wrapper .content-page .container-fluid .function-sms .sms-table tr td:last-child {padding-left:0;}
+.wrapper .content-page .container-fluid .function-sms .send_button {text-align: center; margin:30px 0 100px;}
+	
+
+/*중복체크*/
+.wrapper .content-page .container-fluid .function-sms .double-check .double-check-wrap {padding-left:0; margin-bottom: 10px;}
+	
+	
+/*가입일,예치금*/	
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0; }	
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .date-line {width:100%; display: flex;}	
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .date-line .date-select-bt{white-space: nowrap;}	
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .date-line .date-select{width:90%; margin-left: 1%; margin-bottom: 5px; justify-content: flex-start;}
+.wrapper .content-page .container-fluid .function-sms .date-search .date-search-wrap .deposit-input{width:100%; margin-left:0;}
+	
+	
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap {padding-left:0px; flex-wrap:wrap; margin:10px 0 5px;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-select:nth-child(even) {width:49%; margin-left:1%;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-select:nth-child(odd) {width:50%; }
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-checkbox{display: flex; justify-content:flex-end; padding-top:0px; width:100%;}
+.wrapper .content-page .container-fluid .function-sms .condition-search .condition-search-wrap .custom-checkbox label {margin-right:0;}	
+	
+	
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .function-sms .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; }	
+	
+	
+	
+/*발송대상자*/
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb {width:100%;}
+.wrapper .content-page .container-fluid .function-sms .send-list .send-list-mb .row div {width:50%;}
+
+
+
+
+/*내용(sms)*/
+.wrapper .content-page .container-fluid .function-sms .sms-text div {flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .function-sms .sms-text div textarea {width:100%; margin-bottom: 10px;}
+.wrapper .content-page .container-fluid .function-sms .sms-text div input {width:60px; margin-right:.5rem; margin-left:0;}
+
+	
+/*발신번호*/
+.wrapper .content-page .container-fluid .function-sms .calling-number input {width:100%;}
+
+
+/*발송설정*/
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap {flex-wrap: wrap; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap select {width:100%;}
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap input {width:50%; margin-left:0; margin-top:5px;}
+.wrapper .content-page .container-fluid .function-sms .send-date .send-date-wrap input:last-child {width:49%; margin-left:1%;}
+
+
+}
+
+
+
+
+
+
+
+/********************************sms 발송 조회*******************************************/
+
+.wrapper .content-page .container-fluid .function-sms-inquire{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-sms-inquire .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-sms-inquire table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-sms-inquire table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-sms-inquire table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .custom-select {width:110px;}
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .date-select {width:200px; margin:0 .5rem; }
+
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-sms-inquire .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-sms-inquire .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-sms-inquire {padding:0;}
+.wrapper .content-page .container-fluid .function-sms-inquire table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-sms-inquire table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-sms-inquire table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0; margin-bottom: 3px;}	
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .date-line .custom-select {width:35%;}
+.wrapper .content-page .container-fluid .function-sms-inquire .date-search .date-search-wrap .date-line .date-select {width:64%; margin:0 0 0 1%;}
+
+	
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-sms-inquire .condition-search .condition-search-wrap{padding-left:0px; width:100%;  flex-wrap: wrap; }
+.wrapper .content-page .container-fluid .function-sms-inquire .condition-search .condition-search-wrap .custom-select {width:50%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .function-sms-inquire .condition-search .condition-search-wrap .custom-select:nth-child(even) {width:49%; margin-left:1%;}
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .function-sms-inquire .word-search .word-search-wrap .input-group {margin-left:1%; width:49%;}	
+	
+	
+	
+	
+}
+
+
+
+
+/********************************메일 발송*******************************************/
+
+
+/*검색테이블*/
+.wrapper .content-page .container-fluid .function-mail{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-mail .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-mail .search-table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-mail .search-table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-mail .search-table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*발송테이블*/
+.wrapper .content-page .container-fluid .function-mail{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-mail .send_button {text-align: center; margin:10px 0 100px;}
+.wrapper .content-page .container-fluid .function-mail .send_button button {background-color:#ee321f; border:1px solid #ee321f;}
+.wrapper .content-page .container-fluid .function-mail .mail-table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td{border-bottom: 1px solid #ddd; }
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td:first-child {background-color: #f1f3fa; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:1rem 2rem 1rem 1rem; width:150px;}
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td:last-child {padding-left:10px; }
+
+
+
+
+/*중복체크*/
+.wrapper .content-page .container-fluid .function-mail .double-check .double-check-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-mail .double-check .double-check-wrap textarea{display: block; width:100%;  padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: .25rem; margin:10px 0;}
+.wrapper .content-page .container-fluid .function-mail .double-check .double-check-wrap textarea::placeholder {color:#bbb;}
+
+
+
+/*가입일,예치금*/
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .custom-control-inline {margin-right: 0;}
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .date-select {width:230px; }
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .deposit-input {width:300px; margin-left:1rem;}
+
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-select {width:120px; margin-right:.5rem;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-checkbox {padding-top:7px;} 
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap .custom-select {width:150px;}	
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap .input-group {width:250px; margin-left:.5rem; }	
+
+
+/*발송대상자*/
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb {border:1px solid #ddd; margin:10px 0; padding:10px; height: 150px; border-radius:.25rem; overflow-y:auto;  white-space: nowrap;}
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .all-send {margin:10px 0; }
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .all-send label {font-size:.8rem!important; color:#222!important;}
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div {width:12.5%; }
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div label {font-size:.75rem; color:#777;}
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div label::before {width:.9rem; height: .9rem; border-radius: .15rem; top:1px;}
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div label::after { width:.9rem; height: .9rem; border-radius: .15rem; top:1px; }
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div .custom-control-input:checked ~ .custom-control-label::before  {color:#777; border-color:#777; background-color: #777;}
+
+
+/*제목(mail)*/
+.wrapper .content-page .container-fluid .function-mail .mail-tit div {padding:10px 0; display: flex;}
+.wrapper .content-page .container-fluid .function-mail .mail-tit div .custom-select {width:15%; margin-right: .5rem;}
+
+
+
+/*내용(mail)*/
+.wrapper .content-page .container-fluid .function-mail .mail-text div {padding:10px 0; }
+.wrapper .content-page .container-fluid .function-mail .mail-text div textarea {display: block; width:100%;  padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: .25rem; }
+.wrapper .content-page .container-fluid .function-mail .mail-text div textarea::placeholder {color:#bbb;}
+
+
+
+/*발송설정*/
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap {display:flex;}
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap select {width:150px;}
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap input {width:150px; margin-left:.5rem;}
+
+
+
+
+
+
+@media (max-width:992px){
+	
+/*서치테이블*/	
+.wrapper .content-page .container-fluid .function-mail {padding:0;}
+.wrapper .content-page .container-fluid .function-mail .search-table  {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-mail .search-table  tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-mail .search-table  tr td:first-child {display:none;}
+.wrapper .content-page .container-fluid .function-mail .search_button {text-align: center; margin-bottom:50px;}	
+	
+/*발송테이블*/
+.wrapper .content-page .container-fluid .function-mail .mail-table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td:first-child {display:none;}
+.wrapper .content-page .container-fluid .function-mail .mail-table tr td:last-child {padding-left:0;}
+.wrapper .content-page .container-fluid .function-mail .send_button {text-align: center; margin:30px 0 100px;}
+	
+
+/*중복체크*/
+.wrapper .content-page .container-fluid .function-mail .double-check .double-check-wrap {padding-left:0; margin-bottom: 10px;}
+	
+	
+	
+	
+/*가입일,예치금*/	
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0; }	
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .date-line {width:100%; display: flex;}	
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .date-line .date-select-bt{white-space: nowrap;}	
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .date-line .date-select{width:90%; margin-left: 1%; margin-bottom: 5px; justify-content: flex-start;}
+.wrapper .content-page .container-fluid .function-mail .date-search .date-search-wrap .deposit-input{width:100%; margin-left:0;}
+	
+	
+	
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap {padding-left:0px; flex-wrap:wrap; margin:10px 0 5px;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-select:nth-child(even) {width:49%; margin-left:1%;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-select:nth-child(odd) {width:50%; }
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-checkbox{display: flex; justify-content:flex-end; padding-top:0px; width:100%;}
+.wrapper .content-page .container-fluid .function-mail .condition-search .condition-search-wrap .custom-checkbox label {margin-right:0;}	
+	
+	
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .function-mail .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; }	
+	
+	
+	
+/*발송대상자*/
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb {width:100%;}
+.wrapper .content-page .container-fluid .function-mail .send-list .send-list-mb .row div {width:50%;}
+
+
+
+	
+/*제목(mail)*/
+.wrapper .content-page .container-fluid .function-mail .mail-tit div {display: flex; flex-wrap: wrap;  padding:0;}
+.wrapper .content-page .container-fluid .function-mail .mail-tit div .custom-select {width:100%; margin-right: 0; margin-bottom:10px;}
+
+	
+	
+	
+/*내용(mail)*/
+.wrapper .content-page .container-fluid .function-mail .mail-text div {flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .function-mail .mail-text div textarea {width:100%; margin-bottom: 10px;}
+.wrapper .content-page .container-fluid .function-mail .mail-text div input {width:60px; margin-right:.5rem; margin-left:0;}
+
+
+
+/*발송설정*/
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap {flex-wrap: wrap; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap select {width:100%;}
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap input {width:50%; margin-left:0; margin-top:5px;}
+.wrapper .content-page .container-fluid .function-mail .send-date .send-date-wrap input:last-child {width:49%; margin-left:1%;}
+
+
+}
+
+
+/********************************메일 발송 조회*******************************************/
+
+.wrapper .content-page .container-fluid .function-mail-inquire{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-mail-inquire .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-mail-inquire table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-mail-inquire table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-mail-inquire table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .custom-select {width:110px;}
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .date-select {width:200px; margin:0 .5rem; }
+
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-mail-inquire {padding:0;}
+.wrapper .content-page .container-fluid .function-mail-inquire table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-mail-inquire table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-mail-inquire table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0; margin-bottom: 3px;}	
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .date-line .custom-select {width:35%;}
+.wrapper .content-page .container-fluid .function-mail-inquire .date-search .date-search-wrap .date-line .date-select {width:64%; margin:0 0 0 1%;}
+
+	
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap{padding-left:0px; width:100%;  flex-wrap: wrap; }
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap .custom-select {width:50%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap .custom-select:nth-child(even) {width:49%; margin-left:1%;}
+.wrapper .content-page .container-fluid .function-mail-inquire .condition-search .condition-search-wrap .custom-select:last-child {width:100%;}
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .function-mail-inquire .word-search .word-search-wrap .input-group {margin-left:1%; width:49%;}	
+	
+	
+	
+	
+}
+
+
+
+/********************************시스템 발송*******************************************/
+
+.wrapper .content-page .container-fluid .function-system {padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-system .send-list {width:50%; margin:20px 0 100px;}
+.wrapper .content-page .container-fluid .function-system table{border:1px solid #ddd;  border-spacing: 0; width:100%; text-align: center;}	
+.wrapper .content-page .container-fluid .function-system table thead tr th {height: 40px;  background-color: #f6f6f6; color:#222; border: 1px solid #ddd;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td{border-bottom: 1px solid #ddd; height: 40px; }
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(1) {color:#555; font-size:.8rem; white-space: nowrap; padding:0 2rem 0; width:20%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(2) {text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0; border-left:1px solid #ddd; width:60%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(3) {color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0; border-left:1px solid #ddd; width:20%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td button {border:none; background-color: #fff; margin:0; padding:0; color:#222; font-size:.8rem; }
+
+
+
+/*모달 커스텀*/
+.wrapper .content-page .container-fluid .function-system .modal-title {font-size:1rem; color:#222; font-weight: 600;}
+.wrapper .content-page .container-fluid .function-system .modal-body h6 {font-size:.95rem; color:#222; font-weight: 400; letter-spacing: -0.5px;}
+.wrapper .content-page .container-fluid .function-system .modal-body p {font-size:.8rem; color:#555; font-weight: 400; letter-spacing: -0.5px;}
+.wrapper .content-page .container-fluid .function-system .modal-footer {justify-content:center; padding:1rem 0 1.5rem;}
+.wrapper .content-page .container-fluid .function-system .modal-footer button {margin:0 .3rem;}
+.wrapper .content-page .container-fluid .function-system .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; padding:.5rem 2rem;}
+.wrapper .content-page .container-fluid .function-system .modal-footer .btn-cancel {background-color: #ededed; color:#222; padding:.5rem 2rem;}
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-system {padding:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .function-system .send-list {width:100%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(1) {padding:0 1rem 0; width:20%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(2) {padding:0 1rem 0; width:60%;}
+.wrapper .content-page .container-fluid .function-system table tbody tr td:nth-child(3) {padding:0 1rem 0; width:20%;}	
+	
+	
+	
+/*모달 커스텀*/
+.wrapper .content-page .container-fluid .function-system .modal {padding-right:0!important;}	
+.wrapper .content-page .container-fluid .function-system .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:40%;}
+.wrapper .content-page .container-fluid .function-system .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:40%;}
+	
+	
+	
+}
+
+
+
+/********************************확인서 작성*******************************************/
+
+.wrapper .content-page .container-fluid .function-confirmation-wirte{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-confirmation-wirte table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+/*바로가기*/
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button .basic-bt:hover {border:1px solid #ee321f; color:#ee321f;}
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-confirmation-wirte {padding:0;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte table tr td:first-child {display:none;}
+	
+	
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .word-search .word-search-wrap .input-group {margin-left:1%; width:49%;}	
+	
+	
+/*바로가기*/
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button {padding-left:0; width:100%; }
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button .basic-bt {margin-right:0; width:100%!important; margin-bottom: 3px;}	
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button .basic-bt {border:1px solid #ddd; color:#222; background-color: #f6f6f6;}
+.wrapper .content-page .container-fluid .function-confirmation-wirte .write_button .basic-bt:hover {border:1px solid #ddd; color:#222; background-color: #f6f6f6;}
+	
+	
+}
+
+
+
+/********************************확인서 관리*******************************************/
+
+.wrapper .content-page .container-fluid .function-confirmation-management{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-confirmation-management .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-confirmation-management table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-confirmation-management table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-confirmation-management table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .function-confirmation-management .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-confirmation-management .date-search .date-search-wrap .date-select {width:300px;}
+
+
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-confirmation-management .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .function-confirmation-management .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+
+/*차입자*/
+.wrapper .content-page .container-fluid .function-confirmation-management .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .function-confirmation-management .word-search .word-search-wrap .input-group {width:200px; }	
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-confirmation-management {padding:0;}
+.wrapper .content-page .container-fluid .function-confirmation-management table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-confirmation-management table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-confirmation-management table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .function-confirmation-management .date-search .date-search-wrap {width:100%; display:flex; flex-wrap: wrap; padding-left:0; margin-bottom: 3px;}	
+.wrapper .content-page .container-fluid .function-confirmation-management .date-search .date-search-wrap .date-select {width:100%; margin-right:0;}
+
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .function-confirmation-management .condition-search .condition-search-wrap{padding-left:0px; width:100%;  flex-wrap: wrap; }
+.wrapper .content-page .container-fluid .function-confirmation-management .condition-search .condition-search-wrap .custom-select {width:50%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .function-confirmation-management .condition-search .condition-search-wrap .custom-select:nth-child(even) {width:49%; margin-left:1%;}
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-confirmation-management .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .function-confirmation-management .word-search .word-search-wrap .input-group {width:100%;}	
+	
+	
+	
+	
+}
+
+/********************************투자자 통계 SMS 관리*******************************************/
+
+/*탭메뉴*/
+.wrapper .content-page .container-fluid .function-Investor-statistics {padding:0 30px; }	
+.wrapper .content-page .container-fluid .function-Investor-statistics .nav-pills {background-color: #f5f5f5; margin:10px 0 30px; border-radius:0;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .nav-pills .nav-link.active, .wrapper .content-page .container-fluid .member-create .nav-pills .show>.nav-link { background-color: #ee321f; border-radius:0;}
+
+
+
+.wrapper .content-page .container-fluid .function-Investor-statistics{padding:0 30px;}	
+.wrapper .content-page .container-fluid .function-Investor-statistics .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .function-Investor-statistics table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .function-Investor-statistics table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .function-Investor-statistics table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .function-Investor-statistics .word-search .input-group {width:300px; margin-left:10px; }	
+
+
+
+/*모달 테이블 커스텀 */
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-body table tr td{width:80%; padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-body table tr th{width:20%; padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px; background-color:#f8f8f8; font-weight: 600;  }
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-footer {justify-content:center; padding:1rem 0 1.5rem; border-top:none;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+@media (max-width:992px){
+	
+/*탭메뉴*/	
+.wrapper .content-page .container-fluid .function-Investor-statistics {padding:0; flex-wrap:wrap; }
+.wrapper .content-page .container-fluid .function-Investor-statistics .nav-pills {width:100%;}	
+.wrapper .content-page .container-fluid .function-Investor-statistics .nav-pills .nav-item{width:50%; text-align: center;}
+	
+	
+.wrapper .content-page .container-fluid .function-Investor-statistics {padding:0;}
+.wrapper .content-page .container-fluid .function-Investor-statistics table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .function-Investor-statistics table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .function-Investor-statistics table tr td:first-child {display:none;}
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .function-Investor-statistics .word-search .input-group {width:100%; margin-left:0;}	
+	
+
+	
+
+/*모달 커스텀*/
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body {padding:2rem;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body .form-group {display: flex; white-space: nowrap; align-items: center; justify-content: center;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body .form-group label {width: 25%; color:#222; font-size:.8rem; margin-bottom: 0;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body .form-group input {width: 75%;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body .form-group select {width: 75%;}
+.wrapper .content-page .container-fluid .function-Investor-statistics .modify-modal .modal-body button {width: 100%; margin-top:1rem; background-color: #ee321f; border:1px solid #ee321f;}
+	
+	
+
+	
+}
+
+
+
+/********************************확인서작성 - 금융거래확인서,완납확인서,이자납입내역서,이자내역서*******************************************/
+
+
+
+/*기본테이블*/
+.wrapper .content-page .container-fluid .function-confirmation-page {padding:0 30px 100px;}	
+.wrapper .content-page .container-fluid .function-confirmation-page h3 {font-size:1.05rem; color:#222; margin:40px 0 10px;}
+.wrapper .content-page .container-fluid .function-confirmation-page table{border:1px solid #aaa; width:100%; white-space: nowrap;}	
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td{border-bottom: 1px solid #aaa; height: 40px; color:#222; font-size:.8rem;  }
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td .date-picker {text-align:center!important;}
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td select {text-align:center!important;}
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td input {height:calc(1.8rem);}
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td button {height:calc(1.6rem); padding:0.2rem 1rem;}
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td select {height:calc(1.8rem); line-height: 1.1; }
+
+
+
+
+.wrapper .content-page .container-fluid .function-confirmation-page .modal-header {justify-content: flex-end; padding:0 0 10px 0; }
+.wrapper .content-page .container-fluid .function-confirmation-page .modal-header button {height: calc(2rem); padding:0.45rem 1rem 0.35rem; margin-left:5px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .modal-header .btn-link {background-color: #ee321f; border:1px solid #ee321f;}
+
+
+/*라디오버튼 커스텀*/
+.wrapper input[type="radio"] {display: none;}
+.wrapper input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 1.112em;
+  height: 1.112em;
+  padding:3px;
+  background-clip: content-box;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right:5px;
+  margin-bottom:4px;
+  line-height: 50px;
+  vertical-align:middle;
+}
+
+.wrapper input[type="radio"]:checked + label:before {
+  background-color: #fa5c7c; border: 1px solid #fa5c7c;
+}
+
+
+
+
+
+
+/*채권,채무자*/
+.wrapper .content-page .container-fluid .function-confirmation-page .debtor-info {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debtor-info table tr td {padding:.7rem;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debtor-info table tr td:first-child {background-color:#f6f6f6; width:200px; border-right: 1px solid #aaa; font-weight: 600;}
+.wrapper .content-page .container-fluid .function-confirmation-page .creditor-info {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .creditor-info table tr td {padding:.7rem;}
+.wrapper .content-page .container-fluid .function-confirmation-page .creditor-info table tr td:first-child {background-color:#f6f6f6; width:200px; border-right: 1px solid #aaa; font-weight: 600;}
+
+
+
+/*거래현황*/
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status .loan-status-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status .loan-status-tit span {margin-bottom:7px;  font-size:.75rem; color:#555;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table tr td:nth-child(4) {text-align:right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table tr td:nth-child(5) {text-align:right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table tr td:nth-child(6) {padding:.5rem .7rem; }
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-status table tfoot tr td {background-color: #faf1f3; }
+
+
+
+
+
+
+/*담보내용*/
+.wrapper .content-page .container-fluid .function-confirmation-page .guarantee {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .guarantee table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .guarantee table tr td:nth-child(8) {padding:.5rem .7rem;}
+.wrapper .content-page .container-fluid .function-confirmation-page .guarantee table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+
+
+/*연체여부*/
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-status {display: flex;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-status .overdue-type-wrap  {display: flex; color:#222; font-size:.8rem; margin:20px 0 0; align-items: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-status .overdue-type-wrap p {margin-bottom: 0;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-status .overdue-type-wrap div {margin-left:15px; }
+
+
+
+/*연체명세*/
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table thead .bottom-line {border-bottom:1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table tr td:last-child {padding:.5rem .7rem;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table tr td:nth-child(3) {text-align: right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .overdue-history table tr td:nth-child(4) {text-align: right;}
+
+
+/*부채내역*/
+.wrapper .content-page .container-fluid .function-confirmation-page .debt-history {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debt-history .debt-history-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debt-history .debt-history-tit span {margin-bottom:7px;  font-size:.75rem; color:#555;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debt-history table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debt-history table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+
+
+
+/*대출정보*/
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info .loan-info-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info .loan-info-tit span {margin-bottom:7px;  font-size:.75rem; color:#555;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info table tr td:nth-child(1) {padding:.5rem .7rem; }
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+
+
+/*원리금 및 비용 납입내역*/
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .payment-history-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .payment-history-tit p {margin-bottom:7px;  font-size:.8rem; color:#555; display: flex; white-space: nowrap; align-items: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .payment-history-tit p span {margin-left:5px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table tr td {padding:.5rem .7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table tr td:nth-child(3), .wrapper .content-page .container-fluid .function-confirmation-page .payment-history table tr td:nth-child(4) {text-align:right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table thead tr th {padding:.5rem .7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table thead .bottom-line {border-bottom:1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table tfoot tr td {background-color: #faf1f3; text-align: right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history table tfoot tr td:first-child {text-align:center;}
+
+
+
+
+/*기타*/
+.wrapper .content-page .container-fluid .function-confirmation-page .etc {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .etc table tr td {padding:.7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .etc table tr td input {text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .etc table tr td:nth-child(3) {display:flex; border: 0; justify-content: center; }
+.wrapper .content-page .container-fluid .function-confirmation-page .etc table tr td div {margin:5px 10px 0;}
+.wrapper .content-page .container-fluid .function-confirmation-page .etc table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+
+
+/*대출정보2*/
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 .loan-info-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 .loan-info-tit span {margin-bottom:7px;  font-size:.75rem; color:#555;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 table tr td {padding:.5rem .7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 table tr td div {display: flex; align-items: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 table tr td div span {margin:0 5px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .loan-info2 table tr td input {text-align: right;}
+
+
+
+
+/*납부 계좌 및 금액*/
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account {width:100%;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account .payment-account-tit {display:flex; align-items:flex-end; justify-content: space-between;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account table tr td {padding:.5rem .7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account table tr td:nth-child(2) {text-align:right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account table thead tr th {padding:.7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account table tfoot tr td {background-color: #faf1f3; text-align: right;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-account table tfoot tr td:first-child {text-align:center;}
+
+
+
+
+
+
+
+/*서류 하단*/
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail {width:100%; text-align: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail p {margin-bottom:0;}
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail p:nth-child(1) {color:#222; font-size:.9rem; margin-top:50px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail p:nth-child(2) {color:#222; font-size:1rem; margin-top:20px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail p:nth-child(3) {color:#222; font-size:1.5rem; margin-top:50px; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail div {display:flex; justify-content:space-between; margin-top:50px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail .basic-bt {height: calc(2.3rem); padding:0.45rem 2rem 0.35rem; }
+.wrapper .content-page .container-fluid .function-confirmation-page .docu-tail .btn-link {background-color: #ee321f; border:1px solid #ee321f;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .function-confirmation-page {padding:0; margin-bottom: 100px;}
+.wrapper .content-page .container-fluid .function-confirmation-page .debtor-info, .wrapper .content-page .container-fluid .function-confirmation-page .creditor-info, .wrapper .content-page .container-fluid .function-confirmation-page .scroll-div, .wrapper .content-page .container-fluid .function-confirmation-page .guarantee, .wrapper .content-page .container-fluid .function-confirmation-page .overdue-history, .wrapper .content-page .container-fluid .function-confirmation-page .etc {overflow:auto;}	
+	
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td input{min-width: 200px;}	
+.wrapper .content-page .container-fluid .function-confirmation-page table tr td select {min-width: 150px;}	
+
+	
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .payment-history-tit {display:block;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .payment-history-tit span {float: right; width:50%; margin-bottom:7px;  font-size:.75rem; color:#555; display: flex; white-space: nowrap; align-items: center;}
+.wrapper .content-page .container-fluid .function-confirmation-page .payment-history .scroll-div {clear:both;}
+
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+

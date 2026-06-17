@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+
+/********* 투자상품상세페이지 *********/
+
+.invest_cont { width:1050px; margin:0 auto; background:url('/investment/img/center_bg01.jpg') repeat-y;font-family:'spoqahansans';font-size:15px;color:#343434;line-height:28px;  }
+
+/********* 투자설명서 *********/
+.invest_cont .invest_top {padding:50px 60px 15px 60px;font-family:'spoqahansans';}
+.invest_cont .invest_top p {font-size:35px;color:#146ce9;text-align:center;}
+.invest_cont .invest_top .notice_top {background:url('/investment/img/notice_top_bg01.jpg') no-repeat;height:73px;font-size:15px;color:#343434;margin:30px 0 20px 0;padding:10px 0 0 24px;}
+
+/********* 1. 투자설명개요 *********/
+.invest_cont .cont1 {padding:0 60px 0 60px;}
+.invest_cont .cont1 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont1 .income{float:left;width:932px;font-family:'spoqahansans';color:#000;font-size:15px;margin-top:15px;border-top:2px solid #0c429d;}
+.invest_cont .cont1 .income th {background-color:#e0e8f0;font-size:16px;font-family:'spoqahansans';height:50px;color:#000;}
+.invest_cont .cont1 .income tr {border-bottom:1px solid #ead7d9;height:42px;}
+.invest_cont .cont1 .income td {text-align:left;padding-left:15px;color:#343434;}
+
+/********* 2. 담보실사평가 *********/
+.invest_cont .cont2 {padding:40px 80px 0 60px;clear:both;}
+.invest_cont .cont2 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}
+
+/********* 3. 투자자 보호장치 *********/
+.invest_cont .cont3 {padding:40px 70px 40px 60px;clear:both;font-family:'spoqahansans';}
+.invest_cont .cont3 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}
+
+/********* 4. 예상수익 *********/
+.invest_cont .cont4 {padding:0 70px 40px 60px;clear:both;}
+.invest_cont .cont4 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont4 .income{float:left;width:932px;font-family:'spoqahansans';color:#000;font-size:15px;margin:15px 0 30px 0;border-top:2px solid #0c429d;}
+.invest_cont .cont4 .income th {background-color:#e0e8f0;font-size:16px;font-family:'spoqahansans';height:50px;color:#000;line-height:24px;}
+.invest_cont .cont4 .income tr {border-bottom:1px solid #ead7d9;height:42px;}
+.invest_cont .cont4 .income td {text-align:center;color:#343434;}
+.invest_cont .cont4 .rewards {clear:both;width:932px;height:50px;background-color:#d19e13;text-align:center;color:#fff;font-size:22px;line-height:50px;}
+
+/********* 5. 예상수익 *********/
+.invest_cont .cont5 {padding:0 60px 40px 60px; clear:both;}
+.invest_cont .cont5 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont5 .income{float:left;width:420px;font-family:'spoqahansans';color:#000;font-size:15px;margin-top:15px;border-top:2px solid #0c429d;}
+.invest_cont .cont5 .income th {background-color:#e0e8f0;font-size:16px;font-family:'spoqahansans';height:50px;color:#000;line-height:24px;}
+.invest_cont .cont5 .income tr {border-bottom:1px solid #ead7d9;height:42px;}
+.invest_cont .cont5 .income td {text-align:right;padding-right:10px;color:#343434;}
+
+/********* 6. 심사총평 *********/
+.invest_cont .cont6 {padding:40px 60px 40px 60px; clear:both;}
+.invest_cont .cont6 .tit {font-size:22px;color:#146ce9;font-family:'spoqahansans';}

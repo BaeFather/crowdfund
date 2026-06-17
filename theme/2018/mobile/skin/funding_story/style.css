@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* 펀딩디자이너 스토리 */
+.funding_story {border: none;}
+.funding_story .main-banner {width: 100%;height: auto;}
+.funding_story .list {width: 100%;box-sizing: border-box;}
+.funding_story .list .latest {margin: 20px 0;}
+.funding_story .list .latest .left {float: none;width: 100%;}
+.funding_story .list .latest .left iframe {width: 100%;height: 222px;}
+.funding_story .list .latest .right {float: none;margin-top: 10px;background-color: #EFEFEF;border: 1px solid #DFDFDF;padding: 33px 25px 33px 25px;}
+.funding_story .list .latest .right strong {font-size: 24px;color: #1A1A1A;}
+.funding_story .list .latest .right h5 {display: block;font-size: 17px;color: #1A1A1A;padding-top: 15px;line-height: 26px;}
+.funding_story .list .latest .right span {display: block;font-size: 14px;color: #1A1A1A;padding-top: 15px;line-height: 26px;text-align: justify;}
+
+.funding_story .list img {width: 100%;margin-top: 30px;margin-bottom: 20px;}
+.funding_story .list ul {overflow: hidden;}
+.funding_story .list ul li {border: 1px solid #D6D6D6;margin-top: 10px;}
+.funding_story .list ul li:first-child {margin: 0;padding: 0}
+.funding_story .list ul li iframe {padding: 0;height: 150px;}
+.funding_story .list ul li img {width: 100%;max-height: 200px;}
+.funding_story .list ul li a:hover {text-decoration: underline;}
+.funding_story .list ul li span {margin-bottom: 10px;display: block;}
+.funding_story .list ul li span.subject {font-size: 19px;font-weight: bold;}
+.funding_story .list ul li span.subheading {font-size: 14px;color: #343434;line-height: 20px;}
+.funding_story .list ul li span.contents {font-size: 13px;color: #929292;line-height: 20px;text-align: justify;}
+.funding_story .list ul li table tbody {margin: 15px;display: block;}
+.funding_story .list ul li table tr td img {margin:0;padding:0;}
+
+div.m_more_list_loading {text-align: center;display: none;}
+div.m_more_list_loading > img {width: 20px !important;}
+div#bg-mask {position: absolute;z-index: 8888;background-color: #000;display: none;left: 0;top: 0;}
+div#preview {z-index: 9999;position: absolute;padding: 0;display: none;left: -5px;}
+div#preview img.thumbnail {width: 80%;left: 10%;top: 21%;position: fixed;border: 1px solid #999;}
+div#preview img.close {position: fixed;width: 17px;bottom: 42%;left: 49%;cursor: pointer;}
+
+.design_more {width:100%;text-align:center;}
+.design_more a span{margin-top:25px;display:inline-block;border-radius:5px;border:1px solid #d6d6d6;width:50%;height:40px;text-align:center;line-height:40px;font-size:16px;cursor:pointer;}

@@ -1,0 +1,174 @@
+/*********************************
+font SET
+**********************************/
+p, a, span, th, td, div, button, h2, h3, h4, h5, ul li, label, input{font-family:Pretendard, sans-serif; }
+
+
+
+/* Change the color to your own background color , 인풋태그 작성시 특정 칼라가 입혀지는 것 방지*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-transition: background-color 9999s ease-out; }
+
+
+.invalid-feedback {margin-top:5px; font-size:.8rem!important; font-weight:500;}
+.input-group:not(.has-validation)>.form-control:not(:last-child) {border-radius:.25rem!important;}
+
+
+
+/************************************************************ 로그인 *****************************************************************************/
+
+
+.login {margin:0 auto;}
+.login .container{padding:1.5rem;}
+.login .container h4 {text-align:center; font-size:1.6rem; color:#222; font-weight:500; margin-bottom:40px;}
+.login .container p {text-align:left; font-size:1.2rem; color:#222; font-weight:400; margin-bottom:5px;}			
+.login .container form .form-group {margin-bottom:10px;}
+.login .container form .form-group .form-control {height: calc(2.8rem); border:1px solid #ddd!important; background-color: #fff; }
+.login .container form .form-group .form-control:focus { border:1px solid #aaa;}
+.login .container form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400;}
+.login .container form .form-group .btn-primary {height: calc(3rem); box-shadow:none!important; border:none; width:100%; background-color:#f64e60; font-size:1rem; }
+.login .container form .form-group .custom-checkbox {margin:10px 0 30px;}
+.login .container form .form-group .custom-checkbox .custom-control-label {color:#222; font-weight:400; font-size:0.85rem; }
+.login .container .bottom-wrap {display:flex; justify-content:space-between; align-items: center; margin:40px 0 10px;}			
+.login .container .bottom-wrap .id-pass-search a{color:#555; font-size:.9rem; font-weight:400;}
+.login .container .bottom-wrap .id-pass-search span {padding:0 10px; font-size:.85rem; margin-top:1px; color:#999;}		
+.login .container .bottom-wrap .signup a{color:#222; border-bottom:1px solid #222; font-size:.9rem;}
+.login .container .id_save_check_input:checked~.id_save_check_label::before {border-color: #222; background-color: #222;}
+
+
+@media all and (min-width:650px) {
+
+.login {margin:150px auto 0;}
+.login .container {border:1px solid #ddd; width:450px; padding:35px; border-radius:.25rem;}
+}
+			
+
+
+
+
+  /************************************************************ 아이디찾기 *****************************************************************************/
+
+
+  .find-id {margin:0 auto;}
+  .find-id .container{padding:1.5rem;}
+  .find-id .container h4 {text-align:center; font-size:1.6rem; color:#222; font-weight:500; margin-bottom:40px;}
+  .find-id .container p {text-align:left; font-size:1.2rem; color:#222; font-weight:400; margin-bottom:5px;}			
+  .find-id .container form .form-group {margin-bottom:10px;}
+  .find-id .container form .form-group .form-control {height: calc(2.8rem); border:1px solid #ddd!important; background-color: #fff; }
+  .find-id .container form .form-group .form-control:focus { border:1px solid #aaa;}
+  .find-id .container form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400;}
+  .find-id .container form .form-group .btn-primary {height: calc(3rem); box-shadow:none!important; border:none; width:100%; background-color:#f64e60; font-size:1rem; margin-top:20px; }
+  .find-id .container form .form-group .custom-checkbox {margin:10px 0 30px;}
+  .find-id .container form .form-group .custom-checkbox .custom-control-label {color:#222; font-weight:400; font-size:0.85rem; }
+  .find-id .container .go-login {margin:40px 0 10px; text-align:right;}	
+  .find-id .container .go-login a{color:#222; border-bottom:1px solid #222; font-size:.9rem;}
+
+
+
+  @media all and (min-width:650px) {
+
+  .find-id {margin:150px auto 0;}
+  .find-id .container {border:1px solid #ddd; width:450px; padding:35px; border-radius:.25rem;}
+  }
+
+
+
+
+
+/************************************************************비번찾기*****************************************************************************/
+
+  .find-pw {margin:0 auto;}
+  .find-pw .container{padding:1.5rem;}
+  .find-pw .container h4 {text-align:center; font-size:1.6rem; color:#222; font-weight:500; margin-bottom:40px;}
+  .find-pw .container p {text-align:left; font-size:1.2rem; color:#222; font-weight:400; margin-bottom:5px;}			
+  .find-pw .container form .form-group {margin-bottom:10px;}
+  .find-pw .container form .form-group .form-control {height: calc(2.8rem); border:1px solid #ddd!important; background-color: #fff;}
+  .find-pw .container form .form-group .form-control:focus { border:1px solid #aaa;}
+  .find-pw .container form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight: 400;}
+  .find-pw .container form .form-group .btn-primary {height: calc(3rem); box-shadow:none!important; border:none; width:100%; background-color:#f64e60; font-size:1rem; margin-top:20px; }
+  .find-pw .container form .form-group .custom-checkbox {margin:10px 0 30px;}
+  .find-pw .container form .form-group .custom-checkbox .custom-control-label {color:#222; font-weight:400; font-size:0.85rem; }
+  .find-pw .container .go-login {margin:40px 0 10px; text-align:right;}	
+  .find-pw .container .go-login a{color:#222; border-bottom:1px solid #222; font-size:.9rem;}
+
+
+
+  @media all and (min-width:650px) {
+
+  .find-pw {margin:150px auto 0;}
+  .find-pw .container {border:1px solid #ddd; width:450px; padding:35px; border-radius:.25rem;}
+  }
+
+
+
+
+
+
+  /************************************************************ 회원가입 *****************************************************************************/
+
+
+  .join {margin:0 auto;}
+  .join .container{padding:1.5rem;}
+  .join .container h4 {text-align:center; font-size:1.6rem; color:#222; font-weight:500; margin-bottom:30px;}
+  .join .container p {text-align:left; font-size:1.2rem; color:#222; font-weight:400; margin-bottom:20px;}	
+  .join .container form .form-group {margin-bottom:20px;}
+  .join .container form .form-group .form-control {height: calc(2.8rem); border:1px solid #ddd!important; background-color: #fff;}
+  .join .container form .form-group .form-control:focus { border:1px solid #aaa;}
+  .join .container form .form-group .form-control::placeholder{font-size:.85rem; color:#bbb; font-weight:400;}	
+  .join .container form .form-group label {font-size:.9rem; font-weight:500; color:#555; margin-bottom:2px;}
+  .join .container form .form-group input:focus {border-color: #999; }
+  .join .container form .form-group .form-control {height: calc(3rem); color:#222; border:1px solid #ddd;}
+  .join .container form .form-group .btn-primary {height: calc(3rem); box-shadow:none!important; border:none; width:100%; background-color:#f64e60; font-size:1rem; margin-top:10px; }
+  .join .container .go-login {margin:40px 0 10px; text-align:right;}	
+  .join .container .go-login a{color:#222; border-bottom:1px solid #222; font-size:.9rem;}
+  .join .container form .filebox {width:100%; display:flex; justify-content:space-between;}
+  .join .container form .filebox input[type="file"] {position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;}
+  .join .container form .filebox label {width:28%; display:inline-block; padding:0 1rem; color:#555; font-size:.9rem; line-height:calc(2.8rem); vertical-align:middle; background-color:#eee;
+   cursor:pointer; border:1px solid #ddd; border-radius:.25em; height:calc(2.8rem); margin-bottom:0; text-align: center; }
+  .join .container form .filebox input:disabled+label {opacity:1;}
+  .join .container form .filebox .upload-name {width:70%; display:inline-block; padding:0 1rem; height:calc(2.8rem); font-size:.9rem; vertical-align:middle; background-color:#fff; border:1px solid #ddd;
+    border-radius:.25em; -webkit-appearance:none; -moz-appearance:none; appearance:none; color:#222;}
+  .join .container form .filebox .upload-name::placeholder{font-size:.85rem; color:#bbb; font-weight:400;}	
+
+
+
+
+
+   @media all and (min-width:650px) {
+	   
+  .join {margin:30px auto; background-color:#fff;}
+  .join .container {border:1px solid #ddd; width:450px; padding:35px; border-radius:.25rem;}
+  .join .container form .form-group label {font-size:.9rem;}
+  .join .container form .form-group .form-control {height: calc(2.8rem); }
+	   
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

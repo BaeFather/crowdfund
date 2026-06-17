@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* 투자후기 */
+.review_tit_r {margin:0 auto;}
+.review_tit_r p {display:inline-block;font-family:'spoqahansans';font-size:30px;color:#4A6FE2;width:100%;text-align:left;}
+.review_tit_r p:last-child {display:inline-block;text-align:left;font-weight: 400;width:100%;font-size:16px;color:#5E5E5E;padding-top:10px;}
+
+/* BEST 후기글 */
+.review_best_title {position: absolute;top:-48px;left: 32%;}
+.review_best_list {position: relative;display:block;margin-top:90px !important;padding:30px 30px 15px 30px !important;border: 2px solid #326FD8;border-radius: 5px;}
+.review_best_list .review .review_box {position: relative;min-height:463px;width:300px;margin:15px;padding:15px;border: 1px solid #EDEDED;}
+.review_best_list .review .review_box:focus,
+.review_best_list .review .review_box:hover {border:1px solid #326FD8;}
+.review_best_list .review .review_box span {line-height: 24px;}
+.review_best_list .review .review_box .subject {display:block;color:#4A6FE2;font-size:17px;font-family:'spoqahansans';}
+.review_best_list .review .review_box .mem_name {display:block;font-size:17px;font-family:'spoqahansans';color:#A5A5A5;}
+.review_best_list .review .review_box .thumbnail {margin: 10px 0;}
+.review_best_list .review .review_box .contents {font-size: 15px;white-space:pre-line;word-break:break-all;display:block;height:100px;}
+.review_best_list .review .review_box .link {overflow:hidden;padding:10px 0;margin:15px 0;text-align:center;width:100%;}
+.review_best_list .review .review_box .link a {margin:0 auto;color:#FFF;padding:6px 20px;border-radius:4px;text-align:center;background-color:#326FD8;}
+.review_best_list .review .review_box .link a:focus,
+.review_best_list .review .review_box .link a:hover,
+.review_best_list .review .review_box .link a:active {color:#FAFAFA;background-color:#2a54b1;}
+
+/* 투자후기 글 */
+.review_list {display: block !important;padding:0 30px;margin-top:15px;}
+.review_list ul {display: table;}
+.review_list ul li {display:table-cell;}
+.review_list ul li .review {width:100%;display:flex;}
+.review_list ul li .review .review_box {position: relative;min-height:412px;width:301px;margin:15px;padding:15px;border: 1px solid #EDEDED;}
+.review_list ul li .review .review_box:focus,
+.review_list ul li .review .review_box:hover {border:1px solid #326FD8;}
+.review_list ul li .review .review_box span {line-height: 24px;}
+.review_list ul li .review .review_box .subject {display:block;color:#4A6FE2;font-size:18px;font-family:'spoqahansans';}
+.review_list ul li .review .review_box .mem_name {display:block;font-size:17px;font-family:'spoqahansans';color:#A5A5A5;}
+.review_list ul li .review .review_box .thumbnail {margin: 10px 0;}
+.review_list ul li .review .review_box .contents {font-size: 15px;white-space:pre-line;word-break:break-all;display:block;height:100px;}
+.review_list ul li .review .review_box .link {text-align:center;width:100%;margin:15px 0;}
+.review_list ul li .review .review_box .link a {margin:0 auto;color:#FFF;padding:6px 20px;border-radius:4px;text-align:center;background-color:#326FD8;}
+.review_list ul li .review .review_box .link a:focus,
+.review_list ul li .review .review_box .link a:hover,
+.review_list ul li .review .review_box .link a:active {color:#FAFAFA;background-color:#2a54b1;}
+.review_list ul li.review_empty {width: 100%;}
+
+.swiper-pagination {margin: 0 auto;position: relative !important;}
+.swiper-button-next {right: 0 !important;}
+.swiper-button-prev {left: 0 !important;}

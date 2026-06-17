@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>사이트관리 - 게시판관리 - 법인투자케어</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		
+        <!-- third party css -->
+        <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+		
+		 <!-- 추가 css -->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/header.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/site.css" rel="stylesheet" type="text/css" />
+		
+		
+		
+        <!-- App css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+		<style>
+		/*모달 테이블 커스텀 */
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table {width:100%;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr td{width:70%; padding:1rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px; }
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr th{width:30%; padding:1rem; border:1px solid #e0e0e0; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;  text-align: center;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr td p {margin-bottom:.5rem; font-weight: 600; color:#222;}
+
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body .modal-bt{display: flex; justify-content:center; padding:1rem 0 1.5rem; border-top:none;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body .btn-confirm {background-color: #ee321f; color:#fff; font-weight: 600; letter-spacing: -1px;}
+
+
+		@media (max-width:992px){
+
+		/*모달 테이블 커스텀 */
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table {border-bottom: 1px solid #e0e0e0;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr{display: flex;  flex-wrap: wrap; }
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr td{display: block;  align-items: center; width:65%; padding:1rem; border:1px solid #e0e0e0; border-bottom:none; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px;}
+		.wrapper .content-page .container-fluid .limit-info .modal-content .modal-body table tr th{display: flex; align-items: center; width:35%; padding:1rem; border:1px solid #e0e0e0; border-bottom:none; border-right:none; height:auto; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;  }
+
+
+		}
+		
+		</style>
+		
+		
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+            <div class="content-page">
+                <div class="content">
+                    <div class="container-fluid">
+
+
+						
+						<!--투자한도 팝업 시작 -->
+                        <button type="button" class="btn table-bt detail-bt" data-toggle="modal" data-target="#limit-info">투자한도안내</button>
+						<!--  팝업페이지 시작-->
+                        <div class="modal fade limit-info" id="limit-info" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+                        	<div class="modal-dialog modal-dialog-centered">
+                            	<div class="modal-content">
+                                	<div class="modal-header">
+                                    	<h4 class="modal-title" id="standard-modalLabel">투자한도안내</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+										<div>
+											<table>
+												<tr>
+													<th>개인</th>
+													<td><p>온투업 한도 3천만원</p>
+														- 부동산 상품 1천만원<br>
+														- 동일 차입자 5백만원
+													</td>
+												</tr>
+												<tr>
+													<th>소득적격</th>
+													<td><p>온투업 한도 1억원</p>
+														- 동일 차입자 2천만원
+													</td>
+												</tr>
+												<tr>
+													<th>전문/법인</th>
+													<td><p>투자 한도 없음</p>
+														- 상품별 모집금액의 최대 40%
+													</td>
+												</tr>
+											</table>
+											<div class="modal-bt">
+												<button type="button" class="btn btn-confirm">투자한도 늘리기</button>
+											</div>	
+										</div>
+									</div>
+                            	</div>
+                         	</div>
+                         </div>
+            			<!--  팝업페이지 끝-->
+
+
+
+                    </div>
+                    <!-- container -->
+
+                </div>
+                <!-- content -->
+
+
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+		 <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+        <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+        <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+        <script src="assets/js/vendor/dataTables.select.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.datatable-init.js"></script>
+        <!-- end demo js-->
+
+    </body>
+</html>

@@ -1,0 +1,637 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+	ul li {list-style:none;}
+
+
+
+
+	.clear {clear:both;}
+
+	.br {display:none;}
+	.del {display:inline-block;}
+
+	/*-----------------------  input/ select  ----------------------------*/
+
+
+
+	input[type="radio"] {display: none;}
+
+
+	input[type="radio"]:checked + span:before {
+    border-color: #00a0ea;
+	}
+
+
+	input[type="radio"] + span {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    line-height: 26px;
+	color: #383838;
+	}
+
+
+	input[type="radio"] + span:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all .3s;
+    background-color: #fff;
+	}
+
+
+	input[type="radio"] + span:after {
+    content: "";
+    transition: all .2s;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+	}
+
+
+	input[type="radio"]:checked + span:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 5px;
+    background-image: url("../img/check.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	}
+
+
+
+
+
+
+	.apt_radio input[type="radio"] + span:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all .3s;
+    background-color: #fff;
+	border-radius: 12px;
+	}
+
+
+
+
+	.apt_radio input[type="radio"]:checked + span:after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 5px;
+    left: 5px;
+	border-radius: 7px;
+	background-image: none;
+	background-color: #324fb9!important;
+	background-position: center center;
+	background-repeat: no-repeat;
+	}
+
+
+
+
+
+
+
+	input[type="checkbox"] {display: none;}
+
+
+	input[type="checkbox"]:checked + span:before {
+    border-color: #324fb9;
+
+	}
+
+
+	input[type="checkbox"] + span {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    line-height: 26px;
+	color: #383838;
+	}
+
+
+	input[type="checkbox"] + span:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all .3s;
+    background-color: #fff;
+	}
+
+
+	input[type="checkbox"] + span:after {
+    content: "";
+    transition: all .2s;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+	}
+
+
+	input[type="checkbox"]:checked + span:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 5px;
+    background-image: url("../img/check.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;
+	}
+
+
+
+
+	select,.citys,.gus,.dongs{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ccc;
+    height: 40px;
+    font-size: 16px;
+	font-weight: 500;
+    color: #777;
+    width:230px;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("../img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+	}
+
+
+	select,.b_names,.areas {width:350px;}
+
+
+	select::-ms-expand { display:none; }
+
+
+	option:disabled {color:#aaa;}
+
+
+	input[type=text],.dong_num,.ho_num,.floor_num {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    height: 40px;
+    font-size: 16px;
+    color: #222;
+    width:230px;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+
+	input.addr_new {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    height: 40px;
+    font-size: 16px;
+    color: #222;
+    width:350px;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+
+	input.loansum {width:530px;}
+	input.detail_add {width:710px;}
+	input.loansum2 {width:710px; border: 1px solid #98a7dc;}
+	input.tel{width:350px; border: 1px solid #98a7dc;}
+	input.name{width:350px; border: 1px solid #98a7dc;}
+	input::-webkit-input-placeholder {color:#aaa; text-align: left}
+	input::-moz-placeholder {color:#aaa; text-align: left}
+	input:-ms-input-placeholder {color:#aaa; text-align: left}
+	input:-moz-placeholder {color:#aaa; text-align: left}
+	input::placeholder{color:#aaa; text-align: left}
+
+
+/*----------------------- 웹_신청페이지 -----------------------------*/
+
+
+
+
+	#loan {margin:0 auto; width:100%; padding-bottom: 50px; background-color: #f8f8f8;}
+	#loan ul li {list-style:none; float: left;}
+
+
+
+     /*상단비주얼*/
+
+	.loan1 {text-align:center; }
+	.loan1 h2 {font-size:30px; color:#222; padding-top: 80px; font-weight: 400;}
+	.loan1 p {font-size:16px; color:#777; padding-top: 20px;}
+
+
+
+     /*과정순서(넘버1/2)*/
+
+	.loan3 {padding: 30px 0;   text-align: center;  }
+	.loan3 ul {display: inline-block;}
+	.loan3 ul li {text-align: center; font-size: 18px; font-weight:500;}
+	.ball_01 {border-radius: 50px; width:30px; height: 30px; background-color: #324fb9; color:#fff; margin-right:10px;  line-height: 30px; }
+	.ball_02 {border-radius: 50px; width:30px; height: 30px; background-color: #cccccc; color:#fff; line-height: 30px;}
+
+	.ball_03 {border-radius: 50px; width:30px; height: 30px; background-color: #cccccc; color:#fff; margin-right:10px;  line-height: 30px; }
+	.ball_04 {border-radius: 50px; width:30px; height: 30px; background-color: #324fb9; color:#fff; line-height: 30px;}
+
+
+
+	.ball_07 {border-radius: 50px; width:30px; height: 30px; background-color: #cccccc; color:#fff; margin-right:10px; line-height: 30px; }
+	.ball_08 {border-radius: 50px; width:30px; height: 30px; background-color: #cccccc; color:#fff; margin-right:10px; line-height: 30px;}
+	.ball_09 {border-radius: 50px; width:30px; height: 30px; background-color: #324fb9; color:#fff;line-height: 30px;}
+
+
+
+
+
+
+     /*폼*/
+
+	.loan4 {width:950px; clear: both; color:#222; text-align: left; border:1px solid #ddd; background-color: #fff; border-radius: 20px;}
+    .loan_form {width:710px;}
+	.loan4 p {clear: both; padding:80px 0 20px; font-weight: 600; font-size:22px; color:#333; letter-spacing:-1px;}
+	.loan4 .step {padding-top:50px;}
+	.loan4 .step22 {padding-top:30px;}
+	.loan4 ul li  {float:left; padding-top:10px;}
+	.loan4 ul .step1 {padding-right:10px;}
+	.loan4 ul .step2 {padding-right:10px;}
+	.loan4 ul .step3 {padding-right:0px;}
+	.loan4 .radiobt {font-size:18px; font-weight: 500;}
+	.loan4 ul .selbox {clear:both;}
+	.loan4 .pd {padding-left:50px;}
+	.loan4 .info {font-size:16px; font-weight: 500; padding:5px 0 0 20px; color:#777;}
+	.loan4 .sum {position:relative;}
+	.loan4 .won {position:absolute; right: 20px; top: 5px; z-index: 3; float: right; width: auto; border: none; padding: 0 10px 0 0; line-height: 50px;
+                 font-size: 18px; padding-left: 0; background-color: transparent; color: #222;}
+
+
+     /*버튼*/
+	.btn1 {text-align:center; padding:100px 0; clear: both;}
+	.btn1 a {font-size: 24px; color: #fff;  box-sizing:border-box; border-radius: 5px; text-align: center; display: block;
+	         background-color: #324fb9; width: 300px;text-decoration: none; height: 60px; line-height: 60px;  }
+
+	/*상담*/
+	.m_call {display:none;}
+	.call {width:100%; height: 100px; border-bottom:1px solid #eee;}
+	.call ul {width:920px; margin: 0 auto;}
+	.call ul li {float:left; padding:0;}
+	.call ul li:nth-child(1) {font-size:18px; line-height: 22px; padding-top:25px; box-sizing: border-box; color:#333; font-weight: 400; letter-spacing: -1px;
+	text-align:left; padding-right:145px;}
+	.call ul li:nth-child(1) span{font-size:14px; line-height: 16px; padding-top:10px; box-sizing: border-box; color:#333; font-weight: 400;}
+	.call ul li:nth-child(2) img {margin-top:30px; width:36px;   }
+	.call ul li:nth-child(3) {font-size:24px; font-weight: 600; color:333; padding-top:30px; padding-left:10px;}
+	.loan_warning{font-size:14px; line-height: 18px; padding:30px 0 50px; box-sizing: border-box; color:#777; font-weight: 400;}
+
+
+
+/*----------------------- 웹_결과페이지 -성공  -----------------------------*/
+
+
+
+     /*상단비주얼*/
+
+
+	.re_loan1 h2 {font-size:65px; padding-bottom: 20px; margin-top:-5px; color:#33a5ed;}
+	.re_loan1 p {font-size:40px; padding-top: 50px;letter-spacing:-1px; color:#222;}
+	.re_loan1 span {font-size:18px; color:#777777; letter-spacing:-0.5px;}
+
+
+
+	/*대출결과*/
+	.result_loan {width:950px; clear: both; color:#222; text-align: left; border:1px solid #ddd; background-color: #fff; border-radius: 20px;}
+	.loan_form {width:710px;}
+	.loan_value {text-align:center; padding:50px 0;}
+	.loan_value h3 {font-size:30px; color:#333; font-weight: 400; letter-spacing: -1px;}
+	.loan_value p {font-size:46px; color:#324fb9; font-weight: 500; letter-spacing: -1px;}
+	.result_loan .title {padding-top:30px;  font-weight: 600; font-size:22px; color:#333; letter-spacing:-1px; padding-bottom: 20px; text-align: left;}
+	.result_loan table {border-spacing: 0; width: 710px;}
+	.result_loan .first {border-top: 2px solid #324fb9;}
+	.result_loan .last {border-bottom: 1px solid #b7bbd1;}
+	.result_loan table th {font-size:18px; border-bottom: 1px solid #ccc;  background-color: #f9f9f9; text-align: center;letter-spacing:-1px; padding: 20px 0; border-right:1px solid #ccc; width:180px; white-space:nowrap; font-weight: 300;}
+	.result_loan table td {text-align:right;  font-size:18px; border-bottom: 1px solid #ccc; line-height:20px; padding-right:10px;}
+	.result_info {float:right; font-size:15px; color:#555; font-weight: 300; letter-spacing: 0; padding-top:10px;}
+
+
+
+     /*폼*/
+
+	.re_loan4 {width:710px; clear: both;  color:#222; text-align: left; height: 280px; margin-top:70px; }
+	.re_loan4 p {clear: both; padding-bottom:20px; font-weight: 600; font-size:22px; color:#333; letter-spacing:-0.5px;}
+	.re_loan4 ul li  {float:left; padding-top:10px;}
+	.re_loan4 .info {font-size:16px; font-weight: 500; padding:5px 0 0 20px; color:#222;}
+	.re_loan4 .sum {position:relative;}
+	.re_loan4 .won {position:absolute; right: 20px; top: 5px; z-index: 3; float: right; width: auto; border: none; padding: 0 10px 0 0; line-height: 50px;
+                 font-size: 18px; padding-left: 0; background-color: transparent; color: #324fb9;}
+	.re_loan4 .tel {margin-left:10px;}
+ 	.re_loan4 .loansum2 {text-align: right; padding-right: 100px!important;}
+	.re_label_check {margin-top:20px; font-size:18px;}
+
+
+
+
+     /*버튼*/
+	.btn2 {text-align:center; padding:50px 0 80px; clear: both;}
+	.btn2 a {font-size: 24px; color: #fff;  box-sizing:border-box; border-radius: 5px; text-align: center; display: block;
+	         background-color: #324fb9; width: 300px;text-decoration: none; height: 60px; line-height: 60px; }
+
+
+
+
+
+
+
+/*----------------------- 웹_결과페이지-실패 -----------------------------*/
+
+
+
+
+
+     /*문구안내 */
+
+	.fail_loan4 {width:710px;}
+	.fail_loan4 .text {font-size:18px; color:#555; line-height: 24px; padding-top:30px; text-align: left;}
+	.fail_loan4 .text span {color:#324fb9;}
+
+     /*버튼*/
+
+	.btn3 {text-align:center; padding:50px 0 80px; clear: both;}
+	.btn3 a {font-size: 24px; color: #fff;  box-sizing:border-box; border-radius: 5px; text-align: center; display: block;
+	         background-color: #324fb9; width: 300px;text-decoration: none; height: 60px; line-height: 60px; }
+
+
+
+	.hiddenbr {display:none;}
+	.hiddentitle {display:inline-block;width:auto;}
+
+
+
+/*----------------------- 웹_결과페이지-완료 -----------------------------*/
+
+
+
+
+
+     /*문구안내 */
+
+	.finish_loan4 {width:710px; text-align: center;}
+	.finish_loan4 img {padding:50px 0 20px;}
+	.finish_loan4 .text {font-size:20px; color:#555; line-height: 30px; padding-top:20px; font-weight: 400;}
+	.finish_loan4 .text span {color:#324fb9;}
+
+     /*버튼*/
+
+	.btn3 {text-align:center; padding:50px 0 80px; clear: both;}
+	.btn3 a {font-size: 24px; color: #fff;  box-sizing:border-box; border-radius: 5px; text-align: center; display: block;
+	         background-color: #324fb9; width: 300px;text-decoration: none; height: 60px; line-height: 60px; }
+
+
+
+	.hiddenbr {display:none;}
+	.hiddentitle {display:inline-block;width:auto;}
+
+
+
+
+
+
+
+
+@media all and (max-width: 900px){
+
+
+	.del {display:none;}
+
+/*----------------------- 모바일_신청페이지 -----------------------------*/
+
+
+
+	select, .citys, .gus, .dongs {
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ccc;
+    height: 50px;
+    font-size: 18px;
+	font-weight: 500;
+	width:100%;
+    color: #555;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("../img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+
+	}
+
+	input[type=text] {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    height: 50px;
+    font-size: 18px;
+    color: #222;
+    width:100%;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+
+
+	.b_names, .areas {
+		width: 100%;
+	}
+
+	input.loansum2 {border: 1px solid #98a7dc;}
+	input.tel{border: 1px solid #98a7dc;}
+	input.name{border: 1px solid #98a7dc;}
+	#loan {background-color: #f8f8f8; padding-bottom: 0px;}
+	#loan ul li {list-style:none; float: left;}
+	.hiddenbr {display:block;}
+	.hiddentitle {display:none;}
+
+     /*상단비주얼*/
+
+	.loan1 h2 {font-size:26px; padding:50px 0 0;}
+	.loan1 p {font-size:16px; padding-top: 10px; letter-spacing: -1px; word-spacing: -1px;}
+
+
+     /*과정순서(넘버1/2)*/
+
+	.loan3 {padding: 20px 0 30px; text-align: center; width:100%;float:none;overflow:hidden;}
+	.loan3 ul { display: inline-block;float:none;}
+	.loan3 ul li {text-align: center; font-size:20px; font-weight:500; width:100%;}
+	.loan3 .ball_01 {border-radius: 50px; width:40px; height: 40px; background-color: #324fb9; color:#fff; margin-right:20px; line-height: 40px; }
+	.loan3 .ball_02 {border-radius: 50px; width:40px; height: 40px; background-color: #cccccc; color:#fff; line-height: 40px; }
+	.loan3 .ball_04 {border-radius: 50px; width:40px; height: 40px; background-color: #324fb9; color:#fff; margin-right:20px; line-height: 40px; }
+	.loan3 .ball_03 {border-radius: 50px; width:40px; height: 40px; background-color: #cccccc; color:#fff; line-height: 40px; }
+
+	.loan3 .ball_07 {border-radius: 50px; width:40px; height: 40px; background-color: #cccccc; color:#fff; margin-right:20px; line-height: 40px; }
+	.loan3 .ball_08 {border-radius: 50px; width:40px; height: 40px; background-color: #cccccc; color:#fff; margin-right:20px; line-height: 40px; }
+	.loan3 .ball_09 {border-radius: 50px; width:40px; height: 40px; background-color: #324fb9; color:#fff; line-height: 40px; }
+
+     /*폼*/
+    .loan_form {width:100%;}
+	.loan4 {clear: both;  width:100%;float:none; border:none; border-radius: 0;}
+	.loan4 p {clear: both; display:block; text-align: center;padding:10px 5%; font-weight: 600; font-size:24px; color:#222;  }
+	.loan4 .title {clear:both;padding:30px 0 20px 0;letter-spacing:-1px;}
+	.loan4 .title2 {clear:both;padding:30px 0 0px 0;letter-spacing:-1px;}
+	.loan4 ul li  {float:none; padding:0 5%; width:100%;}
+	.loan4 ul li.step1 {padding-bottom:3%;padding-right:5%;}
+	.loan4 ul li.step2 {padding-bottom:3%;padding-right:5%;}
+	.loan4 ul li.step3 {padding-bottom:3%;padding-right:5%;}
+	.loan4 .step {padding-top:10px;padding-bottom:10px;}
+	.loan4 .step22 {padding-top:10px;padding-bottom:0px;}
+	.loan4 .pd {padding:0 5%;}
+
+	.loan4 .th {font-size:18px; font-weight: 300; padding-top:20px;}
+	.loan4 .radiobt {font-size:18px; font-weight: 500;}
+	.loan4 .radiobt li {padding-bottom:10px;}
+	.loan4 .radiobt1 li {float: left; width: 50%; padding-bottom:20px; font-size:18px; font-weight: 500;}
+	.loan4 .pd {padding-bottom: 3%;}
+	.loan4 .info {display:block;clear:both; display:block; float: none;background-color:#fff; font-size:16px; font-weight: 500; padding-bottom:10px; padding-right:5%; padding-top:20px;letter-spacing: -1px; color:#555;border-top:10px solid #f5f5f5}
+	.loan4 .sum {position:relative;}
+	.loan4 .won {position:absolute; right: 7%; top: 0; z-index: 3; float: right; width: auto; border: none; padding: 0 10px 0 0; line-height: 50px; font-size: 18px; padding-left: 0; background-color: transparent; color: #222;}
+
+     /*버튼*/
+	.btn1 {padding:0;}
+	.btn1 a {position:fixed; bottom: 0; font-size: 24px; color: #fff;  box-sizing:border-box; border-radius:0px; text-align: center; display: block;
+	         background-color: #324fb9; width: 100%; text-decoration: none; z-index: 1000;  height: 80px; line-height: 80px;}
+
+
+
+	 /*상담*/
+	.call {display:none;}
+	.loan_warning {display:none;}
+	.m_call {display:block;}
+	.m_call {width:100%; border-top:1px solid #eee; padding: 20px 0 120px; margin-top:30px;}
+	.m_call ul {width:100%; margin: 0 auto;}
+	.m_call ul li {float:none!important;}
+	.m_call ul li:nth-child(1) {font-size:18px;padding-top:50px; box-sizing: border-box; color:#333; font-weight: 400; letter-spacing: -1px;
+	text-align:center;}
+	.m_call ul li:nth-child(1) span{font-size:14px; padding-top:10px; box-sizing: border-box; color:#333; font-weight: 400;}
+	.m_call ul li:nth-child(2) {text-align: center;}
+	.m_call ul li:nth-child(2) img {width:35px; padding-bottom:5px; vertical-align: bottom!important;}
+	.m_call ul li:nth-child(2) span {font-size:30px; font-weight: 600; padding-left: 10px;}
+	.m_loan_warning{font-size:13px; padding:20px 5% 0; box-sizing: border-box; color:#777; font-weight: 400; line-height: 18px; text-align: center;}
+
+	input.loansum {text-align: right; padding-right: 20%!important;width:100%;}
+
+
+
+
+
+
+/*----------------------- 모바일_결과페이지 - 성공  -----------------------------*/
+
+
+	.loan_value {text-align:center; padding:50px 0 10px;}
+	.loan_value h3 {font-size:26px; color:#333; font-weight: 400; letter-spacing: -1px;}
+	.loan_value p {font-size:34px; color:#324fb9; font-weight: 500; letter-spacing: -1px; line-height: 40px;}
+
+
+	/*조회결과*/
+	.result_loan {clear: both; width: 100%; border:none; border-radius: 0;}
+	.result_loan .title {padding:10px 0; font-size:24px; color:#222; letter-spacing:0; text-align: center; background-color: #fff; }
+	.result_loan table {border-spacing: 0; width: 100%;  padding:20px 3% 10px;}
+	.result_loan table th {font-size:14px; letter-spacing:-1px; padding:3% 2%; width:auto;}
+	.result_loan table td {font-size:14px; padding:3% 3% 3% 0; letter-spacing:-1px;}
+	.result_loan .result_info {padding:0 3% 30px; font-size:13px; letter-spacing: -1px;}
+
+
+	/*폼*/
+	.re_loan4 {background-color: #fff; height:auto; margin-top:0px; padding:15px 0; width:100%;}
+	.re_loan4 p {clear: both; text-align: center; padding:10px 0;font-weight: 600; font-size:20px; color:#222; letter-spacing:0;}
+	.re_loan4 ul li  {clear: both; padding:0 5% 3%; width:100%; background-color:#fff;}
+	.re_loan4 .info {display: block; text-align: right; font-size:16px; font-weight: 500; padding:20px 0 5px; padding-right:5%; letter-spacing: -1px; color:#555; background-color:#fff; width: 100%;}
+	.re_loan4 .sum {position:relative;}
+	.re_loan4 .won {position:absolute; right: 7%; top: 0; z-index: 3; float: right; width: auto; border: none; padding: 0 10px 0 0; line-height: 50px;
+                 font-size: 18px; padding-left: 0; background-color: transparent; color: #324fb9;}
+	.re_loan4 .tel {margin-left:0;}
+ 	.re_loan4 .loansum2 {text-align: right; padding-right: 100px!important;}
+	.re_label_check {font-size:16px; padding:10px 5% 10px!important; margin-top: 0;}
+
+
+	.btn2 {padding:0;}
+	.btn2 a {position:fixed; bottom: 0; font-size: 24px; color: #fff;  box-sizing:border-box; border-radius:0px; text-align: center; display: block;
+	         background-color: #324fb9; width: 100%; text-decoration: none;  z-index: 1000; height: 80px; line-height: 80px;}
+
+
+
+
+
+/*----------------------- 웹_결과페이지-실패 -----------------------------*/
+
+
+
+    /*결과*/
+
+	.fail_loan4 {width:100%;}
+	.fail_loan4 .text {font-size:17px; color:#555; line-height: 20px; padding:10px 5%; line-height: 20px;}
+	.fail_loan4 .text span {color:#324fb9; padding:0; font-size:17px;}
+
+     /*버튼*/
+	.btn3 {padding:0;}
+	.btn3 a {position:fixed; bottom: 0; font-size: 24px; color: #fff;  box-sizing:border-box; border-radius:0px; text-align: center; display: block;
+	         background-color: #324fb9; width: 100%; text-decoration: none;  z-index: 1000; height: 80px; line-height: 80px;}
+
+	
+	
+	
+	/*----------------------- 모바일_결과페이지-완료 -----------------------------*/
+
+
+
+
+
+     /*문구안내 */
+
+	.finish_loan4 {width:100%; text-align: center;}
+	.finish_loan4 img {padding:30px 0 0px;}
+	.finish_loan4 .text {font-size:20px; color:#555; line-height: 28px; padding-top:30px; font-weight: 400;}
+	.finish_loan4 .text span {color:#324fb9;}
+
+     /*버튼*/
+
+	.btn3 {padding:0;}
+	.btn3 a {position:fixed; bottom: 0; font-size: 24px; color: #fff;  box-sizing:border-box; border-radius:0px; text-align: center; display: block;
+	         background-color: #324fb9; width: 100%; text-decoration: none;  z-index: 1000; height: 80px; line-height: 80px;}
+	
+
+	.finish_loan4 .br {display:block;}
+	.hiddenbr {display:none;}
+	.hiddentitle {display:inline-block;width:auto;}
+
+	
+	
+	
+
+}

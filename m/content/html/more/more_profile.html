@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>회원정보</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/more.css" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <div class="back_btn">
+                <a href="#"><img src="img/back_icon.png" /></a>
+            </div>
+            <h2>회원정보</h2>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### Profile Start -->
+        <div id="Profile">
+            <form>
+                <div class="form_wrap">
+                    <ul>
+                        <li>
+                            <div class="label_box">이름</div>
+                            <div class="form_box">
+                                이상규
+                            </div>
+                        </li>
+                        <li>
+                            <div class="label_box">아이디</div>
+                            <div class="form_box">
+                                hellofunding
+                            </div>
+                        </li>
+                        <li>
+                            <div class="label_box">이메일</div>
+                            <div class="form_box">
+                                <input type="text" value="hellofunding" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="label_box">비밀번호</div>
+                            <div class="form_box">
+                                <input type="password" value="1111111" />
+                                <button type="button">수정</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="label_box">휴대전화</div>
+                            <div class="form_box">
+                                <input type="text" value="010-1234-5678" />
+                                <button type="button">수정</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="label_box">투자자유형</div>
+                            <div class="form_box">
+                                <input type="text" value="일반투자자" />
+                                <button type="button">변경</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="agreement">
+                        <p><input type="checkbox" id="agree" />[선택] 마케팅 정보 수집 및 활용에 동의합니다.</p>
+                        <p class="info">* 마케팅 동의 시 헬로펀딩 상품정보 및 이벤트 정보를 받으실 수 있습니다.</p>
+                    </div>
+
+                    <div class="btn_box">
+                        <button type="button" class="logout">로그아웃</button>
+                        <button type="button" class="secession">회원탈퇴</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- ### Profile End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button>수정</button>
+        </div>
+        <!-- ### BottomBtn End -->
+    </body>
+</html>

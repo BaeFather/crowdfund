@@ -1,0 +1,47 @@
+# Env / secrets
+.env
+.htaccess
+
+# Build / artifacts
+*.tar.gz
+*.zip
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Cursor / VSCode / IDE state
+.cursor/
+.cursor-server/
+.vscode-server/
+
+# MCP config (contains DB credentials)
+.mcp.json
+
+# SSL / keys (never commit)
+ssl/
+*.key
+
+# Local-only secret aggregations
+.env.gykcha
+
+# Temporary / helper folders
+_gykchamain_tmp_clone/
+deploy
+
+# Huge archives / parts
+*.tgz
+*.tar.gz
+*.tar.gz.part_*
+
+*.pdf
+*.png
+*.jpg
+*.bmp
+*.mp3
+*.mp4
+
+data/session/*
+images/*
+img/*

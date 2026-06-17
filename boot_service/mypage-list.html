@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>마이페이지-투자내역</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer, common css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+		<link rel="stylesheet" href="./assets/css/common/common.css">
+
+		<!-- contents css -->
+		<link href="./assets/css/page/mypage.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+    </head>
+
+    <body class="loading">
+        <!-- header start -->
+        <!-- PC -->
+		<section class="header">
+			<header>
+				<div class="header_wrap">
+					<h1><a href="/sp/main"></a></h1>
+					<nav>
+						<ul class="depth1">
+							<li><a href="/sp/product/productList">투자하기</a></li>
+							<li><a href="/sp/loan">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="/sp/introduce/company">회사소개</a>
+								<ul class="depth2">
+									<li><a href="/sp/introduce/company">회사소개</a></li>
+									<li><a href="/sp/introduce/status">사업공시</a></li>
+									<!--                                <li><a href="">채용안내</a></li>-->
+								</ul>
+							</li>
+							<li><a href="/sp/introduce/userguide">이용안내</a>
+								<ul class="depth2">
+									<li><a href="/sp/introduce/userguide">이용가이드</a></li>
+									<li><a href="/sp/information/notice">공지사항</a></li>
+									<li><a href="/sp/information/faq">도움말</a></li>
+									<li><a href="/sp/information/investType">투자유형 안내</a></li>
+									<li><a href="/sp/invest/corpInvestGuide">법인투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="/sp/magazine">헬로매거진</a>
+								<ul class="depth2">
+									<li><a href="/sp/magazine">헬로매거진</a></li>
+									<li><a href="/sp/event/reviewList">투자후기</a></li>
+									<li><a href="/sp/event/eventList">이벤트</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="pre_login btn_box">
+						<a href="/sp/login"><button class="login_btn">로그인</button></a>
+						<a href="/sp/join"><button class="join_btn">회원가입</button></a>
+					</div>
+
+				</div>
+
+				<!-- Tablet, Mobile -->
+				<div class="m_header_wrap">
+					<div class="dimmed"></div>
+					<h1><a href="/sp/main"></a></h1>
+					<div class="m_menu_box">
+						<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+					</div>
+					<div id="menuList" class="menu_list_container">
+						<div class="menu_top">
+							<div class="menu_logo">
+								<a href="/sp/main">
+									<img src="/assets/images/header/hello_logo.png" alt="hellofunding logo">
+								</a>
+							</div>
+							<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+						</div>
+						<div class="menu_top_content">
+							<div class="pre_login btn_box">
+								<a href="/sp/login"><button class="login_btn">로그인</button></a>
+								<a href="/sp/join"><button class="join_btn">회원가입</button></a>
+							</div>
+
+						</div>
+						<nav>
+							<ul class="depth1">
+								<li><a href="/sp/product/productList">투자하기</a></li>
+								<li><a href="/sp/loan">대출하기</a></li>
+							</ul>
+							<ul class="depth1">
+								<li><p>회사소개<span></span></p>
+									<ul class="depth2">
+										<li><a href="/sp/introduce/company">- 회사소개</a></li>
+										<li><a href="/sp/introduce/status">- 사업공시</a></li>
+										<!--                                    <li><a href="">- 채용안내</a></li>-->
+									</ul>
+								</li>
+								<li><p>이용안내<span></span></p>
+									<ul class="depth2">
+										<li><a href="/sp/introduce/userguide">- 이용가이드</a></li>
+										<li><a href="/sp/information/notice">- 공지사항</a></li>
+										<li><a href="/sp/information/faq">- 도움말</a></li>
+										<li><a href="/sp/information/investType">- 투자유형 안내</a></li>
+										<li><a href="/sp/invest/corpInvestGuide">- 법인투자 안내</a></li>
+									</ul>
+								</li>
+								<li><p>헬로매거진<span></span></p>
+									<ul class="depth2">
+										<li><a href="/sp/magazine">- 헬로매거진</a></li>
+										<li><a href="/sp/event/eventList">- 이벤트</a></li>
+										<li><a href="/sp/event/reviewList">- 투자후기</a></li>
+									</ul>
+								</li>
+							</ul>
+							<div class="menu_bottom_content">
+								<ul>
+									<li>헬로펀딩 고객센터</li>
+									<li>1588-6760</li>
+									<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+								</ul>
+								<div><p><a href="https://pf.kakao.com/_xgAdWu">카카오톡<br />채팅상담</a></p></div>
+							</div>
+						</nav>
+					</div>
+
+				</div>
+			</header>
+			<form method="get" id="reloadForm" name="reloadForm" action="/sp/withdraw/session/reload">
+				<input type="hidden" id="currentUrl" name="currentUrl">
+				<input type="hidden" id="reloadFlag" name="reloadFlag" value="">
+			</form>
+		</section>
+		<!-- header end -->	
+		
+		<section class="mypage-Investment-list">
+			<!-- tab start -->
+			<div class="tab-nav">
+				<div class="nav-flex">	
+                	<ul class="nav nav-pills">
+                    	<li class="nav-item">
+                    		<a href="mypage-board.html" class="nav-link">투자관리</a>
+                    	</li>
+                        <li class="nav-item">
+                        	<a href="mypage-list.html" class="nav-link active">투자내역</a>
+                        </li>
+						<li class="nav-item">
+                            <a href="mypage-schedule.html" class="nav-link">상환스케줄</a>
+                        </li>
+						<li class="nav-item">
+                        	<a href="mypage-deposit.html" class="nav-link">예치금/포인트</a>
+                       </li>
+                	</ul>
+				</div>	
+			</div>
+			<!-- tab end -->	
+			<div class="contents-wrap">
+				<!-- 검색박스 시작-->	
+				<div class="btn-box">
+					<div class="left-bt">
+						<div class="search-bt">
+							<button class="search-btn" data-toggle="modal" data-target="#search-pop"><i class="uil uil-search"></i> 상품검색</button>
+						</div>
+						<div class="vote-bt">
+							<button class="btn" type="button"  data-toggle="modal" data-target="#vote-pop">연장/매각 투표</button>
+						</div>
+					</div>	
+					<div class="web-bt">
+						<div class="receipt-bt">
+							<button type="button" class="btn btn-receipt shadow-none" onclick = "location.href = 'tax-receipt.html' ">원천징수영수증</button>
+						</div>
+						<div class="download-bt">
+							<button type="button" class="btn btn-down shadow-none">내역 다운로드</button>
+						</div>
+					</div>
+				</div>
+				<!-- 검색박스 끝-->	
+				
+				<!-- 리스트 시작-->	
+				<div class="tab-content">
+					<div class="tab-pane show active" id="bordered-tabs-code">
+						<div class="container-fluid">
+							<div id="investList" class="row">
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제8203호] 인천 용현동 인천에스케이스카이뷰아파트</p>
+												</h4>
+												<div class="table">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>9.9%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>700만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>12개월</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td style="color:#F64E60;">모집중</td>
+															</tr>
+															<tr>
+																<td>투자취소</td>
+																<td><a href="#" class="invest_cancel_button">취소하기</a></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div> <!-- end col -->
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제8060호] 소상공인 확정매출채권T 59호</p>
+												</h4>
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>12.00%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>500만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>3일</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td style="color:#0BB783;">모집완료</td>
+															</tr>
+															<tr>
+																<td>상환예정일</td>
+																<td>-</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div>
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제7962호] 서울 방배동 토지 브릿지 2차</p>
+												</h4>
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>16.00%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>1000만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>6개월</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td style="color:#8950FC;">상환중</td>
+															</tr>
+															<tr>
+																<td>상환예정일</td>
+																<td>2022.08.30</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div>
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제8008호] 안산 고잔동 호수공원아파트</p>
+												</h4>
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>9.5%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>140만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>12개월</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td style="color:#FFA800;">연체/지연</td>
+															</tr>
+															<tr>
+																<td>상환예정일</td>
+																<td>2022.03.24</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div> <!-- end col -->
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제8032호] 소상공인 확정매출채권P 330호</p>
+												</h4>
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>12.00%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>500만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>2일</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td>상환완료</td>
+															</tr>
+															<tr>
+																<td>상환예정일</td>
+																<td>2022.03.01</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div>
+								<div class="col-md-6 col-xl-3">
+									<!-- project card -->
+									<div class="card d-block">
+										<a href="" class="myInvest_list_box">
+											<div class="card-body">
+												<h4>
+													<p class="text-title">[제7981호] 온라인 쇼핑몰 확정매출채권 286호</p>
+												</h4>
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<tr>
+																<td>연 수익률</td>
+																<td>12.00%</td>
+															</tr>
+															<tr>
+																<td>투자금액</td>
+																<td>100만원</td>
+															</tr>
+															<tr>
+																<td>투자기간</td>
+																<td>3일</td>
+															</tr>
+															<tr>
+																<td>투자상태</td>
+																<td>상환완료</td>
+															</tr>
+															<tr>
+																<td>상환예정일</td>
+																<td>2022.02.30</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div> <!-- end card-body-->
+										</a>
+									</div> <!-- end card-->
+								</div>
+							</div>	
+
+							<div class="list-add-bt"><button type="button" class="btn btn-secondary">더보기</button></div>
+						</div> 
+
+
+					</div>			
+				</div> 
+				<!-- 리스트 끝 -->	
+				
+			</div>
+		</section>
+		
+		
+		<!--  상품검색 시작-->
+        <div class="modal fade search-pop" id="search-pop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">상품검색</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<div class="pro-name">
+							<span><i class="uil uil-search"></i></span>
+							<input class="form-control" type="text" id="pro-name" placeholder="상품명 입력">
+						</div>
+						
+
+						<div class="pro-type">
+							<h5>투자상품</h5>
+							<div class="pro-type-wrap">
+								<button class="active">전체</button>
+								<button>SCF</button>
+								<button>주택담보</button>
+								<button>부동산PF</button>
+								<button>기타</button>
+							</div>
+						</div>
+						<div class="pro-status">
+							<h5>상품상태</h5>
+							<div class="pro-status-wrap">
+								<button class="active">전체</button>
+								<button>모집중</button>
+								<button>모집완료</button>
+								<button>상환중</button>
+								<button>상환완료</button>
+								<button>상환지연</button>
+								<button>연체중</button>
+							</div>
+						</div>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-confirm">검색</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  상품검색 끝-->
+		
+		
+		<!--  연장/매각투표 시작-->
+        <div class="modal fade vote-pop" id="vote-pop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel1">연장/매각 투표</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<p><span>채권 만기연장 또는 매각동의 찬/반 투표</span>가 필요한 상품이 있습니다. <br class="br">투표에 참여해주세요.</p>
+						<div class="list">
+							<div>
+								<p class="tit">[제8430호] 김포 장기동 중흥에스클래스리버티아파트</p>
+								<p class="date">투표기간 : 2023-01-02 ~ 2023-01-05</p>
+							</div>
+							<button class="view-bt">내용보기</button>
+						</div>
+						<div class="list">
+							<div>
+								<p class="tit">[제7365호] 서울 봉천동 벽산블루밍아파트</p>
+								<p class="date">투표기간 : 2023-01-02 ~ 2023-01-05</p>
+							</div>
+							<button class="vote-bt">투표하기</button>
+						</div>
+                    </div>
+                    <div class="modal-footer">
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  연장/매각투표 끝-->
+		
+
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+
+    </body>
+</html>

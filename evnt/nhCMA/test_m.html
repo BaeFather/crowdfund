@@ -1,0 +1,48 @@
+<?
+include_once('../../common.php');
+?>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB"></script>
+
+<center>
+	<img src="NH_M.jpg" usemap="#001"/>
+</center>
+
+
+
+
+<map name="001">
+	<area shape="rect" coords="270,590,509,644"   onclick="go_nh();" onmouseover="document.body.style.cursor='pointer';" onmouseout="document.body.style.cursor='default';" />
+	<area shape="rect" coords="217,4156,550,4205" onclick="go_nh();" onmouseover="document.body.style.cursor='pointer';" onmouseout="document.body.style.cursor='default';" />
+</map>
+
+<a onclick="go_nh()" >gogo</a>
+<script>
+function go_nh() {
+<?
+if ($member["mb_no"]) {
+	?>
+	$.ajax({
+		url: '/evnt/nhCMA/ajax_go_nhcma.php',
+		type: 'GET',
+		//data: {page:page, search_state:search_state},
+		dataType: 'JSON',
+		success: function(data) {
+			if (data.res=="ok") {
+				//self.location.href="https://m.mynamuh.com/nffAct/brg/hellofund";
+				window.open("https://m.mynamuh.com/nffAct/brg/hellofund", "width=400,height=500, scrollbars=yes,resizable=yes");
+			}
+		},
+		error: function(e) { alert("네트워크 오류 입니다. 잠시 후 다시 요청하십시요."); return; }
+	});
+
+	
+	<?
+} else {
+	?>
+	alert("로그인후 이용해 주세요.");
+	<?
+}
+?>
+}
+</script>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>헬로펀딩</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/main.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<section class="header">
+			<header>
+				<div class="header_wrap">
+					<h1><a href=""></a></h1>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기</a> 
+								<ul class="depth2">
+									<li><a href="">투자 상품 보기</a></li>
+									<li><a href="">법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개</a>
+								<ul class="depth2">
+									<li><a href="">회사소개</a></li>
+									<li><a href="">사업공시</a></li>
+									<li><a href="">채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내</a>
+								<ul class="depth2">
+									<li><a href="">공지사항</a></li>
+									<li><a href="">이벤트</a></li>
+									<li><a href="">투자후기</a></li>
+									<li><a href="">도움말</a></li>
+									<li><a href="">투자자유형</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+					</nav>
+					<div class="pre_login btn_box" style="display: none;">
+						<button class="login_btn">로그인</button>
+						<button class="join_btn">회원가입</button>
+					</div>
+					<div class="after_login myinfo_box">
+						<div class="user_nick" onclick="infoDisplay();">
+							윤선미님
+						</div>
+						<aside class="user_box">
+							<ul class="user_info">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+								<li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="limit_box">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li>부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li>SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<div class="user_info_btn_box">
+								<button type="button" class="mypage_btn">마이페이지</button>
+								<ul class="user_active_btn_box">
+									<li><a href="">정보수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+						</aside>
+					</div>
+				</div>
+				
+				<!-- Tablet, Mobile -->
+				<div class="m_header_wrap">
+					<div class="dimmed"></div>
+					<h1><a href=""></a></h1>
+					<div class="m_menu_box">
+						<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+					</div>
+					<div id="menuList" class="menu_list_container">
+						<div class="menu_top">
+							<div class="menu_logo">
+								<a href="">
+									<img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+								</a>
+							</div>
+							<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+						</div>
+						<div class="menu_top_content">
+							<div class="pre_login btn_box" style="display: none;">
+								<button class="login_btn">로그인</button>
+								<button class="join_btn">회원가입</button>
+							</div>
+							<div class="after_login myinfo_box">
+								<div class="myinfo">
+									<p class="info_name">윤선미님</p>
+									<ul class="btn_box">
+										<li><a href="">수정</a></li>
+										<li><a href="">로그아웃</a></li>
+									</ul>
+								</div>
+								<ul class="myinfo_detail">
+									<li>예치금</li>
+									<li>10,151,041원</li>
+								</ul>
+								<ul class="myinfo_detail">
+									<li>계좌</li>
+									<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+								</ul>
+								<div class="mylimit_info">
+									<ul class="mylimit_detail">
+										<li>나의 투자한도</li>
+										<li>3,000만원</li>
+									</ul>
+									<ul class="mylimit_detail">
+										<li>나의 잔여한도</li>
+										<li>2,400만원</li>
+									</ul>
+									<ul class="limit_cf">
+										<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+										<li>1,000만원</li>
+									</ul>                           
+									<ul class="limit_cf">
+										<li><span>투자가능한도 -</span> SCF, 동산</li>
+										<li>3,000만원</li>
+									</ul>
+								</div>
+								<button type="button" class="mypage_btn">마이페이지</button>
+							</div>
+						</div>
+						<nav>
+							<ul class="depth1">
+								<li><a href="">투자하기<span></span></a>
+									<ul class="depth2">
+										<li><a href="">- 투자 상품 보기</a></li>
+										<li><a href="">- 법인 투자 안내</a></li>
+									</ul>
+								</li>
+								<li><a href="">대출하기</a></li>
+							</ul>
+							<ul class="depth1">
+								<li><a href="">회사소개<span></span></a>
+									<ul class="depth2">
+										<li><a href="">- 회사소개</a></li>
+										<li><a href="">- 사업공시</a></li>
+										<li><a href="">- 채용안내</a></li>
+									</ul>
+								</li>
+								<li><a href="">이용안내<span></span></a>
+									<ul class="depth2">
+										<li><a href="">- 공지사항</a></li>
+										<li><a href="">- 이벤트</a></li>
+										<li><a href="">- 투자후기</a></li>
+										<li><a href="">- 도움말</a></li>
+										<li><a href="">- 투자유형안내</a></li>
+									</ul>
+								</li>
+								<li><a href="">헬로매거진</a></li>
+							</ul>
+							<div class="menu_bottom_content">
+								<ul>
+									<li>헬로펀딩 고객센터</li>
+									<li>1588-6760</li>
+									<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+								</ul>
+								<div><p>카카오톡<br />채팅상담</p></div>
+							</div>
+						</nav>
+					</div>
+					
+				</div>     
+			</header>
+		</section>
+		<!-- header end -->	
+ 
+        <!-- 메인롤링배너 start -->
+        <section class="banner">
+            <div class="container" >
+               	<div class="tab-content" >
+                	<div class="tab-pane show active" id="with-captions-preview" >
+                    	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                        	<div class="carousel-inner" role="listbox" >
+								<div class="carousel-item active" >
+									<div class="contents">
+										<div class="carousel-caption" >
+											<h3>투자가 가장 쉬운 곳<br><span>헬로펀딩</span></h3>
+											<p>모르면 손해!<br>주택담보 / SCF / 부동산에 투자해보세요.</p>
+										</div>
+										 <div class="app-bn-img"><img src="./assets/images/main/m-bn-01.png" alt="투자가 가장 쉬운 곳은 헬로"></div>
+										 <div class="web-bn-img"><img src="./assets/images/main/bn-01.png" alt="투자가 가장 쉬운 곳은 헬로"></div>
+									</div>
+                               </div>
+                                <div class="carousel-item">
+									<div class="contents">
+										<div class="carousel-caption">
+											<h3>헬로펀딩에서<br><span>만날 수 있는 이벤트</span></h3>
+											<p>투자후기 / 주택담보 투자 / 친구초대 등<br>다양한 이벤트에 참여해보세요.</p>
+										</div>
+										<div class="app-bn-img"><img src="./assets/images/main/m-bn-02.png" alt="헬로펀딩 이벤트"></div>
+										<div class="web-bn-img"><img src="./assets/images/main/bn-02.png" alt="헬로펀딩 이벤트"></div>
+									</div>
+                               </div>
+                                <div class="carousel-item">
+									<div class="contents">
+										<div class="carousel-caption">
+											<h3>헬로 투자자들의<br><span>REAL 투자 스토리</span></h3>
+											<p>실제 헬로펀딩에 투자하신 투자자분들의<br>생생한 투자 후기를 확인해보세요.</p>
+									   </div>
+									   <div class="app-bn-img"><img src="./assets/images/main/m-bn-03.png" alt="헬로펀딩 투자후기"></div>
+									   <div class="web-bn-img"><img src="./assets/images/main/bn-03.png" alt="헬로펀딩 투자후기"></div>
+								   </div>
+                               </div>
+							</div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+                            </a>
+						</div>
+					</div> 
+                </div>
+
+            </div>
+        </section>
+        <!-- 메인롤링배너 end -->
+		
+		<!-- 사업정보공시 start -->
+		<section class="status">
+			<div class="status-go">사업정보공시 <a href="#"> 바로가기 ></a></div>
+			<div class="status-wrap">
+				<div class="status-01">누적대출액<p>1조 212억원</p></div>
+				<div class="status-02">대출잔액<p>184억원</p></div>
+				<div class="status-03">상환율<p>97.4%</p></div>
+				<div class="status-04">펑균수익률(연)<p>12.63%</p></div>
+			</div>			
+		</section>	
+		<!-- 사업정보공시 end -->
+		
+        <!-- 카드링크 start -->
+        <section class="card-link">
+            <h3>헬로와 함께 재테크</h3>
+			<div class="box-wrap">
+                <div class="card box"  onclick="location.href='#';" style="cursor: pointer;">
+                    <div class="card-body">
+                        <div class="card-icon"><img src="./assets/images/main/card-icon-01.png"  alt="투자하기"></div>
+                        <h4>투자하기</h4>
+                        <p>주택담보, SCF, 부동산에<br>투자해보세요.</p>
+                    </div>
+                </div>
+                <div class="card box"  onclick="location.href='#';" style="cursor: pointer;">
+                    <div class="card-body">
+                        <div class="card-icon"><img src="./assets/images/main/card-icon-02.png"  alt="대출받기"></div>
+                        <h4>대출받기</h4>
+                        <p>아파트 담보대출<br>간편하게 신청하세요.</p>
+                    </div>
+                </div>
+                <div class="card box"  onclick="location.href='#';" style="cursor: pointer;">
+                    <div class="card-body">
+                        <div class="card-icon"><img src="./assets/images/main/card-icon-03.png"  alt="투자자 유형안내"></div>
+                        <h4>투자자 유형안내</h4>
+                        <p>투자자 유형에 따라<br>투자한도가 달라집니다.</p>
+                    </div>
+                </div>
+                <div class="card box"  onclick="location.href='#';" style="cursor: pointer;">
+                    <div class="card-body">
+                        <div class="card-icon"><img src="./assets/images/main/card-icon-04.png"  alt="법인투자안내"></div>
+                        <h4>법인투자안내</h4>
+                        <p>한도제한이 없는<br>법인<span>투자</span> 상담신청 하세요.</p>
+                    </div>
+                </div>
+			</div>	
+        </section>
+        <!-- 카드링크 end -->
+
+        <!-- 언론보도/공지사항 start -->
+        <section class="news-notice">
+        	<div class="container">
+				<div class="row news-notice-box">
+					<div class="col-lg-6 news">
+						<h3>언론보도<a href="#"><span>+</span></a></h3>
+						<div class="card">
+							<div class="row">
+								<div class="col-md-2 news-img">
+									<a href="#"><img src="./assets/images/main/news-01.png" class="card-img" alt="헬로펀딩 HDC 드림 디벨로퍼 대학생들 초청"></a>
+								</div>
+								<div class="col-md-10 news-tit"   onclick="location.href='#';" style="cursor: pointer;">
+									<div class="card-body">
+										<h5>헬로펀딩, 'HDC 드림 디벨로퍼' 대학생들 초청</h5>
+										<p>EBN<span>|</span>2022.02.24</p>
+									</div> 
+								</div> 
+							</div> 
+						</div> 
+						<div class="card">
+							<div class="row">
+								<div class="col-md-2 news-img">
+									<a href="#"><img src="./assets/images/main/news-02.png" class="card-img" alt="최수석 대표, P2P 안심투자 5계명"></a>
+								</div>
+								<div class="col-md-10 news-tit"  onclick="location.href='#';" style="cursor: pointer;">
+									<div class="card-body">
+										<h5>최수석 대표, P2P 안심투자 5계명</h5>
+										<p>한경<span>|</span>2022.02.15</p>
+									</div> 
+								</div> 
+							</div> 
+						</div>
+					</div> 
+					<div class="col-lg-6 notice-bn">
+						<div class="notice">
+							<h3>공지사항<a href="#"><span>+</span></a></h3>
+							<div class="card">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="card-body">
+											<h5><a href="#">1원 계좌인증 서비스 일시 중단 안내</a><span>22.02.21</span></h5>
+										</div> 
+									</div> 
+								</div> 
+							</div> 
+							<div class="card">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="card-body">
+											<h5><a href="#">본인확인 점검 예정 안내</a><span>22.01.15</span></h5>
+										</div> 
+									</div> 
+								</div> 
+							</div>
+						</div>
+					
+						<div class="mini-bn"  onclick="location.href='#';" style="cursor: pointer;">
+							<div class="help-img">
+								<img src="./assets/images/main/m-help-icon.png" alt="도움말 바로가기">
+							</div>	
+							<div class="txt">
+								<h5>도움말 바로가기</h5>
+								<p>헬로펀딩 투자에 대해 궁금한 사항들을 확인할 수 있습니다.</p>
+							</div>	
+						</div>
+					</div>	
+                </div>	
+			</div>	
+        </section>
+        <!-- 언론보도/공지사항 end -->
+
+
+        <!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+        
+    </body>
+
+</html>

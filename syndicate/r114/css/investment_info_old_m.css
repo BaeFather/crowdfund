@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* 모바일용 */
+input[type=image] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -webkit-text-size-adjust: none;
+}
+*{-webkit-text-size-adjust: none;  -moz-text-size-adjust: none;   -ms-text-size-adjust: none;}
+
+a,img,input { outline:none; selector-dummy:expression(this.hideFocus=true); }
+/********* 투자상품상세페이지 *********/
+
+.invest_cont {background:url('/investment/img/center_bg01_m.jpg') repeat-y; background-size:100%; font-family:'spoqahansans';font-size:11px;color:#343434;line-height:24px;}
+
+/********* 투자설명서 *********/
+.invest_cont .invest_top {padding:30px 8% 12px 8%;font-family:'spoqahansans';}
+.invest_cont .invest_top p {font-size:28px;color:#146ce9;text-align:center;}
+.invest_cont .invest_top .notice_top {background:url('/investment/img/notice_top_bg01_m.jpg') no-repeat; background-size:100%; font-size:11px;color:#343434;margin:20px 0 20px 0;padding:10px 20px 10px 20px;}
+
+/********* 1. 투자설명개요 *********/
+.invest_cont .cont1 {padding:0 8% 0 8%;}
+.invest_cont .cont1 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont1 .income{float:left;width:100%;font-family:'spoqahansans';color:#000;font-size:11px;margin-top:15px;border-top:2px solid #0c429d;}
+.invest_cont .cont1 .income th {background-color:#e0e8f0;font-size:11px;font-family:'spoqahansans';width:35%;height:50px;color:#000;}
+.invest_cont .cont1 .income th:last-child {background-color:#e0e8f0;font-size:11px;font-family:'spoqahansans';width:65%;height:50px;color:#000;}
+.invest_cont .cont1 .income tr {border-bottom:1px solid #ead7d9;height:50px;}
+.invest_cont .cont1 .income td {text-align:left;padding-left:5px;color:#343434;}
+
+/********* 2. 담보실사평가 *********/
+.invest_cont .cont2 {padding:30px 8% 0 8%;clear:both;}
+.invest_cont .cont2 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+
+/********* 3. 투자자 보호장치 *********/
+.invest_cont .cont3 {padding:30px 8% 30px 8%;clear:both;}
+.invest_cont .cont3 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+
+/********* 4. 예상수익 *********/
+.invest_cont .cont4 {padding:0 8% 30px 8%;clear:both;}
+.invest_cont .cont4 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont4 .income{float:left;width:100%;font-family:'spoqahansans';color:#000;font-size:11px;margin:15px 0 30px 0;border-top:2px solid #0c429d;}
+.invest_cont .cont4 .income th {background-color:#e0e8f0;font-size:11px;font-family:'spoqahansans';height:50px;color:#000;line-height:24px;}
+.invest_cont .cont4 .income tr {border-bottom:1px solid #ead7d9;height:42px;}
+.invest_cont .cont4 .income td {text-align:center;color:#343434;}
+.invest_cont .cont4 .rewards {clear:both;width:100%;height:50px;background-color:#d19e13;text-align:center;color:#fff;font-size:13px;line-height:50px;}
+
+/********* 5. 예상수익 *********/
+.invest_cont .cont5 {padding:0 8% 30px 8%; clear:both;}
+.invest_cont .cont5 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+.invest_cont .cont5 .income{width:100%;font-family:'spoqahansans';color:#000;font-size:11px;margin-top:15px;}
+.invest_cont .cont5 .income th {background-color:#e0e8f0;font-size:11px;font-family:'spoqahansans';height:50px;color:#000;line-height:24px;border-top:2px solid #0c429d;}
+.invest_cont .cont5 .income tr {border-bottom:1px solid #ead7d9;height:42px;}
+.invest_cont .cont5 .income td {text-align:right;padding-right:10px;color:#343434;}
+
+/********* 6. 심사총평 *********/
+.invest_cont .cont6 {padding:0 8% 30px 8%; clear:both;}
+.invest_cont .cont6 .tit {font-size:18px;color:#146ce9;font-family:'spoqahansans';}
+
+
+/* 인기상품 리스트 */
+.open_tit{position:absolute;bottom:0;height:44px;width:100%;background: rgba(0, 0, 0, 0.5);z-index:700;font-size:12px;font-family:'spoqahansans';color:#fff;text-align:center;line-height:44px;}
+.open_tit img {width:21px;}
+.detail_info {float:right;width:99%;border:1px solid #ccc;position:relative;}
+.detail_info .detail_cont {width:100%;padding:0 10px;}
+.detail_info .detail_cont .detail_tit { width:100%; font-size:20px; line-height:22px; font-family:'spoqahansans'; display:table-cell;vertical-align:bottom; padding:16px 0 0; }
+/* .detail_info .detail_cont .detail_tit {font-size:20px;font-family:'spoqahansans';padding:20px 0 10px 0;} */
+
+.detail_info .detail_cont .flag_area { width:100%; height:24px; padding:6px 0 3px 0; }
+.detail_info .detail_cont .flag_area .flag_green  { float:left; margin-right:4px; width:130px;height:24px; background:#00C73C; font-size:12px; line-height:22px; color:#FFF; text-align:center; }
+.detail_info .detail_cont .flag_area .flag_green .help { background-color:#fff; color:#00C73C; font-weight:bold; width:15px; height:15px; line-height:15px; text-align:center; border-radius:10px; margin-top:3px; cursor:pointer; display:inline-block; }
+.detail_info .detail_cont .flag_area .flag_orange { float:left; margin-right:4px; width:130px;height:24px; background:#FF7419; font-size:12px; line-height:22px; color:#FFF; text-align:center; }
+.detail_info .detail_cont .flag_area .flag_red    { float:left; margin-right:4px; width:130px;height:24px; background:#DC2F43; font-size:12px; line-height:22px; color:#FFF; text-align:center; }
+
+.detail_info .detail_cont .detail_table li{float:left;border:1px solid #d3d3d3;width:48%;height:64px;margin:0 5px 5px 0;text-align:center;}
+.detail_info .detail_cont .detail_table li:last-child {float:left;border:1px solid #d3d3d3;width:48%;height:64px;margin:0 0 5px 0;text-align:center;}
+.detail_info .detail_cont .detail_table li p {font-size:14px;margin-top:10px;font-family:'spoqahansans';}
+.detail_info .detail_cont .detail_table li p:last-child {font-size:20px;margin-top:5px;color:#3453a8;font-family:'spoqahansans';}
+
+.detail_info .detail_cont .detail_progress {width:99%;clear:both;padding-top:6px;}
+.detail_info .detail_cont .detail_progress .prog_tit1 {float:left;font-size:16px;font-family:'spoqahansans';}
+.detail_info .detail_cont .detail_progress .prog_tit2 {float:right;font-size:20px;color:#3453a8;font-family:'spoqahansans';}
+
+.detail_info .detail_cont .detail_progress .progress { clear:both; height:8px; line-height:8px; padding:0; }
+.detail_info .detail_cont .detail_progress .progress li.rate2 { position:relative; height:8px; background-color:#DDDDDD; }
+.detail_info .detail_cont .detail_progress .progress li.rate2 img { height:8px; }
+
+.detail_info .detail_cont .detail_btn {text-align:center;padding:16px 0;}
+.detail_info .detail_cont .detail_btn .btn_big_link  { width:30%; }
+.detail_info .detail_cont .detail_btn .btn_big_blue  { width:30%; }
+.detail_info .detail_cont .detail_btn .btn_big_green { width:30%; }
+.detail_info .detail_cont .detail_btn .btn_big_maple { width:30%; }
+
+.detail_info .detail_guide {font-size:11px;border-top:1px solid #cccccc;font-family:'spoqahansans';}
+.detail_info .detail_guide .guide1 {float:left;width:50%;height:66px;background:url('../../images/investment/detail_icon01_m.png') no-repeat center left;background-size:20px;background-position:10px 22px;background-color:#f2f2f2;padding-top:25px;}
+.detail_info .detail_guide .guide2 {float:left;border-left:1px solid #cccccc;width:49%;height:66px;background:url('../../images/investment/detail_icon02_m.png') no-repeat center left;background-size:18px;background-position:10px 23px;background-color:#f2f2f2;padding-top:25px;}
+.detail_info .detail_guide .guide1:active {background:url('../../images/investment/detail_icon01_m.png') no-repeat center left;background-position:10px 22px;background-color:#4a6fe2;color:#fff;cursor:pointer;}
+.detail_info .detail_guide .guide2:active {background:url('../../images/investment/detail_icon02_m.png') no-repeat center left;background-position:10px 23px;background-color:#4a6fe2;color:#fff;cursor:pointer;}
+

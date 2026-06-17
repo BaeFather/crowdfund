@@ -1,0 +1,702 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/********************************공직윤리위원회 자료*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-ethics {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-ethics .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-ethics table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-ethics table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .reporting-ethics table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-ethics .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-ethics .date-search .date-search-wrap .date-select {width:300px; margin:0; }
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap .custom-select {width:200px;}	
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap .input-group {width:200px; margin-left:.5rem; }	
+
+
+/*자료등록*/
+.wrapper .content-page .container-fluid .reporting-ethics .management-bt .button{padding-left:10px;}
+
+
+
+/*모달 테이블 커스텀 */
+.wrapper .content-page .docu-regi .modal-dialog	{max-width:600px;}	
+.wrapper .content-page .docu-regi .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.wrapper .content-page .docu-regi .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.wrapper .content-page .docu-regi .modal-content .modal-body table {width:100%; margin-top:0;}
+.wrapper .content-page .docu-regi .modal-content .modal-body table tr td{width:70%; padding:.5rem .7rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px;}
+.wrapper .content-page .docu-regi .modal-content .modal-body table tr th{width:30%; padding:.5rem .7rem; border:1px solid #e0e0e0; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-hidden-list {height:0; overflow:hidden;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-list { border:1px solid #d5d5d5; border-radius:.25rem; padding:1rem; min-height:100px;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-list .thumbnail {display:flex; position:relative; color: #555; align-items:center;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-list .thumbnail i {font-size:16px; color:#555;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-list .thumbnail p {margin-bottom:0; margin-left:5px; font-size:.8rem; color:#222;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .file-list .thumbnail .delete i{position:absolute; font-size:14px; right:0; top:2px; color:#ee321f; margin-left:1rem;}
+.wrapper .content-page .docu-regi .modal-content .modal-body .add-button {border:1px solid #ddd; width:100px; text-align: center; background-color: #f6f6f6; line-height:35px; cursor: pointer; margin-bottom:5px; height:35px; color:#222;}
+.wrapper .content-page .docu-regi .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.wrapper .content-page .docu-regi .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.wrapper .content-page .docu-regi .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.wrapper .content-page .docu-regi .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-ethics {padding:0;}
+.wrapper .content-page .container-fluid .reporting-ethics table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-ethics table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-ethics table tr td:first-child {display:none;}
+
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-ethics .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-ethics .date-search .date-search-wrap .date-select {width:100%; margin:0;}
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .reporting-ethics .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; }	
+	
+	
+/*자료등록*/
+.wrapper .content-page .container-fluid .reporting-ethics .management-bt .button {padding-left:0; margin-top:3px;}	
+.wrapper .content-page .container-fluid .reporting-ethics .management-bt button{width:100%; text-align: center;}	
+
+}
+
+
+/********************************공직윤리위원회 자료조회*******************************************/
+
+
+/*자료등록*/
+.wrapper .content-page .container-fluid .reporting-ethics .docu-upload .form-control-file {line-height: calc(1.5rem);  font-size:.8rem; color:#555; margin-left:10px;}
+
+
+
+@media (max-width:992px){
+	
+/*자료등록*/	
+.wrapper .content-page .container-fluid .reporting-ethics .docu-upload .form-control-file {line-height: calc(1.5rem);  font-size:.8rem; color:#555; margin-left:0;}
+
+
+
+}
+
+
+
+
+
+/********************************감사보고서*******************************************/
+
+
+.wrapper .content-page .container-fluid .reporting-audit {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-audit .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-audit table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-audit table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .reporting-audit table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-audit .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-audit .date-search .date-search-wrap .date-select {width:300px; margin:0; }
+
+
+/*종류*/
+.wrapper .content-page .container-fluid .reporting-audit .audit-type .audit-type-wrap {display:flex; padding-left:10px;} 
+.wrapper .content-page .container-fluid .reporting-audit .audit-type .audit-type-wrap div {width:80px; font-size:.8rem; color:#555;}
+
+
+
+/*라디오버튼 커스텀*/
+.wrapper input[type="radio"] {display: none;}
+.wrapper input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 1.112em;
+  height: 1.112em;
+  padding:3px;
+  background-clip: content-box;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right:5px;
+  margin-bottom:4px;
+  line-height: 50px;
+  vertical-align:middle;
+}
+
+.wrapper input[type="radio"]:checked + label:before {
+  background-color: #fa5c7c; border: 1px solid #fa5c7c;
+}
+
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap select:first-child {width:100px;}
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap .custom-select{width:250px; margin-right:.5rem;}	
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap .input-group {width:200px; }	
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-audit {padding:0;}
+.wrapper .content-page .container-fluid .reporting-audit table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-audit table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-audit table tr td:first-child {display:none;}
+	
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-audit .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-audit .date-search .date-search-wrap .date-select {width:100%; margin:0;}
+
+	
+/*종류*/
+.wrapper .content-page .container-fluid .reporting-audit .audit-type .audit-type-wrap {justify-content: center; margin:15px 0;} 
+
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap{display:flex; padding-left:0; margin:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap select:first-child {width:30%; margin-right:1%;}
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap .custom-select{width:69%; margin-right:0;}	
+.wrapper .content-page .container-fluid .reporting-audit .word-search .word-search-wrap .input-group {width:100%; margin-top:5px;}	
+
+
+
+}
+
+
+
+/********************************감사보고서 자료조회*******************************************/
+
+
+.wrapper .content-page .container-fluid .reporting-audit-search {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-audit-search .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-audit-search table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-audit-search table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .reporting-audit-search table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+
+/*종류*/
+.wrapper .content-page .container-fluid .reporting-audit-search .audit-type .audit-type-wrap {display:flex; padding-left:10px;} 
+.wrapper .content-page .container-fluid .reporting-audit-search .audit-type .audit-type-wrap div {width:80px; font-size:.8rem; color:#555;}
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap .custom-select {width:150px; margin-right:.5rem;}
+
+
+
+/*결과*/
+.wrapper .content-page .container-fluid .reporting-result {padding:0 30px; margin:50px 0;}	
+.wrapper .content-page .container-fluid .reporting-result .result-content .tit {font-size:.9rem; color:#222; font-weight: 600; display: flex; justify-content:space-between ; align-items:flex-end; margin-bottom: 10px;}
+.wrapper .content-page .container-fluid .reporting-result .result-content .content{border:1px solid #ddd; margin:0 0 20px; padding:20px; text-align: center;}
+.wrapper .content-page .container-fluid .reporting-result .result-bt {text-align:center;}
+.wrapper .content-page .container-fluid .reporting-result .result-bt .basic-bt {height: calc(2.3rem); padding:0.45rem 2rem 0.35rem; }
+.wrapper .content-page .container-fluid .reporting-result .result-bt .btn-link {background-color: #ee321f; border:1px solid #ee321f;}
+.wrapper .content-page .container-fluid .reporting-result .result-bt button { margin:20px 10px 50px; }
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-audit-search {padding:0;}
+.wrapper .content-page .container-fluid .reporting-audit-search table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-audit-search table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-audit-search table tr td:first-child {display:none;}
+	
+	
+/*종류*/
+.wrapper .content-page .container-fluid .reporting-audit-search .audit-type .audit-type-wrap {justify-content: center; margin:15px 0;} 
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap{padding-left:0px; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap .custom-select:nth-child(1) {width:49%; margin-right:1%;}
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap .custom-select:nth-child(2) {width:50%; }
+.wrapper .content-page .container-fluid .reporting-audit-search	.condition-search .condition-search-wrap .custom-select:nth-child(3) {width:100%; }	
+	
+	
+/*결과*/
+.wrapper .content-page .container-fluid .reporting-result {padding:0;}	
+.wrapper .content-page .container-fluid .reporting-result .result-content .tit button{display:none;}
+	
+}
+
+
+
+
+
+/*******************************투자현황*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-invest-status {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-invest-status	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-invest-status table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-invest-status table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .bold {font-weight:600; color:#222;}
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*투자조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .invest-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .invest-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*회원조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .selectbox {display:flex;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .selectbox .custom-select {width:180px; margin-right:.5rem;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .checklist {display:flex;} 
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .checklist .custom-checkbox {padding-top:7px;} 
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap div {display:flex;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .input-group {width:180px; margin:0 .5rem; }	
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-invest-status .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-invest-status {padding:0;}
+.wrapper .content-page .container-fluid .reporting-invest-status table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-invest-status table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-invest-status table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap .custom-select {width:33%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .date-search .date-search-wrap .date-select {width:66%; margin:0 0 0 1%;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .pro-condition-search .condition-search-wrap{padding-left:0px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .pro-condition-search .condition-search-wrap .custom-select {width:100%; margin-right:5px; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .pro-condition-search .condition-search-wrap .custom-select:last-child {margin-right:0;}	
+
+/*투자조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .invest-condition-search .condition-search-wrap{padding-left:0px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .invest-condition-search .condition-search-wrap .custom-select {width:100%; margin-right:5px; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .invest-condition-search .condition-search-wrap .custom-select:last-child {margin-right:0;}
+	
+	
+/*회원조건검색*/
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap{padding-left:0px; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .selectbox {display:flex; width:100%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .selectbox .custom-select{width:49%; margin-right:1%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .selectbox .custom-select:last-child {width:50%; margin-right:0;}
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .checklist {display:flex; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-invest-status .mb-condition-search .condition-search-wrap .checklist .custom-checkbox {width:50%; display:flex; margin-bottom: 5px;}		
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap {padding-left:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .pro {width:100%; margin-bottom: 5px;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .pro .custom-select{width:40%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .pro .input-group{margin-left:1%; width:59%; margin-right: 0;}	
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .mb {width:100%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .mb .custom-select{width:40%;}
+.wrapper .content-page .container-fluid .reporting-invest-status .word-search .word-search-wrap .mb .input-group {margin-left:1%; width:59%; margin-right: 0;}
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-invest-status .download {display:none;}
+	
+	
+
+}
+
+
+/*******************************대출현황*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-loan-status {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-loan-status	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-status table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-loan-status table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-loan-status table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .bold {font-weight:600; color:#222;}
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-status .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap .input-group {width:180px; margin:0 .5rem; }	
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-status .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-loan-status {padding:0;}
+.wrapper .content-page .container-fluid .reporting-loan-status table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-status table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-status table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap .custom-select {width:33%;}
+.wrapper .content-page .container-fluid .reporting-loan-status .date-search .date-search-wrap .date-select {width:66%; margin:0 0 0 1%;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-status .pro-condition-search .condition-search-wrap{padding-left:0px; width:100%; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-loan-status .pro-condition-search .condition-search-wrap .custom-select {width:49.5%; margin-right:1%; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-loan-status .pro-condition-search .condition-search-wrap .custom-select:nth-child(even) {margin-right:0;}	
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap .custom-select{width:40%;}
+.wrapper .content-page .container-fluid .reporting-loan-status .word-search .word-search-wrap .input-group{margin-left:1%; width:59%; margin-right: 0;}	
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-status .download {display:none;}
+	
+	
+
+}
+
+
+
+/*******************************부분상환현황*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-part-status {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-part-status	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-part-status table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-part-status table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-part-status table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-part-status .bold {font-weight:600; color:#222;}
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-part-status .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-part-status .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap .input-group {width:180px; margin:0 .5rem; }	
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-part-status .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-part-status .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-part-status .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-part-status {padding:0;}
+.wrapper .content-page .container-fluid .reporting-part-status table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-part-status table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-part-status table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap .custom-select {width:33%;}
+.wrapper .content-page .container-fluid .reporting-part-status .date-search .date-search-wrap .date-select {width:66%; margin:0 0 0 1%;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-part-status .pro-condition-search .condition-search-wrap{padding-left:0px; width:100%; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-part-status .pro-condition-search .condition-search-wrap .custom-select {width:49.5%; margin-right:1%; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-part-status .pro-condition-search .condition-search-wrap .custom-select:nth-child(even) {margin-right:0;}	
+
+
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap .custom-select{width:40%;}
+.wrapper .content-page .container-fluid .reporting-part-status .word-search .word-search-wrap .input-group{margin-left:1%; width:59%; margin-right: 0;}	
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-part-status .download {display:none;}
+	
+	
+
+}
+
+
+
+
+/*******************************대출잔액*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-loan-balance {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-loan-balance	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-loan-balance table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .bold {font-weight:600; color:#222;}
+
+
+/*조회기준일*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .date-search .date-select {width:300px; padding-left:10px;}
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-loan-balance {padding:0;}
+.wrapper .content-page .container-fluid .reporting-loan-balance table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-balance table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-balance table tr td:first-child {display:none;}
+	
+/*조회기준일*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .date-search .date-search-wrap .date-select {width:100%; padding-left:0;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .pro-condition-search .condition-search-wrap{padding-left:0px; width:100%; flex-wrap:wrap;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .pro-condition-search .condition-search-wrap .custom-select {width:49.5%; margin-right:1%; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-loan-balance .pro-condition-search .condition-search-wrap .custom-select:nth-child(even) {margin-right:0;}	
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-balance .download {display:none;}
+	
+	
+
+}
+
+
+
+
+
+/*******************************대출/상환 일대사*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-loan-repay {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-loan-repay	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-loan-repay table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay .bold {font-weight:600; color:#222;}
+
+
+/*조회기준일*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .date-search .date-select {width:300px; padding-left:10px;}
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-loan-repay .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-loan-repay {padding:0;}
+.wrapper .content-page .container-fluid .reporting-loan-repay table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-repay table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-repay table tr td:first-child {display:none;}
+	
+/*조회기준일*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .date-search .date-search-wrap .date-select {width:100%; padding-left:0;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .pro-condition-search .condition-search-wrap{padding-left:0px; width:100%;}
+.wrapper .content-page .container-fluid .reporting-loan-repay .pro-condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0;}
+
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-loan-repay .download {display:none;}
+	
+	
+
+}
+
+
+
+
+
+/*******************************원리금 지급통계*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-give-stats {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-give-stats .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-give-stats table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-give-stats table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-give-stats table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-give-stats .bold {font-weight:600; color:#222;}
+
+
+/*조회기준일*/
+.wrapper .content-page .container-fluid .reporting-give-stats .date-search .date-select {width:300px; padding-left:10px;}
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-give-stats {padding:0;}
+.wrapper .content-page .container-fluid .reporting-give-stats table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-give-statsreporting-give-stats table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-loan-repay table tr td:first-child {display:none;}
+	
+/*조회기준일*/	
+.wrapper .content-page .container-fluid .reporting-loan-repay .date-search .date-search-wrap .date-select {width:100%; padding-left:0;}
+
+
+
+}
+
+
+
+
+
+/*******************************원리금지급내역*******************************************/
+
+.wrapper .content-page .container-fluid .reporting-repay-log {padding:0 30px;}	
+.wrapper .content-page .container-fluid .reporting-repay-log .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .reporting-repay-log table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .reporting-repay-log table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .bold {font-weight:600; color:#222;}
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+	
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .pro-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .pro-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*회원조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .selectbox {display:flex;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .selectbox .custom-select {width:180px; margin-right:.5rem;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .checklist {display:flex;} 
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .checklist .custom-checkbox {padding-top:7px;} 
+
+
+/*지급조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .pay-condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .pay-condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap div {display:flex;}
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .custom-select {width:130px;}	
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .input-group {width:150px; margin:0 .5rem; }	
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-repay-log .down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .reporting-repay-log {padding:0;}
+.wrapper .content-page .container-fluid .reporting-repay-log table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .reporting-repay-log table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .reporting-repay-log table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap .custom-select {width:33%;}
+.wrapper .content-page .container-fluid .reporting-repay-log .date-search .date-search-wrap .date-select {width:66%; margin:0 0 0 1%;}
+
+
+/*상품조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .pro-condition-search .condition-search-wrap{padding-left:0px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .pro-condition-search .condition-search-wrap .custom-select {width:100%; margin-right:5px; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .pro-condition-search .condition-search-wrap .custom-select:last-child {margin-right:0;}	
+
+	
+/*회원조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap{padding-left:0px; flex-wrap: wrap; display:flex; width:100%;  margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .selectbox {width:67%;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .selectbox .custom-select {width:100%; margin-right:5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .mb-condition-search .condition-search-wrap .checklist {width:33%;}	
+	
+	
+/*지급조건검색*/
+.wrapper .content-page .container-fluid .reporting-repay-log .pay-condition-search .condition-search-wrap{padding-left:0px; }
+.wrapper .content-page .container-fluid .reporting-repay-log .pay-condition-search .condition-search-wrap .custom-select {width:100%; margin-right:1%; margin-bottom:5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .pay-condition-search .condition-search-wrap .custom-select:last-child {margin-right:0;}
+	
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap {padding-left:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pro, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .mb, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pay {width:100%; margin-bottom: 5px;}
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pro .custom-select, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .mb .custom-select, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pay .custom-select{width:40%;}
+.wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pro .input-group, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .mb .input-group, .wrapper .content-page .container-fluid .reporting-repay-log .word-search .word-search-wrap .pay .input-group{margin-left:1%; width:59%; margin-right: 0;}	
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .reporting-repay-log .download {display:none;}
+	
+	
+
+}

@@ -1,0 +1,107 @@
+<style>
+.new_mark { display:inline-block; font-size:8pt; padding:0 2px; line-height:12px;color:#fff; background:red; border-radius:3px; }
+input.radioarea {float:left;margin-top:7px;margin-left:10px;border:1px solid #ff0000;}
+label {float:left;display:block;padding:0px 5px;}
+</style>
+	<script type="text/javascript" src="smshello.js"/></script>
+
+	<!-- 검색영역 START -->
+	<div style="overflow:hidden; line-height:28px;margin-bottom:8px;">
+		<form id="frmSearch" method="get" class="form-horizontal">
+		<ul class="col-sm-10 list-inline">
+			<li>
+				<input type="text" name="STXT" value="<?php ECHO $STXT;?>"  placeholder="이름 연락처 검색어 입력" class="form-control input-sm" style="width:250px;" />
+			</li>
+			<li>
+				<button type="submit" class="btn btn-sm btn-warning" onClick="form_change();">검색</button>
+				&nbsp;
+				<button type="button" class="btn btn-sm btn-default" onClick="window.location='<?php ECHO $_SERVER["PHP_SELF"]?>';">초기화</button>
+			</li>
+		</ul>
+		</form>
+	</div>
+	<!-- 검색영역 E N D -->
+
+
+	<!-- 리스트 START -->
+	<div style="float:right; display:inline-block; font-size:12px;line-height:20px;width:100%;">
+		<span style="float:left">▣ 등록 : <?=number_format($total_count);?>건</span>
+		<span style="float:right"><?=$page?> / <?=$total_page?> Page<span>
+	</div>
+	<table class="table table-striped table-bordered table-hover" style="padding-top:0; font-size:12px;">
+		<caption style="padding:0"><?=$g5['title']?> 목록</caption>
+		<thead>
+		<tr>
+			<th scope="col" style="text-align:center;width:60px">NO.</th>
+			<th scope="col" style="text-align:center;">제목</th>
+			<th scope="col" style="text-align:center;">발송일</th>
+			<th scope="col" style="text-align:center;">오픈일</th>
+			<th scope="col" style="text-align:center;">만료일</th>
+			<th scope="col" style="text-align:center;">비고</th>
+		</tr>
+		</thead>
+		<tbody>
+<?php
+	IF($rowList[1] > 0)
+	{
+		$bunho=($rowList[1])-(($page-1) * $num_per_page); //리스트의 넘버수
+		FOR($i=0;$i<COUNT($rowList[2]);$i++)
+		{
+			unset($RowLink);
+
+			FOR($j=0;$j<COUNT($strColumn);$j++)
+			{
+				${$strColumn[$j]} = $rowList[2][$i][$j];
+			}
+			$RowLink = $gstrPHPSELF."?KD=".$KD."&RD=2&SE=".$midx."&page=".$page."&STXT=".$STXT;
+?>
+		<tr>
+			<td align="center"><?=$bunho?></td>
+			<td align="center"><?=$title?></td>
+			<td align="center"><?=DATE("Y-m-d H:i:s",$send_time)?></td>
+			<td align="center"><?=DATE("Y-m-d H:i:s",$reg_time)?></td>
+			<td align="center"><?=DATE("Y-m-d H:i:s",$end_time)?></td>
+			<td align="center">
+				<button type="button" style="margin-top:2px;" onClick="open_window_center('poplist.php?SE=<?php ECHO $pidx;?>','poplist','500','800','yes')" class="btn btn-sm <?=($row['idx']==$idx)?'':'btn-default'?>">상세보기</button>
+				&nbsp;&nbsp;&nbsp;
+				<button type="button" style="margin-top:2px;" onClick="check_sms_send('<?php ECHO $ridx?>','smsform',event);" class="btn btn-sm btn-warning">재발송하기</button>
+			</td>
+		</tr>
+<?php
+			$bunho--;
+		}
+	} ELSE {
+?>
+
+		<tr>
+			<td colspan="7" align="center">검색된 데이터가 없습니다.</td>
+		</tr>
+
+<?php
+	}
+?>
+	</table>
+
+	<div style="float:right">
+		<button type="button" style="margin-top:2px;" onClick="location.href='<?=$qstr?>&page=<?=$page?>'" class="btn btn-sm btn-default">목록보기</button>
+	</div>
+	<!-- 리스트 E N D -->
+
+	<form name="smsform" id="smsform">
+		<input type="hidden" name="kind" value="smssend" />
+		<input type="hidden" name="SE" value="" />
+		<input type="hidden" name="page" value="<?php ECHO $page;?>" />
+		<input type="hidden" name="RD" value="<?php ECHO $RD;?>" />
+		<input type="hidden" name="STXT" value="<?php ECHO $STXT;?>" />
+	</form>
+
+	<form name="smsform2" id="smsform2">
+		<input type="hidden" name="idx" value="<?php ECHO $idx;?>" />
+		<input type="hidden" name="page" value="<?php ECHO $page;?>" />
+		<input type="hidden" name="RD" value="<?php ECHO $RD;?>" />
+		<input type="hidden" name="STXT" value="<?php ECHO $STXT;?>" />
+	</form>
+
+<?php
+echo get_paging(G5_IS_MOBILE ? $config['cf_mobile_pages'] : $config['cf_write_pages'], $page, $total_page, $qstr.'&amp;page=');
+?>

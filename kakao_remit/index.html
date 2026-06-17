@@ -1,0 +1,53 @@
+<?
+include_once('../common.php');
+include_once('../lib/common.lib.php');
+include_once('../lib/sms.lib.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+function go_kkp() {
+	<?
+	if (!$member["virtual_account2"]) {
+		?>
+		alert("로그인 오류");
+		return ;
+		<?
+	}
+	?>
+	var request = "";
+	$.ajax({
+		type: "POST",
+		url: "/kakao_remit/kakao_remit.php",
+		dataType : "json",
+		beforeSend: function() {
+			//$.indicator("spinner").show();
+		},
+		success: function(res) {
+			console.log(res);
+			if (res.status=="200") {
+				self.location.href = res.next_send_url;
+			} else {
+				alert(res.error_message);
+			}
+		},
+		error: function(e) {
+			console.log(e);
+			alert("통신 오류");
+		},
+		complete: function() {
+			//$.indicator("spinner").hide();
+		}
+	});
+}
+</script>
+</head>
+<body>
+<br/><br/><br/><br/>
+<center>
+<a onclick="go_kkp();" style="cursor:pointer;"><img src="kkp.jpg" width="350" height="150"/></a>
+</center>
+</body>
+</html>

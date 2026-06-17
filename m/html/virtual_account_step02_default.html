@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>가상계좌발급</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/virtual.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" /> <!-- modal(popup) css -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### VirtualAcc02 Start -->
+        <div id="VirtualAcc02">
+            <div class="virtual_step">
+                <div class="step">1</div>
+                <div class="border"></div>
+                <div class="step step_on">2</div>
+                <div class="border"></div>
+                <div class="step">3</div>
+            </div>
+            <div class="virtual_title">
+                <h2>
+                    환급계좌 및 원천징수 정보 등록
+                </h2>
+                <p>
+                    환급계좌 내용을 등록하시고 <br />
+                    아래 가상계좌발급 버튼을 클릭하십시요. 
+                </p>
+            </div>
+            
+            <div class="virtual_content">
+                <form class="default_form">
+                    <div class="label_box">
+                        환급계좌
+                    </div>
+                    <div class="form_box">
+                        <input type="text" value="이상규" />
+                        <select>
+                            <option disabled selected hidden>은행을 선택해주세요</option>
+                            <option>KB국민은행</option>
+                        </select>
+                        <input type="text" placeholder="계좌번호를 입력해주세요" />
+                    </div>
+                    <div class="label_box">
+                        주민등록번호
+                    </div>
+                    <div class="form_box btn_fm">
+                        <input type="text" placeholder="'-'제외 후 숫자만 입력해주세요" />
+                        <button type="button">계좌인증</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ### VirtualAcc02 End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button type="button" class="cancel">취소</button>
+            <button type="button" class="md-trigger" data-modal="modal-3">가상계좌발급</button>
+        </div>
+        <!-- ### BottomBtn End -->
+
+        <!-- ### alertPopup Start-->
+        <div class="md-modal md-effect-3" id="modal-3">
+			<div class="md-content" id="alertPopup">
+                <div class="content">
+                    <P>환급계좌가 정상적으로 인증되었습니다.</P>
+                </div>
+                <div class="md-close txt_close_btn">확인</div>
+			</div>
+		</div>
+        <div class="md-overlay"></div><!-- the overlay element -->
+        <!-- ### alertPopup end-->
+
+        <!-- modal(popup) script -->
+        <script src="js/classie.js"></script>
+        <script src="js/modalEffects.js"></script>
+    </body>
+</html>

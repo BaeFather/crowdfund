@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>헬로관리자 관리자 회원가입</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta http-equiv="Cache-Control" content="No-Cache">
+		<meta http-equiv="Pragma" content="No-Cache">
+
+		<!-- media query viewport -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- csrf token -->
+		<meta name="_csrf" content="ba3e0c20-48ba-47f9-8645-462e47e9701c"/>
+		<meta name="_csrf_header" content="X-CSRF-TOKEN" >
+
+		<!-- App favicon -->
+		<link href="/assets/images/favicon.ico" rel="shortcut icon">
+
+		<!-- App css -->
+		<link href="assets/css/admin/admin.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<style>
+
+			
+		</style>
+	</head>
+
+	<body>
+	<div class="join">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="card">
+					<!-- Logo -->
+					<div class="card-header">
+						<a href="/"><img src="assets/images/hello_logo_red.png" alt="hellofunding" /></a>
+						
+					</div>
+					<div class="card-body">
+						<form id="joinForm" name="joinForm">
+							<h4>관리자 회원가입</h4>
+							<div class="form-group">
+								<label>아이디</label>
+								<input class="form-control" type="text" name="adminId" id="adminId" required="" placeholder="아이디"  onBlur="id_check();">
+								<div id="adminId-invalid" class="invalid-feedback"></div>
+							</div>
+							<div class="form-group">
+								<label>이름</label>
+								<input class="form-control" type="text" name="adminName" id="adminName" placeholder="이름"  onBlur="name_check();">
+								<div id="adminName-invalid" class="invalid-feedback"></div>
+							</div>
+							<div class="form-group">
+								<label>휴대폰번호</label>
+								<input class="form-control" type="text" name="hp" id="hp" placeholder="휴대폰 번호 '-' 제외" onBlur="hp_check();">
+								<div id="hp-invalid" class="invalid-feedback"></div>
+							</div>
+							<div class="form-group">
+								<label>이메일</label>
+								<input class="form-control" type="email" name="email" id="email" placeholder="이메일"  onBlur="email_check();">
+								<div id="email-invalid" class="invalid-feedback"></div>
+							</div>
+							<div class="form-group">
+								<label for="post">소속부서</label>
+								<select class="form-control" id="post" name="post">
+									<option value="ADPT1001"
+									>운영기획팀</option>
+									<option value="ADPT1002"
+									>홍보전략팀</option>
+									<option value="ADPT1003"
+									>경영지원팀</option>
+									<option value="ADPT2001"
+									>부동산금융1팀</option>
+									<option value="ADPT2004"
+									>상품관리팀</option>
+									<option value="ADPT3001"
+									>신사업개발팀</option>
+									<option value="ADPT3002"
+									>SCF사업운영팀</option>
+									<option value="ADPT3003"
+									>주택금융사업팀</option>
+									<option value="ADPT4001"
+									>개발운영팀</option>
+									<option value="ADPT4002"
+									>IT고도화팀</option>
+									<option value="ADPT5001"
+									>법무팀</option>
+									<option value="ADPT6001"
+									>NK페이먼츠</option>
+									<option value="ADPT0000"
+									>임원실</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="position">직급</label>
+								<select class="form-control" id="position" name="position">
+									<option value="ADPN0001"
+									>사원</option>
+									<option value="ADPN0002"
+									>주임</option>
+									<option value="ADPN0003"
+									>대리</option>
+									<option value="ADPN0004"
+									>과장</option>
+									<option value="ADPN0005"
+									>차장</option>
+									<option value="ADPN0000"
+									>부장</option>
+									<option value="ADPN1001"
+									>이사</option>
+									<option value="ADPN1002"
+									>상무</option>
+									<option value="ADPN1003"
+									>전무</option>
+									<option value="ADPN1004"
+									>부대표</option>
+									<option value="ADPN1000"
+									>대표</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<button class="btn btn-primary" type="button" id="btnSubmit"> 가입신청하기 </button>
+							</div>
+						</form>
+						<div class="signup">
+							<p><span>계정이 있으십니까? <a href="/">로그인하기</a></span></p>
+						</div>
+					</div> <!-- end card-body -->
+				</div><!-- end card -->
+			</div> <!-- end row -->
+		</div><!-- end container -->
+</div>
+
+
+
+    <!-- bundle -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/plugins/jquery/jquery.setup.js"></script>
+    <script src="assets/js/common/msg.js"></script>
+    <script src="assets/js/common/header.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		
+    <!-- third party js -->
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+    <script src="assets/js/vendor/buttons.bootstrap4.min.js"></script>
+    <script src="assets/js/vendor/buttons.html5.min.js"></script>
+    <script src="assets/js/vendor/buttons.flash.min.js"></script>
+    <script src="assets/js/vendor/buttons.print.min.js"></script>
+    <script src="assets/js/vendor/buttons.colVis.min.js"></script>
+    <script src="assets/js/vendor/jszip.min.js"></script>
+    <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+    <script src="assets/js/vendor/dataTables.select.min.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Scripts -->
+    <script>
+
+        $(document).ready(function(){
+            $("#btnSubmit").on("click", function() {
+                var fd = $("#joinForm").serializeArray();
+                MsgBox.Confirm("신청 하시겠습니까?", function() {fncCreate(fd);});
+            });
+
+            function fncCreate(formData) {
+                $.ajax({
+                    url: "\/CC\/Login\/Join",
+                    method: "POST",
+                    data: formData,
+                    dataType: "JSON",
+                    success: function(response){
+                        if ( response && response.status == 'SUCCESS' ){
+                            MsgBox.Alert("suc", "신청 완료되었습니다.", function() {location.href = "\/CC\/Login";});
+                        }else if( response && response.status == 'FAILED' ){
+                            MsgBox.Alert("error", response.message);
+                        }
+                        else {
+                            MsgBox.Alert("error", '입력항목 에러 입니다.');
+                            markingErrorField(response);
+                        }
+                    },
+                    error : function(jqXHR, exception) {
+                        if (jqXHR.status === 0) {
+                            MsgBox.Alert("error", 'Not connect.\n Verify Network.');
+                        } else if (jqXHR.status == 404) {
+                            MsgBox.Alert("error", 'Requested page not found. [404]');
+                        } else if (jqXHR.status == 500) {
+                            MsgBox.Alert("error", 'Internal Server Error [500].');
+                        } else if (exception === 'parsererror') {
+                            MsgBox.Alert("error", 'Requested JSON parse failed.');
+                        } else if (exception === 'timeout') {
+                            MsgBox.Alert("error", 'Time out error.');
+                        } else if (exception === 'abort') {
+                            MsgBox.Alert("error", 'Ajax request aborted.');
+                        } else {
+                            MsgBox.Alert("error", 'Uncaught Error.\n' + jqXHR.responseText);
+                        }
+                    }
+                })
+            }
+
+            var markingErrorField = function (response) {
+                const errorFields = response.data;
+                $('.invalid-feedback').text('');
+                $('.form-control').removeClass('is-invalid');
+
+                if(errorFields.length > 0) {
+                    var $field, $invalid, error;
+                    for(var i=0, length = errorFields.length; i<length;i++){
+                        error = errorFields[i];
+                        $field = $('#'+error['field']);
+                        $invalid = $('#'+error['field']+'-invalid');
+                        if($field && $field.length > 0){
+                            $field.addClass('is-invalid');
+                            $invalid.text($invalid.text() + '['+error.defaultMessage + ']');
+                        }
+                    }
+                }
+                else {
+                    MsgBox.Alert("error", response.message);
+                }
+            };
+        });
+		
+    </script>
+
+
+	<script>
+		
+	function idInvalTextView(id, color, msg){
+    $('#' + id).addClass('is-invalid');
+    $('#' + id + '-invalid').css("color", color);
+    $('#' + id + '-invalid').text(msg);
+	}
+
+		
+	// 아이디 빈값 체크
+	id_check = function(){
+		var adminId = $("#adminId").val();
+		if(!adminId) {
+			idInvalTextView('adminId', 'red', '[아이디를 입력해주세요.]');
+				return false;
+		}
+	}
+	
+
+	// 이름 빈값 체크
+	name_check = function(){
+		var adminName = $("#adminName").val();
+		if(!adminName) {
+			idInvalTextView('adminName', 'red', '[이름을 입력해주세요.]');
+				return false;
+		}
+	}
+
+
+	// 휴대폰 체크
+
+	hp_check = function() {
+		var hp = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
+		var str = $('#hp').val();
+
+		if(str.length > 1) {
+			if(hp.test(str) == false) {
+				idInvalTextView('hp', 'red', '[올바른 휴대폰 번호를 입력해 주세요.]');
+			}
+			else {
+				$("#hp").addClass('is-invalid');
+				$('#hp-invalid').empty();
+			}
+		}
+		else {
+			idInvalTextView('hp', 'red', '[휴대폰 번호를 입력해 주세요.]');
+		}
+	}
+
+
+
+	// 이메일 체크
+	email_check = function() {
+		var re = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+		var str = $('#email').val();
+
+		if(str.length > 1) {
+			if(re.test(str) == false) {
+				idInvalTextView('email', 'red', '[올바른 이메일 주소를 입력해 주세요.]');
+			}
+			else {
+				$("#email").addClass('is-invalid');
+				$('#email-invalid').empty();
+			}
+		}
+		else {
+			idInvalTextView('email', 'red', '[이메일 주소를 입력해 주세요.]');
+		}
+	}
+
+
+	// 빈값일 때, 하단 가입버튼 클릭시 안내 문구
+	
+	$("#btnSubmit").on('click', function(){
+		var adminId = $("#adminId").val();
+        var adminName = $("#adminName").val();
+        var hp = $("#hp").val();
+        var email = $("#email").val();
+		
+		if(!adminId) {
+		   idInvalTextView('adminId', 'red', '[아이디는 필수정보입니다.]');
+		}
+		
+		if(!adminName) {
+		   idInvalTextView('adminName', 'red', '[이름은 필수정보입니다.]');
+		}
+		
+		if(!hp) {
+		   idInvalTextView('hp', 'red', '[휴대폰 번호는 필수정보입니다.]');
+		}
+		
+		if(!email) {
+		   idInvalTextView('email', 'red', '[이메일은 필수정보입니다.]');
+		}
+
+	});
+
+
+		
+	</script>	
+
+		
+	</body>
+	
+    <div class="modal" id="msg_popup" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body"> <!-- MSG Space--> </div>
+                <div class="modal-footer" id="btn_confirm">
+                    <button type="button" id="confirm_yes" class="btn btn-primary" data-dismiss="modal" >YES</button>
+                    <button type="button" id="confirm_no" class="btn btn-secondary" data-dismiss="modal">NO</button> </div>
+                <div class="modal-footer" id="btn_alert">
+                    <button type="button" id="alert_ok" class="btn btn-primary alert_ok" data-dismiss="modal" >OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert-suc" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content modal-filled bg-success">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2">성공!</h4>
+                        <p class="mt-3 alert-msg"></p>
+                        <button type="button" class="btn btn-light my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <h4 class="mt-2">Information!</h4>
+                        <p class="mt-3 alert-msg"></p>
+                        <button type="button" class="btn btn-info my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-warning" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-warning h1 text-warning"></i>
+                        <h4 class="mt-2">Warning</h4>
+                        <p class="mt-3 alert-msg"></p>
+                        <button type="button" class="btn btn-warning my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-error" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content modal-filled bg-danger">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-wrong h1"></i>
+                        <h4 class="mt-2">Error!</h4>
+                        <p class="mt-3 alert-msg" ></p>
+                        <button type="button" class="btn btn-light my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-danger">
+                    <h4 class="modal-title" id="danger-header-modalLabel">Confirm</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p class="mt-3 alert-msg" ></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="confirm-no" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" id="confirm-yes" class="btn btn-danger" data-dismiss="modal">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-prompt" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-colored-header bg-danger">
+                    <h4 class="modal-title">Prompt</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <p class="mt-3 alert-msg" ></p>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="prompt-str">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="prompt-no" class="btn btn-light" data-dismiss="modal">취소</button>
+                    <button type="button" id="prompt-yes" class="btn btn-danger" data-dismiss="modal">확인</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="alert-copy" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-checkmark h1"></i>
+                        <h4 class="mt-2">Copy!</h4>
+                        <p class="mt-3 alert-msg" ></p>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="copyStr">
+                        </div>
+                        <button type="button" id="copy" class="btn btn-light my-2">복사</button>
+                        <button type="button" class="btn btn-light my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <p class="mt-3 alert-msg"></p>
+                        <button type="button" class="btn btn-info my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--- 완납확인서 모달창 -->
+    <div id="paper-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="">
+                        <div class="modal-header">
+                            <button type="button" class="btn btn-link" onclick="modalPaperPrint();"><i class="mdi mdi-printer"></i> 인쇄</button>
+                            <button type="button" class="btn basic-bt" data-dismiss="modal">확인</button>
+
+                        </div>
+                        <p class="mt-0 alert-msg"></p>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="product-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <div class="text-center">
+                        <i class="dripicons-information h1 text-info"></i>
+                        <p class="mt-3 alert-msg"></p>
+                        <button type="button" class="btn btn-info my-2 alert-ok" data-dismiss="modal">확인</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    
+</html>

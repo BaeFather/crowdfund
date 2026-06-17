@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Thin"), local("Spoqa Han Sans Thin"), url("/theme/2018/css/font/Spoqa Han Sans Thin.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Thin.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Thin.ttf") format("truetype");
+
+   font-weight: 100;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Light"), url("/theme/2018/css/font/Spoqa Han Sans Light.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Light.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Light.ttf") format("truetype");
+
+   font-weight: 300;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Regular"), url("/theme/2018/css/font/Spoqa Han Sans Regular.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Regular.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Regular.ttf") format("truetype");
+
+   font-weight: 400;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Bold"), url("/theme/2018/css/font/Spoqa Han Sans Bold.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Bold.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Bold.ttf") format("truetype");
+
+   font-weight: 700;
+}
+
+body, input, textarea, select, button, table{ margin:0; font-size:13px; font-family:'Spoqa Han Sans', Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; }
+body, h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, form, fieldset, legend, button { margin: 0; padding:0; font-weight:normal; }
+
+
+img, fieldset{ border:0 none; }
+dl, ul, ol, li { list-style: none outside none; }
+button{ border:0 none; cursor:pointer; display: block; }
+table, th, td, div{ border-collapse:collapse; }
+textarea { outline:0; }
+
+
+a,img,input { outline:none; selector-dummy:expression(this.hideFocus=true); }
+
+/* 모바일용 */
+input[type=image] {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+
+li img { vertical-align:top; }
+td img { vertical-align:middle; }
+
+a { text-decoration:none; color:#202020; }
+a:hover, a:active, a:focus { color:#153fa1; text-decoration:none; }
+table a:link, table a:visited { color:#202020; }
+table a:hover, table a:active { color:#153fa1; text-decoration:none; }
+address, caption, cite, code, dfn, em, var { font-style:normal; }
+address{line-height:20px;}
+
+strong, .strong, b {font-family:'Spoqa Han Sans'}
+.blind, legend, caption {display:none !important}
+.cursor {cursor: pointer}
+.clear {clear:both}
+
+input.text { height:33px; padding:0 5px; border:1px solid #ddd; background-color:#f8f8f8; color:#ced0d6; vertical-align:middle; min-width:340px; }
+
+body {background:#fff;font-family:'Spoqa Han Sans';}
+
+.top {width:100%;height:549px;background:url('../img/top_bg01.jpg') center no-repeat;}
+.top .auto_btn {width:1100px;margin:0 auto;text-align:left;padding:330px 0 0 110px;cursor:pointer;}
+.cont {width:1100px;margin:0 auto;}
+
+.qna {background:#eff4fa;width:100%;margin:0 auto;padding:90px 0;}
+.qna .qna_cont {width:1100px;margin:0 auto;}
+.qna .qna_cont .faq {text-align:left;width:964px;margin:40px auto;}
+.qna .qna_cont .faq li {margin-bottom:15px;}
+.qna .qna_cont .faq li a {border:1px solid #d9e4f1;border-radius:5px;background-color:#d9e4f1;padding:15px 15px;display:block;color:#7b8ca3;font-size:21px;}
+.qna .qna_cont .faq li a:hover {border:1px solid #1277f4;border-radius:5px;background-color:#1277f4;padding:15px 15px;display:block;color:#fff;font-size:21px;}
+.qna .qna_cont .faq li a:focus {border:1px solid #1277f4;border-radius:5px;background-color:#1277f4;padding:15px 15px;display:block;color:#fff;font-size:21px;}
+.qna .qna_cont .faq li p {border:1px solid #fff;border-radius:5px;background-color:#fff;padding:15px 30px;margin:10px 0;display:block;color:#1e1e1e;font-size:18px;}
+.qna .qna_cont .faq li p span {color:#1277f4;font-size:18px;font-weight:400;}
+
+.select_board {width:100%;border:0;margin:10px 0;}
+.select_board .top_board {border-top:2px solid #1277f4;border-bottom:1px solid #dcdcdc;height:50px;background-color:#f6f6f6;font-size:16px;}
+.select_board tr {border-bottom:1px solid #dcdcdc;height:55px;font-size:16px;}
+.select_board td {padding:0 10px;}
+.select_board .texts {text-align:right;font-size:16px;}
+.select_board input {border-radius:3px;border:1px solid #dcdcdc;padding-right:5px;width:80px;line-height:30px;}
+.select_board input:focus {border:1px solid #1277f4;}
+
+.select_board input[type=checkbox] { display:none; }
+.select_board input[type=checkbox] + label { display: inline-block; cursor: pointer; line-height: 24px; width:24px;height:24px;background: url('../img/check_off.png') center no-repeat; }
+.select_board input[type=checkbox]:checked + label { background: url('../img/check_on.png'); }
+
+
+.notice {width:1100px;margin:0 auto;}
+.auto_btn2 {width:1100px;margin:0 auto;text-align:center;padding:0 0 90px 0;cursor:pointer;}
+
+#disp_selected p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: hidden; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	width:838px;height:580px;background-color:#fff;
+	margin: 8% auto; /* 15% from the top and centered */
+	padding: 10px 20px;
+
+}
+.modal-content .tabs {padding:10px 0 20px 0;}
+.modal-content .tabs li {float:left;width:278px;font-size:21px;color:#a3a3a3;font-weight:400;}
+.modal-content .tabs .on a {border-bottom:4px solid #1277f4;padding-bottom:8px;}
+.modal-content .tabs .line {width:2px !important;float:left;color:#a3a3a3;}
+.modal-content .select_cont01 {border:6px solid #f3f3f4;padding:5px 20px;margin-top:5px;text-align:left;}
+.modal-content .select_cont01 li {font-size:20px;color:#2d2d2d;font-weight:400;padding:10px 0; vertical-align: super;}
+.modal-content .select_cont01 li:nth-child(1) {font-size:21px;color:#2d2d2d;font-weight:600;height:32px;}
+.modal-content .select_cont01 li span {display:inline-block;line-height:24px;}
+.modal-content .select_cont01 input[type=checkbox] { display:none;}
+.modal-content .select_cont01 input[type=checkbox] + label { display: inline-block; cursor: pointer; line-height: 24px; width:24px;height:24px;background: url('../img/check_off.png') center no-repeat; }
+.modal-content .select_cont01 input[type=checkbox]:checked + label { background: url('../img/check_on.png') center no-repeat; }
+
+.modal-content .select_cont02 {border:6px solid #f3f3f4;padding:50px 30px;margin-top:10px;text-align:center;font-size:20px;}
+/* .modal-content .select_cont02 input {border-radius:3px;border:1px solid #dcdcdc;padding-left:10px;width:250px;line-height:55px;font-size:16px;} */
+.modal-content .select_cont02 input {border-radius:3px;border:1px solid #dcdcdc;padding-left:10px;width:250px;font-size:16px;}
+.modal-content .select_cont02 input:focus {border:1px solid #1277f4;}
+
+.modal-content .auto04 {padding-top:30px;}
+.modal-content .auto04 ul li:nth-child(1) {float:left;width:100%;font-size:18px;}
+.modal-content .auto04 ul li:nth-child(2) {float:right;width:405px;font-size:18px;}
+/* .modal-content .auto04 ul li div {width:365px;height:140px;border:6px solid #f3f3f4;font-size:18px;text-align:left;padding:10px 20px;} */
+.modal-content .auto04 ul li .div1 {border:6px solid #f3f3f4;font-size:16px;text-align:left;padding:10px 20px;clear:both;}
+.modal-content .auto04 ul li .won {width:353px;text-align:center;border:6px solid #f3f3f4;padding:10px 20px;}
+/* .modal-content .auto04 ul li .won span {color:#1277f4;font-size:24px;line-height:26px;text-align:center;display:block;margin-top:15%;} */
+/* .modal-content .auto04 ul li .won span {color:#1277f4;font-size:24px;line-height:26px;text-align:center;margin-top:15%;} */
+
+
+
+/* Renewal */
+#auto_money {
+    font-size: 20px;
+}

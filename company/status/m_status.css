@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; }
+	/* ul li {list-style:none; float: left;} */
+	.title ul li {list-style:none; float: left;}
+	table {border-collapse:collapse; border-spacing:0}
+
+	select{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #dcdcdc;
+    height: 30px;
+    font-size: 14px;
+	font-weight: 500;
+    color: #222;
+    width:90px;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 1px;
+	}
+
+
+	select.month{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #dcdcdc;
+    height: 30px;
+    font-size: 14px;
+	font-weight: 500;
+    color: #222;
+    width:110px;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 1px;
+
+	}
+
+
+
+	select::-ms-expand { display:none; }
+
+
+	option:disabled {color:#aaa;}
+
+
+
+
+
+	/*모바일*/
+
+	::-webkit-scrollbar { -webkit-appearance: none; }
+	::-webkit-scrollbar:vertical { width: 12px; }
+	::-webkit-scrollbar:horizontal { height: 8px; }
+	::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, .5); border-radius: 10px; border: 2px solid #ffffff; }
+	::-webkit-scrollbar-track { border-radius: 10px; background-color: #ffffff; }
+
+
+	#mobile {width:100%; margin:0 auto; border:0; text-align:center; overflow-x:hidden; }
+    #mobile img {width:100%;}
+	#mobile .tops {width:100%; height: 150px; background-image: url("img/m_top_bg.jpg"); background-position: center center; background-size:cover; background-repeat: no-repeat; color:#fff; font-size:26px; padding-top: 50px; box-sizing: border-box; font-weight: 600; margin-bottom:20px;}
+	#mobile .structure {width:100%; padding: 0 3%; box-sizing: border-box;}
+	#mobile .structure img {border:1px solid #dcdcdc;}
+	#mobile .structure span {padding-bottom: 5px; display: block;}
+	#mobile .h3 {text-align:left; color:#222; font-weight: 400; font-size: 20px; }
+
+
+	#mobile .title {width:100%; padding: 70px 3% 0; display: inline-block; box-sizing: border-box;}
+	#mobile .title .date {float:right; padding-top: 0px; }
+	#mobile .wrap_investment {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .investment {width:100%; text-align: center; margin-top:5px; border:1px solid #dcdcdc;}
+	#mobile .investment tr:nth-child(even) {background-color: #f9f9f9;}
+	#mobile .investment tr th {height:50px; font-size:16px; color:#222; font-weight: 400; text-align: left; padding-left: 5%;}
+	#mobile .investment tr th span {font-size:13px;}
+	#mobile .investment tr td {height:50px; font-size:16px; font-weight: 600; text-align: right; padding-right: 5%;}
+	#mobile .investment tr td span {font-weight: 400;}
+
+
+	#mobile .box_type_investment {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .wrap_type_investment {width:100%; padding-bottom:10px; overflow-x:auto;}
+	#mobile .type_investment {width:100%; text-align: center; margin-top:5px; white-space: nowrap;  }
+	#mobile .type_investment thead tr th {height:50px; background-color: #f9f9f9; border-top:1px solid #666666; font-size:16px; color:#222; font-weight: 400; padding: 0 30px;}
+	#mobile .type_investment thead tr th span {font-size:13px;}
+	#mobile .type_investment thead tr th:nth-child(2) {text-align:right;}
+	#mobile .type_investment thead tr th:nth-child(3) {text-align:right;}
+	#mobile .type_investment thead tr th:nth-child(4) {text-align:right;}
+
+	#mobile .type_investment tbody tr th {height:45px; background-color: #f9f9f9; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc; font-size:15px; font-weight: 400; padding: 0 30px;}
+	#mobile .type_investment tbody tr td {height:45px; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc;  font-size:15px; font-weight: 500; color:#666; padding: 0 30px;}
+	#mobile .type_investment tbody tr td:nth-child(2) {text-align:right;}
+	#mobile .type_investment tbody tr td:nth-child(3) { text-align:right;}
+	#mobile .type_investment tbody tr td:nth-child(4) { text-align:right;}
+
+	#mobile .box_disposal{width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .wrap_disposal {width:100%; padding-bottom:10px; overflow-x:auto;}
+	#mobile .disposal {width:100%; text-align: center; margin-top:5px; white-space: nowrap;  }
+	#mobile .disposal tr th {height:50px; background-color: #f9f9f9; border-top:1px solid #666666; font-size:16px; color:#222; font-weight: 400; padding: 0 30px;}
+	#mobile .disposal thead tr th span {font-size:13px;}
+	#mobile .disposal tbody tr th {height:45px; background-color: #f9f9f9; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc; font-size:15px; font-weight: 400; padding: 0 30px;}
+	#mobile .disposal tbody tr td {height:45px; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc;  font-size:15px; font-weight: 500; color:#666; padding: 0 30px;}
+
+
+	#mobile .wrap_finance {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .finance  {width:100%; text-align: center; margin-top:5px; }
+	#mobile .finance tbody tr th {width:70%; height:50px; background-color: #f9f9f9; border-top:1px solid #666666; border-bottom:1px solid #dcdcdc;  font-size:16px; font-weight: 400;}
+	#mobile .finance tbody tr td {width:30%; border-top:1px solid #666666; border-bottom:1px solid #dcdcdc;  font-size:16px; font-weight: 500; color:#666;}
+	#mobile .finance tbody tr td img {width:30px; height:30px;}
+
+	#mobile .wrap_member {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .member {width:100%; text-align: center; margin-top:5px; border:1px solid #dcdcdc;}
+	#mobile .member tr th {height:50px; font-size:16px; color:#222; font-weight: 400; text-align: left; padding-left: 5%; border-bottom:1px solid #dcdcdc;}
+	#mobile .member tr th span {font-size:13px;}
+	#mobile .member tr td {height:50px; font-size:16px; font-weight: 600; text-align: right; padding-right: 5%; border-bottom:1px solid #dcdcdc;}
+	#mobile .member tr td span {font-weight: 400;}
+	
+	#mobile .member {width:100%; text-align: center; margin:10px auto 0;}
+	#mobile .member thead tr th {height:50px; background-color: #f9f9f9; border-top:1px solid #666666; font-size:18px; color:#222; font-weight: 400;}
+	#mobile .member tbody tr td {height:45px; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc;  font-size:17px; font-weight: 500; color:#666;}
+
+
+	#mobile .wrap_stockholder {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .stockholder  {width:100%; text-align: center; margin-top:5px; }
+	#mobile .stockholder tbody tr td {border-top:1px solid #666666; border-bottom:1px solid #dcdcdc;  font-size:15px; font-weight: 500; color:#666; padding:3% 3%;}
+	#mobile .stockholder tbody tr td span {font-size:17px; font-weight: 500; color:#222;}
+
+	#mobile .wrap_gongsi {width:100%; padding:0 3%; box-sizing: border-box; overflow-x:auto;}
+	#mobile .gongsi {width:100%; text-align: center; margin-top:5px;}
+	#mobile .gongsi tr th {height:50px; background-color: #f9f9f9; border-top:1px solid #666666; font-size:16px; color:#222; font-weight: 400; padding: 0 30px;}
+	#mobile .gongsi thead tr th span {font-size:13px;}
+	#mobile .gongsi tbody tr th {height:45px; background-color: #f9f9f9; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc; font-size:15px; font-weight: 400; padding: 0 30px;}
+	#mobile .gongsi tbody tr td {height:45px; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc;  font-size:15px; font-weight: 500; color:#666; padding: 0 30px;}
+
+	#mobile .wrap_info {width:100%; padding:0 3% 80px; box-sizing: border-box;}
+	#mobile .info  {width:100%; text-align: center; margin-top:5px; }
+	#mobile .info tbody tr th {width:70%; height:50px; background-color: #f9f9f9; border-top:1px solid #666666; border-bottom:1px solid #dcdcdc;  font-size:16px; font-weight: 400;}
+	#mobile .info tbody tr td {width:30%; border-top:1px solid #666666; border-bottom:1px solid #dcdcdc;  font-size:16px; font-weight: 500; color:#666;}
+	#mobile .info tbody tr td img {width:30px; height:30px;}
+	
+	#mobile .box_type_invest_hello {width:100%; padding:0 3%; box-sizing: border-box;}
+	#mobile .wrap_type_invest_hello {width:100%; padding-bottom:10px; overflow-x:auto;}
+	#mobile .invest-data {width: 100%; text-align: center; margin-top:5px; white-space: nowrap;}
+	#mobile .invest-data tr th {height:50px; background-color: #f9f9f9; border-top:1px solid #666666; font-size:16px; color:#222; font-weight: 400; padding: 0 30px;}
+	#mobile .invest-data thead tr th:nth-child(1),
+	#mobile .invest-data thead tr th:nth-child(2) {width: 22%; text-align: right;}
+	#mobile .invest-data thead tr th:nth-child(3) {width: 25%;}
+	#mobile .invest-data thead tr th:nth-child(4) {width: 25%;}
+	#mobile .invest-data thead tr th span {font-size:13px;}
+	#mobile .invest-data tbody tr th {height:45px; background-color: #f9f9f9; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc; font-size:15px; font-weight: 400; padding: 0 30px;}
+	#mobile .invest-data tbody tr td {height:45px; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc;  font-size:15px; font-weight: 500; color:#666; padding: 0 30px;}

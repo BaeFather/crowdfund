@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>헬로펀딩, 대한민국 P2P 금융의 표준, P2P투자, P2P대출, 소액투자의 시작 헬로펀딩</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+
+<!-- hellofunding 전용 START -->
+<link rel="stylesheet" type="text/css" href="https://www.hellofunding.co.kr/theme/blueman1/css/default.css">
+<script type="text/javascript" src="https://www.hellofunding.co.kr/event_invest/235_event/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://www.hellofunding.co.kr/event_invest/235_event/js/jquery.nivo.slider.pack.3.2.js"></script>
+<script type="text/javascript" src="https://www.hellofunding.co.kr/event_invest/235_event/js/custom5-S.js" ></script>
+<link href="https://www.hellofunding.co.kr/event_invest/235_event/css/demo35-nivo-slider.css" rel="stylesheet" type="text/css">
+<link href="https://www.hellofunding.co.kr/event_invest/235_event/css/custom5-S.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="loading">
+<div id="navblayer">
+	<div class="nivoSlider" style="cursor:pointer">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img_start.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img01.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img02.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img03.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img04.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img05.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img06.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img07.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img08.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img09.jpg">
+		<img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img10.jpg">
+		<a href="https://www.hellofunding.co.kr/event_invest/event_invest.php?prd_idx=15" onClick="eventInvest()"><img src="https://www.hellofunding.co.kr/event_invest/235_event/images/slide_img11.jpg" id="last_image"></a>
+	</div>
+</div>
+
+<script>
+		var pauseTime=10000,       // Set here Nivo Slider pauseTime
+			animSpeed=300,          // Set here Nivo Slider animSpeed,
+			pieWidth='100%',        // max pie width,
+			autoPieCenter=true,     // Pie is centered or not (false)
+			pieColor='#E76861',     // Pie color
+			pieBackground='#333',   // Pie background color e.g. #A5A5A5
+			pieType='radial',       // Circular or radial
+			pieDiameter=32,         // Circle diameter
+			pieTime=pauseTime-animSpeed-2000,
+			started=2*animSpeed,
+			pieML=0,
+			ratio;
+
+		function pieBar() {
+
+			if (pieTime<100) return // Quit if no value added
+
+			testCanvas=$('<canvas width="1px" height="1px"/>');
+			$('body').append(testCanvas);
+			if (!testCanvas.width()) { // Canvas not supported? radial mode instead
+				pieType='radial';
+				testCanvas.remove();
+			};
+
+			if (pieType=='circular') {
+
+				NB=NBBkg=$('<canvas width='+pieDiameter+'px" height='+pieDiameter+'px"/>');
+
+				$('.nivoSlider').append(NB);
+
+				var ctx=NB[0].getContext('2d');
+
+				ctx.beginPath();
+				ctx.arc(pieDiameter/2,pieDiameter/2,Math.round(pieDiameter/2)-4,0,2*Math.PI);
+				ctx.lineWidth=8;
+				ctx.strokeStyle=pieBackground;
+				ctx.stroke();
+
+				NB.css({
+						display:'block',
+						position:'absolute',
+						opacity:0,
+						top:'30px',
+						right:'30px',
+						zIndex:9999
+					})
+				.delay(started+300).animate({opacity:1},300);
+
+				if (autoPieCenter) {
+					NB.css({
+						left:'50%',
+						marginLeft:-pieDiameter/2
+					});
+				};
+
+				pieT=setTimeout(function() {
+					ratio=0,
+					pieI=setInterval(function () {
+
+						var ctx=NBBkg[0].getContext('2d');
+						ctx.beginPath();
+						ctx.arc(pieDiameter/2,pieDiameter/2,Math.round(pieDiameter/2)-4,-1/2*Math.PI, ratio*2*Math.PI-1/2*Math.PI );
+						ctx.lineWidth=2;
+						ctx.strokeStyle=pieColor;
+						ctx.stroke();
+						ratio+=0.005
+						if (ratio>1.01) {
+							clearInterval(pieI);
+							NB.animate({opacity:0},300,function() {NB.remove()});
+							started=0;
+						};
+					},pieTime/200);
+				},300+started);
+			};
+
+			if (pieType=='radial') {
+
+				if (!$('.nivoBar').length) {
+					$('.nivoSlider').append('<div class="nivoBar"></div><div class="nivoBarBkg"></div>');
+					NB=$('.nivoBar').css({
+						display:'block',
+						position:'relative',
+						width:0,
+						height:7,
+						bottom:'100%',
+						left:0,
+						background:pieColor,
+						zIndex:4
+					});
+				};
+
+				var valPieWidth=parseInt(pieWidth,10);
+				if (valPieWidth<2) {pieWidth='2%'};
+				if (valPieWidth>100) {pieWidth='100%'};
+				valPieWidth=parseInt(pieWidth,10);
+
+				if (autoPieCenter) {
+					pieML=(50-valPieWidth/2)+'%';
+					NB.css({
+						marginLeft:pieML
+					});
+				};
+
+				$('.nivoBarBkg').css({
+					display:'block',
+					position:'relative',
+					width:pieWidth,
+					height:NB.height(),
+					bottom:'100%',
+					left:0,
+					marginLeft:pieML,
+					marginTop:-7,
+					background:pieBackground,
+					zIndex:3
+				});
+
+				NB.css({opacity:1})
+				.stop(1,1)
+				.delay(300+started)
+				.animate({width:pieWidth},pieTime,'linear')
+				.delay(300)
+				.animate({opacity:0},500)
+				.css({width:0});
+
+				started=0;
+
+			};
+
+		};
+
+		function checkRemovePieBar() {
+			if (pieType=='circular' & ratio<1.01) {
+				clearTimeout(pieT);
+				clearInterval(pieI);
+				NB.stop(1,0).animate({opacity:0},300, function(){NB.remove()});
+				started=2*animSpeed;
+			};
+
+			if (pieType=='radial' & NB.css('opacity')==1) {
+				NB.stop(1,0).animate({opacity:0},300);
+				started=animSpeed;
+			};
+		};
+
+		$(window).load(function() {
+			//alert($('#navblayer img').length);
+
+			$('.nivoSlider').nivoSlider({
+				effect:'sliceUpDownRight',
+				pauseTime:pauseTime,  // Do not change (set value above)
+				animSpeed:animSpeed,  // Do not change (set value above)
+				pauseOnHover:false,   // Do not change this setting
+				controlNav:false,     // 하단 네비게이션
+				afterLoad: function(){pieBar()},
+				beforeChange: function(){checkRemovePieBar()},
+				afterChange: function(){pieBar()},
+				lastSlide: function(){ $('.nivoSlider').data('nivoslider').stop(); }
+			});
+
+		});
+</script>
+
+<script>
+//$('.noFooter').on('click', function() {
+//	window.location.href ='http://www.soslignes-ecrivain-public.fr/Progress-Bar-Nivo-Slider.html';
+//});
+</script>
+</body>
+</html>

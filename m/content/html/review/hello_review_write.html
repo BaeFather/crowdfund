@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>추천평 작성</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/hello.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" /> <!-- modal(popup) css -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <h2>추천평 작성</h2>
+            <div class="close_btn">
+                <a href="#"><img src="img/close_icon.png" /></a>
+            </div>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### ReviewWrite Start -->
+        <div id="ReviewWrite">
+            <form>
+                <ul>
+                    <li>
+                        <span>이름</span>
+                        <p>이상규</p>
+                    </li>
+                    <li>
+                        <span>성별</span>
+                        <p>남</p>
+                    </li>
+                    <li>
+                        <span>투자참여</span>
+                        <p>80회</p>
+                    </li>
+                    <li>
+                        <span>선호상품</span>
+                        <select>
+                            <option selected disabled hidden>선호하는 투자상품을 선택해주세요</option>
+                            <option>헬로펀딩</option>
+                            <option>소상공인</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="photo">
+                    <span>헬로포토 (선택)</span>
+                    <input type="text" disabled placeholder="추천평에 사용될 사진을 첨부해주세요."/>
+                    <label for="review_file">파일첨부</label>
+                    <input type="file" id="review_file">
+                    <p>* 본인 사진만 인정되며, 타인 사진 도용 시 발생하는 책음은 작성자 본인에게 있습니다.</p>
+                </div>
+                <div class="write">
+                    <span>추천평 작성</span>
+                    <textarea placeholder="추천평은 최소 50자 이상, 최대 200자 이하까지 작성 가능합니다."></textarea>
+                </div>
+                <div class="agree"><input type="checkbox" />작성된 추천평 정보 활용에 동의합니다.</div>
+            </form>
+        </div>
+        <!-- ### ReviewWrite End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button class="md-trigger" data-modal="modal-3">등록</button>
+        </div>
+        <!-- ### BottomBtn End -->
+
+        <!-- ### alertPopup Start-->
+        <div class="md-modal md-effect-3" id="modal-3">
+			<div class="md-content" id="alertPopup">
+                <div class="content">
+                    <P>선호상품을 선택해주세요.</P>
+                    <!-- <p>리뷰는 최소 50자 이상 입력해주세요</p> -->
+                    <!-- <p>정보 활용에 동의 해주세요.</p> -->
+                    <!-- <p>리뷰작성은 1회만 가능합니다.</p> -->
+                </div>
+                <div class="md-close txt_close_btn">확인</div>
+			</div>
+		</div>
+        <div class="md-overlay"></div><!-- the overlay element -->
+        <!-- ### alertPopup end-->
+
+        <!-- modal(popup) script -->
+        <script src="js/classie.js"></script>
+        <script src="js/modalEffects.js"></script>
+    </body>
+</html>

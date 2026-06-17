@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+/*** 상품슬라이드 ***/
+#p_info {margin: 0;text-align:center;margin-top: 50px;z-index:8;}
+#p_info .p_info_b {background-size: 100% 100% !important;}
+#p_info .p_info_bb {padding: 5%;}
+#p_info .p_numb {float: left;text-align:left;font-size:16px;font-weight:700;color:#FFF;}
+#p_info .p_tit {text-align:left;font-size:17px;font-weight:700;color:#FFF;margin-top:2%;letter-spacing:-1px;}
+#p_info .p_date {text-align:left;font-size:14px;font-weight:400;color:#FFF;margin-top:1%;}
+#p_info .p_info_total {width:100%;margin-top:2%;text-align:center;}
+#p_info .p_info_total div {font-size:26px;font-weight:400;color:#FFF;display:inline-block;padding-left:5%;line-height:32px;}
+#p_info .p_info_total div:first-child {font-size:26px;font-weight:400;color:#FFF;display:inline-block;padding-left:0;line-height:32px;}
+#p_info .p_info_total div span {font-size:14px;font-weight:400;color:#FFF;display:block;}
+#p_info .p_info_total div b {font-size:12px;font-weight:400;color:#FFF;display:inline-block;}
+#p_info .p_btn {background-color:#073190;margin-top:6%;padding:3% 0;font-size:16px;font-weight:400;color:#FFF;border-radius:3px;cursor:pointer;}
+
+#p_info .p_flags {position: relative;width:100%;padding: 0;}
+#p_info .p_flags ul {overflow: hidden;}
+#p_info .p_flags ul li {list-style:none;padding:3px 4px;text-align:center;border-radius:3px;color:#FFF;font-size:13px;line-height:22px;font-family:'spoqahansans';font-weight:400;display:block;float:left;margin:0 7px 0 0;letter-spacing:1px;cursor: pointer;}
+#p_info .p_flags ul li:after {content: "";display: block;clear: both;}
+
+/* 소셜미디어 URL 버튼 */
+#p_info .sns_share {position:relative;margin-top:20px;z-index:1;}
+#p_info .sns_share ul {text-align: center;}
+#p_info .sns_share ul li {display: inline-block;padding-left:5px;list-style:none;}
+
+#p_info .process_wrap {clear:both;width:100%;display:inline-block;}
+#p_info .process_wrap .process {background-color:#fff;width:100%;height:8px;margin-top:60px;border-radius:50px;}
+#p_info .process_wrap .process .process_bar {position:relative;width:90%;height:8px;border-radius:50px 0 0 50px;background: linear-gradient(to right, #00a0e9, #073190);}
+#p_info .process_wrap .process .process_tag {width:90%;position:absolute;margin:-60px 0 0 0;}
+#p_info .process_wrap .process .process_tag .process_tag_c {margin:0 auto;width:70%;background-color:#fff;border-radius:50px;opacity:0.9;padding:0.3% 0 1% 0;font-size:14px;font-weight:400;}
+#p_info .process_wrap .process .process_tag .process_tag_c span {margin-top:5px;display:block;font-family:'Spoqa Han Sans';font-size:12px}
+#p_info .process_wrap .process .process_tag .process_tag_c .p_t_n {margin-top:2px;display:inline-block;font-family:'Spoqa Han Sans';font-size:16px;font-weight:400;line-height:16px;color:#e91d1d;}
+#p_info .process_wrap .process .process_tag .process_tag_c .p_t_t {margin-top:2px;display:inline-block;font-family:'Spoqa Han Sans';font-size:16px;font-weight:400;line-height:16px;color:#073190;}
+#p_info .process_wrap .process .process_total {text-align:right;margin-top:5px;font-family:'Spoqa Han Sans';font-size:14px;font-weight:400;color:#fff;}
+
+#p_info .main_image {position: absolute;width:100%;height:495px;min-width: 1150px;z-index: -2;}
+#p_info .main_image img {width: 100%;height: 100%;min-width: 1150px;}
+
+#p_info .btn_all {text-align:center;padding:10px 0 20px 0;}
+#p_info .btn_all li {display:block;list-style:none;}
+#p_info .btn_all li a {margin: 5px 0;}
+
+/* 상품요약 */
+.product_brief {padding: 15px 15px;clear: both;min-height:140px;max-height:100%;background-color:#FFF;font-family:'spoqahansans';border:3px solid #0557ae;text-align:center;}
+.product_brief p {margin-top: 0;font-size:14px;font-weight:400;line-height:28px;}
+.product_brief p strong {color:#073290;font-size:18px;font-family:'spoqahansans';font-weight:400;line-height:23px;}
+
+/*** 투자포인트 ***/
+.invest_point {width:auto;margin:30px auto 0;font-family:'Spoqa Han Sans';}
+.invest_point .invest_point_tit {font-size:22px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;border-bottom:1px solid #143FA8;padding-left:5%;padding-bottom:3%;}
+.invest_point .invest_point_cont {padding:30px 0 40px 0;text-align:center;font-family:'Spoqa Han Sans';}
+.invest_point .invest_point_cont span {display:block;padding: 10px;vertical-align:top;font-size:15px;font-weight:300;font-family:'Spoqa Han Sans';}
+.invest_point .invest_point_cont span strong {display:block;font-size:19px;font-weight:400;font-family:'Spoqa Han Sans';color:#1E89EC;padding-bottom:10px;}
+
+/*** 상품 개요 ***/
+.product_info {margin:13% 0;text-align:center;text-justify: inter-word;}
+.product_info .product_info_tit {font-size:22px;font-weight:300;font-family:'spoqahansans';color:#000;border-bottom:1px solid #143FA8;padding-left:5%;padding-bottom:3%; text-align:left;}
+.p_i_t {margin:10% 5%;display: inline-block;}
+.p_i_t li:nth-child(1) {float:left;width:45%;font-size:14px;}
+.p_i_t li:nth-child(2) {float:left;width:55%;font-size:14px;}
+.p_i_t li:nth-child(3) {float:left;width:45%;padding-top:5%;font-size:14px;}
+.p_i_t li:nth-child(4) {float:left;width:55%;padding-top:5%;font-size:14px;}
+.p_i_t li p:last-child {font-size:20px;color:#073290;font-weight:400;font-family:'Spoqa Han Sans';line-height:24px;letter-spacing:-1px;}
+.product_info_cont_c {clear:both;text-align:left;margin: 0 5% 3% 5%;font-size: 14px;color: #000;font-weight: 300;font-family: 'Spoga Han Sans';line-height: 18px;}
+.p_i_c_t {border-collapse: collapse;width:90%;border-top:1px solid #143FA8;border-bottom:1px solid #143FA8;margin:0 auto;}
+.p_i_c_t td {text-align: left;padding:15px 0;width:28%;font-size:12px;font-weight:300;font-family:'spoqahansans';line-height:22px;color:#000;padding-left:15px;border-right:1px solid #143fa8;background-color:#ebf5fe;}
+.p_i_c_t td:last-child {width:85%;font-size:12px;font-weight:300;font-family:'spoqahansans';line-height:22px;color:#000;border-right:1px solid #fff;background-color:#fff;}
+.p_i_c_t td strong {font-size:6px;vertical-align:top;}
+.p_i_c_t tr {border-bottom:1px solid #b8c5e5;}
+.p_i_c_t tr:last-child {border-bottom:0px solid #b8c5e5;}
+
+
+/*** 라이브티비 ***/
+.hello_tv {margin:10% 5%;}
+.hello_tv img {width:100%;height:auto;}
+
+
+/*** 예상수익금 ***/
+.pre_earn {margin:13% 0;background-color:#f7f8fa;}
+.pre_earn .pre_earn_tit {font-size:22px;font-weight:300;font-family:'spoqahansans';color:#000;border-bottom:1px solid #143FA8;padding-left:5%;padding-bottom:3%; text-align:left;background-color:#fff;}
+
+.pre_earn .pre_earn_c {padding:32px 0 0 0;text-align:center;background-color:#f7f8fa;}
+.pre_earn .pre_earn_c li {list-style:none;display:inline-block;vertical-align:top;font-size:16px;font-weight:300;font-family:'Spoqa Han Sans';line-height:50px;}
+.pre_earn .pre_earn_c li:first-child {display:inline-block;vertical-align:top;font-size:16px;font-weight:300;font-family:'Spoqa Han Sans';line-height:50px;padding-right:2%;}
+.pre_earn .pre_earn_c li input {width:130px;height:42px;border:1px solid #073190;border-radius:5px;background-color:#fff;color:#000;vertical-align:top;font-family:'Spoqa Han Sans';font-size:16px;text-align:right;padding-right:5px;}
+.pre_earn .pre_earn_c li input::-webkit-input-placeholder {background-color:#fff;color:#96a7d1;font-size:14px;text-align:center;}
+.pre_earn .pre_earn_c li input::-moz-placeholder {background-color:#fff;color:#96a7d1;font-size:14px;text-align:center;}
+.pre_earn .pre_earn_c li input:-ms-input-placeholder {background-color:#fff;color:#96a7d1;font-size:14px;text-align:center;}
+.pre_earn .pre_earn_c .equal {background-color:#1E89EC;width:90px;height:44px;border-radius:5px;margin-left:3px;line-height:44px;}
+.pre_earn .pre_earn_c .equal a{display:block;color:#FFF;}
+.pre_earn .earn_btn {margin:5% 5%;font-size:24px;font-weight:300;font-family:'Spoqa Han Sans';text-align:center;}
+.pre_earn .earn_btn strong {color:#073190;font-size:24px;font-weight:400;font-family:'Spoqa Han Sans';}
+.pre_earn .earn_info p {width:95%;margin:0 auto;padding:15px 0;line-height:38px;font-size:16px;font-weight:300;font-family:'Spoqa Han Sans';border-bottom:1px solid #cacdd2;}
+.pre_earn .earn_info p:nth-child(1) {width:95%;margin:0 auto;margin-top:30px;padding:15px 0;line-height:38px;font-size:16px;font-weight:300;font-family:'Spoqa Han Sans';border-top:1px solid #cacdd2;}
+.pre_earn .earn_info .claim-mark {display:inline-block;vertical-align:top;margin-top:9px;line-height:20px; border-radius:100px; background-color:#bfbfbf; width:18px; height:18px;font-size:15px;color:#fff; font-family:'spoqahansans'; font-weight:400; text-align:center; cursor:pointer; }
+.pre_earn .simulation_detail_btn {clear:both;padding:40px 0 50px 0;text-align:center;color:#1E89EC;font-size:18px;cursor:pointer;}
+.pre_earn .blind {display:none;}
+
+/*** 신한은행배너***/
+.shinhan_ban {margin:0 5% 5% 5%;}
+.shinhan_ban img {width:100%;}
+
+
+/*** 상품자세히보기***/
+.detail_btn {margin:0 5%;}
+.detail_btn p {width:100%;height:45px;line-height:41px;background-color:#e7f3ff;text-align:center;font-size:16px;font-weight:300;font-family:'Spoqa Han Sans';}
+.detail_btn p a {display: block;color:#000;border:2px solid #1e88ec;height:45px;line-height:41px;}
+.detail_btn p span {position:absolute;right:8%;display:inline-block;}
+.detail_btn p span img {height:28px;vertical-align:top;margin-top:8px;}
+.detail_box {padding: 30px 0;width:100%;clear: both;margin: 0 auto;display: none;}
+
+/*** 투자 상품 구조(기존) ***/
+.invest_orga {margin:13% 0 10% 0;}
+.invest_orga .invest_orga_tit {text-align:left; border-bottom:1px solid #143fa8;}
+.invest_orga .invest_orga_tit p {padding-left:5%;font-size:22px;font-weight:300;color:#000;}
+.invest_orga .invest_orga_tit span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+
+
+.invest_o_i {margin:0 5%;text-align:justify;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';}
+.invest_o_i p {text-align:justify;font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#1e89ec;padding-bottom:3%;}
+.invest_o_i p img {width:100%;padding:5% 0 0 0;}
+
+
+/*** 투자 상품 구조(수정) ***/
+#investment_m_detail .invest_orga {margin:3% 0 15% 0;}
+#investment_m_detail .invest_orga .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .invest_orga .content {margin:10% 5% ;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .invest_orga .content p {text-align:justify; padding:3% auto;}
+#investment_m_detail .invest_orga .content p img {width:100%;padding:5% 0;}
+
+/*** 상품설명 ***/
+#investment_m_detail .prdt_summ {margin:13% 0 15% 0;}
+#investment_m_detail .prdt_summ .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .prdt_summ .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .prdt_summ .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .prdt_summ .content p {text-align:justify; padding:3% auto;}
+#investment_m_detail .prdt_summ .content p img {width:100%;padding:5% 0;}
+
+/*** 상환재원 ***/
+#investment_m_detail .reward_info {margin:13% 0 15% 0;}
+#investment_m_detail .reward_info .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .reward_info .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .reward_info .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';}
+#investment_m_detail .reward_info .content p {text-align:justify; padding:3% auto;}
+#investment_m_detail .reward_info .content p img {width:100%;padding:5% 0;}
+/* #investment_m_detail .reward_info .content p:first-child {font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#1e89ec;line-height:24px;} */
+/* #investment_m_detail .reward_info .content p:last-child {padding:0 0 10% 0;} */
+
+/*** 상환계획 ***/
+#investment_m_detail .reward_plan {margin:13% 0 15% 0;}
+#investment_m_detail .reward_plan .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .reward_plan .title span {text-align:justify;padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .reward_plan .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .reward_plan .content li:first-child {font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;line-height:14px;text-align:center;}
+#investment_m_detail .reward_plan .content li:first-child p:first-child {background-color:#143fa8;height:35px;font-size:20px;font-weight:300;font-family:'Spoqa Han Sans';color:#fff;line-height:35px;}
+#investment_m_detail .reward_plan .content li:first-child p:last-child {padding-top:5%;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;line-height:18px;text-align:left;}
+#investment_m_detail .reward_plan .content li:last-child {padding-top:10%;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;line-height:14px;text-align:center;}
+#investment_m_detail .reward_plan .content li:last-child p:first-child {background-color:#00a0e9;height:35px;font-size:20px;font-weight:300;font-family:'Spoqa Han Sans';color:#fff;line-height:35px;}
+#investment_m_detail .reward_plan .content li:last-child p:last-child {padding-top:5%;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;line-height:18px;text-align:left;}
+
+
+/*** 담보상환력 평가 ***/
+#investment_m_detail .reward_assess {margin:13% 0 15% 0;}
+#investment_m_detail .reward_assess .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .reward_assess .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .reward_assess .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .reward_assess .content .reward_assess_t {margin:10% 0 5%;width:100%; border-top:1px solid #073190; border-bottom:1px solid #073190;}
+#investment_m_detail .reward_assess .content .reward_assess_t strong {font-weight:400;}
+#investment_m_detail .reward_assess .content .reward_assess_t tr {border-bottom:1px solid #b8c5e5;height:50px;}
+#investment_m_detail .reward_assess .content .reward_assess_t tr:last-child {border-bottom:0px solid #b8c5e5;}
+#investment_m_detail .reward_assess .content .reward_assess_t td {border-right:1px solid #b8c5e5; border-bottom:1px solid #b8c5e5; text-align:center;font-size:13px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;padding:10px 0;}
+#investment_m_detail .reward_assess .content .reward_assess_t td:last-child {border-right:0px solid #b8c5e5;font-size:12px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;text-align:right;padding-right:5px;}
+#investment_m_detail .reward_assess .content .reward_assess_t td.r_a_t_1 {width:25%;background-color:#e9f4fe;font-weight:400;}
+#investment_m_detail .reward_assess .content .reward_assess_t td.r_a_t_2 {width:40%;background-color:#e9f4fe;font-weight:400;}
+#investment_m_detail .reward_assess .content .reward_assess_t td.r_a_t_3 {width:35%;background-color:#e9f4fe;font-weight:400;padding-right:10px;}
+#investment_m_detail .reward_assess .content .reward_assess_t td.r_a_t_4 {border-bottom:0; background-color:#fff4e4;color:#000;font-weight:400;}
+#investment_m_detail .reward_assess .content .reward_assess_n {margin:5% 5%;text-align:left;font-size:14px;font-weight:300;font-family:'Spoqa Han Sans';color:#000;}
+#investment_m_detail .reward_assess .count_rate {margin:5% 5%;}
+#investment_m_detail .reward_assess .count_rate .count_r_1 {padding:1% 0;text-align:center;background-color:#073190;font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#fff;line-height:30px;display:block;}
+#investment_m_detail .reward_assess .count_rate .count_r_2 {padding:1% 0;text-align:center;background-color:#00a0e9;font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#fff;line-height:30px;display:block;}
+#investment_m_detail .reward_assess .count_rate .count_r_3 {padding:1% 0;text-align:center;background-color:#61adcf;font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#fff;line-height:30px;display:block;}
+#investment_m_detail .reward_assess .count_rate .count_r_4 {text-align:center;font-size:22px;font-weight:400;font-family:'Spoqa Han Sans';color:#073190;line-height:26px;display:inline-block;}
+
+
+/*** 사업지 정보 ***/
+#investment_m_detail .corp_info {margin:13% 0 15% 0;}
+#investment_m_detail .corp_info .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .corp_info .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .corp_info .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .corp_info .content img {width:100%;height:auto;}
+#investment_m_detail .corp_info .content .corp_info_t { width:100%; border-collapse:collapse; border-top:1px solid #073190; border-bottom:1px solid #073190; font-size:14px; font-family:'Spoqa Han Sans'; color:#000;}
+#investment_m_detail .corp_info .content .corp_info_t td            {width:35%;height:50px; border-right:1px solid #b8c5e5; border-bottom:1px solid #b8c5e5; background-color:#e9f4fe; text-align:left; padding-left:5%; font-weight:400;}
+#investment_m_detail .corp_info .content .corp_info_t td:last-child {width:65%;height:50px; border-right:0; background-color:#fff; font-weight:300;}
+
+#image-box {width: auto;display: block;}
+#image-box .swiper-container { margin-left: auto; margin-right: auto; }
+#image-box .swiper-slide {cursor: pointer; background-size: cover; background-position: center; }
+#gallery {width: auto;}
+#gallery .swiper-slide {width: 100%;height: 100%;}
+#gallery .swiper-slide img {width: auto !important;height: 339px !important;}
+#gallery-thumbs {width: auto;margin-top: 20px;margin: 0 auto;box-sizing: border-box; padding: 10px 0;}
+#gallery-thumbs .swiper-slide {width:100%;height: 100%;}
+#gallery-thumbs .swiper-slide img {width: 98px !important;height: 86px !important;}
+
+
+/*** 투자자 보호장치 ***/
+#investment_m_detail .invest_safe {margin:13% 0 15% 0;}
+#investment_m_detail .invest_safe .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .invest_safe .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .invest_safe .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .invest_safe .content li.t {font-size:20px;font-weight:400;color:#1e89ec;}
+#investment_m_detail .invest_safe .content li.s {font-size:14px;font-weight:300;}
+
+
+/*** 리스크 검토 ***/
+#investment_m_detail .risk_check {margin:13% 0 20% 0;}
+#investment_m_detail .risk_check .title {text-align:justify; border-bottom:1px solid #143fa8; padding: 0 4% 3%; font-size:22px; font-weight:300;color:#000;}
+#investment_m_detail .risk_check .title span {padding-top:3%;border-bottom:1px solid #143fa8;display:block;margin:0 auto;}
+#investment_m_detail .risk_check .content {margin:10% 5% 0;text-align:justify;font-size:14px;font-weight:300;color:#000;font-family:'Spoqa Han Sans';}
+#investment_m_detail .risk_check .content .risk_check_t { width:100%; border-collapse:collapse; border-top:1px solid #073190; border-bottom:1px solid #073190; font-size:14px; font-family:'Spoqa Han Sans'; color:#000;}
+#investment_m_detail .risk_check .content .risk_check_t td            {width:35%;height:50px; border-right:1px solid #b8c5e5; border-bottom:1px solid #b8c5e5; background-color:#e9f4fe; text-align:left; padding-left:5%; font-weight:400;}
+#investment_m_detail .risk_check .content .risk_check_t td:last-child {width:65%;height:50px; border-right:0; background-color:#fff; font-weight:300;}
+
+
+/*** 증빙서류 ***/
+.file_upload {width:auto;margin:0 auto;padding:0;clear:both;}
+.file_upload .file_upload_tit {font-size:22px;font-weight:300;font-family:'spoqahansans';color:#000;border-bottom:1px solid #143FA8;padding-left: 5%;padding-bottom: 3%;}
+.file_upload ul {margin-top: 20px;width:100%;text-align:left;}
+.file_upload ul:after {content: "";display: block;clear: both;}
+.file_upload ul li {width: 30%;float:none;display: inline-block;padding: 0 3% 0 10%;list-style:none;margin-bottom: 13px;vertical-align:top;text-align:center;}
+.file_upload ul li p:nth-child(1) img {width: 50% !important;}
+.file_upload ul li p:nth-child(2) {color:#000;font-size:13px;font-weight:400;font-family:'spoqahansans';padding:10px 0;}
+.file_upload ul li p:nth-child(3) {border:1px solid #073190;border-radius:3px;color:#073190;font-size:13px;font-weight:400;font-family:'spoqahansans';margin:0 auto;cursor:pointer;}
+.file_upload ul li p:nth-child(3):hover {padding: 0 !important;background-color:#073190;border:1px solid #073190;border-radius:3px;color:#fff;font-size:13px;font-weight:400;font-family:'spoqahansans';margin:0 auto;cursor:pointer;}
+.file_upload ul li p a {display: block;padding:5px 0;}
+/*
+.file_upload ul li p a:hover,
+.file_upload ul li p a:focus {color: #FFF;}
+*/
+
+/*** 안전장치 업데이트 ***/
+.safe_update {width:auto;margin:0 auto;padding:30px 0 0 0;clear:both;}
+.safe_update .safe_update_tit {font-size:22px;font-weight:300;font-family:'spoqahansans';color:#000;border-bottom:1px solid #143FA8;padding-left: 5%;padding-bottom: 3%;}
+.safe_update_c {margin:10% 5%;}
+.safe_update_c .safe_update_n {font-size:20px;font-weight:300;font-family:'Spoqa Han Sans';padding:10px 0;background-color:#424749;border-radius:3px;color:#fff;text-align:center;}
+.safe_update_c .safe_upadat_ct {text-align: center;font-size:14px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding-top:30px;line-height:24px;}
+.safe_update_c .safe_upadat_ct span {font-size:18px;font-weight:400;font-family:'Spoqa Han Sans';color:#073190;}
+.safe_update_c .safe_update_t {width:auto;margin:20px 0;}
+.safe_update_c .safe_update_t table {border-collapse: collapse;width: 100%;}
+.safe_update_c .safe_update_t tr td {border:1px solid #073190; border-width: 1px 0;}
+.safe_update_c .safe_update_t tr td img {height: 45px;}
+.safe_update_c .safe_update_t td:nth-child(1) {width: 20% !important;text-align:center;font-size:12px;}
+.safe_update_c .safe_update_t td:nth-child(2) {width: auto;text-align:left;padding:27px 5px;font-size:12px;}
+.safe_update_c .safe_update_t td:nth-child(3) {width: 50%;text-align:center;font-size:16px;}
+.safe_update_c .safe_update_t .sate_update_t_b {border:1px solid #073190;border-radius:3px;color:#073190;font-size:13px;font-weight:400;font-family:'spoqahansans';margin:0 auto;cursor:pointer;padding: 0 !important;}
+.safe_update_c .safe_update_t .sate_update_t_b:focus,
+.safe_update_c .safe_update_t .sate_update_t_b:hover {background-color:#073190;border:1px solid #073190;border-radius:3px;color:#fff;font-size:13px;font-weight:400;font-family:'spoqahansans';margin:0 auto;cursor:pointer;}
+.safe_update_c .safe_update_t .sate_update_t_b a {display:block;padding: 5px 0;color: #073190;}
+.safe_update_c .safe_update_t .sate_update_t_b a:focus,
+.safe_update_c .safe_update_t .sate_update_t_b a:hover {color: #FFF;}
+
+/*** 투자 시 유의사항 ***/
+.invest_notice {width:auto;margin:0 auto;padding:0;clear:both;}
+.invest_notice .invest_notice_tit {font-size:22px;font-weight:300;font-family:'spoqahansans';color:#000;border-bottom:1px solid #143FA8;padding-left: 5%;padding-bottom: 3%;}
+.invest_notice .faq {display:block;margin: 0 auto;font-family:'spoqahansans';}
+.invest_notice .faq li {list-style: none;border-bottom:1px solid #cdd6e9;font-family:'spoqahansans';padding:0 7% 0 0;}
+.invest_notice .faq li a {width:100%;display:block;overflow:hidden;font-size:24px;font-weight:200;font-family:'spoqahansans';color:#1e89ec;line-height:80px;border: none;}
+.invest_notice .faq li a span {padding-left:15px;font-family:'spoqahansans';}
+.invest_notice .faq li a span strong {font-size:24px;font-weight:200;font-family:'spoqahansans';color:#1e89ec;}
+.invest_notice .faq li p {width:100%;padding:0 0 30px 40px;font-size:16px;font-weight:300;font-family:'spoqahansans';color:#000;display:none;line-height:28px;text-overflow:clip;}
+.invest_notice .faq li p strong {font-size:24px;font-weight:200;font-family:'spoqahansans';color:#1e89ec;}

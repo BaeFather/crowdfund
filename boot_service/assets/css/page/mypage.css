@@ -1,0 +1,1339 @@
+/********************************************************
+                    datepicker custom
+ ********************************************************/
+ .monthly-data input, .yearly-data input {cursor:pointer;}
+ .monthly-data input:focus {-moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; border: 1px solid #ee321f; outline-width: 0;}
+ .yearly-data input:focus {-moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; border: 1px solid #ee321f; outline-width: 0;}
+ .datepicker {border-radius: 0px;}
+ .datepicker table {margin:0 auto;}
+ .datepicker table tr td {padding:0 .5rem .5rem;}
+ .datepicker table tr td span {font-size:.76rem!important; color: #555; font-family: "Nunito",sans-serif; font-weight: 400; height: 50px; line-height: 50px;}
+ .datepicker-dropdown {margin-top:50px; left: 50%!important; transform: translate(-50%,0); width:240px;}
+ .datepicker table tr td.today, span.focused {border-radius: .25rem!important; background-color :#ee321f!important; color:#fff!important; font-family: "Nunito",sans-serif; font-weight: 600; font-size:.78rem!important;}
+
+ .datepicker table tr td .active.disabled:hover[disabled],
+ .datepicker table tr td .active.disabled[disabled],
+ .datepicker table tr td .active:active,
+ .datepicker table tr td .active:hover,
+ .datepicker table tr td .active:hover.active,
+ .datepicker table tr td .active:hover.disabled,
+ .datepicker table tr td .active:hover:active,
+ .datepicker table tr td .active:hover:hover,
+ .datepicker table tr td .active:hover[disabled],
+ .datepicker table tr td .active[disabled],
+ .datepicker table tr td span.active.active,
+ .datepicker table tr td span.active.disabled,
+ .datepicker table tr td span.active.disabled.active,
+ .datepicker table tr td span.active.disabled.disabled,
+ .datepicker table tr td span.active.disabled:active,
+ .datepicker table tr td span.active.disabled:hover,
+ .datepicker table tr td span.active.disabled:hover.active,
+ .datepicker table tr td span.active.disabled:hover.disabled,
+ .datepicker table tr td span.active.disabled:hover:active,
+ .datepicker table tr td span.active.disabled:hover:hover,
+ .datepicker table tr td span.active.disabled:hover[disabled],
+ .datepicker table tr td span.active.disabled[disabled],
+ .datepicker table tr td span.active:active,
+ .datepicker table tr td span.active:hover,
+ .datepicker table tr td span.active:hover.active,
+ .datepicker table tr td span.active:hover.disabled,
+ .datepicker table tr td span.active:hover:active,
+ .datepicker table tr td span.active:hover:hover,
+ .datepicker table tr td span.active:hover[disabled],
+ .datepicker table tr td span.active[disabled],
+ .datepicker table tr td.active.active,
+ .datepicker table tr td.active.disabled,
+ .datepicker table tr td.active.disabled.active,
+ .datepicker table tr td.active.disabled.disabled,
+ .datepicker table tr td.active.disabled:active,
+ .datepicker table tr td.active.disabled:hover,
+ .datepicker table tr td.active.disabled:hover.active,
+ .datepicker table tr td.active.disabled:hover.disabled,
+ .datepicker table tr td.active.disabled:hover:active,
+ .datepicker table tr td.active.disabled:hover:hover,
+ .datepicker table tr td.today.disabled,
+ .datepicker table tr td.today.disabled:hover,
+ .datepicker table tr td.today:hover {border-radius: .25rem !important; background-color :#ee321f!important; color:#fff!important; font-family: "Nunito",sans-serif; font-weight: 600; font-size:.76rem!important;}
+ .datepicker .prev, .datepicker .next, .datepicker-switch {border-radius:0 !important; padding: .5rem !important; text-transform: uppercase; font-size: .9rem!important; color: #222; font-family: "Nunito",sans-serif; font-weight: 600;}
+ .datepicker .prev:hover, .datepicker .next:hover, .datepicker-switch:hover {background-color: inherit !important; opacity: 1;}
+
+
+ @media all and (min-width:900px) {
+
+ .datepicker-dropdown {margin-top:75px; left: 50%!important; transform: translate(-50%,0);}
+
+ }
+
+
+ /*********************************
+ font SET
+ **********************************/
+ .mypage-dashboard p, .mypage-dashboard a, .mypage-dashboard span , .mypage-dashboard th , .mypage-dashboard td , .mypage-dashboard div, .mypage-dashboard button, .mypage-dashboard h2, .mypage-dashboard h3, .mypage-dashboard h4, .mypage-dashboard h5, .mypage-dashboard ul li , .mypage-dashboard label , .mypage-dashboard .active{font-family: "Nunito",sans-serif; }
+ .mypage-Investment-list p, .mypage-Investment-list a, .mypage-Investment-list span , .mypage-Investment-list th , .mypage-Investment-list td , .mypage-Investment-list div, .mypage-Investment-list button, .mypage-Investment-list h2, .mypage-Investment-list h3, .mypage-Investment-list h4, .mypage-Investment-list h5, .mypage-Investment-list ul li , .mypage-Investment-list label , .mypage-Investment-list .active{font-family: "Nunito",sans-serif;  }
+ .mypage-investment-details p, .mypage-investment-details a, .mypage-investment-details span , .mypage-investment-details th , .mypage-investment-details td , .mypage-investment-details div,
+ .mypage-investment-details button, .mypage-investment-details h2, .mypage-investment-details h3, .mypage-investment-details h4, .mypage-investment-details h5, .mypage-investment-details ul li , .mypage-investment-details label , .mypage-investment-details .active{font-family: "Nunito",sans-serif; }
+ .mypage-repayment-schedule p, .mypage-repayment-schedule a, .mypage-repayment-schedule span , .mypage-repayment-schedule th , .mypage-repayment-schedule td , .mypage-repayment-schedule div,
+ .mypage-repayment-schedule button, .mypage-repayment-schedule h2, .mypage-repayment-schedule h3, .mypage-repayment-schedule h4, .mypage-repayment-schedule h5, .mypage-repayment-schedule ul li , .mypage-repayment-schedule label , .mypage-repayment-schedule .active{font-family: "Nunito",sans-serif;  }
+ .mypage-deposit-point p, .mypage-deposit-point a, .mypage-deposit-point span , .mypage-deposit-point th , .mypage-deposit-point td , .mypage-deposit-point div, .mypage-deposit-point button, .mypage-deposit-point h2, .mypage-deposit-point h3, .mypage-deposit-point h4, .mypage-deposit-point h5, .mypage-deposit-point ul li , .mypage-deposit-point label , .mypage-deposit-point .active{font-family: "Nunito",sans-serif;  }
+
+
+
+ /*팝오버*/
+ .popover-body {font-size:.85rem!important; color:#333; font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -.5px;}
+
+ /* common top tab menu */
+ .tab-nav {text-align:center; overflow:auto; display: flex; flex-shrink:0; flex-wrap: nowrap; margin:0 auto 0; justify-content: left; background-color: #fafafa;}
+ .tab-nav .nav-flex {display:flex; flex-shrink: 0; margin:0;}
+ .tab-nav .nav-flex .nav-pills {margin:15px 1rem 10px;}
+ .tab-nav .nav-flex .nav-pills .nav-item a {padding:.4rem 1rem; font-size:.925rem; font-weight:400; color:#555; font-family:"NotoSansKR", sans-serif;}
+ .tab-nav .nav-flex .nav-pills .nav-item .nav-link.active, .show>.nav-link  { font-size:.925rem; background-color: #222; color:#fff; font-weight:400; border-radius:0;}
+
+
+ /********************투자관리(대시보드)*******************************************************************************************************************************************************************/
+
+ .mypage-dashboard {background-color: #fafafa;}
+
+ .mypage-dashboard .tab-content .tab-pane .container-fluid {padding:10px 1rem 50px;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row {margin:0;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-md-6, .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-xl-4, .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-xl-8 {padding:0;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card {box-shadow: none; margin-bottom:10px;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body {border:1px solid #ddd; padding:1.3rem 1rem 1rem; border-radius:0;}
+
+
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body h4 {margin:0; font-size:1.05rem; font-weight:600; color:#555; vertical-align: middle; letter-spacing: -.5px; word-spacing: -.5px;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table {margin: .5rem 0 0;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td {border-top:none;  padding:0; vertical-align: middle;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:first-child {font-size:.78rem; color:#777; letter-spacing: -.5px; word-spacing: -.5px; padding-top:4px; }
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:last-child {text-align:right; color:#222; font-weight: 600;  font-size:.8rem;   padding-top:4px;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body button {float:right; box-shadow:none; border:1px solid #ddd; color:#222; font-size:.7rem;  padding:.3rem .5rem .2rem;  margin-top:-5px;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .uil-question-circle {font-size:.97rem!important; color:#555; margin-left:-2px; font-weight: 400;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table tr .color-point {color:#ee321f;}
+
+
+ /* 보유예치금 */
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-deposit p { font-size:1.1rem; font-weight:600; color:#ee321f; font-family: "Pretendard", Sans-serif; margin:8px 0 0;}
+
+
+ /* 예치금계좌 */
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account h4 {display:block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; -webkit-line-clamp: 1 }
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account p {margin:10px 0 0; font-size:.95rem; color:#222;  font-weight:500;  font-family: "Pretendard", Sans-serif;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account p i {margin-left:5px; font-size:.9rem;}
+
+
+ /* 헬로포인트 */
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-point p {margin:6px 0 0; font-size:1rem; color:#222;  font-weight:600;  font-family: "Pretendard", Sans-serif;}
+
+
+ /* 당월수익 */
+
+
+ /* 레퍼럴친구 */
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .my-referral-web {display:none;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral button {font-family: "Nunito",sans-serif; float:right; box-shadow:none; border:1px solid #ddd; color:#222; font-size:.75rem;  padding:.2rem .5rem;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral p {margin:6px 0 0; font-size:1rem; color:#222;  font-weight:600;  font-family: "Pretendard", Sans-serif;}
+
+
+ /* 투자상품비율 */
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered {width:80%; margin:0 auto;}
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered li {width:50%; text-align: center;}
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered li a {font-weight: 400; color:#888; font-size:.8rem; padding:0.5rem 0.8rem;}
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered li a.active {border-bottom: 1px solid #ee321f; font-weight: 500; color:#222; font-size:.8rem;}
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered {border-bottom:1px solid #ddd;}
+ .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered .nav-item {margin-bottom: 0px;}
+
+
+ .tab-content .mypage_chart_wrap {margin: 20px 0 0; overflow: hidden;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box {display: flex; flex-direction: column;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 50%; min-width: 150px; margin: auto;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label {width: 100%; margin-top: 1.5rem;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul {overflow: hidden; margin-bottom: 0;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li {width: 100%; padding: .2rem 1rem; float: left; color: #555;  font-size: .8rem; vertical-align: middle; font-weight: 500;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li::before {display: inline-block; content: ''; width: 12px; height: 12px; margin-right:10px;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(1)::before {background-color: #727cf5;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(2)::before {background-color: #0acf97;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(3)::before {background-color: #fa5c7b;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(4)::before {background-color: #0ab2cf;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(2n-1) {clear: both;}
+ .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li span {float: right; font-weight: 600; font-size:.8rem;}
+
+
+ /* 투자한도 */
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-limit .table {border-top: 1px solid #ddd; margin-top:.8rem;}
+ .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-limit .table .pt-2 {padding-top:1rem!important;}
+
+
+
+
+ /* 투자한도 Modal */
+ .limit-info .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+ .limit-info .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+ .limit-info .modal-content .modal-body table {width:100%;}
+ .limit-info .modal-content .modal-body table tr td{width:70%; padding:1rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px; }
+ .limit-info .modal-content .modal-body table tr th{width:30%; padding:1rem; border:1px solid #e0e0e0; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;  text-align: center;}
+ .limit-info .modal-content .modal-body table tr td p {margin-bottom:.5rem; font-weight: 600; color:#222;}
+
+ .limit-info .modal-content .modal-body .modal-bt{display: flex; justify-content:center; padding:1rem 0 1.5rem; border-top:none;}
+ .limit-info .modal-content .modal-body button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+ .limit-info .modal-content .modal-body .btn-confirm {background-color: #ee321f; color:#fff; font-weight: 600; letter-spacing: -1px;}
+
+
+
+ @media (min-width:440px) {
+     /* 투자상품비율 */
+     .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered {width: 80%;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 45%;}
+ }
+
+
+ @media (min-width:580px) {
+
+
+     /* 투자상품비율 */
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 40%;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label {margin-top:40px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li {width: 50%; padding: 10px 5%; float: left; color: #222; }
+ }
+
+
+ @media (min-width:660px) {
+     /* 투자상품비율 */
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 35%;}
+ }
+
+
+ @media (min-width:768px){
+     .mypage-dashboard .col-md-4 {flex: 0 0 100%!important; max-width: 100%!important;}
+
+     /* 투자상품비율 */
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 30%;}
+
+ }
+
+
+ @media (min-width:900px){
+     .tab-nav .nav-flex {margin-left:1rem;}
+     .tab-nav .nav-flex .nav-pills {margin-left:6px;}
+
+
+     .mypage-dashboard .tab-content .tab-pane .container-fluid {padding:0 1rem 50px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-md-6, .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-xl-4, .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-xl-8 {padding:0 6px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-md-4 {flex: 0 0 33.3%!important; max-width: 33.3%!important;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .col-xl-8  {flex: 0 0 66.6%!important; max-width: 66.6%!important;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body {padding:1.35rem 1rem;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body h4 {font-size:.85rem; }
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:first-child {color:#888; font-weight: 400; font-size:.78rem; }
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:last-child {font-size:.8rem; }
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body button {margin-top:-3px; padding:.3rem .5rem .1rem;}
+
+
+     /* 보유예치금 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-deposit {height:90px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-deposit p {font-size:1.1rem; margin-top:8px;}
+
+
+     /* 예치금계좌 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account {height:90px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account p {font-size:1rem; margin-top:10px;}
+
+
+     /* 헬로포인트 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-point {height: 90px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-point p {font-size:1.05rem; margin-top:8px;}
+
+
+     /* 당월수익 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-monthly-income {height:132px;}
+
+
+     /*현재투자내역*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-details {height:132px;}
+
+
+     /*누적현황*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-cumulative-status {height:132px;}
+
+
+     /*연환산수익률*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-rate-of-return {height:110px;}
+
+     /*지연연체손실*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-delay-loss {height:110px;}
+
+
+     /* 레퍼럴친구 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .my-referral-app {display:none;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .my-referral-web {display:block;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral {height:110px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral h4 span {font-size:1.05rem; color:#222; float:right;  font-weight:600;  font-family: "Pretendard", Sans-serif;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral p button {width:100%; margin-top:20px; background-color: #ee321f; color:#fff; padding:5px 0; border:none; border-radius: 0;}
+
+
+
+     /* 투자상품비율 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio {height:180px;}
+     .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered {position: absolute; top:-13px; right:1rem; width:40%;}
+     .tab-content .mypage_chart_wrap {margin:0;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box {flex-direction: row;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {width: 25%; min-width:130px; margin: 0 10%;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label { margin-top: 25px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li {width: 100%; font-size: .78rem; padding:3px 0;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(2n-1) {margin-right: 2rem;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li span { font-size:.78rem;}
+
+
+     /* 투자한도 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-limit {height: 180px;}
+
+ }
+
+
+
+ @media (min-width:1050px){
+
+     .tab-nav .nav-flex {margin:0;}
+     .tab-nav .nav-flex .nav-pills {margin-left:0;}
+     .mypage-dashboard {margin:0 auto 0; padding-bottom:50px; }
+     .mypage-dashboard .tab-nav {width:1050px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid {width:1050px; padding:0;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row {margin-right:-8px; margin-left:-8px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body {padding:25px 20px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body h4 {font-size:.9rem; font-weight: 600; letter-spacing: -.5px; word-spacing: -.5px; }
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table {margin-top:.9rem;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:first-child {font-size:.825rem; letter-spacing: -.5px; word-spacing: -.5px;  margin-top:5px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table td:last-child {font-size:.85rem; letter-spacing: 0; margin-top:5px;}
+
+
+     /* 보유예치금 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-deposit {height:100px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-deposit p {margin-top:10px;}
+
+
+     /* 예치금계좌 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account {height:100px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-account p {margin-top:13px; font-size:1rem;  }
+
+
+
+     /* 헬로포인트 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-point {height: 100px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-point p {margin-top:13px;}
+
+
+     /* 당월수익 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-monthly-income {height:152px;}
+
+
+     /*현재투자내역*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-details {height:152px;}
+
+
+     /*누적현황*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-cumulative-status {height:152px;}
+
+
+     /*연환산수익률*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-rate-of-return {height:130px;}
+
+
+     /*지연연체손실*/
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-delay-loss {height:130px;}
+
+
+     /* 레퍼럴친구 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral {height:130px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-referral p button {margin-top:30px;}
+
+
+
+     /* 투자상품비율 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio {height:200px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_graph {min-width: 150px; margin-right:50px; margin-top: -2px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label {padding: 0.5rem 1rem 0.5rem 2.5rem; margin-top:25px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li {font-size: 0.8rem;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li:nth-child(2n-1) {margin-right:4rem;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li::before {margin-right:5px;}
+     .tab-content .mypage_chart_wrap .mypage_chart_box .mypage_chart_label ul li span {font-size:.825rem;}
+     /* 투자한도 */
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .my-investment-limit {height: 200px;}
+     .mypage-dashboard .tab-content .tab-pane .container-fluid .row .card .card-body .table {margin-top:15px;}
+     .tab-content .tab-pane .container-fluid .row .card .my-investment-ratio .nav-tabs.nav-bordered {position: absolute; top:-8px;}
+
+
+      /* 투자한도 Modal */
+     .limit-info .modal-content .modal-body table {border-bottom: 1px solid #e0e0e0;}
+     .limit-info .modal-content .modal-body table tr{display: flex;  flex-wrap: wrap; }
+     .limit-info .modal-content .modal-body table tr td{display: block;  align-items: center; width:65%; padding:1rem; border:1px solid #e0e0e0; border-bottom:none; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px;}
+     .limit-info .modal-content .modal-body table tr th{display: flex; align-items: center; width:35%; padding:1rem; border:1px solid #e0e0e0; border-bottom:none; border-right:none; height:auto; color:#222; font-size:.8rem; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;  }
+ }
+
+
+
+
+
+
+
+ /********************투자내역 리스트**************************************************************************************************************************************/
+
+ .mypage-Investment-list {background-color: #fafafa;}
+
+ /* 버튼라인 */
+ .mypage-Investment-list .btn-box .left-bt {display: flex; padding:1rem 1rem .5rem; justify-content: flex-end; }
+ .mypage-Investment-list .btn-box .left-bt .search-bt {margin-right:6px;}
+ .mypage-Investment-list .btn-box .left-bt .search-bt button { border-radius:0;  border:none; box-shadow: none; background-color: #444; color:#fff; font-size:.8rem;  padding:.3rem 1rem .2rem;  height: calc(2.2rem);}
+ .mypage-Investment-list .btn-box .left-bt .vote-bt button { border-radius:0;  border:none; box-shadow: none; background-color: #f64e60; color:#fff; font-size:.8rem;  padding:.3rem 1rem .2rem;  height: calc(2.2rem);}
+ .mypage-Investment-list .btn-box .web-bt {display:none;}
+
+
+ /*투자상품 리스트*/
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid {padding:0 1rem 50px;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row {margin:0;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .col-md-6, .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .col-xl-3 {padding:0;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card {box-shadow: none; -webkit-box-shadow:none; margin-bottom:10px;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body {border:1px solid #ddd; padding:0;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body h4 { padding:1rem; border-bottom: 1px solid #ddd; margin:0;  }
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .text-title {font-size:.9rem; line-height: 1.2rem; font-weight: 500; color:#555; margin-bottom: 0; letter-spacing: -.2px;  font-family:"NotoSansKR", sans-serif; }
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .myInvest_list_box .text-title {text-decoration: underline;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table {margin:1rem 0;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td {border-top:none; padding:.2rem 1rem;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td:first-child {font-size:.8rem; color:#777; text-align: justify; vertical-align: middle; letter-spacing: -.5px;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td:last-child {text-align:right; color:#222; font-weight: 600;  font-size:.875rem; font-family: "Pretendard", Sans-serif;}
+
+
+
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td .invest_cancel_button {position: relative; z-index: 10; display: inline-block; cursor: pointer; margin-bottom: 0; text-decoration: underline; color:#ee321f; font-family: "Pretendard", Sans-serif; font-size:0.85rem; font-weight: 600; }
+
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .no-list {display: none !important;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .list-add-bt {display: block;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .list-add-bt {text-align:center; margin:20px 0 30px;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .list-add-bt button{background-color: #999; padding:.4rem 2rem .2rem; color:#fff; border-radius:5rem; outline: none; font-size:.8rem; border:none; box-shadow: none; -webkit-box-shadow:none; }
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .list-add-bt button:focus {outline: none; box-shadow: none;}
+
+ /*** 투자한 상품이 없을 경우 ***/
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .invest_null {padding-top: 3rem; text-align: center; height: 250px; color: #9d9d9d;}
+
+ /*** 투자상태 값에 따라 font color change ***/
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_0 {color: #222;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_1 {color: #8950FC;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_2 {color: #FFA800;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_3 {color: #0BB783;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_5 {color: #B5B5B5;}
+ .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td.state_5 {color: #F64E60;}
+
+/*상품검색 모달 커스텀 */
+.search-pop {padding-right: 0!important; }
+.search-pop .modal-content {border-radius:0;}
+.search-pop .modal-dialog {max-width:420px!important; margin:0 auto; padding:.5rem; border-radius: 1rem;}
+.search-pop .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.search-pop .modal-content .modal-header h4 {font-size:1rem; color:#333; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500; letter-spacing: -.5px; }
+.search-pop .modal-content .modal-header .close {font-size:1rem; color:#333;}
+.search-pop .modal-content .modal-body {margin:.5rem 0 0; }
+.search-pop .modal-content .modal-body label {font-size:.9rem; font-weight: 500; color:#222; margin-bottom:8px; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.search-pop .modal-content .modal-body input {border-radius:0;}
+.search-pop .modal-content .modal-body input:focus {border-color: #999; }
+.search-pop .modal-content .modal-body .form-control {height: calc(2.3rem); color:#555; border:1px solid #ddd; font-size:.9rem; padding:.35rem .9rem .45rem;  font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.search-pop .modal-content .modal-body .pro-name {display:flex; align-items: center; position: relative;}
+.search-pop .modal-content .modal-body .pro-name  span { position: absolute; right: 0px; padding: 10px 12px;pointer-events: none;}
+
+
+.search-pop .modal-content .modal-body  h5 {font-size:.9rem; font-weight: 400; color:#222; margin-bottom:1rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; border-bottom:1px solid #888; padding-bottom:.5rem; }
+.search-pop .modal-content .modal-body .pro-type, .search-pop .modal-content .modal-body .pro-status {margin:2rem 0; }
+.search-pop .modal-content .modal-body .pro-type .pro-type-wrap, .search-pop .modal-content .modal-body .pro-status .pro-status-wrap{display:flex;  flex-wrap: wrap;}
+.search-pop .modal-content .modal-body div button {width:32%; border:1px solid #ccc; background-color: #fff; color:#222; outline: none;  font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom:8px; padding:.4rem 0; font-size:.82rem;  margin-right:2%; font-weight: 300;}
+.search-pop .modal-content .modal-body  button.active {border:1px solid #ee321f; color:#ee321f; font-weight: 400;}
+.search-pop .modal-content .modal-body  button:nth-child(3n) {margin-right:0; }
+.search-pop .modal-content .modal-footer {justify-content:center; padding:0 1rem 2rem; border-top:none;}
+.search-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.5rem  0 .5rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.85rem;}
+.search-pop .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:100%;}
+.search-pop .modal-content .modal-footer button:disabled {opacity:.30;}
+
+
+
+/*찬반투표 모달 커스텀 */
+.vote-pop {padding-right: 0!important; }
+.vote-pop .modal-content {border-radius:0;}
+.vote-pop .modal-dialog {max-width:550px!important; margin:0 auto; padding:.5rem; border-radius: 1rem;}
+.vote-pop .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.vote-pop .modal-content .modal-header h4 {font-size:1rem; color:#333; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500;  }
+.vote-pop .modal-content .modal-header .close {font-size:1rem; color:#333;}
+.vote-pop .modal-content .modal-body  {padding:2rem 1rem 2.5rem;}
+.vote-pop .modal-content .modal-body .br {display:none;}
+.vote-pop .modal-content .modal-body p {margin-bottom:20px; font-family: "Pretendard", Sans-serif; font-size:.925rem; font-weight:500; color:#333; letter-spacing: -.5px; line-height: 1.2rem;}
+.vote-pop .modal-content .modal-body p span {color:#ee321f;}
+.vote-pop .modal-content .modal-body .list {display:flex; justify-content: space-between; align-items: center; padding:1.5rem 0; border-top:1px solid #ddd; }
+.vote-pop .modal-content .modal-body .list:last-child {border-bottom:1px solid #ddd;}
+.vote-pop .modal-content .modal-body .list p {margin:0; font-family: "Pretendard", Sans-serif; font-size:.9rem; font-weight:500; color:#222; letter-spacing: -.5px;  line-height:1.1rem;}
+.vote-pop .modal-content .modal-body .list .date {font-size:.9rem; color:#999; margin-top:5px;}
+.vote-pop .modal-content .modal-body .list button {white-space: nowrap; margin-left:1rem; font-family: "Pretendard", Sans-serif; font-size:.85rem; font-weight:500; }
+.vote-pop .modal-content .modal-body .list .view-bt {background-color: #fff; color:#333; border:1px solid #aaa; padding:.3rem 1rem;}
+.vote-pop .modal-content .modal-body .list .vote-bt {background-color: #ee321f; color:#fff; border:1px solid #ee321f; padding:.3rem 1rem;}
+.vote-pop .modal-content .modal-footer {padding:0; border-top:none;}
+
+
+
+
+@media (min-width:500px){
+	
+   /*찬반투표 모달 커스텀 */
+  .vote-pop .modal-content .modal-body  {padding:2rem 2rem 3rem;}
+  .vote-pop .modal-content .modal-body .br {display:block;}	 
+
+}
+
+
+
+ @media (min-width:768px){
+	 
+   /*투자상품 리스트*/
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row {margin-left:-5px; margin-right:-5px;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card {margin:0 5px 10px;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body {border:1px solid #ddd; padding:0; }
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body h4 { padding:1rem; border-bottom: 1px solid #ddd; margin:0; }
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .text-title {font-size:.9rem; line-height: 1.2rem; font-weight: 500; color:#555; margin-bottom: 0; letter-spacing: -.2px;  font-family:"NotoSansKR", sans-serif; }
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table {margin:1rem 0;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td {border-top:none; padding:.2rem 1rem;}
+
+}	 
+
+
+
+@media (min-width:1050px){
+   .mypage-Investment-list {margin:0 auto 0; padding-bottom:50px;}
+   .mypage-Investment-list .tab-nav {width:1050px;}
+
+    /* 버튼라인 */	
+   .mypage-Investment-list .btn-box {display:flex; align-items: center; justify-content: space-between; margin-bottom:10px;}
+   .mypage-Investment-list .btn-box .left-bt {padding:0;}
+   .mypage-Investment-list .btn-box .left-bt .search-bt {margin-right:10px;}	
+   .mypage-Investment-list .btn-box .web-bt {display:flex;}
+   .mypage-Investment-list .btn-box .web-bt .receipt-bt {margin-right:10px;}	
+   .mypage-Investment-list .btn-box .web-bt .receipt-bt button {color: #fff; background-color: #39afd1; border-color: #39afd1; border-radius: 0; font-size:.8rem;  letter-spacing: -.5px; padding:.3rem 1rem .2rem; height: calc(2.2rem); margin-left:10px;}
+   .mypage-Investment-list .btn-box .web-bt .download-bt button {color: #555; border-color: #aaa;  border-radius: 0; font-size:.8rem; letter-spacing: -.5px;  padding:.3rem 1rem .2rem; height: calc(2.2rem);}
+
+
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid {padding-right:0; padding-left: 0; }
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row {min-height: 480px;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .col-xl-3 {max-width:33.3%; flex:0 0 33.3%;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card:hover .card-body {border-color: #aaa;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body {border-radius:0;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body h4 { background-color:#f6f6f6; padding:0;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .text-title {margin-bottom: 0; font-size:.85rem; display: block; min-width: 325px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; height:50px; line-height: 50px; padding:0 1rem;}
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table td {padding:4px 20px;}
+
+   .mypage-Investment-list .tab-content .tab-pane .container-fluid .row .card .card-body .table .cancel a{text-decoration: underline; color:#ee321f; font-weight: 600;  font-size:.875rem; font-family: "Pretendard", Sans-serif;}
+
+   .mypage-Investment-list .contents-wrap	{width:1050px; border:1px solid #ddd; background-color: #fff; margin:0 auto; padding:1.5rem 1rem 0; box-sizing: border-box; border-radius: 0;}
+
+
+  /*찬반투표 모달 커스텀 */
+  .vote-pop .modal-content .modal-body p {font-size:.95rem; line-height: 1.3rem;}
+
+  .vote-pop .modal-content .modal-body .list p {font-size:.95rem;}
+  .vote-pop .modal-content .modal-body .list .date {font-size:.9rem; color:#777; }
+  .vote-pop .modal-content .modal-body .list button { font-size:.9rem; }
+
+
+
+}
+
+
+
+
+ /********************원리금수취증서**************************************************************************************************************************************/
+
+ .principal-interest-modal .modal-dialog {width: 21cm; max-width:21cm; margin:0 auto; height: 29.7cm; min-height: 29.7cm; padding:1cm; margin: 1cm auto; background:#fff;}
+ .principal-interest-modal .modal-header {display:flex; align-items: flex-end; justify-content: space-between; border-bottom:1px solid #ee321f; padding:0;}
+ .principal-interest-modal .modal-header p {margin-bottom:10px;  font-family: "Nunito",sans-serif; color:#555; font-weight: 600; font-size:.9rem; letter-spacing: -.5px;}
+ .principal-interest-modal .modal-header p span {font-family: "Nunito",sans-serif; }
+ .principal-interest-modal .modal-body {padding:0; position:relative;}
+ .principal-interest-modal .modal-body h1 {font-size:2.3rem; color:#333; text-align: center; margin: 50px 0 30px; font-weight:600; font-family: "NotoSansKR",Sans-serif; }
+ .principal-interest-modal .modal-body table {width:100%; border-top:2px solid #333; margin-bottom:30px;}
+ .principal-interest-modal .modal-body table tr th {width:20%; padding:.6rem 1rem; border-right:1px solid #ddd; border-bottom:1px solid #ddd; font-family: "Pretendard", Sans-serif; font-size:.85rem; color:#222;font-weight: 600;}
+ .principal-interest-modal .modal-body table tr td {width:30%; padding:.6rem 1rem; border-right:1px solid #ddd; border-bottom:1px solid #ddd; font-family: "Pretendard", Sans-serif; font-size:.85rem; color:#555;font-weight: 500; letter-spacing: -.3px;}
+ .principal-interest-modal .modal-body table tr th:nth-of-type(1) {width:18%; background-color: #f6f6f6;}
+ .principal-interest-modal .modal-body table tr td:nth-of-type(1) {width:42%;}
+ .principal-interest-modal .modal-body table tr th:nth-of-type(2) {width:18%; background-color: #f6f6f6;}
+ .principal-interest-modal .modal-body table tr td:nth-of-type(2) {width:22%;}
+ .principal-interest-modal .modal-body table tr td:nth-child(4n) {border-right:none;}
+ .principal-interest-modal .modal-body table .border-none {border-right:none;} 
+ .principal-interest-modal .modal-body .table-info-01 tr th {width:18%!important; background-color: #fff;}
+ .principal-interest-modal .modal-body .table-info-01 tr td {width:82%!important; background-color: #fff;}
+ .principal-interest-modal .modal-body .table-info-03 {margin-bottom:10px;}
+ .principal-interest-modal .modal-body .tit {font-size:1rem; color:#222; font-family: "Pretendard", Sans-serif; font-weight: 600; margin-bottom:5px;}
+ .principal-interest-modal .modal-body .notice {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align:right; letter-spacing: -.5px;}
+
+ .principal-interest-modal .modal-body .page-bottom {margin:50px auto 30px; text-align: center; }
+ .principal-interest-modal .modal-body .page-bottom p {color:#222; font-family: "Pretendard", Sans-serif; font-weight: 500;}
+ .principal-interest-modal .modal-body .page-bottom p:nth-child(1) {font-size:1.1rem;}
+ .principal-interest-modal .modal-body .page-bottom p:nth-child(2) {font-size:1rem; }
+ .principal-interest-modal .modal-body .page-bottom p:nth-child(3) {font-size:1.6rem; font-weight: 600; margin-top:30px;}
+ .principal-interest-modal .modal-body .logo-bg {position: absolute; top:50%; left:50%; transform : translate(-50%, -50%);}
+
+
+ .principal-interest-modal .modal-footer {border-top:none; margin:20px 0 30px; display:flex; justify-content: space-between; bottom:0;}
+ .principal-interest-modal .modal-footer .btn-confirm {margin:0; background-color:#ee321f; color:#fff; width:30%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+ .principal-interest-modal .modal-footer .btn-cancel {margin:0; background-color:#aaa; color:#fff; width:30%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none;}
+
+
+
+
+
+
+ /********************찬/반투표 안내**************************************************************************************************************************************/
+
+.mypage-votepage {padding:2rem 0;}
+.mypage-votepage h1, .mypage-votepage h3, .mypage-votepage p, .mypage-votepage span, .mypage-votepage ul li, .mypage-votepage button {font-family: "Pretendard", Sans-serif;}
+.mypage-votepage h1 {font-size:1.3rem; color:#222; font-weight: 600;  line-height: 1.5rem; letter-spacing:-.5px; margin-bottom:30px; padding:0 1rem;}
+.mypage-votepage h3 {font-size:1.05rem; color:#222; font-weight: 600; line-height: 1.3rem; letter-spacing:-.5px; margin-bottom:10px; }
+.mypage-votepage p, .mypage-votepage li {color:#555; font-size:.95rem; line-height:1.3rem; margin-bottom:0;  letter-spacing:-.5px; text-align: justify;}
+
+.mypage-votepage .vote-txt {padding:0 1rem;}
+.mypage-votepage .vote-txt div {margin:50px 0;}
+.mypage-votepage .vote-txt .state ul li {font-weight:500; color:#555;}
+.mypage-votepage .vote-txt .state ul li span, .mypage-votepage .vote-txt .notice ul li span {color:#ee321f;}
+.mypage-votepage .vote-txt .notice ul {padding-left: 1rem; counter-reset:num; }
+.mypage-votepage .vote-txt .notice ul li {position: relative; margin-bottom:5px;}
+.mypage-votepage .vote-txt .notice ul li:before{position: absolute; top: 0; left:-10px;  display:flex; justify-content: center;  width:0; white-space: nowrap; content: counter(num) ". "; counter-increment:num; }
+.mypage-votepage .vote-txt .list-bt {text-align: center;}
+.mypage-votepage .vote-txt .list-bt button {background-color: #fff; color:#333; border:1px solid #aaa; padding:.7rem 1.5rem; font-weight:500; font-size:.9rem;}
+
+.mypage-votepage .vote-bt-wrap {width:100%; background-color:#fafafa; padding:2rem 1rem; position:fixed; bottom:0; border:1px solid #ddd;}
+.mypage-votepage .vote-bt-wrap .vote-bt {display:flex; justify-content: center; }
+.mypage-votepage .vote-bt-wrap .vote-bt button {width:100%; padding:.8rem 1.5rem;  font-size:.9rem; margin:0 5px;}
+.mypage-votepage .vote-bt-wrap .vote-bt .agree {color:#fff; border:none; background-color:#ff6a32; font-weight:500; }
+.mypage-votepage .vote-bt-wrap .vote-bt .disagree {background-color: #313884; color:#fff; border:none; font-weight:500; }
+.mypage-votepage .vote-bt-wrap .end-bt {display:block; margin:5px 5px 0; text-align: center;}
+.mypage-votepage .vote-bt-wrap .end-bt button {width:100%;  padding:1rem 1.5rem;  font-size:.9rem;  font-weight: 500; border:none; color:#fff; background-color:#868686; cursor: not-allowed; }
+
+
+ @media (min-width:900px){
+.mypage-votepage {margin:30px auto;}	 
+.mypage-votepage h1 {text-align:center; font-size:1.7rem; line-height: 2.2rem; margin-bottom:50px;}	 
+.mypage-votepage .vote-txt {width:900px; margin:0 auto;}	 
+.mypage-votepage h3 { font-size:1.2rem; line-height:1.8rem; }
+.mypage-votepage p, .mypage-votepage li { font-size:1.05rem; line-height:1.7rem; }	 
+.mypage-votepage .vote-txt .list-bt {margin-top:100px; }	 
+.mypage-votepage .vote-txt .list-bt button {padding:1rem 3rem;  font-size:1rem;}
+.mypage-votepage .vote-bt-wrap{padding:2.5rem 1rem;}
+.mypage-votepage .vote-bt-wrap .vote-bt button {width:280px; padding:1rem 3rem; font-size:1rem; margin: 0 20px;}	 
+.mypage-votepage .vote-bt-wrap .end-bt button {width:600px; padding:1rem 3rem; font-size:1rem;}	 
+	 
+}
+
+
+
+
+
+
+
+ /********************투자내역 상세**************************************************************************************************************************************/
+
+
+ .mypage-investment-details {background-color: #fafafa;}
+
+ /*투자상품 상세*/
+ .mypage-investment-details .contents-wrap .container-fluid {padding:0 1rem 50px;}
+ .mypage-investment-details .contents-wrap .container-fluid .row {margin:0;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .col-lg-8, .mypage-investment-details .contents-wrap .container-fluid .row .col-lg-4, .mypage-investment-details .contents-wrap .container-fluid .row .col-12 {padding:0;}
+
+
+ /*상세내역*/
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card {margin:10px 0;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body {border:1px solid #ddd; padding:1rem 0 1.5rem; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body h4 {margin:0; font-size:.9rem; font-weight:500; color:#555; letter-spacing: -.3px; line-height: 1.15rem; padding:0 1rem; font-family:"NotoSansKR", sans-serif; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .date {font-size:.85rem; font-weight: 400; color:#555; margin:5px 0; font-family: "Pretendard", Sans-serif; padding:0 1rem 1rem; border-bottom:1px solid #ddd;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail {margin:1rem 0 1rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div {vertical-align:middle;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div p {font-size:.8rem; color:#777;  padding:4px 1rem; margin-bottom:0; letter-spacing:-.5px;text-align: justify; vertical-align:middle;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div span {float:right; text-align: right; color:#222; font-weight: 600; font-family: "Pretendard", Sans-serif; font-size:.875rem;}
+
+
+
+
+
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns {clear:both; display: flex;  padding:0 1rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns div {width:100%;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns .detail-bt {margin-right:10px; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns .btn-withholding-tax {font-size:.78rem; color: #fff; background-color: #f64d60; border-color: #f64d60; width:100%;  border-radius: 0; font-weight: 400; padding:.4rem 1rem .3rem; letter-spacing: -.5px;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns .btn-detail {font-size:0.78rem; color: #fff; background-color: #444; border-color: #444; width:100%;  border-radius: 0; font-weight: 400; padding:.4rem 1rem .3rem; letter-spacing: -.5px;}
+
+
+ /*상환내역*/
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card {margin-bottom:10px;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body {border:1px solid #ddd; padding:0;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body h4 {padding:1rem; border-bottom: 1px solid #ddd; margin:0; font-size:.9rem; font-weight:500; color:#555; font-family:"NotoSansKR", sans-serif; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table {margin:1rem 0;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table td {border-top:none; font-size:.8rem; color:#777;  padding:4px 1rem; margin-bottom:0; letter-spacing:-.5px; text-align: justify; vertical-align:middle;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table td:last-child {text-align:right; color:#222; font-weight: 600; font-family: "Pretendard", Sans-serif; font-size:.875rem; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table i {font-size:.9rem; color:#777; vertical-align: baseline; margin-left:-2px;}
+
+
+ /*상환일정*/
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card {margin-bottom:10px;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body {border:1px solid #ddd; padding:0 1rem; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body h4 {padding:1rem 0 0; margin:0; font-size:.9rem; font-weight:500; color:#555; font-family:"NotoSansKR", sans-serif; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table-responsive {width:100%; margin-top:15px; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table {width:960px; }
+
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table thead th{ background-color:#f6f6f6; border-top:1px solid #555; font-size:.825rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table thead th:first-child {position:sticky; left:0; z-index: 100; border-right: 1px solid #ddd; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table thead th:last-child {padding-right:2rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tbody td:last-child {padding-right:2rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tbody tr th {position:sticky; left:0; background-color: #fff; z-index: 100; border-right: 1px solid #ddd; font-size:.825rem;  font-family: "Pretendard", Sans-serif; letter-spacing: -.3px; font-weight: 500;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table th{padding:.8rem 0 .6rem; color:#222; border-top:none; border-bottom:1px solid #eaeaea;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table td{padding:.7rem 0; color:#555; border-top:none; border-bottom:1px solid #eaeaea; font-size:.76rem; font-family: "Nunito",sans-serif; letter-spacing: -.5px; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tfoot th{position:sticky; left:0; background-color: #fcf4f5; z-index: 100; border-right: 1px solid #ddd; font-size:.825rem;  border-bottom:1px solid #555; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tfoot td{ border-bottom:1px solid #555; color:#222; font-size:.78rem; font-family: "Nunito",sans-serif; letter-spacing: -.5px; font-weight: 600; background-color: #fcf4f5;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tfoot td:last-child {padding-right:2rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table .responsive-width{flex: 0 0 120px;}
+
+
+ /*안내사항*/
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card{border:1px solid #ddd; border-radius:0;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-header {background-color:#fff; padding:.65rem 1rem;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-header h4 {margin:0;  }
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-header h4 a {font-size:.9rem; font-weight:500; color:#555; font-family:"NotoSansKR", sans-serif; }
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-header h4 i {float:right;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-body {border:none; border-top: 1px solid #ddd;}
+
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-body p {font-size:.78rem; font-weight: 400; color:#555; margin-bottom: 10px; text-align: justify; line-height: 1rem; letter-spacing: -.5px;}
+ .mypage-investment-details .contents-wrap .container-fluid .row .invest-guide .card .card-body .etc {font-size:.78rem; font-weight: 400; color:#999; margin-bottom: 10px; padding-left: 10px; line-height: 1rem; }
+
+
+
+
+ @media (min-width:900px){
+     .mypage-investment-details .contents-wrap .container-fluid .row .col-lg-8 {flex: 0 0 66.66667%!important; max-width: 66.66667%!important; width: 66.66667%!important;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .col-lg-4 {flex: 0 0 33.33333%!important; max-width: 33.33333%!important; width: 33.33333%!important;}
+
+
+
+     /*상세내역*/
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card {margin:0 0 10px;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body {height:235px; padding:1.5rem 1rem ; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body h4 { font-size:.95rem; padding:0; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .date {font-size:.9rem; margin:10px 0 10px; padding:0; border-bottom:none;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail {margin-bottom:15px; border:1px solid #ddd; display: flex; flex-wrap: wrap;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div {border-bottom:1px solid #ddd; width:50%;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div:nth-child(1) {border-right: 1px solid #ddd;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div:nth-child(3) {border-bottom:none; border-right: 1px solid #ddd;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div:nth-child(4) {border-bottom:none;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .invest-info-detail div p { padding:.5rem 1rem; margin-bottom: 0; vertical-align: middle;}
+
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns {padding:0; justify-content: flex-end;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .invest-info .card .card-body .btns div {width:150px;}
+
+
+
+
+     /*상환내역*/
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card {margin-left:10px;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body {height:235px; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body h4 {padding:1.5rem 1rem 0; border-bottom: none; font-size:.95rem; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table {margin:10px 0;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-info .card .card-body .table td {border-top:none;  padding:6px 1rem;}
+
+
+
+     /*상환일정*/
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body h4 {padding:1.5rem 0 0;font-size:.95rem; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table-responsive { margin-top:15px; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table th{padding:.8rem 0 .6rem; }
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table td{padding:.7rem 0; font-size:.76rem;  }
+
+
+ }
+
+
+
+ @media (min-width:1050px){
+     .mypage-investment-details {margin:0; padding-bottom: 50px;}
+     .mypage-investment-details .tab-nav {width:1050px;}
+     .mypage-investment-details .contents-wrap .container-fluid {width:1050px; padding:0;}
+
+
+
+     /*상환일정*/
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table {width:100%;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table thead th:first-child {border-right:none;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tbody tr th {border-right:none;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table tfoot th{border-right: none;}
+     .mypage-investment-details .contents-wrap .container-fluid .row .repayment-schedule .card .card-body .table .responsive-width{flex: 0 0 12.5%;}
+
+
+
+ }
+
+
+
+ /********************상환스케줄**************************************************************************************************************************************/
+
+
+ .mypage-repayment-schedule {background-color: #fafafa;}
+
+ .mypage-repayment-schedule .contents-wrap .container-fluid {padding:0 1rem 50px;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row  {margin:0;}
+
+
+ /*내부탭*/
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule {width:100%; margin:10px auto;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered li {width:50%; text-align: center;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered li a {font-weight: 400; color:#888; font-size:.8rem; padding:.5rem .8rem; letter-spacing: -.5px;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered li a.active {border-bottom: 1px solid #ee321f; font-weight: 600; color:#222; font-size:.8rem; background-color: #fafafa;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered {border-bottom:1px solid #ddd; margin-bottom: 10px;}
+ .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered .nav-item {margin-bottom: 0px;}
+
+ .mypage-repayment-schedule .tab-content .schedule .monthly-data {text-align: center; margin-bottom:10px;}
+ .mypage-repayment-schedule .tab-content .schedule .monthly-data input {border:none; width:130px; background-color: #fafafa; margin:0 auto; font-size:1.3rem; font-family: "Pretendard", Sans-serif; color:#222; font-weight: 600; text-align:left;  background-image: url("../../images/img/calender.png");  background-repeat: no-repeat; background-position:95px 15px; box-sizing: border-box; background-size: 22px 22px;}
+
+ .mypage-repayment-schedule .tab-content .schedule .yearly-data {display: flex; justify-content: center; align-items: center; margin:0 auto 10px; }
+ .mypage-repayment-schedule .tab-content .schedule .yearly-data input {border:none; width:100px; background-color: #fafafa; margin:0 auto; font-size:1.3rem; font-family: "Pretendard", Sans-serif; color:#222; font-weight: 600; text-align:left;  background-image: url("../../images/img/calender.png");  background-repeat: no-repeat; background-position:70px 15px; box-sizing: border-box; background-size: 22px 22px;}
+
+
+
+ /*상환스케줄 박스*/
+ .mypage-repayment-schedule .tab-content .schedule .row .col-xl-4 {padding:0px;}
+ .mypage-repayment-schedule .tab-content .schedule .row .card {box-shadow: none; -webkit-box-shadow:none; margin-bottom:10px;}
+ .mypage-repayment-schedule .tab-content .schedule .row .card .card-body {border:1px solid #ddd; padding:1rem;}
+ .mypage-repayment-schedule .tab-content .schedule .row .card .card-body h4 {margin:0; font-size:.9rem; font-weight:600; color:#555;  letter-spacing: -.5px; word-spacing: -.5px;}
+
+
+ .mypage-repayment-schedule .tab-content .schedule .row .card .my-total-payout h4 span {float:right;font-size:.95rem;  font-weight:500; color:#ee321f; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+
+ .mypage-repayment-schedule .tab-content .schedule .row .card .my-repayment-principal h4 span {float:right;font-size:.95rem;  font-weight:500; color:#222; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+
+ .mypage-repayment-schedule .tab-content .schedule .row .card .my-repayment-interest h4 span {float:right;font-size:.95rem;  font-weight:500; color:#222; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+
+
+ /*상환지급내역*/
+
+ .mypage-repayment-schedule .tab-content .schedule .payment-history {padding:0;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel {margin:0 0 10px;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body {border:1px solid #ddd; padding:25px 15px 50px; border-radius: 3px; background-color: #fff;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .table {font-size:0.9rem; letter-spacing: -0.5px; width:100%; margin-bottom:0;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th{border-bottom:none; background-color:#f6f6f6; border-top:1px solid #222; font-size:.825rem;  }
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(3) {padding-right:1rem;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody {border-bottom:1px solid #222;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(3) {padding-right:1rem;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th{padding:.8rem 0 .6rem; color:#222; border-top:1px solid #eaeaea; font-weight: 500; }
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td{padding:.7rem 0;  border-top:1px solid #eaeaea; letter-spacing: -0.5px; font-size:.76rem; color:#222; }
+
+
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th:nth-child(1) {width:40%;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th:nth-child(2) {width:10%;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th:nth-child(3) {width:50%;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th:nth-child(4) {display: none;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table th:nth-child(5) {display: none;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td:nth-child(1) {width:40%; font-size:.76rem; color:#555;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td:nth-child(2) {width:10%; }
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td:nth-child(3) {width:50%; font-size:.77rem;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td:nth-child(4) {display: none;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table td:nth-child(5) {display: none;}
+
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table .hiddenRow {border-top:none; padding:0;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody {border-bottom:none; background-color: #fafafa;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(1) {padding-left:1rem; width:60%; line-height: 1rem; font-size:0.76rem; color:#555;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(2) {padding-right:1rem; width:40%;  font-size:.77rem; color:#222; }
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(3) {display: none;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(4) {display: none;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody .unpaid td{color:#999;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody tr.com > td{color:#555;}
+
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .arrow-active.on {transform: rotate(-90deg); position: absolute; left:5%;}
+ .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .arrow-active {transform: rotate(0deg); position: absolute; left:5%;}
+
+
+
+
+ @media (min-width:768px){
+
+     /*내부탭*/
+     .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule  .nav-tabs.nav-bordered {margin-bottom: 20px;}
+     .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule  .nav-tabs.nav-bordered li {width:15%; text-align: center;}
+     .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule  .nav-tabs.nav-bordered li a {font-size:.9rem;}
+     .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule  .nav-tabs.nav-bordered li a.active {font-size:.9rem; background-color: #fafafa;}
+
+
+     /*상환스케줄 박스*/
+     .mypage-repayment-schedule .col-md-4 {flex: 0 0 100%!important; max-width: 100%!important;}
+
+
+     /*상환지급내역*/
+	 .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead tr {display:flex;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(1) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(2) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(3) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(4) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(5) {width:20%; display: inline-block; padding-right:1rem;}
+
+	 .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody tr {display:flex;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(1) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(2) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(3) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(4) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(5) {width:20%; display: inline-block; padding-right:1rem;}
+
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table .hiddenRow {width:100%!important; padding:0; display: inline!important;}
+	 .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody tr {display:flex;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(1) {width:40%; display: inline-block; padding-left:1rem;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(2) {width:20%; display: inline-block;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(3) {width:20%; display: inline-block; padding-right:0;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(4) {width:20%; display: inline-block; padding-right:1rem;}
+
+
+ }
+
+
+
+ @media (min-width:900px){
+
+
+     .mypage-repayment-schedule .tab-content .schedule .monthly-data input { width:150px; font-size:1.5rem;  background-position:120px 15px;  background-size: 25px 25px;}
+
+     .mypage-repayment-schedule .tab-content .schedule .yearly-data input { width:120px; font-size:1.5rem;  background-position:85px 15px;  background-size: 25px 25px;}
+
+
+     /*상환스케줄 박스*/
+     .mypage-repayment-schedule .col-md-4 {flex: 0 0 33.3%!important; max-width: 33.3%!important;}
+     .mypage-repayment-schedule .tab-content .schedule .row .card {background-color: #fafafa;}
+     .mypage-repayment-schedule .tab-content .schedule .row .card .card-body {margin-right:10px;}
+     .mypage-repayment-schedule .tab-content .schedule .row .card .card-body h4{font-size:.9rem; line-height: 1rem; }
+     .mypage-repayment-schedule .tab-content .schedule .row .card .card-body h4 span{font-size:.95rem; padding-top:2px; }
+     .mypage-repayment-schedule .tab-content .schedule .row .card .my-repayment-interest {margin-right:0;}
+
+
+     /*상환지급내역*/
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(5) {width:20%; display: inline-block; padding-right:2rem;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(5) {width:20%; display: inline-block; padding-right:2rem;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(1) {width:40%; display: inline-block; padding-left:2rem;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(4) {width:20%; display: inline-block; padding-right:2rem;}
+
+ }
+
+
+ @media (min-width:1050px){
+
+     .mypage-repayment-schedule {margin:0 auto 0; padding-bottom: 50px;}
+     .mypage-repayment-schedule .tab-nav {width:1050px;}
+     .mypage-repayment-schedule .contents-wrap {width:1050px; border:1px solid #ddd; background-color: #fff; margin:0 auto; padding:30px 50px 0; box-sizing: border-box; }
+
+     .mypage-repayment-schedule .contents-wrap .container-fluid {width:950px; padding:0; }
+
+
+     /*내부탭*/
+     .mypage-repayment-schedule .contents-wrap .container-fluid .row .repayment-schedule .nav-tabs.nav-bordered li a.active {background-color: #fff;}
+
+
+     .mypage-repayment-schedule .tab-content .schedule .monthly-data input {background-color: #fff; }
+     .mypage-repayment-schedule .tab-content .schedule .yearly-data input {background-color: #fff; }
+
+
+     /*상환스케줄 박스*/
+     .mypage-repayment-schedule .tab-content .schedule .row .card {background-color: #fff;}
+
+
+     /*상환지급내역*/
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel {margin:10px 0 50px;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body {padding:0; border:none;  background-color: #fff;}
+
+
+	 .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(1) {width:26%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(2) {width:20%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(3) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(4) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table thead th:nth-child(5) {width:18%;}
+
+
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(1) {width:26%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(2) {width:20%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(3) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(4) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .outside-table tbody td:nth-child(5) {width:18%;}
+
+
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(1) {width:46%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(2) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(3) {width:18%;}
+     .mypage-repayment-schedule .tab-content .schedule .payment-history .panel .panel-body .inside-table tbody td:nth-child(4) {width:18%;}
+
+
+ }
+
+
+
+ /********************예치금/포인트**************************************************************************************************************************************/
+
+
+ .mypage-deposit-point {background-color: #fafafa;}
+
+ .mypage-deposit-point .contents-wrap .container-fluid {padding:0 1rem 50px;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row  {margin:0;}
+
+
+ /*내부탭*/
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point {width:100%; margin:10px auto;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li {width:50%; text-align: center;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li a {font-weight: 400; color:#888; font-size:0.8rem; padding:0.5rem 0.8rem;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li a.active {border-bottom: 1px solid #ee321f; font-weight: 600; color:#222; font-size:0.8rem; background-color: #fafafa;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered {border-bottom:1px solid #ddd; margin-bottom: 10px;}
+ .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered .nav-item {margin-bottom: 0px;}
+
+
+
+
+ /*예치금 박스*/
+ .mypage-deposit-point .tab-content .deposit .row .col-xl-4 {padding:0px;}
+ .mypage-deposit-point .tab-content .deposit .row .card {box-shadow: none; -webkit-box-shadow:none; margin-bottom:10px;}
+ .mypage-deposit-point .tab-content .deposit .row .card .card-body {border:1px solid #ddd; padding:1.3rem 1rem 1rem;}
+ .mypage-deposit-point .tab-content .deposit .row .card .card-body h4 {margin:0; font-size:.9rem; font-weight:600; color:#555; vertical-align: middle; letter-spacing: -.5px; word-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .deposit .row .card .card-body h4 i {margin-left:0; color:#555; font-size:1rem;}
+ .mypage-deposit-point .tab-content .deposit .row .card .card-body h4 i:before {cursor: pointer;}
+ .mypage-deposit-point .tab-content .deposit .row .card .card-body button {float:right; box-shadow:none; border:1px solid #ddd; color:#222; font-size:.7rem;  padding:.3rem .5rem .2rem; margin-top:-5px; }
+
+
+ /*예치금 박스 - 보유예치금*/
+ .mypage-deposit-point .tab-content .deposit .row .card .my-deposit p {font-size:1.1rem; font-weight:600; color:#ee321f; font-family: "Pretendard", Sans-serif; margin:10px 0 0; vertical-align: middle;}
+ .mypage-deposit-point .tab-content .deposit .row .card .my-deposit p button {margin-top:-2px;}
+
+ /*예치금 박스 - 가상계좌*/
+ .mypage-deposit-point .tab-content .deposit .row .card .my-account h4 {display:block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; -webkit-line-clamp: 1 }
+ .mypage-deposit-point .tab-content .deposit .row .card .my-account p {margin:15px 0 0; font-size:.9rem; font-weight:500; color:#666; vertical-align: middle; font-family: "Pretendard", Sans-serif;}
+
+ /*예치금 박스 - 출금계좌*/
+ .mypage-deposit-point .tab-content .deposit .row .card .my-account2 p {margin:15px 0 0; font-size:.9rem; font-weight:500; color:#666; vertical-align: middle; font-family: "Pretendard", Sans-serif;}
+
+
+ /*포인트 박스*/
+ .mypage-deposit-point .tab-content .point .row .col-xl-4 {padding:0px;}
+ .mypage-deposit-point .tab-content .point .row .card {box-shadow: none; -webkit-box-shadow:none; margin-bottom:10px;}
+ .mypage-deposit-point .tab-content .point .row .card .card-body {border:1px solid #ddd; padding:1rem;}
+ .mypage-deposit-point .tab-content .point .row .card .card-body h4 {margin:0; font-size:.9rem; font-weight:600; color:#555;  letter-spacing: -.5px; word-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .point .row .card .card-body h4 i {color:#555; font-size:1rem; margin-left:-2px;}
+ .mypage-deposit-point .tab-content .point .row .card .card-body h4 i:before {cursor: pointer;}
+ .mypage-deposit-point .tab-content .point .row .card .my-point {border:1px solid #555;}
+ .mypage-deposit-point .tab-content .point .row .card .my-point h4 span {float:right; font-size:.95rem; font-weight:500; color:#ee321f; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+ .mypage-deposit-point .tab-content .point .row .card .my-accumulated-points h4 span {float:right;font-size:.95rem;  font-weight:500; color:#222; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+ .mypage-deposit-point .tab-content .point .row .card .my-extinction-point h4 span {float:right; font-size:.95rem;  font-weight:500; color:#222; letter-spacing: 0px; font-family: "Pretendard", Sans-serif;}
+
+
+ /*검색조회 폼태그 */
+ .mypage-deposit-point .tab-content .check-bt .web-bt {display:none;}
+ .mypage-deposit-point .tab-content .check-bt .form-control {border-radius:0; color:#555; font-size:.78rem;  height: calc(2.3rem);  letter-spacing: -.5px; border:1px solid #ddd!important; background-color:#fff!important; }
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .list-select {margin:10px 0;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .list-select .form-control {border-radius:2px; border-top-right-radius: 2px!important; border-bottom-right-radius: 2px!important;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker {margin:0 0 10px;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker .input-group  {display:flex; align-items: center;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker .input-group .form-control {border-radius:0;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker .input-group .input-group-append {margin-left:6px;}
+ .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker .input-group .input-group-append button {border-radius:0;  border:none; box-shadow: none; background-color: #444; color:#fff; font-size:.825rem;  padding:.4rem 1rem .2rem;  height: calc(2.2rem);}
+
+
+
+ /*예치금 입출금내역*/
+ .mypage-deposit-point .tab-content .deposit .deposit-history {padding:0;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card {margin:0 0 10px;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body {background-color: #fafafa; padding:0; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body h4 {padding:20px 0 0; margin:0; font-size:.9rem; font-weight: 600; color:#222; letter-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body p {margin:0px; color:#777; padding:3px 0; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body ul {margin-bottom:0px;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-history-web {display:none;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-history-app  {border:1px solid #ddd; background-color: #fff;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list { padding:1rem 0; border-bottom: 1px solid #eee; margin:0 1rem;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list ul li{float:left; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list ul li:last-child {float:right; text-align: right;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .date {color:#777; font-size:.8rem; font-family: "Pretendard", Sans-serif; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .date span {font-family: "Pretendard", Sans-serif; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .tit {font-size:.8rem; font-weight: 600; margin-top:5.5px;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .money {font-size:1rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .balance {color:#222;font-weight: 500; font-size:.85rem; font-family: "Pretendard", Sans-serif; letter-spacing: -.3px; }
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .txt {clear:both;  color:#555; font-size:.78rem; padding-top:1rem;  font-weight: 400; line-height: 1rem; letter-spacing: -.5px;}
+
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .red {color:#ee321f;}
+ .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-list .blue {color:#133ea6;}
+
+
+
+ /*포인트내역*/
+ .mypage-deposit-point .tab-content .point .point-history {padding:0;}
+ .mypage-deposit-point .tab-content .point .point-history .card {margin:0 0 10px;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body {background-color: #fafafa; padding:0; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body h4 {padding:20px 0 0; margin:0; font-size:.9rem; font-weight: 600; color:#222; letter-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body i {font-size:1rem; color:#555;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body p {margin:0px; color:#444; padding:3px 0; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body ul {margin-bottom:0px;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-history-web {display:none;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-history-app {border:1px solid #ddd; background-color: #fff; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list{padding:1rem 0; border-bottom: 1px solid #eee; margin:0 1rem;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list ul li{float:left; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list ul li:last-child {float:right; text-align: right;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .date {color:#777; font-size:.8rem; font-family: "Pretendard", Sans-serif; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .date span{font-family: "Pretendard", Sans-serif;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .tit {font-size:.8rem; font-weight: 600; margin-top:5.5px;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .money {font-size:1rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .balance {color:#222;font-weight: 500; font-size:.85rem; font-family: "Pretendard", Sans-serif; letter-spacing: -.3px; }
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .txt {clear:both;  color:#555; font-size:.78rem; padding-top:1rem;  font-weight: 400; line-height: 1rem; letter-spacing: -.5px;}
+
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .red {color:#ee321f;}
+ .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-list .blue {color:#133ea6;}
+
+
+
+ /* 더보기 */
+ .mypage-deposit-point .tab-content .tab-content .card .card-body .no-list {display: none !important;}
+ .mypage-deposit-point .tab-content .tab-content .card .card-body .list-add-bt {display: block;}
+ .mypage-deposit-point .tab-content .tab-content .card .card-body .list-add-bt {text-align:center; margin:20px 0 30px;}
+ .mypage-deposit-point .tab-content .tab-content .card .card-body .list-add-bt button{background-color: #999; padding:.4rem 2rem .2rem; color:#fff; border-radius:5rem; outline: none; font-size:.8rem; border:none; box-shadow: none; -webkit-box-shadow:none; }
+ .mypage-deposit-point .tab-content .tab-content .card .card-body .list-add-bt button:focus {outline: none; box-shadow: none;}
+
+
+
+ @media (min-width:768px){
+     .mypage-deposit-point .tab-content .check-bt .form-list-search {display: flex; margin-top:10px; }
+     .mypage-deposit-point .tab-content .check-bt .form-list-search .list-select {margin:0 6px 0 0!important; width:30%;}
+     .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker {margin:0 0 20px; width:70%;}
+     .mypage-deposit-point .tab-content .check-bt .web-bt {display:none;}
+
+
+     /*내부탭*/
+     .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered {margin-bottom: 20px;}
+     .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li {width:15%; text-align: center;}
+     .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li a {font-size:.9rem;}
+     .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li a.active {font-size:.9rem; background-color: #fafafa;}
+
+
+     /*예치금박스*/
+     .mypage-deposit-point .col-md-4 {flex: 0 0 100%!important; max-width: 100%!important;}
+
+
+ }
+
+
+
+ @media (min-width:900px){
+
+
+     /*예치금박스*/
+     .mypage-deposit-point .col-md-4 {flex: 0 0 33.3%!important; max-width: 33.3%!important;}
+     .mypage-deposit-point .tab-content .deposit .row .card {background-color: #fafafa;}
+     .mypage-deposit-point .tab-content .deposit .row .card .card-body {margin-right:10px;}
+	 .mypage-deposit-point .tab-content .deposit .row .card .card-body button {margin-top:-2px;}
+
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account2 {margin-right:0;}
+
+     .mypage-deposit-point .tab-content .deposit .row .card .my-deposit {height:95px;}
+     .mypage-deposit-point .tab-content .deposit .row .card .my-deposit p {font-size:1.1rem; margin-top:13px;}
+
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account {height:95px;}
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account p {letter-spacing: -0.3px;  margin-top:17px;}
+
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account2 {height:95px;}
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account2 p {letter-spacing: -0.3px;  margin-top:17px;}
+
+
+
+     /*포인트박스*/
+     .mypage-deposit-point .col-md-4 {flex: 0 0 33.3%!important; max-width: 33.3%!important;}
+     .mypage-deposit-point .tab-content .point .row .card {background-color: #fff;}
+     .mypage-deposit-point .tab-content .point .row .card .card-body {margin-right:10px;}
+     .mypage-deposit-point .tab-content .point .row .card .my-extinction-point {margin-right:0;}
+
+
+
+     /*검색조회 폼태그 */
+     .mypage-deposit-point .tab-content .check-bt .form-list-search {display: flex; margin: 0; padding:0;}
+     .mypage-deposit-point .tab-content .check-bt .form-list-search .list-select {margin:0 6px 0 0; width:120px!important;}
+     .mypage-deposit-point .tab-content .check-bt .form-list-search .daterange-picker {width:280px;}
+
+
+
+     /*예치금 입출금내역*/
+     .mypage-deposit-point .tab-content .deposit .deposit-history {padding:0; }
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card {margin:0 0 10px;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body {border:1px solid #ddd; padding:1rem; background-color: #fff;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body h4 {margin:0; font-size:1rem; font-weight:600;  padding:1rem 0 .5rem;}
+
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-history-web {display:block;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .deposit-withdrawal-history-app {display:none;}
+
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table-responsive {width:100%;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table {width:100%; }
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table thead th{border-bottom:none; background-color:#f6f6f6; border-top:1px solid #555; }
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table thead th:first-child {position:sticky; left:0; z-index: 100;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table thead th:last-child {padding-right:2rem;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table tbody {border-bottom:1px solid #555; }
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table tbody td:last-child {padding-right:2rem;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table tbody tr th {position:sticky; left:0; background-color: #fff; z-index: 100; }
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table th{padding:.7rem 0; color:#222; border-top:1px solid #eaeaea; font-weight: 500; font-size: .78rem; vertical-align: middle;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td{padding:.7rem 0;  border-top:1px solid #eaeaea; letter-spacing: -0.3px;  vertical-align: middle;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(1) {font-family: "Pretendard", Sans-serif; font-size:.8rem; color:#555;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(1) span {font-family: "Pretendard", Sans-serif; font-size:0.8rem; color:#555;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(2) {font-size:.75rem; font-weight: 500;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(3) {font-size:.78rem; color:#555; letter-spacing: -.5px;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(4) {font-size:.85rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td:nth-child(5) {font-size:.8rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px; color:#222;}
+
+
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .responsive-width-10{flex: 0 0 10%;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .responsive-width-15{flex: 0 0 15%;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .responsive-width-20{flex: 0 0 20%;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .responsive-width-35{flex: 0 0 35%;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .red {color:#ee321f;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .blue {color:#133ea6;}
+
+
+
+     /*포인트 내역*/
+     .mypage-deposit-point .tab-content .point .point-history {padding:0;}
+     .mypage-deposit-point .tab-content .point .point-history .card {margin:0 0 10px;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body {border:1px solid #ddd; padding:25px 15px; border-radius: 3px; background-color: #fff;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body h4 {margin:0; font-size:1rem; font-weight:600;  padding:1rem 0 .5rem;}
+
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-history-web {display:block;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .point-history-app {display:none;}
+
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table-responsive {width:100%;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table {width:100%; }
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table thead th{border-bottom:none; background-color:#f6f6f6; border-top:1px solid #555; }
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table thead th:first-child {position:sticky; left:0; z-index: 100;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table thead th:last-child {padding-right:2rem;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table tbody {border-bottom:1px solid #555; }
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table tbody td:last-child {padding-right:2rem;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table tbody tr th {position:sticky; left:0; background-color: #fff; z-index: 100; }
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table th{padding:.7rem 0; color:#222; border-top:1px solid #eaeaea; font-weight: 500; font-size: .78rem; vertical-align: middle;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td{padding:.7rem 0;  border-top:1px solid #eaeaea; letter-spacing: -0.3px;  vertical-align: middle;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(1) {font-family: "Pretendard", Sans-serif; font-size:.8rem; color:#555;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(1) span {font-family: "Pretendard", Sans-serif; font-size:0.8rem; color:#555;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(2) {font-size:.75rem; font-weight: 500;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(3) {font-size:.78rem; color:#555; letter-spacing: -.5px;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(4) {font-size:.85rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td:nth-child(5) {font-size:.8rem; font-weight: 500; font-family: "Pretendard", Sans-serif; letter-spacing: -.5px; color:#222;}
+
+
+
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .responsive-width-10{flex: 0 0 10%;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .responsive-width-15{flex: 0 0 15%;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .responsive-width-20{flex: 0 0 20%;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .responsive-width-35{flex: 0 0 35%;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .red {color:#ee321f;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .blue {color:#133ea6;}
+
+
+     /*페이지넘버*/
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt {display: block; margin:20px 0 30px;}
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt nav .pagination {justify-content: center; }
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt nav .pagination .page-item .page-link{background-color:#fff; font-size:0.84rem;}
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt nav .pagination .page-item.active {border:none; }
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt nav .pagination .page-item.active .page-link {color:#ee321f;}
+
+
+ }
+
+
+
+
+ @media (min-width:1050px){
+
+     .mypage-deposit-point {margin:0 auto 0; padding-bottom: 50px;}
+     .mypage-deposit-point .tab-nav {width:1050px;}
+     .mypage-deposit-point .contents-wrap {width:1050px; border:1px solid #ddd; background-color: #fff; margin:0 auto; padding:30px 50px 0; box-sizing: border-box; border-radius: 3px;}
+
+     .mypage-deposit-point .contents-wrap .container-fluid {width:950px; padding:0; }
+
+
+     /*내부탭*/
+     .mypage-deposit-point .contents-wrap .container-fluid .row .deposit-point .nav-tabs.nav-bordered li a.active {background-color: #fff;}
+
+
+     /*예치금 박스*/
+     .mypage-deposit-point .tab-content .deposit .row .card {background-color: #fff!important; }
+	 .mypage-deposit-point .tab-content .deposit .row .card .my-deposit p {font-size:1.1rem;}
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account p {font-size:.925rem; }
+     .mypage-deposit-point .tab-content .deposit .row .card .my-account2 p {font-size:.925rem;}
+
+
+     /*예치금 검색조회 폼태그 */
+     .mypage-deposit-point .tab-content .check-bt {display:flex; width:950px; margin:0 auto; position: relative; box-sizing: border-box;}
+     .mypage-deposit-point .tab-content .check-bt .form-list-search {display: flex; margin: 0; padding:0;}
+     .mypage-deposit-point .tab-content .check-bt .form-list-search .list-select {margin:0 6px 0 0; width:150px;}
+     .mypage-deposit-point .tab-content .check-bt .web-bt {display:inline-flex; position: absolute; right:2px;}
+     .mypage-deposit-point .tab-content .check-bt .web-bt .btn {margin-left:10px;}
+     .mypage-deposit-point .tab-content .check-bt .web-bt .btn-receipt {color: #fff; background-color: #39afd1; border-color: #39afd1; }
+     .mypage-deposit-point .tab-content .check-bt .web-bt .btn-down {color: #555; border-color: #aaa;  border-radius: 0; font-size:.78rem; letter-spacing: -1px;  padding:.4rem .9rem .3rem; height: calc(2.2rem);}
+
+
+     /*예치금 입출금내역*/
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card {margin:0 0 10px;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body {padding:0; border:none;  background-color: #fff;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body h4 {padding:20px 0 10px;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table td{font-size:0.9rem;}
+     .mypage-deposit-point .tab-content .deposit .deposit-history .card .card-body .table .date{font-size:0.86rem;}
+
+
+     /*포인트내역*/
+     .mypage-deposit-point .tab-content .point .point-history .card {margin:0 0 10px;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body {padding:0; border:none;  background-color: #fff;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body h4 {padding:20px 0 10px;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table td{font-size:0.9rem;}
+     .mypage-deposit-point .tab-content .point .point-history .card .card-body .table .date{font-size:0.86rem;}
+
+
+
+     /*페이지 넘버*/
+     .mypage-deposit-point .tab-content .card .card-body .list-num-bt nav .pagination .page-item .page-link{font-size: 0.9rem;}
+
+
+ }
+
+
+ /********************원천징수영수증**************************************************************************************************************************************/
+
+
+ /* 원천징수영수증 신청 */
+ .tax-receipt {margin:80px 0 50px;}
+ .tax-receipt .container .row .card {box-shadow: none; width:100%; background-color: #fff;}
+ .tax-receipt .container .row .card .card-body {padding:20px;}
+ .tax-receipt .container .row .card .card-body .col-3 {flex: 0 0 30%!important; max-width: 30%!important;}
+ .tax-receipt .container .row .card .card-body .col-9 {flex: 0 0 70%!important; max-width: 70%!important;}
+ .tax-receipt .container .row .card .card-body .input_readonly {display: inline-flex;}
+ .tax-receipt .container .row .card .card-body .input_readonly > input {border: none; outline: none;}
+ .tax-receipt .container .row .card .card-body h4 {text-align:left; font-size:1.5rem; color:#222; font-weight: 400; margin:0 0 30px;}
+ .tax-receipt .container .row .card .card-body form .form-group {margin-bottom:10px; }
+ .tax-receipt .container .row .card .card-body form .form-group .col-form-label {padding-top:14px;}
+ .tax-receipt .container .row .card .card-body form .form-group label{color:#222; font-size:0.9rem; font-weight: 500; padding-right: 0; letter-spacing: -0.5px;}
+ .tax-receipt .container .row .card .card-body form .form-group .type {margin:10px 0;}
+ .tax-receipt .container .row .card .card-body form .form-group .form-control {min-height: calc(3rem + 2px); border:1px solid #ddd!important;}
+ .tax-receipt .container .row .card .card-body form .form-group .form-control input:focus {background-color: #fff!important;}
+ .tax-receipt .container .row .card .card-body form .form-group .btn-primary {height: calc(3rem + 1px); box-shadow: none; width:100%; background-color: #f64e60; border:none; font-size:1rem; margin:30px auto 0;}
+ .tax-receipt .container .row .card .card-body form .form-group .custom-control-input:checked~.custom-control-label::before {color:#f64e60!important; border-color:#f64e60!important; background-color: #f64e60!important;}
+ .tax-receipt .container .row .card .card-body form .form-group input {background-color: #fff!important;}
+ .tax-receipt .container .row .card .card-body p {color:#555; font-size:0.8rem; margin:5px 0; font-weight: 500; letter-spacing: -0.5px;}
+
+ .tax-receipt .container .row .card .card-body .date {display: flex; align-items: center; flex-flow: wrap;}
+ .tax-receipt .container .row .card .card-body .date > span {padding: 0 10px;}
+ .tax-receipt .container .row .card .card-body .date > input {flex: 1;}
+
+ @media all and (min-width:500px) {
+
+     /* 원천징수영수증 신청 */
+     .tax-receipt .container .row .card .card-body {padding:35px;}
+     .tax-receipt .container .row .card .card-body .col-3 {flex: 0 0 25%!important; max-width: 25%!important;}
+     .tax-receipt .container .row .card .card-body .col-9 {flex: 0 0 75%!important; max-width: 75%!important;}
+     .tax-receipt .container .row .card .card-body form .form-group label{letter-spacing: 0px;}
+     .tax-receipt .container .row .card .card-body p {font-size:0.9rem; letter-spacing: 0px;}
+
+
+ }
+
+
+ @media all and (min-width:768px) {
+
+     /* 원천징수영수증 신청 */
+     .tax-receipt {margin:80px 0 100px;}
+     .tax-receipt .container .row .card {box-shadow: none; border:1px solid #ddd; width:550px;}
+     .tax-receipt .container .row .card .card-body {padding:35px;}
+     .tax-receipt .container .row .card .card-body h4 {margin:0 0 30px;}
+     .tax-receipt .container .row .card .card-body form .request-btn {text-align:center;}
+     .tax-receipt .container .row .card .card-body form .form-group .btn-primary {width:60%; margin:30px 0 10px;}
+
+ }
+
+

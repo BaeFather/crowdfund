@@ -1,0 +1,25 @@
+<?
+$aa="hellofunding";
+$bb = openssl_encrypt($aa, 'AES-256-CBC',"12345678901234567890123456789012");
+echo $bb;
+$cc = openssl_decrypt($bb, 'AES-256-CBC',"12345678901234567890123456789012");
+echo "<br/>".$cc;die();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" >
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+<title>헬로펀딩, 대한민국 P2P 금융의 표준, P2P투자, P2P대출, 소액투자의 시작 헬로펀딩</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.hellofunding.kr/favicon.ico?ver=20180826">
+<link rel="stylesheet" type="text/css" href="css/landing.css">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+
+<form method="post" action="auth_proc.php">
+name<input type="text" name="Mname" value="전승찬"><br/><br/>
+<input type="text" name="Mhpcomp" value="1">hp<input type="text" name="Mhp" value="01086246176"><br/><br/>
+yyyymmdd<input type="text" name="Mbirth" value="197207311"><br/><br/>
+<input type="submit" value="go">
+</form>

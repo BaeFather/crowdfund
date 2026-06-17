@@ -1,0 +1,81 @@
+<?php include_once('/home/crowdfund/public_html/m2/inc/meta.php');?>
+<body>
+
+<div id="wrap">
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/header.php');?>
+
+	<div id="container">
+		<!-- 비주얼 -->
+		<img src="../images/bbs/sub_qna.jpg" alt="QNA 투자자가 작은 금액들을 모아서 함께 투자하는 새로운 투자 방식입니다." />
+		<div id="content">
+			<div class="location"><span>이용안내</span><b class="blue">Q&A</b></div>
+
+			<div class="content">
+
+				<div class="type01 bbs">
+					<table>
+						<tbody>
+							<tr>
+								<td><b>제목</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>이메일</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>내용</b><textarea class="textArea"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="btnArea">
+					<a href="#" class="btn_big_blue" id="check">메일발송</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/footer.php');?>
+
+</div>
+
+<div id="complete" class="qna">
+	<img src="../images/btn_close.gif" alt="close" class="close" />
+	<div class="title">질문완료</div>
+	<div class="text pT50"><span class="blue">질문이 성공적으로 완료되었습니다.</span><br>빠른 시간안에 답변드리겠습니다.</div>
+	<a href="../index.html" class="btn_big_link">메인으로</a>
+</div>
+
+<script>
+$(document).ready(function(){
+	// 레이어 팝업
+	$('#check').click(function() {
+		$.blockUI({
+			message: $('#complete'),
+			css: { width:'280px',top:'30%',left:'50%',marginLeft:'-140px',border:0, cursor:'default' } });
+
+		/*
+		$.ajax({
+			url: 'wait.php',
+			cache: false,
+			complete: function() {
+				// unblock when remote call returns
+				$.unblockUI();
+			}
+		});
+		*/
+
+	});
+
+	$('#complete #yes, #complete .close').click(function() {
+		$.unblockUI();
+		return false;
+	});
+
+});
+</script>
+
+</body>
+</html>

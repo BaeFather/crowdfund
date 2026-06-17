@@ -1,0 +1,166 @@
+/* ### common */
+.virtual_step{
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 4.6%;
+    box-sizing: border-box;
+}
+.virtual_step > div{
+    float: left;
+}
+.virtual_step > div.step{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    color: #fff;
+    background-color: #cccccc;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+.virtual_step > div.border{
+    width: 13px;
+    height: 1px;
+    background-color: #cccccc;
+    margin-top: 14px;
+}
+.virtual_step > div.step.step_on{
+    background-color: #3951bb;
+}
+.virtual_title {
+    overflow: hidden;
+    width: 100%;
+    padding: 0px 4.6%;
+    box-sizing: border-box;
+}
+.virtual_title h2{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 40px;
+}
+.virtual_title h2 span{
+    color: #3951bb;
+}
+.virtual_title p{
+    font-size: 16px;
+    color: #555;
+    line-height: 20px;
+}
+.virtual_title .p_box{
+    overflow: hidden;
+    width: 100%;
+}
+.virtual_title .p_box span{
+    float: left;
+    width: 4%;
+    line-height: 28px;
+}
+.virtual_title .p_box p{
+    float: left;
+    width: 96%;
+    word-break: keep-all;
+}
+.virtual_content > img {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+}
+/* ### VirtualAcc01 */
+#VirtualAcc01 {
+    background-color: #f5f5f5;
+    padding-bottom: 60px;
+}
+/* ### VirtualAcc02 */
+#VirtualAcc02 {
+    background-color: #f5f5f5;
+    padding-bottom: 60px;
+}
+#VirtualAcc02 .virtual_content{
+    box-sizing: border-box;
+    padding: 0px 4.6%;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+#VirtualAcc02 .virtual_content .label_box{
+    font-size: 19px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+#VirtualAcc02 .virtual_content .form_box{
+    overflow: hidden;
+    width: 100%;
+}
+#VirtualAcc02 .virtual_content .form_box input,
+#VirtualAcc02 .virtual_content .form_box select{
+    height: 35px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f5f5f5;
+    margin-bottom: 15px;
+	color:#333;
+}
+#VirtualAcc02 .virtual_content .form_box select{
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-image: url('../img/select_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 11px auto;
+    background-position: 95% 50%;
+    border-radius: 0px;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */ 
+#VirtualAcc02 .virtual_content .form_box select::-ms-expand { display: none; }
+
+#VirtualAcc02 .virtual_content .btn_fm input[type="text"] {
+    width: 74%;
+    float: left;
+}
+#VirtualAcc02 .virtual_content .btn_fm button {
+    width: 22%;
+    float: right;
+    height: 35px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3951bb;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 3px;
+}
+/* ### VirtualAcc03 */
+#VirtualAcc03 {
+    background-color: #f5f5f5;
+    padding-bottom: 60px;
+}
+#VirtualAcc03 .virtual_content{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 50px 4.6% 200px 4.6%;
+}
+#VirtualAcc03 .virtual_content p {
+    font-size: 19px;
+    color: #3951bb;
+    margin-bottom: 25px;
+}
+#VirtualAcc03 .virtual_content p span{
+    color: #222;
+    display: inline-block;
+    width: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

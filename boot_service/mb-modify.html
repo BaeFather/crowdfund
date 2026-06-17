@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>회원정보수정</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer, common css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+		<link rel="stylesheet" href="./assets/css/common/common.css">
+
+		<!-- contents css -->
+		<link href="./assets/css/page/member.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+
+		
+		
+		<!-- member-modify start -->
+		<section class="mb-modify">
+            <div class="container">
+                <div class="row justify-content-center">
+                     <div class="card">
+                     	<div class="card-body"> 
+							<div class="head-title">
+                        		<h4>회원정보수정</h4>
+							</div>
+                            <form action="#">
+								<div class="id-info">
+									<h5>계정정보</h5>
+									<div class="form-group">
+										<label for="mb-id" class="form-label">아이디</label>
+										<input class="form-control mb-id" type="text" id="mb-id" value="me_sunny" readonly>	
+									</div>
+									<div class="form-group">                                     
+										<label for="password" class="form-label">비밀번호</label>
+										<div class="input-group">
+											<input class="form-control" type="password" id="password" value="**************" readonly>
+											<button class="btn" type="button" data-toggle="modal" data-target="#pass-change">변경</button>
+										</div>	
+									</div>
+								</div>	
+								<div class="mb-info">
+									<h5>회원정보</h5>
+									<div class="form-group">                                     
+										<label for="name" class="form-label">이름 (법인은 상호명)</label>
+										<input class="form-control" type="text" id="name" value="김미선" readonly>
+									</div>
+									<div class="form-group">
+										<label for="phone" class="form-label">휴대폰번호</label>
+										<div class="input-group">
+											<input class="form-control" type="text" id="phone" value="01099991111" readonly>
+											<button class="btn" type="button">변경</button>
+										</div>	
+									</div>
+									<div class="form-group">                                     
+										<label for="email" class="form-label">이메일</label>
+										<div class="input-group">
+											<input class="form-control" type="email" id="email" value="hello@hellofunding.co.kr" readonly>
+											<button class="btn" type="button" data-toggle="modal" data-target="#email-change">변경</button>
+										</div>	
+									</div>
+									<div class="form-group">                                     
+										<label for="type" class="form-label">투자자유형 (법인은 비노출)</label>
+										<div class="input-group">
+											<input class="form-control" type="text" id="type"  value="개인 일반투자자" readonly>
+											<button class="btn" type="button" data-toggle="modal" data-target="#invest-type-change">변경</button>
+										</div>
+									</div>
+								</div>
+								<div class="account-info">
+									<h5>출금계좌정보</h5>
+									<div class="form-group">                                     
+										<label for="account" class="form-label">계좌</label>
+										<div class="input-group">
+											<input class="form-control" type="text" id="account"  value="국민 91918098089" readonly>
+											<button class="btn" type="button">변경</button>
+										</div>
+									</div>
+									<div class="form-group">                                     
+										<label for="account-name" class="form-label">예금주</label>
+										<input class="form-control" type="text" id="account-name" value="김미선" readonly>
+									</div>
+								</div>								
+								<div class="agree-info">
+									<h5>선택동의정보</h5>
+									<div class="form-group">
+										<div class="investment-manual checkbox">
+											<input type="checkbox"  id="checkbox-01">
+											<label for="checkbox-manual"><a href="">마케팅 정보 수집 및 활용</a> 동의</label>
+										</div>
+										<div class="investment-manual checkbox">
+											<input type="checkbox"  id="checkbox-02">
+											<label for="checkbox-manual"><a href="">투자확인서</a> 수신 동의</label>
+										</div>
+                                	</div>	
+								</div>	
+								<div class="modify-button">
+									<button type="button" class="btn"  data-toggle="modal">확인</button>
+									<button type="button" class="out-btn"  data-toggle="modal" data-target="#yes-withdrawal">회원탈퇴 (가능)</button>
+								</div>
+								<div class="modify-button" style="clear:both;">
+									<button type="button" class="out-btn"  data-toggle="modal" data-target="#no-withdrawal">회원탈퇴 (불가)</button>
+								</div>
+								
+                            </form>						
+                        </div> <!-- end card-body -->
+                    </div><!-- end card -->
+                </div> <!-- end row -->
+            </div><!-- end container -->
+		</section>
+ 		<!-- member-modify end -->
+		
+		
+		
+		<!--  비밀번호변경 시작-->
+        <div class="modal fade mb-modify-modal" id="pass-change" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel">비밀번호 변경</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<form action="#">
+                          	<div class="form-group">                                     
+                             	<label for="now-pass" class="form-label">현재 비밀번호</label>
+                              	<input class="form-control" type="password" id="now-pass">
+                          	</div>
+                          	<div class="form-group">                                     
+                              	<label for="new-pass" class="form-label">새 비밀번호</label>
+                              	<input class="form-control" type="password" id="new-pass">
+                          	</div>
+                          	<div class="form-group">                                     
+                              	<label for="check-pass" class="form-label">새 비밀번호 확인</label>
+                              	<input class="form-control" type="password" id="check-pass">
+                          	</div>
+							<p><i class="mdi mdi-alert-circle"></i>숫자, 영문, 특수문자를 조합하여 8자리 이상 입력해주세요.</p>
+                    	</form>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-confirm">변경</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  비밀번호변경 끝-->
+				
+		<!--  이메일변경 시작-->
+        <div class="modal fade mb-modify-modal" id="email-change" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel2">이메일 변경</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<form action="#">
+                          	<div class="form-group">                                     
+                             	<label for="new-email" class="form-label">변경 이메일</label>
+                              	<input class="form-control" type="email" id="new-email">
+                          	</div>
+                    	</form>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-confirm">변경</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  이메일변경 끝-->
+	
+		<!--  투자자유형변경 시작-->
+        <div class="modal fade mb-modify-modal" id="invest-type-change" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel3" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel3">투자자 유형 변경</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<form action="#">
+                          	<div class="radio-type-wrap">
+								<h5>유형 선택</h5>
+                                <div>
+                                    <input type="radio" class="form-check-input" id="codeView_소득적격" value="소득적격" name="pidGroup" checked="">
+                                    <label class="form-check-label" for="codeView_소득적격">소득적격투자자<span>[투자한도 업권내 1억원]</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="form-check-input" id="codeView_전문" value="전문" name="pidGroup">
+                                    <label class="form-check-label" for="codeView_전문">전문투자자<span>[투자한도 제한 없음]</span></label>
+                                </div>
+                            </div>
+                          	<div class="docu-info">                                     
+                              	<h5>증빙서류 안내</h5>
+								<table>
+									<tr>
+										<th>소득 적격</th>
+										<td>종합소득 과세표준 확정신고서<br>종합소득세 신고서 접수증</td>
+									</tr>
+									<tr>
+										<th>전문 투자</th>
+										<td>전문투자자 확인증</td>
+									</tr>
+								</table>
+                          	</div>
+                          	<div class="add-docu">                                     
+                                <h5>증빙서류 첨부</h5>
+                                <div class="custom-file">
+                                    <input class="file-control" type="file" id="formFileMultiple1">
+                                </div>
+                                <div class="custom-file">
+                                    <input class="file-control" type="file" id="formFileMultiple2">
+                                </div>
+                            </div>
+							<p><i class="mdi mdi-alert-circle"></i>변경신청 심사는 영업일 기준 1~3일 정도 소요됩니다.</p>
+                    	</form>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-confirm">변경</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  투자자유형변경 끝-->
+		
+		
+		<!--  회원탈퇴 가능 시작-->
+        <div class="modal fade mb-modify-modal" id="yes-withdrawal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel4" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel4">헬로펀딩 회원탈퇴</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<form action="#">
+                          	<div class="form-group">                                     
+                             	<label for="now-password" class="form-label">현재 비밀번호</label>
+                              	<input class="form-control" type="password" id="now-password">
+                          	</div>
+							<p>
+								탈퇴 후 해당 계정은 복구 불가능합니다.<br>
+								탈퇴를 원하시는 경우 비밀번호 입력 후 회원탈퇴 버튼을 선택해주세요.
+							</p>
+                    	</form>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-cancel" data-dismiss="modal">취소</button>
+						<button type="button" class="btn btn-confirm">회원탈퇴</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  회원탈퇴 가능 끝-->
+		
+		<!--  회원탈퇴 불가 시작-->
+        <div class="modal fade mb-modify-modal" id="no-withdrawal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel5" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myLargeModalLabel5">헬로펀딩 회원탈퇴 안내</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<p class="notice">가상계좌에 예치금 잔액이 있을 경우 출금 후 탈퇴 가능합니다.</p>
+						<p class="notice">현재 상환중인 투자/대출 상품이 있을 경우 상환완료 후 탈퇴 가능합니다.</p>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-confirm">확인</button>
+					</div>
+                </div>
+            </div>
+         </div>
+        <!--  회원탈퇴 불가 끝-->
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+
+    </body>
+</html>

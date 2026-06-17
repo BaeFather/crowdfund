@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumBarunGothic.eot);
+  src: local('Nanum Barun Gothic'),
+       local('NanumBarunGothic'),
+       url(../fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NanumBarunGothic.woff2) format('woff2'),
+       url(../fonts/NanumBarunGothic.woff) format('woff'),
+       url(../fonts/NanumBarunGothic.ttf) format('truetype');
+}
+
+
+
+@font-face {
+ font-family: 'NanumSquareRoundB';
+ src: url(../fonts/NanumSquareRoundB.eot);
+ src: url(../fonts/NanumSquareRoundB.eot?#iefix) format('embedded-opentype'),
+      url(../fonts/NanumSquareRoundB.woff2) format('woff2'),
+      url(../fonts/NanumSquareRoundB.woff) format('woff'),
+      url(../fonts/NanumSquareRoundB.ttf) format('truetype');
+}	
+	
+
+@font-face {
+ font-family: 'NanumSquareRoundEB';
+ src: url(../fonts/NanumSquareRoundEB.eot);
+ src: url(../fonts/NanumSquareRoundEB.eot?#iefix) format('embedded-opentype'),
+      url(../fonts/NanumSquareRoundEB.woff2) format('woff2'),
+      url(../fonts/NanumSquareRoundEB.woff) format('woff'),
+      url(../fonts/NanumSquareRoundEB.ttf) format('truetype');
+}		
+			
+	
+	
+#event {width:100%; margin:-3px 0 0 0 ; padding:0 }
+#event .event {text-align:center; margin:0 auto;}
+#event .sub {
+		font-family:'Nanum Barun Gothic', sans-serif; color:#fff; font-size: 20px;
+		border_radius:50px;
+		border-radius: 50px;
+		-moz-border-radius: 50px;
+		background-color: #333;
+		color:#fff;
+		height: 42px;
+		line-height:42px;
+		text-align:center;
+		width: 125px;
+
+}
+#event .num {
+		margin: 0 auto;
+		border_radius:10px;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		background-color: #ff6428;
+		height: 60px;
+		line-height:60px;
+		text-align:center;
+		width: 190px;
+		font-family:'NanumSquareRoundB', sans-serif; font-style: normal; color:#fff; font-size: 24px;
+
+}
+
+	
+#event .titleA {font-family:'NanumSquareRoundB', sans-serif; font-style: normal;font-size: 40px;}	
+#event .titleB {font-family:'NanumSquareRoundEB', sans-serif; font-style: normal; font-weight: 500; font-size: 55px;}		
+#event .btext {margin-left:24px; font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-size:20px; text-align: left; line-height: 30px;}	
+#event .wtext {margin-left:24px; font-family:'Nanum Barun Gothic', sans-serif; color:#fff; font-size:20px; text-align: left; }
+#event .atext {padding:27px 0 0 24px; font-family:'Nanum Barun Gothic', sans-serif; color:#fff; font-size:20px; text-align: left; }
+
+	
+#event .bt {
+		margin:0 auto; 
+		text-align: center; 
+		width:700px; 
+		height: 80px; 
+		line-height: 80px; 
+		background-color:#333; 
+		border:1px solid #000;
+		color:#fff; 
+		font-family:'Nanum Barun Gothic', sans-serif; 
+		font-style: normal;
+		font-size: 30px; 
+}
+	
+#event .bt span{color:#ffde4a; font-weight:500;}
+#event .box10 ,.box11 ,.box12 ,.box13 ,.box14 {background-color:#098446;}
+	
+	
+	
+#event .box1 {background-color: #f5f5f5;}
+	
+#event .box2 {background-color: #098446;}
+#event .box2 div {width:1149px; height: 120px; margin: 0 auto;}	
+#event .box2 ul {float:left; width: 573px;}	
+#event .box2 ul li{float: left; list-style-type: none;  }	
+#event .box2 ul li a {display:block; color:#fff; line-height: 27px;}
+#event .box2 .atext {margin-top:10px;}
+#event .box2 .line {width:1px; border-right:1px solid #fff; height:90px; margin-top:15px; opacity: 0.5;}
+#event .box2 .arrow {float:right;  margin: 45px 40px 0 0 ;}
+#event .box2 span {color:#ffd600; font-weight: bold;}	
+
+#event .box3 {margin-top: 80px;}
+	
+#event .box4 .titleA {color:#333; margin-top:50px;}	
+#event .box4 .titleB {color:#ff6428; margin-top:20px;}	
+	
+#event .box5 ul {width:1149px; height:50px; margin: 50px auto; }	
+#event .box5 ul li{float: left; list-style-type: none;  }	
+#event .box5 span {color:#f13e00; text-decoration: underline;  }	
+
+#event .box6 {clear:both; height:400px; background-color: #eee;}	
+#event .box6 div {width:1149px;  margin:0 auto;}	
+#event .box6 ul {list-style-type: none; float: left; width:340px; margin:40px 63px 0 0;}
+#event .box6 ul .step {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-size:18px; font-weight: bold; text-align: left; margin-top:15px;}
+#event .box6 ul .stepw {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-size:15px; line-height: 20px; text-align: left; margin-top:10px;}
+#event .box6 ul span {font-weight:bold;}	
+#event .box6 .last {margin-right:0;}
+	
+#event .box7 {clear: both; width:1149px; height:50px; margin: 50px auto; }	
+#event .box7 p {font-family:'Nanum Barun Gothic', sans-serif; color:#333; font-size:20px; text-align: left; margin-top:15px;}
+#event .box7 p span {color:#f13e00;}	
+	
+#event .box8 ul {width:1149px; height: 42px; margin: 20px auto 20px; }	
+#event .box8 ul li{float: left; list-style-type: none;  }	
+#event .box8 .btext {margin-top:10px;}
+
+#event .box09 {margin-top:80px;}
+	
+#event .box10 {padding: 65px 0 50px 0; margin:80px auto 0;}	
+
+#event .box11 {padding-bottom: 60px;} 	
+#event .box11 .titleA {color:#fff;}	
+#event .box11 .titleB {color:#ffd600; margin-top:20px;}
+	
+
+#event .box12 ul {width:1149px; height:80px; margin: 0 auto; }	
+#event .box12 ul li{float: left; list-style-type: none;  }	
+#event .box12 .wtext {line-height:30px;}
+#event .box12 span {color:#ffd600; text-decoration: underline; }		
+	
+	
+#event .box13 {clear: both;  height: 300px; background-image: url(/images/event/2020event/1event_04.png); background-repeat: no-repeat; background-position: center; backgound-size:auto;}	
+#event .box13 ul {width:1149px;  height: 42px; margin: 0 auto; margin-bottom: 20px;}	
+#event .box13 ul li{float: left; list-style-type: none;}		
+#event .box13 .sub{margin-top:20px;}
+#event .box13 .wtext {margin-top:30px;}
+#event .box14 {padding-bottom:70px;}
+#event .box15 {width:1149px; margin:30px auto 60px; text-align: left; font-family:'Nanum Barun Gothic', sans-serif; color:#777; font-size: 13px;}	
+#event .box15 p {margin-top:15px; }
+#event .box15 .bold {font-weight:500; font-size: 17px; color:#444;}
+	

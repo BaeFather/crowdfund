@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Thin"), local("Spoqa Han Sans Thin"), url("/theme/2018/css/font/Spoqa Han Sans Thin.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Thin.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Thin.ttf") format("truetype");
+
+   font-weight: 100;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Light"), url("/theme/2018/css/font/Spoqa Han Sans Light.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Light.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Light.ttf") format("truetype");
+
+   font-weight: 300;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Regular"), url("/theme/2018/css/font/Spoqa Han Sans Regular.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Regular.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Regular.ttf") format("truetype");
+
+   font-weight: 400;
+}
+@font-face{
+   font-family: "Spoqa Han Sans";
+   src:local("Spoqa Han Sans Bold"), local("Spoqa Han Sans Bold"), url("/theme/2018/css/font/Spoqa Han Sans Bold.woff2") format("woff2"), url("/theme/2018/css/font/Spoqa Han Sans Bold.woff") format("woff"), url("/theme/2018/css/font/Spoqa Han Sans Bold.ttf") format("truetype");
+
+   font-weight: 700;
+}
+
+body, input, textarea, select, button, table{ margin:0; font-size:13px; font-family:'Spoqa Han Sans', Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; }
+body, h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, form, fieldset, legend, button { margin: 0; padding:0; font-weight:normal; }
+
+
+img, fieldset{ border:0 none; }
+dl, ul, ol, li { list-style: none outside none; }
+button{ border:0 none; cursor:pointer; display: block; }
+table, th, td, div{ border-collapse:collapse; }
+textarea { outline:0; }
+
+
+a,img,input { outline:none; selector-dummy:expression(this.hideFocus=true); }
+
+/* 모바일용 */
+input[type=image] {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+
+li img { vertical-align:top; }
+td img { vertical-align:middle; }
+
+a { text-decoration:none; color:#202020; }
+a:hover, a:active, a:focus { color:#153fa1; text-decoration:none; }
+table a:link, table a:visited { color:#202020; }
+table a:hover, table a:active { color:#153fa1; text-decoration:none; }
+address, caption, cite, code, dfn, em, var { font-style:normal; }
+address{line-height:20px;}
+
+strong, .strong, b {font-family:'Spoqa Han Sans'}
+.blind, legend, caption {display:none !important}
+.cursor {cursor: pointer}
+.clear {clear:both}
+
+input.text { height:33px; padding:0 5px; border:1px solid #ddd; background-color:#f8f8f8; color:#ced0d6; vertical-align:middle; min-width:340px; }
+
+body {background:#edeffa;font-family:'Spoqa Han Sans';}
+
+.top {width:100%;height:678px;background:url('../img/top_bg01.jpg') center no-repeat;}
+.earn {width:100%;height:716px;background:url('../img/top_bg02.jpg') center no-repeat;}
+.earn .earn_data{width:1000px;margin:0 auto;text-align:center;padding-top:85px;}
+.earn .earn_data p:nth-child(1) {font-size:56px;color:#fff;font-weight:500;letter-spacing:-2px;}
+.earn .earn_data p:nth-child(2) {font-size:56px;color:#fff;font-weight:500;letter-spacing:-2px;}
+.earn .earn_data p:nth-child(1) span {font-size:56px;color:#fff600;font-weight:500;}
+.earn .earn_data p:nth-child(2) span {font-size:56px;color:#fff600;font-weight:500;}
+.earn .earn_data p:nth-child(3) {padding-top:15px;}
+.earn .earn_data p:nth-child(4) {padding-top:5px;}
+.earn .earn_data .earn_guess {background:url('../img/earn_bg01.png') center no-repeat;width:320px;height:176px;text-align:center;margin:15px auto;display:inline-block;}
+.earn .earn_data .earn_guess .eg_tit {font-size:22px;color:#000;font-weight:500;line-height:35px;padding-top:45px;letter-spacing:0;}
+
+.content {background-color:#532e9e;width:100%;}
+.content .cont01 {width:1000px;margin:0 auto;text-align:center;}
+.content .cont01 .btn {display:inline-block;line-height:0;padding-left:10px;cursor:pointer;vertical-align:bottom;}
+.content .cont01 p:nth-child(1){padding-top:50px;}
+.content .cont01 p:nth-child(2){margin-top:20px;text-align:right;background-image: url('../img/input_bg01.jpg'); background-repeat: no-repeat; background-position: center;width:560px;height:65px;display:inline-block;}
+.content .cont01 p:nth-child(2) input {width:420px;height:63px;border:0;background-color:#fff;margin-right:65px;font-size:24px;color:#000;text-align:right;}
+.content .cont01 p:nth-child(3){padding-top:50px;}
+.content .cont01 p:nth-child(4){padding-top:20px;}
+.content .cont02 {width:1000px;margin:0 auto;text-align:center;}
+.content .cont02 p:nth-child(1){padding-top:50px;}
+.content .cont02 p:nth-child(2){padding-top:20px;}
+.content .cont02 p:nth-child(3){padding-top:50px;}
+
+.content ul{width:1000px;margin:0 auto;text-align:center;padding-bottom:70px;}
+.content ul li {display:inline-block;padding-right:35px;}
+
+.lastest_list {background-color:#d5c5f6;width:100%;text-align:center;padding:83px 0;}
+.lastest_list .lastest_list_cont {width:710px;margin:0 auto;}
+.lastest_list .lastest_list_cont .date {font-size:28px;color:#000;padding:25px 0 5px 0;line-height:32px;}
+.lastest_list .lastest_list_cont .date span img {line-height:32px;vertical-align:top;}
+.lastest_list .lastest_list_cont .option {text-align:right;}
+.lastest_list .lastest_list_cont .cover {position:absolute;width:710px;height:380px;line-height:370px;margin-top:10px;background:url('../img/cover.png') center repeat;font-size:35px;color:#fff;}
+.lastest_list .lastest_list_cont .list {text-align:center;background-color:#532e9e;height:350px;margin-top:10px;padding-bottom:25px;overflow-x:hidden;overflow-y:auto;}
+.lastest_list .lastest_list_cont .list table {color:#fff;font-size:18px;width:710px;padding-top:15px;}
+.lastest_list .lastest_list_cont .list table td {padding:25px 15px 0 15px;}
+
+.earn_list {background-color:#e8ddff;width:100%;text-align:center;padding:83px 0;}
+.earn_list .earn_list_cont {width:710px;margin:0 auto;}
+.earn_list .earn_list_cont .cover {position:absolute;width:710px;height:380px;line-height:370px;margin-top:10px;background:url('../img/cover.png') center repeat;font-size:35px;color:#fff;}
+.earn_list .earn_list_cont .date {font-size:28px;color:#000;padding:25px 0 5px 0;line-height:32px;}
+.earn_list .earn_list_cont .date span img {line-height:32px;vertical-align:top;}
+.earn_list .earn_list_cont .option {text-align:right;}
+.earn_list .earn_list_cont .list {text-align:center;background-color:#532e9e;height:350px;margin-top:10px;padding-bottom:25px;overflow-x:hidden;overflow-y:auto;}
+.earn_list .earn_list_cont .list table {color:#fff;font-size:18px;width:710px;padding-top:15px;}
+.earn_list .earn_list_cont .list table td {padding:25px 15px 0 15px;}
+
+.notice {background-color:#300e75;width:100%;text-align:center;}
+.notice img {width:1000px;margin:0 auto;}
+
+
+
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+    
+/* Modal Content/Box */
+.modal-content {
+	width:695px;height:313px;background:url('../img/popup01.png') center no-repeat;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	width: 90%; /* Could be more or less, depending on screen size */ 
+}
+

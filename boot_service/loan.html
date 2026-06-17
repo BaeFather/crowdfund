@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>대출하기</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+		
+
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+		<script defer src="./assets/js/app/wow.min.js"></script>
+		<script defer src="./assets/js/app/jquery.counterup.min.js"></script>
+		<script defer src="./assets/js/app/jquery.waypoints.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/company.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+
+<style>
+			
+.loan p, .loan a, .loan span , .loan th , .loan td , .loan div, .loan button, .loan h4, .loan h5, .loan .active{font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}			
+			
+.loan {margin-top:60px; }
+.loan .container-fluid {padding:0;}
+
+/*라디오버튼 커스텀*/
+.loan input[type="radio"] {display: none;}
+.loan input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding:2px;
+  background-clip: content-box;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right:5px;
+  margin-bottom:4px;
+  line-height: 50px;
+  vertical-align:middle;
+}
+
+.loan input[type="radio"]:checked + label:before {
+  background-color: #ee321f; border: 1px solid #ee321f;
+}	
+			
+/*셀렉트박스*/
+.loan .custom-select {display:block; width:100%; height: calc(2.5rem); padding:.45rem .5rem; font-size:.85rem; font-weight: 400;  color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .6rem center; background-size: 10px 8px; border:1px solid #d5d5d5; border-radius: 0rem; }
+
+/*인풋박스*/
+.loan .form-control {display: block; width:100%; height: calc(2.5rem); padding:.45rem .5rem; font-size:.85rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem;}			
+	
+	
+	
+	
+	
+/*대출하기 상단*/			
+.loan .container-fluid .top-visual { background-color: #f8f8f8; padding:0 1rem; }
+.loan .container-fluid .top-visual .top .tit h4 { font-size:1.6rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:2rem 0 1rem; text-align: left; }	
+.loan .container-fluid .top-visual .top .tit .check {display:flex; align-items: center; margin-bottom:5px;}			
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:20px; height: 20px; border-radius: 20px; background-color: #ee321f; margin-right:.5rem;}			
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-10px; margin-left:2px; width:90%;}			
+.loan .container-fluid .top-visual .top .tit p { font-size:1.1rem; font-weight:600; color:#333; font-family:Pretendard, sans-serif;}
+.loan .container-fluid .top-visual .top .apt-img {text-align:right; margin-top:1rem;}		
+.loan .container-fluid .top-visual .top .apt-img img {width:90%; padding-left:1rem;} 	
+			
+			
+		
+/*한도조회*/	
+#tab1:checked ~ #content1, #tab2:checked ~ #content2 {display: block;}		
+.loan .container-fluid .form-wrap {padding:0 1rem; text-align: center;}
+.loan .container-fluid .form-wrap h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:2rem 0 .5rem; }				
+.loan .container-fluid .form-wrap p {font-size:.95rem; font-weight:500; color:#555; font-family:Pretendard, sans-serif; margin-bottom:10px;}	
+.loan .container-fluid .form-wrap .form-check-label{margin:1rem 1rem 0.5rem 1rem; font-size:.9rem; color:#333; font-weight: 500;}		
+.loan .container-fluid .form-wrap section {display:none;}				
+	
+.loan .container-fluid .form-wrap form table{width:100%; border-collapse: separate; border-spacing:.5rem; max-width: 500px; margin:0 auto;}			
+.loan .container-fluid .form-wrap form table tr td input::placeholder {font-size:.85rem;}
+.loan .container-fluid .form-wrap form .btn {width:100%; padding:.5rem; max-width: 500px;}			
+.loan .container-fluid .form-wrap form .btn button {background-color:#ee321f; border:none; color:#fff; width:100%; padding:.7rem 1rem;}
+.loan .container-fluid .form-wrap form span {font-size:.8rem; font-weight:400; color:#777; text-align:center; display:block;}			
+
+	
+/*이유*/	
+.loan .container-fluid .point-wrap {background-color: #f8f8f8; padding:0 1rem 3rem; text-align: center; margin:3rem 0; }	
+.loan .container-fluid .point-wrap h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:3rem 0 2rem; }		
+.loan .container-fluid .point-wrap div {margin-bottom:50px;}
+.loan .container-fluid .point-wrap .point_01 img {width:35%;}	
+.loan .container-fluid .point-wrap .point_02 img {width:50%;}	
+.loan .container-fluid .point-wrap .point_03 img {width:30%;}		
+.loan .container-fluid .point-wrap div p {font-size:1.1rem; color:#222; font-weight: 500; margin:1rem 0 0;}
+.loan .container-fluid .point-wrap div span {font-size:.85rem; color:#555; font-weight: 400; line-height: 1.2rem; display: inline-block;}	
+.loan .container-fluid .point-wrap div span .br {display:none;}	
+	
+/*상품안내*/
+.loan .container-fluid .loan-info {width:100%; padding:1rem;}	
+.loan .container-fluid .loan-info h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:0 0 2rem; text-align: center;}	
+.loan .container-fluid .loan-info #toc-content {display:none;}	
+.loan .container-fluid .loan-info #toc-content tr th, .loan .container-fluid .loan-info #toc-content tr td {border-top:0!important;}
+.loan .container-fluid .loan-info table {width:100%;}	
+.loan .container-fluid .loan-info table tr th, .loan .container-fluid .loan-info table tr td {border:1px solid #ddd;}	
+.loan .container-fluid .loan-info table tr th {background-color:#f8f8f8; width:25%; padding:.7rem .5rem; font-size:.8rem; color:#333; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.loan .container-fluid .loan-info table tr td {width:75%; padding:.7rem .5rem; font-size:.8rem; color:#777; line-height:1.2rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}	
+.loan .container-fluid .loan-info .loan-notice .notice {position: relative; padding-left:10px; margin-bottom:10px; }
+.loan .container-fluid .loan-info .loan-notice .dot::before {width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:10px;}
+.loan .container-fluid .loan-info .loan-notice .color::before {background-color:#777;}		
+.loan .container-fluid .loan-info .more-btn {width:100%; text-align: center;}	
+.loan .container-fluid .loan-info .more-btn button {width:100%; border:1px solid #ddd; border-top:none; background-color: #f8f8f8; color:#333; padding:.7rem; font-size:.95rem;  font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500;}
+	
+
+/*배너*/
+.loan .container-fluid .banner {background-color: #e1e3f3; margin:0 1rem 3rem;; padding:1rem 1rem 1.5rem; text-align: center;}
+.loan .container-fluid .banner .text p:first-child {font-size:1.1rem; color:#222; font-weight: 500; letter-spacing: -.5px; margin-top:2px;}	
+.loan .container-fluid .banner .text p:first-child span {display:none;}	
+.loan .container-fluid .banner .text p:last-child {font-size:.8rem; color:#555; font-weight: 400; letter-spacing: -.5px;margin-top:2px; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}		
+.loan .container-fluid .banner .num {font-size:1.6rem; font-family:Pretendard, sans-serif; font-weight:700; color:#222;}	
+.loan .container-fluid .banner .num span {font-size:1.6rem; font-family:Pretendard, sans-serif; font-weight:700; color:#5c4cc6;}		
+	
+	
+	
+	
+@media (min-width:450px){	
+.loan .container-fluid .point-wrap .point_01 img {width:auto;}	
+.loan .container-fluid .point-wrap .point_02 img {width:auto;}	
+.loan .container-fluid .point-wrap .point_03 img {width:auto;}	
+.loan .container-fluid .banner .text p:first-child span {display:inline-block; margin-right:5px;}		
+	}
+	
+@media (min-width:600px){
+/*대출하기 상단*/		
+.loan .container-fluid .top-visual .top .tit h4 { font-size:1.8rem;  padding:3rem 0 1rem; }	
+.loan .container-fluid .top-visual .top .tit .check {margin-bottom:5px;}			
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:22px; height:22px; border-radius: 22px; margin-right:.8rem; margin-bottom:1px;}			
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-12px; width:99%;}			
+.loan .container-fluid .top-visual .top .tit p { font-size:1.2rem;}
+.loan .container-fluid .top-visual .top .apt-img img {width:auto; padding-left:0;} 		
+	
+	
+/*이유*/	
+.loan .container-fluid .point-wrap div p {font-size:1.15rem;}
+.loan .container-fluid .point-wrap div span {font-size:.9rem; margin-top:.5rem;}	
+.loan .container-fluid .point-wrap div span .br {display:none;}	
+		
+
+}
+	
+@media (min-width:700px){
+/*배너*/
+.loan .container-fluid .banner {padding:1rem 2rem 1.25rem; display:flex; flex-direction: row-reverse; align-items: center; justify-content: space-between;}
+.loan .container-fluid .banner .text {text-align:left;}	
+.loan .container-fluid .banner .text p:first-child {font-size:1.2rem; }	
+.loan .container-fluid .banner .text p:last-child {font-size:.9rem; }		
+.loan .container-fluid .banner .num {font-size:1.7rem;}	
+.loan .container-fluid .banner .num span {font-size:1.7rem;}			
+	
+}
+			
+			
+@media (min-width:900px){
+	
+.loan {margin-top:80px; }
+
+	
+	
+/*대출하기 상단*/	
+.loan .container-fluid .top-visual { background-color: #f8f8f8; padding:0; height:310px;}
+.loan .container-fluid .top-visual .top {width:1000px; margin:0 auto; display: flex; justify-content: space-between; align-items: center;}
+.loan .container-fluid .top-visual .top .tit h4 { font-size:2.2rem;  padding:0 0 1rem;}			
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:24px; height:24px; border-radius: 24px; }			
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-16px; width:auto;}			
+.loan .container-fluid .top-visual .top .tit p { font-size:1.3rem;}
+.loan .container-fluid .top-visual .top .apt-img {text-align:right; margin-top:0;}
+	
+	
+	
+/*한도조회*/		
+.loan .container-fluid .form-wrap h5 { font-size:1.5rem; padding:3rem 0 .7rem; }				
+.loan .container-fluid .form-wrap p {font-size:1rem; font-weight:500; color:#777; margin-bottom:1rem;}	
+.loan .container-fluid .form-wrap .form-check-label{margin:1rem; font-size:1rem; color:#333; font-weight: 500;}		
+.loan .container-fluid .form-wrap section {display:none;}	
+	
+.loan .container-fluid .form-wrap form table{width:500px;}			
+.loan .container-fluid .form-wrap form .btn {width:500px;}			
+.loan .container-fluid .form-wrap form .btn button { padding:.7rem; font-size:1.05rem;}
+.loan .container-fluid .form-wrap form span {font-size:.9rem; margin-top:10px;}				
+	
+	
+	
+/*이유*/	
+.loan .container-fluid .point-wrap .point {width:1000px; margin:0 auto; display:flex; justify-content: space-between;}	
+.loan .container-fluid .point-wrap h5 { font-size:1.5rem;  padding:4rem 0; }	
+.loan .container-fluid .point-wrap div {margin-bottom:30px;}	
+.loan .container-fluid .point-wrap div p {font-size:1.2rem; margin:1.5rem 0 0;}
+.loan .container-fluid .point-wrap div span {font-size:.95rem; line-height: 1.3rem; }	
+.loan .container-fluid .point-wrap div span .br {display:inline-block;}		
+	
+	
+	
+/*상품안내*/			
+.loan .container-fluid .loan-info {width:1000px; padding:0; margin:0 auto 50px;}	
+.loan .container-fluid .loan-info h5 { font-size:1.5rem; padding:1rem 0 2rem;}	
+.loan .container-fluid .loan-info table tr th {width:250px; padding:1rem; font-size:.85rem;}
+.loan .container-fluid .loan-info table tr td {width:750px; padding:1rem; font-size:.85rem; letter-spacing: -.5px;}	
+.loan .container-fluid .loan-info table tr .loan-notice {padding:2rem 1.5rem 2rem 1rem;}
+.loan .container-fluid .loan-info .more-btn {width:1000px; }	
+.loan .container-fluid .loan-info .more-btn button {padding:.8rem; font-size:1rem;}
+		
+	
+	
+/*배너*/
+.loan .container-fluid .banner {width:1000px; margin:0 auto 100px; padding:1rem 2rem 1.25rem;}
+
+	
+	
+}
+			
+			
+		</style>
+		
+
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="loan">	
+			<div class="container-fluid">
+				<div class="top-visual">
+					<div class="top">
+						<div class="tit">
+							<h4>아파트 담보대출은 헬로펀딩</h4>
+							<div class="check">
+								<p><img src="assets/images/img/check.png" alt="체크박스"></p>
+								<p>LTV 80%</p>
+							</div>
+							<div class="check">
+								<p><img src="assets/images/img/check.png" alt="체크박스"></p>
+								<p>최대한도 9억원</p>
+							</div>	
+						</div>	
+						<div class="apt-img"><img src="assets/images/img/m-top-bg.png" alt="아파트 담보대출은 헬로펀딩"></div>
+					</div>
+				</div>
+				
+				<div class="form-wrap">
+					<h5>간편 한도 조회</h5>
+					<p>대출을 원하시는 아파트 주소를 입력해주세요.</p>
+                    <input type="radio" class="form-check-input" id="tab1" name="address-tabs" checked>
+                    <label class="form-check-label" for="tab1">주소검색</label>
+                    <input type="radio" class="form-check-input" id="tab2" name="address-tabs">
+                    <label class="form-check-label" for="tab2">직접입력</label>
+
+                    <section id="content1">
+                        <form class="contents">
+                            <table>
+								<tr>
+									<td colspan="2"><input type="text" class="form-control" name="" placeholder="주소를 입력해주세요 "></td>
+								</tr>
+								<tr>
+									<td>
+										<select class="custom-select">
+                                            <option value="">면적선택</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                        </select>
+									</td>
+									<td><input type="text" class="form-control left" name="" placeholder="층입력"></td>
+								</tr>
+								<tr>
+									<td><input type="text" class="form-control" name="" placeholder="동입력"></td>
+									<td><input type="text" class="form-control left" name="" placeholder="호입력"></td>
+								</tr>
+                        	</table>
+							<div class="btn"><button>한도조회</button></div>
+							<span>신용점수에 어떠한 영향도 주지 않습니다.</span>
+                        </form>
+                    </section>
+                    <section id="content2">
+                        <form class="contents">
+                            <table>
+								<tr>
+									<td colspan="2"><input type="text" class="form-control" name="" placeholder="아파트 및 상세주소를 입력해주세요 "></td>
+								</tr>
+                        	</table>
+							<div class="btn"><button>한도조회</button></div>
+							<span>신용점수에 어떠한 영향도 주지 않습니다.</span>
+                        </form>															
+                    </section>
+                </div>
+
+				<div class="point-wrap">
+					<h5>헬로펀딩 담보대출을 선호하는 이유</h5>
+					<div class="point">
+						<div class="point_01">
+							<img src="assets/images/img/reason-01.png" alt="최저 금리 7.5%">
+							<p>최저 금리 7.5%</p>
+							<span>합리적인 금리로 <br class="br">이자부담을 줄여드립니다.</span>
+						</div>
+						<div class="point_02">
+							<img src="assets/images/img/reason-02.png" alt="후순위 대출 가능">
+							<p>후순위 대출 가능</p>
+							<span>LTV만으로 평가하여 <br class="br">선순위 대출이 있어도 가능합니다.</span>
+						</div>
+						<div class="point_03">
+							<img src="assets/images/img/reason-03.png" alt="쉽고 빠른 대출">
+							<p>쉽고 빠른 대출</p>
+							<span>심사 결과를<br class="br"> 대출신청 당일 안내해 드립니다.</span>
+						</div>
+					</div>
+				</div>	
+					
+				<div class="loan-info">
+					<h5>대출 상품 안내</h5>
+					<table>
+						<tr>
+							<th>대출 종류</th>
+							<td>아파트담보대출</td>
+						</tr>
+						<tr>
+							<th>대상 고객</th>
+							<td>실거주 중인 아파트를 보유한 고객, 소득증빙이 가능한 만19세 이상 만70세 미만 고객</td>
+						</tr>
+						<tr>
+							<th>대출 금리</th>
+							<td>8.5 ~ 9.9%</td>
+						</tr>
+					</table>
+					<table id="toc-content">
+						<tr>
+							<th>대출 한도</th>
+							<td>LTV80% (최대 9억원)</td>
+						</tr>
+						<tr>
+							<th>대출 기간</th>
+							<td>6~12개월 (만기시 연장 가능)</td>
+						</tr>
+						<tr>
+							<th>상환 방법</th>
+							<td>만기일시상환(만기 이전 원리금 부분상환 가능)</td>
+						</tr>
+						<tr>
+							<th>중도상환 수수료</th>
+							<td>1% 이내</td>
+						</tr>
+						<tr>
+							<th>연체 금리</th>
+							<td>약정금리 +3%</td>
+						</tr>
+						<tr>
+							<th>플랫폼 이용료</th>
+							<td>2.2 ~ 3.25%</td>
+						</tr>
+						<tr>
+							<th>부대 비용</th>
+							<td>근저당권설정비용</td>
+						</tr>
+						<tr>
+							<th>유의사항</th>
+							<td class="loan-notice">
+								<p class="notice dot color">대출금리는 담보인정비율, 물건지의 형태, 신용평점 등을 종합적으로 평가하여 산출되며, 헬로펀딩의 심사기준에 따라 대출이 제한될 수 있습니다.</p>
+								<p class="notice dot color">본 대출상품 이용 시 고객님의 신용등급 또는 개인신용평점 등 신용에 영향을 미칠 수 있습니다.</p>
+								<p class="notice dot color">과도한 채무 발생 시 금융거래의 제약 또는 신용상의 불이익이 발생할 수 있습니다.</p>
+								<p class="notice dot color">대출금액 투자모집 중 대출자의 신용정보, 금융정보, 해당 물건지의 권리관계 등의 변동이 있을 경우 대출이 거절될 수 있습니다.</p>
+								<p class="notice dot color">대출금액의 지급시기는 투자모집 종료시점에 따라 결정됩니다.</p>
+								<p class="notice dot color">대출 원리금 상환이 연체되거나, 이자 납입의 장기연체, 권리관계의 침해 등이 발생하는 경우 만기일이 도래하지 않더라도 원리금 전액을 변제할 의무가 발생할 수 있습니다.</p>
+								<p class="notice dot color">본 대출상품은 주택에 대한 근저당권을 담보로 하며 원리금 상환 지연, 이자 납입의 장기연체 등의 사유로 주택에 대한 소유권을 상실할 수 있습니다.</p>
+								<p class="notice dot color">대출금리는 최대 연 20% 이내로 플랫폼이용료, 법무비용 등 부대비용이 발생할 수 있습니다.</p>
+								<p class="notice dot color">대출 만기 이전 중도 상환 시 1% 이내의 중도상환수수료가 부과됩니다.</p>
+								<p class="notice dot color">만기연장 시 담보가치하락, 개인의 신용상태악화, 연체 이력 등의 사유로 연장이 거절될 수 있으며, 대출 연장 시 약정금리 및 플랫폼이용료 등 대출조건은 변동될 수 있습니다.</p>
+								<p class="notice dot color">대출 계약에 앞서 상품설명서 및 약관을 반드시 확인하시기 바랍니다.</p>
+								<p class="notice dot color">대출 상품에 대한 충분한 사전 설명을 받을 권리가 있으며, 공시정보를 충분히 숙지하신 후 대출을 결정하시기 바랍니다.</p>
+							</td>
+						</tr>
+					</table>
+					<div class="more-btn">
+						<button id="toc-toggle" onclick="openCloseToc()">상품설명 더보기</button>
+					</div>
+				</div>	
+				
+				<div class="banner">
+					<p class="num">1588-<span>5210</span></p>
+					<div class="text">
+						<p><span>아파트 </span>담보대출 상담이 필요하시면 연락주세요.</p>
+						<p>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시 (점심 : 13시 - 14시)</p>
+					</div>
+					
+				</div>
+
+				
+			</div>
+		</section>
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+		
+
+
+    </body>
+	<script>
+	  function openCloseToc() {
+		if(document.getElementById('toc-content').style.display === 'block') {
+		  document.getElementById('toc-content').style.display = 'none';
+		  document.getElementById('toc-toggle').textContent = '상품설명 더보기';
+		} else {
+		  document.getElementById('toc-content').style.display = 'block';
+		  document.getElementById('toc-toggle').textContent = '상품설명 접기';
+		}
+	  }
+	</script>	
+	
+</html>

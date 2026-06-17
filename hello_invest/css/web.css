@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+		
+
+
+* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; list-style:none;}	
+#event {width:100%; text-align: center; position: relative;}
+a {text-decoration: none;}
+.fw600 {font-weight:600;}
+
+
+
+.slides {animation-duration: 0.5s;  animation-delay: 0.5s; animation-name: box;}
+
+@keyframes box {
+   0% { opacity: 0; transform: translateY(100px); }
+   100% {opacity: 1;  transform: translateY(0);}
+} 	
+		
+
+
+
+
+
+
+
+
+/*상단비주얼*/
+.visual {width:100%; height: 600px; background-image: url("../img/web_bg.png"); background-position: top center; background-repeat: no-repeat; background-size:cover;}
+.visual .top_bg {width:1000px; height: 600px;  background-image: url("../img/web_01.jpg"); background-position: top center; background-repeat: no-repeat; background-size:cover;}
+.visual ul li {float:left; }
+.visual ul li:nth-child(1) {margin-top:20px;}
+.visual ul li:nth-child(2) {margin-top:20px; float:right!important; color:#fff; font-size:16px; border-radius: 20px;  border:1px solid #eee; padding:5px 10px 6px;}
+
+
+
+
+
+
+
+
+
+
+
+
+/*수익률조회*/
+
+.Calculator {padding-top:250px; letter-spacing: -1px; font-size:26px; font-weight: 300;}
+
+
+.Calculator h3 {font-size:26px; font-weight: 300; }
+.Calculator h3 .color {color:#ff5400; font-weight: 400;}
+
+#principal {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../img/arrow.png);
+  font-size: 25px;
+  font-weight: 400;
+  border-bottom: 1px solid #222;
+  width: 135px;
+  height:40px;
+  margin-top: 10px;
+  background-color: #fff;
+  line-height: 40px;
+  cursor: pointer;
+  
+}
+select:focus {outline:none;}
+textarea:focus {outline: none;}
+button:focus {outline: none;}
+input:focus {outline: none;}
+
+
+
+/*.bank {
+  max-width: 85%;
+  height: 70px;
+  background-color: #5c4ddc;
+  margin-top: 50px;
+  border-radius: 5px;
+  position: absolute;
+  color:#fff;
+  left: 0;
+  right: 0;
+  top: 130px;
+  line-height: 70px;
+  bottom: 0;
+  margin: 0 auto;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+}*/
+
+
+.tjoin_bt {
+	
+  clear:both;
+  background-color:#ff5400;
+  color: white;
+  height: 70px;
+  line-height: 70px;
+  width:440px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 600;
+  font-size: 24px!important;
+  margin:30px 0;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);	
+
+}
+
+
+
+
+
+
+
+
+
+/*투자현황*/
+
+.status {clear: both; width:1000px;}
+.status p {padding:100px 0 50px;}
+.status .status-box {
+	width:332px;
+    text-align: center;
+	float:left;
+}
+.status .line {float:left; width:1px; height:130px; background-color: #dddddd; margin-bottom:85px;}
+.status-box ul li:nth-child(odd) {font-size:28px; color:#333;}
+.status-box ul li:nth-child(even) {font-size:50px; color:#250be2;}
+.status-box ul li .black {font-size:28px;}
+
+
+
+
+
+
+/*이유있는 선택*/
+.safe {clear:both; background-color:#f9f9f9; display: inline-block; width:100%;}
+.safe_part {width:1000px;}
+.safe p {padding:100px 0 50px;}
+.safe .safe-box{
+	float: left;
+	text-align: center;
+	width:295px;
+	box-sizing: border-box;
+	border:1px solid #ff5400;
+	font-size:22px;
+	height: 200px;
+	margin-bottom: 40px;
+	margin-right:50px;
+	letter-spacing: -1.5px;
+	box-shadow: 6px 8px 0px 0px rgba(255, 84, 0, 0.15);
+	background-color: #fff;
+}
+.safe .safe-box:last-child {margin-bottom:100px;}
+.safe .right {margin-right:0;}
+
+.safe-box ul li:nth-child(3) {font-size:17px; color:#222; line-height: 22px; padding:15px 0 0;}
+.orange {color:#ff5400; font-weight: 600;}
+
+
+
+
+
+/*이벤트*/
+
+.event {clear: both; width:1000px;}
+.event p {padding:100px 0 50px;}
+.event ul li {float:left;}
+
+.event_box {width:475px;}
+.event_box:first-child {margin-right:50px;}
+.event_box p {color:#222; font-size:17px; letter-spacing: -1px; padding:5px 0 100px; text-align: left;}
+
+
+
+/*투자상품*/
+
+.product {background-color: #f9f9f9; display: inline-block; padding-bottom:35px; width:100%;}
+.product p {padding:100px 0 50px;}
+.product .product_part {width:1000px;}
+.product ul li {float:left;}
+.product_box {width:310px; height:410px; background-color: #fff;  border:1px solid #f9f9f9; margin-right:31px; margin-bottom:80px;}
+
+.product_box:last-child {margin-right:0;}
+.product_box:hover {box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.15);  border:1px solid #252ee2;}
+
+.product_box ul li {float:left;}
+.product_box ul li:nth-child(2) {padding-left:15px;}
+.product_box h3 {font-size:24px; padding:10px 0 5px; color:#333; text-align: left;}
+.product_box h5 {font-size:20px; padding:0 0 5px; color:#333; font-weight: 400; letter-spacing: -1px;  text-align: left;}
+.product_box p {color:#777; font-size:17px; line-height: 24px; padding:10px 0 15px; letter-spacing: -1px; text-align: left;}
+
+
+
+
+/*하단*/
+.footer {padding:50px 0 80px; letter-spacing: -1px; clear:both;}
+.footer h3 {font-size:17px; color:#555; line-height: 20px; font-weight: 400;}
+.footer p {font-size:17px; line-height: 20px; padding:20px;}
+
+
+	
+/*버튼*/
+
+.tjoin_bt {
+	
+  clear:both;
+  background-color:#ff5400;
+  color: white;
+  height: 70px;
+  line-height: 70px;
+  width:440px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom:50px;
+
+}
+
+.bjoin_bt {
+  background-color:#250be2;;
+  color: white;
+  height: 65px;
+  line-height: 65px;
+  width:440px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom:50px;
+
+}
+
+
+
+
+
+
+

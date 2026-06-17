@@ -1,0 +1,845 @@
+<?
+
+include_once('../common.php');
+include_once('../lib/common.lib.php');
+include_once('../lib/sms.lib.php');
+
+$head_title = "헬로펀딩 | 1000억 돌파 기념 1000만원 이벤트";
+$head_url = "https://www.hellofunding.co.kr/evnt/";
+
+$cookie_life_time = 60*60;
+if(!$_COOKIE[md5('ck_event_id')]) set_cookie('ck_event_id',   "100B",           $cookie_life_time);		// 접속정보 idx 저장
+
+/*
+https://www.hellofunding.co.kr/100B/4181A35429DA423D4DF98640D2DC5B86	//	A001
+https://www.hellofunding.co.kr/100B/4074AEE5BB6DE61B352F6B98D45466E8	//	A002
+https://www.hellofunding.co.kr/100B/A970A9D31CC0618C474357DC854DF201	//	A003
+https://www.hellofunding.co.kr/100B/57E84267F7AB4E28F77D36A6DACE0CC2	//  ppomppu
+*/
+
+if( trim($_REQUEST['pid']) ) {
+	$_pid = trim($_REQUEST['pid']);
+	if( $_pid == strtoupper(MD5('A001')) )      $pid = "A001";
+	else if( $_pid == strtoupper(MD5('A002')) ) $pid = "A002";
+	else if( $_pid == strtoupper(MD5('A003')) ) $pid = "A003";
+	else if( $_pid == strtoupper(MD5('ppomppu')) ) $pid = "ppomppu";
+	else  $pid = "";
+}
+
+if ($co['co_include_head'])
+    @include_once($co['co_include_head']);
+else
+    include_once('../_head.php');
+
+//Check Mobile
+$mAgent = array("iPhone","iPod","Android","Blackberry", "Opera Mini", "Windows ce", "Nokia", "sony" );
+$chkMobile = false;
+for($i=0; $i<sizeof($mAgent); $i++){
+    if(stripos( $_SERVER['HTTP_USER_AGENT'], $mAgent[$i] )){
+        $chkMobile = true;
+        break;
+    }
+}
+
+if (G5_IS_MOBILE or $dv == "m" ) {
+	include "index_m.html";
+	exit;
+}
+
+
+$bank_acct_registered    = ($member['bank_code'] && $member['account_num'] && $member['bank_private_name']) ? true : false;
+$virtual_acct_registered = ($member['va_bank_code2'] && $member['virtual_account2']) ? true : false;
+
+if($member['member_type']=='2') {
+	$load_page = "/bank_account/bank_account_c.php";
+}
+else {
+	$load_page = "/bank_account/bank_account_p.php";
+}
+
+
+include "10b_prg.php";
+?>
+
+<link rel="stylesheet" type="text/css" href="/evnt/css/landing.css?aaa=aa1a">
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+
+
+<script>
+function chk_time() {
+
+
+	var this_time = new Date();
+	var this_timeM = this_time.getTime();
+
+	var evnt_start_dateM = (new Date(2019,0,02,00,00,00)).getTime();
+
+	if (this_timeM < evnt_start_dateM) {
+		alert("2019년 1월 2일부터 응모 가능합니다");
+		$("#answer").val("");
+		return false;
+	}
+
+	var curH = this_time.getHours();
+	var curM = this_time.getMinutes();
+
+	if (curH > 10 && curH < 23) {
+		console.log("aaa");
+		return true;
+	} else if (curH == 10 && curM >=30) {
+		return true;
+	} else {
+		alert("입력가능시간은 10:30~23:00 까지입니다.");
+		$("#answer").val("");
+		return false;
+	}
+
+	return false;
+}
+function check_money() {
+
+	var chk_yn = chk_time();
+	if (!chk_yn) return false;
+
+<? if(false) { ?>
+	//alert("2019년 1월 2일부터 응모 가능합니다.");
+	//$("#answer").val("");
+	//return false;
+<? } ?>
+
+<?
+if(!$member["mb_id"]) {
+	?>
+	must_login();
+	<?
+} else if(!$bank_acct_registered || !$virtual_acct_registered) {
+	?>
+	vaOpen_10b();
+	<?
+} else if (!$member['mb_sms']) {
+	?>
+	check_allow_sms();
+	<?
+}
+?>
+}
+</script>
+
+<!-- 상단 시작 -->
+<div class="top"></div>
+<div class="top2"></div>
+<div class="top3"></div>
+<div class="top4"></div>
+
+
+
+<!-- 내용-->
+<div class="content">
+
+	<div class="cont01">
+		<p><img src="/evnt/img/content_img01_1.jpg"></p>
+		<p><input type="text" name="answer" id="answer" required="required" class="id" onKeyUp="check_money()" disabled></p>
+		<a class="btn" onclick="go_apply();"><img src="/evnt/img/btn01.jpg"></a>
+		<p><img src="/evnt/img/content_img02.jpg"></p>
+
+	</div>
+
+</div>
+
+<div class="earn">
+		<div style="padding-top:20px;"><img src="/evnt/img/content_img02_1.jpg"></div>
+		<div class="earn_bg">
+
+			<div class="earn_money">
+				<p>현재 누적 상금 <br/><span><?=number_format($today_add_prize/10000)?></span></p>
+				<p>총 지급 누적 상금 <br/><span>710<?//=$total_add_price?number_format($total_add_price/10000)."만원":"-";?></span></p>
+			</div>
+
+			<div class="earn_money_list"  style="-ms-overflow-style:none;">
+				<div style="position:absolute;width:393px;height:52px;text-align:center;background:url('img/cover.jpg') center top no-repeat;margin:-7px 0 0 -2px;">
+
+						<marquee width="388" direction="left" scrollamount="4" style="color:#FDF200;font-size:21px;font-weight:700;margin-top:10px;">
+							2019.02.20 &nbsp;&nbsp; vic****** 님 누적상금 250만원 당첨을 축하드립니다!! &nbsp;&nbsp;  2019.01.11 &nbsp;&nbsp; jss**** 님 누적상금 70만원 당첨을 축하드립니다!!  &nbsp;&nbsp; 2019.03.15 &nbsp;&nbsp; son**** 님 누적상금 160만원 당첨을 축하드립니다!! &nbsp;&nbsp; 2019.04.17 &nbsp;&nbsp; fab**** 님 누적상금 230만원 당첨을 축하드립니다!!
+						</marquee>
+
+				</div>
+				<table border="0" style="margin-top:40px;">
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.18 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 266 만원.</span></td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.17 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 310 만원.</span>&nbsp;&nbsp;<span style="color:#FDF200;font-size:17px;font-weight:600;">fab****** 님 누적상금 <br/>&nbsp;&nbsp;&nbsp;230만원 당첨을 축하드립니다!!</span></td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.16 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 707 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 230만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.15 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 887 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 220만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.12 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 133 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 210만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.11 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 267 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 200만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.10 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 299 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 190만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.09 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 367 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 180만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.08 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 823 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 170만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.05 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,250 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 160만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.04 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 346 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 150만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.03 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 469 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 140만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.02 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,225 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 130만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.04.01 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,818 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 120만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.29 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 264 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 110만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.28 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 576 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 100만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.27 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,400 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 90만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.26 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,432 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 80만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.25 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,130 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 70만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.22 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 409 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 60만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.21 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 274 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 50만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.20 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 307 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 40만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.19 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 943 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 30만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.18 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,878 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 20만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.18 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,878 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 20만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.15 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,753 만원.</span>&nbsp;&nbsp;<span style="color:#FDF200;font-size:17px;font-weight:600;">son****** 님 누적상금 <br/>&nbsp;&nbsp;&nbsp;160만원 당첨을 축하드립니다!!</span></td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.14 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,304 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 160만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.13 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,206 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 150만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.12 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,548 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 140만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.11 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,090 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 130만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.08 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,807 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 120만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.07 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,501 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 110만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.06 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,826 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 100만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.05 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,447 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 90만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.03.04 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 8,848 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 80만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.28 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,585 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 70만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.27 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,072 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 60만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.26 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,512 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 50만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.25 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 4,568 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 40만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.22 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,101 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다.<br/>&nbsp;&nbsp;&nbsp;(누적상금 30만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.21 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,839 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 20만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.20 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,272 만원.</span>&nbsp;&nbsp;<span style="color:#FDF200;font-size:17px;font-weight:600;">vic****** 님 누적상금 <br/>&nbsp;&nbsp;&nbsp;250만원 당첨을 축하드립니다!!</span></td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.19 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,373 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 250만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.18 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,959 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 240만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.15 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 626 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 230만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.14 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,228 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 220만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.13 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 518 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 210만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.12 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 717 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 200만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.11 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,405 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 190만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.08 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,001 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 180만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.07 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,958 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 170만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.02.01 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,123 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 160만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.31 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 941 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 150만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.30 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,517 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 140만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.29 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,500 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 130만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.28 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 3,797 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 120만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.25 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 3,214 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 110만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.24 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,422 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 100만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.23 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 3,978 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 90만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.22 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 746 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 80만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.21 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 4,295 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 70만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.18 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,115 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 60만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.17 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 3,146 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 50만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.16 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 4,270 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 40만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.15 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,271 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 30만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.14 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 5,244 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금 20만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.11 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,114 만원.</span>&nbsp;&nbsp;<span style="color:#FDF200;font-size:17px;font-weight:600;">jss**** 님 누적상금 <br/>&nbsp;&nbsp;&nbsp;70만원 당첨을 축하드립니다!!</span></td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.10 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,133 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						70만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.09 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 1,082 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						60만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.08 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 790 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						50만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.07 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 8,383 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						40만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.04 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,555 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						30만원)</td>
+					</tr>
+					<tr>
+						<td style="hieght:60px;text-align:left;" colspan=3>
+						- 2019.01.03 <span style="margin-left:10px;">'소상공인 확정매출채권상품A'</span> <br/><span style="margin-left:10px;">펀딩금액 2,643 만원.</span>&nbsp;&nbsp;상금이 이월되었습니다. <br/>&nbsp;&nbsp;&nbsp;(누적상금
+						20만원)</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+</div>
+
+<!--헬로페이란-->
+
+<div class="hello_pay">
+	<div class="hello_pay_cont">
+		<p><img src="/evnt/img/hello_pay01.jpg"></p>
+		<p style="padding-top:30px;"><a href="https://www.hellofunding.co.kr/investment/invest_list.php?CA=C"><img src="/evnt/img/hello_pay_btn01.jpg"></a></p>
+		<p style="padding-top:80px;"><img src="/evnt/img/share_tit01.jpg"></p>
+		<ul>
+			<li><a id="kakao-link-btn" href="javascript:sendLink();"><img src="/evnt/img/kakao.png"></a></li>
+			<li><a href="javascript:share_facebook();"><img src="/evnt/img/facebook.png"></a></li>
+			<li><a href="javascript:share_insta();"><img src="/evnt/img/insta.png"></a></li>
+			<li><a href="javascript:share_nvblg();"><img src="/evnt/img/blog.png"></a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+<input type="hidden" id="input_stat_date" value="<?=$turn[$this_turn]?>">
+<!--펀딩금액입력현황-->
+<div class="earn_list">
+	<div class="earn_list_cont">
+		<img src="/evnt/img/earnlist_tit01.jpg">
+		<div class="date">
+		<span>
+			<!--a href="javascript:get_stat('<?=$turn[$this_turn-1]?>','money');"-->
+			<a href="javascript:get_stat_first('-')"><img src="/evnt/img/left_btn01.png"></a></span>
+		<span id="status_ymd">
+			<!--<?=substr($turn[$this_turn],0,4)?>.<?=substr($turn[$this_turn],4,2)?>.<?=substr($turn[$this_turn]-1,6,2)?>-->
+			<?=$turn2[$this_turn]?>
+		</span>
+		<span>
+			<!--a href="javascript:get_stat('<?=$turn[$this_turn]?>','money');"-->
+			<a href="javascript:get_stat_first('+')"><img src="/evnt/img/right_btn01.png"></a></span>
+		</div>
+		<div class="option">
+			<span><a href="javascript:get_stat($('#input_stat_date').val(),'money');"><img id="btn_sort_mny" src="/evnt/img/check_img01off.png"></a></span>
+			<span><a href="javascript:get_stat($('#input_stat_date').val(),'id');"><img id="btn_sort_dic" src="/evnt/img/check_img02off.png"></a></span>
+		</div>
+		<!--div class="cover">1월 2일 Update 됩니다.</div-->
+		<div class="list">
+			<table border="0" id="mem_stat">
+		<?
+		for ($i=0 ; $i<count($LIST_STATUS) ; $i++) {
+
+			if ($i<>1 and ($i+1) % 3 == 1) {
+				echo "<tr>";
+			}
+			?>
+					<td><?=substr($LIST_STATUS[$i]["mb_id"],0,3)?>****<br/><?=number_format($LIST_STATUS[$i]["answer"])?>만원</td>
+			<?
+			if ($i<>0 and ($i+1) % 3 == 0) {
+				echo "</tr>";
+			}
+
+		}
+		?>
+			</table>
+		</div>
+	</div>
+
+</div>
+<!--a onclick="get_stat_first('-')">-</a><a onclick="get_stat_first('+')">-</a-->
+<!--공지사항-->
+<div class="notice"><img src="/evnt/img/notice_img01.jpg"></div>
+
+<div id="vact_req_div" class="popbluetheme">
+</div>
+
+<div id="allow_sms" style="position:relative;height:170px;background-color:#fff;" class="popbluetheme">
+	<div class="title">문자 수신 동의</div>
+	<a onclick="close_sms();"><img src="/images/btn_close.gif" alt="close" class="close" /></a>
+	<div class="con">
+		<h3>문자 수신 동의</h3>
+		<div style="margin:8px auto 8px;color:#FF3333;text-align:left;font-size:12px;padding:4px 10px 4px 10px; border:1px solid #aaa; border-radius:3px;background-color:#F8F8EF">
+			<input type="checkbox" id="mb_sms" name="mb_sms"/>
+			<label for="mb_sms"><span style="margin-left:15px;">SMS, e-mail을  통해 헬로펀딩의 투자정보 및 수익금 안내, 이벤트 진행 정보를 받습니다.</span></label>
+		</div>
+		<div class="btnArea" style="margin:20px auto 0;">
+			<button type="button" class="btn_big_blue" onclick="go_allow_sms();">확 인</button>
+		</div>
+	</div>
+</div>
+
+<!-- 본문내용 E N D -->
+
+<!-- 본문내용 E N D -->
+<?
+
+if ($co['co_include_tail'])
+    @include_once($co['co_include_tail']);
+else
+    include_once('../_tail.php');
+
+//include_once(G5_PATH . "/popup/inc_bank_account.php");
+?>
+
+<script>
+function go_apply() {
+
+	alert("이벤트가 종료되었습니다.");
+	return false;
+
+	var chk_yn = chk_time();
+	if (!chk_yn) return false;
+
+<?
+if(!$member["mb_id"]) {
+	?>
+	must_login();
+	return;
+	<?
+} else if(!$bank_acct_registered || !$virtual_acct_registered) {
+	?>
+	vaOpen_10b();
+	retun;
+	<?
+} else if (!$member['mb_sms']) {
+	?>
+	check_allow_sms();
+	return;
+	<?
+}
+?>
+
+	<?
+	if ($my_cnt) {
+		?>
+		alert("이미 응모된 내역이 있습니다.");
+		return;
+		<?
+	}
+	?>
+
+
+
+
+
+	var yn = confirm("응모하시겠습니까?");
+	
+	if (yn && 1>2) {
+
+		var answ = $("#answer").val();
+		answ = answ.replace(/,/g, '');  // 금액표시의 , 를 없앰
+
+		$.ajax({
+			url  : "/evnt/ajax_evnt_10b.php",
+			type : "post",
+			data : {answer : answ , ymd : "<?=$i_row['ymd']?>"},
+			dataType : "json",
+			success : function (res) {
+				console.log(res);
+				if (res["res"]=="SUCCESS") {
+					alert("이벤트 응모가 성공적으로 이뤄졌습니다.");
+					self.location.reload();
+				} else {
+					if (res["msg"]) alert(res["msg"]);
+					else alert("응모 실패");
+				}
+			},
+			error : function (jqXHR, textStatus, errorThrown) {
+				console.log(jqXHR);
+				//alert(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+			}
+		});
+	}
+
+}
+
+function must_login() {
+	<? if ($pid) { ?>
+	var yn = confirm("무료이벤트 참여 및 상금 수령을 위해\n헬로펀딩 로그인이 필요합니다.");
+	<? } else { ?>
+	var yn = confirm("로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?");
+	<? } ?>
+	if (yn)	self.location.href="/bbs/login.php?url=/evnt/";
+	$('#answer').val('');
+}
+
+function vaOpen_10b() {
+	$('#answer').val('');
+	$('#vact_req_div').empty();
+	if(confirm('가상계좌를 발급받으신후에 이용가능합니다.\n\n설레는 투자의 첫걸음인 개인 가상계좌를 발급 받으시겠습니까?\n\n' +
+					 '─────────────────────────────\n\n' +
+					 '[제3자에 의한 예치금 신탁관리 안내]\n' +
+					 '신한은행에서 발급 및 관리하는 가상계좌를 통하여\n' +
+					 '안전한 예치금 신탁관리를 받으실 수 있습니다.')) {
+
+		$.ajax({
+			url: '<?=$load_page?>',
+			success: function(data) {
+				$('#ajax_return_txt').val(data);
+				$('#vact_req_div').html(data);
+			}
+		});
+		$.blockUI({
+			message: $('#vact_req_div'),
+			css: { top:'<?=(G5_IS_MOBILE)?"1%":"10%"?>', left:'<?=(G5_IS_MOBILE)?"1%":"33%"?>', width:'<?=(G5_IS_MOBILE)?"98%":"605px"?>', height:'<?=(G5_IS_MOBILE)?"98%":""?>', border:0, cursor:'default' }
+		});
+	}
+}
+
+function check_allow_sms() {
+	var yn = confirm("문자 수신 동의후에 이용가능합니다.");
+	if (yn) {
+		$.blockUI({
+			message: $('#allow_sms'),
+			css: { top:'<?=(G5_IS_MOBILE)?"1%":"10%"?>',
+				   left:'<?=(G5_IS_MOBILE)?"1%":"33%"?>',
+				   width:'<?=(G5_IS_MOBILE)?"98%":"605px"?>',
+				   height:'<?=(G5_IS_MOBILE)?"98%":"250px"?>',
+				   border:0,
+				   cursor:'default' }
+		});
+	}
+}
+
+function go_allow_sms() {
+	$.ajax({
+		url : '/evnt/allow_sms.php',
+		data : { 'allow' : $('#mb_sms').is(":checked") },
+		type : 'post',
+		success : function(data) {
+			close_sms();
+			self.location.reload();
+		},
+		error : function (jqXHR, textStatus, errorThrown) {
+			//console.log(jqXHR);
+			alert(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+			close_sms();
+		}
+	});
+}
+function close_sms() {
+	$.unblockUI();
+}
+</script>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    //Kakao.init('f1eb4daefea240a442ff34f76d22f24c');
+	Kakao.init('905ae13b8e648ce082bc6f9f66ac817b');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  function sendLink() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '헬로펀딩 이벤트',
+          description: '#헬로펀딩 #천만원이벤트 #천억펀딩',
+          imageUrl: 'https://www.hellofunding.co.kr/marketing/img/top_bg01.jpg',
+          link: {
+            mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+            webUrl: 'https://www.hellofunding.co.kr/evnt/'
+          }
+        },
+		/*
+        social: {
+          likeCount: 286,
+          commentCount: 45,
+          sharedCount: 845
+        },
+		*/
+        buttons: [
+          {
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+              webUrl: 'https://www.hellofunding.co.kr/evnt/'
+            }
+          },
+          {
+            title: '앱으로 보기',
+            link: {
+              mobileWebUrl: 'https://www.hellofunding.co.kr/evnt/',
+              webUrl: 'https://www.hellofunding.co.kr/evnt/'
+            }
+          }
+        ]
+      });
+    }
+  //]]>
+</script>
+
+<script>
+function share_facebook() {
+	var loc = '//www.facebook.com/sharer/sharer.php?u=<?=urlencode("https://www.hellofunding.co.kr/evnt/")?>&t=<?=urlencode("헬로펀딩 1000억돌파 이벤트")?>';
+	window.open(loc);
+}
+function share_nvblg() {
+	var loc = 'http://share.naver.com/web/shareView.nhn?url=<?=urlencode("https://www.hellofunding.co.kr/evnt/")?>&title=<?=urlencode("헬로펀딩 1000억돌파 이벤트")?>';
+	window.open(loc);
+}
+function share_kakaostory() {
+	var loc = 'https://story.kakao.com/share?url=<?=urlencode("https://www.hellofunding.co.kr/evnt/")?>';
+	window.open(loc);
+}
+function share_insta() {
+	var loc = 'https://www.instagram.com/';
+	window.open(loc);
+}
+</script>
+
+<script>
+function get_stat(ymd,sort) {
+	$("#input_stat_date").val(ymd);
+
+	// 활성 버튼 처리
+	if (sort=="money") {
+		$("#btn_sort_mny").attr("src","/evnt/img/check_img01on.png");
+		$("#btn_sort_dic").attr("src","/evnt/img/check_img02off.png");
+	} else if (sort=="id") {
+		$("#btn_sort_mny").attr("src","/evnt/img/check_img01off.png");
+		$("#btn_sort_dic").attr("src","/evnt/img/check_img02on.png");
+	} else {
+		$("#btn_sort_mny").attr("src","/evnt/img/check_img01off.png");
+		$("#btn_sort_dic").attr("src","/evnt/img/check_img02off.png");
+	}
+
+	$.ajax({
+		url : '/evnt/ajax_get_apply_mem.php',
+		data : { 'srch_ymd' : ymd , 'sort':sort },
+		type : 'post',
+		dataType : 'json',
+		success : function(data) {
+			if (data["cnt"]) {
+				if (data["list"].length) {
+					$("#mem_stat tr").remove();
+					dply(data);
+					var ymd2 = ymd-1;
+					//$("#status_ymd").text(ymd.substr(0,4)+"."+ymd.substr(4,2)+"."+String(ymd2).substr(6,2));
+					$("#status_ymd").text(data["m"]["product_name"]);
+				}
+			} else {
+				$("#mem_stat tr").remove();
+				var ymd2 = ymd-1;
+				//$("#status_ymd").text(ymd.substr(0,4)+"."+ymd.substr(4,2)+"."+String(ymd2).substr(6,2));
+				$("#status_ymd").text(data["m"]["product_name"]);
+			}
+		},
+		error : function (jqXHR, textStatus, errorThrown) {
+			alert(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+		}
+	});
+}
+function dply(data) {
+
+	var tr_html = "";
+	for (var i=0 ; i<data["list"].length ; i++) {
+		if (i!=1 && (i+1)%3 == 1) tr_html += "<tr>";
+		tr_html += "<td>"+ data["list"][i]["mb_id"].substring(0,3) +"****<br/>"+ number_format(data["list"][i]["answer"]) +"만원</td>";
+		if (i!=0 && i+1%3 == 0) tr_html += "</tr>";
+	}
+
+	if (i%3==1) tr_html +="<td>&nbsp;</td><td>&nbsp;</td></tr>";
+	if (i%3==2) tr_html +="<td>&nbsp;</td></tr>";
+	$("#mem_stat").append(tr_html);
+}
+function get_stat_first(fb) {
+	var old_turn = this_turn;
+	if (fb=="-") {
+		if (this_turn>0) this_turn = this_turn - 1;
+		else this_turn=0;
+	}
+	if (fb=="+") {
+		if (this_turn<max_turn) this_turn = this_turn + 1;
+		else this_turn=max_turn;
+	}
+	if (old_turn==this_turn) return;
+
+	get_stat(mArray[this_turn]["ymd"],'money');
+}
+</script>

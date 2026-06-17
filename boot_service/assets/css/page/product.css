@@ -1,0 +1,1194 @@
+/* CSS Document */
+
+/*기본버튼*/
+.product-detail .basic-bt {display:inline-block; height: calc(2rem); font-weight: 400; color:#222; text-align: left; vertical-align: middle; user-select: none; padding:0.4rem 1rem 0.35rem; font-size:.8rem; border-radius: .25rem; border:1px solid #d5d5d5; background-color:#fff; box-shadow: none;  }
+.product-detail .basic-bt:focus, .product-detail .basic-bt:active, .product-detail .basic-bt:hover {box-shadow:none!important; outline:none; background-color:#fff; border:1px solid #ee321f; color:#ee321f!important;}
+
+/*인풋박스*/
+.product-detail .form-control {display: block; width:100%; height: calc(2.3rem); padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem;}
+
+
+
+/********************************************************상품상세*******************************************************/
+.product-detail {margin:0 auto 0;}
+.product-detail .container-fluid {padding:0;}
+.product-detail p, .product-detail a, .product-detail span , .product-detail th , .product-detail td , .product-detail div, .product-detail button{font-family: Nunito,sans-serif; letter-spacing: -0.5px; margin-bottom: 0;}
+.product-detail h3 {font-size:1.4rem; font-weight:500; color:#222; margin:0 0 20px 0; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.product-detail .tit {font-size:1.05rem; color:#222; font-weight: 600; margin-bottom: 5px;}
+.product-detail .txt {font-size:.9rem; color:#777; line-height: 1.2rem; }
+.product-detail button:focus {outline: none !important; box-shadow: none;}
+
+
+/*상품상세 상단*/
+.product-detail .container-fluid .product-top {background-color:#eaecf7; border-bottom: 1px solid #eee; height: 260px; text-align:left; position: relative;}
+.product-detail .container-fluid .mortgage {background-color:#f7eeea;}
+.product-detail .container-fluid .realty {background-color:#e8f5f8;}
+.product-detail .container-fluid .product-top .pro-name-wrap {width:1050px; margin:0 auto; }
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-tag {padding-top:30px; }
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-type {padding:0 .5rem; background-color: #333; color:#fff; cursor:default; border-radius:2rem;  font-size:.78rem; height:24px; line-height: 24px; margin-right: 5px;}
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-name {margin-top:15px; font-size:1.6rem; margin-bottom: 0;}
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-period {margin-top:10px; font-size:.9rem; color:#555;}
+.product-detail .container-fluid .product-top .pro-info-wrap {width:1050px; margin:10px auto 0; display:flex; justify-content: flex-end;}
+.product-detail .container-fluid .product-top .pro-info-wrap .rate-return, .product-detail .container-fluid .product-top .pro-info-wrap .invest-period, .product-detail .container-fluid .product-top .pro-info-wrap .recruiting-amount{color:#555; font-size:.9rem; margin-left:5rem;}
+.product-detail .container-fluid .product-top .pro-info-wrap .rate-return span, .product-detail .container-fluid .product-top .pro-info-wrap .invest-period span, .product-detail .container-fluid .product-top .pro-info-wrap .recruiting-amount span{font-weight:500; color:#222; font-size:1.8rem; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.product-detail .container-fluid .product-top .progress-wrap {width:1050px; left:0; right:0; bottom:0; position: absolute; margin:auto; }
+.product-detail .container-fluid .product-top .progress-wrap .progress {border-radius:0; height: .3rem; background-color: #fff; opacity: 0.9;}
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt {display:flex; justify-content:space-between; align-items:flex-end;}
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .amount {font-size:1.1rem; color:#222;  font-weight: 400; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .amount span{font-size:.9rem; color:#555;  font-weight: 400; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .status {font-size:.9rem; color:#222;}
+.product-detail .container-fluid .product-top .progress-wrap .progress .progress-bar {background-color: #ee321f;}
+
+
+
+/*상품상세 컨텐츠*/
+.product-detail .container-fluid .detail {width:1050px; margin:70px auto 0; position: relative;}
+
+
+
+/*사이드폼*/
+.product-detail .container-fluid .detail .side-form {position:sticky; right:0; top:90px; border:1px solid #aaa; padding:2rem 1rem; width:270px; float:right; text-align: center; z-index: 999;}
+.product-detail .container-fluid .detail .side-form .max-amount {display: flex; justify-content: space-between; align-items: center; border-bottom:1px solid #ddd; padding-bottom:5px;}
+.product-detail .container-fluid .detail .side-form .max-amount .tit {font-size:.9rem; color:#555; margin-bottom: 0;}
+.product-detail .container-fluid .detail .side-form .max-amount .txt {font-size:.9rem; color:#ee321f; font-weight: 600; }
+
+.product-detail .container-fluid .detail .side-form .invest-amount {margin:20px 0;}
+.product-detail .container-fluid .detail .side-form .invest-amount .tit {font-size:.9rem; color:#555; margin-bottom: 0; text-align: left;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group {display:flex; flex-wrap: nowrap; white-space: nowrap; margin-top:5px;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group input {text-align:right; border-right:none;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group button {box-shadow:none; border-radius:0; background-color: #222; letter-spacing: -1px; font-size:.8rem;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group .input-box {display:flex; align-items: center; position:relative;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group .input-box span{position: absolute; right:0; padding:12px 12px 10px; pointer-events: none; font-size:.8rem; color:#222;}
+.product-detail .container-fluid .detail .side-form .invest-amount .input-group .input-box input {text-align:right; border-right:none; padding-right:40px;}
+
+.product-detail .container-fluid .detail .side-form .real-interest {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
+.product-detail .container-fluid .detail .side-form .real-interest .tit {font-size:.9rem; color:#555; margin-bottom: 0; }
+.product-detail .container-fluid .detail .side-form .real-interest .txt {font-size:.9rem; color:#222; font-weight: 600; }
+
+.product-detail .container-fluid .detail .side-form .expected-interest {display: flex; justify-content: space-between; align-items: center; background-color: #f8f8f8; padding:1rem 1rem .5rem;}
+.product-detail .container-fluid .detail .side-form .tax {display: flex; justify-content: space-between; align-items: center; background-color: #f8f8f8; padding:0 1rem; }
+.product-detail .container-fluid .detail .side-form .commission {display: flex; justify-content: space-between; align-items: center; background-color: #f8f8f8; padding:.5rem 1rem 1rem; }
+.product-detail .container-fluid .detail .side-form .expected-interest .tit, .product-detail .container-fluid .detail .side-form .tax .tit, .product-detail .container-fluid .detail .side-form .commission .tit{font-size:.78rem; color:#888; margin-bottom: 0; }
+.product-detail .container-fluid .detail .side-form .expected-interest .txt, .product-detail .container-fluid .detail .side-form .tax .txt, .product-detail .container-fluid .detail .side-form .commission .txt {font-size:.78rem; color:#555; font-weight: 600; }
+.product-detail .container-fluid .detail .side-form .invest-btn {width:100%; background-color: #ee321f; border:0; color:#fff; height: 40px; margin-top:10px; font-size:.95rem; font-weight: 600;}
+.product-detail .container-fluid .detail .side-form .invest-wait-btn {width:100%; background-color: #ff9d92;  border:0; color:#fff; height: 40px; margin-top:10px; font-size:.95rem; font-weight: 600;}
+.product-detail .container-fluid .detail .side-form .invest-end-btn {width:100%; background-color: #555555; border:0; color:#fff; height: 40px; margin-top:10px; font-size:.95rem; font-weight: 600;  cursor: not-allowed;}
+.product-detail .container-fluid .detail .side-form .detail-btn {margin:10px; color:#777; font-size:.78rem; letter-spacing: -1px; text-decoration: underline; border:none; background-color:#fff;}
+
+
+
+/*투자포인트*/
+.product-detail .container-fluid .detail .invest-point {width:750px;}
+.product-detail .container-fluid .detail .invest-point table tr td {padding:1rem; vertical-align: middle; }
+.product-detail .container-fluid .detail .invest-point table tr td:nth-child(odd) {padding-left:0;}
+
+
+
+/*탭 메뉴*/
+.product-detail .container-fluid .detail .info-tab {width:750px; margin-top:70px;}
+.product-detail .container-fluid .detail .info-tab .nav{width:100%;}
+.product-detail .container-fluid .detail .info-tab .nav .nav-item .nav-link{background-color:#fff; height:45px; line-height: 45px; padding:0;  border-radius:0; border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; border-right:1px solid #e0e0e0; color:#777;}
+.product-detail .container-fluid .detail .info-tab .nav .nav-item .borderline {border-left:1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .info-tab .nav .nav-item .active {background-color:#fff; border:1px solid #ee321f!important; border-radius:0; color:#ee321f;}
+
+/*탭 테이블 - 공통*/
+.product-detail .container-fluid .detail .info-tab .tab-content table {width:100%;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tr td{padding:.7rem; border-top: 1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;  height: 45px; color:#555; font-size:.8rem; letter-spacing: -0.5px; vertical-align: middle; line-height: 20px;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tr th{padding:.7rem; border-top: 1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; vertical-align: middle; white-space: nowrap;}
+.product-detail .container-fluid .detail .info-tab .tab-content table thead tr th {background-color:#f8f8f8; color:#222; text-align: center; font-size:.9rem; height: 45px; border:1px solid #555; font-weight: 600;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tbody tr th {background-color:#f8f8f8; font-weight: 600; color:#222; font-size:.8rem; border:1px solid #e0e0e0; white-space: nowrap;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tbody tr td {border:1px solid #e0e0e0; }
+.product-detail .container-fluid .detail .info-tab .tab-content .tab-pane {border:1px solid #ddd; border-top:none; padding:40px 20px; }
+.product-detail .container-fluid .detail .info-tab .tab-content .tab-pane img {display: block; margin: 1rem auto 0;}
+.product-detail .container-fluid .detail .info-tab .tab-content img  {width:auto;}
+
+
+
+/*탭 테이블 - scf*/
+.product-detail .container-fluid .detail .info-tab .scf .loan-tab table tr th {width:18%; white-space: normal;}
+.product-detail .container-fluid .detail .info-tab .scf .loan-tab table tr td {width:32%;}
+.product-detail .container-fluid .detail .info-tab .scf .guarantee .tit {font-size:1rem; color:#222; font-weight: 600; margin-bottom: 10px; padding:0 10px;}
+.product-detail .container-fluid .detail .info-tab .scf .guarantee .txt {font-size:.8rem; color:#777; line-height: 1.2rem; padding:0 10px;}
+.product-detail .container-fluid .detail .info-tab .scf .borrower tr th{width:16%!important; letter-spacing: -1px;}
+.product-detail .container-fluid .detail .info-tab .scf .borrower tr td{width:34%!important; letter-spacing: -1px;}
+
+
+
+/*탭 테이블 - 주택담보*/
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .loan-tab table tr th {width:18%; white-space: normal;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .loan-tab table tr td {width:32%;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .guarantee .notice-txt { margin-top:10px;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .guarantee .notice-txt .txt{font-size:.75rem; color:#777; line-height: 1.2rem; padding:0;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .guarantee table tr th {width:20%;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .guarantee table tr td {width:30%;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .borrower table tr th {width:18%;}
+.product-detail .container-fluid .detail .info-tab .mortgage-loan .borrower table tr td {width:32%;}
+
+
+
+
+/*탭 테이블 - 부동산PF*/
+.product-detail .container-fluid .detail .info-tab .pf .loan-tab table tr th {width:18%;}
+.product-detail .container-fluid .detail .info-tab .pf .loan-tab table tr td {width:32%;}
+.product-detail .container-fluid .detail .info-tab .pf .guarantee .txt {font-size:.8rem; color:#333; line-height: 1.4rem; padding:0 10px; margin-bottom: 20px;}
+.product-detail .container-fluid .detail .info-tab .pf .guarantee .txt .point-color {color:#d15b39; font-weight: 600;}
+.product-detail .container-fluid .detail .info-tab .pf .guarantee .txt .notice-txt{display: inline-block; font-size:.75rem; color:#777; line-height: 1rem; padding:0; padding-top:5px;}
+
+
+.product-detail .container-fluid .detail .info-tab .pf .diagram {text-align:center; margin:40px 0 0; border:1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .info-tab .pf .diagram .m {display: none;}
+.product-detail .container-fluid .detail .info-tab .pf .borrower table tr th {width:15%;}
+.product-detail .container-fluid .detail .info-tab .pf .borrower table tr td {width:35%;}
+.product-detail .container-fluid .detail .info-tab .pf .borrower .txt {font-size:.8rem; color:#333; line-height: 1.3rem; padding:0 10px; margin-bottom: 20px;}
+.product-detail .container-fluid .detail .info-tab .pf .map {margin-top:20px; }
+.product-detail .container-fluid .detail .info-tab .pf .map img{width:100%;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point  {display:flex; justify-content: space-between; margin-top:20px; padding:0 2%;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point div {width:30%;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point .tit {background-color: #947a75; border-radius: 1rem; text-align: center; padding:.3rem; font-size:.95rem; color:#fff; margin-bottom: 10px;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point .txt {color:#222; font-size:.8rem; line-height: 1.5rem;}
+
+
+
+
+/*담보상환력 평가*/
+.product-detail .container-fluid .detail .collateral-redemption {width:750px; margin-top:70px;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .bar-graph {display:flex; width:100%; height: 2rem;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .bar-graph .seniority {width:50%; background-color: #555;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .bar-graph .hello {width:30%; background-color: #f34b3b;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .bar-graph .spare {width:20%; background-color: #ddd;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list {display:flex; margin:10px 0; justify-content: flex-end;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .seniority-txt, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .hello-txt, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .spare-txt {display:flex; align-items: flex-start;  margin-left:1rem; }
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .seniority-txt p, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .hello-txt p, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .spare-txt p{width:14px; height: 14px; background-color: #555; margin:1px 5px 0 0;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .seniority-txt span, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .hello-txt span, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .spare-txt span{font-size:.8rem; color:#222;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .hello-txt p{background-color: #f34b3b;}
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .spare-txt p{background-color: #ddd;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info {width:100%; background-color: #fff;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info tr th{width:25%; text-align:left; background-color:#f8f8f8; padding:0 .7rem; border:1px solid #e0e0e0;  height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;  font-weight: 600;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info tr td{width:25%; padding:.7rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px; text-align:right; vertical-align:middle;}
+.product-detail .container-fluid .detail .collateral-redemption .unit {text-align:right; color:#555; font-size:.75rem; margin:20px 0 3px;}
+.product-detail .container-fluid .detail .collateral-redemption .notice-txt { margin-top:10px;}
+.product-detail .container-fluid .detail .collateral-redemption .notice-txt .txt{font-size:.75rem; color:#777; line-height: 1.2rem; padding:0;}
+
+
+
+
+
+/*담보상환력 평가-pf테이블*/
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf {width:100%; background-color: #fff;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr th{text-align:left; background-color:#f8f8f8; padding:0 .7rem; border:1px solid #e0e0e0;  height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; font-weight: 600; vertical-align:middle; line-height: 45px;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr th:first-child {width:25%;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr th:last-child {width:45%;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr td{width:30%; padding:.7rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px; text-align:right; vertical-align:middle;}
+
+
+
+/*채권보전*/
+.product-detail .container-fluid .detail .bond-preservation {width:750px; margin:70px 0;}
+.product-detail .container-fluid .detail .bond-preservation .tit {margin-top:20px;}
+.product-detail .container-fluid .detail .bond-preservation .txt {position: relative; padding-left:10px;}
+.product-detail .container-fluid .detail .bond-preservation .dot::before { background-color:#555; width:3px; height: 3px; border-radius:3px; content:" "; position: absolute; left:0; top:8px;}
+.product-detail .container-fluid .detail .bond-preservation img {width:auto; margin:20px 0; border:1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .bond-preservation .diagram p {color:#222; font-size:.9rem; font-weight: 600; margin-top: 10px;}
+
+
+
+/*법률검토*/
+.product-detail .container-fluid .detail .legal-review {width:750px;  margin-bottom:70px;}
+.product-detail .container-fluid .detail .legal-review div {display:flex; align-items: center;}
+.product-detail .container-fluid .detail .legal-review p {font-size:.8rem; line-height: 1.2rem;}
+.product-detail .container-fluid .detail .legal-review p img {margin-right:30px;}
+.product-detail .container-fluid .detail .legal-review p span {color:#222; font-size:1rem;font-weight: 600; display:block; margin-bottom: 5px;}
+
+
+
+/*심사체크사항*/
+.product-detail .container-fluid .detail .checklist {width:750px;}
+.product-detail .container-fluid .detail .checklist table {width:100%; background-color: #fff;}
+.product-detail .container-fluid .detail .checklist table tr th{text-align:center; background-color:#f8f8f8; padding:0 .7rem; border:1px solid #e0e0e0;  height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;  font-weight: 600; white-space: nowrap;}
+.product-detail .container-fluid .detail .checklist table tr td{padding:.7rem; border:1px solid #e0e0e0; color:#555; font-size:.8rem; letter-spacing: -0.5px; text-align:left; vertical-align:middle;}
+.product-detail .container-fluid .detail .checklist table tr td:first-child { font-weight: 600;}
+.product-detail .container-fluid .detail .checklist table tr td:last-child {text-align: center; font-size:1rem; color:#222;}
+.product-detail .container-fluid .detail .checklist table tr td p {display:none;}
+
+
+
+/*증빙서류*/
+.product-detail .container-fluid .detail .evidence-docu {width:750px; margin:70px 0;}
+.product-detail .container-fluid .detail .evidence-docu .btn {border:1px solid #ee321f; padding:0 .7rem; height: 30px; color:#ee321f; font-size:.8rem; vertical-align:middle; margin-right: 10px;  white-space: nowrap;}
+.product-detail .container-fluid .detail .evidence-docu .btn:focus,.btn:active {outline: none !important; box-shadow: none;}
+.product-detail .container-fluid .detail .evidence-docu table {width:100%;}
+.product-detail .container-fluid .detail .evidence-docu table thead {border-top:1px solid #222;}
+.product-detail .container-fluid .detail .evidence-docu table tr td {border-bottom: 1px solid #e0e0e0; padding:.5rem 1rem; vertical-align: middle; }
+.product-detail .container-fluid .detail .evidence-docu table tr td:first-child {color:#555; font-size:.8rem; letter-spacing: -0.5px; border-right: 1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .evidence-docu table tr td:last-child { text-align: left;}
+.product-detail .container-fluid .detail .evidence-docu table tr td p {display:none;}
+.product-detail .container-fluid .detail .evidence-docu i {font-size:.9rem;}
+
+
+
+/*상환계획*/
+.product-detail .container-fluid .detail .repayment-plan {width:750px; margin:70px 0;}
+.product-detail .container-fluid .detail .repayment-plan .tit {margin-top:20px;}
+.product-detail .container-fluid .detail .repayment-plan .txt {position: relative; padding-left:10px;}
+.product-detail .container-fluid .detail .repayment-plan .dot::before { background-color:#555; width:3px; height: 3px; border-radius:3px; content:" "; position: absolute; left:0; top:8px;}
+
+
+
+/*배너*/
+.product-detail .container-fluid .detail .banner {display: flex; justify-content: space-between; width:750px; align-items: center; }
+.product-detail .container-fluid .detail .banner span {font-size:1rem; color:#222; letter-spacing: -1px; font-weight: 600;}
+.product-detail .container-fluid .detail .banner .guide {background-image: url("../../images/products/bn_01.png"); width:365px; border:1px solid #ddd; height: 100px; padding:30px 30px; font-size:.95rem; color:#222; letter-spacing: -1px; line-height: 1.3rem; cursor: pointer;}
+.product-detail .container-fluid .detail .banner .kakao {background-image: url("../../images/products/bn_02.png"); width:365px;  border:1px solid #ddd; height: 100px; padding:30px 30px; font-size:.95rem; color:#222; letter-spacing: -1px; line-height: 1.3rem; cursor: pointer;}
+
+
+
+/*신한은행배너*/
+.product-detail .container-fluid .detail .shinhan {width:750px; margin:20px 0 70px; background-color:#eff2f7; display: flex; align-items: center; padding:2rem;}
+.product-detail .container-fluid .detail .shinhan p img {margin-right:30px;}
+.product-detail .container-fluid .detail .shinhan p {color:#555;line-height: 1.3rem;}
+
+
+
+/*유의사항*/
+.product-detail .container-fluid .detail .notice {width:750px; margin-bottom:70px; }
+.product-detail .container-fluid .detail .notice h3 {margin-bottom:20px;}
+.product-detail .container-fluid .detail .notice h2 {margin:0;}
+.product-detail .container-fluid .detail .notice .accordion .card {box-shadow: none; border:1px solid #bbb; border-radius: 0; margin-bottom: 10px;}
+.product-detail .container-fluid .detail .notice .accordion .card .card-header {padding:.3rem 1rem; position: relative;  }
+.product-detail .container-fluid .detail .notice .accordion .card-header .btn { color: #555; font-size:.95rem; text-align: left; font-weight: 600; display: block; letter-spacing: -0.5px;}
+.product-detail .container-fluid .detail .notice .accordion .card-header i { font-size: 1.2rem;  position: absolute; right:1rem; line-height: 1.5rem; transition: all 0.5s;}
+.product-detail .container-fluid .detail .notice .accordion .card-body { color: #555; padding: 1rem 2rem; font-size:.8rem; }
+.product-detail .container-fluid .detail .notice .accordion .card-body p {margin-bottom:10px;}
+.product-detail .container-fluid .detail .notice .accordion .highlight .btn { color: #ee321f; }
+.product-detail .container-fluid .detail .notice .accordion .highlight i { transform: rotate(180deg);}
+
+
+
+/*공시정보*/
+.product-detail .container-fluid .detail .disclosure {width:750px;  margin-bottom: 100px;}
+.product-detail .container-fluid .detail .disclosure .disclosure-tit {display:flex; justify-content: space-between;  align-items:flex-end; border-bottom:1px solid #aaa; margin-bottom:20px;}
+.product-detail .container-fluid .detail .disclosure .disclosure-tit h3 {margin-bottom:10px;}
+.product-detail .container-fluid .detail .disclosure .disclosure-tit h3 span {font-size:.8rem; color:#888; }
+.product-detail .container-fluid .detail .disclosure .disclosure-tit button {margin-bottom:10px;}
+.product-detail .container-fluid .detail .disclosure table {width:100%; background-color: #fff;}
+.product-detail .container-fluid .detail .disclosure table tr td{width:25%; padding:0 .7rem; border:1px solid #e0e0e0;  height: 45px; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;  text-align: right;}
+.product-detail .container-fluid .detail .disclosure table tr th{width:25%; background-color:#f8f8f8; padding:0 .7rem; border:1px solid #e0e0e0;  height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;  font-weight: 600;}
+.product-detail .container-fluid .detail .disclosure .investment-status .tit {padding-top:30px;}
+.product-detail .container-fluid .detail .disclosure .type-investment-status thead tr th {background-color:#f8f8f8; color:#222; text-align: center; font-size:.8rem; height: 45px;  line-height: 45px; border-bottom:1px solid #222; font-weight: 600;}
+.product-detail .container-fluid .detail .disclosure .type-investment-status tbody tr td {border: 1px solid #e0e0e0; }
+.product-detail .container-fluid .detail .disclosure .type-investment-status tbody tr td:first-child, .product-detail .container-fluid .detail .disclosure .type-investment-status tfoot tr td:first-child {text-align:center;}
+.product-detail .container-fluid .detail .disclosure .type-investment-status tfoot tr th {font-weight: 600; color:#222; font-size:.8rem;}
+.product-detail .container-fluid .detail .disclosure .type-investment-status tfoot tr td {border: 1px solid #e0e0e0; background-color:#fcf4f5; font-weight: 600; color:#222;}
+.product-detail .container-fluid .detail .disclosure .txt {letter-spacing:-1px; margin-top:20px; line-height:1rem;}
+.product-detail .container-fluid .detail .disclosure .txt span {color:#222; font-weight: 600; margin-bottom:5px; display: block;}
+
+
+
+/*투자하기버튼*/
+.product-detail .container-fluid .invest-button {display:none;}
+
+
+
+
+/*모달 테이블 커스텀 */
+.product-detail .repayment-schedule {padding-right:0!important;}
+.product-detail .repayment-schedule .modal-content {height:800px; overflow-y: scroll;}
+.product-detail .repayment-schedule .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.product-detail .repayment-schedule .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.product-detail .repayment-schedule .modal-content .modal-body {margin-top:20px;}
+.product-detail .repayment-schedule .modal-content .modal-body h4 {margin:0 0 20px; font-size:1.125rem; color:#000;  font-weight:500; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; text-align: center;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest {display:flex; align-items: center; justify-content: center; margin-bottom:20px;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .txt { font-size:.8rem; color:#222; margin-right:.5rem;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .form-control{text-align: right; height: calc(2.2rem); border-radius:.15rem; font-size:.9rem; color:#222;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest button {font-size:.8rem; background-color: #222; color:#fff; padding:.45rem .9rem .35rem; margin-left:.5rem; }
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .input-box {display:flex; align-items: center; position:relative;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .input-box span{position: absolute; right:0; padding:12px 12px 10px; pointer-events: none; font-size:.8rem; color:#222;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .form-control{text-align: right; height: calc(2.2rem); border-radius:.15rem; font-size:.9rem; color:#222; padding-right:40px;}
+
+.product-detail .repayment-schedule .modal-content .modal-body .table p{text-align:right; font-size:.75rem; color:#222; margin-bottom: 5px;}
+.product-detail .repayment-schedule .modal-content .modal-body .table {overflow:auto;}
+.product-detail .repayment-schedule .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0; }
+.product-detail .repayment-schedule .modal-content .modal-body table thead tr th{ padding:.5rem .7rem; border:1px solid #e0e0e0; color:#222; font-size:.78rem; background-color:#f8f8f8; font-weight: 600; text-align: center;}
+.product-detail .repayment-schedule .modal-content .modal-body table tbody tr td{ padding:.5rem .7rem; border:1px solid #e0e0e0; color:#333; font-weight: 500; font-size:.78rem; text-align: right; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.product-detail .repayment-schedule .modal-content .modal-body table tbody tr td:nth-child(1), .product-detail .repayment-schedule .modal-content .modal-body table tr td:nth-child(2) {text-align:center;}
+.product-detail .repayment-schedule .modal-content .modal-body table tfoot tr td{ padding:.4rem .7rem; border:1px solid #e0e0e0; color:#000; font-size:.78rem; background-color:#fcf4f5;  text-align: right; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.product-detail .repayment-schedule .modal-content .modal-body table tfoot tr td:nth-child(1){text-align:center; font-family: Nunito,sans-serif; font-weight: 600; }
+.product-detail .repayment-schedule .modal-content .modal-body table tfoot tr td:nth-child(2){text-align:right;}
+.product-detail .repayment-schedule .modal-content .modal-body .notice { margin:1rem 0;}
+.product-detail .repayment-schedule .modal-content .modal-body .notice p {font-size:.75rem; color:#555; margin:.3rem 0;}
+.product-detail .repayment-schedule .modal-content .modal-body .notice .txt {position: relative; padding-left:10px;}
+.product-detail .repayment-schedule .modal-content .modal-body .notice .dot::before { background-color:#777; width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:8px;}
+.product-detail .repayment-schedule .modal-content .modal-footer {justify-content:center; padding:0 0 3rem; border-top:none;}
+.product-detail .repayment-schedule .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.product-detail .repayment-schedule .modal-content .modal-footer .invest-btn {background-color: #ee321f; color:#fff; width:200px;}
+.product-detail .repayment-schedule .modal-content .modal-footer .invest-wait-btn {background-color: #ff9d92; color:#fff; width:200px;}
+.product-detail .repayment-schedule .modal-content .modal-footer .invest-end-btn {background-color: #555555; color:#fff; width:200px;}
+
+
+
+
+@media (max-width:1050px){
+
+
+/********************************************************상품상세*******************************************************/
+.product-detail {margin:0 auto;}
+.product-detail h3 {font-size:1.4rem; font-weight:500; color:#222; margin:0 0 20px 0;}
+.product-detail .tit {font-size:1.05rem; color:#222; font-weight: 600; margin-bottom: 5px;}
+.product-detail .txt {font-size:.9rem; color:#777; line-height: 1.2rem; }
+
+
+/*상품상세 상단*/
+.product-detail .container-fluid .product-top {padding:0 30px;}
+.product-detail .container-fluid .product-top .pro-name-wrap {width:100%; }
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-tag {padding-top:30px; }
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-name {font-size:1.5rem;}
+.product-detail .container-fluid .product-top .pro-info-wrap {width:100%;}
+.product-detail .container-fluid .product-top .pro-info-wrap .rate-return span, .product-detail .container-fluid .product-top .pro-info-wrap .invest-period span, .product-detail .container-fluid .product-top .pro-info-wrap .recruiting-amount span{font-size:1.6rem;}
+.product-detail .container-fluid .product-top .progress-wrap {width:100%; padding:0 30px;}
+
+
+
+	
+/*상품상세 컨텐츠*/
+.product-detail .container-fluid .detail {width:100%; padding:0 30px; margin-top:50px;}
+
+/*사이드폼*/
+.product-detail .container-fluid .detail .side-form {display:none;}
+
+
+/*투자포인트*/
+.product-detail .container-fluid .detail .invest-point {width:100%;}
+
+
+/*탭 메뉴*/
+.product-detail .container-fluid .detail .info-tab {width:100%; margin-top:50px;}
+
+
+/*담보상환력 평가*/
+.product-detail .container-fluid .detail .collateral-redemption {width:100%; margin-top:50px;}
+
+
+/*채권보전*/
+.product-detail .container-fluid .detail .bond-preservation {width:100%; margin:50px 0;}
+.product-detail .container-fluid .detail .bond-preservation img {width:auto;}
+
+/*법률검토*/
+.product-detail .container-fluid .detail .legal-review {width:100%; margin:50px 0;}
+
+/*심사체크사항*/
+.product-detail .container-fluid .detail .checklist {width:100%; }
+
+/*증빙서류*/
+.product-detail .container-fluid .detail .evidence-docu {width:100%; margin:50px 0;}
+
+
+/*상환계획*/
+.product-detail .container-fluid .detail .repayment-plan {width:100%; margin:50px 0;}
+
+
+/*배너*/
+.product-detail .container-fluid .detail .banner {width:100%;}
+.product-detail .container-fluid .detail .banner .guide {background-position: right center; background-repeat: no-repeat; width:49.5%; margin-right:1%;}
+.product-detail .container-fluid .detail .banner .kakao {background-position: right center; background-repeat: no-repeat; width:49.5%; }
+
+
+/*신한은행배너*/
+.product-detail .container-fluid .detail .shinhan {width:100%; }
+
+
+/*유의사항*/
+.product-detail .container-fluid .detail .notice {width:100%; margin:50px 0;}
+
+
+/*공시정보*/
+.product-detail .container-fluid .detail .disclosure {width:100%;  margin-bottom: 100px;}
+
+
+
+/*투자하기버튼*/
+.product-detail .container-fluid .invest-button {position: fixed; bottom:0; width:100%; text-align: center; display:block;}
+.product-detail .container-fluid .invest-button button {width:100%; border:none; color:#fff; padding:1rem 0; font-size:1rem; font-weight: 600;}
+.product-detail .container-fluid .invest-button .invest-btn {background-color: #f04635;}
+.product-detail .container-fluid .invest-button .invest-btn:hover, .product-detail .container-fluid .invest-button .invest-btn:active {background-color: #ee321f; }
+.product-detail .container-fluid .invest-button .invest-wait-btn {background-color: #ff9d92;}
+.product-detail .container-fluid .invest-button .invest-wait-btn:hover, .product-detail .container-fluid .invest-button .invest-wait-btn:active {background-color: #ff9d92; }
+.product-detail .container-fluid .invest-button .invest-end-btn {background-color: #555;  cursor: not-allowed;}
+.product-detail .container-fluid .invest-button .invest-end-btn:hover, .product-detail .container-fluid .invest-button .invest-end-btn:active {background-color: #555; }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+@media (max-width:768px){
+
+.product-detail h3 {font-size:1.2rem; font-weight:500; color:#222; margin:0 0 20px 0;}
+.product-detail .tit {font-size:.95rem; color:#222; font-weight: 600; margin-bottom: 5px;}
+.product-detail .txt {font-size:.8rem; color:#777; line-height: 1.1rem; }
+
+
+/*상품상세 상단*/
+.product-detail .container-fluid .product-top {padding:0 1rem;}
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-tag {padding-top:20px; }
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-name {margin-top:10px; font-size:1.3rem;}
+.product-detail .container-fluid .product-top .pro-name-wrap .pro-period {margin-top:10px; font-size:.8rem; color:#555;}
+.product-detail .container-fluid .product-top .pro-info-wrap {justify-content:space-around; text-align: center;}
+.product-detail .container-fluid .product-top .pro-info-wrap .rate-return, .product-detail .container-fluid .product-top .pro-info-wrap .invest-period, .product-detail .container-fluid .product-top .pro-info-wrap .recruiting-amount{color:#555; font-size:.8rem; margin:1.5rem 0 0;}
+.product-detail .container-fluid .product-top .pro-info-wrap .rate-return span, .product-detail .container-fluid .product-top .pro-info-wrap .invest-period span, .product-detail .container-fluid .product-top .pro-info-wrap .recruiting-amount span{font-size:1.4rem; }
+.product-detail .container-fluid .product-top .progress-wrap {width:100%; padding:0 1rem;}
+.product-detail .container-fluid .product-top .progress-wrap .progress {height: .1rem;}
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .amount {font-size:.9rem; }
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .amount span{font-size:.8rem; }
+.product-detail .container-fluid .product-top .progress-wrap .progress-txt .status {font-size:.8rem;}
+
+
+/*상품상세 컨텐츠*/
+.product-detail .container-fluid .detail {width:100%; padding:0 .5rem; margin-top:50px;}
+
+
+/*탭 테이블 공통*/
+.product-detail .container-fluid .detail .info-tab .tab-content .tab-pane {padding:20px 10px;}
+.product-detail .container-fluid .detail .info-tab .tab-content .guarantee .tit {font-size:.95rem;}
+.product-detail .container-fluid .detail .info-tab .tab-content .guarantee .txt {font-size:.8rem; line-height: 1.1rem; }
+.product-detail .container-fluid .detail .info-tab .tab-content img {width:100%;}	
+.product-detail .container-fluid .detail .info-tab .tab-content .guarantee .notice-txt { margin-top:10px;}
+.product-detail .container-fluid .detail .info-tab .tab-content .guarantee .notice-txt .txt{font-size:.75rem; color:#777; line-height: 1.2rem; padding:0;}
+.product-detail .container-fluid .detail .info-tab .tab-content table {width:100%; white-space: normal;border-bottom: 1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tr {width:100%; display: flex;  flex-wrap: wrap; }
+.product-detail .container-fluid .detail .info-tab .tab-content table tr td{display:flex; align-items: center; width:60%!important; padding:.5rem; border:1px solid #e0e0e0; border-bottom:none!important; border-left:none!important; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 1.1rem;}
+.product-detail .container-fluid .detail .info-tab .tab-content table tr th{display:flex;  align-items: center; width:40%!important; padding:.5rem; border: 1px solid #e0e0e0; border-bottom:none!important; height:auto;  color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height:1.1rem;}
+.product-detail .container-fluid .detail .info-tab .tab-content table thead tr th {width:100%!important; background-color:#f8f8f8; color:#222; text-align: center; font-size:.9rem; height: 45px;  line-height: 45px; border:1px solid #555!important; font-weight: 600;}
+.product-detail .container-fluid .detail .info-tab .tab-content .borrower thead tr th{width:100%!important; letter-spacing: -1px; }
+.product-detail .container-fluid .detail .info-tab .tab-content .borrower tbody tr {width:100%; display: flex;  flex-wrap: wrap; }
+.product-detail .container-fluid .detail .info-tab .tab-content .borrower tbody tr th{display:flex;  align-items: center; width:40%!important; padding:.5rem; border: 1px solid #e0e0e0; border-bottom:none!important; height:auto;  color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height:1.1rem;}
+.product-detail .container-fluid .detail .info-tab .tab-content .borrower tbody tr td{display:flex; align-items: center; width:60%!important; padding:.5rem; border:1px solid #e0e0e0; border-bottom:none!important; border-left:none!important; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 1.1rem;}
+
+
+
+/*탭 테이블 - pf 구조도*/
+.product-detail .container-fluid .detail .info-tab .pf .diagram {border:none; margin-top:20px;}
+.product-detail .container-fluid .detail .info-tab .pf .diagram img {width:100%;}
+.product-detail .container-fluid .detail .info-tab .pf .diagram .web {display: none;}
+.product-detail .container-fluid .detail .info-tab .pf .diagram .m {display: block; padding:.5rem; }
+
+
+
+/*탭 테이블 - pf사업장정보*/
+.product-detail .container-fluid .detail .info-tab .pf .borrower table tr td{width:70%!important;}
+.product-detail .container-fluid .detail .info-tab .pf .borrower table tr th{width:30%!important;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point  {display:block;margin-top:20px; padding:0;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point div {width:100%;  margin-bottom: 1rem;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point .tit {background-color: #947a75; border-radius:0; text-align: center; padding:.3rem; font-size:.9rem; color:#fff; margin-bottom: 10px;}
+.product-detail .container-fluid .detail .info-tab .pf .map .map-point .txt {color:#222; font-size:.8rem; line-height: 1.5rem; padding-left:1rem;}
+
+
+
+/*담보상환력 평가*/
+.product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .seniority-txt, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .hello-txt, .product-detail .container-fluid .detail .collateral-redemption .bar-chart .graph-list .spare-txt {margin-left:.4rem; }
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info {border-bottom:1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info tr {width:100%; display:flex; flex-wrap:wrap; }
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info tr td{align-items: center; width:40%!important; padding:.5rem; border:1px solid #e0e0e0; border-bottom:none!important; border-left:none!important; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 1.1rem; justify-content: flex-end; }
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info tr th{align-items: center; width:60%!important; padding:.5rem; border: 1px solid #e0e0e0; border-bottom:none!important; height:auto;  color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height:1.1rem;}
+
+
+/*담보상환력 평가-pf*/
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf {border-bottom:1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr td{align-items: center; width:30%; padding:.5rem; border:1px solid #e0e0e0; border-bottom:none!important; border-left:none!important; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 1.1rem; justify-content: flex-end;}
+.product-detail .container-fluid .detail .collateral-redemption .evaluation-info-pf tr th{align-items: center;  width:70%; padding:.5rem; border: 1px solid #e0e0e0; border-bottom:none!important; height:auto;  color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height:1.1rem;}
+
+
+/*채권보전*/
+.product-detail .container-fluid .detail .bond-preservation img {width:100%;}
+
+
+
+/*법률검토*/
+.product-detail .container-fluid .detail .legal-review div {display:block;}
+.product-detail .container-fluid .detail .legal-review p {font-size:.8rem; line-height: 1.2rem;}
+.product-detail .container-fluid .detail .legal-review p span {margin:10px 0;}
+
+
+/*심사체크사항*/
+.product-detail .container-fluid .detail .checklist table tr th:nth-child(2), .product-detail .container-fluid .detail .checklist table tr td:nth-child(2) {display:none;}
+.product-detail .container-fluid .detail .checklist table tr td {font-weight: 600;  line-height: 1.1rem;}
+.product-detail .container-fluid .detail .checklist table tr td p {display: block;font-weight: 500; margin-top:5px; color:#777;}
+
+
+
+
+/*증빙서류*/
+.product-detail .container-fluid .detail .evidence-docu table tr td:first-child {display:none;}
+.product-detail .container-fluid .detail .evidence-docu table tr td:last-child { text-align: left; padding:.5rem 0;}
+.product-detail .container-fluid .detail .evidence-docu table tr td p {display:block; color:#555; font-size:.8rem; margin-top:5px;}
+.product-detail .container-fluid .detail .evidence-docu i {font-size:.9rem;}
+
+
+
+/*배너*/
+.product-detail .container-fluid .detail .banner {display: flex; flex-wrap:wrap;}
+.product-detail .container-fluid .detail .banner .guide { background-position: right center; background-repeat: no-repeat; width:100%; margin-right:0; margin-bottom: 10px;}
+.product-detail .container-fluid .detail .banner .kakao { background-position: right center; background-repeat: no-repeat; width:100%; }
+
+
+
+
+/*신한은행배너*/
+.product-detail .container-fluid .detail .shinhan {display:block; padding:1.5rem;}
+.product-detail .container-fluid .detail .shinhan p img {margin-bottom:10px;}
+.product-detail .container-fluid .detail .shinhan p {line-height: 1.1rem; font-size:.8rem;}
+
+
+/*유의사항*/
+.product-detail .container-fluid .detail .notice .accordion .card .card-header {padding:.3rem .5rem; }
+.product-detail .container-fluid .detail .notice .accordion .card-header .btn {font-size:.85rem; }
+
+
+
+/*공시정보*/
+.product-detail .container-fluid .detail .disclosure .disclosure-tit h3 span {font-size:.7rem; color:#888; }
+
+
+.product-detail .container-fluid .detail .disclosure .investment-status {width:100%; white-space: normal;border-bottom: 1px solid #e0e0e0;}
+.product-detail .container-fluid .detail .disclosure .investment-status tr {width:100%; display: flex;  flex-wrap: wrap; }
+.product-detail .container-fluid .detail .disclosure .investment-status tr td{display:flex; align-items: center; width:50%!important; padding:.5rem; border:1px solid #e0e0e0; border-bottom:none!important; border-left:none!important; height:auto; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 1.1rem;}
+.product-detail .container-fluid .detail .disclosure .investment-status tr th{display:flex;  align-items: center; width:50%!important; padding:.5rem; border: 1px solid #e0e0e0; border-bottom:none!important; height:auto;  color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height:1.1rem;}
+
+.product-detail .container-fluid .detail .disclosure .scroll {width:100%; overflow-x: auto; white-space: nowrap;}
+.product-detail .container-fluid .detail .disclosure .scroll .tit {position:sticky; left:0;}
+
+
+
+/*투자하기버튼*/
+.product-detail .container-fluid .invest-button {position: fixed; bottom:1rem; width:100%; text-align: center; display:block; padding:0;}
+.product-detail .container-fluid .invest-button button {width:80%;background-color: #f04635; border:none; color:#fff; padding:.7rem 0; font-size:1rem; font-weight: 600; border-radius:3rem ; }
+.product-detail .container-fluid .invest-button button:hover, .product-detail .container-fluid .invest-button button:active {background-color: #ee321f; }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:420px){
+/*모달 테이블 커스텀 */
+.product-detail .repayment-schedule .modal-content .modal-body {margin-top:10px;}
+.product-detail .repayment-schedule .modal-content .modal-body h4 {font-size:1rem; text-align: center;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest {width:100%;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .txt {display: none;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest .form-control{width:100%;}
+.product-detail .repayment-schedule .modal-content .modal-body .virtual-invest button {white-space: nowrap;}
+.product-detail .repayment-schedule .modal-content .modal-footer {padding:0 0 3rem; }
+.product-detail .repayment-schedule .modal-content .modal-footer .btn-invest {width:98%; margin:0 1rem;}
+
+
+
+}
+
+
+/*********************************
+상품 리스트
+**********************************/
+.product-list p, .product-list a, .product-list span , .product-list th , .product-list td , .product-list div, .product-list button, .product-list h4, .product-list h5, .product-list a ,.product-list ul li , .review .active{font-family:"NotoSansKR", sans-serif;  margin: 0;}
+
+.product-list .container-fluid {padding:0;}
+.product-list .container-fluid h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center; margin: 40px 0 20px;}
+.product-list .container-fluid .search {display:flex; justify-content: flex-end; padding:0 1.25rem;}
+.product-list .container-fluid .search button {border:1px solid #aaa; background-color:#fff; color:#222; font-size:.9rem; padding:.4rem 1rem; margin-bottom:.5rem;  font-weight: 400; }
+.product-list .container-fluid .list {padding:0 1.25rem; margin-bottom: 80px;}
+.product-list .container-fluid .list h4{margin: auto;}
+.product-list .container-fluid .list .box {box-shadow: 0 6px 16px 0 rgb(0 0 0 / 15%); -webkit-box-shadow:0 6px 16px 0 rgb(0 0 0 / 15%); -moz-box-shadow:0 6px 16px 0 rgba(0,0,0,.15);  margin-bottom:30px;  cursor: pointer;}
+.product-list .container-fluid .list p.list-none {text-align: center;}
+
+.product-list .container-fluid .list .before-pf1 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-pf-01.jpg"); }
+.product-list .container-fluid .list .ing-pf1 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-pf-01.jpg"); }
+.product-list .container-fluid .list .after-pf1 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-pf-01.jpg"); }
+
+.product-list .container-fluid .list .before-ju1 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-ju-01.jpg"); }
+.product-list .container-fluid .list .before-ju2 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-ju-02.jpg"); }
+.product-list .container-fluid .list .before-ju3 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-ju-03.jpg"); }
+.product-list .container-fluid .list .ing-ju1 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-ju-01.jpg"); }
+.product-list .container-fluid .list .ing-ju2 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-ju-02.jpg"); }
+.product-list .container-fluid .list .ing-ju3 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-ju-03.jpg"); }
+.product-list .container-fluid .list .after-ju1 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-ju-01.jpg"); }
+.product-list .container-fluid .list .after-ju2 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-ju-02.jpg"); }
+.product-list .container-fluid .list .after-ju3 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-ju-03.jpg"); }
+
+.product-list .container-fluid .list .before-scf1 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-scf-01.jpg"); }
+.product-list .container-fluid .list .ing-scf1 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-scf-01.jpg"); }
+.product-list .container-fluid .list .after-scf1 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-scf-01.jpg"); }
+.product-list .container-fluid .list .before-online1 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-scf-02.jpg"); }
+.product-list .container-fluid .list .ing-online1 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-scf-02.jpg"); }
+.product-list .container-fluid .list .after-online1 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-scf-02.jpg"); }
+.product-list .container-fluid .list .before-settlement1 {background-image:linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/products/pro-scf-03.jpg"); }
+.product-list .container-fluid .list .ing-settlement1 {background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 70%), url("/assets/images/products/pro-scf-03.jpg"); }
+.product-list .container-fluid .list .after-settlement1 {background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/products/pro-scf-03.jpg"); }
+/* calc (이미지 높이 ÷ 이미지 가로 × 100 %) */
+
+
+/* 이미지파트 */
+.product-list .container-fluid .list .box .img-box {position:relative; background-repeat: no-repeat; background-size: cover; background-position:center center; width:100%; height:0;  padding-top:calc(160 / 310 * 100%); border-top-left-radius:.3rem; border-top-right-radius:.3rem;}
+/*.product-list .container-fluid .list .box .img-box .category {position:absolute; top:0; background-color:#222; color:#fff; font-size:.7rem; height:22px; line-height: 24px; padding:0 .5rem; font-family: "Nunito",sans-serif; letter-spacing:.-5px; border-radius:.2rem; margin:12px 10px;}*/
+.product-list .container-fluid .list .box .img-box .date {position:absolute; top:0; right:10px; padding-top:12px; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.75rem;}
+.product-list .container-fluid .list .box .img-box .end {position:absolute;  font-size:1.35rem; color:#fff; top: 50%;  left: 50%;   transform: translate(-50%, -50%); font-weight: 500;}
+
+
+/* 상품명 및 수익율파트 */
+.product-list .container-fluid .list .box .pro-info {padding:15px 20px;}
+.product-list .container-fluid .list .box .pro-info	.name {font-size:1rem; color:#333; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -.7px; font-weight: 400; height: 40px; line-height: 20px;}
+.product-list .container-fluid .list .box .pro-info div {display:flex;  color:#222; justify-content: space-between; padding:1rem 0 1rem; }
+.product-list .container-fluid .list .box .pro-info div p {font-size:.95rem; color:#555;}
+.product-list .container-fluid .list .box .pro-info div p span{font-size:1.35rem;  font-weight:500; color:#000; letter-spacing: -.5px; padding:0 2px; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; vertical-align: -.9px; }
+
+
+
+/* 진행률 및 가능금액표기 */
+.product-list .container-fluid .list .box .progress {height:2px; background-color: #eee; }
+.product-list .container-fluid .list .box .progress .progress-bar{background-color: #ee321f;}
+.product-list .container-fluid .list .box .invest-info {display:flex; justify-content: space-between; align-items: center; padding:0 20px; height:50px; line-height: 50px; }
+.product-list .container-fluid .list .box .invest-info p{font-size:.85rem; color:#555; font-family: "Nunito",sans-serif; letter-spacing: -.5px;}
+.product-list .container-fluid .list .box .invest-info p span {font-size:.9rem; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 600;  color:#000;}
+
+
+/* 모집예정표기 */
+.product-list .container-fluid .list .box .before-invest-info {background-color:#f34748; height:50px; line-height: 50px; }
+.product-list .container-fluid .list .box .before-invest-info p {color:#fff; font-size:1rem; text-align: center; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif;  font-weight: 400;}
+.product-list .container-fluid .list .box .before-invest-info p span {font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; }
+
+
+/* 모집완료 상품 */
+.product-list .container-fluid .finish {background-color: #f8f8f8; padding:10px 0; }
+.product-list .container-fluid .finish .end-list {padding:0 1.25rem;}
+.product-list .container-fluid .finish .end-list h4{margin: auto;}
+.product-list .container-fluid .finish .end-list .box {box-shadow: 0 6px 16px 0 rgb(0 0 0 / 10%); -webkit-box-shadow:0 6px 16px 0 rgb(0 0 0 / 10%); -moz-box-shadow:0 6px 16px 0 rgba(0,0,0,.10);  margin-bottom:20px; border:1px solid #ddd; cursor:pointer;}
+.product-list .container-fluid .finish .end-list p.list-none {text-align: center;}
+
+.product-list .container-fluid .finish .end-list .box .tag {display:flex; }
+.product-list .container-fluid .finish .end-list .box .tag .category {background-color:#222; color:#fff; font-size:.72rem; height:28px; line-height: 30px; padding:0 .5rem; font-family: "Nunito",sans-serif; letter-spacing:-.5px; }
+.product-list .container-fluid .finish .end-list .box .tag .situation {color:#fff; font-size:.72rem; height:28px; line-height: 30px; padding:0 .5rem; font-family: "Nunito",sans-serif; letter-spacing:-.5px; }
+
+/*상품 상태 색깔 구분*/
+.product-list .container-fluid .finish .end-list .box .tag .type-01 {background-color:#947a75;}
+.product-list .container-fluid .finish .end-list .box .tag .type-02 {background-color:#229aac;}
+.product-list .container-fluid .finish .end-list .box .tag .type-03 {background-color:#9c3440;}
+.product-list .container-fluid .finish .end-list .box .tag .type-04 {background-color:#F8BBD0;}
+.product-list .container-fluid .finish .end-list .box .tag .type-05 {background-color:#82B1FF;}
+.product-list .container-fluid .finish .end-list .box .tag .type-06 {background-color:#FFE0B2;}
+.product-list .container-fluid .finish .end-list .box .tag .type-07 {background-color:#F0F4C3;}
+.product-list .container-fluid .finish .end-list .box .tag .type-08 {background-color:#CFD8DC;}
+.product-list .container-fluid .finish .end-list .box .tag .type-08 {background-color:#B0BEC5;}
+.product-list .container-fluid .finish .end-list .box .tag .type-09 {background-color:#E0E0E0;}
+.product-list .container-fluid .finish .end-list .box .tag .type-10 {background-color:#FF9E80;}
+.product-list .container-fluid .finish .end-list .box .tag .type-11 {background-color:#FFCCBC;}
+.product-list .container-fluid .finish .end-list .box .tag .type-12 {background-color:#FFE57F;}
+.product-list .container-fluid .finish .end-list .box .tag .type-13 {background-color:#8BC34A;}
+.product-list .container-fluid .finish .end-list .box .tag .type-14 {background-color:#80D8FF;}
+.product-list .container-fluid .finish .end-list .box .tag .type-15 {background-color:#C5CAE9;}
+
+.product-list .container-fluid .finish .end-list .box .pro-info {padding:15px 20px;}
+.product-list .container-fluid .finish .end-list .box .pro-info	.name {font-size:.95rem; color:#333; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -.7px; font-weight: 400; height: 30px; line-height: 20px;}
+.product-list .container-fluid .finish .end-list .box .pro-info div {display:flex;  color:#222; justify-content: space-between; padding:.7rem 0 0; }
+.product-list .container-fluid .finish .end-list .box .pro-info div p {font-size:.9rem; color:#555;}
+.product-list .container-fluid .finish .end-list .box .pro-info div p span{font-size:1.2rem;  font-weight:500; color:#000; letter-spacing: -.5px; padding:0 2px; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; vertical-align: -.7px; }
+
+
+
+/*더보기*/
+.product-list .container-fluid .add-btn {margin:30px auto 100px; text-align: center;}
+.product-list .container-fluid .add-btn button {background-color: #222; padding:.3rem 2rem; color:#fff; border-radius:5rem; outline: none;}
+.product-list .container-fluid .add-btn button:focus {outline: none; box-shadow: none;}
+
+
+
+/*모달 커스텀 */
+.search-pop {padding-right: 0!important; }
+.search-pop .modal-content {border-radius:0;}
+.search-pop .modal-dialog {max-width:420px!important; margin:0 auto; padding:.5rem; border-radius: 1rem;}
+.search-pop .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.search-pop .modal-content .modal-header h4 {font-size:1rem; color:#333; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500; letter-spacing: -.5px; }
+.search-pop .modal-content .modal-header .close {font-size:1rem; color:#333;}
+.search-pop .modal-content .modal-body {margin:.5rem 0 0; }
+.search-pop .modal-content .modal-body label {font-size:.9rem; font-weight: 500; color:#222; margin-bottom:8px; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.search-pop .modal-content .modal-body input:focus {border-color: #999; }
+.search-pop .modal-content .modal-body .form-control {height: calc(2.3rem); color:#555; border:1px solid #ddd; font-size:.9rem; padding:.35rem .9rem .45rem;  font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.search-pop .modal-content .modal-body .pro-name {display:flex; align-items: center; position: relative;}
+.search-pop .modal-content .modal-body .pro-name  span { position: absolute; right: 0px; padding: 10px 12px;pointer-events: none;}
+
+
+.search-pop .modal-content .modal-body  h5 {font-size:.9rem; font-weight: 400; color:#222; margin-bottom:1rem; font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; border-bottom:1px solid #888; padding-bottom:.5rem; }
+.search-pop .modal-content .modal-body .pro-type, .search-pop .modal-content .modal-body .pro-status {margin:2rem 0; }
+.search-pop .modal-content .modal-body .pro-type .pro-type-wrap, .search-pop .modal-content .modal-body .pro-status .pro-status-wrap{display:flex;  flex-wrap: wrap;}
+.search-pop .modal-content .modal-body div button {width:32%; border:1px solid #ccc; background-color: #fff; color:#222; outline: none;  font-family:"NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom:8px; padding:.4rem 0; font-size:.82rem; border-radius:.2rem; margin-right:2%; font-weight: 300;}
+.search-pop .modal-content .modal-body  button.active {border:1px solid #ee321f; color:#ee321f; font-weight: 400;}
+.search-pop .modal-content .modal-body  button:nth-child(3n) {margin-right:0; }
+.search-pop .modal-content .modal-footer {justify-content:center; padding:0 1rem 2rem; border-top:none;}
+.search-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.5rem  0 .5rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.85rem;}
+.search-pop .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:100%;}
+.search-pop .modal-content .modal-footer button:disabled {opacity: .30;};
+
+/* 이미지파트 */
+.product-list .container-fluid .list .box .img-box {position:relative; background-repeat: no-repeat; background-size: cover; background-position:center center; width:100%; height:0;  padding-top:calc(160 / 310 * 100%); border-top-left-radius:.3rem; border-top-right-radius:.3rem;}
+.product-list .container-fluid .list .box .img-box .tag{position:absolute; top:0; margin:10px 10px; display: flex;  width:70%; white-space: nowrap; flex-wrap: wrap;}
+.product-list .container-fluid .list .box .img-box .tag p {background-color:#222; color:#fff; font-size:.7rem; height:22px; line-height: 24px; padding:0 .5rem; font-family: "Nunito",sans-serif; letter-spacing:-.5px; border-radius:.2rem; margin-right:5px; margin-bottom:5px;}
+
+.product-list .container-fluid .list .box .img-box .tag .p_ai {background-color:#229aac;} /*자동투자*/
+.product-list .container-fluid .list .box .img-box .tag .p_live_tv {background-color:#9c3440;} /*live tv*/
+.product-list .container-fluid .list .box .img-box .tag .p_adir {background-color:#947a75;} /*사전투자*/
+.product-list .container-fluid .list .box .img-box .tag .p_adpy {background-color:#FFB4B9;} /*이자 선지급*/
+.product-list .container-fluid .list .box .img-box .tag .p_con {background-color:#FFA374;} /*컨소시엄*/
+.product-list .container-fluid .list .box .img-box .tag .p_vip {background-color:#787878;} /*법인전용*/
+
+.product-list .container-fluid .list .box .img-box .date {position:absolute; top:0; text-align: right; right:10px; width:30%; padding-top:12px; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.75rem;}
+.product-list .container-fluid .list .box .img-box .end {position:absolute;  font-size:1.35rem; color:#fff; top: 50%;  left: 50%;   transform: translate(-50%, -50%); font-weight: 500;}
+
+
+
+
+
+@media (min-width:700px){
+.product-list .container-fluid .list{display:flex; flex-wrap: wrap;}
+.product-list .container-fluid .list .box {width:48%; margin-bottom:30px;}
+.product-list .container-fluid .list .box:nth-child(odd) {margin-left:.5%; margin-right:1.5%;}
+.product-list .container-fluid .list .box:nth-child(even) {margin-right:.5%; margin-left:1.5%;}
+.product-list .container-fluid .list p.list-none {margin: 5% auto;}
+
+.product-list .container-fluid .finish {padding-top:30px; }
+.product-list .container-fluid .finish .end-list {display:flex; flex-wrap: wrap; margin:40px auto 0;}
+.product-list .container-fluid .finish .end-list .box {width:48%; }
+.product-list .container-fluid .finish .end-list .box:nth-child(odd) {margin-left:.5%; margin-right:1.5%;}
+.product-list .container-fluid .finish .end-list .box:nth-child(even) {margin-right:.5%; margin-left:1.5%;}
+.product-list .container-fluid .finish .end-list p.list-none {margin: 5% auto;}
+
+}
+
+
+
+@media (min-width:900px){
+.product-list {margin:60px auto 0; padding:0;}
+.product-list .container-fluid .list {width:1050px; margin:0 auto 100px; padding:0;}
+.product-list .container-fluid .search {width:1050px; margin:0 auto; padding:0; text-align: right;}
+.product-list .container-fluid .list .box {width:330px; margin-right:30px!important;}
+.product-list .container-fluid .list .box:nth-child(3n) {margin-right:0!important;}
+.product-list .container-fluid .list .box:nth-child(odd) {margin-left:0; margin-right:0;}
+.product-list .container-fluid .list .box:nth-child(even) {margin-right:0; margin-left:0;}
+.product-list .container-fluid .list p.list-none {margin: 100px auto 200px;}
+
+.product-list .container-fluid .finish {padding-top:50px; }
+.product-list .container-fluid .finish .end-list {width:1050px; margin:50px auto 0; padding:0; }
+.product-list .container-fluid .finish .end-list .box {width:330px; margin-right:30px!important;}
+.product-list .container-fluid .finish .end-list .box:nth-child(3n) {margin-right:0!important;}
+.product-list .container-fluid .finish .end-list .box:nth-child(odd) {margin-left:0; margin-right:0;}
+.product-list .container-fluid .finish .end-list .box:nth-child(even) {margin-right:0; margin-left:0;}
+.product-list .container-fluid .finish .end-list .box .pro-info	.name {font-size:.9rem; height: 20px;}
+.product-list .container-fluid .finish .end-list p.list-none {margin: 100px auto;}
+
+}
+
+
+
+
+/********************************************************AS-IS 상품(SCF) 상세보기*****************************************************/
+
+#asis-scf p, #asis-scf a, #asis-scf span, #asis-scf div, #asis-scf button, #asis-scf h4, #asis-scf h5, #asis-scf a , #asis-scf ul li {font-family:"NotoSansKR", sans-serif;  margin: 0;}
+#asis-scf {width:100%; margin-left:0; padding-right:0; padding-left:0;}
+#asis-scf img {width:100%; }
+#asis-scf p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+#asis-scf .invest_point .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; }
+#asis-scf .invest_point .invest_point_cont {display:block;  padding:0;  text-align: center;  margin-bottom:50px; }
+#asis-scf .invest_point .invest_point_cont span {display:block;  font-size:.85rem!important; color:#777; font-weight: 400; line-height: 1.2rem; font-family: Nunito,sans-serif;  margin-bottom:30px; }
+#asis-scf .invest_point .invest_point_cont span strong {font-weight: 500; display: block; font-size:1.2rem; color:#222;}
+
+
+#asis-scf .p_i_c_t {width:100%; }
+#asis-scf .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-scf .p_i_c_t tr td:nth-child(odd) {color:#555; background-color: rgb(239, 239, 239)!important; text-align: left!important;}
+#asis-scf .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-scf .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-scf .p_i_c_t strong {display:none;}
+
+
+#asis-scf .container {padding-right:0; padding-left:0; max-width:100%!important; }
+#asis-scf .container .invest_orga {margin:30px 0;}
+#asis-scf .container .invest_orga .title {display:none;}
+#asis-scf .container .invest_orga .content p span{font-size:.9rem!important; color:#222; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+
+#asis-scf .container .p_i_c_t {width:100%; margin-top:5px; }
+#asis-scf .container .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-scf .container .p_i_c_t tr td:nth-child(odd) {color:#555;}
+#asis-scf .container .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-scf .container .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-scf .container .p_i_c_t strong {display:none;}
+
+
+#asis-scf .container .reward_assess {width:100%; margin:50px 0 40px;}
+#asis-scf .container .reward_assess p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-scf .container .reward_assess div {font-size:.85rem; color:#555;}
+#asis-scf .container .reward_assess p {font-size:.85rem; color:#555;}
+#asis-scf .container .reward_assess .reward_assess_t {width:100%; margin:5px 0 10px;}
+#asis-scf .container .reward_assess .reward_assess_t tr td{border:1px solid #ddd; padding:.7rem; vertical-align: middle; line-height: 1.1rem;  color:#222; font-size:.825rem;}
+#asis-scf .container .reward_assess .reward_assess_t .r_a_t_1, #investment_detail .reward_assess .reward_assess_t .r_a_t_2, #investment_detail .reward_assess .reward_assess_t .r_a_t_3 {background-color: #fff4e4; border-bottom:1px solid #222!important;}
+#asis-scf .container .reward_assess .reward_assess_t .r_a_t_4 {background-color: #fcf4f5;}
+
+
+
+#asis-scf .container .reward_plan .content {margin:10px 0 50px;}
+#asis-scf .container .reward_plan .title{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:0 0 10px;}
+#asis-scf .container .reward_plan .reward_plan_c1_cont {margin-bottom:20px; }
+#asis-scf .container .reward_plan .reward_plan_c1_cont span:first-child {background-color:#947a75; color:#fff!important; font-size:1rem!important; padding:.5rem 1rem; font-weight:400; font-family:"NotoSansKR", sans-serif;  }
+#asis-scf .container .reward_plan span {color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-scf .container .invest_point {margin:50px 0 70px;}
+#asis-scf .container .invest_point .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-scf .container .invest_point .invest_point_cont span{color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+#asis-scf .container .invest_point .invest_point_cont span strong {display:block; color:#333; font-weight: 500; font-size:1rem!important; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-scf .file_upload_tit span{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-scf .file_upload ul li img {display:none;}
+#asis-scf .file_upload ul{display:flex; flex-wrap: wrap; margin-top:20px;}
+#asis-scf .file_upload ul li{ margin-bottom:20px;}
+#asis-scf .file_upload ul li a {border:1px solid #ee321f; color:#ee321f; padding:.3rem .7rem; border-radius:.2rem; margin-right:.5rem;}
+
+
+#asis-scf .invest_notice {margin-bottom:70px;}
+#asis-scf .invest_notice_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:45px 0 10px;}
+#asis-scf .invest_notice ul li {border:1px solid #aaa; padding:.7rem 1rem; margin-bottom:10px;}
+#asis-scf .invest_notice a span{color:#222; font-size:1rem!important;}
+#asis-scf .invest_notice p {display:none; border-top:1px solid #aaa; margin-top:1rem; padding:1rem 0; color:#777; font-size:.85rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+@media (min-width:768px){
+
+#asis-scf .invest_point .invest_point_tit {font-size:1.4rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-scf .invest_point .invest_point_cont {display:flex; justify-content: space-between; text-align: center; padding:1rem 1rem 0;  margin-bottom:50px;}
+#asis-scf .invest_point .invest_point_cont span {font-size:.825rem!important; color:#777; font-weight: 400; line-height: 1.1rem; font-family: Nunito,sans-serif;  margin-bottom:0px;}
+#asis-scf .invest_point .invest_point_cont span strong {font-weight: 500; display: block; font-size:1.2rem; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+#asis-scf .container {max-width:100%!important;}
+
+
+
+#asis-scf p span {font-size:1.4rem!important;}
+#asis-scf .container .reward_assess p span {font-size:1.4rem!important;}
+#asis-scf .container .reward_plan .title{font-size:1.4rem!important;}
+
+#asis-scf .container .invest_point .invest_point_tit {font-size:1.4rem!important; }
+#asis-scf .file_upload_tit span{font-size:1.4rem!important;}
+#asis-scf .invest_notice_tit {font-size:1.4rem!important;}
+
+}
+
+@media (min-width:1050px){
+
+#asis-scf {width:750px;}
+#asis-scf img {width:750px; }
+
+#asis-scf .container {max-width:750px!important;}
+
+
+
+}
+
+
+/********************************************************AS-IS 상품(주담대) 상세보기*****************************************************/
+
+#asis-judam p, #asis-judam a, #asis-judam span, #asis-judam div, #asis-judam button, #asis-judam h4, #asis-judam h5, #asis-judam a , #asis-judam ul li {font-family:"NotoSansKR", sans-serif;  margin: 0;}
+#asis-judam {width:100%; margin-left:0; padding-right:0; padding-left:0;}
+#asis-judam img {width:100%; }
+#asis-judam p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+#asis-judam .invest_point .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; }
+#asis-judam .invest_point .invest_point_cont {display:block;  padding:0;  text-align: center;  margin-bottom:50px; }
+#asis-judam .invest_point .invest_point_cont span {display:block; font-size:.85rem!important; color:#777; font-weight: 400; line-height: 1.2rem; font-family: Nunito,sans-serif; margin-bottom:30px;}
+#asis-judam .invest_point .invest_point_cont span strong {font-weight: 500; display: block; font-size:1.2rem; margin-bottom:10px; color:#222;}
+
+
+
+
+#asis-judam .new_point img{width:auto!important; }
+#asis-judam .new_point p {margin-left:0!important;}
+#asis-judam .new_point .txt {font-size:.9rem!important; margin-left:0!important; line-height: 1.4!important; margin-top:10px; }
+#asis-judam .new_point .tit {font-size:1.2rem!important; font-weight:500!important;}
+
+
+#asis-judam .law img {width:auto;}
+#asis-judam .law .posting_check_img	{display:flex; margin-top:15px;}
+#asis-judam .law span {color:#222!important; font-weight: 500; font-size:1.4rem;}
+#asis-judam .law .law-name {font-size:1.2rem!important; font-weight: 500; }
+
+
+#asis-judam .bn-wrap {display:block!important; }
+#asis-judam .bn-wrap img {width:100%!important;}
+#asis-judam .bn-wrap img:last-child {margin-left:0!important; margin-top:10px!important;}
+
+
+
+#asis-judam .p_i_c_t {width:100%; }
+#asis-judam .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-judam .p_i_c_t tr td:nth-child(odd) {color:#555; background-color: rgb(239, 239, 239)!important; text-align: left!important;}
+#asis-judam .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-judam .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-judam .p_i_c_t strong {display:none;}
+
+
+#asis-judam .posting_tbl_check td {font-size:.85rem!important;}
+#asis-judam .posting_tbl_check tr td:nth-child(1), #asis-judam .posting_tbl_check tr td:nth-child(3) {text-align: center!important; font-size:.9rem!important; color:222!important; font-weight: 500!important;}
+
+
+#asis-judam .container {padding-right:0; padding-left:0; max-width:100%!important; }
+#asis-judam .container .invest_orga {margin:50px 0;}
+#asis-judam .container .invest_orga .title {display:none;}
+#asis-judam .container .content span {font-size:1.4rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; }
+#asis-judam .container .content p {font-size:.9rem; color:#555;}
+#asis-judam .container .p_i_c_t {width:100%; margin-top:5px; }
+#asis-judam .container .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-judam .container .p_i_c_t tr td:nth-child(odd) {color:#555;}
+#asis-judam .container .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-judam .container .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-judam .container .p_i_c_t strong {display:none;}
+
+
+
+
+#asis-judam .safe_update {margin-top:50px;}
+#asis-judam .safe_update .safe_update_tit {font-size:1.4rem; color:#222; font-weight: 500; margin-left:-5px;}
+#asis-judam .safe_update .safe_update_c .safe_upadat_ct {font-size:.9rem; color:#777; margin:10px 0;}
+#asis-judam .safe_update .safe_update_c .safe_update_t table {border:1px solid #ddd; width:100%;}
+#asis-judam .safe_update .safe_update_c .safe_update_t table td {border:1px solid #ddd; padding:.5rem .5rem; font-size:.825rem; letter-spacing: -.5px; color:#222; vertical-align: middle;}
+#asis-judam .safe_update .safe_update_c .safe_update_t table td:nth-child(1) {background-color:rgb(239, 239, 239); white-space: nowrap; }
+#asis-judam .safe_update .safe_update_c .safe_update_t table td p a {text-align:center; display:inline-block; width:100%; white-space: nowrap; border:1px solid #ccc; padding:.3rem .5rem; border-radius:.2rem; color:#555;}
+#asis-judam .safe_update .safe_update_c .safe_update_t table td p a:hover, #asis-judam .safe_update .safe_update_c .safe_update_t table td p a:active {background-color:#eee;}
+#asis-judam p span strong {font-size:.85rem; font-weight: 500; display: inline-block;}
+
+
+
+
+#asis-judam .container .reward_assess {width:100%; margin:50px 0 40px;}
+#asis-judam .container .reward_assess p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-judam .container .reward_assess div {font-size:.85rem; color:#555;}
+#asis-judam .container .reward_assess p {font-size:.85rem; color:#555;}
+#asis-judam .container .reward_assess .reward_assess_t {width:100%; margin:5px 0 10px;}
+#asis-judam .container .reward_assess .reward_assess_t tr td{border:1px solid #ddd; padding:.7rem; vertical-align: middle; line-height: 1.1rem;  color:#222; font-size:.825rem;}
+#asis-judam .container .reward_assess .reward_assess_t .r_a_t_1, #investment_detail .reward_assess .reward_assess_t .r_a_t_2, #investment_detail .reward_assess .reward_assess_t .r_a_t_3 {background-color: #fff4e4; border-bottom:1px solid #222!important;}
+#asis-judam .container .reward_assess .reward_assess_t .r_a_t_4 {background-color: #fcf4f5;}
+
+
+#asis-judam .container .reward_plan .content {margin:20px 0 50px;}
+#asis-judam .container .reward_plan .title{font-size:1.4rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:0 0 10px;}
+#asis-judam .container .reward_plan .reward_plan_c1_cont {margin-bottom:20px; }
+#asis-judam .container .reward_plan .reward_plan_c1_cont strong span{background-color:#947a75; color:#fff!important; font-size:1rem!important; padding:.5rem 1rem; font-weight:400; font-family:"NotoSansKR", sans-serif;   }
+#asis-judam .container .reward_plan span {color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-judam .container .invest_point {margin:50px 0 70px;}
+#asis-judam .container .invest_point .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-judam .container .invest_point .invest_point_cont span{color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+#asis-judam .container .invest_point .invest_point_cont span strong {display:block; color:#333; font-weight: 500; font-size:1rem!important; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-judam .file_upload_tit span{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-judam .file_upload ul li img {display:none;}
+#asis-judam .file_upload ul{display:flex; flex-wrap: wrap; margin-top:20px;}
+#asis-judam .file_upload ul li{ margin-bottom:20px;}
+#asis-judam .file_upload ul li a {border:1px solid #ee321f; color:#ee321f; padding:.3rem .7rem; border-radius:.2rem; margin-right:.5rem;}
+
+
+#asis-judam .invest_notice {margin-bottom:70px;}
+#asis-judam .invest_notice_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:45px 0 10px;}
+#asis-judam .invest_notice ul li {border:1px solid #aaa; padding:.7rem 1rem; margin-bottom:10px;}
+#asis-judam .invest_notice a span{color:#222; font-size:1rem!important;}
+#asis-judam .invest_notice p {display:none; border-top:1px solid #aaa; margin-top:1rem; padding:1rem 0; color:#777; font-size:.85rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+@media (min-width:768px){
+
+#asis-judam .invest_point .invest_point_tit {font-size:1.4rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-judam .invest_point .invest_point_cont {display:flex; justify-content: space-between; text-align: center; padding:1rem 1rem 0;  margin-bottom:50px;}
+#asis-judam .invest_point .invest_point_cont span {font-size:.825rem!important; color:#777; font-weight: 400; line-height: 1.1rem; font-family: Nunito,sans-serif; margin-bottom:0px;}
+#asis-judam .invest_point .invest_point_cont span strong {font-weight: 500; display: block; font-size:1.2rem; margin-bottom:15px; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+#asis-judam .bn-wrap {display:flex!important; }
+#asis-judam .bn-wrap img {width:367px!important;}
+#asis-judam .bn-wrap img:last-child {margin-left:15px!important; margin-top:0!important;}
+
+
+
+
+#asis-judam .container {max-width:100%!important;}
+
+
+#asis-judam p span {font-size:1.4rem!important;}
+#asis-judam .invest_point .invest_point_tit {font-size:1.4rem!important; }
+#asis-judam .container .reward_assess p span {font-size:1.4rem!important;}
+#asis-judam .container .invest_point .invest_point_tit {font-size:1.4rem!important; }
+#asis-judam .file_upload_tit span{font-size:1.4rem!important;}
+#asis-judam .invest_notice_tit {font-size:1.4rem!important; }
+
+
+
+}
+
+@media (min-width:1050px){
+
+#asis-judam {width:750px;}
+#asis-judam img {width:750px; }
+
+#asis-judam .container {max-width:750px!important;}
+
+
+
+}
+
+
+/********************************************************AS-IS 상품(부동산) 상세보기*****************************************************/
+
+#asis-dongsan p, #asis-dongsan a, #asis-dongsan span, #asis-dongsan div, #asis-dongsan button, #asis-dongsan h4, #asis-dongsan h5, #asis-dongsan a , #asis-dongsan ul li {font-family:"NotoSansKR", sans-serif;  margin: 0;}
+#asis-dongsan {width:100%; margin-left:0; padding-right:0; padding-left:0;}
+#asis-dongsan img {width:100%; }
+#asis-dongsan p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+#asis-dongsan .invest_point:nth-child(1) .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom:30px;}
+#asis-dongsan .invest_point:nth-child(1) p {margin-left:0!important;}
+#asis-dongsan .invest_point:nth-child(1) p span {display:block;  font-size:.83rem!important; color:#555; font-weight: 400; line-height: 1.2rem; font-family: Nunito,sans-serif;  margin-top:-30px;}
+#asis-dongsan .invest_point:nth-child(1) p span strong span {font-weight: 500; display: block; font-size:1.1rem!important; color:#d15b39; font-family:"NotoSansKR", sans-serif;}
+
+#asis-dongsan .invest_point:nth-child(2) .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom:15px; margin-top:20px;}
+#asis-dongsan .invest_point:nth-child(2) p {margin-left:0!important;}
+#asis-dongsan .invest_point:nth-child(2) p span {display:block;  font-size:.83rem!important; color:#555; font-weight: 400; line-height: 1.2rem; font-family: Nunito,sans-serif;  margin-top:-15px;}
+#asis-dongsan .invest_point:nth-child(2) p span strong span {font-weight: 500; display: block; font-size:1.1rem!important; color:#d15b39; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-dongsan .p_i_c_t {width:100%; }
+#asis-dongsan .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-dongsan .p_i_c_t tr td:nth-child(odd) {color:#555; background-color: rgb(239, 239, 239)!important; text-align: left!important;}
+#asis-dongsan .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-dongsan .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-dongsan .p_i_c_t strong {display:none;}
+
+
+#asis-dongsan .container {padding-right:0; padding-left:0; max-width:100%!important; }
+#asis-dongsan .container .invest_orga .title {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:70px 0 10px;}
+#asis-dongsan .container .invest_orga .content p{font-size:.83rem!important; color:#333; font-weight: 400; font-family: Nunito,sans-serif; line-height: 1.3rem;}
+
+#asis-dongsan .container .prdt_summ .title{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:50px 0 10px;}
+#asis-dongsan .container .prdt_summ .content p span{font-size:.85rem!important; color:#333; font-weight: 400; font-family: Nunito,sans-serif;}
+
+
+
+#asis-dongsan .container .p_i_c_t {width:100%; margin-top:5px; }
+#asis-dongsan .container .p_i_c_t tr td {padding:.7rem; border:1px solid #ddd; vertical-align: middle; line-height: 1.1rem;  }
+#asis-dongsan .container .p_i_c_t tr td:nth-child(odd) {color:#555;}
+#asis-dongsan .container .p_i_c_t tr td:nth-child(even) {color:#222;}
+#asis-dongsan .container .p_i_c_t tr td span {font-family: Nunito,sans-serif; font-size:.825rem!important; letter-spacing:-.5px;}
+#asis-dongsan .container .p_i_c_t strong {display:none;}
+
+
+#asis-dongsan .container .reward_assess {width:100%; margin:50px 0 40px;}
+#asis-dongsan .container .reward_assess .reward_assess_tit{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:0 0 10px;}
+#asis-dongsan .container .reward_assess p span {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-dongsan .container .reward_assess div {font-size:.85rem; color:#555;}
+#asis-dongsan .container .reward_assess p {font-size:.85rem; color:#555;}
+#asis-dongsan .container .reward_assess .reward_assess_t {width:100%; margin:5px 0 10px;}
+#asis-dongsan .container .reward_assess .reward_assess_t tr td{border:1px solid #ddd; padding:.7rem; vertical-align: middle; line-height: 1.1rem;  color:#222; font-size:.825rem;}
+#asis-dongsan .container .reward_assess .reward_assess_t .r_a_t_1, #investment_detail .reward_assess .reward_assess_t .r_a_t_2, #investment_detail .reward_assess .reward_assess_t .r_a_t_3 {background-color: #fff4e4; border-bottom:1px solid #222!important;}
+#asis-dongsan .container .reward_assess .reward_assess_t .r_a_t_4 {background-color: #fcf4f5;}
+
+
+
+#asis-dongsan .container .reward_plan {margin:50px 0}
+#asis-dongsan .container .reward_plan .title{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:0 0 20px;}
+#asis-dongsan .container .reward_plan .reward_plan_c1_cont {margin-bottom:20px; }
+#asis-dongsan .container .reward_plan .reward_plan_c1_cont span:first-child {background-color:#947a75; color:#fff!important; font-size:1rem!important; padding:.5rem 1rem; font-weight:400; font-family:"NotoSansKR", sans-serif;  }
+#asis-dongsan .container .reward_plan span {color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+#asis-dongsan .container .safe_update .safe_update_tit	{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:50px 0 10px;}
+#asis-dongsan .container .safe_update table {border:1px solid #ddd; border-collapse:collapse;}
+#asis-dongsan .container .safe_update table tr td {border:1px solid #ddd; vertical-align: middle; padding:.5rem; font-family: Nunito,sans-serif; font-size:.8rem!important; color:#222; text-align: left;}
+#asis-dongsan .container .safe_update table tr td a {border:1px solid #ee321f; color:#ee321f; padding:.3rem .5rem; white-space: nowrap; border-radius: .2rem; font-size:.78rem; letter-spacing: -1px;}
+#asis-dongsan .container .safe_update table tr td:nth-child(1) {font-weight: 600; width:40%!important;}
+#asis-dongsan .container .safe_update table tr td:nth-child(3) {text-align:center;}
+
+
+#asis-dongsan .container .invest_point {margin:50px 0 30px;}
+#asis-dongsan .container .invest_point .invest_point_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-dongsan .container .invest_point .invest_point_cont span{color:#555; font-size:.9rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif; margin-bottom:30px; text-align:center;}
+
+#asis-dongsan .container .invest_point .invest_point_cont span strong {display:block; color:#333; font-weight: 500; font-size:1rem!important; font-family:"NotoSansKR", sans-serif; margin-bottom:10px;}
+
+
+#asis-dongsan .file_upload_tit span{font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+#asis-dongsan .file_upload ul li img {display:none;}
+#asis-dongsan .file_upload ul{display:flex; flex-wrap: wrap; margin-top:20px;}
+#asis-dongsan .file_upload ul li{ margin-bottom:20px;}
+#asis-dongsan .file_upload ul li a {border:1px solid #ee321f; color:#ee321f; padding:.3rem .7rem; border-radius:.2rem; margin-right:.5rem;}
+
+
+#asis-dongsan .invest_notice {margin-bottom:70px;}
+#asis-dongsan .invest_notice_tit {font-size:1.2rem!important; font-weight: 500; color:#222; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; margin:45px 0 10px;}
+#asis-dongsan .invest_notice ul li {border:1px solid #aaa; padding:.7rem 1rem; margin-bottom:10px;}
+#asis-dongsan .invest_notice a span{color:#222; font-size:1rem!important;}
+#asis-dongsan .invest_notice p {display:none; border-top:1px solid #aaa; margin-top:1rem; padding:1rem 0; color:#777; font-size:.85rem!important; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+@media (min-width:768px){
+
+#asis-dongsan p span {font-size:1.4rem!important;}
+
+#asis-dongsan .container {max-width:100%!important;}
+
+
+#asis-dongsan .invest_point:nth-child(1) .invest_point_tit {font-size:1.4rem!important; }
+#asis-dongsan .invest_point:nth-child(2) .invest_point_tit {font-size:1.4rem!important;}
+
+#asis-dongsan .container .invest_orga .title {font-size:1.4rem!important;}
+#asis-dongsan .container .prdt_summ .title{font-size:1.4rem!important;}
+#asis-dongsan .container .reward_plan .title{font-size:1.4rem!important;}
+#asis-dongsan .container .reward_assess .reward_assess_tit{font-size:1.4rem!important;}
+#asis-dongsan .file_upload_tit span{font-size:1.4rem!important; padding-top:50px; display:block;}
+#asis-dongsan .invest_notice_tit {font-size:1.4rem!important;}
+
+
+#asis-dongsan .container .safe_update .safe_update_tit	{font-size:1.4rem!important;}
+#asis-dongsan .container .safe_update table tr td {padding:1rem; font-family: Nunito,sans-serif;}
+
+
+
+#asis-dongsan .container .invest_point .invest_point_cont span {text-align:left!important;}
+#asis-dongsan .container .invest_point .invest_point_cont span br {display:none;}
+
+}
+
+@media (min-width:1050px){
+
+#asis-dongsan {width:750px;}
+#asis-dongsan img {width:750px; }
+
+#asis-dongsan .container {max-width:750px!important;}
+
+
+
+}

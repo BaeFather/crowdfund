@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+    /* PC */
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; }
+	#recruit { width:100%; word-spacing:-1px;  text-align: left;}
+	ul li {list-style:none;}
+	#recruit .img1_1 {width:1150px; position:relative;}
+	#recruit .img1,.img4 {text-align: center;} 
+	#recruit .img4 {display: inline-block; margin-top:80px;} 
+	#recruit .img2,.img3 {clear:both; padding-top:120px; text-align: center;}
+	#recruit .img3 {padding-bottom: 10px;}
+	
+	
+	/*hello 원합니다, 행동합니다.*/
+	#recruit .title {position: absolute; top:-325px; left:0; font-size: 46px; color:#fff; line-height: 50px; font-weight: 300;}
+	#recruit .img1_1 .btn a {position: absolute; top:-140px; left:0; background-color:#1a1c47; padding:20px 90px 20px 40px; color:#fff; font-size: 22px; font-weight: 300; text-decoration: none;}
+	#recruit .num {position: absolute; top:18px; right:35px; background-color:#fff; width:40px; height:40px; color:#222; font-size: 22px; font-weight: 400; border-radius:50%; text-align: center; padding-top:3px; box-sizing: border-box;}
+	#recruit .text1 {width:1150px; padding:70px 0 0;}
+	#recruit .text1 ul li {float:left;}
+	#recruit .word {font-size:18px; color:#777; line-height: 24px; margin-top:20px; padding-top:30px; border-top:1px solid #999; font-weight: 300;}
+	#recruit .word p{font-size:26px; color:#222; font-weight: 300; }
+	#recruit .title01{font-size:38px; line-height:40px; font-weight:300;}
+
+	.pd01{width:310px;}
+	.t01{width:290px;}
+	.t02{width:325px;}
+	.t03{width:225px;}
+	.pd02{width:310px;}
+	.t04{width:325px}
+	.t05{width:305px}
+	.t06{width:210px}
+	
+	
+
+
+	
+	/*hello 지원합니다*/
+	#recruit .text2 {width:1150px; padding:70px 0 0;}
+	#recruit .text2 ul li {float:left;}
+	#recruit .benefit {font-size:18px; color:#777; line-height: 24px; padding-bottom:30px; font-weight: 300;}
+	#recruit .benefit p{font-size:26px; color:#222; font-weight: 300; }
+	#recruit .benefit p span{vertical-align: bottom;}
+	#recruit .title02{font-size:38px; line-height:40px; font-weight:300;}
+	
+	.pd03 {width:297px;}
+	.t07{width:300px;}
+	.t08{width:300px;}
+	.t09{width:253px;}
+	.t10{width:297px; padding-top:36px; padding-bottom:87px;}
+	.t11{width:300px; padding-top:36px; padding-bottom:87px;}
+	.t12{width:300px; padding-top:36px; padding-bottom:87px;}
+	.t13{width:253px; padding-top:36px; padding-bottom:87px;}
+	
+	
+	
+	
+	
+	/*공고부분*/
+	#recruit .title03{font-size:32px; line-height:40px; font-weight:300; padding-bottom: 50px;}
+	#recruit .tab {width:1150px;}
+	#recruit .tab ul li {float:left; width:158px; height: 50px; border:1px solid #999; margin-right: 30px; text-align: center; padding-top:10px; box-sizing: border-box;}
+	#recruit .tab a {display:block; text-decoration: none; font-size:18px; color:#222;}
+	#recruit .tab .on {background-color: #222; border: none;}
+	#recruit .tab .on a{color:#fff;}
+
+	#recruit .board {clear:both; width:1150px; padding: 50px 0 100px;}
+	#recruit .board table {width:1150px; border-top:2px solid #555; border-collapse: separate; border-spacing: 0px;}
+	#recruit .board table tr td {border-bottom:1px solid #ddd; height: 80px;}
+	#recruit .board .type {width:230px; padding-left: 50px;  font-size:18px; color:#555;}
+	#recruit .board .subject {width:480px;  font-size:18px; color:#222; text-align: left;}
+	#recruit .board .date {width:90px;  font-size:16px; color:#777; text-align: center;}
+	#recruit .board .r_bt {width:350px; text-align: center;}
+	#recruit .board .r_bt a{width:130px ;text-align: center; padding:5px 25px; border: 1px solid #ee321f; border-radius: 20px; color:#ee321f; font-size:15px;}
+
+

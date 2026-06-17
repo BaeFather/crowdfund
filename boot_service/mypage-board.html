@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="utf-8" />
+        <title>마이페이지-투자관리</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+
+	
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+
+		<!-- chart js cdn -->
+		<script src="./assets/js/chart.js"></script>
+	
+ 		<!-- third party js -->
+        <script src="./assets/js/vendor/apexcharts.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="./assets/js/pages/demo.dashboard.js"></script>
+        <!-- end demo js-->
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+	
+	
+		<!-- contents css -->
+		<link href="./assets/css/page/mypage.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/apexcharts.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+    </head>
+
+    <body class="loading">
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="mypage-dashboard">
+			<!-- tab start -->
+			<div class="tab-nav">
+				<div class="nav-flex">	
+                	<ul class="nav nav-pills">
+                    	<li class="nav-item">
+                    		<a href="#"  class="nav-link active">투자관리</a>
+                    	</li>
+                        <li class="nav-item">
+                        	<a href="mypage-list.html" class="nav-link">투자내역</a>
+                        </li>
+						<li class="nav-item">
+                            <a href="mypage-schedule.html" class="nav-link">상환스케줄</a>
+                        </li>
+						<li class="nav-item">
+                        	<a href="mypage-deposit.html" class="nav-link">예치금/포인트</a>
+                       </li>
+                	</ul>
+				</div>	
+			</div>
+			<!-- tab end -->	
+			<div class="contents-wrap">
+				<!-- 대시보드 시작-->	
+				<div class="tab-content">
+					<div class="tab-pane show active" id="bordered-tabs-code">
+						<div class="container-fluid">
+							<div class="row">
+								<!-- 보유예치금 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-deposit">
+											<h4>보유 예치금<span><button class="btn" type="button">출금</button></span></h4>
+											<p>10,151,041원</p>
+										</div> 
+									</div>
+								</div> 
+								<!-- 보유예치금 끝-->
+								<!-- 예치금계좌 기본 시작-->
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-account">
+											<h4>예치금 계좌 - <span>에이코리아대부(헬로펀딩)</span></h4>
+											<p>신한 1230499191891<i class="mdi mdi-content-copy"></i></p>
+										</div>
+									</div>
+								</div>
+								<!-- 예치금계좌 기본 끝-->
+								<!-- 헬로포인트 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-point">
+											<h4>헬로포인트 <i class="uil-question-circle" tabindex="0"  data-toggle="popover"  data-placement="top" data-trigger="focus" title="" data-content="헬로포인트란?" ></i><span><button class="btn" type="button">쿠폰등록</button></span></h4>
+											<p>4,000P</p>
+										</div> 
+									</div>
+								</div> 
+								<!-- 헬로포인트 끝-->
+								<!-- 당월수익 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-monthly-income">
+											<h4>2022년 6월 수익</h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>투자금액</td>
+															<td>54,000,000원</td>
+														</tr>
+														<tr>
+															<td>이자수익(지급완료)</td>
+															<td>11,200,000원</td>
+														</tr>
+														<tr>
+															<td>이자수익(지급예정)</td>
+															<td>1,200,000원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div> 
+								<!-- 당월수익 끝-->
+								<!-- 현재투자내역 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-investment-details">
+											<h4>현재투자내역</h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>현재투자금액</td>
+															<td class="color-point">5,471,000원</td>
+														</tr>
+														<tr>
+															<td>-부동산</td>
+															<td>5,000,000원</td>
+														</tr>
+														<tr>
+															<td>-비 부동산</td>
+															<td>471,000원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div> 
+								<!-- 현재투자내역 끝-->
+								<!-- 누적현황 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-cumulative-status">
+											<h4>누적현황</h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>누적수익금액</td>
+															<td>14,500,000원</td>
+														</tr>
+														<tr>
+															<td>누적투자금액</td>
+															<td>14,500,000원</td>
+														</tr>
+														<tr>
+															<td>누적상환금액</td>
+															<td>14,500,000원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div> 
+								<!-- 누적현황 끝-->
+								<!-- 연 환산 수익률 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-rate-of-return">
+											<h4>연 환산 수익률</h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>세전 수익률</td>
+															<td>12.4%</td>
+														</tr>
+														<tr>
+															<td>세후 수익률</td>
+															<td>10.1%</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div> 
+								<!-- 연 환산 수익률 끝-->
+								<!-- 지연/연체/손실 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-delay-loss">
+											<h4>지연·연체/손실 <i class="uil-question-circle" tabindex="0"  data-toggle="popover"  data-placement="top" data-trigger="focus" title="" data-content="지연·연체/손실이란?" ></i></h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td>지연·연체 원금</td>
+															<td>223,456원</td>
+														</tr>
+														<tr>
+															<td>손실 원금</td>
+															<td>0원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div>
+								<!-- 지연/연체/손실 끝-->
+								<!-- 레퍼럴친구 모바일 시작-->	
+								<div class="col-md-4 col-xl-4 my-referral-app">
+									<div class="card d-block">
+										<div class="card-body my-referral">
+											<h4>레퍼럴 친구 <i class="uil-question-circle" tabindex="0"  data-toggle="popover"  data-placement="top" data-trigger="focus" title="" data-content="레퍼럴 친구란?" ></i><span><button class="btn" type="button">친구초대</button></span></h4>
+											<p>15명</p>
+										</div> 
+									</div>
+								</div> 
+								<!-- 레퍼럴친구 모바일 끝-->
+								<!-- 레퍼럴친구 웹 시작-->	
+								<div class="col-md-4 col-xl-4 my-referral-web">
+									<div class="card d-block">
+										<div class="card-body my-referral">
+											<h4>레퍼럴 친구 <i class="uil-question-circle" tabindex="0"  data-toggle="popover"  data-placement="top" data-trigger="focus" title="" data-content="레퍼럴 친구란?" ></i><span>15명</span></h4>
+											<p><button class="btn" type="button">친구초대</button></p>
+										</div> 
+									</div>
+								</div> 
+								<!-- 레퍼럴친구 웹 끝-->
+								<!-- 투자상품비율 시작-->	
+								<div class="col-md-4 col-xl-8">
+									<div class="card d-block">
+										<div class="card-body my-investment-ratio">
+											<h4>투자 상품 비율</h4>
+											<ul class="nav nav-tabs nav-bordered mt-3">
+                                            <li class="nav-item">
+                                                <a href="#default-tabs-preview" data-toggle="tab" aria-expanded="false" class="nav-link active">
+                                                    누적 상품 비율
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#default-tabs-code" data-toggle="tab" aria-expanded="true" class="nav-link">
+                                                    현재 상품 비율 
+                                                </a>
+                                            </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                            	<div class="tab-pane show active mypage_chart_wrap" id="default-tabs-preview">
+													<div class="mypage_chart_box">
+														<div class="mypage_chart_graph">
+															<canvas id="dougnutChart"></canvas>
+														</div>
+														<div class="mypage_chart_label">
+															<ul>
+																<li>부동산PF <span>2건</span></li>
+																<li>SCF <span>22,244,340건</span></li>
+																<li>주택담보 <span>12건</span></li>
+																<li>동산담보 <span>1건</span></li>
+															</ul>
+														</div>
+													</div>
+                                            	</div>
+
+                                            	<div class="tab-pane" id="default-tabs-code"></div>
+														
+                                            </div> <!-- end tab-content-->
+										</div> 
+									</div>
+								</div> 
+								<!-- 투자상품비율 끝-->
+
+								<script>
+										
+								new Chart(document.getElementById("dougnutChart"), {
+									type: 'doughnut',
+									data: {
+										datasets: [
+											{	
+												cutout: "45%",
+												label: "투자 상품 비율",
+												backgroundColor: ["#727cf5", "#fa5d7c","#0acf97","#0ab2cf"],
+												data: [1478,2267,1734,784]
+											}
+										]
+									},
+									options: {
+										title: {
+											display: true,
+										}
+									}
+								});
+										
+								</script>
+
+
+								<!-- 투자한도 시작-->	
+								<div class="col-md-4 col-xl-4">
+									<div class="card d-block">
+										<div class="card-body my-investment-limit">
+											<h4>투자한도 <i class="uil-question-circle" tabindex="0"  data-toggle="popover"  data-placement="top" data-trigger="focus" title="" data-content="투자한도안내" ></i><span><button class="btn" type="button">투자 한도 늘리기</button></span></h4>
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<td class="pt-2">투자 한도 (일반투자자)</td>
+															<td class="pt-2">3,000만원</td>
+														</tr>
+														<tr>
+															<td>잔여 한도</td>
+															<td class="color-point">2,400만원</td>
+														</tr>
+														<tr>
+															<td>부동산 한도</td>
+															<td>1,000만원</td>
+														</tr>
+														<tr>
+															<td>비 부동산 한도</td>
+															<td>3,000만원</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> 
+									</div>
+								</div> 
+								<!-- 투자한도 끝-->
+
+							</div>	
+						</div> 
+					</div>			
+				</div> 
+				<!-- 리스트 끝 -->	
+				
+			</div>
+		</section>
+		
+
+		
+		
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+
+
+       
+
+    </body>
+</html>

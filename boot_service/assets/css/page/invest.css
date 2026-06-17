@@ -1,0 +1,196 @@
+
+
+/*********************************
+font SET
+**********************************/
+.invest p, .invest a, .invest span , .invest th , .invest td , .invest div, .invest button, .invest h2, .invest h3, .invest h4, .invest h5, .invest ul li , .invest label , .invest .active{font-family:NotoSansKR, sans-serif;  margin: 0;}
+			
+			
+			
+/*********************************
+인풋태그 작성시 특정 칼라가 입혀지는 것 방지
+**********************************/		
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-transition: background-color 9999s ease-out; }
+
+
+/************************************************************ 투자하기 *****************************************************************************/
+
+.invest {margin:100px auto 80px;}
+.invest .container-fluid {padding:0 1.25rem; max-width:500px; background-color: #fff; margin:0 auto;}
+.invest .container-fluid h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center; margin: 40px 0 20px;}			
+.invest button:focus { outline:none!important; box-shadow:none!important;}
+			
+			
+
+/*예치금파트*/			
+.invest .container-fluid .invest-deposit {margin:30px 0;}		
+.invest .container-fluid .invest-deposit p {font-size:.925rem; color:#555; letter-spacing: -0.5px;}			
+.invest .container-fluid .invest-deposit table {width:100%; border-top:1px solid #222; margin-top:10px; border-collapse:separate;}	
+.invest .container-fluid .invest-deposit table tr th {width:35%; height:45px; line-height: 45px; background-color: #f8f8f8; border-bottom: 1px solid #e0e0e0; padding:0 .7rem; white-space: nowrap; font-size:.85rem; color:#555; text-align:left;}
+.invest .container-fluid .invest-deposit table tr th i {color:#000; margin-right:2px; display:inline-block; vertical-align:middle;  cursor:pointer;}
+.invest .container-fluid .invest-deposit table tr td {width:65%; border-bottom: 1px solid #e0e0e0; padding:0 .7rem; font-size:.85rem; color:#222; border-left:1px solid #e0e0e0; text-align: right; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.invest .container-fluid .invest-deposit table span {margin-left:3px;}
+.invest .container-fluid .invest-deposit .account-info {display:flex; justify-content:flex-end; align-items:center; margin:.3rem .7rem 0 0; }		
+.invest .container-fluid .invest-deposit .account-info button {font-size:.75rem; outline:none; text-align:center; padding:0;  letter-spacing: -0.5px;}
+.invest .container-fluid .invest-deposit .account-info i {font-size:.95rem; }
+			 
+
+			
+/*투자금액*/	
+.invest .container-fluid .to-invest .input-box {margin-top:30px;width:100%; display:flex; flex-wrap:wrap; align-items: center; position: relative; }
+.invest .container-fluid .to-invest .input-box input {padding-right:60px; text-align: right; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.9rem; border-radius:.15rem; height:calc(3rem); background-color: #fff!important;}		
+.invest .container-fluid .to-invest .input-box input::placeholder {text-align: left; font-size:.85rem; }			
+.invest .container-fluid .to-invest .input-box input:focus {border:1px solid #777;}			
+.invest .container-fluid .to-invest .input-box span {position: absolute; right: 0px; top:15px; padding: 0 20px; pointer-events: none; font-size:.85rem;}
+.invest .container-fluid .to-invest .custom-control-inline {width:100%;}					
+.invest .container-fluid .to-invest .custom-control-inline div{width:100%;  display: flex; justify-content: space-between;}		
+.invest .container-fluid .to-invest .custom-control-inline div button {border:1px solid #999; width:32%; padding:.4rem .7rem .45rem; margin-top:10px; font-size:.8rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border-radius:.15rem; color:#555;}	
+.invest .container-fluid .to-invest .custom-control-inline div .active {background-color: #333; color:#fff; border:1px solid #333; }
+		
+			
+			
+			
+			
+/*헬로포인트 아코디언*/					
+.invest .container-fluid .accordion-tap div, ul li i:before, ul li i:after {transition: all 0.3s;}			
+.invest .container-fluid .accordion-tap {margin-top:40px;}				
+.invest .container-fluid .accordion-tap h4 {color: #555!important; font-size:.85rem; text-align:left; cursor: pointer; transition:.2s; font-weight:500; margin:0; background-color: #f8f8f8; padding:1rem; border-radius: .15rem; border:1px solid #aaa;} 
+.invest .container-fluid .accordion-tap div { position:relative; overflow: hidden; max-height: 250px;  opacity: 1;  transform: translate(0, 0); transition: .3s opacity, .6s max-height;  hyphens: auto; z-index: 2;}
+.invest .container-fluid .accordion-tap li { position:relative; overflow: hidden; padding: 0; margin: 0; background: #fff;}
+.invest .container-fluid .accordion-tap ul li + li {margin-top: 10px;}
+.invest .container-fluid .accordion-tap ul li i {position: absolute; transform: translate(-6px, 0); margin-top: 22px; right: 20px;}
+.invest .container-fluid .accordion-tap ul li i:before, .invest .container-fluid .accordion-tap ul li i:after {content: ""; position: absolute;  background-color: #222; width:1px; height:6px;}
+.invest .container-fluid .accordion-tap ul li i:before {transform: translate(-2px, 0) rotate(45deg);}
+.invest .container-fluid .accordion-tap ul li i:after {transform: translate(2px, 0) rotate(-45deg);}
+.invest .container-fluid .accordion-tap ul li input[type=checkbox] {position: absolute; cursor: pointer; width: 100%; height: 100%; z-index: 1; opacity: 0; touch-action: manipulation;}
+.invest .container-fluid .accordion-tap ul li input[type=checkbox]:checked ~ h4 {color: #222;}
+.invest .container-fluid .accordion-tap ul li input[type=checkbox]:checked ~ div {max-height: 0; opacity: 0;  transition: .3s;}
+.invest .container-fluid .accordion-tap ul li input[type=checkbox]:checked ~ i:before {transform: translate(2px, 0) rotate(45deg);}
+.invest .container-fluid .accordion-tap ul li input[type=checkbox]:checked ~ i:after {transform: translate(-2px, 0) rotate(-45deg);}			
+			
+	
+			
+			
+/*헬로포인트 입력*/				
+.invest .container-fluid .accordion-tap .input-box { width:100%; display:flex; align-items: center; position:relative; margin-top:10px;} 	
+.invest .container-fluid .accordion-tap .input-box input { padding-right:40px; text-align: right; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.9rem; border-radius:.15rem; height:calc(3rem);}	
+.invest .container-fluid .accordion-tap .input-box input::placeholder {text-align: left; font-size:.85rem; }			
+.invest .container-fluid .accordion-tap .input-box input:focus {border:1px solid #777;}			
+.invest .container-fluid .accordion-tap .input-box span {position: absolute; right: 0px; padding: 10px 20px; pointer-events: none; font-size:.85rem;}				
+.invest .container-fluid .accordion-tap  p {font-size:.8rem; color:#555; text-align: right; padding:.2rem; margin-bottom:1rem; letter-spacing: -.3px; margin-right:3px;}			
+			
+		
+			
+			
+/*동일차주 테이블*/					
+.invest .container-fluid .accordion-tap table {width:100%; margin-top:10px;}	
+.invest .container-fluid .accordion-tap table tr th {background-color: #fcf4f5; border-top:1px solid #aaa; border-bottom:1px solid #aaa; padding:.5rem .7rem; white-space: nowrap; font-size:.8rem; color:#222; text-align:center;}
+.invest .container-fluid .accordion-tap table tr td {border-bottom:1px solid #e0e0e0; padding:.5rem .7rem;  font-size:.8rem; color:#555; }
+.invest .container-fluid .accordion-tap table tr th:first-child {border-right:1px solid #aaa;}				
+.invest .container-fluid .accordion-tap table tr td:first-child {border-right:1px solid #e0e0e0;}			
+.invest .container-fluid .accordion-tap table tr td:last-child {text-align:center;}			
+			
+			
+/*약관동의*/				
+.invest .container-fluid .invest-agree {margin-top:30px; text-align: center; margin-left:-10px;}			
+.invest .container-fluid .invest-agree label{color: #333; font-size: 1rem; font-weight: 500; }
+.invest .container-fluid .invest-agree label a {text-decoration:underline; color: #333; font-size: 1rem; font-weight: 500; margin-left:10px;}
+	
+			
+			
+/*기본 체크박스*/	
+.invest .container-fluid .checkbox input[type="checkbox"] {opacity:0;}
+.invest .container-fluid .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 18px; height: 18px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.invest .container-fluid .checkbox input[type="checkbox"]:checked + label:before{background: url("../../images/join/check.png") no-repeat center 50%; background-size: contain; background-color:#f64e60; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+
+			
+/*투자하기 버튼*/	
+.invest .container-fluid .invest-button button {width:100%; background-color: #ee321f; color:#fff; margin:50px 0; font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}		
+	
+			
+			
+			
+/*예치금 계좌 모달 커스텀 */
+.modal {padding-right: 0!important; }			
+.modal-dialog {max-width:420px!important; margin:0 auto; padding:.5rem; border-radius: 1rem;}				
+.account-alert .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.account-alert .modal-content .modal-header h4 {font-size:.9rem; color:#333; font-family:NotoSansKR, sans-serif; font-weight: 500; letter-spacing: -.5px; }			
+.account-alert .modal-content .modal-header .close {font-size:1rem; color:#333;}			
+.account-alert .modal-content .modal-body {margin:.5rem; text-align: center;}
+.account-alert .modal-content .modal-body img {width:18px; margin-bottom:3px; margin-right:2px;}			
+.account-alert .modal-content .modal-body p {font-family:NotoSansKR, sans-serif; font-size:.9rem;  text-align: center; margin:0; }
+.account-alert .modal-content .modal-body p:nth-child(1) {color:#222;  font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.9rem; font-weight: 400; } 	
+.account-alert .modal-content .modal-body p span {margin:0 3px; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.9rem; font-weight: 400;}	
+.account-alert .modal-content .modal-body p:nth-child(2) {color:#222;  font-family:NotoSansKR, sans-serif; font-size:.85rem; font-weight: 400;  }
+.account-alert .modal-content .modal-body p:nth-child(3) {color:#555; font-size:.85rem; line-height: 1.1rem; margin: 20px 0 15px;}
+.account-alert .modal-content .modal-footer {justify-content:center; border-top:none; padding:0;}
+
+			
+			
+/*복사 버튼*/
+.account-alert .modal-content .modal-body .small-bt {display:inline-block;  font-weight: 400; color:#222; text-align: left; vertical-align: middle; user-select: none; padding:0 .5rem; font-size:.7rem; border-radius: .15rem; border:1px solid #d5d5d5; background-color:#fff; box-shadow: none;  line-height: calc(1.4rem); cursor: pointer; font-family: Dotum, Helvetica, AppleGothic, Sans-serif; margin-bottom: 2px; margin-left:5px;}
+.account-alert .modal-content .modal-body .small-bt:focus, .account-alert .modal-content .modal-body .small-bt:active, .account-alert .modal-content .modal-body .small-bt:hover {box-shadow:none!important; outline:none; background-color:#fff; border:1px solid #d5d5d5; color:#222; cursor: pointer;}
+
+			
+			
+			
+/*투자하기 모달 커스텀 */		
+.go-invest .modal-content .modal-header {padding:.5rem; border-bottom: none;}			
+.go-invest .modal-content .modal-body {margin:.7rem 1rem 1rem; text-align: center;}		
+.go-invest .modal-content .modal-body p {font-family:NotoSansKR, sans-serif; font-size:.9rem; color:#333; text-align: center; margin:0; line-height: 1.4rem; font-weight: 400; letter-spacing: -.5px; }
+.go-invest .modal-content .modal-body span {font-family:NotoSansKR, sans-serif; font-size:.9rem; color:#d52d1c; text-align: center; margin:0; font-weight: 500; }
+.go-invest .modal-content .modal-footer {justify-content:center; border-top:none; padding:0;}
+.go-invest .modal-content .modal-footer {justify-content:center; padding:0 0 2rem; border-top:none;}
+.go-invest .modal-content .modal-footer button {margin:0 .3rem; padding:.3rem .9rem .35rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.8rem;}
+.go-invest .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:120px; outline: none; box-shadow:none;}
+.go-invest .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px; outline: none; box-shadow:none;}
+	
+			
+			
+			
+/*투자위험고지 팝업*/
+.invest-agree-modal .modal-dialog {max-width:500px!important; margin:0 auto;}
+.invest-agree-modal .modal-header { display: flex; align-items: center;}
+.invest-agree-modal .modal-header h4 {font-size:1rem; color:#222; font-weight:500;}
+.invest-agree-modal .modal-header .close {opacity:1; color:#222; font-size:1rem;  font-weight: 400;}
+.invest-agree-modal .modal-body {padding:0 2rem; }
+.invest-agree-modal .modal-body h3 {font-size:1.15rem; color:#333; text-align: center; margin: 30px 0 30px; font-weight:600;}
+.invest-agree-modal .modal-body p {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align: justify; letter-spacing: -.5px;}
+
+.invest-agree-modal .modal-body .input-wrap {background-color:#f8f8f8; border:1px solid #aaa; padding: 1.5rem 2rem;}
+.invest-agree-modal .modal-body .input-wrap input {width:50%; margin:0 auto; text-align: center; color:#222; font-size:.85rem; font-weight: 500; font-family:"NotoSansKR", sans-serif;}
+.invest-agree-modal .modal-body .input-wrap input::placeholder {color:#aaa; font-size:.85rem; font-weight: 400; text-align: center;  font-family:"NotoSansKR", sans-serif;}
+.invest-agree-modal .modal-body .input-wrap p {display:flex; align-items: center; justify-content:center; text-align: center; font-size:.85rem; color:#555; font-weight: 500; font-family:"NotoSansKR", sans-serif; letter-spacing: 0;}
+.invest-agree-modal .modal-footer {border-top:none; margin:20px 1rem 30px; display:flex; justify-content: space-between;}
+.invest-agree-modal .modal-footer .btn-confirm {margin:0; background-color:#ee321f; color:#fff; width:49%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+.invest-agree-modal .modal-footer .btn-cancel {margin:0; background-color:#aaa; color:#fff; width:49%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none;}
+
+/*투자성공 모달 커스텀 */
+.success-invest-modal .modal-content .modal-header {padding:.5rem; border-bottom: none;}
+.success-invest-modal .modal-content .modal-body {margin:.7rem 1rem 1rem; text-align: center;}
+.success-invest-modal .modal-content .modal-body h3 {font-size:1.15rem; color:#333; text-align: center; margin: 10px 0 0 0; font-weight:600;}
+.success-invest-modal .modal-content .modal-footer {justify-content:center; border-top:none; padding:0;}
+.success-invest-modal .modal-content .modal-footer {justify-content:center; padding:0 0 2rem; border-top:none;}
+.success-invest-modal .modal-content .modal-footer button {margin:0 .3rem; padding:.3rem .9rem .35rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:.8rem;}
+.success-invest-modal .modal-content .modal-footer .btn-confirm {background-color: #ee321f; color:#fff; width:120px; outline: none; box-shadow:none;}
+.success-invest-modal .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px; outline: none; box-shadow:none;}
+			
+
+@media all and (min-width:500px) {
+
+.invest {margin:0 auto; background-color: #fafafa; padding:50px 0 80px; }
+.invest .container-fluid {padding:0 1.25rem; max-width:500px; background-color: #fff; border:1px solid #ddd; }
+
+
+}
+
+
+@media all and (min-width:900px) {
+.invest {padding:60px 0 80px; }
+
+	
+}

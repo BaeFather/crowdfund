@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /
+
+User-agent: googlebot
+User-agent: googlebot-mobile
+User-agent: naverbot
+User-agent: yeti
+User-agent: cowbot
+User-agent: daumoa
+User-agent: daumos
+User-agent: bingbot
+User-agent: msnbot
+Disallow: /adm/
+Allow: /bbs/
+Allow: /company/
+Allow: /etc/
+Allow: /event/
+Allow: /investment/
+Allow: /loan/
+Allow: /member/
+Allow: /news/

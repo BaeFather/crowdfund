@@ -1,0 +1,629 @@
+<?
+include_once("_common.php");
+
+if( preg_match("/index_m\./i", $_SERVER['PHP_SELF']) ) { msg_replace("", "/toomics/"); }
+
+if(G5_IS_MOBILE) {
+	include_once("index_m.html");
+	return;
+}
+
+include_once(G5_LIB_PATH.'/nujuk_state.lib.php');
+
+// 헬로펀딩 투자현황 (통계데이터)
+$NUJUK_CACHE = getNujukState();
+$NUJUK_STATUS['investAmount']       = price_cutting($NUJUK_CACHE["investAmount"]);				// 누적대출액
+$NUJUK_STATUS['repayPrincipal']     = price_cutting($NUJUK_CACHE["repayPrincipal"]);			// 누적상환액
+$NUJUK_STATUS['overduePerc']        = floatRtrim($NUJUK_CACHE["overduePerc"]);						// 연체율
+
+$app_id = trim($_REQUEST['app_id']);
+$response_idx = trim($_REQUEST['response_idx']);
+
+// app_id 가 toomics 가 아닐경우 아웃시킴 -------
+if (!$app_id or $app_id<>"toomics") {
+	?>
+	<script>
+	alert("잘못된 접근입니다.");
+	self.close();
+	</script>
+	<?
+	exit;
+}
+// ----------------------------------------
+
+// response_idx 가 없을경우 아웃시킨 ------------
+if (!$response_idx) {
+	?>
+	<script>
+	alert("회원 구분값 오류");
+	self.close();
+	</script>
+	<?
+	exit;
+}
+// ----------------------------------------
+
+
+// 중복 가입 체크 -----------------------------
+$DUPREQ  = sql_fetch("SELECT count(mb_no) AS cnt FROM g5_member WHERE pid='".$app_id."' AND mb_3='".$response_idx."'");
+$DUPREQ2 = sql_fetch("SELECT count(mb_no) AS cnt FROM g5_member_drop WHERE pid='".$app_id."' AND mb_3='".$response_idx."'");
+if($DUPREQ['cnt'] || $DUPREQ2['cnt']) {
+	$dup_request = 1;
+}
+// ----------------------------------------
+
+
+// 리턴 url 정의 -----------------------------
+if( preg_match("/dev\.hellofunding/i", $_SERVER['HTTP_HOST']) ) {
+	$callback_url = "https://dev.hellofunding.co.kr:4443/toomics2/toomics_curl_test.php";
+}
+else {
+	$callback_url = "https://www.hellofunding.co.kr/toomics/toomics_curl_test.php";
+}
+// ----------------------------------------
+?>
+<?
+if ($dup_request == 1) {
+	?>
+	<script>
+	alert("이미 참여하신 이벤트 입니다.");
+	self.close();
+	</script>
+	<?
+	exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes" />
+<title>투믹스-헬로펀딩</title>
+<link rel="stylesheet" type="text/css" href="css/global.css?v=1" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript">
+var idpw_type = "<?=$idpw_type?>";
+var id_min_length = <?=$ID_LIMIT[$idpw_type]['min_length']?>;
+var id_max_length = 40;
+var pw_min_length = <?=$PW_LIMIT[$idpw_type]['min_length']?>;
+var pw_max_length = <?=$PW_LIMIT[$idpw_type]['max_length']?>;
+var pw_describe   = "<?=$PW_LIMIT[$idpw_type]['describe']?>";
+var toomics_curl  = "<?=$callback_url?>";
+</script>
+<script type="text/javascript" src="join.js?ymd=20191209"></script>
+</head>
+<body>
+
+
+
+
+<!-- 상단 시작 -->
+
+<div class="container-fluid head bg-top">
+    <div class="top">
+		<div class="container">
+				<img src="img/logo.png" height='40px' class="mt-4 float-left">
+
+
+				<h4 class="mt-4 font-extrabold text-right float-right color-blue">1588-6760</h4>
+				<div class="clearfix"></div>
+			<div class="row">
+			<div class="col-md-5 col-lg-5">
+				<img src="img/title_1.png" class="img-fluid wow fadeInLeft" style="margin-top: 120px;" >
+				<img src="img/title_2.png" class="img-fluid wow slideInRight"  style="margin-top: 16px;">
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="container-fluid" style="background-color: #f4c744;">
+	<div class="container-1150">
+		<div class="row">
+			<div style="width: 300px;" class="text-center">
+				<h4 style="color: #191e54; font-weight: 900; margin-top: 48px;">헬로펀딩 간편 회원가입하고<br>
+투믹스 5코인 받으세요!</h4>
+					<img src="img/toomics_coin.png" class="img-fluid">
+			</div>
+			<div style="width: 600px; margin-top: 16px;">
+				<div id="joins" class="pl-4 pr-4 pt-4 pb-0">
+
+					<div id="quick_join" class="quick_join">
+						<form name="frmJoin" id="frmJoin">
+		<input type="hidden" id="ordertime"   name="ordertime"   value="<?=time()?>" />
+		<input type="hidden" id="member_type" name="member_type" value="1" />
+		<input type="hidden" id="is_sign"     name="is_sign"     value="N" />
+		<input type="hidden" id="mb_dupinfo"  name="mb_dupinfo"  value="" />
+		<input type="hidden" id="mb_ci"       name="mb_ci"       value="" />
+		<input type="hidden" id="mb_reqnum"   name="mb_reqnum"   value="" />
+		<input type="hidden" id="gender"      name="gender"      value="" />
+		<input type="hidden" id="app_id"      name="app_id"      value="<?=$app_id?>" />
+		<input type="hidden" id="response_idx" name="response_idx" value="<?=$response_idx?>" />
+
+		<div class="join_form">
+		<div class="row">
+			<div class="label_form">
+				<span class="label">이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일</span>
+				<input type="text" name="mb_id" id="mb_id" placeholder="이메일을 입력해주세요.">
+				<span class="repeat_btn bg-color-blue text-white" onClick="id_check();">중복체크</span>
+				<input type="hidden" name="mb_email" id="mb_email">
+			</div>
+	</div>
+		<div class="row">
+			<div class="label_form ">
+				<span class="label">비 &nbsp;밀 &nbsp;번 &nbsp;호</span>
+				<input type="password" name="mb_password" id="mb_password" placeholder="비밀번호 입력" onBlur="passwd_check();">
+				<div id="mb_password_error" style="display:none;margin-left:0px; padding:0;width:100%;font-size:11px;"></div>
+
+				</div>
+
+			<div class="label_form">
+				<span class="label" style="margin-left: 15px;">비밀번호 확인</span>
+				<input type="password" name="cfm_password" id="cfm_password" placeholder="비밀번호 재입력" onBlur="passwd_check();">
+				<div id="cfm_password_error" style="display:none;margin-left:15px;padding:0;width:100%;font-size:11px;"></div>
+
+				</div>
+			</div>
+			<div class="row">
+			<div class="label_form">
+				<span class="label">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</span>
+				<input type="text" name="mb_name" id="mb_name" placeholder="홍길동">
+				<select id="foreigner" name="foreigner">
+					<option value="">내국인</option>
+					<option value="1">외국인</option>
+				</select>
+		</div>
+			<div class="label_form">
+				<span class="label" style="margin-left: 15px;">생 &nbsp;년&nbsp;&nbsp;&nbsp; 월&nbsp; 일</span>
+				<input type="birth" name="mb_birth" id="mb_birth" onKeyUp="onlyDigit(this);" placeholder="ex.19800101">
+				<span class="sex_btn1" id="gender_btn1" onClick="selectGender('m');">남</span>
+				<span class="sex_btn2" id="gender_btn2" onClick="selectGender('w');">여</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="label_form">
+				<span class="label">휴대폰&nbsp; 번호</span>
+				<select id="hp_comp" name="hp_comp" onChange="provisionBlind();">
+					<option value="">통신사</option>
+					<option value="1">SKT</option>
+					<option value="2">KT</option>
+					<option value="3">LGU+</option>
+					<option value="5">알뜰폰(SKT)</option>
+					<option value="6">알뜰폰(KT)</option>
+					<option value="7">알뜰폰(LGU+)</option>
+				</select>
+
+
+				<input type="phonenumb" id="mb_hp1" name="mb_hp1" maxlength="3" onKeyUp="onlyDigit(this); if(this.value.length==3){document.frmJoin.mb_hp2.focus();}">
+				<input type="phonenumb" id="mb_hp2" name="mb_hp2" maxlength="4" onKeyUp="onlyDigit(this); if(this.value.length==4){document.frmJoin.mb_hp3.focus();}">
+				<input type="phonenumb" id="mb_hp3" name="mb_hp3" maxlength="4" onKeyUp="onlyDigit(this);">
+				<span class="certify_btn" id="auth_request" onClick="NiceSockStep1('<?=$mode?>');">인증번호받기</span>
+			</div>
+				<div class="label_form">
+				<input type="text" id="auth_num" name="auth_num" placeholder="인증번호 입력" style="margin-left: 4px;">
+				<span class="check_btn" id="auth_submit" onClick="NiceSockStep2();">확 인</span>
+
+				<div id="member_sign" class="error-block"></div>
+			</div>
+	</div>
+	</div>
+
+		<div class="row agree">
+			<p>
+				<span class="agree_list mr-1">
+					<label><input type="checkbox" id="agree_provision" name="agree_provision"> [필수] <a href="/company/provision.php" target="_blank" style="text-decoration: underline; font-weight: 800; color: white;">서비스이용약관</a>에 동의합니다.</label>
+				 </span>
+				<span class="agree_list mr-1">
+					<label><input type="checkbox" id="agree_privacy" name="agree_privacy"> [필수] <a href="/company/privacy.php" target="_blank" style="text-decoration: underline; font-weight: 800; color: white;">개인정보처리방침</a>에 동의합니다.</label>
+				</span>
+				<span class="agree_list">
+					<label><input type="checkbox" id="agree_marketing" name="agree_marketing"> [필수] <a href="/company/marketing_agreement.php" target="_blank" style="text-decoration: underline; font-weight: 800; color: white;">마케팅 정보 수집 및 활용</a>에 동의합니다.</label>
+				</span>
+			</p>
+		</div>
+
+
+		</div>
+
+	</form>
+
+	<form name="frmAuthRes">
+		<input type="hidden" name="auth_mb_name" />
+		<input type="hidden" name="auth_foreigner" />
+		<input type="hidden" name="auth_mb_birth" />
+		<input type="hidden" name="auth_gender" />
+		<input type="hidden" name="auth_hp_comp" />
+		<input type="hidden" name="auth_mb_hp" />
+    </form>
+					</div>
+				</div>
+				<div class="mt-3 mb-3">
+			<p class="join_btn" onclick="go_submit();"><span style="color: #f4c744">5코인</span> 받기</p>
+		</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="container-fluid pt-5 pb-5 if position-relative">
+<div class="container text-center d-flex justify-content-center">
+
+                <select id="principal" class="earn_numb float-left" onChange="simulation();return false;">
+                    <option value="500000">50만원</option>
+                    <option value="1000000" selected>100만원</option>
+                    <option value="3000000">300만원</option>
+                    <option value="5000000">500만원</option>
+					<option value="10000000">1,000만원</option>
+				</select>
+				<h1 class="float-left" style="margin-top: 26px;">&nbsp;을</h1>
+
+
+
+
+			</div>
+			<h2 class="text-center mt-3">헬로펀딩에 투자한다면?</h2>
+
+			<div class="container ">
+	<div class="row">
+	<div class="earning text-center wow bounceInUp" style="width:100%;">
+
+		<h3 class="text-white mt-4">예상 총수익</h3>
+				<h1 class="text-white font-light"><span id="TotalInterestPrice" class="text-white font-extrabold"></span> 원 <span style="font-size: 20px; color: white;">(세전)</span></h1>
+				<hr class="border-white-top mt-3">
+				<h3 class="text-white text-center mt-3 mb-3"><span class="text-white">14%</span>&nbsp;<span class="text-white">수익률</span> <span class="text-white">&nbsp;・&nbsp;12개월</span>&nbsp;<span class="text-white">만기</span></h3>
+				<hr class="border-white-bottom">
+				<h4 class="text-white mt-3">은행예금 대비 <span id="DiffEarning" class="text-white font-extrabold"></span> 수익</h4>
+				<p class="text-white">※세전수익률 기준</p>
+
+	</div>
+</div>
+</div>
+
+</div>
+
+
+
+<script>
+simulation = function() {
+
+	$('#TotalInterestPrice').fadeOut();
+	$('#DiffEarning').fadeOut();
+
+	var principal = Number($('#principal').val());
+	var invest_return_perc = 14;
+	var invest_period = 365;
+
+	day_interest = (principal * ( invest_return_perc / 100)) / 365
+
+	Interest = day_interest * invest_period;
+	principal_interest = principal +Interest;
+	print_principal_interest = number_format(principal_interest);
+
+	bank_interest = ((principal * 0.017 / 365) * 0.725) * invest_period;
+
+	earning_diff = bank_interest / Interest * 100;
+	//earning_diff = Interest / bank_interest ;
+
+	$('#TotalInterestPrice').html(print_principal_interest);
+	//$('#DiffEarning').html(Math.round(earning_diff) + '배');
+	$('#DiffEarning').html(Math.round('7배'));
+
+	setInterval(function() {
+		$('#TotalInterestPrice').fadeIn();
+		$('#DiffEarning').fadeIn();
+	}, 500);
+
+	return;
+}
+
+$(document).ready(function() {
+	simulation();
+});
+</script>
+
+<style>
+#mb_id::placeholder { font-size:14px; }
+#mb_password::placeholder { font-size:14px; }
+#cfm_password::placeholder { font-size:14px; }
+#mb_email::placeholder { font-size:14px; }
+#mb_name::placeholder { font-size:14px; }
+#mb_birth::placeholder { font-size:14px; }
+#mb_hp1::placeholder { font-size:14px; }
+#auth_num::placeholder { font-size:14px; }
+</style>
+
+<div class="container-fluid  bg-color-gray ">
+<div class="container invest pb-5 ">
+	<h1 class="text-center font-extrabold" style="color: #435acd">헬로펀딩 투자 현황</h1>
+	<div class="col-lg-12 p-5 text-center invest_box mt-5">
+		<div class="row">
+			<div class="col-lg-4">
+				<h5>누적대출액</h5>
+				<span class="invest_number"><strong class="total_1 font-extrabold"><?=explode("억", $NUJUK_STATUS['investAmount'])[0]?></strong>억원</span>
+			</div>
+			<div class="col-lg-4">
+				<h5>누적상환액</h5>
+				<span class="invest_number"><strong class="total_2 font-extrabold"><?=explode("억", $NUJUK_STATUS['repayPrincipal'])[0]?></strong>억원</span>
+				</div>
+			<div class="col-lg-4">
+				<h5>연체율</h5>
+				<span class="invest_number"><strong class="total_3 font-extrabold"><?=$NUJUK_STATUS['overduePerc']?></strong>%</span>
+			</div>
+		</div>
+	</div>
+	<div class="text-right date_box"><strong class="date"><?=date("Y. m. d")?> 기준</strong></div>
+</div>
+</div>
+
+
+
+
+<div class="container-fluid praise mt-5 mb-5">
+	<div class="container">
+		<h1 class="text-center font-extrabold mb-5" style="color: #435acd">헬로펀딩이 극찬받는 이유</h1>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 text-center mt-5">
+
+				<img src="img/praise_1.png" width='54px'>
+				<h3 class="font-extrabold mt-3"><span class="color-blue">신한은행</span>을<br>
+통한 완벽한 <span class="color-blue">자금관리</span></h3>
+<p>예치금, 투자금, 상환금을 신한은행에서 신탁관리합니다.</p>
+			</div>
+			<div class="col-lg-4 col-md-6 text-center mt-5">
+
+<img src="img/praise_6.png" width='54px'>
+<h3 class="font-extrabold mt-3"><span class="color-blue">국내최초 현장 LIVE <br>스트리밍</span>
+	서비스 구축</h3>
+<p>실시간 현장확인이 가능하도록 국내 최초 라이브 스트리밍 서비스를 구축하였습니다.</p>
+</div>
+<div class="col-lg-4 col-md-6 text-center mt-5">
+
+<img src="img/praise_3.png" width='54px'>
+<h3 class="font-extrabold mt-3"><span class="color-blue">투자심의위원회</span><br>
+운영</span></h3>
+<p>부동산, 담보평가, 금융, IT 최고의 전문가들이 함께합니다.</p>
+</div>
+
+
+
+			<div class="col-lg-4 col-md-6 mt-5 text-center">
+
+				<img src="img/praise_4.png" width='54px'>
+				<h3 class="font-extrabold mt-3"><span class="color-blue">최상급 보안시스템</span>의<br>
+적용</h3>
+<p>한국인터넷진흥원 웹취약점 점검을 무결점 통과하였으며, 통신정보 보안수준 A+등급을 획득하였습니다.</p>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-5 text-center">
+
+<img src="img/praise_5.png" width='54px'>
+<h3 class="font-extrabold mt-3"><span class="color-blue">자산운용사 투자
+</span><br>최대</h3>
+<p>제도권 자산운용사들로부터 다중항목 평가 승인을 통해 업계 최대 규모 펀드자금을 유치하였습니다.</p>
+</div>
+
+<div class="col-lg-4 col-md-6 mt-5 text-center">
+
+<img src="img/praise_2.png" width='54px'>
+<h3 class="font-extrabold mt-3"><span class="color-blue">안전한 채권보전
+</span><br>시스템</h3>
+<p>채권보전을 위한 다각도의 안전장치를 마련하며, 모든 서류를 투명하게 오픈합니다.</p>
+</div>
+
+
+
+
+
+	</div>
+	</div>
+
+
+</div>
+
+
+
+
+<div class="container-fluid pt-5 pb-5 bg-sasun">
+<div class="container no-sasun">
+	<div class="row">
+
+	<div class="width-50 padding-15 text-center  mt-4">
+		<div class="bg-white product_box">
+		<img src="img/product_1.jpg" class="img-fluid">
+		<div class="p-3">
+		<h3 class="font-bold mt-2 mb-2"><span class="font-extrabold color-blue">부동산PF</span> (연 12~18% 수익률)</h3>
+		<p>공정률, 자기자본비율, 분양률 높은 상품만 취급<br>
+우선수익권, 근저당권, 질권 설정 등 담보설정</p>
+	</div>
+</div>
+</div>
+<div class="width-50 padding-15 text-center  mt-4">
+		<div class="bg-white product_box">
+		<img src="img/product_2.jpg" class="img-fluid">
+		<div class="p-3">
+		<h3 class="font-bold mt-2 mb-2"><span class="font-extrabold color-blue">주택담보</span> (연 8~12% 수익률)</h3>
+		<p>LTV 85% 이내 서울, 수도권, 6대 광역시 등 <br>
+주요지역 아파트 담보</p>
+	</div>
+</div>
+</div>
+
+	</div>
+
+	<div class="row">
+
+		<div class="width-50 padding-15 text-center  mt-4">
+			<div class="bg-white product_box">
+			<img src="img/product_3.jpg" class="img-fluid">
+			<div class="p-3">
+			<h3 class="font-bold mt-2 mb-2"><span class="font-extrabold color-blue">동산담보</span> (연 8~12% 수익률)</h3>
+			<p>수요 높은 주요 명품브랜드 담보<br>
+전문 처분회사를 통한 감정 및 매입계약서 체결</p>
+		</div>
+	</div>
+	</div>
+	<div class="width-50 padding-15 text-center  mt-4">
+			<div class="bg-white product_box">
+			<img src="img/product_4.jpg" class="img-fluid">
+			<div class="p-3">
+			<h3 class="font-bold mt-2 mb-2"><span class="font-extrabold color-blue">확정매출채권</span> (연 8~12% 수익률)</h3>
+			<p>우량기업과 파트너사의 기발생한 확정된 매출채권<br> 카드사의 정산대금을 직접 지급상환</p>
+		</div>
+	</div>
+	</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid review bg-color-gray pb-5">
+	<div class="container">
+		<h1 class="text-center font-extrabold mb-5" style="color: #435acd">리얼 투자후기</h1>
+		<div class="row">
+			<div class="col-md-4 col-lg-4">
+				<div class="row">
+					<a href="https://www.hellofunding.co.kr/special_interview/20180823" target="_blank">
+				<img src="img/review_1.png" style="margin-left: 6px;"></a>
+				<h4 class="review_profit_text">총 투자수익 <span class="color-blue font-extrabold"><br>1,124,377원</span></h4>
+			</div><a href="https://www.hellofunding.co.kr/special_interview/20180823" target="_blank">
+				<h5 class="font-bold mt-2 review_text">헬로펀딩 저는 고민없이 투자 하고
+					<br>있어요~!</h5>
+<p class="review_client">박** (일반 직장인)</p>
+</a>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<div class="row">
+				<a href="https://www.hellofunding.co.kr/special_interview/20180709" target="_blank">
+				<img src="img/review_2.png" style="margin-left: 6px;"></a>
+				<h4 class="review_profit_text">총 투자수익 <span class="color-blue font-extrabold"><br>5,642,697원</span></h4>
+			</div>
+			<a href="https://www.hellofunding.co.kr/special_interview/20180709" target="_blank">
+				<h5 class="font-bold mt-2 review_text">헬로펀딩은 삶의 여유를 생기게<br>
+해주는 곳 이예요.</h5>
+<p class="review_client">고** (IT 재무 . 회계 총괄)</p></a>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<div class="row">
+				<a href="https://www.hellofunding.co.kr/special_interview/20180723" target="_blank">
+				<img src="img/review_3.png" style="margin-left: 6px;">
+			</a>
+				<h4 class="review_profit_text">총 투자수익 <span class="color-blue font-extrabold"><br>1,278,919원</span></h4>
+			</div>				<a href="https://www.hellofunding.co.kr/special_interview/20180723" target="_blank">
+
+				<h5 class="font-bold mt-2 review_text">우리부부 재테크는 헬로펀딩!<br>
+너무 좋은 선택입니다.</h5>
+<p class="review_client">김**  / 천**  (직장인 부부)</p></a>
+			</div>
+
+
+			</div>
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+<div class="container-fluid  pt-5 pb-5">
+<div class="container mt-5 mb-5 text-center ">
+
+	<h1 class="text-center font-extrabold mb-5" style="color: #435acd">제휴사</h1>
+	<img src="img/partners.png" class="img-fluid">
+
+
+
+</div>
+</div>
+
+
+
+<div class="container-fluid bg-color-gray pt-5 pb-5">
+<div class="container">
+	<div classs="width-50 text-center join_top">
+				<div class="event_info text-left" style="width:730px;margin:0 auto;">
+				<h3 class="font-bold mb-3 ml-41111" style="margin-left:40px;">[꼭 알아두세요!]</h3>
+				<ul>
+				<li>본 이벤트는 만 20세 이상 누구나 참여 가능하며, 헬로펀딩 신규 회원가입 완료 시 혜택이 지급됩니다.</li>
+				<li>기존 헬로펀딩 회원님께서는 이벤트 참여가 제한됩니다.</li>
+				<li>회원가입 시 마케팅 정보수집 및 활용에 필수 동의가 필요합니다.</li>
+				<li>비 정상적인 방법으로 이벤트 참여시 지급된 혜택은 회수되며 법적 책임이 따를 수 있습니다.</li>
+				<li>해당 이벤트는 당사의 사정에 따라서 사전 공지 없이 내용이 수정되거나 종료 될 수 있습니다.</li>
+				</ul>
+			</div>
+			</div>
+</div>
+</div>
+
+
+
+
+<div class="container-fluid pb-4 pt-4 text-center">
+<div class="container">
+	<p style="margin-bottom: 6px;" class="font-bold">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+	<p>(주)헬로핀테크 대표 : 채영민 | 사업자번호 : 789-81-00529 | 주소 : 서울시 강남구 대치동 945-10
+(테헤란로 98길 8) KT&G 대치타워 4층</p>
+
+</div>
+</div>
+
+
+
+<script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+
+
+</body>
+</html>
+
+<?
+if($app_id=='toomics' && $response_idx) {
+} else {
+	?>
+	<script>
+	alert("올바른 경로로 접근해 주세요.");
+	</script>
+	<?
+}
+?>

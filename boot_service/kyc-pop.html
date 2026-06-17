@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>본인확인</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+
+		
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer, common css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+		<link rel="stylesheet" href="./assets/css/common/common.css">
+
+		<!-- contents css -->
+		<link href="./assets/css/page/member.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+	<style>
+		.kyc-modal {margin:100px auto 0;}
+		.kyc-modal .modal-dialog {max-width:380px; margin:0 auto;}
+		.kyc-modal .modal-header {border-bottom:none;}
+		.kyc-modal .modal-header .close {opacity: 1; color:#555; font-size:.9rem; border:1px solid #888; padding:3px; margin:.5rem 1rem 0 auto; font-weight: 400;}
+		.kyc-modal .modal-body {padding:0 2rem; }
+		.kyc-modal .modal-body h3 {font-size:1.3rem; color:#333; text-align: center; margin: -5px 0 25px; }
+		.kyc-modal .modal-body p {font-size:.825rem; color:#555;  font-family:"NotoSansKR", sans-serif; line-height: 1.125rem; }
+		.kyc-modal .modal-body p span {color:#ee321f; font-family:"NotoSansKR", sans-serif; font-weight: 500;}
+		.kyc-modal .modal-footer {border-top:none; margin:5px 0 30px; }
+		.kyc-modal .modal-footer button {background-color: #ee321f; color:#fff; width:100%; margin:0 1rem; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+	</style>		
+    </head>
+
+    <body>
+
+    	<div class="modal fade kyc-modal" id="KycModal" role="dialog">
+        	<div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+						<h3>투자회원 본인확인</h3>
+						<p>온라인투자연계금융업 및 이용자 보호에 관한 법률 제 21조(투자자에 대한 정보확인)에 의한 투자 회원의 본인확인 인증절차입니다.</p>
+						<p>본인확인 정보 미제공 또는 실패 시 <span>투자 및 서비스(출금, 상환 등) 이용에 제한</span>됩니다.</p>
+                    </div>
+                    <div class="modal-footer">
+						<button type="button" class="btn btn-confirm">본인확인하기</button>
+					</div>
+                </div>
+            </div>
+       </div>
+
+	
+		
+		
+		
+    <!--modal 상시 오픈-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+    <script>
+      $(document).ready(function(){
+        $("#KycModal").modal("show");
+      });
+    </script>
+
+    <!-- bundle -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+
+    </body>
+</html>

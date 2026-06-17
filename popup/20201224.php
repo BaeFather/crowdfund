@@ -1,0 +1,59 @@
+<?
+//$intime = (date('YmdHi') >= 202009291500 && date('YmdHi') < 202010041200) ? true : false;
+$intime = false;
+?>
+<!-- 인증서 업데이트 공지 팝업 시작 //-->
+<style>
+<? if(G5_IS_MOBILE) { ?>
+#popup { display:none; position:relative; width:100%; max-width:800px; background-color:#fff; }
+#popup .title { line-height:42px; text-indent:20px; text-align:left; color:#fff; font-size:18px; background-color:#284893; }
+#popup .close { position:absolute; right:0px; top:0px; cursor:pointer; }
+#popup .text { padding:40px 0 30px 0; font-size:22px; line-height:28px; color:#202020; font-family:'NGB';  }
+#popup img.repimg { width:100%; }
+<? } else { ?>
+#popup { display:none; position:relative; width:100%; background-color:#fff; }
+#popup .title { line-height:42px; text-indent:20px; text-align:left; color:#fff; font-size:18px; background-color:#284893; }
+#popup .close { position:absolute; right:0px; top:0px; width:18px; cursor:pointer; }
+#popup .text { padding:40px 0 30px 0; font-size:22px; line-height:28px; color:#202020; font-family:'NGB';  }
+<? } ?>
+</style>
+
+<div id="popup">
+	<img src="/images/btn_close.gif" alt="close" class="close" <?=($intime) ? "style=\"display:none\"" : ""; ?> />
+	<div style="width:100%;"><img src="/popup/images/20201224.jpg" class="repimg"></div>
+	<div style="background:#eee;text-align:right; padding:6px 16px 6px; <?=($intime) ? "display:none" : ""; ?>">
+		<input type="checkbox" id="popupClose" value="24">
+		<label for="popupClose">오늘 하루 열지 않음</label>
+		<span id="closeLayer" style="margin-left:30px; cursor:pointer;">×닫기</span>
+	</div>
+</div>
+<script type="text/javascript">
+function noticePopOpen() {
+	if(get_cookie('popupOpen')==false) {
+		$.blockUI({
+			message: $('#popup'),
+			<? if(G5_IS_MOBILE) { ?>
+			css: { top:'10%',left:'3%',width:'93%', border:0, cursor:'default' }
+			<? } else { ?>
+			css: { top:'15%',left:'33%',width:'450px', border:0, cursor:'default' }
+			<? } ?>
+		});
+	}
+}
+
+$(document).ready(function() {
+	setTimeout(function() { noticePopOpen() }, 1000);
+});
+
+$('#popupClose').on('click', function(){
+	if($('#popupClose').is(':checked')) {
+		var exptime = $('#popupClose').val();
+		set_cookie('popupOpen', true, exptime, g5_cookie_domain);
+	}
+	else {
+		delete_cookie('popupOpen');
+	}
+});
+</script>
+
+<!-- 인증서 업데이트 공지 팝업 끝 -->

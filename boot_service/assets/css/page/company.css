@@ -1,0 +1,614 @@
+/*********************************
+font SET
+**********************************/
+.company-info p, .company-info a, .company-info span , .company-info th , .company-info td , .company-info div, .company-info button, .company-info h4, .company-info h5, .company-info .active{font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+.disclosure-info p, .disclosure-info a, .disclosure-info span , .disclosure-info th , .disclosure-info td , .disclosure-info div, .disclosure-info button, .disclosure-info h4, .disclosure-info h5, .disclosure-info .active{font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+.care-service p, .care-service a, .care-service span , .care-service th , .care-service td , .care-service div, .care-service button, .care-service h4, .care-service h5, .care-service .active, .care-service label{ margin: 0;  font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+.disclosure-info select {font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; }
+.disclosure-info .num {font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; }
+
+
+
+
+/******************************************* 회사소개**********************************************************/
+
+.company-info {padding:0 1.25rem;}
+.company-info p, .company-info a, .company-info span , .company-info th , .company-info td , .company-info div, .company-info button, .company-info h4, .company-info h5, .company-info a , .company-info .active{font-family:NotoSansKR, sans-serif;  margin-bottom: 0;}
+
+.company-info .container-fluid {padding:0;}
+
+
+
+/******* 상단타이틀 및 탭****************/
+.company-info .container-fluid .top-tap h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center; margin: 40px 0 10px;}
+.company-info .container-fluid .top-tap p {text-align: center; color:#777; line-height: 1.1rem; font-size:.85rem; }
+.company-info .container-fluid .top-tap .nav-pills {margin:30px 0; justify-content: center;}
+.company-info .container-fluid .top-tap .nav-pills .nav-item {width:40%; text-align: center; margin:0 1%;}
+.company-info .container-fluid .top-tap .nav-pills .nav-link {border-radius:50px;}
+.company-info .container-fluid .top-tap .nav-pills .nav-link.active {background-color: #222; color:#fff; font-weight: 400;}
+.company-info .container-fluid .top-tap .nav-pills>li>a {font-size:.9rem; font-weight: 400; color:#555; background-color: #efefef;}
+
+
+/******* 상단이미지 및 실천사항****************/
+.company-info .container-fluid .tab-content .visual-img img {width:100%;}
+.company-info .container-fluid .tab-content .visual-img .main-point div {margin:20px 0;}
+.company-info .container-fluid .tab-content .visual-img .main-point h5 {font-size:1rem; color:#222; margin:0; font-weight: 500;}
+.company-info .container-fluid .tab-content .visual-img .main-point p {font-size:.85rem; color:#777; text-align: left; margin-top:5px;}
+
+
+
+/******* 타이틀바****************/
+.company-info .container-fluid .tab-content div .tit {text-align: left; border-bottom: 2px solid #555; font-size:1.375rem; padding-bottom:10px; font-weight: 500; color:#222; margin:70px 0 0; }
+
+
+
+/******* 히스토리****************/
+.company-info .container-fluid .tab-content .history .nav-tabs .nav-link{ padding:0;}
+.company-info .container-fluid .tab-content .history .nav-bordered {border-bottom:1px solid #ddd;}
+.company-info .container-fluid .tab-content .history .nav-tabs li {width:25%; padding:0;}
+.company-info .container-fluid .tab-content .history .nav-tabs li a {font-size:.825rem; color:#999;  text-align: center;  padding:1rem 0!important;  }
+.company-info .container-fluid .tab-content .history .nav-tabs li a span {font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500!important;}
+.company-info .container-fluid .tab-content .history .nav-tabs li a.active {border-bottom:1px solid #ee321f; color:#ee321f; font-weight: 500;  }
+.company-info .container-fluid .tab-content .history .nav-tabs .nav-item {margin-bottom:0;}
+.company-info .container-fluid .tab-content .history .tab-content table {margin-top:1rem;}
+.company-info .container-fluid .tab-content .history .tab-content table tr td{padding:0.25rem 1rem; color:#555;}
+.company-info .container-fluid .tab-content .history .tab-content table .date { width:20%; font-size:.85rem; white-space: nowrap; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500!important;}
+.company-info .container-fluid .tab-content .history .tab-content table .txt {width:80%; font-size:.85rem; }
+
+
+
+/******* 비전과 핵심가치****************/
+.company-info .container-fluid .tab-content .vision-core-values .vision {text-align:center; font-size:1.125rem; line-height: 1.5rem; color:#222; margin:30px 0 20px; font-weight: 500;}
+.company-info .container-fluid .tab-content .vision-core-values .vision span{color:#ee321f;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value {border:1px solid #ddd; display:flex; align-items: center; margin-bottom:10px;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img {width:25%; padding:1rem 0 1rem 1rem;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img img {width:70%;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents {width:75%; padding:1rem 1rem 1rem 0;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents p {text-align:left;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents .core-value-tit{font-size:1.1rem; color:#222; font-weight: 500; }
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents .core-value-txt{font-size:.8rem; line-height: 1.05rem; color:#888; margin:.25rem 0 0;}
+
+
+
+/******* 투자심의위원회****************/
+.company-info .container-fluid .tab-content .invest-committee p{text-align:center; font-size:.95rem; line-height: 1.2rem; color:#555; margin-top:20px;}
+
+
+
+/******* 파트너사****************/
+.company-info .container-fluid .tab-content .partner .partner-wrap {display: flex; flex-wrap: wrap; justify-content:left; margin-top:20px; padding:0;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div {border:1px solid #ddd; width:32%; margin:0 2% 2% 0;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div:nth-child(3n) {margin-right:0;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div img {width:100%;}
+
+
+
+
+/******* 오시는길****************/
+.company-info .container-fluid .tab-content .hello-address table {margin-top:20px;}
+.company-info .container-fluid .tab-content .hello-address table tr td {display: block;}
+.company-info .container-fluid .tab-content .hello-address table tr td:first-child {font-size:1rem; color:#222; font-weight: 500; }
+.company-info .container-fluid .tab-content .hello-address table tr td:last-child {font-size:.9rem; color:#555; margin-bottom:1rem;}
+
+
+
+
+/******* 조직도****************/
+.company-info .container-fluid .tab-content .hello-org .tit {margin-top:30px;}
+.company-info .container-fluid .tab-content .hello-org .org-wrap .web {display:none;}
+.company-info .container-fluid .tab-content .hello-org .org-wrap .mobile img {width:100%; margin-top:20px;}
+
+
+
+
+/******* 구성원****************/
+.company-info .container-fluid .tab-content .hello-member .member-wrap {display: flex; flex-wrap: wrap; margin-top:20px;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div {width:49%; margin-right: 2%; margin-bottom: 2%;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div img {width:100%;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div:nth-child(even) {margin-right:0;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div .people_text {display: none;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div:hover .people_text {display: block; height: 100px; background: rgba(0,0,0,.7); color: #fff; position: absolute; z-index: 1; margin-top: -100px; padding: .5rem .7rem; font-size: .8rem; line-height: 1.4;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div:hover .people_text span {font-size: .9rem; line-height: 1.7;}
+
+
+@media (min-width:500px){
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img {width:20%; text-align: left;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img img {width:60px;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents {width:80%;}
+
+}
+
+
+@media (min-width:630px){
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img {padding-left:2rem;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents {padding-right:2rem;}
+
+}
+
+
+
+
+
+
+
+
+@media (min-width:920px){
+.company-info {margin:70px auto 0; width:1000px; padding:0;}
+
+/******* 상단타이틀 및 탭****************/
+.company-info .container-fluid .top-tap h4 {margin:50px 0 20px;}
+.company-info .container-fluid .top-tap p {font-size:1rem; color:#777;}
+.company-info .container-fluid .top-tap .nav-pills .nav-item {width:180px; text-align: center; margin:0 10px;}
+.company-info .container-fluid .top-tap .nav-pills>li>a {font-size:0.98rem; padding: 0.5rem 0;}
+
+
+/******* 상단이미지 및 실천사항****************/
+.company-info .container-fluid .tab-content .visual-img {text-align:center; width:1000px;}
+.company-info .container-fluid .tab-content .visual-img img {width:1000px;}
+.company-info .container-fluid .tab-content .visual-img .main-point {display: flex;}
+.company-info .container-fluid .tab-content .visual-img .main-point div {width:33.3%;  padding:0 10px;}
+.company-info .container-fluid .tab-content .visual-img .main-point h5 {font-size:1.2rem; margin: 10px 0 20px;}
+.company-info .container-fluid .tab-content .visual-img .main-point p {font-size:.9rem; line-height: 1.25rem; color:#999; text-align: center;  letter-spacing: 0;}
+
+
+/******* 타이틀바****************/
+.company-info .container-fluid .tab-content div .tit { font-size:1.5rem; }
+
+
+/******* 히스토리****************/
+.company-info .container-fluid .tab-content .history .history-wrap {display:flex; padding:30px 20px;}
+.company-info .container-fluid .tab-content .history .nav-bordered {border-bottom:none;}
+.company-info .container-fluid .tab-content .history .history-tab {width:20%;}
+.company-info .container-fluid .tab-content .history .history-tab ul li {width:100%; margin:0;}
+.company-info .container-fluid .tab-content .history .nav-tabs li a {font-size:1.05rem; text-align: left;  font-weight:300; padding:0 0 0.75rem 0!important;}
+.company-info .container-fluid .tab-content .history .nav-tabs li a.active {text-decoration: underline; border-bottom:none; font-weight:400;}
+.company-info .container-fluid .tab-content .history .tab-content {width:80%;}
+.company-info .container-fluid .tab-content .history .tab-content table {border-left:1px solid #ddd; margin-top:0;}
+.company-info .container-fluid .tab-content .history .tab-content table tr td{padding:0 1rem 0.75rem;}
+.company-info .container-fluid .tab-content .history .tab-content table .date {padding-left:5rem; font-size:.95rem; }
+.company-info .container-fluid .tab-content .history .tab-content table .txt {font-size:.95rem; }
+
+
+
+/******* 비전과 핵심가치****************/
+
+.company-info .container-fluid .tab-content .vision-core-values .vision {font-size:1.4rem; letter-spacing: -0.5px;  margin:40px 0 30px;}
+.company-info .container-fluid .tab-content .vision-core-values .vision .br{display: none;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value-wrap {display:flex; flex-wrap: wrap;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value-wrap .core-value:nth-child(odd) {margin-right:20px;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value {width:490px; margin-bottom:20px;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img {width:25%; padding:0 1.5rem 0 1.5rem; text-align: center;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .img img {width:70px;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents {padding:2rem 1.5rem 2rem 0.5rem;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents p {text-align:left;}
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents .core-value-tit{font-size:1.25rem; }
+.company-info .container-fluid .tab-content .vision-core-values .core-value .contents .core-value-txt{font-size:.9rem; line-height: 1.1rem; color:#777; margin:.5rem 0 0; }
+
+
+
+
+/******* 투자심의위원회****************/
+.company-info .container-fluid .tab-content .invest-committee p{text-align:left; font-size:1.05rem; line-height: 1.5rem; color:#555; margin-top:30px;}
+
+
+
+/******* 파트너사****************/
+.company-info .container-fluid .tab-content .partner .partner-wrap {margin-top:30px;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div {border:1px solid #ddd; width:192px; margin:0 10px 10px 0; text-align: center;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div:nth-child(3n) {margin-right:10px;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div:nth-child(5n) {margin-right:0;}
+.company-info .container-fluid .tab-content .partner .partner-wrap div img {width:170px;}
+
+
+
+/******* 오시는길****************/
+.company-info .container-fluid .tab-content .hello-address table {width:100%; margin:30px 0 100px;}
+.company-info .container-fluid .tab-content .hello-address table tr td {display: inline-flex; }
+.company-info .container-fluid .tab-content .hello-address table tr td:first-child {width:20%; font-size:1.05rem;}
+.company-info .container-fluid .tab-content .hello-address table tr td:last-child {width:80%; font-size:1.05rem;}
+
+
+/******* 조직도****************/
+.company-info .container-fluid .tab-content .hello-org .tit {margin-top:30px;}
+.company-info .container-fluid .tab-content .hello-org .org-wrap {margin-top:30px; text-align: center;}
+.company-info .container-fluid .tab-content .hello-org .org-wrap .web {display:block; margin-top:20px;}
+.company-info .container-fluid .tab-content .hello-org .org-wrap .mobile {display:none;}
+
+
+/******* 구성원****************/
+
+.company-info .container-fluid .tab-content .hello-member .member-wrap {display: flex; flex-wrap: wrap; margin:30px 0 100px;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div {width:235px; margin-right: 20px; margin-bottom: 20px; cursor: pointer;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div img {width:235px;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div:nth-child(even) {margin-right:20px;}
+.company-info .container-fluid .tab-content .hello-member .member-wrap div:nth-child(4n) {margin-right:0;}
+
+}
+
+
+
+
+
+
+/******************************************* 사업정보공시**********************************************************/
+
+
+
+
+.disclosure-info .container-fluid {padding:0;}
+.disclosure-info .container-fluid .top-visual {display: flex;  align-items: center; justify-content: center; height:200px; background-image: url("../../images/company/m-status-visual.png"); background-repeat: no-repeat; background-size: cover; width:100%; background-position:center center;}
+.disclosure-info .container-fluid .top-visual h4 { font-size:1.5rem; font-weight:500; color:#fff;}
+
+
+
+/******* 타이틀바/셀렉트박스****************/
+
+.disclosure-info .container-fluid .content-wrap div .cate-tit {display:flex;  justify-content: space-between; align-items:center; margin-bottom:10px;}
+.disclosure-info .container-fluid .content-wrap div .cate-tit h5 {text-align: left; font-size:1.125rem; font-weight: 500; color:#222; letter-spacing: -1px;}
+.disclosure-info .container-fluid .content-wrap div .cate-tit .select-wrap {display:flex; margin-left:.5rem;}
+.disclosure-info .container-fluid .content-wrap div .cate-tit .select-wrap select:nth-child(1) {width:80px; margin-right:.2rem;}
+.disclosure-info .container-fluid .content-wrap div .cate-tit .select-wrap select:nth-child(2) {width:100px;}
+.disclosure-info .custom-select { display:block; height: calc(2rem); padding:.45rem 1rem .45rem .9rem; font-size:.8rem; font-weight: 400; line-height: 1.3; color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .6rem center; background-size: 10px 8px; border:1px solid #d5d5d5; border-radius: 3rem; }
+
+
+
+/*******투자현황****************/
+.disclosure-info .container-fluid .content-wrap {padding:2rem 1.25rem;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info {border:1px solid #e0e0e0; margin-top:10px; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div {display:flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:1rem;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .tit {font-size:.85rem; color:#555; }
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .tit span {font-size:.7rem;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .txt {font-size:.9rem; color:#222;  font-weight: 500;}
+
+
+/*******유형별투자현황****************/
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info {width:100%; white-space: nowrap; overflow: auto;  margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table { width:100% !important; display:table; border:1px solid #e0e0e0;  border-collapse: collapse;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table thead tr th{padding:.7rem 1.5rem; background-color:#f8f8f8; border-bottom:1px solid #222; font-weight: 500; font-size:.85rem; color:#555; text-align:right;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table thead tr th:nth-child(1), .disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table thead tr th:nth-child(6), .disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table thead tr th:nth-child(7) {text-align:center;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table thead tr th span {font-size:.7rem;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr td.th_gtype{padding:.7rem 1.5rem; border-bottom:1px solid #e0e0e0; font-size:.85rem; color:#222; border-right:1px solid #e0e0e0; text-align:center;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr td{padding:.7rem 1.5rem; border-bottom:1px solid #e0e0e0; font-size:.8rem; color:#333; text-align: right; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr td:nth-child(6), .disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr td:nth-child(7){text-align:center;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table .tfoot th{padding:.7rem 1.5rem; background-color:#fcf4f5; border-bottom:1px solid #e0e0e0; font-size:.85rem; color:#222; border-right:1px solid #e0e0e0; text-align:center;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table .tfoot td{padding:.7rem 1.5rem; background-color:#fcf4f5; border-bottom:1px solid #e0e0e0; font-size:.8rem; color:#333; text-align: right; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;  }
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table .tfoot td:nth-child(6), .disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table .tfoot td:nth-child(7) {text-align:center;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr:last-child td {background-color: #fcf4f5;}
+.disclosure-info .container-fluid .content-wrap .type-invest-status .type-invest-info table tbody tr td.dataTables_empty {background-color: #fff; text-align: center;}
+
+/*******자기계산투자현황****************/
+.disclosure-info .container-fluid .content-wrap .self-invest-status .self-invest-info {width:100%; white-space: nowrap; overflow: auto; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .self-invest-status .self-invest-info table { width:100%;  border:1px solid #e0e0e0;  border-collapse: collapse; text-align: center;}
+.disclosure-info .container-fluid .content-wrap .self-invest-status .self-invest-info table thead tr th{width:25%; padding:.7rem 1.5rem; background-color:#f8f8f8; border-bottom:1px solid #222; font-weight: 500; font-size:.85rem; color:#555;}
+.disclosure-info .container-fluid .content-wrap .self-invest-status .self-invest-info table thead tr th span {font-size:.7rem;}
+.disclosure-info .container-fluid .content-wrap .self-invest-status .self-invest-info table tbody tr td{width:25%; padding:.7rem 1.5rem; border-bottom:1px solid #e0e0e0; font-size:.8rem; color:#333;  font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+
+/*******채권매각****************/
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .cate-tit .select-wrap select:nth-child(1) {margin-right:0; }
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info {width:100%; white-space: nowrap; overflow: auto; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table { width:100% !important;  border:1px solid #e0e0e0;  border-collapse: collapse; text-align: center;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table thead tr th{width:16.6%; padding:.7rem 1.5rem; background-color:#f8f8f8; border-bottom:1px solid #222; font-weight: 500; font-size:.85rem; color:#555;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table thead tr th:nth-child(3), .disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table thead tr th:nth-child(4) {text-align:right;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table thead tr th span {font-size:.7rem;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td{width:16.6%; padding:.7rem 1.5rem; border-bottom:1px solid #e0e0e0; font-size:.8rem; color:#333; }
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td:nth-child(3), .disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td:nth-child(4) {text-align:right;}
+.disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td:nth-child(3), .disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td:nth-child(4),  .disclosure-info .container-fluid .content-wrap .bond-sale-status .bond-sale-info table tbody tr td:nth-child(6) {font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+
+/*******임직원 ****************/
+.disclosure-info .container-fluid .content-wrap .member-status .cate-tit .select-wrap select:nth-child(1) {margin-right:0;}
+.disclosure-info .container-fluid .content-wrap .member-status .member-info {border:1px solid #e0e0e0; margin-top:10px; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .member-status .member-info div {display:flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:1rem;}
+.disclosure-info .container-fluid .content-wrap .member-status .member-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .member-status div .tit {font-size:.85rem; color:#555; }
+.disclosure-info .container-fluid .content-wrap .member-status div .txt {font-size:.9rem; color:#222;  font-weight: 500;}
+
+
+/*******대주주/실태점검 ****************/
+.disclosure-info .container-fluid .content-wrap .two-wrap .cate-tit .select-wrap select:nth-child(1) {margin-right:0;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info {border:1px solid #e0e0e0; margin-top:10px; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info div {display:flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:1rem;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info {border:1px solid #e0e0e0; margin-top:10px; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info div {display:flex; justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:1rem;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap div .tit {font-size:.85rem; color:#555; }
+.disclosure-info .container-fluid .content-wrap .two-wrap div .txt {font-size:.9rem; color:#222;  font-weight: 500;}
+
+
+/*******재무/안내 ****************/
+.disclosure-info .container-fluid .content-wrap .two-wrap .cate-tit .select-wrap select:nth-child(1) {margin-right:0;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info {border:1px solid #e0e0e0; margin-top:10px; background-color: #f6f6f6; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info div {display:flex; align-items: center;  justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:.3rem 1rem;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status h5 {margin-top:5px;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info {border:1px solid #e0e0e0; margin-top:15px;  background-color: #f6f6f6; margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info div {display:flex; align-items: center;  justify-content: space-between; border-bottom: 1px solid #e0e0e0; padding:.3rem 1rem;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info div:last-child {border-bottom:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap div .txt i {font-size:1.3rem; cursor: pointer;}
+.disclosure-info .container-fluid .content-wrap .two-wrap div .txt a {color:#222!important;}
+
+
+
+/*******대출구조 ****************/
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info {text-align:center; border:1px solid #e0e0e0;  margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info img{width:100%;}
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info .web {display:none;}
+
+
+
+@media (min-width:920px){
+
+.disclosure-info .container-fluid .top-visual {height:160px; background-image: url("../../images/company/status-visual.png"); }
+.disclosure-info .container-fluid .content-wrap {width:1000px; margin:0 auto; padding:2rem 0;}
+.disclosure-info .container-fluid .content-wrap div .cate-tit h5 {text-align: left; font-size:1.25rem; font-weight: 500; color:#222; letter-spacing: 0;}
+
+
+/******투자현황 ****************/
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info {display:flex; width:100%;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div {width:22%; display:block; border-bottom:none; border-right:1px solid #e0e0e0; padding:2rem 0; text-align: center;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div:nth-child(4) {width:17%;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div:nth-child(5) {border-right:none; width:17%;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .tit {font-size:.95rem; margin-bottom: 1rem; }
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .tit span {font-size:.75rem;}
+.disclosure-info .container-fluid .content-wrap .invest-status .invest-info div .txt {font-size:1rem;}
+
+
+
+/*******임직원 ****************/
+.disclosure-info .container-fluid .content-wrap .member-status .member-info {display:flex; width:100%;}
+.disclosure-info .container-fluid .content-wrap .member-status .member-info div {width:33.3%; display:block; border-bottom:none; border-right:1px solid #e0e0e0; padding:1rem 0; text-align: center;}
+.disclosure-info .container-fluid .content-wrap .member-status .member-info div:last-child {border-right:none;}
+.disclosure-info .container-fluid .content-wrap .member-status div .tit {font-size:.9rem; margin-bottom: .2rem; }
+.disclosure-info .container-fluid .content-wrap .member-status div .txt {font-size:1rem;}
+
+
+/*******대주주/실태점검 ****************/
+.disclosure-info .container-fluid .content-wrap .two-wrap {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status {width:48%; margin-right:4%;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info div {width:100%; display:block; border-bottom:none; border-right:1px solid #e0e0e0; padding:1rem 0; text-align: center;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .major-status .major-info div:last-child {border-right:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status {width:48%;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info div {width:50%; display:block; border-bottom:none; border-right:1px solid #e0e0e0; padding:1rem 0;text-align: center;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .privacy-status .privacy-info div:last-child {border-right:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap div .tit {font-size:.9rem; margin-bottom: .2rem; }
+.disclosure-info .container-fluid .content-wrap .two-wrap div .txt {font-size:1rem;}
+
+
+
+/*******재무/안내 ****************/
+.disclosure-info .container-fluid .content-wrap .two-wrap {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status {width:48%; margin-right:4%;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info div {width:100%; border-bottom:none; border-right:1px solid #e0e0e0; padding:1rem; text-align:center;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .finance-info div:last-child {border-right:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status {width:48%;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info {display:flex;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info div {width:100%; border-bottom:none; border-right:1px solid #e0e0e0; padding:1rem;text-align: center;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .guide-info div:last-child {border-right:none;}
+.disclosure-info .container-fluid .content-wrap .two-wrap .finance-status .tit, .disclosure-info .container-fluid .content-wrap .two-wrap .guide-status .tit {font-size:1rem; margin-bottom: .2rem; color:#222; }
+
+
+/*******대출구조 ****************/
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info { border:1px solid #e0e0e0;  margin-bottom:50px;}
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info img{width:auto; margin:0 auto; padding:2rem 0;}
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info .web {display:block;}
+.disclosure-info .container-fluid .content-wrap .loan-structure	.loan-structure-info .mobile {display:none;}
+
+
+
+}
+
+
+
+/******************************************************************** 법인투자안내 **********************************************************/
+
+
+
+.care-service .container-fluid {padding:0;}
+.care-service .container-fluid .content-wrap {overflow-x: hidden;}
+
+
+
+/* 그래프 공통 css */
+.care-service .container-fluid .content-wrap .data .graph-wrap {position: relative; width: 50%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul {height: 300px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li {position: absolute; width: 14%; height: 100%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li p {font-size: 16px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li .graph-data {position: absolute; width: 100%; background-color: #2b2b2b; bottom: 50px; height: 0;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li .graph-data p {position: absolute; top: -30px; color: #2b2b2b; width: 100%; opacity: 0;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li .graph-year {position: absolute; width: 100%; text-align:center; bottom: 20px; color: #222; padding: 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(1) {left: 23px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(2) {left: 113px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(3) {left: 203px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(4) {left: 293px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(5) {left: 383px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul::after {content: ''; display: inline-block; position: absolute; width: 100%; height: 1px; background-color: #26374c; left: 0; bottom: 50px;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li.active .graph-data {background-color: #b37353;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li.active .graph-data p {font-size: 24px; color: #b37353; font-weight: 600; top: -32px;}
+
+
+
+
+/*법인투자 상단*/
+.care-service .container-fluid .top-visual {display:flex; flex-direction: column; justify-content: center; align-items: center; height:200px;background-image: url("../../images/company/m-corp-top-bg.jpg"); background-repeat: no-repeat; background-size: cover; width:100%; background-position:center center;}
+.care-service .container-fluid .top-visual h4 { font-size:1.45rem; font-weight:700; color:#fff; font-family:Pretendard, sans-serif; }
+.care-service .container-fluid .top-visual p { font-size:.85rem; font-weight:300; color:#eee; opacity:.9;  padding-top:.3rem;}
+.care-service .container-fluid .top-visual button {background-color: #b37353; border:none; color:#fff; padding:.5rem 2rem .6rem; font-size:.9rem; font-weight: 500; margin-top:1.5rem;}
+
+
+
+
+
+/*법인투자 포인트*/
+.care-service .container-fluid .content-wrap .point {text-align:center; margin:30px 0; padding:0 1rem;}
+.care-service .container-fluid .content-wrap .point div {margin-bottom:2rem;}
+.care-service .container-fluid .content-wrap .point img {width:15%;}
+.care-service .container-fluid .content-wrap .point p {font-size:1rem; font-weight: 500; color:#222;  padding:.2rem 0 .3rem;}
+.care-service .container-fluid .content-wrap .point span {font-size:.85rem; font-weight: 400; color:#888; display: inline-block; line-height: 1.1rem;}
+
+
+
+
+
+/*법인투자현황*/
+.care-service .container-fluid .content-wrap .data {width:100%; margin:50px auto; text-align:center; background-color: #f8f8f8; padding:50px 0; }
+.care-service .container-fluid .content-wrap .data h5 {font-size:1.3rem; color:#222; font-weight: 600; }
+.care-service .container-fluid .content-wrap .data p {font-size:.85rem; color:#777;line-height: 1rem; padding:.5rem 1rem;}
+.care-service .container-fluid .content-wrap .data .contents {width:100%; max-width: 500px; margin:0 auto;}
+.care-service .container-fluid .content-wrap .data .graph-wrap {width:100%; margin-top:1rem;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li p {font-size:14px; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; padding:0;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul::after {width: 90%; left: 5%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(1) {left: 7%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(2) {left: 25%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(3) {left: 43%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(4) {left: 61%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li:nth-child(5) {left: 79%;}
+.care-service .container-fluid .content-wrap .data .graph-wrap ul li.active .graph-data p {font-size: 20px; font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; padding:0;}
+
+.care-service .container-fluid .content-wrap .data .detail {width:100%; background-color: #f5f5f5; padding:0 1rem; display:flex; flex-wrap: wrap;}
+.care-service .container-fluid .content-wrap .data .detail div{width:48%; margin:1rem 1% .5rem;}
+.care-service .container-fluid .content-wrap .data .detail div p{color:#fff; font-size:.85rem;}
+.care-service .container-fluid .content-wrap .data .detail div p:last-child	span{font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.care-service .container-fluid .content-wrap .data .detail .black p:first-child {width:100%;  background-color: #2b2b2b; padding: 10px 0;}
+.care-service .container-fluid .content-wrap .data .detail .brown p:first-child {width:100%;  background-color: #b37353; padding: 10px 0;}
+.care-service .container-fluid .content-wrap .data .detail .black p:last-child {font-size:1rem; color: #2b2b2b; border-bottom: 1px solid #2b2b2b; padding: .7rem 0;}
+.care-service .container-fluid .content-wrap .data .detail .brown p:last-child {font-size:1rem; color: #b37353; border-bottom: 1px solid #b37353; padding: .7rem 0;}
+.care-service .container-fluid .content-wrap .data .detail .date {width:100%; text-align: right; font-size:.8rem; color:#555; padding-right:1%; }
+
+
+
+
+
+
+/*자주하는 질문*/
+.care-service .container-fluid .content-wrap .qa {width:100%; padding:0 1rem;}
+.care-service .container-fluid .content-wrap .qa h5 {font-size:1.3rem; color:#222; font-weight: 600; text-align: center; margin-bottom: 1rem;}
+.care-service .container-fluid .content-wrap .qa h2 {margin:0;}
+.care-service .container-fluid .content-wrap .qa .accordion .card {box-shadow: none; border:1px solid #bbb; border-radius: 0; margin-bottom: 10px;}
+.care-service .container-fluid .content-wrap .qa .accordion .card .card-header {padding:.2rem .5rem; position: relative;  }
+.care-service .container-fluid .content-wrap .qa .accordion .card-header .btn { color: #555; font-size:.85rem; text-align: left; font-weight: 400; display: block; }
+.care-service .container-fluid .content-wrap .qa .accordion .card-header i { font-size: 1.2rem;  position: absolute; right:1rem; line-height: 1.5rem; transition: all 0.5s;}
+.care-service .container-fluid .content-wrap .qa .accordion .card-body { color: #555; padding: 1rem 1.5rem; font-size:.85rem; }
+.care-service .container-fluid .content-wrap .qa .accordion .card-body p {margin-bottom:10px;}
+.care-service .container-fluid .content-wrap .qa .accordion .card-body a {color:#ee321f; text-decoration: underline;}
+.care-service .container-fluid .content-wrap .qa .accordion .card-body .br {display:none;}
+.care-service .container-fluid .content-wrap .qa .accordion .highlight .btn {color: #95312a;}
+.care-service .container-fluid .content-wrap .qa .accordion .highlight i { transform: rotate(180deg);}
+
+
+
+
+/*신청폼*/
+.care-service .container-fluid .content-wrap .form_box {width:100%;  margin:50px auto 0; text-align:center; background-color: #f3edea; padding:50px 0; }
+.care-service .container-fluid .content-wrap .form_box h5 {font-size:1.3rem; color:#222; font-weight: 600; }
+.care-service .container-fluid .content-wrap .form_box p {font-size:.85rem; color:#777;line-height: 1rem; padding:.5rem 1rem;}
+
+
+.care-service .container-fluid .content-wrap .form_box .contents form {padding:1rem; max-width: 600px; margin:0 auto;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group div{display:flex; align-items: center; white-space: nowrap; margin-bottom:10px;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group p {width:26%; text-align: left;  font-size:.85rem; color: #222; font-weight: 400; padding:0;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group .input-wrap label {margin-right:20px; width:74%;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group .input-wrap  {margin-bottom:0;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group .invalid-feedback{margin-left:25%!important;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group label{width:35%; text-align: left;  font-size:.85rem; color: #222; font-weight: 400;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group input[type=text],
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group textarea{border: 1px solid #ddd; box-sizing: border-box; width:100%; padding: 1rem; background-color: #fff!important; border-radius: 0; outline:none!important;  font-size:.85rem; color:#6c757d;}
+.care-service .container-fluid .content-wrap .form_box .contents form .form-group textarea{height:140px;  padding: 1rem; margin-bottom:15px;}
+
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=radio],
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=checkbox] {visibility: hidden; position: absolute;}
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=radio] + label,
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=checkbox] + label {display: inline-block; color: #222; cursor: pointer; background: url("../../images/company/check_off.png") 0 no-repeat; padding-left: 25px; line-height: 2; font-weight: 400; font-size:.85rem; }
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=radio]:checked + label,
+.care-service .container-fluid .content-wrap .form_box .contents form input[type=checkbox]:checked + label {background: url("../../images/company/check_on.png") 0 no-repeat;}
+
+
+.care-service .container-fluid .content-wrap .form_box .contents .agree-chk {text-align: left; margin-top:10px; font-size:.9rem;}
+.care-service .container-fluid .content-wrap .form_box .contents .agree-txt {text-align: left; color: #777; font-size: .8rem;  margin:.5rem 1rem;  }
+.care-service .container-fluid .content-wrap .form_box .contents .agree-txt li {font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.care-service .container-fluid .content-wrap .form_box .contents .apply-btn {display: inline-block; cursor: pointer; width:100%; border-radius: .25rem; background-color: #222; color: #fff; font-size: 1rem; font-weight: 500; padding:1rem 2rem; margin-top:30px;}
+
+
+
+@media (min-width:450px){
+.care-service .container-fluid .content-wrap .point img {width:auto;}
+}
+
+
+
+@media (min-width:900px){
+
+
+/*법인투자 상단*/
+.care-service .container-fluid .top-visual { margin:0 auto; height:350px; background-image: url("../../images/company/corp-top-bg.jpg"); }
+.care-service .container-fluid .top-visual h4 { font-size:2.5rem; font-weight:800; color:#fff; }
+.care-service .container-fluid .top-visual p { font-size:1.3rem; font-weight:300; color:#eee; opacity: .8;  padding:.7rem 0 1.5rem; }
+.care-service .container-fluid .top-visual button {background-color: #b37353; border:none; color:#fff; padding:.7rem 4rem .8rem; font-size:1.15rem; font-weight: 500;}
+
+
+
+
+/*법인투자 포인트*/
+.care-service .container-fluid .content-wrap .point {width:1000px; text-align:center; margin:50px auto 70px; display: flex; justify-content: space-between; }
+.care-service .container-fluid .content-wrap .point div {margin-bottom:0; width:330px;}
+.care-service .container-fluid .content-wrap .point img {width:auto;}
+.care-service .container-fluid .content-wrap .point p {font-size:1.2rem; font-weight: 500; color:#222;  padding:.2rem 0 .3rem;}
+.care-service .container-fluid .content-wrap .point span {font-size:.95rem; font-weight: 400; color:#888; display: inline-block; line-height: 1.3rem;}
+
+
+
+
+/*법인투자현황*/
+.care-service .container-fluid .content-wrap .data {width:100%; text-align:center; background-color: #f5f5f5; padding:80px 0;}
+.care-service .container-fluid .content-wrap .data h5 {font-size:1.5rem; color:#222; font-weight: 600; }
+.care-service .container-fluid .content-wrap .data p {font-size:1rem; color:#777; padding: 15px 0 50px;}
+.care-service .container-fluid .content-wrap .data .contents {display:flex; box-sizing: border-box; width:1000px; max-width: 1000px; margin:0 auto; justify-content: space-between;}
+.care-service .container-fluid .content-wrap .data .graph-wrap {width: 500px; margin-top:0;}
+
+
+
+
+.care-service .container-fluid .content-wrap .data .detail {width:450px; padding:0; margin-top:25px;}
+.care-service .container-fluid .content-wrap .data .detail div{width:48%; margin:1rem 1% .5rem;}
+.care-service .container-fluid .content-wrap .data .detail div p{color:#fff; font-size:.9rem;}
+.care-service .container-fluid .content-wrap .data .detail .black p:first-child {padding: 15px 0;}
+.care-service .container-fluid .content-wrap .data .detail .brown p:first-child {padding: 15px 0;}
+.care-service .container-fluid .content-wrap .data .detail .black p:last-child {font-size:1.2rem; padding: 1rem 0;}
+.care-service .container-fluid .content-wrap .data .detail .brown p:last-child {font-size:1.2rem; padding: 1rem 0;}
+.care-service .container-fluid .content-wrap .data .detail .date {width:100%; text-align: right; font-size:.9rem; color:#555; padding-right:1%; }
+
+
+
+
+/*자주하는 질문*/
+.care-service .container-fluid .content-wrap .qa {width:1000px; padding:0; margin:80px auto;}
+.care-service .container-fluid .content-wrap .qa h5 {font-size:1.5rem; color:#222; font-weight: 600; margin-bottom: 30px;}
+.care-service .container-fluid .content-wrap .qa h2 {margin:0;}
+.care-service .container-fluid .content-wrap .qa .accordion .card {margin-bottom: 15px;}
+.care-service .container-fluid .content-wrap .qa .accordion .card .card-header {padding:.5rem 1rem;  }
+.care-service .container-fluid .content-wrap .qa .accordion .card-header .btn { color: #555; font-size:.95rem; }
+.care-service .container-fluid .content-wrap .qa .accordion .card-body { color: #555; padding: 1rem 2rem; font-size:.95rem; }
+.care-service .container-fluid .content-wrap .qa .accordion .card-body p {margin-bottom:10px;}
+.care-service .container-fluid .content-wrap .qa .accordion .card-body a {color:#ee321f; text-decoration: underline;}
+.care-service .container-fluid .content-wrap .qa .accordion .card-body .br {display:inline-block;}
+.care-service .container-fluid .content-wrap .qa .accordion .highlight .btn {color: #95312a;}
+.care-service .container-fluid .content-wrap .qa .accordion .highlight i { transform: rotate(180deg);}
+
+
+
+
+/*신청폼*/
+.care-service .container-fluid .content-wrap .form_box {padding:80px 0; }
+.care-service .container-fluid .content-wrap .form_box h5 {font-size:1.5rem; }
+.care-service .container-fluid .content-wrap .form_box p {font-size:1rem; padding: 15px 0 30px;}
+.care-service .container-fluid .content-wrap .form_box .contents form {padding:3rem; max-width: 600px; margin:0 auto; background-color: #fff; }
+
+}

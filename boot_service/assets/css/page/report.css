@@ -1,0 +1,33 @@
+html,body {margin:0px;padding:0px;text-align:center;}
+*{margin:0px;padding:0px;color:#333;}
+table, td {border-collapse:collapse;}
+.content_guide {width:98%;overflow:hidden;margin:0 auto;}
+.content_guide .title_guide{width:100%; text-align:center; font-weight:700; font-size:1.2rem; margin-top:30px; font-family: "Pretendard", Sans-serif; color:#222;}
+.content_guide .tb1_guide{width:100%;border-collapse:collapse;margin-top:20px;}
+.content_guide .tb1_guide .tb1_title_area{width:100%; background-color:#f85c4e; text-align: center; color:#fff; padding:.7rem 0 .6rem; font-size:.85em; font-family: "Pretendard", Sans-serif; font-weight:600; border:1px solid #ff5647;}
+.content_guide .tb1_guide th{background-color:#fff3f1; padding:.6rem .3rem; text-align:left;  font-family:"NotoSansKR", Sans-serif; border:1px solid #bbb; color:#333; font-size:.75rem;}
+.content_guide .tb1_guide td{background-color:#fff; font-size:.75rem;  padding:.6rem .3rem; border:1px solid #bbb;}
+.content_guide .tb1_guide .th_deep_gray {background-color:#f5f5f5;}
+.content_guide .tb1_guide .td_gray {background-color:#f5f5f5;}
+.content_guide .tb1_guide .th_33{width:33%;}
+.content_guide .tb1_guide .th_25{width:25%;}
+.content_guide .tb1_guide .th_5{width:5%;}
+.content_guide .tb1_guide .td_int_area {text-align:right; font-family: "Pretendard", Sans-serif; color:#000; font-size:.75rem; font-weight: 500; }
+.content_guide .tb1_guide .td_txt_area {text-align:center;}
+
+.content_guide .tb2_guide{width:100%;border-collapse:collapse;margin-top:30px; }
+.content_guide .tb2_guide .tb1_title_area{width:100%; background-color:#f85c4e; text-align: center; color:#fff; padding:.7rem 0 .6rem; font-size:.85em; font-family: "Pretendard", Sans-serif; font-weight:600; border:1px solid #ff5647;}
+.content_guide .tb2_guide th{background-color:#fff3f1;font-size:.7rem; font-family:"NotoSansKR", Sans-serif; text-align:center; padding:.6rem .3rem; border:1px solid #bbb; vertical-align: middle; line-height:.85rem; color:#333;}
+.content_guide .tb2_guide td{background-color:#fff; font-size:.7rem; text-align:left; padding:.6rem .3rem; border:1px solid #bbb;  font-family: "Pretendard", Sans-serif; font-weight:600;  color:#222; letter-spacing: -.5px;}
+.content_guide .tb2_guide .td_int_area {text-align:right;padding-right:3px;}
+.content_guide .tb2_guide .td_txt_area {text-align:center;}
+
+
+.login_guide {width:98%;overflow:hidden;margin:60px auto;}
+.login_guide .login_logo_area{text-align:center;padding:10px 0;}
+.login_guide .login_table{width:70%;border-collapse:collapse;margin:40px auto;}
+.login_guide .login_table td {font-weight:800px;font-size:14px;}
+.login_guide .login_table td .input1 {border:1px solid #CCC;border-radius:3px;padding:7px 0;line-height:16px;font-size:16px;width:100%;text-align:center;}
+.login_guide .login_btn {margin:30px auto;width:120px;border:1px solid #21548c;color:#FFF;font-weight:600;background-color:#217798;border-radius:5px;padding:7px 0;line-height:16px;font-size:16px;width:150px;text-align:center;}
+
+.fb {font-weight:700!important; }

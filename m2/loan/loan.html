@@ -1,0 +1,121 @@
+<?php include_once('/home/crowdfund/public_html/m2/inc/meta.php');?>
+<body>
+
+<div id="wrap">
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/header.php');?>
+
+	<div id="container">
+		<!-- 비주얼 -->
+		<img src="../images/loan/sub_loan.jpg" alt="대출하기 투자자가 작은 금액들을 모아서 함께 투자하는 새로운 투자 방식입니다." />
+
+		<div id="content">
+			<div class="location"><b class="blue">대출하기</b></div>
+
+			<div class="content">
+
+				<div class="type01">
+					<table>
+						<tbody>
+							<tr>
+								<td><b>이름</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>E-mail</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>전화번호</b><input type="text" class="text" /><div class="mt5"> - 없이 입력해주세요</div></td>
+							</tr>
+							<tr>
+								<td>
+									<b>대출상품</b>
+									<select>
+										<option>부동산담보대출</option>
+										<option>부동산담보대출부동산담보대출</option>
+										<option>부동산담보대출</option>
+										<option>부동산담보대출</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>담보주소</b>
+									<div class="btnWrap"><input type="text" class="text small" />&nbsp; <input type="button" class="btn_green2" value="주소찾기" /></div>
+								</td>
+							</tr>
+							<tr>
+								<td><b>담보상세주소</b><input type="text" class="text" /></td>
+							</tr>
+							<tr>
+								<td><b>희망대출금</b><input type="text" class="text price" /></td>
+							</tr>
+							<tr>
+								<td>
+									<b>희망대출 만기일</b>
+									<select>
+										<option>12개월</option>
+										<option>6개월</option>
+										<option>3개월</option>
+										<option>1개월</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td><b>내용</b><textarea class="textArea"></textarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="btnArea">
+					<a href="#" class="btn_big_blue" id="check">신청하기</a>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/footer.php');?>
+
+</div>
+
+<div id="complete" class="loan">
+	<img src="../images/btn_close.gif" alt="close" class="close" />
+	<div class="title">대출 신청 완료</div>
+	<div class="text">성공적으로 대출 신청이<br><span class="blue">완료되었습니다.</span><br><span class="normal">검토 후 연락드리겠습니다.</span></div>
+	<a href="../index.html" class="btn_big_link">메인으로</a>
+</div>
+
+<script>
+$(document).ready(function(){
+	// 레이어 팝업
+	$('#check').click(function() {
+		$.blockUI({
+			message: $('#complete'),
+			css: { width:'280px',top:'30%',left:'50%',marginLeft:'-140px',border:0, cursor:'default' } });
+
+		/*
+		$.ajax({
+			url: 'wait.php',
+			cache: false,
+			complete: function() {
+				// unblock when remote call returns
+				$.unblockUI();
+			}
+		});
+		*/
+
+	});
+
+	$('#complete #yes, #complete .close').click(function() {
+		$.unblockUI();
+		return false;
+	});
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+/********** kyc 개인 - 개별 심사 **********/
+
+.kyc-other p, .kyc-other a, .kyc-other span , .kyc-other th , .kyc-other td , .kyc-other div, .kyc-other button, .kyc-other h2, .kyc-other h3, .kyc-other h4, .kyc-other h5, .kyc-other ul li , .kyc-other label , .kyc-other input , .kyc-other .active{font-family:NotoSansKR, sans-serif; }
+
+
+.loading_wrap {display: block; position: absolute; top: 30%; left: 48%; z-index: 9999;}
+.loading_wrap .spinner-border{margin-left: 0.5rem;}
+
+/* 페이지별 노출/비노출 */
+.kyc-other .container .row .card .card-body .kyc-step:first-of-type {display: block;}
+.kyc-other .container .row .card .card-body .kyc-step {display: none;}
+
+/*셀렉트박스*/
+.kyc-other .custom-select {display:block; width:100%; height:calc(2.8rem); padding:.45rem 1rem; font-size:.85rem; font-weight:400; line-height: 1.5; color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 10px 8px; border:1px solid #ddd; border-radius:.25rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+/*인풋박스*/
+.kyc-other .form-control {display: block; width:100%; height:calc(2.8rem); padding:.45rem 1rem; font-size:.85rem; font-weight:400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #ddd; border-radius:.25rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+
+/*라디오버튼 커스텀*/
+.kyc-other input[type="radio"] {display: none;}
+.kyc-other input[type="radio"] + label:before{content: ""; display: inline-block;  width: 12px; height: 12px; padding:2px; background-clip: content-box; border: 1px solid #ccc; background-color: #fff;
+border-radius: 50%; margin-right:3px; margin-bottom:3px; vertical-align:middle;}
+.kyc-other input[type="radio"]:checked + label:before {background-color: #ee321f; border: 1px solid #ee321f;}
+.kyc-other input[type="radio"]:disabled + label:before {background-color: #fff; border: 1px solid #ccc;}
+.kyc-other input[type="radio"]:disabled + label {opacity:1;}
+
+
+
+
+/*파일업로드*/
+.kyc-other .container .row .card .card-body form .kyc-step .custom-file {margin-bottom:10px; height: calc(2.8rem);  }
+
+.kyc-other .container .row .card .card-body form .kyc-step .custom-file-label {height: calc(2.8rem); color:#555; background-color: #fff; border:1px solid #ddd; font-size:.85rem; line-height:2;  }
+.kyc-other .container .row .card .card-body form .kyc-step .custom-file-label::after{height: calc(2.8rem); color:#555; background-color: #eee;  font-size:.85rem; line-height:2;  }
+.kyc-other .container .row .card .card-body form .kyc-step .custom-file-input:lang(en)~.custom-file-label::after {content:"이미지선택";}
+
+
+
+
+/* 페이지공통 */
+.kyc-other .container .row .card {box-shadow: none; width:100%; background-color: #fff; margin:30px 0;}
+.kyc-other .container .row .card .card-body {padding:0;}
+.kyc-other .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.2rem; color:#222; font-weight: 500;  padding-left:1rem;  border-bottom:1px solid #ddd; padding-bottom:1rem; margin-bottom:30px;}
+.kyc-other .container .row .card .card-body form .kyc-step {padding:0 1rem;}
+.kyc-other .container .row .card .card-body form .kyc-step h5 {text-align:left; font-size:1.05rem; color:#222; font-weight: 500;  margin-bottom:10px;}
+.kyc-other .container .row .card .card-body form .kyc-step p {font-size:.85rem; color:#777; font-weight: 400;}
+
+
+/*서류제출*/
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail {margin:1rem 0;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table {width:100%;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tr th,.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tr td {border:1px solid #ddd;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table thead {background-color: #f8f8f8; }
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table thead th {color:#222; font-weight: 500; font-size:.825rem; text-align: center; padding:.6rem 1rem; border-bottom:1px solid #999;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table thead th span {color:#ee321f; font-weight:500; font-size:.825rem;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr th {border:1px solid #ddd; width:25%; padding:.7rem .5rem .2rem; vertical-align: middle; text-align: center; white-space: nowrap;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr th label{font-size:.825rem; color:#222; font-weight: 500; }
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr td {border:1px solid #ddd; width:75%; padding:.7rem 1rem;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr td label{font-size:.825rem; color:#222; font-weight: 500;  }
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr td p {font-family: "Nunito",sans-serif; font-size:.78rem; color:#555; font-weight: 400; letter-spacing: -.5px; margin-bottom:0;}
+.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tbody tr td p span {font-family: "Nunito",sans-serif; font-size:.825rem; color:#666; font-weight: 400; margin-top:-3px; vertical-align: middle; display: inline-block;}
+
+.kyc-other .container .row .card .card-body form .docu-check .notice {margin:10px 0 50px; padding:0 5px;}
+.kyc-other .container .row .card .card-body form .docu-check .notice p {font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif;  text-align: justify; line-height: 1rem; letter-spacing: -.5px;}
+
+
+/*인적정보입력*/
+.kyc-other .container .row .card .card-body form .info-regi .my-info {margin:30px 0 50px;}
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group {margin-bottom:20px;}
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group .id-num {display:flex; }
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group .id-num input{width:49%;}
+.kyc-other .container .row .card .card-body form .info-regi .my-info .form-group .id-num input:first-child{margin-right:2%;}
+
+
+/*출금계좌등록*/
+.kyc-other .container .row .card .card-body form .account-regi .account-info {margin:30px 0 50px;}
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group {margin-bottom:20px;}
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num {display:flex; }
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num input{width:49%;}
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num input:first-child{margin-right:2%;}
+
+
+/*본인계좌인증*/
+.kyc-other .container .row .card .card-body form .account-1won .ex-img {display:flex; justify-content: space-between;  border:1px solid #aaa;   background-color: #f8f8f8; padding:1rem 1.5rem 1.5rem; align-items: center; }
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .name p:first-child {margin-bottom:15px; font-size:.8rem; color:#777; font-weight: 400; }
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .name p:last-child {margin-bottom:0; font-size:.9rem; color:#222; font-weight: 500;  }
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .name p span{border:1px solid #222; padding:.3rem .5rem; margin-left:5px;  background-color: #fff; font-weight: 600; color:#222; font-size:.7rem;}
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .won {text-align:right;}
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .won p:first-child {margin-bottom:15px; font-size:.8rem; color:#777; font-weight: 400;  }
+.kyc-other .container .row .card .card-body form .account-1won .ex-img .won p:last-child {margin-bottom:0;font-size:.9rem; color:#222; font-weight: 500; }
+.kyc-other .container .row .card .card-body form .account-1won .form-group {margin:20px 0 50px;}
+.kyc-other .container .row .card .card-body form .account-1won .form-group p {margin-top:10px; font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif; line-height: 1rem; letter-spacing: -.5px;} .kyc-other .container .row .card .card-body form .account-1won .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+
+
+/*본인계좌확인*/
+.kyc-other .container .row .card .card-body form .account-check .bank-info{border:1px solid #aaa;   background-color: #f8f8f8; padding:1.5rem; align-items: center; margin-bottom: 50px;}
+.kyc-other .container .row .card .card-body form .account-check .bank-info p:first-child {margin-bottom:10px; font-size:.9rem; color:#777; font-weight: 500; font-family:"Pretendard", sans-serif;}
+.kyc-other .container .row .card .card-body form .account-check .bank-info p:last-child {margin-bottom:0; font-size:1rem; color:#222; font-weight: 600; font-family:"Pretendard", sans-serif; }
+.kyc-other .container .row .card .card-body form .account-check .bank-info p span {margin-bottom:0; margin-left:.5rem; font-size:1.05rem; color:#222; font-weight: 600; font-family:"Pretendard", sans-serif; }
+
+/*본인정보입력*/
+.kyc-other .container .row .card .card-body form .info-form .input-wrap {margin:30px 0 0;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group {margin-bottom:30px;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name {display:flex; }
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name input{width:49%;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name input:first-child{margin-right:2%;}
+
+
+/*본인정보입력 - 주소*/
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap {display:flex;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap button {width:40%; border-radius:.25rem; box-shadow: none; font-size:.9rem; background-color: #444; color:#fff;  margin-bottom:5px; height: calc(2.8rem); border-top-left-radius:0;  border-bottom-left-radius:0;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap input {width:58%; margin-right:1%;}
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group .postcode{margin-bottom: 5px; }
+.kyc-other .container .row .card .card-body form .info-form .input-wrap .form-group input[readonly] {background: #eee; color: #818181; cursor: auto;}
+
+
+/*본인정보입력 - 서비스동의*/
+.kyc-other .container .row .card .card-body form .info-form .agree-info {margin-bottom:50px;}
+.kyc-other .container .row .card .card-body form .info-form .agree-info p {font-size:.85rem; font-weight:500; color:#222; margin-bottom: .5rem; font-family:"NotoSansKR", sans-serif; }
+.kyc-other .container .row .card .card-body form .info-form .agree-info label {color:#555; font-size:.8rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc-other .container .row .card .card-body form .info-form .agree-info label a {color:#555; text-decoration: underline; font-size:.8rem; font-weight:500; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+/*기본 체크박스*/
+.kyc-other .container .row .card .card-body form .info-form .agree-info .form-group .checkbox input[type="checkbox"] {opacity:0;}
+.kyc-other .container .row .card .card-body form .info-form .agree-info .form-group .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; }
+.kyc-other .container .row .card .card-body form .info-form .agree-info .form-group .checkbox input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#ee321f; color: #fff; border: 1px solid #ee321f; box-sizing: border-box; }
+
+.kyc-other .container .row .card .card-body form .id-end p {margin:30px 0 80px; ;}
+
+
+/*하단 버튼 1열*/
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap1 {text-align:center; margin-bottom:70px;}
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap1 .next-btn {width:100%!important; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none;}
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap1 .other-btn{ border:none; background-color:#fff; color:#777;  font-size:.85rem; padding:0; margin-top:1.5rem;  font-weight: 500; border-bottom: 1px solid #999;}
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap1 .main-btn {width:100%; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none;}
+
+/*하단 버튼 2열*/
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap2 {display:flex; justify-content:center;  text-align:center; margin-bottom:70px; flex-wrap: wrap; }
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap2 .next-btn {width:49%; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; }
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap2 .prev-btn {width:49%; background-color: #aaa; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; margin-right:2%;}
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap2 .modify-btn {width:49%; background-color: #aaa; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; margin-right:2%;}
+.kyc-other .container .row .card .card-body form .kyc-step .btn-wrap2 .other-btn{ border:none; background-color:#fff; color:#777;  font-size:.85rem; padding:0; margin-top:1.5rem;  font-weight: 500; border-bottom: 1px solid #999; text-align: center;}
+
+
+@media all and (min-width:500px) {
+    /*페이지공통*/
+    .kyc-other {margin:0; background-color: #fafafa;}
+    .kyc-other .container .row .card {box-shadow: none; border:1px solid #ddd; width:500px; margin:40px 0 100px; border-radius: 0;}
+    .kyc-other .container .row .card .card-body .head-title h4 {font-size:1.4rem; margin:40px 0 20px; border-bottom: none; padding-left:1.5rem;}
+    .kyc-other .container .row .card .card-body form .kyc-step p {font-size:.9rem; }
+    .kyc-other .container .row .card .card-body form .kyc-step {padding:0 1.5rem;}
+
+    /*서류제출*/
+    .kyc-other .container .row .card .card-body form .docu-check .notice p {font-size:.8rem; line-height: 1.1rem; }
+
+    /*신분증정보확인*/
+    .kyc-other .container .row .card .card-body form .id-photo .notice p{font-size:.8rem; line-height: 1.1rem; }
+}
+
+@media all and (min-width:900px) {
+    .kyc-other {margin:0; background-color: #fafafa;}
+    .tail {display:block;}
+}

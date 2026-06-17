@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>기능 - 완납확인서</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		
+        <!-- third party css -->
+        <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+		
+		 <!-- 추가 css -->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/function.css" rel="stylesheet" type="text/css" />
+		
+		
+		
+        <!-- App css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+
+		
+		
+    </head>
+
+    <body class="loading">
+        <!-- Begin page -->
+        <div class="wrapper porduct-list">
+            <div class="content-page" style="margin-left:0;  padding-top:30px;">
+                <div class="content">
+                    <div class="container-fluid">
+						<!-- 페이지 타이틀 시작-->
+						
+                        <!-- 페이지 타이틀 끝-->
+						
+						<!-- 테이블 시작-->
+					    <div class="function-confirmation-page">
+							<div class="modal-header">
+							<button type="button" class="btn btn-link"><i class="mdi mdi-printer"></i> 인쇄</button>
+							<button type="button" class="btn basic-bt">확인</button>
+						</div>
+							<div class="page-tit">
+								<div class="row">
+									<div class="col-12">
+										<h4 style="border:none; text-align: center; padding-bottom:0; margin-top:30px;">완납확인서</h4>
+									</div>
+								</div>  
+							</div>	
+							<div class="debtor-info">
+								<h3 style="margin-top:20px;">채무자</h3>
+								<table>
+									<tr>
+										<td>고객명</td>
+										<td>김미선</td>
+									</tr>
+									<tr>
+										<td>주민등록번호</td>
+										<td>820812-2******</td>
+									</tr>
+									<tr>
+										<td>주소</td>
+										<td>서울특별시 강남구 대치동 945-10, KT&G 대치타워 5층</td>
+									</tr>
+								</table>
+							</div>
+							
+							<div class="creditor-info">
+								<h3>채권자</h3>
+								<table>
+									<tr>
+										<td>회사명</td>
+										<td>(주)헬로핀테크</td>
+									</tr>
+									<tr>
+										<td>주소</td>
+										<td>서울특별시 강남구 대치동 945-10, KT&G 대치타워 5층</td>
+									</tr>
+									<tr>
+										<td>연락처</td>
+										<td>1588-5210</td>
+									</tr>
+								</table>
+							</div>
+							
+							
+							<div class="debt-history">
+								<div class="debt-history-tit">
+									<h3>부채내역</h3>
+									<span>단위 (원)</span>
+								</div>
+								<div class="scroll-div">
+									<table>
+										<thead>
+											<tr>
+												<th></th>
+												<th>대출금액</th>
+												<th>대출실행일</th>
+												<th>만료일</th>
+												<th>은행</th>
+												<th>납입계좌</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>￦ 150,000,000</td>
+												<td>2023-07-01</td>
+												<td>2023-07-01</td>
+												<td>신한은행</td>
+												<td>56212670593608</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							
+							<div class="docu-tail">
+								<p><span>김미선</span>님은 위 내용의 채무를 전액 상환하였음을 알려드립니다.</p>
+								<p>2020년 07월 07일</p>
+								<p>(주)헬로핀테크 (인)</p>
+								
+								<!--div>
+									<button type="button" id="" class="basic-bt">취소</button>
+                            		<button type="button" id="" class="btn btn-link">저장</button>
+								</div-->
+							</div>
+							
+							
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!-- 테이블 끝-->
+						
+
+                    </div>
+                    <!-- container -->
+
+                </div>
+                <!-- content -->
+
+
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+		 <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+        <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+        <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+        <script src="assets/js/vendor/dataTables.select.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.datatable-init.js"></script>
+        <!-- end demo js-->
+
+    </body>
+</html>

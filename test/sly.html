@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sly/1.6.1/sly.min.js"></script>
+	
+	<script>
+$(document).ready(function() {
+	var menu_start = "0";
+	$('#mobile_nav').sly({
+		horizontal: 1,
+		itemNav: 'centered',
+		smart: 1,
+		mouseDragging: 1,
+		touchDragging: 1,
+		releaseSwing: 1,
+		startAt: menu_start,
+		speed: 300,
+		elasticBounds: 1,
+		dragHandle: 1,
+		dynamicHandle: 1
+    });
+	$(window).resize(function(e) {
+		$('#mobile_nav').sly('reload');
+
+	});
+	
+
+	var menu_start02 = "0";
+	var $wrap = $('#mobile_nav02').parent();	//스크롤을 넣고 싶을 경우 삽입
+	$('#mobile_nav02').sly({
+		horizontal: 1,
+		itemNav: 'centered',
+		smart: 1,
+		mouseDragging: 1,
+		touchDragging: 1,
+		releaseSwing: 1,
+		startAt: menu_start02,
+		scrollBar: $wrap.find('.scrollbar'),	//스크롤을 넣고 싶을 경우 삽입
+		scrollBy: 1,							//스크롤을 넣고 싶을 경우 삽입
+		speed: 300,
+		elasticBounds: 1,
+		dragHandle: 1,
+		dynamicHandle: 1
+    });
+	$(window).resize(function(e) {
+		$('#mobile_nav02').sly('reload');
+
+	});
+});
+</script>
+</head>
+<body>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+body {font-family: 'Noto Sans KR';font-size: 16px; color: #454545;background-color:#fff}
+a:link, a:visited {color: #000;text-decoration: none}
+
+.title {text-align: center;font-size: 1.3em;background-color: #00446c;color: #fff;padding: 17px}
+.title a {color: #fff;font-size: 16px;border: 1px solid #9fb7c5;display: inline-block;padding: 3px 24px;border-radius: 17px;margin-left: 10px}
+
+h1 {text-align: center;margin-top: 100px;font-size: 1.5em}
+.webtong_menu_wrap {border: 2px solid #26364c;border-radius: 5px;margin: 0 auto;width: 100%;max-width: 1215px}
+.m-nav {margin: 0 10px}
+.m-nav ul {margin: 0;padding: 0;list-style: none;-ms-touch-action: pan-y;touch-action: pan-y;}
+.m-nav ul:after {clear: both;content: " ";display:block}
+.m-nav ul li {display: table-cell;white-space: nowrap}
+.m-nav ul li a {padding: 14px 25px;position: relative;letter-spacing: -0.9px;display: inline-block;}
+.m-nav ul li a:after {content:'';position: absolute;right: 0;top: 21px;background-color: #c5c5c5;height: 13px;width: 1px;}
+.m-nav ul li:last-child a:after {background:none}
+
+.webtong_menu_wrap.shop {border: 0;max-width: 1081px;margin-bottom: 50px}
+.webtong_menu_wrap.shop .m-nav ul li {padding: 10px}
+.webtong_menu_wrap.shop .m-nav ul li a {border: 1px solid #9dafb9;border-radius: 5px;box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.1);}
+.webtong_menu_wrap.shop .m-nav ul li a:after {content:none}
+.webtong_menu_wrap.shop .m-nav ul li a p {border-top: 1px solid #9dafb9;text-align: center;padding-top: 10px}
+
+.scrollbar {margin: 12px 0 1em 0;height: 5px;background: #fff;line-height: 0}
+.scrollbar .handle {width: 50px;height: 100%;background: #e0e0e0;cursor: pointer;border-radius:20px}
+.scrollbar .handle .mousearea {position: absolute;top: -9px;left: 0;width: 100%;height: 20px}
+
+</style>
+
+<p class="title">가벼운 터치 슬라이드 : sly.min.js <a href="https://darsa.in/sly/#!download">sly 소개 사이트 이동</a></p>
+<h1>모바일 반응형 대응 메뉴 가로 스크롤</h1>
+<div class="webtong_menu_wrap">
+	<div class="m-nav" id="mobile_nav">
+		<ul>
+			<li><a href="https://webtong.kr:443">웹통 메인</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=benchmarking">위</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=tutorial">튜터리얼</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=freecon">무료콘텐츠</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=freesauce">무료소스정보</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=empathy">작품공감</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=qna ">질문과답변</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=free">디자인이야기</a></li>
+			<li><a href="http://webtong.kr/bbs/board.php?bo_table=competition">공모·전시·행사</a></li>
+			<li><a href="http://webtong.kr/shop/">웹통 콘텐츠몰</a></li>
+		</ul>
+	</div>
+</div>	
+
+<h1>모바일 반응형 대응 상품 가로 스크롤</h1>
+<div class="webtong_menu_wrap shop">
+	<div class="m-nav" id="mobile_nav02">
+		<ul>
+			<li>
+				<a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품01">
+					<p>webtong.kr 상품01</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품02">
+					<p>webtong.kr 상품02</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품03">
+					<p>webtong.kr 상품03</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품04">
+					<p>webtong.kr 상품04</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품05">
+					<p>webtong.kr 상품05</p>
+				</a>
+			</li>
+			<li>
+				<a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품01">
+					<p>webtong.kr 상품01</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품02">
+					<p>webtong.kr 상품02</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품03">
+					<p>webtong.kr 상품03</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품04">
+					<p>webtong.kr 상품04</p>
+				</a>
+			</li>
+			<li><a href="https://webtong.kr/bbs/board.php?bo_table=freesauce">
+					<img src="img01.png" alt="상품05">
+					<p>webtong.kr 상품05</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="scrollbar">
+		<div class="handle">
+			<div class="mousearea"></div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+</body>
+</html>

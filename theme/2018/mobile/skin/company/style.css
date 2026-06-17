@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/*헬로펀딩 투자자 데이터*/
+#invest_data .tbg {width:94%;border-radius:8px;margin:0 auto;background-color:#00a0e9;font-family:'spoqahansans' !important;}
+#invest_data .tbg tr {border-bottom:1px solid #41c3ff;font-family:'spoqahansans' !important;}
+#invest_data .tbg td {font-family:'spoqahansans' !important;}
+#invest_data .tbg tr:last-child {border-bottom:0px solid #d9e8f0;font-family:'spoqahansans' !important;}
+#invest_data .data_info {color:#fff;font-size:11px;font-family:'spoqahansans' !important;font-weight:400;text-align:center;line-height:20px;}
+#invest_data .data_info span {display:block;color:#fff;font-size:16px;font-family:'spoqahansans' !important;font-weight:700;line-height:20px;}
+#invest_data .data_info2 {color:#fff;font-size:11px;font-family:'spoqahansans' !important;font-weight:400;text-align:center;line-height:20px;border-bottom:0px solid #41c3ff;}
+#invest_data .data_info2 span {display:block;color:#fff;font-size:16px;font-family:'spoqahansans' !important;font-weight:700;line-height:20px;}
+#invest_data .r_line{border-right:1px solid #41c3ff;height:70px;}
+#invest_data .data_bot {width:94%;color:#313131;font-size:12px;font-family:'spoqahansans';margin:0 auto;text-align:center;padding:20px 0 40px 0;line-height:20px;}
+#invest_data .data_info b {width:15px;height:15px;border-radius:50%;background-color:#fff;font-size:12px;font-family:'spoqahansans';font-weight:400;color:#000;display:inline-block;line-height:15px;vertical-align:top;margin-top:2px;}
+#invest_data .data_info2 b {width:15px;height:15px;border-radius:50%;background-color:#fff;font-size:12px;font-family:'spoqahansans';font-weight:400;color:#000;display:inline-block;line-height:15px;vertical-align:top;margin-top:2px;}
+
+#vip_member {width:100%; text-align:center; display:inline-block;}
+#vip_member #member_m01 {position:absolute;margin-top:39%;  margin-left:23.5%;width:25%;height:1.1%;cursor:pointer; }
+#vip_member #member_m02 {position:absolute;margin-top:39%;  margin-left:50.7%;width:25%;height:1.1%;cursor:pointer; }
+#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:1.1%;cursor:pointer; }
+#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:1.1%;cursor:pointer; }
+#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:1.1%;cursor:pointer; }
+
+
+@media screen and (max-width:320px) {
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:70%; margin-left:10%; z-index:5; width:83.4%; border:0px solid red}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:70%; margin-left:10%; z-index:5; width:83.4%; border:0px solid red}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid red}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid red}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid red}
+
+	.member_m {position:absolute;margin:0px;width:50%;height:1.87%;cursor:pointer;overflow:hidden;}
+	.member_m_info {
+		display:none;position:absolute;z-index:5;overflow:hidden;width:92%;padding:4%;bottom:0;
+		background:url('/images/company/profile/pro_bg.png') center;font-size:12px;color:#fff;font-family:'spoqahansans';line-height:18px;
+	}
+	.member_m_info p {font-size:10px;font-family:'spoqahansans' !important;line-height:12px;}
+}
+
+@media screen and (min-width:321px) and (max-width:414px) {
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:70%; margin-left:10%; z-index:5; width:83.4%; border:0px solid green}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:70%; margin-left:10%; z-index:5; width:83.4%; border:0px solid green}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid green}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid green}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:104%;margin-left:10%; z-index:5; width:83.4%; border:0px solid green}
+
+	.member_m {position:absolute;margin:0px;width:50%;height:48.1vw;cursor:pointer;overflow:hidden;}
+	.member_m_info {
+		display:none;position:absolute;z-index:5;overflow:hidden;width:92%;padding:4%;bottom:0;
+		background:url('/images/company/profile/pro_bg.png') center;font-size:14px;color:#fff;font-family:'spoqahansans';line-height:20px;
+	}
+	.member_m_info p {font-size:12px;font-family:'spoqahansans' !important;line-height:16px;}
+}
+
+@media screen and (min-width:415px) {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;  margin-left:23.5%;width:25%;height:1.2%;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m02 {position:absolute;margin-top:39%;  margin-left:50.7%;width:25%;height:1.2%;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:1.2%;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:1.2%;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:1.2%;cursor:pointer; border:0px solid royalblue}
+
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:70%; margin-left:18%; z-index:5; width:40%; border:0px solid royalblue}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:70%; margin-left:39%; z-index:5; width:50%; border:0px solid royalblue}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:104%;margin-left:15%; z-index:5; width:40%; border:0px solid royalblue}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:104%;margin-left:31%; z-index:5; width:40%; border:0px solid royalblue}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:104%;margin-left:45%; z-index:5; width:40%; border:0px solid royalblue}
+
+	.member_m {position:absolute;margin:0px;width:50%;height:48.2vw;cursor:pointer;overflow:hidden;}
+	.member_m_info {
+		display:none;position:absolute;z-index:5;overflow:hidden;width:92%;padding:4%;bottom:0;
+		background:url('/images/company/profile/pro_bg.png') center;font-size:16px;color:#fff;font-family:'spoqahansans';line-height:22px;
+	}
+	.member_m_info p {font-size:14px;font-family:'spoqahansans' !important;line-height:20px;}
+}
+
+.member_m_info {background:url('/images/company/profile/pro_bg.png') center bottom;}
+
+
+table {border-collapse: collapse;}
+div.members {position:absolute; display:none;}
+div.members img {width: 300px;z-index:10;}
+
+#content .content2 { padding:0 0 20px 0 !important; }
+
+.profile {width:95%; margin:0 auto;}
+.profile  ul {padding-top:1.5%; clear:both;}
+.profile  ul li {float:left;width:50%;padding-right:1.5%;}
+
+.tabs {width:100%; margin:0 auto; margin-top:15px; text-align:center;padding:30px 1.5% 30px 2%;display:block;}
+.tabs li.on {width:15.35%;color:#000 !important;text-align:center;border-top:4px solid #1175d1;border-bottom:1px solid #e1e1e1;}
+.tabs li.on a {width:15.35%;color:#1175d1 !important;text-align:center;font-size:16px;font-weight:400;}
+.tabs li.off {width:15.35%;color:#797979 !important;text-align:center;border-top:4px solid #b7d5f1;border-bottom:1px solid #e1e1e1;}
+.tabs li.line {float:left; width:1px; height:40px; line-height:35px; font-size:16px; font-family:'Spoqa Han Sans'; font-weight:300; color:#C7C7C7;border-top:4px solid #b7d5f1;border-bottom:1px solid #e1e1e1;}
+.tabs li {float:left; width:15.35%; height:40px; line-height:35px; font-size:14px; font-family:'Spoqa Han Sans'; font-weight:400; color:#000; cursor:pointer;text-align:center;}
+
+#history_tab1 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+#history_tab2 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+#history_tab3 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+#history_tab4 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+#history_tab5 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+#history_tab6 {clear:both;font-size:12px;font-weight:400;font-family:'Spoqa Han Sans';color:#000;padding:30px 0 30px 5px;width:96%; border:1px solid #e1e1e1; border-top:none;margin:0 auto;}
+
+
+
+.months {padding:0 10px;width:50px;color:#1175d1;font-weight:400;font-size:14px;text-align:right;display:inline-block;vertical-align:top;clear:both;}

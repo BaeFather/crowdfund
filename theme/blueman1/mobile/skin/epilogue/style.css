@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* 투자후기 */
+.review_tit_r {margin:0 auto;}
+.review_tit_r p {display:inline-block;font-family:'NGB';font-size:20px;color:#4A6FE2;width:100%;text-align:left;}
+.review_tit_r p:last-child {display:inline-block;text-align:left;width:100%;font-size:13px;color:#5E5E5E;padding-top:10px;}
+
+/* BEST 후기글 */
+.review_best_title {position:absolute;bottom:0;top:1%;left:27%;height:40px;min-height:40px;width:100%;max-width:49%;padding:0;margin:0;z-index:1;}
+.review_best_list {position:relative;width:100%;margin-top:30px;padding:30px 0 0 0;}
+.review_best_list > div {position: relative;border: 2px solid #326FD8;border-radius: 5px;}
+.review_best_list ul {width:100%;display: table;margin:0 auto;}
+.review_best_list ul li {}
+.review_best_list ul li:after {clear: both;content: "";display:block;}
+.review_best_list ul li .review {width:100%;}
+.review_best_list ul li .review .review_box {margin:15px;padding:15px;border: 1px solid #EDEDED;min-height: 460px;}
+.review_best_list ul li .review .review_box:focus,
+.review_best_list ul li .review .review_box:hover {border:1px solid #326FD8;}
+.review_best_list ul li .review .review_box span {line-height: 24px;}
+.review_best_list ul li .review .review_box .subject {display:block;color:#4A6FE2;font-size:17px;font-family:'NGB';}
+.review_best_list ul li .review .review_box .mem_name {display:block;font-size:17px;font-family:'NGB';color:#A5A5A5;}
+.review_best_list ul li .review .review_box .thumbnail {margin: 10px 0;}
+.review_best_list ul li .review .review_box .contents {font-size: 15px;white-space:pre-line;word-break:break-all;}
+.review_best_list ul li .review .review_box .link {overflow:hidden;padding:10px 0;margin:15px 0;text-align:center;width:100%;}
+.review_best_list ul li .review .review_box .link a {margin:0 auto;color:#FFF;padding:6px 20px;border-radius:4px;text-align:center;background-color:#326FD8;}
+.review_best_list ul li .review .review_box .link a:focus,
+.review_best_list ul li .review .review_box .link a:hover,
+.review_best_list ul li .review .review_box .link a:active {color:#FAFAFA;background-color:#2a54b1;}
+
+/* 투자후기 글 */
+.review_list {display: block !important;margin-top:15px;}
+.review_list ul {width:100%;margin:0 auto;}
+.review_list ul li {}
+.review_list ul li .review {width:100%;}
+.review_list ul li .review .review_box {margin:15px;padding:15px;border: 1px solid #EDEDED;}
+.review_list ul li .review .review_box:focus,
+.review_list ul li .review .review_box:hover {border:1px solid #326FD8;}
+.review_list ul li .review .review_box span {line-height: 24px;}
+.review_list ul li .review .review_box .subject {display:block;color:#4A6FE2;font-size:16px;font-family:'NGB';}
+.review_list ul li .review .review_box .mem_name {display:block;font-size:15px;font-family:'NGB';color:#A5A5A5;}
+.review_list ul li .review .review_box .thumbnail {margin: 10px 0;}
+.review_list ul li .review .review_box .contents {font-size: 14px;white-space:pre-line;word-break:break-all;}
+.review_list ul li .review .review_box .link {text-align:center;width:100%;margin:15px 0;}
+.review_list ul li .review .review_box .link a {margin:0 auto;color:#FFF;padding:6px 20px;border-radius:4px;text-align:center;background-color:#326FD8;}
+.review_list ul li .review .review_box .link a:focus,
+.review_list ul li .review .review_box .link a:hover,
+.review_list ul li .review .review_box .link a:active {color:#FAFAFA;background-color:#2a54b1;}
+.review_list ul li.review_empty {width: 100%;}
+
+/* 더보기 버튼 */
+.m_more_list {position:relative;color:#343434;border:1px solid #9E9E9E;-webkit-border-radius: 3px; -moz-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px;width:92%;margin: 0 auto;background-color:#FFF;padding:10px;}
+.m_more_list_loading {display: none;text-align:center;padding:15px;}

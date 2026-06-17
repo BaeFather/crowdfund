@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>대출하기</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+		
+
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+		<script defer src="./assets/js/app/wow.min.js"></script>
+		<script defer src="./assets/js/app/jquery.counterup.min.js"></script>
+		<script defer src="./assets/js/app/jquery.waypoints.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/company.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+
+<style>
+			
+.loan-step03 p, .loan-step03 a, .loan-step03 span , .loan-step03 th , .loan-step03 td , .loan-step03 div, .loan-step03 button, .loan-step03 h4, .loan-step03 h5, .loan-step03 .active{font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}			
+
+	
+.loan-step03 {margin:60px auto 0; }
+.loan-step03 .container-fluid {padding:20px 1rem 0 ; background-color: #f8f8f8;}	
+	
+
+.loan-step03 .container-fluid .complete {width:100%; max-width:500px; padding:2rem 1rem 2.5rem; text-align:center; border:1px solid #ccc; margin:0 auto; background-color:#fff;}
+.loan-step03 .container-fluid .complete .mdi {font-size:2rem; color:#ee321f;  margin-bottom:10px; display: block;}
+.loan-step03 .container-fluid .complete p:nth-child(2) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem; margin-bottom:5px;}
+.loan-step03 .container-fluid .complete p:nth-child(2) span {display:none;}	
+.loan-step03 .container-fluid .complete p:nth-child(3) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem;}	
+.loan-step03 .container-fluid .complete p:nth-child(4) {border-bottom:1px solid #ee321f; margin:1.5rem 0;}
+.loan-step03 .container-fluid .complete p:nth-child(5){font-size:.75rem; color:#777; font-family: Nunito,sans-serif; letter-spacing: -.3px; text-align: center; line-height: 1.05rem; }
+
+.loan-step03 .container-fluid .customer {width:100%; max-width:500px; padding:1rem 1rem 1rem; text-align:center;  margin:10px auto 0; background-color:#fff; border:1px solid #ccc; }	
+.loan-step03 .container-fluid .customer .txt p:nth-child(1) {font-size:.95rem; font-weight:500; color:#222; letter-spacing: -.5px; font-family:Pretendard, sans-serif;}
+.loan-step03 .container-fluid .customer .txt p:nth-child(2) {font-size:.85rem; font-weight:500; color:#777; font-family:Pretendard, sans-serif; letter-spacing: -.5px;}	
+.loan-step03 .container-fluid .customer .txt p span {display:none;}
+.loan-step03 .container-fluid .customer .tel {margin-top:10px; }	
+.loan-step03 .container-fluid .customer .tel a{font-size:1.4rem;  font-family:Pretendard, sans-serif;  font-weight:800; color:#222;}
+.loan-step03 .container-fluid .customer .tel span{font-size:1.4rem;  font-family:Pretendard, sans-serif;  font-weight:800; color:#ee321f; margin-top:10px; }	
+	
+.loan-step03 .container-fluid .loan-btn	{display:flex; justify-content:center;}
+.loan-step03 .container-fluid .loan-btn button {width:100%; max-width:500px; border:none; background-color: #ee321f; padding:1rem; color:#fff; margin:1rem 0 3rem; font-size:1rem;}	
+	
+
+	
+@media (min-width:500px){
+.loan-step03 .container-fluid .complete .mdi {font-size:2.5rem;  margin-bottom:15px; }
+.loan-step03 .container-fluid .complete p:nth-child(2) {font-size:1.1rem;}
+.loan-step03 .container-fluid .complete p:nth-child(2) span {display:inline-block; font-size:1.1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem;}	
+.loan-step03 .container-fluid .complete p:nth-child(3) {font-size:1.1rem; }	
+.loan-step03 .container-fluid .complete p:nth-child(4) {margin:2rem 0;}
+.loan-step03 .container-fluid .complete p:nth-child(5){text-align: center; padding:0 10px;}
+	
+.loan-step03 .container-fluid .customer {padding:1.5rem 1rem 1.5rem;  }	
+.loan-step03 .container-fluid .customer .txt p:nth-child(1) {font-size:1rem;}
+.loan-step03 .container-fluid .customer .txt p:nth-child(2) {font-size:.9rem; letter-spacing: 0px; margin-top:3px;}	
+.loan-step03 .container-fluid .customer .txt p span {display:inline-block; font-size:1rem; font-weight:500; color:#222; letter-spacing: -.5px; font-family:Pretendard, sans-serif;}
+.loan-step03 .container-fluid .customer .tel {margin-top:15px; }	
+.loan-step03 .container-fluid .customer .tel a{font-size:1.6rem;}
+.loan-step03 .container-fluid .customer .tel span{font-size:1.6rem;}		
+}
+	
+
+@media (min-width:600px){
+
+.loan-step03 .container-fluid .loan-btn button { padding:1rem; color:#fff; margin:2rem 0 5rem; font-size:1rem; width:500px;}	
+		
+	}
+@media (min-width:900px){
+	
+.loan-step03 {margin-top:80px; }
+
+}
+			
+			
+		</style>
+		
+
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="loan-step03">	
+			<div class="container-fluid">
+				<div class="complete">
+					<p><i class="mdi mdi-check-circle"></i></p>
+					<p><span>헬로펀딩 아파트</span> 담보대출을 신청해 주셔서 감사합니다.</p>
+					<p>영업일 1일 이내 담당자 확인 후 연락드리겠습니다.</p>
+					<p></p>
+					<p>연계대출 이자율 연 19.9% 이내 (연체금리 연 20% 이내), 연계대출 시 법무비 등 부가비용이 발생할 수 있으며 신용점수가 하락 될 수 있습니다.
+					대출 유형에 따라 중도상환수수료 등 조기 상환 조건이 적용될 수 있습니다. 플랫폼 이용 시 플랫폼이용수수료가 발생 할 수 있습니다. 과도한 빚은 당신에게 큰 불행을 안겨 줄 수 있습니다.</p>
+				</div>
+				<div class="customer">
+					<div class="txt">
+						<p><span>아파트</span> 담보대출상담이 필요하시면 언제든지 연락주세요</p>
+						<p>운영시간 (월-목 : 10시-19시 | 금 : 10시-17시)</p>
+					</div>
+					<p class="tel"><a href="tel:1588-5210">1588-<span>5210</span></a></p>
+				</div>
+
+				<div class="loan-btn">
+					<button>확인 완료</button>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+		
+
+
+    </body>	
+	
+</html>

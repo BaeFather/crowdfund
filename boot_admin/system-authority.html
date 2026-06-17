@@ -1,0 +1,1174 @@
+
+<!DOCTYPE html>
+<html >
+    <head>
+    <title>헬로관리자 권한 관리</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta http-equiv="Cache-Control" content="No-Cache">
+    <meta http-equiv="Pragma" content="No-Cache">
+
+    <!-- media query viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- csrf token -->
+    <meta name="_csrf" content="f72c4422-d481-4f7b-a2ac-36a4e820aa78"/>
+    <meta name="_csrf_header" content="X-CSRF-TOKEN" >
+
+    <!-- App favicon -->
+    <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!-- App css -->
+    <link href="assets/css/admin/header.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/admin/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/admin/common.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/system.css" rel="stylesheet" type="text/css" />	
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        
+    <!-- import css -->
+    <link href="assets/plugins/jstree/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+
+		
+	<style>
+
+		
+	
+/****************************************************		
+시스템관리 - 권한관리	
+*****************************************************/	
+.wrapper .content-page .container-fluid .system-authority {display:flex; width:100%; padding:0 30px; margin-top:-10px; }	
+.wrapper .content-page .container-fluid .system-authority .tree-view {padding:2rem 1rem;}			
+.wrapper .content-page .container-fluid .system-authority .menu-regi{width:60%;  border-right:1px solid #ddd; padding:2rem 3rem 2rem 2rem;}		
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap {text-align:center; margin:50px 0 20px;}		
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap button {outline:none; box-shadow: none; width:100px; height:35px;}
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap .btn-info {background-color:#fff; color:#222; border:1px solid #222;}	
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap .btn-success {background-color:#fff; color:#888; border:1px solid #888; margin:0 10px;}	
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap .btn-danger {background-color:#fff; color:#ee321f; border:1px solid #ee321f;}				
+		
+.wrapper .content-page .container-fluid .system-authority .table ul {display:flex; align-items:center; width:100%; flex-wrap: wrap; padding:0; border-top:1px solid #888; }	
+.wrapper .content-page .container-fluid .system-authority .table ul li:nth-child(2n+1) {background-color:#f6f6f6; width:16%; border-bottom:1px solid #ddd; height:55px; line-height:55px; padding-left:1rem;}	
+.wrapper .content-page .container-fluid .system-authority .table ul li:nth-child(2n) {width:34%; border-bottom:1px solid #ddd; height:55px; padding:.65rem 2rem .65rem 1rem;}	
+.wrapper .content-page .container-fluid .system-authority .table ul li .custom-checkbox {display:flex; align-items:flex-end;}	
+.wrapper .content-page .container-fluid .system-authority .table ul li .col-form-label {margin-bottom:5px; line-height:0; font-size:.8rem; color:#222; font-weight:500; letter-spacing:-.5px;}		
+.wrapper .content-page .container-fluid .system-authority .table ul li .form-control {border-radius:0; height:calc(2rem); border-radius:.25rem;}	
+.wrapper .content-page .container-fluid .system-authority .table ul li .custom-control-label::before,
+.wrapper .content-page .container-fluid .system-authority .table ul li .custom-control-label::after {top:17px;}	
+
+		
+/*트리메뉴 커스텀*/		
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-container-ul .jstree-themeicon {background-position:-135px -73px;}
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-container-ul ul li .jstree-themeicon {background-position:-168px -75px;}
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-container-ul ul li ul li .jstree-themeicon {background-position:-200px -74px;}	
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-container-ul ul li ul li ul li .jstree-themeicon {background-position:-232px -75px;}		
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-container-ul ul li ul li ul li ul li .jstree-themeicon {display: none;}				
+.wrapper .content-page .container-fluid .system-authority .tree-view li a {color:#777;  font-size:.825rem; margin-bottom:7px;}	
+.wrapper .content-page .container-fluid .system-authority .tree-view li a:hover {color:#fa5c7c; background-color:#fff; box-shadow:none;}	
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-clicked {color:#fa5c7c!important; background:#fff!important; box-shadow:none!important; font-weight: 600;}	
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-clicked span {background-color:#f3f3f3; color:#222; border:1px solid #ccc; font-weight:400; font-size:.75rem; margin:0 2px; padding:2px 3px;}
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-clicked span.first {margin-left:10px;}		
+.wrapper .content-page .container-fluid .system-authority .tree-view [tabindex="-1"]:focus:not(:focus-visible){background-color:#fff; outline:none; box-shadow:none;}
+.wrapper .content-page .container-fluid .system-authority .tree-view .jstree-checkbox {margin:0 3px 0 0;}
+				
+
+/*데이터테이블 커스텀*/		
+.wrapper .content-page .container-fluid .system-authority .table_wrap .dataTables_length {text-align:right;}
+.wrapper .content-page .container-fluid .system-authority .table_wrap .dataTables_length > label {padding:0;}		
+.wrapper .content-page .container-fluid .system-authority .table_wrap .col-sm-12 {padding:0;}
+.wrapper .content-page .container-fluid .system-authority .table_wrap table.system_table thead tr th {font-size:.8rem; text-align: center; color:#777;}
+.wrapper .content-page .container-fluid .system-authority .table_wrap table.system_table tbody tr td {font-size:.85rem; text-align: center; color:#222;}	
+.wrapper .content-page .container-fluid .system-authority .table_wrap .dataTables_info {font-size:.8rem; font-weight:400; color:#777;}
+.wrapper .content-page .container-fluid .system-authority .table_wrap .page-item.active .page-link {background-color:#555; border-color:#fa5c7c; outline:none!important; box-shadow:none;}		
+.wrapper .content-page .container-fluid .system-authority .table_wrap .page-item .page-link {outline:none!important; box-shadow:none;}			
+		
+
+ @media (max-width:1300px){	
+	 
+.wrapper .content-page .container-fluid .system-authority .tree-view {width:35%;}	
+.wrapper .content-page .container-fluid .system-authority .menu-regi{width:65%;}
+.wrapper .content-page .container-fluid .system-authority .table ul {display:flex; align-items:center; width:100%; flex-wrap: wrap; padding:0; border-top:1px solid #888; }	
+.wrapper .content-page .container-fluid .system-authority .table ul li:nth-child(2n+1) {background-color:#f6f6f6; width:30%; border-bottom:1px solid #ddd; height:55px; line-height:55px; padding-left:1rem;}	
+.wrapper .content-page .container-fluid .system-authority .table ul li:nth-child(2n) {width:70%; border-bottom:1px solid #ddd; height:55px; padding:.66rem 1rem;}	
+
+	 
+
+}
+		
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .system-authority {display: block; padding:0 1rem;}	
+.wrapper .content-page .container-fluid .system-authority .tree-view {width:100%; padding:2rem 0; margin:0 auto;}	
+.wrapper .content-page .container-fluid .system-authority .menu-regi{width:100%; border-right:none; padding:0;}
+.wrapper .content-page .container-fluid .system-authority .menu-regi .btn-wrap {margin-top:50px; padding-right:0;} 	
+.wrapper .content-page .container-fluid .system-authority .table {margin-top:50px;}
+
+
+  }		
+		
+		
+		
+		
+	</style>	
+		
+
+		
+		
+		
+		
+    </head>
+
+    <body class="loading">
+        <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div id="leftWrap" class="left-side-menu">
+				<div id="left-side-menu-container" class="h-100">
+					<!--- Sidemenu -->
+					<ul class="metismenu side-nav">
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>회원</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/Member/List">회원정보</a>
+
+									</li>
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>승인관리</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Member/InvestorTypeChangeList">개인 투자자 유형 변경</a>
+												</li>
+												<li>
+													<a href="/CC/Member/Kyc/Allow">KYC 승인</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>통계</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>서비스 통계</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Statistics/Entire">전체 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Channel">채널별 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Member">회원 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Advertisement">광고 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Invest">투자 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Loan">대출 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Sale">매출 통계</a>
+												</li>
+												<li>
+													<a href="/CC/Statistics/Shinhan">신한 일별 거래내역</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Statistics/Realtime">실시간 통계</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>예치금</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/Balance/List">예치금 리스트</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Balance/Deposit">입금내역</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Balance/Withdrawal">출금내역</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Balance/Kakao">카카오송금</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>사이트 관리</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>게시판 관리</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Board/Notice/List">공지사항</a>
+												</li>
+												<li>
+													<a href="/CC/Board/BizInfo">사업정보공시</a>
+												</li>
+												<li>
+													<a href="/CC/Board/CorpInvestmentCare">법인투자케어</a>
+												</li>
+												<li>
+													<a href="/CC/Board/FAQ">도움말</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>매거진 관리</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Magazine/Hello_News">보도자료</a>
+												</li>
+												<li>
+													<a href="/CC/Magazine/Hello_Story">스토리</a>
+												</li>
+												<li>
+													<a href="/CC/Magazine/Hello_Talk">직원 인터뷰</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>투자후기 관리</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Review/Event_Request">인터뷰</a>
+												</li>
+												<li>
+													<a href="/CC/Review/Epilogue/Recommendation">추천평 / SNS 리뷰</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Event_Management">이벤트 관리</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/ServiceNotice/List">시스템 제어</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>상품</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/Product/List">상품리스트</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Product/SelfCalculation">자기계산 투자 관리</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Product/Vote">연장/매각</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>부가기능</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/Additional/Tax">세금계산서 발행</a>
+
+									</li>
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>확인서</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Additional/NewPaper">확인서 발급</a>
+												</li>
+												<li>
+													<a href="/CC/Additional/Paper">확인서 관리</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Additional/HoldReceipt">원천징수영수증 신청현황</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>리포팅</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li class="side-nav-item">
+
+											<a href="javascript: void(0);" aria-expanded="false">
+												<span>공직 윤리위원회</span>
+												<span class="menu-arrow"></span>
+											</a>
+											<ul class="side-nav-third-level" aria-expanded="false">
+												<!-- Third Menu Start -->
+												<li>
+													<a href="/CC/Reporting/Ethics/Search">보고자료</a>
+												</li>
+												<li>
+													<a href="/CC/Reporting/Ethics">자료작성</a>
+												</li>
+												<!-- Third Menu Start -->
+											</ul>
+
+
+									</li>
+									<li>
+
+
+											<a href="/CC/Reporting/Invest/Status">투자현황</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>시스템관리</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/System/Menu/List">메뉴 관리</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/System/Auth/List">권한 관리</a>
+
+									</li>
+									<li>
+
+
+											<a href="/CC/System/Admin/List">임직원 관리</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<li class="side-nav-item header-manu">
+
+								<a href="javascript: void(0);" class="side-nav-link">
+									<span>설정</span>
+									<span class="menu-arrow"></span>
+								</a>
+								<ul class="side-nav-second-level" aria-expanded="false">
+									<!-- Second Menu Start -->
+									<li>
+
+
+											<a href="/CC/Setting/Account">My Account</a>
+
+									</li>
+									<!-- Second Menu End -->
+								</ul>
+
+
+
+						</li>
+						<!-- First Menu End -->
+					</ul>
+					<!-- End Sidebar -->
+
+					<div class="clearfix"></div>
+
+				</div>
+				<!-- Sidebar -left -->
+    		</div>
+
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <div id="contentPage" class="content-page">
+                <!-- Content Start-->
+                <div class="content">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom"></div>
+                    <!-- end Topbar -->
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+						<!-- start page title -->
+						<div class="page-nav">
+							<div class="row">
+								<div class="col-12">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="javascript: void(0);">시스템 관리</a></li>
+										<li class="breadcrumb-item active">권한 관리</li>
+									</ol>
+								</div>
+							</div>
+							<div class="page-tit">
+								<div class="row">
+									<div class="col-12">
+										<h4>권한 관리</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end page title -->
+						
+
+						<div class="system-authority">
+							<div class="menu-regi">
+								<form id='frm' name='frm'>
+									<div class="table_wrap">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="dataTables_length" id="auth-datatable_length">
+													<label>
+														<select name="auth-datatable_length" aria-controls="auth-datatable" class="form-control form-control-sm">
+															<option value="5">5</option><option value="10">10</option>
+														</select>
+													</label>
+												</div>
+											</div>
+										</div>
+										<table id="auth-datatable" class="table dt-responsive nowrap w-100 system_table">
+											<thead>
+												<tr>
+													<th>권한번호</th>
+													<th>권한명</th>
+													<th>사용</th>
+													<th>등록자</th>
+													<th>등록일</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr role="row" class="odd">
+													<td class="sorting_1 dtr-control">1</td>
+													<td>시스템 관리자</td>
+													<td>1</td>
+													<td style="">admin</td>
+													<td style="">2021/12/15</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="dataTables_info" id="auth-datatable_info" role="status" aria-live="polite">Showing 1 to 5 of 9 entries</div>
+											</div>
+											<div class="col-sm-12">
+												<div class="dataTables_paginate paging_simple_numbers" id="auth-datatable_paginate">
+													<ul class="pagination pagination-rounded" style="justify-content: flex-end; margin:20px 0 50px;">
+														<li class="paginate_button page-item previous disabled" id="auth-datatable_previous">
+															<a href="#" aria-controls="auth-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+														</li><li class="paginate_button page-item active"><a href="#" aria-controls="auth-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+														<li class="paginate_button page-item "><a href="#" aria-controls="auth-datatable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+														<li class="paginate_button page-item next" id="auth-datatable_next"><a href="#" aria-controls="auth-datatable" data-dt-idx="3" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="table">
+										<ul>
+											<li><label for="authorNo" class="col-form-label">권한번호</label></li>
+											<li><input type="text" class="form-control form-control-sm" name="authorNo" id="authorNo" placeholder="권한번호"></li>
+											<li><label for="authorNm" class="col-form-label">권한명</label></li>
+											<li><input type="text" class="form-control form-control-sm" name="authorNm" id="authorNm" placeholder="권한명"></li>
+											<li><label for="sysRegisterId" class="col-form-label">등록자</label></li>
+											<li><input type="text" class="form-control form-control-sm" name="sysRegisterId" id="sysRegisterId" placeholder="등록자"></li>
+											<li><label for="sysRegistDt" class="col-form-label">등록일</label></li>
+											<li><input type="text" class="form-control form-control-sm" data-provide="datepicker" data-date-format="yyyy/mm/dd" name="sysRegistDt" id="sysRegistDt" placeholder="등록일"></li>
+											<li><label for="sysUpdusrId" class="col-form-label">수정자</label></li>
+											<li><input type="text" class="form-control form-control-sm" name="sysUpdusrId" id="sysUpdusrId" placeholder="수정자"></li>
+											<li><label for="sysUpdtDt" class="col-form-label" >수정일</label></li>
+											<li><input type="text" class="form-control form-control-sm" data-provide="datepicker" data-date-format="yyyy/mm/dd" name="sysUpdtDt" id="sysUpdtDt" placeholder="수정일"></li>
+											<li><label for="authType" class="col-form-label">권한타입</label></li>
+											<li>
+												<select id="authType" name="authType" class="form-control form-control-sm">
+													<option value="">::선택하세요::</option>
+													<option value="RDA00011" >CC    </option>
+												</select>
+											</li>
+											<li><label for="useAt" class="col-form-label">사용</label></li>
+											<li>
+												<select id="useAt" name="useAt" class="form-control form-control-sm">
+													<option value="1">사용</option>
+													<option value="0">사용안함</option>
+												</select>
+											</li>
+										</ul>
+										<div class="btn-wrap">
+											<button type="button" class="btn btn-info btn-sm" id="addBtn">등록</button>
+											<button type="button" class="btn btn-success btn-sm" id="updateBtn">수정</button>
+											<button type="button" class="btn btn-danger btn-sm" id="deleteBtn">삭제</button>
+										</div>
+									</div>
+									
+									
+									
+
+								</form>
+							</div>
+
+                        	<div id="jstree"  class="tree-view"></div>
+							
+						</div>
+					</div>
+                    <!-- container -->
+                </div>
+                <!-- Content End-->
+            </div>
+        </div>
+
+        
+		<!-- bundle -->
+		<script src="assets/js/vendor.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+		<script src="assets/plugins/jquery/jquery.setup.js"></script>
+		<script src="assets/js/common/common.js"></script>
+		<script src="assets/js/common/msg.js"></script>
+		<script src="assets/js/common/header.js"></script>
+		<script src="assets/js/common/number.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+		
+		
+		<!-- Imports Scripts -->
+        <script src="assets/plugins/jstree/jstree.js"></script>
+		<script src="assets/plugins/jstree/jstree.list.view.js"></script>
+		<script src="assets/plugins/jstree/define-jqgrid.js"></script>
+		<script src="assets/plugins/jstree/jquery.jqGrid.js"></script>
+		
+		<script>
+            /* initialize() */
+            $(document).ready(function(){
+                var jsonData = [{"parent":"#","sysRegistDt":"2022-02-05 00:40:49","menuDpAt":1,"level":1,"sysUpdtDt":"2022-02-05 00:40:49","id":"1","text":"root","useAt":1},{"lstViwUrl":"\/CC\/Main","parent":"1","dtlViwUrl":"\/SL\/Main","menuDpAt":1,"level":2,"sysRegisterId":"admin","dtlUrl":"\/AG\/Main","sysUpdusrId":"admin","sort":0,"sysRegistDt":"2021-12-14 13:04:23","sysUpdtDt":"2021-12-14 13:04:23","lstUrl":"\/SA\/Main","id":"2","text":"\uAD00\uB9AC\uC790\uC2DC\uC791\uD398\uC774\uC9C0","useAt":1},{"lstViwUrl":"\/CC\/Logout","parent":"1","dtlViwUrl":"\/AG\/Logout","menuDpAt":0,"level":2,"sysRegisterId":"admin","dtlUrl":"\/SA\/Logout","sysUpdusrId":"admin","sort":0,"sysRegistDt":"2021-12-15 14:58:50","lstUrl":"\/SL\/Logout","id":"3","text":"\uB85C\uADF8\uC544\uC6C3","useAt":1},{"lstViwUrl":"\/CC\/IndustryCode","parent":"2","delUrl":"","dtlViwUrl":"\/CC\/Member\/inquiry\/member","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Member\/makeVirtualAccount\/loaner","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Member\/makeVirtualAccount","id":"190000","text":"\uD68C\uC6D0","dtl4Url":"\/p2pBank\/customer\/inquiry","info":"\uD68C\uC6D0 \uBC0F \uD22C\uC790\uC790 \uAD00\uB9AC","fileDwnUrl":"\/CC\/file\/download","fileUpldUrl":"\/CC\/file\/delete","menuDpAt":1,"level":3,"sysRegisterId":"admin","sort":1,"dtl3ViwUrl":"\/CC\/Member\/inquiry\/account","pdfDwnUrl":"","registViwUrl":"\/CC\/Member\/makeVirtualAccount\/loaner","registUrl":"","dtl3Url":"\/CC\/Member\/makeVirtualAccount\/investor","sysRegistDt":"2021-12-28 12:59:46","sysUpdtDt":"2022-08-02 17:01:29","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Member\/shinHan\/update"},{"lstViwUrl":"test","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop5393","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"888888","text":"Staiging\uD14C\uC2A4\uD2B8\uBA54\uB274","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":0,"level":3,"sysRegisterId":"lmnop5393","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-11-22 14:00:32","sysUpdtDt":"2022-11-22 14:09:00","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Main","parent":"2","sysRegistDt":"2022-03-08 18:06:22","menuDpAt":1,"level":3,"lstUrl":"\/CC\/Statistics\/Main","sysRegisterId":"admin","sysUpdusrId":"admin","id":"150000","text":"\uD1B5\uACC4","sort":2,"useAt":1},{"lstViwUrl":"\/CC\/Balance\/Shinhan","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Balance\/ShinhanChart","sysUpdusrId":"arpino123","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"160000","text":"\uC608\uCE58\uAE08","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"admin","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-05-12 14:15:29","sysUpdtDt":"2022-06-07 16:53:05","lstUrl":"\/CC\/Balance\/ShinhanJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Tboard\/List","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"790000","text":"\uAC8C\uC2DC\uD310","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":0,"level":3,"sysRegisterId":"admin","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-04-19 11:26:27","sysUpdtDt":"2022-08-17 14:24:29","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200000","text":"\uC0AC\uC774\uD2B8 \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"admin","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-03-17 14:07:38","sysUpdtDt":"2022-08-18 11:32:53","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Product\/List","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"260000","text":"\uC0C1\uD488","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"jangmi","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-28 12:15:18","sysUpdtDt":"2022-06-29 14:07:36","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"jsc6176","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"780000","text":"\uBD80\uAC00\uAE30\uB2A5","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"admin","sort":4,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-04-12 17:36:54","sysUpdtDt":"2022-06-14 19:41:05","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Reporting\/Ethics","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"460000","text":"\uB9AC\uD3EC\uD305","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"jangmi","sort":5,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-07-11 09:47:46","sysUpdtDt":"2022-07-12 16:32:06","lstUrl":"\/CC\/Reporting\/Ethics\/SummaryJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/School\/Study","parent":"2","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop5393","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"770000","text":"\uD559\uAD50","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":3,"sysRegisterId":"seo9700","sort":5,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-03-30 10:20:37","sysUpdtDt":"2022-11-22 14:47:55","lstUrl":"","useAt":1,"updtViwUrl":""},{"parent":"2","sysRegistDt":"2021-12-14 14:29:44","menuDpAt":1,"level":3,"sysUpdtDt":"2021-12-14 14:29:44","sysRegisterId":"admin","sysUpdusrId":"admin","id":"170000","text":"\uC2DC\uC2A4\uD15C\uAD00\uB9AC","sort":14,"useAt":1},{"lstViwUrl":"\/CC\/Setting\/Account","parent":"2","sysRegistDt":"2022-09-23 16:31:25","menuDpAt":1,"level":3,"sysRegisterId":"lmnop","sysUpdusrId":"admin","id":"300000","text":"\uC124\uC815","sort":99,"useAt":1},{"lstViwUrl":"\/CC\/System\/Menu\/List","parent":"170000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"","sysUpdusrId":"seo9700","updtUrl":"","excelDwnUrl":"","id":"170100","text":"\uBA54\uB274 \uAD00\uB9AC","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-01-27 17:55:36","sysUpdtDt":"2022-03-18 10:11:32","lstUrl":"\/CC\/System\/Menu\/List\/Data","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/System\/Batch\/List","parent":"170000","delUrl":"\/CC\/System\/Batch\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"jji0428","additionalAjax2Url":"","updtUrl":"\/CC\/System\/Batch\/Update","additionalAjax6Url":"","dtl2Url":"","additionalAjax4Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"170400","text":"\uBC30\uCE58 \uC2A4\uCF00\uC904 \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jji0428","additionalAjax1Url":"\/CC\/System\/Batch\/List","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/System\/Batch\/Insert","additionalAjax5Url":"","registUrl":"\/CC\/System\/Batch\/Insert","dtl3Url":"","additionalAjax3Url":"","sysRegistDt":"2023-03-10 10:17:11","sysUpdtDt":"2023-03-10 15:53:44","lstUrl":"\/CC\/System\/Batch\/List\/Data","useAt":1,"updtViwUrl":"\/CC\/System\/Batch\/Update"},{"lstViwUrl":"\/CC\/Member\/List","parent":"190000","delUrl":"\/CC\/Member\/Drop","dtlViwUrl":"\/CC\/Member\/Info","excelUpldUrl":"\/CC\/Member\/Create\/Data","dtl2ViwUrl":"\/CC\/Member\/Balance","dtlUrl":"\/CC\/Member\/Invest\/Product\/List","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Member\/Update\/Corp","dtl2Url":"\/CC\/Member\/Regist\/Number","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Member\/Invest\/List","id":"190200","text":"\uD68C\uC6D0\uC815\uBCF4","dtl4Url":"","info":"\uD68C\uC6D0\uC815\uBCF4","fileDwnUrl":"","fileUpldUrl":"\/CC\/KycLog","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":1,"dtl3ViwUrl":"\/CC\/Member\/Profit","pdfDwnUrl":"\/CC\/Member\/Dup\/Check","registViwUrl":"\/CC\/Member\/Create\/Investor","registUrl":"\/CC\/Member\/Create\/Loaner","dtl3Url":"\/CC\/Member\/Drop\/Member","sysRegistDt":"2022-01-10 11:01:25","sysUpdtDt":"2022-08-01 12:38:15","lstUrl":"\/CC\/Member\/Update","useAt":1,"updtViwUrl":"\/CC\/Member\/Update\/Indi"},{"lstViwUrl":"","parent":"200000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200100","text":"\uAC8C\uC2DC\uD310 \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-08-17 14:08:43","sysUpdtDt":"2022-08-17 14:19:59","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Magazine\/Hello_News","parent":"200000","sysRegistDt":"2022-08-31 10:30:45","menuDpAt":1,"level":4,"sysRegisterId":"lmnop","sysUpdusrId":"lmnop","id":"200200","text":"\uB9E4\uAC70\uC9C4 \uAD00\uB9AC","sort":1,"useAt":1},{"lstViwUrl":"\/CC\/Event\/Request","parent":"200000","sysRegistDt":"2022-09-06 10:43:24","menuDpAt":1,"level":4,"sysRegisterId":"lmnop","sysUpdusrId":"lmnop","id":"200300","text":"\uD22C\uC790\uD6C4\uAE30 \uAD00\uB9AC","sort":1,"useAt":1},{"lstViwUrl":"\/CC\/Setting\/Account","parent":"300000","delUrl":"","dtlViwUrl":"\/CC\/Setting\/Account","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Setting\/Account","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Setting\/Account","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"301000","text":"My Account","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-23 16:32:07","sysUpdtDt":"2022-09-23 16:33:04","lstUrl":"\/CC\/Setting\/Account","useAt":1,"updtViwUrl":"\/CC\/Setting\/Account"},{"lstViwUrl":"\/CC\/Reporting\/Ethic","parent":"460000","delUrl":"","dtlViwUrl":"\/CC\/Reporting\/EthicInsert","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Reporting\/EthicDownload","sysUpdusrId":"jsc6176","additionalAjax2Url":"","updtUrl":"","additionalAjax6Url":"","dtl2Url":"","additionalAjax4Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"460003","text":"\uACF5\uC9C1 \uC724\uB9AC\uC704\uC6D0\uD68C","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jsc6176","additionalAjax1Url":"","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","additionalAjax5Url":"","registUrl":"","dtl3Url":"","additionalAjax3Url":"","sysRegistDt":"2023-03-06 10:49:18","sysUpdtDt":"2023-03-14 14:37:54","lstUrl":"\/CC\/Reporting\/EthicJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/School\/Study","parent":"770000","delUrl":"\/CC\/School\/Study\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/School\/Study\/Update","excelDwnUrl":"","id":"770100","text":"\uD559\uC2B5","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"seo9700","sort":1,"pdfDwnUrl":"","registViwUrl":"\/CC\/School\/Study\/Create","registUrl":"\/CC\/School\/Study\/Create","sysRegistDt":"2022-03-30 10:23:25","sysUpdtDt":"2022-04-11 10:59:02","lstUrl":"\/CC\/School\/Study","useAt":1,"updtViwUrl":"\/CC\/School\/Study\/Update"},{"lstViwUrl":"\/CC\/Additional\/Tax","parent":"780000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop5393","additionalAjax2Url":"","updtUrl":"","additionalAjax6Url":"","dtl2Url":"","additionalAjax4Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"780200","text":"\uC138\uAE08\uACC4\uC0B0\uC11C \uBC1C\uD589","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":0,"level":4,"sysRegisterId":"jsc6176","additionalAjax1Url":"","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","additionalAjax5Url":"","registUrl":"","dtl3Url":"","additionalAjax3Url":"","sysRegistDt":"2022-07-07 13:59:07","sysUpdtDt":"2023-02-22 17:01:12","lstUrl":"\/CC\/Additional\/TaxJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"test","parent":"888888","sysRegistDt":"2022-11-22 14:01:16","menuDpAt":1,"level":4,"sysRegisterId":"lmnop5393","sysUpdusrId":"lmnop5393","id":"880000","text":"Staiging\uD14C\uC2A4\uD2B8\uBA54\uB2741","sort":1,"useAt":1},{"lstViwUrl":"\/CC\/Statistics\/Main","parent":"150000","sysRegistDt":"2022-03-08 18:07:38","menuDpAt":1,"level":4,"lstUrl":"\/CC\/Statistics\/Main","sysRegisterId":"admin","sysUpdusrId":"admin","id":"150100","text":"\uC11C\uBE44\uC2A4 \uD1B5\uACC4","sort":2,"useAt":1},{"lstViwUrl":"\/CC\/Balance\/List","parent":"160000","delUrl":"","dtlViwUrl":"\/CC\/Balance\/Detail","excelUpldUrl":"","dtlUrl":"\/CC\/Balance\/DetailJSON","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"160600","text":"\uC608\uCE58\uAE08 \uB9AC\uC2A4\uD2B8","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-05-17 12:51:30","sysUpdtDt":"2022-05-18 14:55:43","lstUrl":"\/CC\/Balance\/ListJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Balance\/Deposit","parent":"160000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"\/CC\/Balance\/LoanerJSON","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"160700","text":"\uC785\uAE08\uB0B4\uC5ED","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-05-23 15:49:38","sysUpdtDt":"2022-05-24 15:49:53","lstUrl":"\/CC\/Balance\/DepositJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Balance\/Withdrawal","parent":"160000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"\/CC\/Balance\/Withdrawal\/SumJSON","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"160800","text":"\uCD9C\uAE08\uB0B4\uC5ED","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-05-26 14:08:54","sysUpdtDt":"2022-05-26 15:43:29","lstUrl":"\/CC\/Balance\/WithdrawalJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Balance\/Kakao","parent":"160000","sysRegistDt":"2022-05-30 14:36:35","menuDpAt":1,"level":4,"lstUrl":"\/CC\/Balance\/KakaoJSON","sysRegisterId":"admin","sysUpdusrId":"admin","id":"160900","text":"\uCE74\uCE74\uC624\uC1A1\uAE08","sort":2,"useAt":1},{"lstViwUrl":"\/CC\/System\/Auth\/List","parent":"170000","delUrl":"\/CC\/System\/Auth\/Data","dtlViwUrl":"\/CC\/System\/Auth\/View","excelUpldUrl":"","dtlUrl":"","sysUpdusrId":"seo9700","updtUrl":"\/CC\/System\/Auth\/Data","excelDwnUrl":"","id":"170200","text":"\uAD8C\uD55C \uAD00\uB9AC","fileDwnUrl":"1","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"pdfDwnUrl":"","registViwUrl":"\/CC\/System\/Auth\/Data","registUrl":"\/CC\/System\/Auth\/Data","sysRegistDt":"2022-01-27 17:57:05","sysUpdtDt":"2022-03-18 10:13:29","lstUrl":"\/CC\/System\/Auth\/List\/Data","useAt":1,"updtViwUrl":"\/CC\/System\/Auth\/Data"},{"lstViwUrl":"","parent":"190000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"190100","text":"\uC2B9\uC778\uAD00\uB9AC","dtl4Url":"","info":"\uAC1C\uC778\uD22C\uC790\uC790 \uC2B9\uC778 \uC815\uBCF4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2021-12-28 14:13:53","sysUpdtDt":"2022-06-08 18:41:55","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Product\/List","parent":"260000","delUrl":"","dtlViwUrl":"\/CC\/Product\/Info","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Product\/SearchLoaner","dtlUrl":"\/CC\/Product\/Preview","sysUpdusrId":"lmnop5393","additionalAjax2Url":"\/CC\/Product\/Multi\/Management","updtUrl":"","additionalAjax6Url":"\/service\/api\/p2pcenter\/loan\/inquery","dtl2Url":"\/CC\/Product\/CheckAccount","additionalAjax4Url":"\/CC\/Product\/NewSave","excelDwnUrl":"","dtl4ViwUrl":"","id":"260100","text":"\uC0C1\uD488\uB9AC\uC2A4\uD2B8","dtl4Url":"\/CC\/Product\/record","fileDwnUrl":"\/CC\/Product\/file\/delete","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jangmi","additionalAjax1Url":"\/CC\/Product\/Copy","sort":2,"dtl3ViwUrl":"\/CC\/Product\/extension","pdfDwnUrl":"","registViwUrl":"\/CC\/Product\/New","additionalAjax5Url":"\/CC\/Product\/record\/info","registUrl":"","dtl3Url":"\/CC\/Product\/CheckProductNum","additionalAjax3Url":"\/CC\/Product\/Multi\/Update","sysRegistDt":"2022-06-28 12:16:18","sysUpdtDt":"2023-02-15 16:40:32","lstUrl":"\/CC\/Product\/ListJSON","useAt":1,"updtViwUrl":"\/CC\/Product\/Update"},{"lstViwUrl":"\/CC\/Reporting\/Invest\/Status","parent":"460000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"admin","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"460002","text":"\uD22C\uC790\uD604\uD669","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-01 14:59:49","sysUpdtDt":"2022-09-07 18:27:07","lstUrl":"\/CC\/Reporting\/Invest\/StatusJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/School\/Bae","parent":"770000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"sori9th","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"770200","text":"\uBC30\uBD80\uC7A5 \uD14C\uC2A4\uD2B8","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"sori9th","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-10-12 19:56:41","sysUpdtDt":"2022-10-12 21:49:20","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Tboard\/List","parent":"790000","delUrl":"\/CC\/Tboard\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"","sysUpdusrId":"yoonsm45","updtUrl":"\/CC\/Tboard\/Update","excelDwnUrl":"","id":"790100","text":"\uAC8C\uC2DC\uD310","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":2,"pdfDwnUrl":"","registViwUrl":"\/CC\/Tboard\/Create","registUrl":"\/CC\/Tboard\/Create","sysRegistDt":"2022-04-19 11:27:24","sysUpdtDt":"2022-04-22 16:45:13","lstUrl":"\/CC\/Tboard\/List","useAt":1,"updtViwUrl":"\/CC\/Tboard\/Update"},{"lstViwUrl":"\/CC\/Statistics\/Realtime","parent":"150000","delUrl":"","dtlViwUrl":"\/CC\/Member\/inquiry\/total","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Statistics\/RealtimeChart","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"150200","text":"\uC2E4\uC2DC\uAC04 \uD1B5\uACC4","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jangmi","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-14 18:37:09","sysUpdtDt":"2022-11-25 17:33:06","lstUrl":"\/CC\/Statistics\/RealtimeJSON","useAt":1,"updtViwUrl":"\/CC\/System\/Admin\/TableVisibleUpdate"},{"lstViwUrl":"\/CC\/System\/Admin\/List","parent":"170000","delUrl":"\/CC\/System\/Admin\/Delete","dtlViwUrl":"\/CC\/System\/Admin\/Detail","excelUpldUrl":"","dtlUrl":"\/CC\/System\/Admin\/Detail","sysUpdusrId":"seo9700","updtUrl":"\/CC\/System\/Admin\/Update","excelDwnUrl":"","id":"170300","text":"\uC784\uC9C1\uC6D0 \uAD00\uB9AC","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"admin","sort":3,"pdfDwnUrl":"","registViwUrl":"\/CC\/System\/Admin\/Create","registUrl":"\/CC\/System\/Admin\/Create","sysRegistDt":"2022-02-21 18:28:02","sysUpdtDt":"2022-03-18 10:13:39","lstUrl":"\/CC\/System\/Admin\/List","useAt":1,"updtViwUrl":"\/CC\/System\/Admin\/Update"},{"lstViwUrl":"\/CC\/Product\/SelfCalculation","parent":"260000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop5393","additionalAjax2Url":"","updtUrl":"","additionalAjax6Url":"","dtl2Url":"","additionalAjax4Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"260200","text":"\uC790\uAE30\uACC4\uC0B0 \uD22C\uC790 \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":0,"level":4,"sysRegisterId":"admin","additionalAjax1Url":"","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","additionalAjax5Url":"","registUrl":"","dtl3Url":"","additionalAjax3Url":"","sysRegistDt":"2022-08-22 16:02:10","sysUpdtDt":"2023-02-22 17:00:15","lstUrl":"\/CC\/Product\/SelfCalculationJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Product\/Vote","parent":"260000","delUrl":"","dtlViwUrl":"\/CC\/Product\/Vote\/Detail","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Product\/Vote\/Sms\/Start","dtlUrl":"\/CC\/Product\/Vote\/Insert\/SearchProduct","sysUpdusrId":"lmnop5393","updtUrl":"\/CC\/Product\/Vote\/Update","dtl2Url":"\/CC\/Product\/Vote\/Sms\/End","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Product\/Vote\/Preview","id":"260300","text":"\uC5F0\uC7A5\/\uB9E4\uAC01","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"lmnop5393","sort":3,"dtl3ViwUrl":"\/CC\/Product\/Vote\/Detail","pdfDwnUrl":"","registViwUrl":"\/CC\/Product\/Vote\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2023-01-09 12:59:58","sysUpdtDt":"2023-02-02 12:47:01","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Product\/Vote\/Info"},{"lstViwUrl":"\/CC\/Reporting\/Ethics","parent":"460000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Reporting\/EthicsJSON","sysUpdusrId":"jsc6176","additionalAjax2Url":"","updtUrl":"","additionalAjax6Url":"","dtl2Url":"\/CC\/Reporting\/Ethics\/Download","additionalAjax4Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"460001","text":"\uACF5\uC9C1 \uC724\uB9AC\uC704\uC6D0\uD68C(old)","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jangmi","additionalAjax1Url":"","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","additionalAjax5Url":"","registUrl":"","dtl3Url":"","additionalAjax3Url":"","sysRegistDt":"2022-07-11 09:49:22","sysUpdtDt":"2023-03-14 12:55:39","lstUrl":"\/CC\/Reporting\/Ethics\/SummaryJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Additional\/Main","parent":"780000","sysRegistDt":"2022-08-12 15:54:17","menuDpAt":1,"level":4,"lstUrl":"\/CC\/Additional\/Main","sysRegisterId":"jsc6176","id":"780400","text":"\uD655\uC778\uC11C","sort":4,"useAt":1},{"lstViwUrl":"\/CC\/Event_Management","parent":"200000","delUrl":"\/CC\/Event_Management\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200400","text":"\uC774\uBCA4\uD2B8 \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"lmnop","sort":5,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Event_Management\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-14 17:31:48","sysUpdtDt":"2022-09-15 12:19:06","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Event_Management\/Update"},{"lstViwUrl":"\/CC\/ServiceNotice\/List","parent":"200000","delUrl":"","dtlViwUrl":"\/CC\/ServiceNotice\/Create","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/ServiceNotice\/GetNotice","sysUpdusrId":"jsc6176","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200500","text":"\uC2DC\uC2A4\uD15C \uC81C\uC5B4","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jsc6176","sort":6,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-11-16 14:39:58","sysUpdtDt":"2022-11-19 01:41:24","lstUrl":"\/CC\/ServiceNotice\/ListJson","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Additional\/HoldReceipt","parent":"780000","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"jsc6176","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"780300","text":"\uC6D0\uCC9C\uC9D5\uC218\uC601\uC218\uC99D \uC2E0\uCCAD\uD604\uD669","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":4,"sysRegisterId":"jsc6176","sort":6,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-08-04 11:00:13","sysUpdtDt":"2022-08-10 16:56:43","lstUrl":"\/CC\/Additional\/HoldReceiptJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Entire","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Statistics\/Entire\/AtTime","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Entire\/Comparison","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"150101","text":"\uC804\uCCB4 \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"admin","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-03-08 18:08:23","sysUpdtDt":"2022-06-03 15:04:59","lstUrl":"\/CC\/Statistics\/EntireJSON","useAt":1,"updtViwUrl":"\/CC\/System\/Admin\/TableVisibleUpdate"},{"lstViwUrl":"\/CC\/Statistics\/Channel","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Statistics\/Channel\/Comparison","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Statistics\/Channel\/AtTime","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"\/CC\/Statistics\/Channel\/MonthJson","excelDwnUrl":"","dtl4ViwUrl":"","id":"150102","text":"\uCC44\uB110\uBCC4 \uD1B5\uACC4","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-03-30 11:32:20","sysUpdtDt":"2022-06-17 12:40:32","lstUrl":"\/CC\/Statistics\/ChannelJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Member","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Statistics\/Member\/AtTime","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Member\/Comparison","sysUpdusrId":"lmnop","updtUrl":"","excelDwnUrl":"","id":"150103","text":"\uD68C\uC6D0 \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-04-11 14:26:09","sysUpdtDt":"2022-04-22 10:39:41","lstUrl":"\/CC\/Statistics\/MemberJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Advertisement","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Statistics\/Advertisement\/AtTime","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Advertisement\/Comparison","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"150104","text":"\uAD11\uACE0 \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-04-21 16:03:16","sysUpdtDt":"2022-04-27 14:10:01","lstUrl":"\/CC\/Statistics\/AdvertisementJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Invest","parent":"150100","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Invest\/Comparison","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"150105","text":"\uD22C\uC790 \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-04-29 16:54:13","sysUpdtDt":"2022-05-03 19:07:38","lstUrl":"\/CC\/Statistics\/InvestJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Loan","parent":"150100","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Loan\/Comparison","sysUpdusrId":"admin","updtUrl":"","excelDwnUrl":"","id":"150106","text":"\uB300\uCD9C \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"admin","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-05-04 10:56:18","sysUpdtDt":"2022-05-04 14:44:14","lstUrl":"\/CC\/Statistics\/LoanJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Sale","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Statistics\/Sale\/Comparison","excelUpldUrl":"","dtlUrl":"\/CC\/Statistics\/Sale\/Comparison","sysUpdusrId":"lmnop","updtUrl":"","excelDwnUrl":"","id":"150107","text":"\uB9E4\uCD9C \uD1B5\uACC4","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"admin","sort":1,"pdfDwnUrl":"","registViwUrl":"","registUrl":"","sysRegistDt":"2022-05-09 11:48:31","sysUpdtDt":"2022-05-23 11:33:51","lstUrl":"\/CC\/Statistics\/SaleJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Statistics\/Shinhan","parent":"150100","delUrl":"","dtlViwUrl":"\/CC\/Balance\/DepositPopup","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Balance\/WithdrawalPopup","dtlUrl":"\/CC\/Statistics\/ShinhanChart","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"\/CC\/Statistics\/Shinhan\/DataCheck","excelDwnUrl":"","dtl4ViwUrl":"","id":"150108","text":"\uC2E0\uD55C \uC77C\uBCC4 \uAC70\uB798\uB0B4\uC5ED","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"admin","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-02 10:53:15","sysUpdtDt":"2022-06-24 11:59:13","lstUrl":"\/CC\/Statistics\/ShinhanJSON","useAt":1,"updtViwUrl":"\/insideBank\/inquiry\/total"},{"lstViwUrl":"\/CC\/Member\/InvestorTypeChangeList","parent":"190100","delUrl":"","dtlViwUrl":"\/CC\/Member\/InvestorTypeChangeList\/Detail","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Member\/InvestorTypeChange\/sms","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Member\/InvestorTypeChangeList\/Allow","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"190101","text":"\uAC1C\uC778 \uD22C\uC790\uC790 \uC720\uD615 \uBCC0\uACBD","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-08 18:43:52","sysUpdtDt":"2022-07-25 18:08:52","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Board\/Notice\/List","parent":"200100","delUrl":"\/CC\/Board\/Notice\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Board\/Notice\/Update\/File","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200101","text":"\uACF5\uC9C0\uC0AC\uD56D","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Board\/Notice\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-08-17 14:09:50","sysUpdtDt":"2022-09-02 12:47:59","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Board\/Notice\/Update"},{"lstViwUrl":"\/CC\/Magazine\/Hello_News","parent":"200200","delUrl":"\/CC\/Magazine\/Hello_News\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200201","text":"\uBCF4\uB3C4\uC790\uB8CC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Magazine\/Hello_News\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-08-31 10:31:13","sysUpdtDt":"2022-09-01 11:09:14","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Magazine\/Hello_News\/Update"},{"lstViwUrl":"\/CC\/Review\/Event_Request","parent":"200300","delUrl":"\/CC\/Review\/Epilogue\/Delete","dtlViwUrl":"\/CC\/Review\/Event_Request\/Reward","excelUpldUrl":"\/CC\/Review\/Event_Request\/Excel\/Reward","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Review\/Epilogue\/Update","dtl2Url":"","excelDwnUrl":"\/CC\/Review\/Event_Request\/Excel","dtl4ViwUrl":"","id":"200301","text":"\uC778\uD130\uBDF0","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Review\/Epilogue\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-06 10:43:48","sysUpdtDt":"2022-09-13 14:42:57","lstUrl":"\/CC\/Review\/Epilogue","useAt":1,"updtViwUrl":"\/CC\/Review\/Event_Request\/Update"},{"lstViwUrl":"\/CC\/Review\/Epilogue\/Recommendation","parent":"200300","delUrl":"\/CC\/Review\/Epilogue\/SNS\/Delete","dtlViwUrl":"\/CC\/Review\/Epilogue\/Recommendation\/Reward","excelUpldUrl":"\/CC\/Review\/Epilogue\/Excel","dtl2ViwUrl":"","dtlUrl":"\/CC\/Review\/Epilogue\/SNS\/Reward","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Review\/Epilogue\/Recommendation\/Update","dtl2Url":"","excelDwnUrl":"\/CC\/Review\/Epilogue\/Excel\/Reward","dtl4ViwUrl":"","id":"200302","text":"\uCD94\uCC9C\uD3C9 \/ SNS \uB9AC\uBDF0","dtl4Url":"\/CC\/Review\/Epilogue\/Recommendation\/Delete","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"\/CC\/Review\/Epilogue\/Excel\/Reward\/SNS","registViwUrl":"\/CC\/Review\/Epilogue\/SNS\/Insert","registUrl":"\/CC\/Review\/Epilogue\/Recommendation\/Insert","dtl3Url":"","sysRegistDt":"2022-09-15 16:55:05","sysUpdtDt":"2022-09-19 14:13:05","lstUrl":"\/CC\/Review\/Epilogue\/SNS","useAt":1,"updtViwUrl":"\/CC\/Review\/Epilogue\/SNS\/Update"},{"lstViwUrl":"\/CC\/Reporting\/Ethics\/Search","parent":"460001","delUrl":"","dtlViwUrl":"\/CC\/Reporting\/Ethics","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Reporting\/Ethics\/Delete","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"460050","text":"\uBCF4\uACE0\uC790\uB8CC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"jangmi","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-07-19 11:16:02","sysUpdtDt":"2022-07-28 11:31:13","lstUrl":"\/CC\/Reporting\/Ethics\/SearchJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/euntae\/Board","parent":"770100","delUrl":"\/CC\/euntae\/Delete","dtlViwUrl":"\/CC\/euntae\/Save","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/euntae\/Detail","dtlUrl":"\/CC\/euntae\/Save","sysUpdusrId":"dmsxo0691","updtUrl":"\/CC\/euntae\/Board\/Update","dtl2Url":"\/CC\/euntae\/Detail","excelDwnUrl":"","dtl4ViwUrl":"","id":"770101","text":"\uBC15\uC740\uD0DC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"dmsxo0691","sort":1,"dtl3ViwUrl":"\/CC\/euntae\/Update","pdfDwnUrl":"","registViwUrl":"\/CC\/euntae\/Board\/Create","registUrl":"\/CC\/euntae\/Board\/Create","dtl3Url":"\/CC\/euntae\/Update","sysRegistDt":"2023-01-10 10:17:58","sysUpdtDt":"2023-01-11 16:16:25","lstUrl":"\/CC\/School\/Study","useAt":1,"updtViwUrl":"\/CC\/euntae\/Board\/Update"},{"lstViwUrl":"\/CC\/School\/Study\/Kim","parent":"770100","delUrl":"\/CC\/School\/Study\/Kim","dtlViwUrl":"\/CC\/Kim\/Save","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Kim\/Detail","dtlUrl":"\/CC\/School\/Study\/Kim\/Save","sysUpdusrId":"wjddn312","updtUrl":"\/CC\/School\/Study\/Kim\/Update","dtl2Url":"\/CC\/School\/Study\/Kim\/Detail","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/KIM\/Create","id":"770110","text":"\uAE40\uC815\uC6B0","dtl4Url":"\/CC\/School\/Study\/Kim\/goCreate","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"wjddn312","sort":1,"dtl3ViwUrl":"\/CC\/Kim\/Update","pdfDwnUrl":"","registViwUrl":"\/CC\/Kim\/Board\/Create","registUrl":"\/CC\/School\/Study\/Kim\/Create","dtl3Url":"\/CC\/School\/Study\/Kim\/Update","sysRegistDt":"2023-02-14 10:05:03","sysUpdtDt":"2023-02-19 21:01:12","lstUrl":"\/CC\/School\/Study\/Kim","useAt":1,"updtViwUrl":"\/CC\/Kim\/Board\/Update"},{"lstViwUrl":"\/CC\/School\/Study\/Jeongil","parent":"770100","delUrl":"\/CC\/School\/Study\/Jeongil\/Delete","dtlViwUrl":"\/CC\/Jeongil\/Comment","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Jeongil\/Detail","dtlUrl":"\/CC\/School\/Study\/Jeongil\/Comment","sysUpdusrId":"jji0428","additionalAjax2Url":"\/CC\/School\/Study\/Jeongil\/Register","updtUrl":"\/CC\/School\/Study\/Jeongil\/Update","additionalAjax6Url":"","dtl2Url":"\/CC\/School\/Study\/Jeongil\/Detail","additionalAjax4Url":"\/CC\/School\/Study\/Jeongil\/Updater","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Jeongil\/Create","id":"770111","text":"\uC815\uC815\uC77C","dtl4Url":"\/CC\/School\/Study\/Jeongil\/Create","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"jji0428","additionalAjax1Url":"\/CC\/Jeongil\/Register","sort":1,"dtl3ViwUrl":"\/CC\/Jeongil\/Update","pdfDwnUrl":"","registViwUrl":"\/CC\/School\/Study\/Jeongil\/Register","additionalAjax5Url":"\/CC\/School\/Study\/Jeongil\/Comment","registUrl":"\/CC\/School\/Study\/Jeongil\/Create","dtl3Url":"\/CC\/School\/Study\/Jeongil\/Update","additionalAjax3Url":"\/CC\/Jeongil\/Updater","sysRegistDt":"2023-03-07 12:16:45","sysUpdtDt":"2023-03-08 16:19:36","lstUrl":"\/CC\/School\/Study\/Jeongil","useAt":1,"updtViwUrl":"\/CC\/School\/Study\/Jeongil\/Updater"},{"lstViwUrl":"\/CC\/School\/Bae\/Test01","parent":"770200","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"sori9th","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"770210","text":"\uB2E8\uC21C\uCD9C\uB825","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"sori9th","sort":1,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-10-12 20:00:23","sysUpdtDt":"2022-10-13 18:12:16","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Additional\/NewPaper","parent":"780400","delUrl":"","dtlViwUrl":"\/CC\/Additional\/NewPaperPay","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Additional\/NewPaperTransactions","dtlUrl":"\/CC\/Additional\/NewPaperSave","sysUpdusrId":"jsc6176","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Additional\/NewPaperInterestPay","id":"780140","text":"\uD655\uC778\uC11C \uBC1C\uAE09","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"jsc6176","sort":1,"dtl3ViwUrl":"\/CC\/Additional\/NewPaperInterest","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"\/CC\/Additional\/NewPaperInterestSave","sysRegistDt":"2022-08-10 16:57:06","sysUpdtDt":"2022-09-22 18:39:07","lstUrl":"\/CC\/Additional\/NewPaperJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Member\/Kyc\/Allow","parent":"190100","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"190102","text":"KYC \uC2B9\uC778","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-09 10:17:13","sysUpdtDt":"2022-06-09 11:47:02","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Board\/BizInfo","parent":"200100","delUrl":"","dtlViwUrl":"\/CC\/Board\/BizInfo\/Section4\/Product","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200102","text":"\uC0AC\uC5C5\uC815\uBCF4\uACF5\uC2DC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Board\/BizInfo\/Insert","registUrl":"\/CC\/Board\/BizInfo\/Section4\/Insert","dtl3Url":"","sysRegistDt":"2022-08-17 17:12:52","sysUpdtDt":"2022-09-02 14:12:16","lstUrl":"\/CC\/Board\/BizInfo\/Section4","useAt":1,"updtViwUrl":"\/CC\/Board\/BizInfo\/Update"},{"lstViwUrl":"\/CC\/Reporting\/Ethics","parent":"460001","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"\/CC\/Reporting\/EthicsJSON","sysUpdusrId":"jangmi","updtUrl":"","dtl2Url":"\/CC\/Reporting\/Ethics\/Download","excelDwnUrl":"","dtl4ViwUrl":"","id":"460100","text":"\uC790\uB8CC\uC791\uC131","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"jangmi","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-07-19 10:44:20","sysUpdtDt":"2022-07-28 11:31:21","lstUrl":"\/CC\/Reporting\/Ethics\/SummaryJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/School\/Bae\/Test02","parent":"770200","delUrl":"","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"sori9th","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"770220","text":"\uC138\uC158\uCD9C\uB825","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"sori9th","sort":2,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"","dtl3Url":"","sysRegistDt":"2022-10-13 11:46:55","sysUpdtDt":"2022-10-13 18:12:30","lstUrl":"","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Additional\/Paper","parent":"780400","delUrl":"\/CC\/Additional\/PaperDelete","dtlViwUrl":"\/CC\/Additional\/PaperConfirm","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Additional\/PaperDeal","dtlUrl":"","sysUpdusrId":"jsc6176","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Additional\/PaperInterest","id":"780100","text":"\uD655\uC778\uC11C \uAD00\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"jsc6176","sort":2,"dtl3ViwUrl":"\/CC\/Additional\/PaperInterestPay","pdfDwnUrl":"","registViwUrl":"\/CC\/Additional\/PaperPrint","registUrl":"","dtl3Url":"","sysRegistDt":"2022-06-09 17:41:04","sysUpdtDt":"2022-08-12 15:57:02","lstUrl":"\/CC\/Additional\/PaperJSON","useAt":1,"updtViwUrl":""},{"lstViwUrl":"\/CC\/Board\/CorpInvestmentCare","parent":"200100","delUrl":"\/CC\/Board\/CorpInvestmentCare\/Delete","dtlViwUrl":"\/CC\/Board\/CorpInvestmentCare\/Info","excelUpldUrl":"","dtl2ViwUrl":"\/CC\/Board\/CorpInvestmentCare\/SendEmail","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Board\/CorpInvestmentCare\/Delete\/Comment","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200103","text":"\uBC95\uC778\uD22C\uC790\uCF00\uC5B4","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"","registUrl":"\/CC\/Board\/CorpInvestmentCare\/Insert\/Comment","dtl3Url":"","sysRegistDt":"2022-08-23 16:13:29","sysUpdtDt":"2022-08-26 16:32:08","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Board\/CorpInvestmentCare\/Update"},{"lstViwUrl":"\/CC\/Magazine\/Hello_Story","parent":"200200","delUrl":"\/CC\/Magazine\/Hello_Story\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200202","text":"\uC2A4\uD1A0\uB9AC","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":3,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Magazine\/Hello_Story\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-01 12:20:29","sysUpdtDt":"2022-09-05 12:13:05","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Magazine\/Hello_Story\/Update"},{"lstViwUrl":"\/CC\/School\/Bae\/Test03","parent":"770200","sysRegistDt":"2022-10-13 21:29:39","menuDpAt":1,"level":5,"sysRegisterId":"sori9th","sysUpdusrId":"sori9th","id":"770230","text":"DB\uC790\uB8CC\uCD9C\uB825","sort":3,"useAt":1},{"lstViwUrl":"\/CC\/Board\/FAQ","parent":"200100","delUrl":"\/CC\/Board\/FAQ\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"\/CC\/Board\/FAQ\/Category\/Update","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"\/CC\/Board\/FAQ\/Category\/Delete","id":"200104","text":"\uB3C4\uC6C0\uB9D0","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":4,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Board\/FAQ\/Insert","registUrl":"\/CC\/Board\/FAQ\/Category\/Insert","dtl3Url":"","sysRegistDt":"2022-08-26 16:31:49","sysUpdtDt":"2022-08-30 12:50:57","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Board\/FAQ\/Update"},{"lstViwUrl":"\/CC\/Magazine\/Hello_Talk","parent":"200200","delUrl":"\/CC\/Magazine\/Hello_Talk\/Delete","dtlViwUrl":"","excelUpldUrl":"","dtl2ViwUrl":"","dtlUrl":"","sysUpdusrId":"lmnop","updtUrl":"","dtl2Url":"","excelDwnUrl":"","dtl4ViwUrl":"","id":"200203","text":"\uC9C1\uC6D0 \uC778\uD130\uBDF0","dtl4Url":"","fileDwnUrl":"","fileUpldUrl":"","menuDpAt":1,"level":5,"sysRegisterId":"lmnop","sort":4,"dtl3ViwUrl":"","pdfDwnUrl":"","registViwUrl":"\/CC\/Magazine\/Hello_Talk\/Insert","registUrl":"","dtl3Url":"","sysRegistDt":"2022-09-13 18:49:43","sysUpdtDt":"2022-09-14 11:09:10","lstUrl":"","useAt":1,"updtViwUrl":"\/CC\/Magazine\/Hello_Talk\/Update"}];
+
+                $('#jstree').jstree({
+					"core" : {
+						"themes" : {
+							"variant" : "small"
+						},
+						"data" : jsonData
+					},
+					"checkbox" : {
+						"keep_selected_style" : false,
+						"three_state" : false
+					},
+					'sort' : function(a, b) {
+						a1 = this.get_node(a);
+						b1 = this.get_node(b);
+						if (a1.original.level == b1.original.level) {
+							return (a1.original.sort > b1.original.sort) ? 1 : -1;
+						} else {
+							return (a1.original.level < b1.original.level) ? 1 : -1;
+						}
+					},
+					"plugins" : [ "types", "checkbox", "html_data", "themes", "ui", "sort", "contextmenu" ],
+					"contextmenu" : {
+						"items" : {
+							"registAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "등록",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.registAt = node.original.registAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"lstAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "읽기",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.lstAt = node.original.lstAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"updtAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "수정",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.updtAt = node.original.updtAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"delAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "삭제",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.delAt = node.original.delAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"fileUpAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "파일U",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.fileUpAt = node.original.fileUpAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"fileDnAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "파일D",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.fileDnAt = node.original.fileDnAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"excelUpAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "엑셀U",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.excelUpAt = node.original.excelUpAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"excelDnAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "엑셀D",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.excelDnAt = node.original.excelDnAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							},
+							"pdfDnAt" : {
+								"separator_before" : false,
+								"separator_after" : true,
+								"label" : "pdfD",
+								"action" : function(obj) {
+									var node = $('#jstree').jstree(true).get_node(obj.reference[0]);
+									node.original.pdfDnAt = node.original.pdfDnAt == 1 ? 0 : 1;
+									$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+								}
+							}
+						}
+					}
+				}).bind("loaded.jstree", function(event, data) {
+					// load후 처리될 event를 적어줍니다.
+					//$("#jstree").jstree("open_all");//
+				}).bind("select_node.jstree", function(event, data) {
+					// node가 select될때 처리될 event를 적어줍니다.
+					if(data.node.original.registAt == null || data.node.original.registAt == -1){
+						var node = $('#jstree').jstree(true).get_node(data.node.id);
+
+						node.original.registAt = 1;
+						node.original.lstAt = 1;
+						node.original.updtAt = 1;
+						node.original.delAt = 1;
+						node.original.menuDpAt = 1;
+						node.original.fileUpAt = 1;
+						node.original.fileDnAt = 1;
+						node.original.excelUpAt = 1;
+						node.original.excelDnAt = 1;
+						node.original.pdfDnAt = 1;
+						$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+					}
+				}).bind("deselect_node.jstree", function(evt, data) {
+					var node = $('#jstree').jstree(true).get_node(data.node.id);
+					node.original.registAt = -1;
+					node.original.lstAt = -1;
+					node.original.updtAt = -1;
+					node.original.delAt = -1;
+					node.original.fileUpAt = -1;
+					node.original.fileDnAt = -1;
+					node.original.excelUpAt = -1;
+					node.original.excelDnAt = -1;
+					node.original.pdfDnAt = -1;
+					node.original.menuDpAt = -1;
+					$('#jstree').jstree("set_text", node.id, getTextAuth(node));
+		        }).bind("refresh.jstree", function(event, data) {
+					// node가 refresh될때 처리될 event를 적어줍니다.
+					$("#jstree").jstree("open_all");
+				});
+
+                function responseData(response, reqType) {
+                    if (reqType == 0) { // select
+                        var selectedElms = $("#jstree").jstree(true).get_json('#', {'flat': true});
+                        $.each(selectedElms, function() {
+                            var node = $('#jstree').jstree(true).get_node(this.id);
+                            $('#jstree').jstree("set_text", this.id, node.original.text);
+                        });
+                        //  체크 전체 해제
+                        $('#jstree').jstree("uncheck_all");
+
+                        var ar = response;
+                        for (var i = 0; i < ar.length; i++) {
+                            var node = $('#jstree').jstree(true).get_node(ar[i].menuNo);
+                            if(!node) {
+                                console.log(ar[i].menuNo, '메뉴가 삭제되었음');
+                                continue;
+                            }
+
+                            setAuth(node, ar[i]);
+                            //if(node.original.level == 2 || node.original.level == 3) continue;
+                            $('#jstree').jstree("check_node", ar[i].menuNo);
+                            $('#jstree').jstree("set_text", ar[i].menuNo, getTextAuth(node));
+                        }
+
+                        for (var i = 0; i < ar.length; i++) {
+                            var node = $('#jstree').jstree(true).get_node(ar[i].menuNo);
+                            if(!node) {
+                                console.log(ar[i].menuNo, '메뉴가 삭제되었음');
+                                continue;
+                            }
+                            //console.log(ar[i].menuNo, node);
+                            if(node.original.level == 3)
+                            {
+                                var isChild = false;
+                                for (var a = 0; a < ar.length; a++){
+                                    var node2 = $('#jstree').jstree(true).get_node(ar[a].menuNo);
+                                    if(!node2) {
+                                        console.log(ar[i].menuNo, 'node2메뉴가 삭제되었음');
+                                        continue;
+                                    }
+
+                                    if(node.original.id == node2.original.parent ){
+                                        isChild = true; break;
+                                    }
+                                }
+                                if(!isChild){
+                                    $('#jstree').jstree("check_node", ar[i].menuNo);
+                                    $('#jstree').jstree("set_text", ar[i].menuNo, getTextAuth(node));
+                                }
+                            }
+                        }
+                    } else if (reqType == 1){ // 저장
+                        $("#grid").trigger("reloadGrid");
+                    }
+                    else if(reqType == 2){ // 등록
+                    }
+                    else if(reqType == 3){ // 삭제
+                    }
+                }
+
+				function setAuth(node, data){
+					if(data.registAt == 1){
+						node.original.registAt = 1;
+					}
+					else {
+						node.original.registAt = 0;
+					}
+					if(data.lstAt == 1){
+						node.original.lstAt = 1;
+					}else {
+						node.original.lstAt = 0;
+					}
+					if(data.updtAt == 1){
+						node.original.updtAt = 1;
+					}else {
+						node.original.updtAt = 0;
+					}
+					if(data.delAt == 1){
+						node.original.delAt = 1;
+					}else {
+						node.original.delAt = 0;
+					}
+					if(data.fileUpAt == 1){
+						node.original.fileUpAt = 1;
+					}else {
+						node.original.fileUpAt = 0;
+					}
+					if(data.fileDnAt == 1){
+						node.original.fileDnAt = 1;
+					}else {
+						node.original.fileDnAt = 0;
+					}
+					if(data.excelUpAt == 1){
+						node.original.excelUpAt = 1;
+					}else {
+						node.original.excelUpAt = 0;
+					}
+					if(data.excelDnAt == 1){
+						node.original.excelDnAt = 1;
+					}else {
+						node.original.excelDnAt = 0;
+					}
+					if(data.pdfDnAt == 1){
+						node.original.pdfDnAt = 1;
+					}else {
+						node.original.pdfDnAt = 0;
+					}
+				}
+
+				function getTextAuth(node){
+					var name = null;
+					try{
+						name = node.original.text;
+					}catch(err){
+						return;
+					}
+					if(node.original.registAt == 1){
+						name += "<span class='first'>등록</span>";
+					}
+					else if(node.original.registAt == 0){
+						name += "<span class='first'>등록</span>";
+					}
+					if(node.original.lstAt == 1){
+						name += "<span>읽기</span>";
+					}else if(node.original.lstAt == 0){
+						name += "<span>읽기</span>";
+					}
+					if(node.original.updtAt == 1){
+						name += "<span>수정</span>";
+					}else if(node.original.updtAt == 0){
+						name += "<span>수정</span>";
+					}
+					if(node.original.delAt == 1){
+						name += "<span>삭제</span>";
+					}else if(node.original.delAt == 0){
+						name += "<span>삭제</span>";
+					}
+					if(node.original.fileUpAt == 1){
+						name += "<span>파일U</span>";
+					}else if(node.original.fileUpAt == 0){
+						name += "<span>파일U</span>";
+					}
+					if(node.original.fileDnAt == 1){
+						name += "<span>파일D</span>";
+					}else if(node.original.fileDnAt == 0){
+						name += "<span>파일D</span>";
+					}
+					if(node.original.excelUpAt == 1){
+						name += "<span>엑셀U</span>";
+					}else if(node.original.excelUpAt == 0){
+						name += "<span>엑셀U</span>";
+					}
+					if(node.original.excelDnAt == 1){
+						name += "<span>엑셀D</span>";
+					}else if(node.original.excelDnAt == 0){
+						name += "<span>엑셀D</span>";
+					}
+					if(node.original.pdfDnAt == 1){
+						name += "<span>pdfD</span>";
+					}else if(node.original.pdfDnAt == 0){
+						name += "<span>pdfD</span>";
+					}
+					return name;
+				}
+
+				function checkSelectTree() {
+					var selectedElmsIds = [];
+					var selectedElms = $('#jstree').jstree("get_selected", true);
+					$.each(selectedElms, function() {
+						selectedElmsIds.push(this);
+
+						//var node = $('#jstree').jstree().get_node(this);
+						//var parent = $('#jstree').jstree().get_node(node.parent);
+						//selectedElmsIds.push(parent);
+					});
+					// 중복제거
+					return selectedElmsIds.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);;
+				}
+
+                 // 상세 정보 등록
+                $("#addBtn").on("click", function() {
+                    if ($("#authorNm").val().length == 0) {
+                        MsgBox.Alert("warn","권한명을 입력해주세요.");
+                        return false;
+                    }
+                    MsgBox.Confirm("등록 하시겠습니까?", function() {fncRegist();});
+                });
+                function fncRegist() {
+                    var authVo = new Object();
+                    authVo.useAt = $("#useAt").val();
+                    authVo.authorNm = $("#authorNm").val();
+                    authVo.authType = $("#authType").val();
+                    $.ajax({
+                        url: "\/CC\/System\/Auth\/Data",
+                        method: "POST",
+                        data: authVo,
+                        dataType: "JSON",
+                        success: function(response){
+                            if ( response && response.status == 'SUCCESS' ){
+                                responseData(response, 2);
+                                MsgBox.Alert("suc", "등록 작업이 완료되었습니다.", function() {location.reload();});
+                            }
+                            else {
+                                MsgBox.Alert("error", response.message);
+                            }
+                        }
+                    })
+                }
+
+                 // 상세 정보 저장
+                $("#updateBtn").on("click", function() {
+                    if ($("#authorNo").val().length == 0) {
+                        MsgBox.Alert("warn","대상을 선택해 주세요.");
+                        return false;
+                    }
+                    MsgBox.Confirm("수정 하시겠습니까?", function() {fncUpdate();});
+                });
+                function fncUpdate() {
+                    selectRow = $("#grid").jqGrid('getGridParam', 'selrow');
+
+                    var authVo = new Object();
+                    authVo.authorNo = $("#authorNo").val();
+                    authVo.useAt = $("#useAt").val();
+                    authVo.authorNm = $("#authorNm").val();
+                    authVo.authType = $("#authType").val();
+
+                    var list = checkSelectTree();
+
+                    var authList = new Array();
+                    for (var i = 0; i < list.length; i++) {
+                        if(list[i].original == null) continue;
+                        var item = new Object();
+                        if(list[i].original.id == 2 || list[i].original.id == 3){ // 각 페이지의 시작
+                            item.authorNo = authVo.authorNo;
+                            item.menuNo = list[i].original.id;
+                            item.registAt = 1;
+                            item.lstAt = 1;
+                            item.updtAt = 1;
+                            item.delAt = 1;
+                            item.fileUpAt = 1;
+                            item.fileDnAt = 1;
+                            item.excelUpAt = 1;
+                            item.excelDnAt = 1;
+                            item.pdfDnAt = 1;
+                        }
+                        else{
+                            item.authorNo = authVo.authorNo;
+                            item.menuNo = list[i].original.id;
+                            item.registAt = list[i].original.registAt;
+                            item.lstAt = list[i].original.lstAt;
+                            item.updtAt = list[i].original.updtAt;
+                            item.delAt = list[i].original.delAt;
+                            item.fileUpAt = list[i].original.fileUpAt;
+                            item.fileDnAt = list[i].original.fileDnAt;
+                            item.excelUpAt = list[i].original.excelUpAt;
+                            item.excelDnAt = list[i].original.excelDnAt;
+                            item.pdfDnAt = list[i].original.pdfDnAt;
+                        }
+                        authList[i] = item;
+                    }
+
+                    var authRelateJson = authList;
+                    var authVoJson = authVo;
+                    $.ajax({
+                        url: "\/CC\/System\/Auth\/Data",
+                        method: "PUT",
+                        data: {"Auth":authVoJson, "AuthRelate":authRelateJson},
+                        dataType: "JSON",
+                        success: function(response){
+                            if ( response && response.status == 'SUCCESS' ){
+                                responseData(response, 1);
+                                MsgBox.Alert("suc", "저장이 완료되었습니다.", function() {location.reload();});
+                            }
+                            else {
+                                MsgBox.Alert("error", response.message);
+                            }
+                        }
+                    })
+                }
+
+                 // 상세 정보 삭제
+                $("#deleteBtn").on("click", function() {
+                    if ($("#authorNo").val().length == 0) {
+                        MsgBox.Alert("warn","대상을 입력해주세요.");
+                        return false;
+                    }
+
+                    MsgBox.Confirm("삭제 하시겠습니까?", function() {fncDelete();});
+
+                });
+                function fncDelete() {
+
+                    selectRow = $("#grid").jqGrid('getGridParam', 'selrow');
+
+                    var authVo = new Object();
+                    authVo.authorNo = $("#authorNo").val();
+
+                    $.ajax({
+                        url: "\/CC\/System\/Auth\/Data",
+                        method: "DELETE",
+                        data: authVo,
+                        dataType: "JSON",
+                        success: function(response){
+                            if ( response && response.status == 'SUCCESS' ){
+                                responseData(response, 3);
+                                MsgBox.Alert("suc", "삭제가 완료되었습니다.", function() {location.reload();});
+                            }
+                            else {
+                                MsgBox.Alert("error", response.message);
+                            }
+                        }
+                    })
+                }
+
+                $('.table_wrap > #auth-datatable_wrapper > .row > div').removeClass('col-md-6');
+                $('.table_wrap > #auth-datatable_wrapper > .row > div').removeClass('col-md-5');
+                $('.table_wrap > #auth-datatable_wrapper > .row > div').removeClass('col-md-7');
+
+            });
+    </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,420 @@
+@charset "utf-8";
+/* CSS Document */
+
+    
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; list-style: none;  }
+
+	body {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+	#Corp {width:100%; margin:0 auto; padding:0; text-align:left; font-size:16px;}
+	ul li {list-style:none;}
+	a {text-decoration:none; cursor: pointer;}
+	p {transform : rotate(0.03deg);}
+
+
+
+	/* 그래프 */
+	#Corp .data .graph-wrap {position: relative; width: 50%;}
+	#Corp .data .graph-wrap ul {height: 300px;}
+	#Corp .data .graph-wrap ul li {position: absolute; width: 14%; height: 100%;}
+	#Corp .data .graph-wrap ul li p {font-size: 16px;}
+	#Corp .data .graph-wrap ul li .graph-data {position: absolute; width: 100%; background-color: #26374c; bottom: 50px; height: 0;}
+	#Corp .data .graph-wrap ul li .graph-data p {position: absolute; top: -40px; color: #606060; width: 100%; opacity: 0;}
+	#Corp .data .graph-wrap ul li .graph-year {position: absolute; width: 100%; text-align:center; bottom: 20px; color: #606060; padding: 0;}
+	#Corp .data .graph-wrap ul li:nth-child(1) {left: 23px;}
+	#Corp .data .graph-wrap ul li:nth-child(2) {left: 113px;}
+	#Corp .data .graph-wrap ul li:nth-child(3) {left: 203px;}
+	#Corp .data .graph-wrap ul li:nth-child(4) {left: 293px;}
+	#Corp .data .graph-wrap ul li:nth-child(5) {left: 383px;}
+	#Corp .data .graph-wrap ul::after {content: ''; display: inline-block; position: absolute; width: 100%; height: 1px; background-color: #26374c; left: 0; bottom: 50px;}
+	#Corp .data .graph-wrap ul li.active .graph-data {background-color: #775bfe;}
+	#Corp .data .graph-wrap ul li.active .graph-data p {font-size: 24px; color: #775bfe; font-weight: 600; top: -52px;}
+
+
+/* PC (해상도 1024px)*/ 
+@media all and (min-width:1024px) {
+	
+	/*법인투자상단*/
+	#Corp .top{width:100%; background: url("img/top_bg.jpg") no-repeat center; background-size : cover; text-align: center;}
+	#Corp .top .top_m_title {display:none;}
+	#Corp .top h1 {text-align:center; padding-top:110px;}
+	#Corp .top .bt {width:265px; height: 55px; background-color:#6d4eff; border-radius: 3px; margin:60px auto 80px; display: inline-block; color:#fff; font-size:20px; letter-spacing: -0.5px;}
+	
+	/*법인투자장점*/
+	#Corp .point {width:1000px; margin:70px auto 0; text-align: center; display: flex;}
+	#Corp .point .point_01 {width:33.3%;}
+	#Corp .point .point_02 {width:33.3%;}
+	#Corp .point .point_03 {width:33.3%;}
+	#Corp .point .title {font-size:1.5rem; letter-spacing: -0.5px; color:#222; font-weight: 600; transform : rotate(0.03deg);}
+	#Corp .point .ex {font-size:1.063rem; letter-spacing: -0.5px; color:#555; font-weight: 400; line-height: 1.375rem; padding:10px 0; display: inline-block;}
+	#Corp .point .ex .space {display:none;}
+
+	
+	
+	/*법인투자현황*/
+	#Corp .data {width:100%; margin:80px auto 0; text-align:center; background-color: #f5f5f5; padding:80px 0;}
+	#Corp .data h3 {font-size:2rem; color:#222; font-weight: 600; }
+	#Corp .data p {font-size:1.188rem; color:#222; padding: 10px 0 70px;  }
+	#Corp .data .contents {display:flex; width:950px; box-sizing: border-box;}
+	#Corp .data .graph {margin-right:70px; }
+	#Corp .data .detail {width:420px;}
+	#Corp .data .detail ul li {float:left; width:200px; margin-top:30px;}
+	#Corp .data .detail ul li:nth-child(1) {margin-right:20px;}
+	#Corp .data .detail ul li:nth-child(3) {margin-right:20px;}
+	#Corp .data .detail ul li p:first-child {color:#fff; font-size:1.063rem;}
+	#Corp .data .detail .navy {width:200px;  background-color: #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple {width:200px;  background-color: #775bfe; padding: 10px 0;}
+	#Corp .data .detail .navy_font {font-size:1.375rem; color: #26374c; border-bottom: 1px solid #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple_font {font-size:1.375rem; color: #775bfe; border-bottom: 1px solid #775bfe; padding: 10px 0;}
+	#Corp .data .detail .date {float:right; display: inline-block; padding-top:5px; font-size:0.875rem; color:#777;}
+	
+	
+	
+	/*자주하는질문*/
+	#Corp .qa {width:100%; margin:0 auto; text-align:center;  padding:80px 0;}
+	#Corp .qa h3 {font-size:2rem; color:#222; font-weight: 600; }
+	#Corp .qa .accordion { width: 950px; margin: 30px auto 20px; text-align: left; }
+	#Corp .qa .accordion .link { cursor: pointer; display: block; padding: 15px 15px 15px 20px; color: #222; font-size:1.2rem; border-bottom: 1px solid #CCC;
+                                          position: relative; -webkit-transition: all 0.1s ease; -o-transition: all 0.1s ease; transition: all 0.1s ease; border:1px solid #ccc;
+										  margin-top:20px;   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 400; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li i { position: absolute; top: 20px; left: 12px; font-size:1.125em; color: #222;
+		                                  -webkit-transition: all 0.1s ease;  -o-transition: all 0.1s ease; transition: all 0.1s ease;}
+	#Corp .qa .accordion li i.fa-chevron-down { right: 20px; left: auto;  font-size: 1rem;}
+	#Corp .qa .accordion li.open .link {font-weight: 600; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li.open i { color: #222; }
+	#Corp .qa .accordion li.open i.fa-chevron-down { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg);  -o-transform: rotate(180deg);  transform: rotate(180deg);}
+	#Corp .qa .accordion .answer { display: none; background: #f9f9f9; font-size:1.125rem; color:#222; border:1px solid #ccc; padding: 30px 100px 30px 20px;
+									border-top:none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; transform : rotate(0deg);}
+	#Corp .qa .accordion .answer a {text-decoration:underline; color:#000; font-weight: 600;}
+	
+	
+	
+	/*신청 폼*/
+	#Corp .form_box {width:100%; margin:0 auto; text-align:center;  padding:80px 0; background: url("img/line_bg.png") repeat-Y center;}
+	#Corp .form_box h3 {font-size:2rem; color:#FFF; font-weight: 600; }
+	#Corp .form_box p {font-size:1.188rem; color:#FFF; padding: 10px 0 40px;  }
+	#Corp .form_box .contents {width:600px; background: #fff;}
+	#Corp .form_box .contents form {padding: 35px 50px;}
+	#Corp .form_box .contents .apply_option {width: 100%; font-size: 1em; text-align: left;}
+	#Corp .form_box .contents .apply_option tr {height: 60px;}
+	#Corp .form_box .contents .apply_option tr th {width: 25%; color: #444;}
+	#Corp .form_box .contents .apply_option tr td {width: 75%;} 
+	#Corp .form_box .contents .apply_option input[type=text],
+	#Corp .form_box .contents .apply_option textarea {border: 1px solid #dcdcdc; box-sizing: border-box; width: 100%; border-radius: 5px; height: 40px; padding: 0 5px;}
+	#Corp .form_box .contents .apply_option textarea {height: 120px; padding: 5px 5px;}
+
+	#Corp .form_box .contents .apply_option input[type=radio],
+	#Corp .form_box .contents input[type=checkbox] {visibility: hidden; position: absolute;}
+	#Corp .form_box .contents .apply_option input[type=radio] + label, 
+	#Corp .form_box .contents input[type=checkbox] + label {display: inline-block; color: #636363; cursor: pointer; background: url(../img/check_off.png) 0 no-repeat; padding-left: 30px;}
+	#Corp .form_box .contents .apply_option input[type=radio]:checked + label,
+	#Corp .form_box .contents input[type=checkbox]:checked + label {background: url(../img/check_on.png) 0 no-repeat;}
+	
+	#Corp .form_box .contents .apply_option .note {vertical-align: top; border-top: 20px solid #fff;}
+	#Corp .form_box .contents .agree-chk {text-align: left; margin-top: 30px;}
+	#Corp .form_box .contents .agree-txt {text-align: left; color: #a2a2a2; font-size: 13px; padding: 10px 0 45px 30px;}
+
+	#Corp .form_box .contents .apply-btn {display: inline-block; width: 100%; background-color: #26374b; color: #fff; border-radius: 5px; font-size: 20px; font-weight: 600; padding: 15px 0;}
+
+
+}
+
+
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {
+	
+	/*법인투자상단*/
+	#Corp .top{width:100%; background: url("img/top_bg.jpg") no-repeat center; background-size : cover; text-align: center;}
+	#Corp .top .top_m_title {display:none;}
+	#Corp .top h1 {text-align:center; padding-top:110px;}
+	#Corp .top .bt {width:265px; height: 55px; background-color:#6d4eff; border-radius: 3px; margin:60px auto 80px; display: inline-block; color:#fff; font-size:20px; letter-spacing: -0.5px;}
+
+	
+	/*법인투자장점*/
+	#Corp .point {width:100%; margin:50px auto 0; text-align: left; }
+	#Corp .point .point_01 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .point_02 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .point_03 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .title {font-size:1.5rem; letter-spacing: -0.5px; color:#222; font-weight: 600; width:70%;}
+	#Corp .point .ex {font-size:1.125rem; letter-spacing: -0.5px; color:#777; font-weight: 400; line-height: 1.563rem; padding:5px 0; display: inline-block; }
+	#Corp .point .ex .br {display:none;}
+	#Corp .point .ex .space {display:inline-block;}
+	
+	/*법인투자현황*/
+	#Corp .data {width:100%;  margin:50px auto 0; text-align:center; background-color: #f5f5f5; padding:70px 5%; box-sizing: border-box; overflow: hidden;}
+	#Corp .data h3 {font-size:2rem; color:#222; font-weight: 600; }
+	#Corp .data p {font-size:1.250rem; color:#222; padding: 10px 0 70px; }
+	#Corp .data .graph-wrap {width: 470px;}	
+	#Corp .data .detail {width:100%; background-color: #f5f5f5; }
+	#Corp .data .detail ul li {float:left; width:48%; margin-top:30px; padding:0 1% 0;}
+	#Corp .data .detail ul li p:first-child {color:#fff; font-size:1.063rem;}
+	#Corp .data .detail .navy {width:100%;  background-color: #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple {width:100%;  background-color: #775bfe; padding: 10px 0;}
+	#Corp .data .detail .navy_font {font-size:1.375rem; color: #26374c; border-bottom: 1px solid #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple_font {font-size:1.375rem; color: #775bfe; border-bottom: 1px solid #775bfe; padding: 10px 0;}
+	#Corp .data .date {clear:both; float:right;display:inline-block; padding:5px 1% 0 0; font-size:0.875rem; color:#777;}
+	
+	
+	
+	/*자주하는질문*/
+	#Corp .qa {width:100%; margin:0 auto; text-align:center;  padding:70px 5% 60px; box-sizing: border-box;}
+	#Corp .qa h3 {font-size:2rem; color:#222; font-weight: 600; }
+	#Corp .qa .accordion { width: 100%; margin: 30px auto 20px; text-align: left; }
+	#Corp .qa .accordion .link { cursor: pointer; display: block; padding: 15px 15px 15px 40px; color: #222; font-size:1.125rem; border-bottom: 1px solid #CCC;
+                                          position: relative; -webkit-transition: all 0.1s ease; -o-transition: all 0.1s ease; transition: all 0.1s ease; border:1px solid #ccc;
+										  margin-top:20px;   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 400; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li i { position: absolute; top: 20px; left: 12px; font-size:1.125em; color: #222;
+		                                  -webkit-transition: all 0.1s ease;  -o-transition: all 0.1s ease; transition: all 0.1s ease;}
+	#Corp .qa .accordion li i.fa-chevron-down { right: 20px; left: auto;  font-size: 1rem;}
+	#Corp .qa .accordion li.open .link {font-weight: 600; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li.open i { color: #222; }
+	#Corp .qa .accordion li.open i.fa-chevron-down { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg);  -o-transform: rotate(180deg);  transform: rotate(180deg);}
+	#Corp .qa .accordion .answer { display: none; background: #f9f9f9; font-size:1.063rem; color:#222; border:1px solid #ccc; padding: 30px 40px 30px 40px;
+											border-top:none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; transform : rotate(0deg);}
+	#Corp .qa .accordion .answer a {text-decoration:underline; color:#000; font-weight: 600;}
+	#Corp .qa .accordion .br {display:none;}
+	
+	
+	
+	/*신청 폼*/
+	#Corp .form_box {width:100%; margin:0 auto; text-align:center;  padding:70px 0; background: url("img/line_bg.png") repeat-Y center;}
+	#Corp .form_box h3 {font-size:2rem; color:#FFF; font-weight: 600; }
+	#Corp .form_box p {font-size:1.250rem; color:#FFF; padding: 10px 0 40px;  }
+	#Corp .form_box .contents {width:600px; background: #fff;}
+	#Corp .form_box .contents form {padding: 35px 50px;}
+	#Corp .form_box .contents .apply_option {width: 100%; font-size: 1em; text-align: left;}
+	#Corp .form_box .contents .apply_option tr {height: 60px;}
+	#Corp .form_box .contents .apply_option tr th {width: 25%; color: #444;}
+	#Corp .form_box .contents .apply_option tr td {width: 75%;} 
+	#Corp .form_box .contents .apply_option input[type=text],
+	#Corp .form_box .contents .apply_option textarea {border: 1px solid #dcdcdc; box-sizing: border-box; width: 100%; border-radius: 5px; height: 40px; padding: 0 5px;}
+	#Corp .form_box .contents .apply_option textarea {height: 120px; padding: 5px 5px;}
+
+	#Corp .form_box .contents .apply_option input[type=radio],
+	#Corp .form_box .contents input[type=checkbox] {visibility: hidden; position: absolute;}
+	#Corp .form_box .contents .apply_option input[type=radio] + label, 
+	#Corp .form_box .contents input[type=checkbox] + label {display: inline-block; color: #636363; cursor: pointer; background: url(../img/check_off.png) 0 no-repeat; padding-left: 30px;}
+	#Corp .form_box .contents .apply_option input[type=radio]:checked + label,
+	#Corp .form_box .contents input[type=checkbox]:checked + label {background: url(../img/check_on.png) 0 no-repeat;}
+	
+	#Corp .form_box .contents .apply_option .note {vertical-align: top; border-top: 20px solid #fff;}
+	#Corp .form_box .contents .agree-chk {text-align: left; margin-top: 30px;}
+	#Corp .form_box .contents .agree-txt {text-align: left; color: #a2a2a2; font-size: 13px; padding: 10px 0 45px 30px;}
+
+	#Corp .form_box .contents .apply-btn {display: inline-block; width: 100%; background-color: #26374b; color: #fff; border-radius: 5px; font-size: 20px; font-weight: 600; padding: 15px 0;}
+
+	
+}
+
+
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px) */ 
+@media all and (min-width:480px) and (max-width:767px){
+	
+	/*법인투자상단*/
+	#Corp .top{width:100%; background: url("img/m_top_bg.jpg") no-repeat center; background-size : cover; text-align: center; }
+	#Corp .top .top_title {display:none;}
+	#Corp .top h1 img {width:60%; margin-top:60px;}
+	#Corp .top .bt {width:60%;  background-color:#6d4eff; border-radius: 3px; margin:30px auto 50px; display: inline-block; color:#fff; font-size:20px; letter-spacing: -0.5px; padding:10px 0;}
+
+	
+	/*법인투자장점*/
+	#Corp .point {width:100%; margin:50px auto 0; text-align: left; }
+	#Corp .point .point_01 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .point_02 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .point_03 {display:flex; width:90%; padding:10px 5% 15px; align-items: center;}
+	#Corp .point .title {font-size:1.375rem; letter-spacing: -0.5px; color:#222; font-weight: 600; width:70%;}
+	#Corp .point .ex {font-size:1.063rem; letter-spacing: -0.5px; color:#777; font-weight: 400; line-height: 1.563rem; padding:5px 0; display: inline-block; }
+	#Corp .point .ex .br {display:none;}
+	#Corp .point .ex .space {display:inline-block;}
+	
+	
+	
+	/*법인투자현황*/
+	#Corp .data {width:100%;  margin:50px auto 0; text-align:center; background-color: #f5f5f5; padding:70px 5%; box-sizing: border-box; overflow: hidden;}
+	#Corp .data h3 {font-size:1.75rem; color:#222; font-weight: 600; }
+	#Corp .data p {font-size:1.15rem; color:#222; padding: 10px 0 50px; }
+	#Corp .data .contents {width: 100%; padding: 0 5%; box-sizing: border-box;}
+	#Corp .data .graph-wrap {width: 100%;}
+	#Corp .data .graph-wrap ul li p {font-size: 14px;}
+	#Corp .data .graph-wrap ul::after {width: 90%; left: 5%;}
+	#Corp .data .graph-wrap ul li:nth-child(1) {left: 7%;}
+	#Corp .data .graph-wrap ul li:nth-child(2) {left: 25%;}
+	#Corp .data .graph-wrap ul li:nth-child(3) {left: 43%;}
+	#Corp .data .graph-wrap ul li:nth-child(4) {left: 61%;}
+	#Corp .data .graph-wrap ul li:nth-child(5) {left: 79%;}
+	#Corp .data .graph-wrap ul li.active .graph-data p {font-size: 20px;}
+	#Corp .data .detail {width:100%; background-color: #f5f5f5; }
+	#Corp .data .detail ul li {float:left; width:48%; margin-top:30px; padding:0 1% 0;}
+	#Corp .data .detail ul li p:first-child {color:#fff; font-size:1.063rem;}
+	#Corp .data .detail .navy {width:100%;  background-color: #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple {width:100%;  background-color: #775bfe; padding: 10px 0;}
+	#Corp .data .detail .navy_font {font-size:1.375rem; color: #26374c; border-bottom: 1px solid #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple_font {font-size:1.375rem; color: #775bfe; border-bottom: 1px solid #775bfe; padding: 10px 0;}
+	#Corp .data .date {clear:both; float:right;display:inline-block; padding:5px 1% 0 0; font-size:0.875rem; color:#777;}
+	
+	
+	
+	
+	
+	/*자주하는질문*/
+	#Corp .qa {width:100%; margin:0 auto; text-align:center;  padding:70px 5% 60px; box-sizing: border-box;}
+	#Corp .qa h3 {font-size:1.75rem; color:#222; font-weight: 600; }
+	#Corp .qa .accordion { width: 100%; margin: 30px auto 20px; text-align: left; }
+	#Corp .qa .accordion .link { cursor: pointer; display: block; padding: 15px 15px 15px 20px; color: #222; font-size:1.125rem; border-bottom: 1px solid #CCC;
+                                          position: relative; -webkit-transition: all 0.1s ease; -o-transition: all 0.1s ease; transition: all 0.1s ease; border:1px solid #ccc;
+										  margin-top:20px;   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 400; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li i { position: absolute; top: 20px; left: 12px; font-size:1.125em; color: #222;
+		                                  -webkit-transition: all 0.1s ease;  -o-transition: all 0.1s ease; transition: all 0.1s ease;}
+	#Corp .qa .accordion li i.fa-chevron-down { right: 20px; left: auto;  font-size: 1rem;}
+	#Corp .qa .accordion li.open .link {font-weight: 600; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li.open i { color: #222; }
+	#Corp .qa .accordion li.open i.fa-chevron-down { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg);  -o-transform: rotate(180deg);  transform: rotate(180deg);}
+	#Corp .qa .accordion .answer { display: none; background: #f9f9f9; font-size:1.063rem; color:#222; border:1px solid #ccc; padding: 30px 20px 30px 20px;
+											border-top:none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; transform : rotate(0deg);}
+	#Corp .qa .accordion .answer a {text-decoration:underline; color:#000; font-weight: 600;}
+	#Corp .qa .accordion .br {display:none;}
+	
+	
+	
+	
+	/*신청 폼*/
+	#Corp .form_box {width:100%; margin:0 auto; text-align:center;  padding:70px 0; background: url("img/line_bg.png") repeat-Y center;}
+	#Corp .form_box h3 {font-size:1.75rem; color:#FFF; font-weight: 600; }
+	#Corp .form_box p {font-size:1.15rem; color:#FFF; padding: 10px 0 40px;  }
+	#Corp .form_box .contents {width:85%; background: #fff;}
+	#Corp .form_box .contents form {padding: 30px;}
+	#Corp .form_box .contents .apply_option {width: 100%; font-size: 1em; text-align: left;}
+	#Corp .form_box .contents .apply_option tr {height: 60px;}
+	#Corp .form_box .contents .apply_option tr th {width: 25%; color: #444;}
+	#Corp .form_box .contents .apply_option tr td {width: 75%; border-left: 10px solid #fff;} 
+	#Corp .form_box .contents .apply_option input[type=text],
+	#Corp .form_box .contents .apply_option textarea {border: 1px solid #dcdcdc; box-sizing: border-box; width: 100%; border-radius: 5px; height: 40px; padding: 0 5px;}
+	#Corp .form_box .contents .apply_option textarea {height: 120px; padding: 5px 5px;}
+
+	#Corp .form_box .contents .apply_option input[type=radio],
+	#Corp .form_box .contents input[type=checkbox] {visibility: hidden; position: absolute;}
+	#Corp .form_box .contents .apply_option input[type=radio] + label, 
+	#Corp .form_box .contents input[type=checkbox] + label {display: inline-block; color: #636363; cursor: pointer; background: url(../img/check_off.png) 0 no-repeat; padding-left: 30px;}
+	#Corp .form_box .contents .apply_option input[type=radio]:checked + label,
+	#Corp .form_box .contents input[type=checkbox]:checked + label {background: url(../img/check_on.png) 0 no-repeat;}
+	
+	#Corp .form_box .contents .apply_option .note {vertical-align: top; border-top: 20px solid #fff;}
+	#Corp .form_box .contents .agree-chk {text-align: left; margin-top: 30px;}
+	#Corp .form_box .contents .agree-txt {text-align: left; color: #a2a2a2; font-size: 13px; padding: 10px 0 45px 30px;}
+
+	#Corp .form_box .contents .apply-btn {display: inline-block; width: 100%; background-color: #26374b; color: #fff; border-radius: 5px; font-size: 20px; font-weight: 600; padding: 15px 0;}
+
+	
+	
+}
+
+
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px) */ 
+@media all and (max-width:479px) {
+	
+	/*법인투자상단*/
+	#Corp .top{width:100%;  background: url("img/m_top_bg.jpg") no-repeat center; background-size : cover; text-align: center; }
+	#Corp .top .top_title {display:none;}
+	#Corp .top h1 img {width:70%; margin-top:50px;}
+	#Corp .top .bt {width:70%;  background-color:#6d4eff; border-radius: 3px; margin:30px auto 50px; display: inline-block;color:#fff; font-size:20px; letter-spacing: -0.5px;  padding:10px 0; }
+
+	
+	/*법인투자장점*/
+	#Corp .point {width:100%; margin:50px auto 0; text-align: left; }
+	#Corp .point .point_01 {display:flex; width:96%; padding:10px 0 15px 4% ; align-items: center;}
+	#Corp .point .point_02 {display:flex; width:96%; padding:10px 0 15px 4% ; align-items: center;}
+	#Corp .point .point_03 {display:flex; width:96%; padding:10px 0 15px 4% ; align-items: center;}
+	#Corp .point .picto_img img{width:15vw; }
+	#Corp .point .title {font-size:1.25rem; letter-spacing: -0.5px; color:#222; font-weight: 600; width:70%;}
+	#Corp .point .ex {font-size:1rem; letter-spacing: -0.5px; color:#777; font-weight: 400; line-height: 1.25rem; padding:5px 0; display: inline-block; }
+	#Corp .point .ex .space {display:inline-block;}
+	
+	
+	
+	/*법인투자현황*/
+	#Corp .data {width:100%; margin:40px auto 0; text-align:center; background-color: #f5f5f5; padding:50px 5%; box-sizing: border-box; overflow: hidden;}
+	#Corp .data h3 {font-size:1.5rem; color:#222; font-weight: 600; }
+	#Corp .data p {font-size:1rem; color:#222; padding: 10px 5% 40px; line-height: 1.25rem;}
+	#Corp .data .contents {width:100%; padding:0 5%; box-sizing: border-box;}
+	#Corp .data .graph-wrap {width: 100%;}
+	#Corp .data .graph-wrap ul li p {font-size: 3vw; padding: 0;}
+	#Corp .data .graph-wrap ul::after {width: 90%; left: 5%;}
+	#Corp .data .graph-wrap ul li:nth-child(1) {left: 7%;}
+	#Corp .data .graph-wrap ul li:nth-child(2) {left: 25%;}
+	#Corp .data .graph-wrap ul li:nth-child(3) {left: 43%;}
+	#Corp .data .graph-wrap ul li:nth-child(4) {left: 61%;}
+	#Corp .data .graph-wrap ul li:nth-child(5) {left: 79%;}
+	#Corp .data .graph-wrap ul li .graph-data p {top: -25px;}
+	#Corp .data .graph-wrap ul li.active .graph-data p {font-size: 4vw; top: -30px;}
+	#Corp .data .graph img{width:100%; margin-bottom: 20px;}
+	#Corp .data .detail ul li {float:left; width:50%; margin-top:20px; padding:0 1% 0;  box-sizing: border-box; }
+	#Corp .data .detail ul li p:first-child {color:#fff; font-size:0.938rem;}
+	#Corp .data .detail .navy {width:100%;  background-color: #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple {width:100%;  background-color: #775bfe; padding: 10px 0;}
+	#Corp .data .detail .navy_font {font-size:1.25rem; color: #26374c; border-bottom: 1px solid #26374c; padding: 10px 0;}
+	#Corp .data .detail .purple_font {font-size:1.25rem; color: #775bfe; border-bottom: 1px solid #775bfe; padding: 10px 0;}
+	#Corp .data .date {clear:both; float:right;display:inline-block; padding:5px 1% 0 0; font-size:0.875rem; color:#777; }
+	
+	
+	
+	
+	
+	/*자주하는질문*/
+	#Corp .qa {clear:both; width:100%; margin:0 auto; text-align:center;  padding:50px 5% 40px; box-sizing: border-box;}
+	#Corp .qa h3 {font-size:1.5rem; color:#222; font-weight: 600; }
+	#Corp .qa .accordion { width: 100%; margin: 20px auto 20px; text-align: left; }
+	#Corp .qa .accordion .link { cursor: pointer; display: block; padding: 15px 20px; color: #222; font-size:1rem; border-bottom: 1px solid #CCC;
+                                          position: relative; -webkit-transition: all 0.1s ease; -o-transition: all 0.1s ease; transition: all 0.1s ease; border:1px solid #ccc;
+										  margin-top:10px;   -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-weight: 400; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li i { position: absolute; top: 20px; left: 12px; font-size:1.125em; color: #222;
+		                                  -webkit-transition: all 0.1s ease;  -o-transition: all 0.1s ease; transition: all 0.1s ease;}
+	#Corp .qa .accordion li i.fa-chevron-down { right: 15px; left: auto;  font-size: 0.875rem;}
+	#Corp .qa .accordion li.open .link {font-weight: 600; transform : rotate(0.03deg);}
+	#Corp .qa .accordion li.open i { color: #222; }
+	#Corp .qa .accordion li.open i.fa-chevron-down { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg);  -o-transform: rotate(180deg);  transform: rotate(180deg);}
+	#Corp .qa .accordion .answer { display: none; background: #f9f9f9; font-size:0.938rem; color:#222; border:1px solid #ccc; padding: 15px 20px;
+											border-top:none; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; transform : rotate(0deg); line-height: 1.25rem;}
+	#Corp .qa .accordion .answer a {text-decoration:underline; color:#000; font-weight: 600;}
+	#Corp .qa .accordion .br {display:none;}
+	
+	
+	
+	/*신청 폼*/
+	#Corp .form_box {width:100%; margin:0 auto; text-align:center;  padding:50px 5%; background: url("img/m_line_bg.png") repeat-Y center;  box-sizing: border-box;}
+	#Corp .form_box h3 {font-size:1.5rem; color:#FFF; font-weight: 600; }
+	#Corp .form_box p {font-size:1rem; color:#FFF; padding: 10px 5% 30px;  line-height: 1.25rem; }
+	#Corp .form_box .contents {width:100%;  background: #fff;}
+	#Corp .form_box .contents form {padding: 20px;}
+	#Corp .form_box .contents .apply_option {width: 100%; font-size: 14px; text-align: left;}
+	#Corp .form_box .contents .apply_option tr {height: 60px;}
+	#Corp .form_box .contents .apply_option tr th {width: 25%; color: #444;}
+	#Corp .form_box .contents .apply_option tr td {width: 75%; border-left: 10px solid #fff;} 
+	#Corp .form_box .contents .apply_option input[type=text],
+	#Corp .form_box .contents .apply_option textarea {border: 1px solid #dcdcdc; box-sizing: border-box; width: 100%; border-radius: 5px; height: 40px; padding: 0 5px;}
+	#Corp .form_box .contents .apply_option textarea {height: 120px; padding: 5px 5px;}
+
+	#Corp .form_box .contents .apply_option input[type=radio],
+	#Corp .form_box .contents input[type=checkbox] {visibility: hidden; position: absolute;}
+	#Corp .form_box .contents .apply_option input[type=radio] + label, 
+	#Corp .form_box .contents input[type=checkbox] + label {display: inline-block; color: #636363; cursor: pointer; background: url(../img/check_off.png) 0 no-repeat; padding-left: 30px; height: 30px; line-height: 2;}
+	#Corp .form_box .contents .apply_option input[type=radio]:checked + label,
+	#Corp .form_box .contents input[type=checkbox]:checked + label {background: url(../img/check_on.png) 0 no-repeat;}
+	
+	#Corp .form_box .contents .apply_option .note {vertical-align: top; border-top: 20px solid #fff;}
+	#Corp .form_box .contents .agree-chk {text-align: left; margin-top: 30px;}
+	#Corp .form_box .contents .agree-chk input[type=checkbox] + label {line-height: 1.7; margin-bottom: 20px;}
+	#Corp .form_box .contents .agree-txt {text-align: left; color: #a2a2a2; font-size: 13px; padding: 5% 0 10% 2%;}
+
+	#Corp .form_box .contents .apply-btn {display: inline-block; width: 100%; background-color: #26374b; color: #fff; border-radius: 5px; font-size: 20px; font-weight: 600; padding: 15px 0;}
+
+
+}
+
+
+
+
+

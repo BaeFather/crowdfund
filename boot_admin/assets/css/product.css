@@ -1,0 +1,431 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/********************************상품*******************************************/
+
+.wrapper .content-page .container-fluid .product-search	{padding:0 30px;}	
+.wrapper .content-page .container-fluid .product-search	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .product-search table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .product-search table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .product-search table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .custom-select {width:110px;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-select {width:200px; margin:0 .5rem; }
+
+	
+	
+/*상품구분*/
+.wrapper .content-page .container-fluid .product-search .product-division .custom-control-label{font-size:.8rem; color:#555; margin:2px 15px 0 10px; }
+
+
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .product-search .product-progress .row{width:1000px; margin:.8rem 0;}	
+.wrapper .content-page .container-fluid .product-search .product-progress .custom-control-label{margin:2px 15px 0 10px; font-size:.8rem; color:#555; }	
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .product-search	.condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .product-search	.condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+/*검색어*/
+.wrapper .content-page .container-fluid .product-search	.word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .product-search	.word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .product-search	.word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .product-search	.down_button {padding-left:10px;}
+.wrapper .content-page .container-fluid .product-search	.down_button .basic-bt {margin-right:5px;}
+.wrapper .content-page .container-fluid .product-search	.down_button .basic-bt img {margin-right:5px; padding-bottom:3px;}
+
+
+
+
+
+/*테이블 상단 버튼 파트*/
+.wrapper .content-page .container-fluid .date-list {padding:30px 30px;}
+.wrapper .content-page .container-fluid .date-list .table-top-bt {width:100%; display:flex; justify-content: flex-end; padding:10px 0 0; font-size:.8rem; color:#555;}
+.wrapper .content-page .container-fluid .date-list .action_button .basic-bt img {margin-right:5px; padding-bottom:3px; }
+.wrapper .content-page .container-fluid .date-list .dataTables_length {padding-left:5px;}
+
+
+/*데이터테이블 검색창 삭제*/
+.wrapper div.dataTables_wrapper div.dataTables_filter {display: none;}
+
+
+/*위아래 정렬 화살표 삭제*/
+.wrapper table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc_disabled:before {display: none;}
+.wrapper table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_desc_disabled:after {display: none;}
+
+
+
+/*테이블 가로 스크롤*/
+.wrapper .table-scroll  {width:100%; white-space: nowrap; }
+
+
+
+/*테이블*/
+.wrapper .col-sm-12 {padding:0;}
+.wrapper .col-md-5, .wrapper .col-md-7{max-width: 100%; flex:0 0 100%;}
+
+.wrapper .content-page .container-fluid .date-list table {border:1px solid #ddd; padding:0 18px;}
+.wrapper .content-page .container-fluid .date-list table th {border-top:1px solid #ddd; border-bottom:1px solid #222; border-right:1px solid #ddd; padding:0 .5rem; height: 40px; line-height: 40px; text-align: center; font-size:.7rem; color:#222; background-color: #fafafc; }
+.wrapper .content-page .container-fluid .date-list table td {border-right:1px solid #ddd; text-align: center; font-size:.75rem; color:#222; height: 40px; padding:0 .5rem;  line-height: 40px; }
+.wrapper .content-page .container-fluid .date-list table .basic-bt {line-height:calc(1.3rem);}
+.wrapper .content-page .container-fluid .date-list table .left {text-align:left;}
+.wrapper .content-page .container-fluid .date-list table .right{text-align:right;}
+
+
+/*테이블 펼침 내역파트*/	
+.wrapper table.dataTable > tbody > tr.child ul.dtr-details {width:100%;}
+.wrapper table.dataTable > tbody > tr.child ul.dtr-details > li {padding:0; height: 40px; font-size:.75rem; display: flex;}
+.wrapper table.dataTable > tbody > tr.child span {display:inline-block!important;}
+.wrapper table.dataTable > tbody > tr.child span:first-child {text-align:left; width:30%; line-height: 40px; padding-left:10px;}
+.wrapper table.dataTable > tbody > tr.child span:last-child {text-align:right; width:70%; line-height: 40px; overflow:hidden; text-overflow:ellipsis; padding-right:10px;}	
+
+
+
+
+
+/*하단 갯수 및 페이징*/
+.wrapper div.dataTables_wrapper div.dataTables_info {font-size:.8rem; color:#555; padding:0; margin:0; text-align: left;}
+.wrapper div.dataTables_wrapper div.dataTables_paginate ul.pagination {justify-content: center!important; font-size:.8rem;}
+.wrapper .page-item.active .page-link {background-color: #555; border-color:#555; }
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .product-search {padding:0;}
+.wrapper .content-page .container-fluid .product-search table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .product-search table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .product-search table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-line .custom-select {width:35%;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-line .date-select {width:64%; margin:0 0 0 1%;}
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-select-bt {width:100%; margin:5px 0; }
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-select-bt .btn:nth-child(7) {display:inline-block;;}
+
+
+	
+/*상품구분*/
+.wrapper .content-page .container-fluid .product-search .product-division {display:none;}
+	
+/*진행현황*/
+.wrapper .content-page .container-fluid .product-search .product-progress .row{margin:10px 0; width:100%;}
+.wrapper .content-page .container-fluid .product-search .product-progress .custom-control {width:33.3%; }
+.wrapper .content-page .container-fluid .product-search .product-progress .custom-control-label{font-size:.8rem; color:#555; margin:0;}	
+.wrapper .content-page .container-fluid .product-search .product-progress .custom-control-label .delete {display:none;}
+.wrapper .content-page .container-fluid .product-search	.condition-search .custom-select:nth-child(2){display:none;}
+.wrapper .content-page .container-fluid .product-search	.condition-search .custom-select:nth-child(3){display:none;}
+.wrapper .content-page .container-fluid .product-search	.condition-search .custom-select:nth-child(4){display:none;}
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .product-search	.condition-search .condition-search-wrap{padding-left:0px;}
+.wrapper .content-page .container-fluid .product-search	.condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}
+	
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .product-search .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .product-search	.word-search .word-search-wrap .custom-select {width:40%;}
+.wrapper .content-page .container-fluid .product-search	.word-search .word-search-wrap .input-group {margin-left:1%; width:59%;}	
+
+
+/*다운로드*/
+.wrapper .content-page .container-fluid .product-search .download {display:none;}
+	
+	
+	
+	
+/*테이블*/	
+.wrapper .table-scroll table {width:100%;}
+.wrapper .content-page .container-fluid .date-list {padding:30px 0;}
+	
+	
+/*출력/복사/다운 버튼 */	
+.wrapper .content-page .container-fluid .date-list .table-top-bt {padding:10px 0 0;}	
+.wrapper .content-page .container-fluid .date-list .action_button{display:none;}
+	
+	
+	
+/*테이블 펼침 내역파트*/	
+.wrapper table.dataTable > tbody > tr.child ul.dtr-details {width:100%;}
+.wrapper table.dataTable > tbody > tr.child ul.dtr-details > li {padding:0; height: 40px; font-size:.75rem; display: flex;}
+.wrapper table.dataTable > tbody > tr.child span {display:inline-block!important;}
+.wrapper table.dataTable > tbody > tr.child span:first-child {text-align:left; width:30%; line-height: 40px; padding-left:10px;}
+.wrapper table.dataTable > tbody > tr.child span:last-child {text-align:right; width:70%; line-height: 40px; overflow:hidden; text-overflow:ellipsis; padding-right:10px;}	
+
+
+	
+
+}
+
+
+@media (max-width:420px){
+.wrapper .content-page .container-fluid .product-search .date-search .date-search-wrap .date-select-bt .btn:nth-child(7) {display:none;}		
+}
+
+
+
+/********************************자기계산 투자 관리*******************************************/
+
+
+.wrapper .content-page .container-fluid .self-calculation{padding:0 30px;}	
+.wrapper .content-page .container-fluid .self-calculation form {width:100%; display:flex; flex-wrap: nowrap;}
+.wrapper .content-page .container-fluid .self-calculation .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .self-calculation .search-table { width:60%; margin-right:50px; }
+.wrapper .content-page .container-fluid .self-calculation .search-table table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%; white-space: nowrap; }	
+.wrapper .content-page .container-fluid .self-calculation .search-table table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .self-calculation .search-table table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px; }
+
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .custom-select {width:110px;}
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap {display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap .custom-select {width:150px;}	
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap .input-group {width:200px; margin-left:.5rem; }	
+
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .self-calculation .product-progress .row{margin:.8rem 0;}	
+.wrapper .content-page .container-fluid .self-calculation .product-progress .custom-control-label{margin:2px 15px 0 10px; font-size:.8rem; color:#555; }	
+
+
+
+/*상단 미니테이블*/	
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table {width:40%; margin:20px 0;}
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table .date-button-wrap {display: flex; justify-content: space-between;}
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table .date-button-wrap input {width:20%;}
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table .date-button-wrap .basic-bt {background-color:#fa5c7c; border:1px solid #fa5c7c; color:#fff!important;}
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table table {margin-top:10px;  width:100%;  white-space: nowrap; text-align: center; line-height: 30px;}	
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table table thead th{border:1px solid #888;background-color: #f6f6f6; padding:0 1rem; }
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table table tr td{border: 1px solid #888; height:45px; color:#222; font-size:.8rem; white-space: nowrap; padding:0 1rem; }
+
+
+
+/*모달 테이블 커스텀*/
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-dialog {max-width: 800px;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-header {border-bottom:none; padding:1rem 2rem 0 0;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body {padding:0 2rem 2rem 2rem;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management {width:100%;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management h3 {font-size:1.05rem; color:#222;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management table tr td {padding:.5rem .7rem; text-align: center; border-right: 1px solid #aaa;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management table thead tr th {padding:.5rem .7rem; background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; height: 40px; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management .table-bt:last-child {background-color:#ee321f; border:1px solid #ee321f; color:#fff;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management .btn-reset {background-color:#555; border:1px solid #555; color:#fff; float: right; margin-top:10px;}
+
+
+
+
+
+
+
+@media (max-width:1300px){
+.wrapper .content-page .container-fluid .self-calculation {padding:0 30px;}
+.wrapper .content-page .container-fluid .self-calculation form {flex-wrap:wrap;}	
+.wrapper .content-page .container-fluid .self-calculation .search-table {width:100%; margin-right:0; order:2;}
+	
+/*상단 미니테이블*/	
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table {width:100%; order:1; overflow-x: auto;}	
+	
+}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .self-calculation {padding:0;}
+.wrapper .content-page .container-fluid .self-calculation .search-table table {border-top: none; margin-top:0;  white-space: nowrap;}	
+.wrapper .content-page .container-fluid .self-calculation .search-table table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .self-calculation .search-table table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .date-line .custom-select {width:35%;}
+.wrapper .content-page .container-fluid .self-calculation .date-search .date-search-wrap .date-line .date-select {width:64%; margin:0 0 0 1%;}
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap {padding-left:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap .custom-select {width:100%;}
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; margin-top:5px;}	
+.wrapper .content-page .container-fluid .self-calculation .word-search .word-search-wrap .pro-keyword {margin-left:0!important; width:50%;}	
+	
+
+	
+/*진행현황*/
+.wrapper .content-page .container-fluid .self-calculation .product-progress .row{margin:10px 0; width:100%;}
+.wrapper .content-page .container-fluid .self-calculation .product-progress .custom-control {width:33.3%; }
+.wrapper .content-page .container-fluid .self-calculation .product-progress .custom-control-label{font-size:.8rem; color:#555; margin:0;}	
+.wrapper .content-page .container-fluid .self-calculation .product-progress .custom-control-label .delete {display:none;}
+
+	
+/*상단 미니테이블*/
+.wrapper .content-page .container-fluid .self-calculation .self-calculation-table .date-button-wrap input {width:30%;}
+	
+	
+/*모달 테이블 커스텀*/	
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-header {border-bottom:none; padding:1rem 1rem 0 0;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body {padding:0 1rem 1rem 1rem;}
+.wrapper .content-page .container-fluid .self-calculation .management-modal .modal-body .capital-management .scroll-div{overflow:auto;}
+
+}
+
+
+
+
+
+/********************************자기계산 검토서 관리*******************************************/
+
+
+.wrapper .content-page .container-fluid .self-calculation-docu	{padding:0 30px;}	
+.wrapper .content-page .container-fluid .self-calculation-docu	.search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .self-calculation-docu table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .self-calculation-docu table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .self-calculation-docu table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem;  width:150px; }
+
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .custom-select {width:110px;}
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap {display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap .custom-select {width:150px;}	
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap .input-group {width:200px; margin-left:.5rem; }	
+
+
+
+
+/*모달 테이블 커스텀 - 공통 */
+.wrapper .content-page .container-fluid .modal-content .modal-header {padding:15px 40px 10px; align-items: center;}
+.wrapper .content-page .container-fluid .modal-content .modal-header h4 {font-size:1.25rem; color:#222;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine {padding:0 30px 50px;}	
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine h3 {font-size:1.05rem; color:#222; margin:20px 0 10px;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table{border:1px solid #aaa; width:100%; white-space: nowrap;}	
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table tr td{padding:.4rem .7rem; border-bottom: 1px solid #aaa; color:#222; font-size:.8rem; height: 35px; }
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table tr th{padding:.4rem .7rem; height: 35px;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table tr td input {height:calc(1.8rem); width:200px;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table tr td button {height:calc(1.6rem); padding:0.2rem 1rem;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table tr td select {height:calc(1.8rem); line-height: 1.1; text-align:center!important; width:130px; }
+
+
+/*모달 테이블 커스텀 - 자기자본 및 연체율 검토*/
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .overdue-check {width:100%;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .overdue-check table tr td {text-align: center; border-right: 1px solid #aaa; background-color:#fff;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .overdue-check table tr th {background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .overdue-check .sort-left {text-align:left;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .overdue-check .sort-right {text-align:right;}
+
+
+
+/* 모달 테이블 커스텀 - LTV 및 동일인 한도 검토*/
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check {width:100%;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check table tr td {text-align: center; border-right: 1px solid #aaa; background-color:#fff;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check table tr th {background-color:#f6f6f6; border-right: 1px solid #aaa; font-weight: 600; border-bottom: 1px solid #222; color:#555; font-size:.8rem; white-space: nowrap; text-align: center;}
+
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check .sort-left {text-align:left;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check .sort-right {text-align:right;}
+
+
+
+/*모달 테이블 커스텀 - 하단*/
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail {width:100%; display:flex; justify-content: space-between; margin:20px 0; }
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail p {margin-bottom:0;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail p{color:#555; font-size:.8rem;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail table {margin-top:0;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail table tr td{text-align:center; background-color:#fff;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail table tr .tit{background-color:#faf1f3;}
+
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .save-bt {text-align: center; }
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .save-bt .btn-link {background-color: #ee321f; border:1px solid #ee321f;}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .self-calculation-docu {padding:0;}
+.wrapper .content-page .container-fluid .self-calculation-docu .search-table table {border-top: none; margin-top:0;  white-space: nowrap;}	
+.wrapper .content-page .container-fluid .self-calculation-docu .search-table table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .self-calculation-docu .search-table table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .date-line .custom-select {width:35%;}
+.wrapper .content-page .container-fluid .self-calculation-docu .date-search .date-search-wrap .date-line .date-select {width:64%; margin:0 0 0 1%;}
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap {padding-left:0; flex-wrap: wrap;}
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap .custom-select {width:100%;}
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; margin-top:5px;}	
+.wrapper .content-page .container-fluid .self-calculation-docu .word-search .word-search-wrap .pro-keyword {margin-left:0!important; width:50%;}	
+	
+
+	
+	
+/*모달 테이블 커스텀*/	
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .scroll-div{overflow:auto;}
+.wrapper .content-page .container-fluid .modal-content .modal-header {padding:1rem; align-items: center;}
+.wrapper .content-page .container-fluid .modal-content .modal-header h4 {font-size:1.15rem; color:#222; letter-spacing: -0.5px;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine {padding:0 0 50px;}		
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine table {margin-top:0;}	
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .limit-check {margin-top:40px;}	
+	
+	
+/*모달 테이블 커스텀 - 하단*/
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail {display: block;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail p{color:#555; font-size:.75rem; letter-spacing: -0.5px;}
+.wrapper .content-page .container-fluid .modal-content .modal-body .examine .docu-tail table {margin-top:20px;}
+
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

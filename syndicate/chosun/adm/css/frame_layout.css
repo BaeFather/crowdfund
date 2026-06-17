@@ -1,0 +1,308 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'NG';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nanum Gothic'), local('나눔고딕'), local('나눔고딕 보통');
+  src: url('/theme/company/css/fonts/NanumGothic-Regular.eot');
+  src: url('/theme/company/css/fonts/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/theme/company/css/fonts/NanumGothic-Regular.woff') format('woff'),
+       url('/theme/company/css/fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NGB';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nanum Gothic Bold'), local('나눔고딕 굵게'), local('나눔고딕');
+  src: url('/theme/company/css/fonts/NanumGothic-Bold.eot');
+  src: url('/theme/company/css/fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/theme/company/css/fonts/NanumGothic-Bold.woff') format('woff'),
+       url('/theme/company/css/fonts/NanumGothic-Bold.ttf') format('truetype');
+}
+
+body, input, textarea, select, button, table{ margin:0; font-size:13px; font-family:'NG', Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; }
+body, h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, form, fieldset, legend, button { margin: 0; padding:0; font-weight:normal; }
+
+
+img, fieldset{ border:0 none; }
+dl, ul, ol, li { list-style: none outside none; }
+button{ border:0 none; cursor:pointer; display: block; }
+table, th, td, div{ border-collapse:collapse; }
+textarea { outline:0; }
+
+
+a,img,input { outline:none; selector-dummy:expression(this.hideFocus=true); }
+
+/* 20170904_추가 */
+input.txt_box {width:522px;height:40px;border:1px solid #e0e0e0;margin-top:10px;padding-left:10px;}
+input.txt_box:focus {border:1px solid #4467c1;}
+textarea.area_box {width:522px;height:155px;border:1px solid #e0e0e0;margin-top:10px;padding-left:10px;padding-top:10px;}
+textarea.area_box:focus {border:1px solid #4467c1;}
+
+
+li img { vertical-align:top; }
+td img { vertical-align:middle; }
+
+a { text-decoration:none; color:#202020; }
+a:hover, a:active, a:focus { color:#153fa1; text-decoration:none; }
+table a:link, table a:visited { color:#202020; }
+table a:hover, table a:active { color:#153fa1; text-decoration:none; }
+address, caption, cite, code, dfn, em, var { font-style:normal; }
+address{line-height:20px;}
+
+strong, .strong, b {font-family:'NGB'}
+.blind, legend, caption {display:none !important}
+.cursor {cursor: pointer}
+.clear {clear:both}
+
+input.text { height:33px; padding:0 5px; border:1px solid #ddd; background-color:#f8f8f8; vertical-align:middle; min-width:340px; }
+
+body {background:#fff;font-family:'NG';}
+
+header {width:100%; height:80px; border-bottom:3px solid #0163AE; position:fixed; z-index:1000; top:0px; left:0px; background: rgba(255, 255, 255, 0.9);}
+header .header_menu { width:1150px; height:77px; margin:0 auto; }
+
+/*** 상단 ***/
+header h1 {float:left;width:140px;padding:0 0 0 0;line-height:77px;height:77px;}
+
+header nav{float:right;width:880px; height:77px;}
+
+header nav #main-menu { text-align:right; }
+header nav #main-menu li{ float:left; font-size:17px; font-family:'NGB'; height:50px; margin:0 0 0 25px; padding-top:30px; }
+header nav #main-menu li:hover { font-size:17px; color:#153FA1; }
+header nav #main-menu li:first-child{ margin-left:-50px; }
+header nav #main-menu li:last-child { }
+
+header nav #main-menu li > .smenu {display:none;position:absolute;top:80px;margin-left:-20px;z-index:120; background:#fff;border:0px; filter:alpha(opacity=50);opacity:0.9; text-align:left;padding:0 0px 20px 0px;}
+header nav #main-menu li:hover > .smenu {display:block;border-top:3px solid #0263ad;border-bottom:1px solid #0263ad;border-left:1px solid #0263ad;border-right:1px solid #0263ad;}
+header nav #main-menu li > .smenu > p {list-style:none;font-size:15px;padding:15px 24px 0 20px;}
+header nav #main-menu li > .smenu > p:first-child {border:0;}
+
+header nav #member div{float:left;margin:26px 0 0 10px;font-weight:500; }
+header nav #member div:first-child{float:left;margin:26px 0 0 35px;font-weight:500; }
+header nav #member .login {border-radius:3px; border:2px solid #153fa1;font-size:15px;padding:4px 10px;font-family:'NGB';}
+header nav #member .join {background-color:#153fa1;border-radius:3px;border:2px solid #153fa1;font-family:'NGB';font-size:15px;color:#fff;padding:4px 10px;}
+header nav #member .join a {color:#fff;font-family:'NGB';}
+
+/**header nav #member .logout {height:95px;color:#153fa1;padding-top:-3px;font-family:'NGB';}
+header nav #member .logout a {font-size:18px;color:#153fa1;}
+header nav #member .logout > .smenu {display:none;position:absolute;top:54px;margin-left:-10px;z-index:120;background:#fff;border:0px; filter:alpha(opacity=50);opacity:0.9; text-align:left;padding:0 0px 20px 0px;}
+header nav #member .logout:hover > .smenu {display:block;border-top:5px solid #0263ad;border-bottom:1px solid #0263ad;border-left:1px solid #0263ad;border-right:1px solid #0263ad;}
+header nav #member .logout > .smenu > p {list-style:none;font-size:15px;padding:15px 24px 0 20px;}
+header nav #member .logout > .smenu > p a {list-style:none;font-size:15px;color:#202020;}
+header nav #member .logout > .smenu > p a:hover {list-style:none;font-size:15px;color:#153fa1;}
+header nav #member .logout > .smenu > p:first-child {border:0;}
+**/
+
+header nav #member .logout {height:95px;color:#153fa1;padding-top:-3px;font-family:'NGB';}
+header nav #member .logout a {font-size:15px;color:#153fa1;}
+header nav #member .logout > .smenu1 {display:none;position:absolute;top:30px;margin-left:5px;z-index:120;border:0px; text-align:left;}
+/* header nav #member .logout:active > .smenu1 {display:none;} */
+
+/* 20180207 자동투자설정 스타일 추가*/
+header nav #member .logout > .smenu1 .mi1 {width:210px; background-color:#EFEFEF; border-radius:3px; margin:0 auto 8px; padding:6px 10px; font-size:14px; color:#3366FF;}
+header nav #member .logout > .smenu1 .myinv_tit {text-align:center;font-size:18px;color:#252525;padding:15px 0 10px 0;}
+header nav #member .logout > .smenu1 .invest_info1{background-color:#5c7abe;border-radius:2px;color:#fff;width:111px;text-align:center;float:left;margin-left:20px;padding:34px 0;}
+header nav #member .logout > .smenu1 .invest_info2 {background-color:#2456c9;border-radius:2px;color:#f2f508;width:111px;text-align:center;padding:15px 0;float:left;margin-left:5px;}
+
+header nav #member .logout > .smenu1 .invest_info2 .invest_total {color:#f2f508;text-align:center;padding:0 0 10px 0;display:block;font-size:11px;line-height:18px;border-bottom:1px solid #4c75d3;}
+header nav #member .logout > .smenu1 .invest_info2 .pf_invest {color:#f2f508;text-align:center;padding:9px 0 0 0;display:block;font-size:11px;line-height:18px;}
+header nav #member .logout > .smenu1 .invest_info2 .pf_invest > .flag_btn {display:inline-block;color:#000;text-align:center;vertical-align:middle;font-size:10px;font-family:'arial';font-weight:bold;line-height:18px;border-radius:7px;background-color:#f2f508;width:14px;height:14px;line-height:16px;cursor:pointer;}
+
+
+header nav #member .logout > .smenu1 .invest_btn1 {display:block;font-size:14px;border:1px solid #5c7abe;border-radius:2px;color:#5c7abe;width:109px;text-align:center;padding:8px 0;margin:0 0 5px 20px;}
+header nav #member .logout > .smenu1 .invest_btn2 {display:block;font-size:14px;border:1px solid #2456c9;border-radius:2px;color:#2456c9;width:109px;text-align:center;padding:8px 0;margin:0 0 5px 5px;}
+
+header nav #member .logout > .smenu1 .invest_btn3   {display:block;font-size:14px;border:1px solid #ff7010;border-radius:2px;background-color:#ff7010;color:#fff;width:225px;text-align:center;padding:8px 0; margin-left:20px;}
+header nav #member .logout > .smenu1 .invest_btn3 a {display:block;font-size:14px;border:1px solid #ff7010;border-radius:2px;background-color:#ff7010;color:#fff;width:225px;text-align:center;padding:8px 0; margin-left:20px;}
+header nav #member .logout > .smenu1 .invest_btn3 a:hover {display:block;font-size:14px;border:1px solid #ed5f00;border-radius:2px;background-color:#ed5f00;color:#fff;width:225px;text-align:center;padding:8px 0;}
+
+header nav #member .logout > .smenu1 .invest_btn4   {font-size:12px; border:1px solid #5c7abe;border-radius:2px;background-color:#fff;color:#5c7abe; padding:4px 6px; }
+
+header nav #member .logout > .smenu1 .rcv_info    {margin:2px 22px 0; padding:4px 10px; line-height:24px; height:24px; color:#153FA1; background:#EEE; border-radius:3px;}
+header nav #member .logout > .smenu1 .count_info  {margin:2px 22px 0; padding:4px 10px; line-height:24px; height:24px; color:#153FA1; background:#EEE; border-radius:3px;}
+
+header nav #member .logout > .smenu1 .outcome_btn {margin:8px auto;width:227px;}
+
+header nav #member .admin_logout {height:95px;color:#153fa1;padding-top:2px;font-family:'NGB';}
+header nav #member .admin_logout a {font-size:15px;color:#153fa1;}
+header nav #member .admin_logout > .smenu { display:none;position:absolute;top:54px;margin-left:-20px;z-index:120;width:145px;background:#fff;border:0px; filter:alpha(opacity=50);opacity:0.9; text-align:left;padding:0 0px 20px 0px;}
+header nav #member .admin_logout:hover > .smenu {display:block;border-top:5px solid #0263ad;border-bottom:1px solid #0263ad;border-left:1px solid #0263ad;border-right:1px solid #0263ad;}
+header nav #member .admin_logout > .smenu > p {list-style:none;font-size:15px;padding:15px 50px 0 20px;}
+header nav #member .admin_logout > .smenu > p a {list-style:none;font-size:15px;color:#202020;}
+header nav #member .admin_logout > .smenu > p a:hover {list-style:none;font-size:15px;color:#153fa1;}
+header nav #member .admin_logout > .smenu > p:first-child {border:0;}
+
+
+#skip_navigation{position:absolute; text-align:center; width:120px; display:block; background:#2ac1bc; padding: 7px 0; color:#fff; left:-9999px;}
+#skip_navigation:hover,#skip_navigation:active,#skip_navigation:focus{z-index:999999; margin-left:-60px; left:50%;}
+
+
+/*** 컨텐츠 ***/
+article {position:relative;width:100%;margin-bottom:30px; min-width:1150px;}
+article #container .notice {width:100%;height:45px;border-bottom:1px solid #DDD}
+article #container .notice .notices { margin:0 auto; width:1150px;margin-top:20px; }
+article #container .notice .notices > div {float:left;}
+#list_info1 {padding:0;margin:0 auto;display:inherit;}
+#list_info1 li{padding:0 0;}
+
+/*** 메인 신상품 노출 ***/
+article #container .new_info {width:100%;background-color:#cce1f1;padding:10px 0;}
+article #container .new_info ul {margin:0 auto; width:1150px;height:55px;border-bottom:0px solid #6d89bb;}
+article #container .new_info ul li{line-height:58px;font-size:16px;font-family:'NGB';color:#212120;float:left;}
+article #container .new_info ul li .t01{width:275px;float:right;padding-left:5px;}
+
+article #container .new_info ul li:nth-child(2){line-height:55px;font-size:16px;font-family:'NGB';color:#212120;float:left;}
+article #container .new_info ul li{line-height:55px;float:left;padding-left:15px;}
+article #container .new_info ul li:nth-child(3) {float:right;}
+article #container .new_info ul li:nth-child(3) a {line-height:36px;font-size:16px;font-family:'NGB';color:#fff;background-color:#2d4e97;padding:8px 15px;border-radius:3px 3px;}
+article #container .new_info ul li:nth-child(3) a:hover {line-height:36px;font-size:16px;font-family:'NGB';color:#fff;background-color:#052981;padding:8px 15px;border-radius:3px 3px;cursor:pointer;}
+
+article #container .new_info ul li img{padding-top:20px;line-height:55px;}
+article #container .new_info ul li span {padding-left:20px;line-height:55px;}
+article #container .new_info ul li span img{padding:16px 5px 0 0;}
+article #container .new_info ul li span b {font-size:20px;font-family:'NGB';color:#1235a8;}
+
+article #container .news {margin:0 auto;width:100%;height:377px;background-color:#eee;border-bottom:0px solid #d6d6d6;font-family:'NGB';}
+article #container .news > ul {margin:0 auto;width:1150px;}
+article #container .news > ul li {float:left;margin:35px 0 0 15px;font-size:20px;color:#3c62ca;line-height:35px;}
+article #container .news > ul li:first-child {float:left;margin:35px 0 0 0;font-size:20px;color:#3c62ca;line-height:35px;}
+article #container .news > ul li:last-child {float:left;margin:35px 0 0 15px;width:434px;font-size:20px;color:#3c62ca;line-height:35px;}
+
+article #container .news .story {clear:both;width:340px;height:260px;border:1px solid #d6d6d6;background-color:#fff;font-family:'NGB';}
+article #container .news .story p {width:340px;text-align:center;margin-top:9px;font-size:15px;color:#3c3c3c;}
+article #container .news .story p:last-child{width:340px;text-align:left;margin-top:5px;padding-left:15px;font-size:15px;color:#3c3c3c;}
+article #container .news .story p:last-child img {padding-top:9px;}
+
+/**20170516추가**/
+article #container .news .story_tit {font-size:20px;color:#3c62ca;width:340px;}
+article #container .news .story_tit p {font-size:22px;color:#3c62ca;width:85%;float:left;line-height:35px;}
+article #container .news .story_tit p:last-child {width:15%;float:right;text-align:right;}
+article #container .news .story_tit p:last-child img {margin-top:5px;}
+
+article #container .news .report_tit {font-size:20px;color:#3c62ca;width:340px;}
+article #container .news .report_tit p {font-size:22px;color:#3c62ca;width:85%;float:left;line-height:35px;}
+article #container .news .report_tit p:last-child {width:15%;float:right;text-align:right;}
+article #container .news .report_tit p:last-child img {margin-top:5px;}
+
+article #container .news .report {clear:both;width:340px;height:260px;border:1px solid #d6d6d6;background-color:#fff;font-family:'NGB';}
+article #container .news .report p {width:340px;text-align:center;margin-top:9px;font-size:15px;color:#3c3c3c;}
+article #container .news .report p:last-child{width:340px;text-align:left;margin-top:5px;padding-left:15px;font-size:15px;color:#e6f2f8;}
+article #container .news .report p:last-child img {padding-top:9px;}
+
+
+article #container .news .tip_tit {font-size:20px;color:#3c62ca;width:434px;}
+article #container .news .tip_tit > p {font-size:22px;color:#3c62ca;width:85%;float:left;line-height:35px;}
+article #container .news .tip_tit > p:last-child {width:15%;float:right;text-align:right;}
+article #container .news .tip_tit > p:last-child img {margin-top:5px;}
+
+article #container .news .tip {clear:both;width:434px;height:260px;border:1px solid #d6d6d6;background-color:#fff;}
+article #container .news .tip > table {width:400px;margin:24px 0 0 20px;}
+article #container .news .tip > table .list_bg {height:35px;margin:24px 0 0 20px;background-color:#e0eff6;}
+article #container .news .tip > table thead th {height:35px;padding:0 8px;text-align:left;}
+article #container .news .tip > table tbody td {height:35px;padding:0 8px;}
+
+article #container .product_list {width:1150px; margin:0 auto;font-family:'NGB';}
+article #container .product_list .plist_tit {margin-top:45px;font-size:26px;color:#3c62ca;font-weight:500;text-align:center;background:url('../img/line_bg01.jpg') no-repeat;background-position:0 20px;}
+
+/*헬로펀딩 투자자 데이터*/
+#invest_data {border-left:1px solid #eaeaea;border-right:1px solid #eaeaea; }
+#invest_data .data_tit{width:1020px;color:#313131;font-size:32px;font-family:'NG';margin:0 auto;text-align:center;padding:60px 0 30px 0;}
+#invest_data .data_tit span{color:#313131;font-size:20px;font-family:'NG';font-weight:500;}
+#invest_data .tbg {width:1020px;border:5px solid #0a6fbf;border-radius:10px;margin:0 auto;}
+#invest_data .data_info {color:#0a6fbd;font-size:18px;font-family:'NGB';font-weight:400;width:339px;height:128px;text-align:center;line-height:40px;border-bottom:2px solid #0a6fbd;}
+#invest_data .data_info span {display:block;color:#0a6fbd;font-size:32px;font-family:'NGB';font-weight:800;line-height:40px;}
+#invest_data .r_line{border-right:2px solid #0a6fbd;height:115px;}
+#invest_data .data_bot {width:1020px;color:#313131;font-size:20px;font-family:'NG';margin:0 auto;text-align:center;padding:30px 0 50px 0;line-height:32px;}
+
+/* 투자후기 */
+.review_tit {width:1150px; margin:0 auto;margin-top:30px;}
+.review_tit p {display:inline-block;font-family:'NGB';font-size:30px;color:#4a6fe2;width:80%;}
+.review_tit p:last-child {display:inline-block;width:20%;text-align:right;}
+
+#reviews_area_title {margin-top:40px;display:inline-block;font-size:28px;font-weight:normal;text-align:center;width:100%;}
+#reviews_area {width:100%;height:565px;margin:0 auto;border-top:2px solid #4B78DE;margin-top:15px;background-color:#ebf5fa;border: 2px solid #326FD8;border-radius: 5px;}
+#reviews_area.bor_non {border-width:2px 0 0 0;border-radius:0;}
+#reviews_area.bg_non {background-color:#fff;padding:20px 0;}
+#reviews_area .reviews_cont {width:1150px;margin:0 auto;}
+#reviews_area .reviews_cont ul {text-align:justify;padding:5px 0 0 10px;}
+#reviews_area .reviews_cont ul li {float:left;}
+#reviews_area .reviews_cont ul li p {text-align:center;padding-top:10px;}
+#reviews_area .reviews_cont ul li .review {width:100%;}
+#reviews_area .reviews_cont ul li .review .review_box {background-color:#fff;position: relative;min-height:412px;margin:15px;padding:15px;border: 1px solid #EDEDED;}
+#reviews_area .reviews_cont ul li .review .review_box:focus,
+#reviews_area .reviews_cont ul li .review .review_box:hover {border:1px solid #326FD8;}
+#reviews_area .reviews_cont ul li .review .review_box span {line-height: 24px;}
+#reviews_area .reviews_cont ul li .review .review_box .subject {display:block;color:#4A6FE2;font-size:18px;font-family:'NGB';}
+#reviews_area .reviews_cont ul li .review .review_box .mem_name {display:block;font-size:17px;font-family:'NGB';color:#A5A5A5;}
+#reviews_area .reviews_cont ul li .review .review_box .thumbnail {width:313px;margin: 10px 0;}
+#reviews_area .reviews_cont ul li .review .review_box .contents {width:313px;font-size: 15px;white-space:pre-line;word-break:break-all;display:block;height:100px;}
+#reviews_area .reviews_cont ul li .review .review_box .link {overflow:hidden;padding:10px 0;margin:15px 0;text-align:center;width:100%;}
+#reviews_area .reviews_cont ul li .review .review_box .link a {margin:0 auto;color:#FFF;padding:6px 20px;border-radius:4px;text-align:center;background-color:#326FD8;}
+#reviews_area .reviews_cont ul li .review .review_box .link a:focus,
+#reviews_area .reviews_cont ul li .review .review_box .link a:hover,
+#reviews_area .reviews_cont ul li .review .review_box .link a:active {color:#FAFAFA;background-color:#2a54b1;}
+
+/********* 투자상품 알림받기 버튼 *********/
+.reqsms { position:absolute; z-index:1000; top:350px;left:424px; width:143px; height:32px; border:0px solid green; }
+
+/********* 펀딩디자이너_더보기 *********/
+.design_more {width:990px;text-align:center;}
+.design_more a span{margin-top:25px;display:inline-block;border-radius:5px;border:1px solid #d6d6d6;width:180px;height:40px;text-align:center;line-height:40px;font-size:16px;cursor:pointer;}
+.design_more a:hover span {margin-top:25px;display:inline-block;border-radius:5px;background-color:#4285f4;color:#fff;font-family:'NGB';width:182px;height:40px;text-align:center;line-height:40px;font-size:16px;cursor:pointer;}
+
+/********* 투자가이드 *********/
+.quick_guide_area { z-index:4; position:fixed; bottom:40px; right:50%; margin-right:-640px; }
+.quick_guide_area p { padding-top:5px; }
+
+
+/********* 하단 제휴업체 배너 출력 *********/
+#client_logo_wrap { width:100%; display:inline-block; border-top:1px solid #eee; }
+#client_logo_wrap .client_logo_zone { margin:0 auto; width:1150px;}
+#client_logo_wrap .client_logo_zone .client_list {width:1150px;margin:0 auto; line-height:42px;}
+#client_logo_wrap .client_logo_zone .client_list li { float:left; padding:25px 25px 15px 10px; text-align:center; vertical-align:middle; }
+
+
+/*** 하단 ***/
+footer #foot_wrap{ width:100%; color:#fff; font-size:14px; background:url('/theme/blueman1/img/bottom_bg01.jpg') center top repeat-x; background-color:#1A1D28; letter-spacing:0;clear:both; display:inline-block}
+footer #foot {width:1150px;margin:0 auto;}
+footer #foot .footlink {width:1150px;height:75px;}
+footer #foot .footlink li a {float:left;padding:28px 0 0 30px;font-size:15px;color:#fff; font-family:'NGB'; }
+footer #foot .footlink li:first-child a {float:left;padding-left:0;font-size:15px;color:#fff;}
+
+footer #foot .info {clear:both;font-size:14px;color:#fff;font-weight:300;padding-top:30px;}
+footer #foot .info .comp1 {float:left;display:inline-block;line-height:20px;}
+footer #foot .info .comp1 .fintech {font-size:18px;color:#fff;line-height:20px;font-family:'NGB';}
+footer #foot .info .comp1 .sns2 li {float:left;padding:20px 5px;}
+footer #foot .info .comp1 .sns2 li:first-child {float:left;padding-left:0px;}
+footer #foot .info .comp1 .sns2 li:last-child {float:left;padding:15px 0 50px 15px;}
+
+footer #foot .info .comp2 {float:left;padding-left:50px;font-size:14px;line-height:20px;}
+footer #foot .info .comp2 .flatform{font-size:18px;color:#fff;line-height:20px;font-family:'NGB';}
+footer #foot .info .comp2 .customer {font-size:22px;font-family:'NGB';line-height:50px;}
+footer #foot .info .comp2 ul li {float:left;padding:30px 0 25px 0;}
+footer #foot .info .comp2 ul li:first-child {float:left;padding-left:0;}
+footer #foot .info .comp2 ul li:last-child {float:left;padding:55px 0 0 0;margin-left:5px;}
+
+footer #foot .info .comp3 {clear:both;font-size:14px;line-height:20px; padding-bottom:30px}
+footer #foot .info .comp3 .crowd{font-size:18px;color:#fff;line-height:20px;font-family:'NGB';}
+footer #foot .info .comp3 .crowd_info {font-size:16px;color:#fff;line-height:20px;}
+
+footer #foot .info .comp4 {float:left;padding-left:50px;}
+footer #foot .info .comp4 .opentime{font-size:18px;color:#fff;line-height:20px;font-family:'NGB';}
+footer #foot .info .comp4 ul li{line-height:20px;}
+
+
+/* 투자상품보기 서브메뉴 */
+/*.invest_list2 .invest-sub-tab {display: table;float: none;width: auto;overflow: hidden;vertical-align: middle;background:url('/images/tab_bg.gif') repeat-x left bottom;}
+.invest_list2 .invest-sub-tab .invest-sub-menu {float: left;width: 225px;text-align: center;font-size:14px;color:#202020;background-color:#F7F7F7;border:1px solid #E5E5E5;margin-left: 3px;}
+.invest_list2 .invest-sub-tab .invest-sub-menu a {display: block;line-height: 40px;margin-left: 3px;}
+.invest_list2 .invest-sub-tab .invest-sub-menu a:hover,
+.invest_list2 .invest-sub-tab .invest-sub-menu a:focus,
+.invest_list2 .invest-sub-tab .invest-sub-menu a:active {}
+.invest_list2 .invest-sub-tab .invest-sub-menu.active {}
+.invest_list2 .invest-sub-tab .invest-sub-menu:hover,
+.invest_list2 .invest-sub-tab .invest-sub-menu:focus,
+.invest_list2 .invest-sub-tab .invest-sub-menu:active {background-color: #FFF;border-bottom: 1px solid #FFF;}
+.invest_list2 .invest-sub-tab .invest-sub-menu:first-child {margin: 0;}
+.invest_list2 .invest-sub-tab:after {content: "";display: block;clear: both;}*/

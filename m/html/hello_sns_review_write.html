@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>SNS리뷰 작성</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/hello.css" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <div class="back_btn">
+                <a href="#"><img src="img/back_icon.png" /></a>
+            </div>
+            <h2>SNS리뷰 등록</h2>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### ReviewWrite Start -->
+        <div id="ReviewWrite">
+            <form>
+                <ul>
+                    <li>
+                        <span>이름</span>
+                        <p>이상규</p>
+                    </li>
+                    <li>
+                        <span>제목</span>
+                        <input type="text" />
+                    </li>
+                    <li>
+                        <span>SNS</span>
+                        <select>
+                            <option selected disabled hidden>리뷰가 등록된 SNS를 선택해주세요</option>
+                            <option>티스토리</option>
+                            <option>네이버 블로그</option>
+                        </select>
+                    </li>
+                </ul>
+                <div class="write">
+                    <span>SNS 주소</span>
+                    <textarea placeholder="리뷰가 작성된 SNS주소를 기재해주세요"></textarea>
+                </div>
+                <div class="agree"><input type="checkbox" />작성된 리뷰 정보 활용에 동의합니다.</div>
+            </form>
+        </div>
+        <!-- ### ReviewWrite End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button class="md-trigger" data-modal="modal-3">등록</button>
+        </div>
+        <!-- ### BottomBtn End -->
+    </body>
+</html>

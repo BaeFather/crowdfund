@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* 새글 스킨 (latest)*/
+.lt_pc {float:left; margin-left:20px}
+.lt {position:relative; width:322px}
+.lt ul {margin:0 0 10px; padding:0; list-style:none}
+.lt li {position:relative; background:url(img/bullet.jpg) no-repeat 0 50% ; padding-left:10px; font-size:1.083em; margin-bottom:13px}
+.lt li.no_bd{padding:40px 0; text-align:center; color:#999; background:none}
+.lt li .lt_date{position:absolute; top:0; right:0; color:#6aa0bf}
+.lt .lt_title {display:block; font-size:1.333em; margin-bottom:22px}
+.lt .lt_more a{position:absolute; top:0; right:0; background:url(img/more_btn.jpg) no-repeat; width:20px; height:20px; text-indent:-999px; overflow:hidden; display:inline-block}
+.lt .cnt_cmt {display:inline-block; margin:0 0 0 3px; font-weight:bold; color:#3c95d5}
+.lt li.no_bd{padding:40px 0}
+
+/*** 헬로펀딩 공지사항 ***/
+.notice {width:1150px; margin:0 auto;}
+.notice p {font-size:46px; font-family:'spoqahansans'; font-weight:300; color:#000; width:100%; text-align:center; padding-top:100px; letter-spacing:-2px;}
+.notice p span {display:block; border-bottom:2px solid #073190; width:30px; height:10px; margin:0 auto; text-align:bottom;}
+.notice .tabs {padding-top:50px; padding-left:150px;}
+.notice .tabs li.on {border-top:5px solid #1175D1; color:#000 !important;}
+.notice .tabs li.off {border-top:5px solid #B7D5F1; color:#797979 !important;}
+.notice .tabs li.line {float:left; width:6px; height:60px; line-height:60px; font-size:20px; font-family:'spoqahansans'; font-weight:300; color:#C7C7C7;}
+.notice .tabs li {float:left; width:425px; height:60px; line-height:60px; font-size:20px; font-family:'spoqahansans'; font-weight:400; color:#000; cursor:pointer;}
+
+.notice table {width:855px; text-align:left; margin-left:150px;}
+.notice table tr {height:48px; border-bottom:1px solid #eaeaea;}
+.notice table tr td {height:48px; text-align:left;}
+.notice table tr td > div {height:25px; line-height:25px; overflow:hidden; cursor:pointer;}
+.notice table tr td img {line-height:48px; vertical-align:top; padding-top:6px;}
+.notice table tr td:last-child {height:48px; text-align:right;}
+.notice .b_r_btn_c {margin:0 auto; clear:both; width:126px; padding-top:50px;}
+.notice .b_r_btn_c .b_r_btn a {width:126px; height:42px; border:1px solid #143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#143fa8; line-height:42px; display:block; cursor:pointer;}
+.notice .b_r_btn_c .b_r_btn a:hover {width:126px; height:42px; background-color:#143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#fff; line-height:42px; display:block; cursor:pointer;}
+.notice .b_r_btn_c .b_r_btn b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#143fa8; vertical-align:top;}
+.notice .b_r_btn_c .b_r_btn a:hover b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#fff; vertical-align:top;}
+
+.notice .funding-news-list {position:relative; overflow:hidden; width:1000px; margin:0 auto;}
+.notice .funding-news-list .flexslider {width:820px; margin:0 auto;}
+.notice .funding-news-list .flex-prev {position:absolute; top:130px; left:79px; display:block; height:120px;}
+.notice .funding-news-list .flex-next {position:absolute; top:130px; right:79px; display:block; height:120px;}
+.notice .funding-news-list .content {float:left; border:1px solid #CCC; width:390px; margin:5px; min-height:390px;}
+.notice .funding-news-list .content div {padding:0 10px;}
+.notice .funding-news-list .content .thumb {width:100%; height:248px;}
+.notice .funding-news-list .content .logo {width:48px; height:auto; padding:10px 0;}
+.notice .funding-news-list .content .datetime {margin:10px; display:block;}
+.notice .funding-news-list .content .subject {text-align:left !important;}
+.notice .funding-news-list .content .subject a {display:block; padding:0 12px 12px 12px;}
+
+/*** 헬로펀딩 공지사항 20190208 ***/
+.notice20190208 {width:1150px; margin:0 auto;}
+.notice20190208 p {font-size:35px; font-family:'spoqahansans'; font-weight:300; color:#000; width:100%; text-align:center; padding-top:100px;}
+.notice20190208 p span {display:block; border-bottom:2px solid #073190; width:30px; height:10px; margin:0 auto; text-align:bottom;}
+.notice20190208 .tabs {padding-top:50px; padding-left:150px;}
+.notice20190208 .tabs li.on {color:#000 !important;}
+.notice20190208 .tabs li.on a {border-bottom:3px solid #1175D1;padding-bottom:10px;}
+.notice20190208 .tabs li.off {color:#797979 !important;}
+.notice20190208 .tabs li.line {float:left; width:6px; height:30px; line-height:30px; font-size:20px; font-family:'spoqahansans'; font-weight:300; color:#C7C7C7;}
+.notice20190208 .tabs li {float:left; width:275px; height:30px; line-height:30px; font-size:20px; font-family:'spoqahansans'; font-weight:400; color:#000; cursor:pointer;}
+
+.notice20190208 table {width:850px; text-align:left; margin-left:150px;margin-top:80px;clear:both;}
+.notice20190208 table tr {height:48px; border-bottom:1px solid #eaeaea;}
+.notice20190208 table tr td {height:48px; text-align:left;}
+.notice20190208 table tr td > div {height:25px; line-height:25px; overflow:hidden; cursor:pointer;}
+.notice20190208 table tr td img {line-height:48px; vertical-align:top; padding-top:6px;}
+.notice20190208 table tr td:last-child {height:48px; text-align:right;}
+.notice20190208 .b_r_btn_c {margin:0 auto; clear:both; width:126px; padding-top:50px;}
+.notice20190208 .b_r_btn_c .b_r_btn a {width:126px; height:42px; border:1px solid #143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#143fa8; line-height:42px; display:block; cursor:pointer;}
+.notice20190208 .b_r_btn_c .b_r_btn a:hover {width:126px; height:42px; background-color:#143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#fff; line-height:42px; display:block; cursor:pointer;}
+.notice20190208 .b_r_btn_c .b_r_btn b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#143fa8; vertical-align:top;}
+.notice20190208 .b_r_btn_c .b_r_btn a:hover b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#fff; vertical-align:top;}
+
+.notice20190208 .funding-news-list {position:relative; overflow:hidden; width:1000px; margin:0 auto; padding-top:40px;}
+.notice20190208 .funding-news-list .flexslider {width:880px; margin:0 auto;}
+.notice20190208 .funding-news-list .content {float:left; border:1px solid #e7e7e7; width:280px; margin:5px; height:280px; margin-bottom:30px;}
+.notice20190208 .funding-news-list .content div {padding:0 10px;}
+.notice20190208 .funding-news-list .content .thumb {width:100%; height:180px;}
+.notice20190208 .funding-news-list .content .logo {width:48px; height:auto; padding:10px 0;}
+.notice20190208 .funding-news-list .content .datetime {margin:10px; display:block;}
+.notice20190208 .funding-news-list .content .subject {text-align:left !important;}
+.notice20190208 .funding-news-list .content .subject a {display:block; padding:0 12px 12px 12px;}
+
+.notice20190208 .funding-news-list .funding-news-list_btn {height:280px;text-align:center;border:1px solid #0B7DDF !important;font-size:22px;font-weight:400;cursor:pointer;}
+.notice20190208 .funding-news-list .funding-news-list_btn a {color:#0B7DDF;margin-top:100px;display:block;}
+.notice20190208 .funding-news-list .funding-news-list_btn:hover {background-color:#0B7DDF;cursor:pointer;}
+.notice20190208 .funding-news-list .funding-news-list_btn a span {color:#0B7DDF;font-size:14px;font-weight:400;cursor:pointer;}
+.notice20190208 .funding-news-list .funding-news-list_btn:hover a {color:#fff;cursor:pointer;margin-top:100px;display:block;}
+.notice20190208 .funding-news-list .funding-news-list_btn:hover a span {color:#fff;cursor:pointer;}
+
+
+/*** 헬로펀딩 투자후기***/
+.review .review_wrap {position:relative; width:100%;  margin-top:50px; min-width:1150px; background-color:#FFF; padding-bottom:30px;}
+.review .review_wrap .navigation {min-width:1300px; width:1100px; position:relative; margin:0 auto; z-index:1; top:-400px; overflow:inherit;}
+.review .review_wrap .review_list {width:1150px; margin:0 auto; text-align:left; }
+.review .review_wrap .review_list .review_cont {width:355px; height:385px; float:left; background-color:#fff;cursor:pointer;}
+.review .review_wrap .review_list .review_cont:first-child {margin-left:25px;}
+.review .review_wrap .review_list .review_cont .review_img {width:355px; display:block;}
+.review .review_wrap .review_list .review_cont .review_img img.thumbnail {width:100%; height:261px;}
+.review .review_wrap .review_list .review_cont .review_img img.best {width:100%; height:auto;}
+.review .review_wrap .review_list .review_cont .review_img span {position:absolute; margin-left:297px; margin-top:-257px; display:block; z-index:100;}
+.review .review_wrap .review_list .review_cont .review_ti {padding:20px 0 3px 0; font-size:16px; font-family:'spoqahansans'; font-weight:400; display:block; color:#222;}
+.review .review_wrap .review_list .review_cont .review_tit1 {clear:both; padding:0; font-family:'spoqahansans'; font-weight:400; color:#000; display:block; font-size:17px;color:#33a5ed}
+.review .review_wrap .review_list .review_cont .review_tit2 {clear:both; padding-top:10px; font-family:'spoqahansans'; font-weight:300; color:#777; display:block; font-size:16px; line-height: 20px;}
+.review .review_wrap .review_list .review_cont .review_id {text-align:center; padding:10px 20px; font-size:17px; font-family:'spoqahansans'; font-weight:400; color:#7B7B7B; display:block; float:left;}
+.review .review_wrap .review_list .review_cont .review_contents {padding:0 20px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#7b7b7b; display:block;}
+.review .review_wrap .review_list .review_cont .review_date {color:#AEAEAE; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#7B7B7B; display:block; float:right; padding:10px 20px;}
+.review .review_wrap .review_list .review_cont .review_btn {clear:both; display:block; margin:0 auto; width:313px; height:38px; border:1px solid #0b7ddf; border-radius:5px;}
+.review .review_wrap .review_list .review_cont .review_btn a {display:block; padding:0 20px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#0B7DDF; text-align:center; line-height:38px; cursor:pointer;}
+.review .review_wrap .review_list .review_cont .review_btn a:hover ,
+.review .review_wrap .review_list .review_cont .review_btn a:focus {background-color:#0B7DDF; color:#FFF;}
+
+.review .review_wrap .b_r_btn_c { margin:60px auto; width:350px; clear:both; text-align:center;}
+.review .review_wrap .b_r_btn_c .b_r_btn a {width:360px; height:50px; border:1px solid #555; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#555; line-height:50px; display:block; cursor:pointer;}
+/*.review .review_wrap .b_r_btn_c .b_r_btn a:hover {width:146px; height:42px; background-color:#143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#fff; line-height:42px; display:block; cursor:pointer;}*/
+.review .review_wrap .b_r_btn_c .b_r_btn b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#143fa8; vertical-align:top;}
+/*.review .review_wrap .b_r_btn_c .b_r_btn a:hover b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#fff; vertical-align:top;}*/
+
+.review .review_wrap .b_r_btn_c .b_r_btn a.btn_200 {width:360px; height:50px; border:1px solid #555; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#555; line-height:50px; display:block; cursor:pointer;}
+
+/*.review .review_wrap .b_r_btn_c .b_r_btn a.btn_200:hover {width:200px; height:42px; background-color:#143fa8; border-radius:5px; font-size:16px; font-family:'spoqahansans'; font-weight:400; color:#fff; line-height:42px; display:block; cursor:pointer;}
+.review .review_wrap .b_r_btn_c .b_r_btn a.btn_200:hover b {font-size:10px; font-family:'Sans-serif'; font-weight:400; color:#fff; vertical-align:top;}*/
+
+.review .review_wrap .review_list .review_list_btn {height:468px;text-align:center;background-color:#fff;border:1px solid #0B7DDF !important;font-size:32px;font-weight:400;cursor:pointer;margin-left:18px;}
+.review .review_wrap .review_list .review_list_btn a {color:#0B7DDF;margin-top:170px;display:block;}
+.review .review_wrap .review_list .review_list_btn:hover {background-color:#0B7DDF;cursor:pointer;}
+.review .review_wrap .review_list .review_list_btn a span {color:#0B7DDF;font-size:18px;font-weight:400;cursor:pointer;}
+.review .review_wrap .review_list .review_list_btn:hover a {color:#fff;cursor:pointer;margin-top:170px;display:block;}
+.review .review_wrap .review_list .review_list_btn:hover a span {color:#fff;cursor:pointer;}

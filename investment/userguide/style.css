@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+
+	.m-userguide-wrap {display:none;}
+	.userguide-wrap {width:1050px; margin:0 auto 0; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0;}
+	
+	
+	/*페이지 상단 타이틀*/
+	.userguide-wrap .page-title {text-align:center;}
+	.userguide-wrap .page-title h3 {font-size:30px; color:#333; font-weight: 400; margin:0; padding:40px 0 10px;}
+	.userguide-wrap .page-title p {font-size:16px; color:#777; margin:0; padding-bottom:40px;} 
+	
+	
+	/*탭 버튼 커스텀*/
+	.userguide-wrap ul.tabs{margin: 0px; padding: 0px; list-style: none; display: flex; justify-content: center;}
+	.userguide-wrap ul.tabs li{ white-space: nowrap; width:150px; height: 36px; border-radius: 36px; text-align: center;  line-height: 36px;  font-size: 15px; color:#888; 
+	 background-color: #f7f7f7; margin:0 5px; cursor: pointer;}
+	.userguide-wrap ul.tabs li.current{color: #fff; background: #ee321f;}
+
+
+
+
+ 	.userguide-wrap .tab-content{ display:none; margin:0 auto 50px; width:840px; }
+
+	.userguide-wrap .tab-content.current{ display: inherit;}
+
+
+	
+	
+	/*컨텐츠 텍스트*/
+	.userguide-wrap .tab-content p {margin:0; text-align: left;}
+	.userguide-wrap .tab-content .slide-tit {font-size:22px; color:#222; font-weight: 600; padding-top:30px;}
+	.userguide-wrap .tab-content .slide-txt {font-size:15px; color:#555; margin:10px 0 30px; line-height: 22px;}
+	.userguide-wrap .tab-content .info-txt {font-size:15px; color:#222; text-align: right; margin-top:10px;}
+	
+	
+	
+	/*폰트 특성별*/
+	.userguide-wrap .tab-content .red-font {color:#ee321f;}
+	.userguide-wrap .tab-content .black-font {color:#000;}
+	.userguide-wrap .tab-content .small-font {font-size:14px;}
+	.userguide-wrap .tab-content .link-font {text-decoration: underline;}
+	
+	
+	
+	
+	@media all and (max-width: 900px){
+	.m-userguide-wrap {display:block; width:100%; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; margin-top:0px;}
+	.userguide-wrap {display:none;}
+		
+		
+	/*페이지 상단 타이틀*/
+	.m-userguide-wrap .page-title {text-align:center; padding:30px 10px 0;}
+	.m-userguide-wrap .page-title h3 {font-size:26px; color:#333; font-weight: 400; margin:0;}
+	.m-userguide-wrap .page-title p {font-size:16px; color:#777; margin:0; padding:15px 0 20px;} 
+	
+	
+	/*슬라이드 커스텀*/
+    .swiper { width: 100%;}
+	.swiper-wrapper {align-items: flex-start; height: auto; margin-top: 60px;}
+	
+	/*슬라이드 탭 버튼 커스텀*/
+	.swiper-pagination {top:0; z-index: 0;}
+    .swiper-pagination-bullet {white-space: nowrap; width:30%; height: 30px; border-radius: 30px; text-align: center;  line-height: 30px;  font-size: 14px; color:#888; 
+		 background-color: #f7f7f7; opacity: 1;  margin-bottom: 8px!important; outline: none; margin-right:0!important;}
+    .swiper-pagination-bullet-active {color: #fff; background: #ee321f; border:none; outline: none;}
+
+	
+	
+	/*슬라이드 컨텐츠 이미지*/
+	.swiper-slide img {display: block; width:100%!important; }
+	
+	/*슬라이드 컨텐츠 텍스트*/
+	.m-userguide-wrap .m-swiper .swiper-slide p {margin:0; text-align: left;}
+	.m-userguide-wrap .m-swiper .swiper-slide .step-01, .m-userguide-wrap .m-swiper .swiper-slide .step-02, .m-userguide-wrap .m-swiper .swiper-slide .step-03, .m-userguide-wrap .m-swiper .swiper-slide .step-04, .m-userguide-wrap .m-swiper .swiper-slide .step-05, .m-userguide-wrap .m-swiper .swiper-slide .step-06 {padding:0 15px;}
+	.m-userguide-wrap .m-swiper .swiper-slide .slide-tit {font-size:18px; color:#222; font-weight: 600; padding-top:40px;}
+	.m-userguide-wrap .m-swiper .swiper-slide .slide-txt {font-size:14px; color:#555; margin:10px 0 20px; letter-spacing: -0.5px; line-height: 20px;}
+	.m-userguide-wrap .m-swiper .swiper-slide .info-txt {font-size:13px; color:#222; letter-spacing: -0.5px; text-align: right; margin:10px 0 50px;}
+	
+	
+	/*폰트 특성별*/
+	.m-userguide-wrap .m-swiper .swiper-slide .red-font {color:#ee321f;}
+	.m-userguide-wrap .m-swiper .swiper-slide .black-font {color:#000; }
+	.m-userguide-wrap .m-swiper .swiper-slide .small-font {font-size:13px;}
+	.m-userguide-wrap .m-swiper .swiper-slide .link-font {text-decoration: underline;}
+		
+	}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+  <allow-access-from Domain="*.hellofunding.co.kr"       HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="itembay.hellofunding.co.kr" HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="r114.hellofunding.co.kr"    HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="chosun.hellofunding.kr"     HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="*.wowstar.co.kr"            HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="*.tvtalk.tv"                HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="223.39.114.132"             HttpOnly="True" Secure="True" SameSite="None" />
+  <allow-access-from Domain="175.193.150.169"            HttpOnly="True" Secure="True" SameSite="None" />
+</cross-domain-policy>

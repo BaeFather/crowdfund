@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+#helloInvest .srch-wrap01 {width: 40%; min-width: 650px; overflow: hidden;}
+#helloInvest .srch-wrap01 ul {float: left;}
+#helloInvest .srch-wrap01 ul.hello-set-btn {float: right;}
+#helloInvest .tbl-tot-data {width: 40%; min-width: 650px;}
+#helloInvest .tbl-tot-data tr:first-child {border-top: 1px solid #ddd;}
+#helloInvest .tbl-tot-data tr th {border-bottom: 1px solid #ddd;}
+#helloInvest .tbl-tot-data tr td {text-align: center;}
+#helloInvest .srch-wrap02 {width: 45%; min-width: 900px;}
+#helloInvest .srch-wrap02 table th {width: 50px; background-color: #fcf8e3; font-size: 0.95em;}
+#helloInvest .srch-wrap02 table td {width: 180px;}
+#helloInvest .srch-wrap02 table td:nth-child(4n) {width: 120px;}
+#helloInvest .srch-wrap02 table td ul {margin: 0;}
+#helloInvest .srch-wrap02 table td ul li.date {width: 120px;}
+#helloInvest .srch-wrap02 table td select[name=category] {width: 70%;}
+#helloInvest .srch-wrap02 table td .checkbox-inline {padding-top: 0;}
+#helloInvest .srch-table {margin-bottom: 10px;}
+#helloInvest .srch-btn {float: right;}
+#helloInvest .excel-btn {clear: both; float: right; margin: 0 0 20px;}
+#helloInvest .tbl-list-data tbody tr td {font-size: 12px; text-align: center;}
+#helloInvest .tbl-list-data tbody tr td:nth-child(4) {text-align: left;}
+#helloInvest .tbl-list-data tbody tr td:nth-child(6),
+#helloInvest .tbl-list-data tbody tr td:nth-child(10),
+#helloInvest .tbl-list-data tbody tr td:nth-child(11),
+#helloInvest .tbl-list-data tbody tr td:nth-child(12),
+#helloInvest .tbl-list-data tbody tr td:nth-child(13) {text-align: right;}
+#helloInvest .tbl-list-data tbody tr.tot td {text-align: right; background-color: #ddddff; color: navy;}
+
+#helloSetInvest {width: 90%; min-width: 800px; padding: 10px 15px;}
+#helloSetInvest .btn {display: inline-block; margin-bottom: 0; font-weight: 400; font-size: 12px; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; user-select: none; background-image: none; border: 1px solid transparent; border-radius: 3px; padding: 5px 10px; color: #fff;}
+#helloSetInvest .btn-wrap {overflow: hidden; width: 100px; margin: 30px auto 0;}
+#helloSetInvest .btn-wrap button {float: left;}
+#helloSetInvest .btn-add {background-color: #333; float: right; margin-bottom: 15px;}
+#helloSetInvest .btn-save {background-color: #337ab7; margin-right: 5px;}
+#helloSetInvest .btn-mod {background-color: #5bc0de; margin-right: 7px;}
+#helloSetInvest .btn-del {background-color: #d74936;}
+#helloSetInvest .h3 {font-weight: 600; font-size: 18px; padding: 10px 0 0;}
+#helloSetInvest .tbl-list {width: 100%; border-collapse: collapse; border-spacing: 0; clear: both; margin-bottom: 20px;}
+#helloSetInvest .tbl-list tr {border: 1px solid #ddd;}
+#helloSetInvest .tbl-list tr th, #helloSetInvest .tbl-list tr td {border-right: 1px solid #ddd;}
+#helloSetInvest .tbl-list tr th {background-color: #e5ecef; color: #383838; letter-spacing: -0.1em; font-size: 13px; padding: 7px 15px;}
+#helloSetInvest .tbl-list tr td {font-size: 12px; text-align: center; padding: 8px;}
+#helloSetInvest input[type=text] {padding: 5px 10px; font-size: 12px;}
+#helloSetInvest .datepicker {width: 100px;}
+#helloSetInvest .price {text-align: right;}
+
+#frmSearch {overflow: hidden;}
+#frmSearchList {clear: both;}
+
+#helloReviewWrap .scrh-wrap {width: 45%; overflow: hidden; min-width: 820px;}
+#helloReviewWrap table {margin-top: 15px;}
+#helloReviewWrap table.srch-table tr th {width: 15%; background-color: #fcf8e3;}
+#helloReviewWrap table.srch-table tr td {width: 35%;}
+#helloReviewWrap table.srch-table ul {margin: 0;}
+#helloReviewWrap table.srch-table ul li.date {width: 120px;}
+#helloReviewWrap table.srch-table tr td select {width: 70%;}
+#helloReviewWrap input[type=button] {padding: 6px 13px; font-size: 12px; line-height: 1.5; border-radius: 3px; color: #fff; border: none;}
+#helloReviewWrap table.srch-list tbody tr {font-size: 12px; text-align: center;}
+#helloReviewWrap table.srch-list tbody tr td:nth-child(5),
+#helloReviewWrap table.srch-list tbody tr td:nth-child(6),
+#helloReviewWrap table.srch-list tbody tr td:nth-child(7),
+#helloReviewWrap table.srch-list tbody tr td:nth-child(8) {text-align: right;}
+#helloReviewWrap .mod-btn {background-color: #5bc0de; margin-right: 7px;}
+#helloReviewWrap .del-btn {background-color: #d74936;}
+#helloReviewWrap .srch-btn {float: right;}
+#helloReviewWrap .write-btn {float: right; margin-bottom: 20px;}
+#helloReviewWrap .list-wrap {clear: both;}
+
+#helloReviewForm {width: 80%; min-width: 1000px;}
+#helloReviewForm h3 {margin: 30px 0 20px;}
+#helloReviewForm input[type=button],
+#helloReviewForm button {padding: 7px 13px; font-size: 12px; line-height: 1.5; border-radius: 3px; color: #fff; border: none;}
+#helloReviewForm input[type=text] {text-align: right;}
+#helloReviewForm input.input-data {border: none; pointer-events : none;} 
+#helloReviewForm input.input-align {text-align: center;}
+#helloReviewForm ul {padding: 0; margin: 25px 0 20px; line-height: 1.8;}
+#helloReviewForm ul li {list-style: none; font-size: 12px; color: #444;}
+#helloReviewForm .pdf-btn {float: right; background-color: #cd321e;}
+#helloReviewForm button.save-btn {clear: both; background-color: #337ab7; display: block; margin: auto; font-size: 14px; padding: 10px 25px;}
+#helloReviewForm .tit {clear: both; padding: 30px 0 12px; margin: 0; font-size: 16px; color: #000;}
+#helloReviewForm .tit:first-of-type {padding-top: 0;}
+#helloReviewForm table tr {font-size: 13px; text-align: center;}
+#helloReviewForm ul.review-res {border: 1px solid #ccc; text-align: center; line-height: 2.5; float: right; width: 150px;}
+#helloReviewForm ul.review-res li {color: #000; font-size: 13px; height: 33px; text-align: center;}
+#helloReviewForm ul.review-res li:first-child {border-bottom: 1px solid #ccc; background-color: #feffc6;}
+#helloReviewForm ul.notice {float: left;}
+#helloReviewForm .tot-res {width: 100px;}
+#helloReviewForm .save-date {clear: both; text-align: center; font-size: 16px; font-weight: 600;}

@@ -1,0 +1,121 @@
+<?php include_once('/home/crowdfund/public_html/m2/inc/meta.php');?>
+<body>
+
+<div id="wrap">
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/header.php');?>
+
+	<div id="container">
+		<!-- 비주얼 -->
+		<img src="../images/member/sub_id.jpg" alt="회원가입 투자자가 작은 금액들을 모아서 함께 투자하는 새로운 투자 방식입니다." />
+
+		<div id="content">
+			<div class="location"><b class="blue">아이디 찾기</b></div>
+
+			<div class="content">
+				<!-- 아이디 찾기-->
+				<div class="findInfo">
+					<img src="../images/member/icon_findid.gif" alt="아이디찾기" />
+					<div class="title"><span class="blue">아이디</span>찾기</div>
+					헬로펀딩 아이디를 찾아보세요.
+					<div class="inputArea">
+						<div class="id"><label class="id-label" for="mb-id">이름을 입력하세요</label><input type="text" class="mb-id" /></div>
+						<div class="phone"><label class="p-label" for="mb-phone">핸드폰 번호를 입력하세요</label><input type="text" class="mb-phone" /></div>
+					</div>
+					<div class="btnArea">
+						<a href="#" class="btn_big_blue" id="check">확인</a>
+					</div>
+				</div>
+				<!-- 아이디 찾기 -->
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/footer.php');?>
+
+</div>
+
+<div id="complete">
+	<img src="../images/btn_close.gif" alt="close" class="close" />
+	<div class="title">아이디 전송 완료</div>
+	<div class="text">고객님의 핸드폰으로<br><span class="blue">아이디가 전송 되었습니다</span></div>
+	<span id="yes" class="btn_big_blue">확인</span>
+</div>
+
+<script>
+$(document).ready(function(){
+	// 인풋박스 텍스트 페이드
+	$('.id-label').animate({ opacity: "1" })
+		.click(function() {
+			var thisFor	= $(this).attr('for');
+			$('.'+thisFor).focus();
+	});
+
+	$('.p-label').animate({ opacity: "1" })
+		.click(function() {
+			var thisFor	= $(this).attr('for');
+			$('.'+thisFor).focus();
+	});
+
+	// 아이디
+	$('.mb-id').focus(function() {
+
+		$('.id-label').animate({ opacity: "0" }, "fast");
+
+			if($(this).val() == "mb-id")
+				$(this).val() == "";
+
+		}).blur(function() {
+
+			if($(this).val() == "") {
+				$(this).val() == "mb-id";
+				$('.id-label').animate({ opacity: "1" }, "fast");
+			}
+	});
+	//핸드폰번호
+	$('.mb-phone').focus(function() {
+
+		$('.p-label').animate({ opacity: "0" }, "fast");
+
+			if($(this).val() == "mb-phone")
+				$(this).val() == "";
+
+		}).blur(function() {
+
+			if($(this).val() == "") {
+				$(this).val() == "mb-phone";
+				$('.p-label').animate({ opacity: "1" }, "fast");
+			}
+	});
+
+	$('#check').click(function() {
+		$.blockUI({
+			message: $('#complete'),
+			css: { width:'280px',top:'30%',left:'50%',marginLeft:'-140px',border:0, cursor:'default' } });
+
+		/*
+		$.ajax({
+			url: 'wait.php',
+			cache: false,
+			complete: function() {
+				// unblock when remote call returns
+				$.unblockUI();
+			}
+		});
+		*/
+
+	});
+
+	$('#complete #yes, #complete .close').click(function() {
+		$.unblockUI();
+		return false;
+	});
+
+});
+</script>
+
+</body>
+</html>

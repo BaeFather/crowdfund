@@ -1,0 +1,10 @@
+<?
+
+// SMS/MMS 발송용 DB
+define('G5_MYSQL_HOST3',     '211.253.30.27');
+define('G5_MYSQL_USER3',     'hellosms114');
+define('G5_MYSQL_PASSWORD3', 'hellosms119');
+define('G5_MYSQL_DB3',       'hellosms_data');
+define('G5_MYSQL_SET_MODE3', true);
+
+?>

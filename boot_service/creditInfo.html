@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>신용정보 활용체제</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- jquery js -->
+    <script defer src="./assets/js/vendor.min.js"></script>
+    <script defer src="./assets/js/app.min.js"></script>
+    <script defer src="./assets/js/app/header.js"></script>
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+    <!-- header, footer css -->
+    <link rel="stylesheet" href="./assets/css/common/reset.css">
+    <link rel="stylesheet" href="./assets/css/common/header.css">
+    <link rel="stylesheet" href="./assets/css/common/footer.css">
+
+    <!-- main contents css -->
+    <link href="./assets/css/page/policy.css" rel="stylesheet" type="text/css" />
+
+    <!-- common css -->
+    <link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+</head>
+
+<body>
+
+    <!-- header start -->
+    <!-- PC -->
+    <header>
+        <div class="header_wrap">
+            <h1><a href=""></a></h1>
+            <nav>
+                <ul class="depth1">
+                    <li><a href="">투자하기</a>
+                        <ul class="depth2">
+                            <li><a href="">투자 상품 보기</a></li>
+                            <li><a href="">법인 투자 안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">대출하기</a></li>
+                </ul>
+                <ul class="depth1">
+                    <li><a href="">회사소개</a>
+                        <ul class="depth2">
+                            <li><a href="">회사소개</a></li>
+                            <li><a href="">사업공시</a></li>
+                            <li><a href="">채용안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">이용안내</a>
+                        <ul class="depth2">
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">이벤트</a></li>
+                            <li><a href="">투자후기</a></li>
+                            <li><a href="">도움말</a></li>
+                            <li><a href="">투자자유형</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">헬로매거진</a></li>
+                </ul>
+            </nav>
+            <div class="pre_login btn_box" style="display: none;">
+                <button class="login_btn">로그인</button>
+                <button class="join_btn">회원가입</button>
+            </div>
+            <div class="after_login myinfo_box">
+                <div class="user_nick" onclick="infoDisplay();">
+                    윤선미님
+                </div>
+                <aside class="user_box">
+                    <ul class="user_info">
+                        <li>예치금</li>
+                        <li>10,151,041원</li>
+                        <li>
+                            <p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i>
+                        </li>
+                    </ul>
+                    <div class="limit_box">
+                        <ul class="mylimit_detail">
+                            <li>나의 투자한도</li>
+                            <li>3,000만원</li>
+                        </ul>
+                        <ul class="mylimit_detail">
+                            <li>나의 잔여한도</li>
+                            <li>2,400만원</li>
+                        </ul>
+                        <ul class="limit_cf">
+                            <li>부동산, 주택담보</li>
+                            <li>1,000만원</li>
+                        </ul>
+                        <ul class="limit_cf">
+                            <li>SCF, 동산</li>
+                            <li>3,000만원</li>
+                        </ul>
+                    </div>
+                    <div class="user_info_btn_box">
+                        <button type="button" class="mypage_btn">마이페이지</button>
+                        <ul class="user_active_btn_box">
+                            <li><a href="">정보수정</a></li>
+                            <li><a href="">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Tablet, Mobile -->
+        <div class="m_header_wrap">
+            <h1><a href=""></a></h1>
+            <div class="m_menu_box">
+                <div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+            </div>
+            <div id="menuList" class="menu_list_container">
+                <div class="menu_top">
+                    <div class="menu_logo">
+                        <a href="">
+                            <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                        </a>
+                    </div>
+                    <div class="menu_bar"><i class="mdi mdi-close"></i></div>
+                </div>
+                <div class="menu_top_content">
+                    <div class="pre_login btn_box" style="display: none;">
+                        <button class="login_btn">로그인</button>
+                        <button class="join_btn">회원가입</button>
+                    </div>
+                    <div class="after_login myinfo_box">
+                        <div class="myinfo">
+                            <p class="info_name">윤선미님</p>
+                            <ul class="btn_box">
+                                <li><a href="">수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                        <ul class="myinfo_detail">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                        </ul>
+                        <ul class="myinfo_detail">
+                            <li>계좌</li>
+                            <li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="mylimit_info">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+                                <li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li><span>투자가능한도 -</span> SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <button type="button" class="mypage_btn">마이페이지</button>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="depth1">
+                        <li><a href="">투자하기<span></span></a>
+                            <ul class="depth2">
+                                <li><a href="">- 투자 상품 보기</a></li>
+                                <li><a href="">- 법인 투자 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">대출하기</a></li>
+                    </ul>
+                    <ul class="depth1">
+                        <li><a href="">회사소개<span></span></a>
+                            <ul class="depth2">
+                                <li><a href="">- 회사소개</a></li>
+                                <li><a href="">- 사업공시</a></li>
+                                <li><a href="">- 채용안내</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">이용안내<span></span></a>
+                            <ul class="depth2">
+                                <li><a href="">- 공지사항</a></li>
+                                <li><a href="">- 이벤트</a></li>
+                                <li><a href="">- 투자후기</a></li>
+                                <li><a href="">- 도움말</a></li>
+                                <li><a href="">- 투자유형안내</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">헬로매거진</a></li>
+                    </ul>
+                    <div class="menu_bottom_content">
+                        <ul>
+                            <li>헬로펀딩 고객센터</li>
+                            <li>1588-6760</li>
+                            <li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+                        </ul>
+                        <div>
+                            <p>카카오톡<br />채팅상담</p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+    <!-- header end -->
+
+    <section class="policy">
+        <div class="container-fluid">
+            <h2 class="title">신용정보 활용체제</span></h2>
+            <div class="content">
+                <br><br>
+                <p>㈜헬로핀테크(이하 ‘회사’)는 「신용정보의 이용 및 보호에 관한 법률」 제31조 및 동법 시행령 제27조에 따라 회사가 관리하고 있는 신용정보의 활용체제에 대하여 다음과 같이
+                    공시합니다.</p>
+
+                <p class="head">제1조 (관리하는 신용정보의 이용목적 및 종류)</p>
+                <p>① 이용목적</p>
+                <ul>
+                    <li>1. 연계대출계약 및 이행 등
+                        <ul>
+                            <li>가. 연계대출계약의 체결 여부 판단을 위한 연계대출심사</li>
+                            <li>나. 연계대출계약의 체결, 유지, 관리, 상담, 이행, 연계대출금 지급 및 관리 등</li>
+                            <li>다. 계약서, 청구서 발송</li>
+                        </ul>
+                    </li>
+                    <li>2. 고객관리
+                        <ul>
+                            <li>가. 서비스 이용에 따른 본인확인, 개인 식별 부정이용 방지, 비인가 사용방지, 가입의사 확인, 분쟁 조정을 위한 기록 보존, 불만처리 등 만원 처리,
+                                고지사항 전달 등의 목적</li>
+                        </ul>
+                    </li>
+                    <li>3. 마케팅 및 광고 등의 활용
+                        <ul>
+                            <li>가. 신규 서비스(제품) 개발 및 맞춤 서비스 제공</li>
+                            <li>나. 이벤트 및 광고성 정보 제공과 참여기회 제공</li>
+                            <li>다. 고객만족도 및 시장조사</li>
+                            <li>라. 연계대출관련 상품 및 서비스 홍보, 이용권유</li>
+                            <li>마. 통계적 이용 등 내부 분석 및 공공기관의 정책자료 활용</li>
+                            <li>바. 연계대출상담을 받거나 연계대출을 신청하였으나 연계대출이 이루어지지 않은 고객(이하 "상담 고객"이라 한다)에 대한 연계대출관련 상품 안내, 서비스 홍보,
+                                판매 권유, 이벤트 참여기회 제공을 위한 목적</li>
+                        </ul>
+                    </li>
+                    <li>4. 금융거래 설정 등
+                        <ul>
+                            <li>가. 금융거래관계의 설정 여부 판단</li>
+                            <li>나. 금융거래관계의 설정, 유지, 이행, 관리, 금융사고 조사, 분쟁해결 민원처리</li>
+                            <li>다. 법령상의 의무 이행 등</li>
+                        </ul>
+                    </li>
+                    <li>5. 금융거래 서비스 제공 등
+                        <ul>
+                            <li>가. 전자금융거래의 내용 추적 및 검색</li>
+                        </ul>
+                    </li>
+                    <li>6. 관련 법규에서 정한 경우</li>
+                    <li>7. 기타 개인이 동의한 목적</li>
+                </ul>
+                <p>② 신용정보 항목</p>
+                <ul>
+                    <li>1. 식별정보 : 성명, 주민등록번호, 전화번호, 휴대폰번호, 주소, 직장 정보, 상호, 법인등록번호, 사업자등록번호, E-mail 등</li>
+                    <li>2. 신용거래정보 : 연계대출, 보증, 담보제공, 당좌예금 개설내역, 신용공여현황 등의 본 계약이전 및 이후의 실적을 포함한 거래내용</li>
+                    <li>3. 신용능력정보 : 재산, 채무, 소득의 총액, 납세실적, 회사의 재무상태, 재무비율 등 재무에 관한 사항 및 회사의 개황, 사업의 내용 등 비재무에 관한 내용 등
+                    </li>
+                    <li>4. 신용평가정보 : 신용등급, 신용평점 등</li>
+                    <li>5. 신용도판단정보 : 연체, 부도, 대지급, 신용질서 문란행위 등 신용정보 일체</li>
+                    <li>6. 공공기관정보 : 개인회생, 파산, 면책, 채무불이행등재 등 법원의 재판·판결정보, 각종 체납정보, 주민등록 관련정보, 사회보험·공공요금 관련정보 등</li>
+                    <li>7. 서비스 이용기록, 접속 로그, 쿠키, 접속IP정보 등</li>
+                    <li>8. 기타(금융)거래의 설정, 유지, 이행, 관리를 위한 상담, 채권관리 등을 통해 생성되는 정보</li>
+                </ul>
+
+                <p class="head">제2조 (신용정보의 제3자 제공에 관한 사항)</p>
+                <p>① 회사는 원칙적으로 고객의 신용정보를 제1조에서 명시한 목적 범위 내에서 처리하며, 고객의 사전 동의 없이는 본래의 범위를 초과하여 처리하거나 제3자에게 제공하지 않습니다. 단,
+                    법률의 규정에 의한 정보 제공과 기타 법령이 허용한 하부 위탁이 가능한 범위 내에서 신용정보를 제공합니다.</p>
+                <p>② 제3자 제공현황은 홈페이지 등을 통해 고객에게 안내합니다.</p>
+
+                <p class="head">제3조 (신용정보의 보유 및 이용기간과 신용정보 파기의 절차 및 방법)</p>
+                <p>① 보유 및 이용기간</p>
+                <ul>
+                    <li>1. 회사는 고객의 신용정보를 제1조에서 명시한 범위 내에서 처리하며, 법령에 따른, 신용정보의 보유, 이용기간 또는 정보주체로부터 신용정보를 수집 시에 동의 받은
+                        신용정보의 보유, 이용 기간 내에서 신용정보를 처리, 보유합니다.</li>
+                    <li>2. 상품서비스 안내 등과 관련한 신용정보는 수집·이용 동의일로부터 (금융)거래 해지 후 5년간 위 목적으로 보유·이용되며, (금융)거래 거절 또는 취소 시 지체 없이
+                        파기됩니다. 단, 동의 철회 후에는 위의 목적과 관련된 사고 조사, 분쟁해결, 민원처리, 법령상 의무이행을 위해서만 보유·이용됩니다.</li>
+                    <li>3. 「국세기본법」, 「상법」, 「전자상거래 등에서의 소비자보호에 관한 법률」, 「신용정보의 이용 및 보호에 관한 법률」 등 관계법령의 규정에 의하여 보존할 필요가 있는
+                        경우, 관계법령에서 정한 일정한 기간 동안 관계법령이 정한 목적만을 위해서만 보유합니다.</li>
+                </ul>
+                <br />
+                <ul>
+                    <li>* 계약 또는 청약철회 등에 관한 기록
+                        <ul>
+                            <li>- 보존이유 : 국세기본법, 상법, 전자상거래 등에서의 소비자 보호에 관한 법률</li>
+                            <li>- 보존기간 : 5년</li>
+                        </ul>
+                    </li>
+                    <li>* 대금결제 및 재화 등의 공급에 관한 기록
+                        <ul>
+                            <li>- 보존이유 : 국세기본법, 상법, 전자상거래 등에서의 소비자 보호에 관한 법률</li>
+                            <li>- 보존기간 : 5년</li>
+                        </ul>
+                    </li>
+                    <li>* 소비자의 불만 또는 분쟁처리에 관한 기록
+                        <ul>
+                            <li>- 보존이유 : 전자상거래 등에서의 소비자 보호에 관한 법률</li>
+                            <li>- 보존기간 : 3년</li>
+                        </ul>
+                    </li>
+                    <li>* 기타 고객의 동의를 받은 경우 : 동의를 받은 기간까지</li>
+                </ul>
+                <br />
+                <p>② 신용정보 파기</p>
+                <ul>
+                    <li>1. 파기절차
+                        <ul>
+                            <li>가. 회사는 고객의 신용정보를 제공받은 시점부터 신용정보의 수집 및 이용 목적이 달성될 때까지 보유 및 이용을 합니다.</li>
+                            <li>나. 회사는 고객이 가입 해지를 요청하거나 신용정보의 삭제를 요청한 경우에는 일정한 내부 절차를 거쳐 해당 정보를 완전히 삭제하며 추후 열람이나 이용이
+                                불가능한 상태로 처리합니다.</li>
+                            <li>다. 다만, 상법, 전자상거래 등에서의 소비자보호에 관한 법률, 신용정보의 이용 및 보호에 관한 법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우는
+                                관계법령에서 정한 일정한 기간 동안 관계법령이 정한 목적만을 위해서만 보유 및 이용합니다.</li>
+                        </ul>
+                    </li>
+                    <li>2. 파기기한
+                        <ul>
+                            <li>가. 이용자의 신용정보는 신용정보의 보유기간이 경과된 경우에는 보유기간의 종료일부터 5일 이내에 그 신용정보를 파기합니다.</li>
+                            <li>나. 신용정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 신용정보가 불필요하게 되었을 때에는 신용정보의 처리가 불필요한 것으로 인정되는
+                                날로부터 5일 이내에 그 신용정보를 파기합니다.</li>
+                        </ul>
+                    </li>
+                    <li>3. 파기방법
+                        <ul>
+                            <li>가. 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기하며 전자적 파일형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 파기합니다.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p class="head">제4조 (신용정보처리 위탁에 관한 사항)</p>
+                <p>위탁업체의 현황과 업무내용은 홈페이지 등을 통해 고객에게 안내합니다.</p>
+
+                <p class="head">제5조 (신용정보주체의 권리, 의무 및 그 행사방법)</p>
+                <p>① 고객은 당사가 처리하는 자신의 신용정보에 대해 다음 각 호에 대해 권리를 행사할 수 있습니다.</p>
+                <ul>
+                    <li>1. 본인신용정보 제공 열람 청구권 : 신용정보주체는 본인의 신분을 나타내는 증표를 표시하고 신용정보업자가 보유하고 있는 본인 정보의 제공 또는 열람을 청구할 수 있습니다.
+                    </li>
+                    <li>2. 본인신용정보 정정청구권 : 신용정보주체는 본인의 신용정보가 사실과 다른 경우에는 신용 정보회사 등에게 정정을 청구할 수 있습니다.</li>
+                    <li>3. 본인신용정보 제공 사실 통보 요구권 : 신용정보주체는 금융회사가 본인정보를 제공한 내역에 대해 통보하도록 요구할 수 있습니다.</li>
+                    <li>4. 본인신용정보 제공 이용 동의 철회권 : 신용정보주체는 본인의 신용도 등을 평가하기 위한 목적 외의 목적으로 제공 동의를 한 경우 인터넷 홈페이지, 유무선통신, 서면
+                        등을 통해 개인신용정보의 제공 동의를 철회할 수 있습니다.</li>
+                </ul>
+
+                <p class="head">제6조 (신용정보관리·보호인 및 보호 주관부서)</p>
+                <p>회사의 신용정보의 관리 및 보호에 관한 제반사항은 준법감시인이 주관합니다.</p>
+
+                <br><br><br><br>
+                <p>[부칙]</p>
+                <p class="sub">제1조 (시행일)</p>
+                <p>이 기준은 금융위원회의 온라인투자연계금융업 등록일부터 시행합니다.</p>
+
+                <br><br>
+                <p class="end-txt">준법감시인 심사필 제2021-A-5 (2021.11.05)</p>
+
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    <!-- footer start -->
+    <section class="tail">
+        <div class="container">
+            <div class="row">
+                <div class="tail-nav-sns">
+                    <div class="tail-nav">
+                        <p><a href="">회사소개</a></p>
+                        <p><a href="">사업정보공시</a></p>
+                        <p><a href="">채용안내</a></p>
+                    </div>
+
+                    <div class="tail-sns">
+                        <p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png"
+                                    alt="페이스북 바로가기"></a></p>
+                        <p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png"
+                                    alt="인스타그램 바로가기"></a></p>
+                        <p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png"
+                                    alt="네이버블로그 바로가기"></a></p>
+                    </div>
+                </div>
+
+                <div class="tail-cs">
+                    <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img
+                                src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+                    <p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 -
+                            17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                </div>
+
+                <div class="tail-info">
+                    <p class="text-white-50">
+                        (주)헬로핀테크 대표 : 최수석<span>|</span><br>
+                        사업자번호 : 789-81-00529<span>|</span><br>
+                        온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+                        주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+                    <p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                </div>
+
+                <div class="tail-go-terms">
+                    <p class="text-white"><a href="">개인정보처리방침</a></p>
+                    <p class="text-white"><a href="">신용정보 활용체제</a></p>
+                    <p class="text-white-50"><a href="">이용약관</a></p>
+                    <p class="text-white-50"><a href="">투자이용약관</a></p>
+                    <p class="text-white-50"><a href="">대출이용약관</a></p>
+                    <p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- footer end -->
+
+</body>
+
+</html>

@@ -1,0 +1,385 @@
+@charset "utf-8";
+/* CSS Document */
+
+    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+	* {font-family: "Noto Sans KR", sans-serif !important; padding:0; border:0;}
+	a {text-decoration:none;}
+	.mg-b30 {margin-bottom:30px;}
+
+	/*웹*/
+	#content {background: none;}
+	#review_event {margin:0 auto; width:1150px; text-align: left;}
+	#review_event ul li {list-style:none; float: left;}
+	.m_banner {display:none;}
+	.banner {display:block;}
+	.m_bt3 {display:none;}
+
+
+	.date {font-size:26px; color:#00a0e9; font-weight: 300; border-bottom: solid 2px #00a0e9; padding: 60px 0 20px;}
+	.date span {float:right; font-size:18px; color:#777; padding-top:5px; }
+	.title {font-size:26px; color:#222; font-weight: 300; letter-spacing: -0.5px; padding: 12px 0 14px;}
+	.desc {font-size:30px; color:#222; padding:45px 0 20px; line-height:38px; letter-spacing: -1px;}
+	.desc span {color:#0062f0; font-weight: 600;}
+	.info_title {font-size:30px; color:#222; padding:30px 0 10px; border-bottom: 1px solid #222; margin-bottom:40px; clear: both;} 
+	.sub {font-size:22px; color:#222; width:150px; clear: both; padding-bottom: 30px; }
+	.text {font-size:22px; color:#555; font-weight: 300; line-height:30px; padding-top: 3px; letter-spacing: -0.5px; padding-bottom: 30px; }
+	.text .mint {color:#0062f0; font-weight: 400;}
+	.text span {color:#333; font-weight: 400;}
+	
+
+	.step {clear: both; }
+	.step img {border:1px solid #ddd; margin-right:40px; margin-bottom:50px;}
+	.bt1 { clear: both; text-align: center; width:350px; height:60px; background-color:#0062f0; border-radius:50px; padding-top: 12px; box-sizing: border-box; margin:80px auto 60px; cursor:pointer; font-size:22px; color:#fff;}
+	.bt3 {text-align: center; margin:100px 0 60px;}
+
+	.step01 {padding-top:70px;}
+	.step02 {padding-top:30px;}
+	.step03 {padding-top:90px;}
+	.tx1 {font-size:22px; color:#222; letter-spacing: -1px; line-height: 22px;}
+	.tx2 {font-size:26px; color:#222; letter-spacing: -1px;}
+	.tx3 {font-size:20px; color:#555; font-weight: 300; line-height: 25px; letter-spacing: -1px; padding-top: 15px;} 
+	.point {color:#ff4d4d; font-size:20px; letter-spacing:-1px; line-height: 25px; padding-top: 10px;}
+
+
+	.notice {font-size:18px; color:#333; line-height: 22px; font-weight: 300; letter-spacing:-0.5px; padding:0 10px; }
+	.notice p {letter-spacing: -1px; padding-bottom: 15px;}
+	.notice .notice {position: relative; padding-left:10px;}
+	.notice .dot::before {width:4px; height: 4px; border-radius:4px; content:" "; position: absolute; left:0; top:8px;}
+	.notice .color::before {background-color:#333;}
+	.notice .bold {font-size:18px;}	
+	.notice_detail li{float:none!important; padding: 5px 0 0 15px; color:#555; font-size:17px; font-weight: 300; }
+	.notice_detail li:nth-child(8) {margin-bottom:20px;}
+	
+
+
+
+
+ /*SNS리뷰 팝업*/
+
+/* The Modal (background) */
+	.modal {
+		display: none;  /*Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: hidden; /* Enable scroll if needed */	
+	}
+
+	.pop_cont {margin:100px auto 0; width:550px; box-sizing: border-box; background-color:#fff; padding:20px 30px; border:1px solid #ddd; text-align: left; }		
+	.p_25 {padding-bottom:25px;}
+	.pop_cont .tt {font-size:26px; text-align: center; color:#333; font-weight: 500; margin:30px 0 30px;}
+	.pop_cont .tt span {color:#1275d2;}			
+
+	.recomA {width:100%; float:left;  box-sizing: border-box; }
+	.name {width:100%; color:#333; font-size:18px;  display: inline-block;}
+	.subject {width:100%; color:#333; font-size:18px;  display: inline-block;}
+	.mark {width:4px; height: 4px; background-color: #1275d2; display: inline-block; margin: 0 5px 5px 0;}
+
+	.recomB {clear: both;  width:100%;  box-sizing: border-box; padding: 30px 0;}
+	.recomB li {float:left; font-size:18px; color:#333;}
+	.recomB .th {width:15%; padding-top: 5px;} 
+	.recomB .td {width:85%; box-sizing: border-box;}
+
+	
+	.recomC {clear: both;  width:100%;  box-sizing: border-box; padding: 30px 0;}
+	.recomC li {float:left; font-size:18px; color:#333;}
+	.recomC .th {width:100%; padding-bottom: 5px;} 
+	.recomC .td {width:100%; box-sizing: border-box;}
+	
+
+	.ck ul li { clear: both;  font-size:16px; color:#333; line-height:24px; margin-bottom: 30px;}
+
+	.btn1 {clear: both; float:right; cursor: pointer;}
+	.btn2 {text-align:center;}
+	.btn2 button { clear: both; text-align:center; margin:15px auto 20px; font-size:18px; color:#fff; padding:12px 60px; background-color: #1275d2;  display: inline-block; box-sizing: border-box;}
+
+
+
+select{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ddd;
+    height: 40px;
+    font-size: 15px;
+	font-weight: 300;
+    color: #777;
+	width:100%;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+	}
+	
+	
+textarea {
+	width: 100%;
+    height: 70px;
+    margin: 0 0 5px 0;
+	font-size: 15px;
+	color:#777;
+    padding: 7px 7px;
+    border-radius: 3px;
+	box-sizing: border-box;
+    border: 1px solid #dcdcdc;
+	
+}
+	
+input[type=text] {
+    -webkit-appearance: none;
+    border: 1px solid #ddd;
+    height: 40px;
+    font-size: 15px;
+    padding: 0 1em;
+	width:100%;
+    box-sizing: border-box;
+	border-radius: 3px;
+    color: #555;
+	}
+
+	input[type="checkbox"] {display: none;}
+
+
+	input[type="checkbox"]:checked + span:before {
+    border-color: #00a0ea;
+			
+	}	
+
+
+	input[type="checkbox"] + span {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    line-height: 20px;
+	color: #383838;
+	}
+
+
+	input[type="checkbox"] + span:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all .3s;
+    background-color: #fff;
+	}
+
+
+	input[type="checkbox"] + span:after {
+    content: "";
+    transition: all .2s;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+	}
+
+
+	input[type="checkbox"]:checked + span:after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 3px;
+    left: 4px;
+    background-image: url("img/check.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;	
+	}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 900px) {
+
+	.m_banner {display:block;}
+	.banner {display:none;}
+	.m_none {display:none;}
+	.m_bt3 {display:block;}
+	.bt3 {display:none;}
+	.br {display:none;}
+	
+	
+	#review_event {width:100%; text-align:left;}
+	#review_event img {width:100%;}
+	#review_event ul li {list-style:none; float: none; }
+
+	
+	.date {font-size:20px; padding: 10px;}
+	.date span {float:right; font-size:14px; }
+	.title {font-size:24px; padding: 10px; line-height:28px;}
+	.desc {font-size:24px; color:#222; padding:45px 10px 20px 10px; line-height:28px; letter-spacing: -1px;}
+
+	.info_title {font-size:26px; padding:30px 10px 10px 10px;} 	
+	.sub {font-size:22px; clear: both; padding: 0 10px 0 10px;}
+	.text {font-size:20px;  line-height:24px;  padding: 5px 10px 30px 10px; }
+
+	.step {clear: both; padding: 0 5%; }
+	.step img {border:1px solid #ddd; margin-bottom: 0; margin-right: 0;}
+	.bt1 { clear: both; text-align: center; width:350px; height:60px; background-color:#0062f0; border-radius:50px; padding-top: 12px; box-sizing: border-box; margin:20px auto 60px; cursor:pointer; font-size:22px; color:#fff;}
+	.m_bt3 {text-align: center; margin:100px 0 60px;}
+
+	
+	
+	
+	.step01 {padding:20px 0 80px;}
+	.step02 {padding:20px 0 80px;}
+	.step03 {padding:20px 0 80px;}
+	.tx1 {font-size:20px; color:#222; letter-spacing: -1px; line-height: 22px;}
+	.tx2 {font-size:24px; color:#222; letter-spacing: -1px;}
+	.tx3 {font-size:20px; color:#555; font-weight: 300; line-height: 25px; letter-spacing: -1px; padding-top: 15px;} 
+	.point {color:#ff4d4d; font-size:20px; letter-spacing:-1px; line-height: 25px; padding-top: 10px;}
+
+
+	
+	
+	
+	/*SNS리뷰팝업*/
+
+/* The Modal (background) */
+	.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: hidden; /* Enable scroll if needed */	
+		
+	}
+
+	.pop_cont {margin:0 auto; width:100%; height: 100vh; box-sizing: border-box; background-color:#fff; padding:20px 30px 0; border:1px solid #ddd; text-align: left; z-index: 1000;  overflow-y:auto; }		
+	
+	.p_25 {padding-bottom:0;}
+	.pop_cont .tt {font-size:28px; text-align: center; color:#333; font-weight: 500; margin:30px 0 40px;}
+	.pop_cont .tt span {color:#1275d2; font-weight: bold;}			
+
+	.recomA {width:100%; float:left;  box-sizing: border-box; }
+	.name {width:50%; color:#333; font-size:20px; display: inline-block;}
+	.sx {width:40%; color:#333; font-size:20px; display: inline-block;}
+	.num {width:100%; color:#333; font-size:20px; display: inline-block; padding-right:0; text-align: left; padding-top:20px;}
+	.mark {width:4px; height: 4px; background-color: #1275d2; display: inline-block; margin: 0 5px 5px 0;}
+
+	.recomB {clear: both;  width:100%;  box-sizing: border-box; padding: 10px 0;}
+	.recomB li {float:left; font-size:20px; color:#333;}
+	.recomB .th {width:100%; padding-top: 10px; padding-bottom: 5px;} 
+	.recomB .td {width:100%; box-sizing: border-box;}
+	.pop_cont .nt {clear: both; font-size:14px; color:#1275d2; font-weight:400; padding-top:10px; letter-spacing:-0.5px; line-height: 18px; }
+
+	
+	
+	.recomC {clear: both;  width:100%;  box-sizing: border-box; padding: 30px 0;}
+	.recomC li {float:left; font-size:18px; color:#333;}
+	.recomC .th {width:100%; padding-bottom: 5px;} 
+	.recomC .td {width:100%; box-sizing: border-box;}
+	
+
+	.ck ul li { clear: both; margin-top:10px; font-size:15px; color:#333; padding-bottom: 100px; }
+	.interck ul li { clear: both; font-size:15px; color:#333; }
+	.btn1 {clear: both; float:right; cursor: pointer;}
+	.btn2 {width:100%; clear: both; text-align:center;}
+	.btn2 button {width:100%;  position: fixed;  margin:10px 0 0; bottom: 0; left:0; font-size:24px; color:#fff; padding:20px 60px; background-color: #1275d2;  display: inline-block; box-sizing: border-box;}
+
+	
+	
+	select{
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ddd;
+    height: 50px;
+    font-size: 17px;
+	font-weight: 300;
+    color: #222;
+	width:100%;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("img/arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+	}
+	
+	
+
+.filebox input[type="file"] {
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0; 
+	margin: -1px; 
+	overflow: hidden; 
+	border: 0; 
+} 
+
+.filebox label { 
+	display: inline-block; 
+	padding: 10px 0; 
+	float:right;
+	text-align: center;
+	color: #fff; 
+	font-size:17px;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #1275d2;;
+	cursor: pointer; 
+	border-radius: 3px; 
+} 
+
+/* named upload */ 
+.filebox .upload-name { 
+
+	display: inline-block; 
+	padding: 10px 10px;  /* label의 패딩값과 일치 */ 
+ 	font-size:17px;
+	color:#222!important;
+	font-weight: 300;
+	line-height: normal; 
+	vertical-align: middle; 
+	background-color: #fff; 
+	border: 1px solid #ddd!important; 
+	border-bottom-color: #e2e2e2; 
+	border-radius: 3px; 
+	-webkit-appearance: none; 
+	/* 네이티브 외형 감추기 */ 
+	-moz-appearance: none; appearance: none; 
+}
+	
+
+textarea {
+	width: 100%;
+    height: 180px;
+    margin: 0;
+	font-size: 17px;
+	color:#777;
+    padding: 10px 10px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+	line-height: 20px;
+	
+}
+	
+	
+}
+
+

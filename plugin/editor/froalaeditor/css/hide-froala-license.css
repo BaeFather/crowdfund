@@ -1,0 +1,16 @@
+a[href="https://www.froala.com/wysiwyg-editor?k=u"] {
+    display: none !important;
+    position: absolute !important;
+    top: -99999999px !important;
+}
+
+div.fr-modal-body div.fr-image-list div.fr-image-container .fr-delete-img {
+    display: none !important;
+}
+
+div.fr-modal-body div.fr-image-list div.fr-image-container .fr-insert-img {
+    -webkit-transform: translateY(-50%) translateX(-50%) !important;
+    -moz-transform: translateY(-50%) translateX(-50%) !important;
+    -ms-transform: translateY(-50%) translateX(-50%) !important;
+    -o-transform: translateY(-50%) translateX(-50%) !important;
+}

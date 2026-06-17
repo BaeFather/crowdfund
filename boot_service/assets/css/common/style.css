@@ -1,0 +1,19 @@
+
+/*에러페이지 404,500*/
+.error-pages .container .card {-webkit-box-shadow:none; box-shadow:none; }
+.error-pages .container .card  .card-body .text-center .web-h1 {display: none;}
+.error-pages .container .card  .card-body .text-center .web-h4 {display: none;}
+.error-pages .container .card  .card-body .text-center p {font-family: "SpoqaHanSansNeo", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:16px; color:#333;}
+.error-pages .container .card  .card-body .text-center p .br {display:block;}
+.error-pages .container .card  .card-body .text-center .btn-back {background-color: #222; color:#fff; }
+.error-pages .container .card  .card-body .text-center .btn {padding:0.45rem 2rem; border-radius: 1.5rem;}
+			
+			
+@media (min-width:768px){
+.error-pages .container .card  .card-body .text-center p .br {display:none;}	
+.error-pages .container .card  .card-body .text-center .web-h1 {display: block;}
+.error-pages .container .card  .card-body .text-center .web-h4 {display: block;}	
+.error-pages .container .card  .card-body .text-center .m-h1 {display: none;}
+.error-pages .container .card  .card-body .text-center .m-h4 {display: none;}		
+				
+}

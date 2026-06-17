@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+    
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; }
+
+
+
+	/*웹*/
+
+	#event {margin:0 auto; width:1150px; text-align: left;}
+	#event ul li {list-style:none; float: left;}
+	#event .sub {font-size:24px; color:#222; width:150px; }
+	#event .text {font-size:24px; color:#222; font-weight: 300; line-height:30px; padding-top: 3px; letter-spacing: -0.5px;}
+	
+
+	#event .event_ing {font-size:26px; color:#222; font-weight: 300; border-bottom: solid 2px #222; padding: 60px 0 10px;}
+	#event .event_ing span {float:right; font-size:18px; color:#777; padding-top:5px; }
+	#event .event_title {font-size:26px; color:#222; font-weight: 300; letter-spacing: -0.5px; padding: 12px 0 14px; }
+
+	#event .event_text {font-size:34px; color:#222; padding:45px 0 20px; line-height:40px; letter-spacing: -1px;}
+	#event .event_text .green {color:#ff7869!important;}
+	#event .event_text .purple {color:#ffa800;}
+	#event .event_how {clear:both; padding-top:40px;}
+	#event .event_how .text span {color:#222; font-weight: 400; }
+	#event .event_how_img {clear: both; padding:47px 0 0 150px;}
+	#event .event_date {clear: both; padding-top:20px;}
+	#event .event_object {clear: both; padding-top:35px;}
+	#event .event_pay {clear: both; padding-top:35px;}
+	#event .bt {clear: both; text-align: center; padding:100px 0 30px;}
+    #event .event_notice {font-size:26px; color:#222; padding:50px 0 13px; border-bottom: 1px solid #222;}
+	#event .event_notice_text {font-size:18px; color:#555; padding-top:48px; line-height: 26px;}
+	#event .event_notice_text p {padding-bottom:17px;}
+	#event .event_notice_text span {padding-left:15px; font-size: 15px; line-height: 18px;}
+	
+	
+	
+	/*모바일*/
+	
+	#event_m {width:100%; margin:0 auto; padding:0; border: 0; text-align:left;}
+	#event_m img { width:100%;}
+	#event_m ul li {list-style:none; }
+	#event_m .m_bt {text-align: center; padding:70px 0 60px;}
+	#event_m .m_sub {font-size:20px; color:#222;  }
+	#event_m .m_text {font-size:20px; color:#222; font-weight: 300; line-height:24px;  letter-spacing: -1px;}
+	#event_m .event_ing {font-size:20px; color:#222; font-weight: 300; border-bottom: solid 2px #222; padding: 10px;}
+	#event_m .event_ing span {display: none; float:right; font-size:14px; color:#777; padding-top:5px; }
+	#event_m .event_title {font-size:24px; color:#222; font-weight: 300; letter-spacing: -0.5px; padding: 10px; }
+	#event_m .event_text {font-size:24px; color:#222; padding:35px 10px 20px 10px; line-height:30px; letter-spacing: -1.5px;}
+	#event_m .event_text .green {color:#ff7869!important;}
+	#event_m .event_text .purple {color:#ffa800;}
+	#event_m .event_how {padding:40px 10px 0 10px;}
+	#event_m .event_how .m_text span {color:#222; font-weight: 400; }
+	#event_m .event_how img {padding-top:15px;}
+	#event_m .event_date {padding:20px 10px 0 10px;}
+	#event_m .event_object {padding:40px 10px 0 10px;}
+ 	#event_m .event_pay {padding:40px 10px 0 10px;}
+	#event_m .event_notice {font-size:24px; color:#222; padding:50px 0 10px 10px; border-bottom: 1px solid #222;}
+	#event_m .event_notice_text {font-size:16px; color:#555; padding:35px 10px 0 10px; line-height: 22px;}
+	#event_m .event_notice_text p {padding-bottom:17px; letter-spacing: -1px;}
+	#event_m .event_notice_text .notice {position: relative; padding-left:10px;}
+	#event_m .event_notice_text .dot::before {width:4px; height: 4px; border-radius:4px; content:" "; position: absolute; left:0; top:8px;}
+	#event_m .event_notice_text .color::before {background-color:#333;}
+	#event_m .event_notice_text .bold {font-size:22px;}
+
+
+
+
+#event {display:block;}
+#event_m {display:none;}
+
+@media all and (max-width: 900px){
+	#event {display:none;}
+	#event_m {display:block;}
+}

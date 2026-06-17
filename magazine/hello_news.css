@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+
+	
+	* {font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+	a {text-decoration: none;}
+	
+	#news_content {background-image: none; width:1150px; margin:0 auto;}
+
+	#news_content .top_title {font-size:30px; color:#333; letter-spacing:-1px; font-weight: 400; padding: 40px 0 10px; background-color: #fff;}
+	#news_content .top_title .sky {color:#33a5ed;}
+	#news_content .top_text {font-size:17px; color:#777; padding-bottom: 20px; font-family:'SpoqaHanSans','sanserif'}
+
+
+	.list_warp {color: #555 !important; margin-bottom:20px; text-align: left;}
+
+	.list_div {margin-bottom:80px;}
+
+	.list_obj {float:left; width:1000px; padding-left: 75px;}
+
+	.thumbnail {float:left;}
+
+	.thumbnail img {width:320px; height:180px; display:inline-block; margin:20px 40px 20px 0;}
+
+	.subject {padding-bottom:15px; margin-top:35px;}
+	
+	.subject a{font-weight:normal; font-size:20px; letter-spacing: -0.5px; color:#222!important; line-height: 27px;}
+	
+	.contents {overflow:hidden;}
+
+	.contents a {line-height:20px; overflow:hidden; font-size:15px; color:#888!important;}
+
+	.list-line {height:1px; background-color:#cccccc; margin:20px 0px;}
+
+	.date {display: inline-block; font-size: 15px; margin-right:20px; color:#777;}
+	
+	.name {display: inline-block; font-size: 17px; color:#555; padding-bottom: 20px;}
+
+	
+	
+	
+@media all and (max-width: 900px){
+
+	#news_content {background-image: none; text-align: center; width:100%;}
+
+	#news_content .top_title {font-size:24px; color:#333; letter-spacing:-1px; font-weight: 400; padding: 20px 0 10px; background-color: #fff;}
+	#news_content .top_title .sky {color:#33a5ed;}
+	#news_content .top_text {font-size:14px; color:#777; font-family:'SpoqaHanSans','sanserif'}
+
+	.list_warp {color: #555 !important; margin-bottom:20px; text-align: left;}
+	
+	.list_div {margin-bottom:50px;}
+	
+	.list_obj {float:left; width:100%; padding: 0 2%; box-sizing: border-box;}
+
+	.thumbnail {float:left; width:40%; margin-right:10px;}
+	.thumbnail img {width:100%; height: auto; margin:0;}
+
+	.subject {padding-bottom:0; margin-top:12px;}
+	
+	.subject a{font-weight:bold; font-size:15px; letter-spacing: -0.5px; color:#333!important;  line-height: 20px;}
+	
+	.contents {overflow:hidden;}
+
+	.contents a {display: none;}
+
+	.list-line {height:1px; background-color:#cccccc; margin:20px 2%;}
+
+	.date {display: inline-block; font-size: 13px; color:#777; margin-right:10px; padding-top:5px; letter-spacing: -0.5px;}
+	
+	.name {display: inline-block; font-size: 13px; color:#777; padding-top: 10px;}
+	
+}
+	
+	

@@ -1,0 +1,69 @@
+
+/* Page Title */
+.event .container-fluid {padding: 0 1.25rem;}
+.event .container-fluid h4 {font-size: 1.625rem; font-weight: 500; color: #222; text-align: center; margin: 40px 0 35px; font-family: NotoSansKR, sans-serif;}
+.event .container-fluid p.top_text {text-align: center; color: #777; line-height: 1.1rem; font-size: .85rem; font-family: NotoSansKR, sans-serif; margin-bottom: 1.5rem;}
+
+
+
+/* 진행중 이벤트 */
+.event .container-fluid .event_ing_wrap ul.event_ing_box {overflow: hidden; display: flex; flex-wrap: wrap; justify-content: center; margin-bottom: 5rem;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box > li {margin: 0 0 1.5rem 0;}
+
+
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_img img {width: 100%;}
+
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text {display: none; margin-top: 1rem;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text ul {display: flex; align-items: center;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text ul li,
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text ul li p {margin: 0; color: #000;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text .state {width: 65px; height: 65px; border-radius: 100%; background-color: #efeeec; font-size: 1rem; color: #222; text-align: center; line-height: 65px;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text .info {flex-grow: 1; margin-left: .8rem;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text .info .title {color: #222; font-family: 'spoqahansans'; letter-spacing: -1px; font-size: 1.1rem; padding-bottom: 3px; max-width: 240px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text .info .range {color: #777; font-family: 'spoqahansans'; letter-spacing: -1px; font-size: .9rem;}
+
+
+
+/* 종료된 이벤트 */
+.event .event_close_bg {display: none;}
+.event .event_close_wrap {width: 1000px; margin: auto;}
+.event .event_close_wrap > ul {display: flex; flex-wrap: wrap;}
+.event .event_close_wrap > ul > li {margin-right: 20px; margin-bottom: 1rem;}
+.event .event_close_wrap > ul > li:nth-child(3n) {margin-right: 0;}
+
+.event .event_close_wrap .event_list_box {display: flex; flex-direction: column; overflow: hidden;}
+.event .event_close_wrap .event_list_box .event_list_img {background-color: #000;}
+.event .event_close_wrap .event_list_box .event_list_img img {width: 320px; height: 270px; opacity: .5;}
+.event .event_close_wrap .event_list_box .event_list_text {color: #555; font-size: 1rem; padding-top: 10px;}
+
+.event .event_close_wrap .event_clost_title {font-size: 1.3rem; /*font-family: 'spoqahansans';*/ font-weight: 300; letter-spacing: -1px; margin: 2.5rem auto 1rem; text-align: left; color: #000}
+
+.event .event_close_wrap .btn_more {display: block; width: 100px; background-color: #222; font-size: .9rem; margin: 2rem auto 3rem; color: #fff; border-radius: 16px; border: none; padding: .3rem;}
+
+
+
+
+
+@media all and (min-width: 920px) {
+    /* Page Title */
+    .event {margin: 70px auto 0; padding: 0;}
+    .event .container-fluid {width: 1000px; padding: 0;}
+    .event .container-fluid p.top_text {font-size: 1rem; color: #777;}
+
+
+
+    /* 진행중 이벤트 */
+    .event .container-fluid .event_ing_wrap {width: 1000px; margin: 3rem auto 5rem;}
+    .event .container-fluid .event_ing_wrap ul.event_ing_box {justify-content: unset;  margin-bottom: 0;}
+    .event .container-fluid .event_ing_wrap ul.event_ing_box > li {margin-right: 20px; margin-bottom: 3rem;}
+    .event .container-fluid .event_ing_wrap ul.event_ing_box > li:nth-child(3n) {margin-right: 0; margin-bottom: 2rem;}
+
+.event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_img img {width: 320px; height: 270px;}
+    .event .container-fluid .event_ing_wrap ul.event_ing_box li ul.event_list_box .event_list_text {display: block; }
+
+
+
+    /* 종료된 이벤트 */
+    .event .event_close_bg {display: block; background-color: #f3f3f3; width: 100%; overflow: hidden;}
+
+ }

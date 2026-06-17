@@ -1,0 +1,222 @@
+@import url("common.css");
+@import url("layout.css");
+
+
+/* new 회원가입 및 본인인증 */
+#newSign .register_form {background-color: #FFFFFF;width: 450px;margin: 0 auto; padding: 50px 25px; font-family:'spoqahansans' !important;}
+#newSign .register_form label {font-weight: 500;font-size: 16px;color: #555;display: inline-block;}
+#newSign .register_form input {box-sizing: border-box;}
+#newSign .register_form input::placeholder {font-size:15px; color: #cdcdcd; margin-left: 3px;}
+
+#newSign .register_form select {
+	-webkit-appearance:none; /* for chrome */
+	-moz-appearance:none; /*for firefox*/
+	appearance:none;
+	background: url(../../../img/member/arrow.png) no-repeat 98% 50%;
+}
+#newSign .register_form select::-ms-expand{
+   display:none;/*for IE10,11*/
+}
+#newSign .register_form input[type="text"],
+#newSign .register_form input[type="password"],
+#newSign .register_form input[type="name"],
+#newSign .register_form input[type="textbox"],
+#newSign .register_form input[name='id_card'] {display: inline-block;border: 1px solid #ddd;margin: 10px 0 0; height: 45px; border-radius: 3px; text-indent: 10px;}
+#newSign .register_form input[type="text"],
+#newSign .register_form input[type="password"],
+#newSign .register_form select[name='hp_comp'] {width: 100%;}
+#newSign .register_form input[type="file"] {width: 180px;}
+#newSign .register_form input[type="name"],
+#newSign .register_form input[type="textbox"],
+#newSign .register_form input[type="textbox"] {width: 320px;}
+#newSign .register_form input[type="file"]:focus,
+#newSign .register_form input[type="file"]:active  {border: none !important;}
+#newSign .register_form input[type="text"]:focus,
+input[type="text"]:active,
+#newSign .register_form input[type="password"]:focus,
+input[type="password"]:active {border: 1px solid #6680BB; }
+#newSign .register_form input[type="checkbox"] {display:none;}
+#newSign .register_form select[name='foreigner']  {width: 115px; margin-top: 10px; display: inline-block; border: 1px solid #ddd; height: 45px; border-radius: 3px; text-indent: 10px;}
+#newSign .register_form input[name='mb_birth'] {float: left;}
+#newSign .register_form select[name='hp_comp'] {margin-top: 10px; display: inline-block; border: 1px solid #ddd; height: 45px; border-radius: 3px; text-indent: 10px;}
+
+#newSign .register_form #mb_id,
+#newSign .register_form .birth-inputbox {width: 320px;}
+#newSign .register_form .btn_big_blue {width: 100%; height: 50px; margin-top: 30px; background-color: #063190;}
+
+#newSign .register_form .page-num {margin-bottom: 20px; width: 100%; text-align: right; font-size: 20px; color: #222; letter-spacing: 3px;}
+#newSign .register_form .page-num .active {color: #00a0ea;}
+
+#newSign .register_form button.gender {float: left; box-sizing: border-box; display: inline-block; width: 55px; height: 45px; margin-top: 10px; text-align: center; border: 1px solid #ddd; background: none; border-radius: 3px;}
+#newSign .register_form button.gender:first-of-type {margin-left: 15px;}
+#newSign .register_form button.gender:last-child {margin-left: 5px;}
+
+#newSign .register_form .btn_group a {display: block;}
+#newSign .register_form .btn_group .btn_big_link {width: 48%;}
+
+#newSign .register_form .register_description {margin-top: 20px;padding: 10px 0;clear: both;content: "";display: block;}
+#newSign .register_form .register_description label {font-size: 15px;color: #555;}
+#newSign .register_form .register_description span {margin-left: 118px;display: inline;}
+#newSign .register_form .register_description span a {text-align: right;color: #063190;font-size: 15px;font-weight: 400;font-family:'spoqahansans' !important;}
+#newSign .register_form .title {font-size: 30px; color: #222; display: block !important; text-align: center; font-family:'spoqahansans' !important;}
+#newSign .register_form .help-block,
+.confirm_form .help-block {display: inline-block; font-size: 12px; font-weight: 400; vertical-align: middle; padding-left: 4px; color: #555; margin: 10px 0;}
+#newSign .register_form .error-block {display: block; font-size: 12px;color: #008000;font-weight: 400;margin: 10px 0;}
+#newSign .register_form .block {display: block; margin: 10px 0;}
+#newSign .register_form .ph_num,
+#newSign .register_form .mb_co_reg_num {width: 145px !important;display: inline !important;}
+#newSign .register_form .member_confirm {border:1px solid #00a0e8;background-color: #00a0e8;font-size:16px;color: #fff;line-height: 24px;padding:7px 0;width:49.2%;display:inline-block;border-radius:3px;}
+#newSign .register_form .member_be_confirm {border:1px solid #636C73;background-color: #636C73;font-size:16px;color: #fff;width:49%;line-height: 24px;padding:7px 0;display:inline-block;border-radius:3px;width:49.2%;}
+#newSign .register_form .member_ph_confirm {border:1px solid #999;background-color: #999;color: #fff;line-height: 20px;height:45px;font-size: 11px;width:49.5%; padding:5px 0; border-radius:3px; display:inline-block;}
+#newSign .register_form .member_teen_confirm {border:1px solid #9aabb3;background-color: #9aabb3;color: #fff;line-height: 20px;font-size: 11px;width:49.5%; padding:5px 0; border-radius:3px; display:inline-block;}
+#newSign .register_tabs {width: auto;display: block;margin: 0 auto;}
+#newSign .register_tabs ul {float: none;overflow: hidden;text-align: center;}
+#newSign .register_tabs ul li {width: 225px; float:left; font-weight: normal;padding: 10px 0 5px;border-bottom: 2px solid #eaeaea; border-top: 0;}
+#newSign .register_tabs ul li a {display: block; color: inherit;font-size:20px;font-family:'spoqahansans' !important;font-weight:400; color: #999;}
+#newSign .register_tabs ul li.on {border-bottom: 2px solid #00a0ea; font-weight: bold; border-top: 0;}
+#newSign .register_tabs ul li.on a {color: #222;}
+#newSign .register_form .invest_type {margin-top: 11px;width: 100%;}
+#newSign .register_form .invest_type tr th {text-align: left;}
+#newSign .register_form .invest_type tr th label {font-size: 14px;color: #8B8B8B;cursor: pointer;display: inline-block;}
+#newSign .register_form .invest_type tr td span {color: #4D6BB0;}
+#newSign .register_form .file_zone {padding: 0;margin: 0 0 10px 0;}
+#newSign .register_form .file_zone .file_text {width: 160px !important;display: inline-block !important;margin-left: 0 !important;}
+#newSign .register_form .file_zone .describe01 {font-size: 13px;margin: 4px 0;color: #58C1F1;}
+#newSign .register_form .file_zone .describe02 {font-size: 13px;margin: 4px 0 10px 0;color: #999;}
+#newSign .register_form .buttons {margin: 8px 0;}
+#newSign .register_form .buttons strong {font-weight: 600;color: #949494;}
+#newSign .register_form .buttons span {display: inline-block;text-align: center;background-color: #00A0E9;height: 20px;color: #FFF;width:45px;border-radius: 3px;cursor: pointer;}
+#newSign .register_form .buttons span:hover,
+#newSign .register_form .buttons span:focus {background-color: #006ADF;}
+#newSign .register_form .alram {margin-top: 10px;border-top: 1px solid #95A7D0;}
+#newSign .register_form .alram tr td {padding: 10px;}
+#newSign .register_form .alram tr td label {font-size: 13px !important;font-weight: normal !important;color: #5D74B1 !important;cursor: pointer;}
+#newSign .register_form .claim-mark {border-radius: 30px;background-color: #00A0E8;color: #FFF;vertical-align: middle;line-height:18px;}
+#newSign .register_form .agree label a {color: #516FB1;}
+#newSign .register_form .member_id #mb_id,
+#newSign .register_form .member_id #mb_id1 {width: 345px !important; display: inline-block !important;}
+#newSign .register_form .member_id #confirm_id {display: inline-block !important;background-color: #02a0e9; line-height: 45px; color: #FFF; border: none; margin-top: 10px;}
+#newSign .register_form .member_id #confirm_id:hover,
+#newSign .register_form .member_id #confirm_id:focus {border: none;}
+#newSign .register_form .business_file {width: 100% !important;}
+#newSign .register_form .business_file tr th {color: #949494;}
+#newSign .register_form .business_file tr td {padding: 5px 0;}
+#newSign .register_form .business_file tr td p {padding: 5px 0;}
+#newSign .register_form .is_creditor,
+#newSign .register_form .is_non_profit,
+#newSign .register_form .is_info_same {font-size: 15px; float: right;}
+#newSign .register_form .is_creditor span,
+#newSign .register_form .is_non_profit span,
+#newSign .register_form .is_info_same span {padding-left: 10px;}
+#newSign .register_form input[type="checkbox"]#is_creditor + label:before,
+#newSign .register_form input[type="checkbox"]#is_non_profit + label:before,
+#newSign .register_form input[type="checkbox"]#is_info_same + label:before {content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa;}
+#newSign .register_form input[type="checkbox"]#is_creditor:checked + label:before,
+#newSign .register_form input[type="checkbox"]#is_non_profit:checked + label:before,
+#newSign .register_form input[type="checkbox"]#is_info_same:checked + label:before {background: url(../../../img/member/check.png) no-repeat center 50%; background-color: #063190; color: #fff; border: 1px solid #063190; box-sizing: border-box; }
+#newSign .register_form .loan_co_license_zone {display: none;}
+
+#newSign .register_form .mb_co_reg_num {width: 140px !important; margin-right: 11.8px !important;}
+#newSign .register_form .mb_co_reg_num:last-child {margin: 0 !important; margin-top: 10px !important;}
+#newSign .register_form input[name='mb_co_enroll_num'] {width: 218px;}
+#newSign .register_form input[name='mb_co_enroll_num']:first-child {margin-right: 10.8px;}
+#newSign .register_form .sel-code {width: 100%; display: inline-block; border: 1px solid #ddd; height: 45px; border-radius: 3px; text-indent: 10px; margin-top: 10px;}
+
+#newSign .register_form .birth-c {width: 140px; display: inline-block; border: 1px solid #ddd; height: 45px; border-radius: 3px; text-indent: 10px; margin-top: 10px; margin-right: 11.8px;}
+#newSign .register_form .birth-c:last-of-type {margin-right: 0;}
+
+#newSign .register_form .hp-comp-box {display: table-header-group}
+#newSign .register_form .hp-box {display: table-cell; width: 100%;}
+#newSign .register_form .hp_comp {text-indent: 10px; width: 96px; height: 45px; margin-top: 10px; border: 1px solid #ddd; border-radius: 3px;}
+#newSign .register_form .auth_request {display: inline-block; float: right; width: 115px; margin-left: 15px; height: 45px; margin-top: 10px; border-radius: 3px; background: #555; color: #fff;}
+#newSign .register_form .hp-auth-box {display: table-row-group;}
+#newSign .register_form .auth_num {width: 320px;}
+#newSign .register_form .auth_submit {width: 115px; margin-left: 15px; height: 45px; margin-top: 10px; border-radius: 3px; background: #02a0e9;color: #fff; display: inline-block;}
+
+#newSign .register_form .pro-box {margin-top: 10px; background-color: #f6f6f6; padding: 10px; overflow: hidden;}
+#newSign .register_form .pro-box ul {width: 50%; float: left;}
+#newSign .register_form .pro-box li label,
+#newSign .register_form .pro-box li label a {color: #555; font-size: 15px;}
+#newSign .register_form .pro-box input[type='checkbox'] + label {display: inline-block; position: relative; cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;}
+#newSign .register_form .pro-box input[type="checkbox"] + label:before {content: ' '; display: inline-block; width: 16px; height: 16px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa;}
+#newSign .register_form .pro-box input[type="checkbox"]:checked + label:before {background: url(../../../img/member/check.png) no-repeat center 50%; background-color: #063190; color: #fff; border: 1px solid #063190; box-sizing: border-box; }
+#newSign .register_form .pro-box label span {padding-left: 10px; vertical-align: inherit;}
+
+#newSign .register_form .agree-box {border: 1px solid #ddd; margin-top: 30px;}
+#newSign .register_form .agree-box input[type='checkbox'] + label {display: inline-block; position: relative; cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;}
+#newSign .register_form .agree-box label span {padding-left: 10px; vertical-align: inherit;}
+#newSign .register_form .agree-box input[type="checkbox"] + label:before {content: ' '; display: inline-block; width: 18px; height: 18px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa;}
+#newSign .register_form .agree-box input[type="checkbox"]:checked + label:before {background: url(../../../img/member/check.png) no-repeat center 50%; background-color: #063190; color: #fff; border: 1px solid #063190; box-sizing: border-box; }
+#newSign .register_form .agree-all {border-bottom: 1px solid #ddd; padding: 0 20px; height: 50px;}
+#newSign .register_form .agree-all li label {font-size: 18px; color: #444; line-height: 50px;}
+#newSign .register_form .agree {padding: 15px 20px 15px;}
+#newSign .register_form .agree li {line-height: 30px;}
+#newSign .register_form .agree li label {font-size: 16px; color: #777;}
+#newSign .register_form .agree li a {color: #777; float: right; /*line-height: 33.5px;*/}
+
+#newSign .register_form .filebox,
+#newSign .register_form .filebox_c {width: 100%;}
+#newSign .register_form .filebox_c {margin: 10px 0;}
+#newSign .register_form .filebox p {color: #bbb; font-size: 16px; line-height: 2.3;}
+#newSign .register_form .filebox input[type="file"],
+#newSign .register_form .filebox_c input[type="file"] {position: absolute; width: 0; height: 0; padding: 0; overflow: hidden; border: 0;}
+#newSign .register_form .filebox label,
+#newSign .register_form .filebox_c label {display: inline-block; padding: 10px; color: #999; width: 101px; height: 45px; font-size: 15px; text-align: center; box-sizing: border-box; background-color: #fdfdfd; cursor: pointer; border: 1px solid #ebebeb; border-radius: 3px; margin-top: 0;}
+#newSign .register_form .filebox .upload-name,
+#newSign .register_form .filebox_c .upload-name {display: inline-block; height: 45px; margin-right: 5.5px; font-size:14px;  padding: 0 12px; vertical-align: middle; background-color: #f5f5f5; border: 1px solid #ebebeb; border-radius: 3px; box-sizing: border-box; width: 340px;}
+
+#newSign .register_form .ph_num_c {width: 100%;}
+#newSign .register_form .input-box .input1,
+.confirm_form .f-box .input-box .input1 {width: 220px; box-sizing: border-box;}
+#newSign .register_form .input-box .input1:first-of-type,
+.confirm_form .f-box .input-box .input1:first-of-type {float: left; margin-right: 10px;}
+#newSign .register_form .input-box .input2,
+.confirm_form .f-box .input-box .input2 {width: 31.3%; margin-right: 10px;}
+#newSign .register_form .input-box .input2:last-of-type,
+.confirm_form .f-box .input-box .input2:last-of-type {margin-right: 0;}
+#newSign .register_form .zip-num,
+.confirm_form .f-box .zip-num {width: 220px !important; margin-right: 10px; float: left;}
+#newSign .register_form .add-search {margin-left: 10px;}
+#newSign .register_form .add-search,
+.confirm_form .add-search {background-color: #555; color: #fff; width: 220px; height: 45px; border: 0; border-radius: 3px; margin-top: 10px; cursor: pointer;}
+
+#newSign .register_form .info-table,
+.confirm_form .info-table {border: 1px solid #ddd; font-size: 15px; color: #222; width: 100%; margin-bottom: 20px;}
+#newSign .register_form .info-table tr th,
+.confirm_form .info-table tr th {background-color: #f6f6f6; height: 40px; padding: 0 20px; border-bottom: 1px solid #ddd;}
+#newSign .register_form .info-table tr td,
+.confirm_form .info-table tr td {border: 1px solid #ddd; padding: 8px 12px;}
+
+#newSign .register_form .info-down-file {display: block; border-radius: 3px; border: 1px solid #1e7fe8; font-size: 17px; color: #1e7fe8; width: 100%; height: 45px; line-height: 45px; text-align: center;}
+#newSign .register_form .info-down-file img {margin-right: 8px; margin-bottom: 4px;}
+
+#newSign .register_form .notice,
+.confirm_form .notice {margin-top: 10px; background-color: #f6f6f6; color: #555; padding: 15px;}
+#newSign .register_form .notice {color: #777; border-radius: 3px;}
+#newSign .register_form .notice li {font-size: 13px;}
+.confirm_form .notice li {font-size: 14px;}
+#newSign .register_form h3,
+.confirm_form h3 {font-size: 24px !important; color: #222 !important; margin-bottom: 0 !important; letter-spacing: -1px;}
+#newSign .register_form .info-txt p.txt,
+.confirm_form p {font-size: 16px; color: #777; padding: 10px 0 50px; letter-spacing:-0.3px; line-height:22px;}
+#newSign .register_form .btn-main {clear: both; width: 450px; border-radius: 3px; height: 55px; background-color: #063190; color: #fff; font-size: 16px; margin-top: 350px;}
+#newSign .register_form .bottom-btn-box {overflow: hidden;}
+#newSign .register_form .pc-btn {float: left; width: 70%;}
+#newSign .register_form .pc-btn-prev {float: left; width: 26%; margin-top: 30px; margin-right: 4%;}
+#newSign .register_form .pc-btn-prev .btn-prev {width: 100%; height: 50px; border-radius: 3px; color: #fff; background: #ccc; font-size: 16px;}
+#newSign .register_form .btn-prev-next {margin: 30px 0 0; overflow: hidden;}
+.confirm_form .btn-prev-next {margin-top: 150px; margin-bottom: 30px; overflow: hidden;}
+#newSign .register_form .btn-prev-next li,
+.confirm_form .btn-prev-next li {float: left;}
+#newSign .register_form .btn-prev-next li button,
+.confirm_form .btn-prev-next li button {width: 220px; height: 55px; font-size: 16px; border-radius: 3px; color: #fff;}
+#newSign .register_form .btn-prev-next .btn-prev,
+.confirm_form .btn-prev-next .btn-prev {margin-right: 10px; background-color: #ccc;}
+#newSign .register_form .btn-prev-next .btn-next,
+.confirm_form .btn-prev-next .btn-next {background-color: #063190;}

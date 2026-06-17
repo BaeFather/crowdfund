@@ -1,0 +1,214 @@
+<?
+include_once('../common.php');
+
+define('_INDEX_', true);
+if(!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
+$cookie_life_time = 60*60;
+//if(!$_COOKIE[md5('ck_event_id')]) set_cookie('ck_event_id',   "100B",           $cookie_life_time);		// 접속정보 idx 저장
+
+if ($member["mb_id"]) {
+	$user_sql = "select * from cf_auto_invest_config_user where member_idx='$member[mb_no]' order by ai_grp_idx";
+	$user_res = sql_query($user_sql);
+	$user_cnt = sql_num_rows($user_res);
+	for ($i=0 ; $i<$user_cnt ; $i++) {
+		$user_row = sql_fetch_array($user_res);
+		$U_LIST[$i] = $user_row;
+		if ($U_LIST[$i]["setup_amount"]>$u_max_money) $u_max_money = $U_LIST[$i]["setup_amount"];
+	}
+	//$def_money = $u_max_money/10000;
+}
+
+$_CONF['theme_path'] = (G5_IS_MOBILE) ? G5_THEME_MOBILE_PATH : G5_THEME_PATH;
+
+
+
+$head_title = "헬로펀딩 | 대한민국 P2P금융의 표준";
+$head_url = "https://www.hellofunding.co.kr";
+
+include_once(G5_THEME_MOBILE_PATH.'/head.php');
+
+?>
+
+<? 
+// 자동투자 설정 팝업
+include_once(G5_PATH.'/auto_invest/auto_inv_popup_m.php');
+?>
+
+
+
+	 <script type="text/javascript">
+		function open_pop(flag) {
+             $('#myModal').show();
+        };
+        //팝업 Close 기능
+        function close_pop(flag) {
+             $('#myModal').hide();
+        };
+        
+    </script>
+	<script>
+		function go_auto1() {
+			$("#auto_tab1").css("display","");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto2() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto3() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","");
+			$("#auto_tab4").css("display","none");
+		}
+		function go_auto4() {
+			$("#auto_tab1").css("display","none");
+			$("#auto_tab2").css("display","none");
+			$("#auto_tab3").css("display","none");
+			$("#auto_tab4").css("display","");
+		}
+		var beforeActiveTab = "";
+		var slideNo = false;
+		$(document).on("click", "ul.tabs li[rel]", function(e) {
+			var index = $(this).index();
+			var activeTab = $(this).attr("rel");
+			var tabs = $(this);
+			if(beforeActiveTab == activeTab) return false;
+
+			tabs.siblings().not('.line').removeClass("on").addClass("off");
+			if(beforeActiveTab == "" && $(this).hasClass("on")) {
+				return false;
+			}
+			else {
+				$(this).not('.line').toggleClass(function(){
+					if($(this).hasClass('on')){
+						tabs.removeClass('on');
+						return 'off';
+					}else{
+						tabs.removeClass('off');
+						return 'on';
+					}
+				});
+			}
+
+			if(activeTab.indexOf("product") != -1 && !slideNo) {
+				swiper_4.slideTo(activeTab.replace( /^\D+/g, '') - 1);
+			}
+			else {
+				tabs.siblings().not('.line').each(function(e){
+					var activeTab = $(this).attr("rel");
+					$("#"+activeTab).hide();
+				});
+				$("#"+activeTab).fadeIn();
+			}
+			beforeActiveTab = activeTab;
+			slideNo = false;
+		});
+	</script>
+ <!--End Modal-->
+
+
+<!-- 상단 시작 -->
+
+<div class="top_bg">
+	<div class="auto_btn" ><img src="./img/m/auto_invest_btn.png" alt="" onClick="open_auto_config_pop();"/></div>
+</div>
+<div><img src="./img/m/img01.jpg" width="100%" alt=""/></div>
+<div class="qna">
+	<div class="qna_cont">
+		<p><img src="./img/m/img02.jpg" alt=""/></p>
+		<ul class="faq">
+			<li>
+				<a href="#">자동투자가 무엇인가요?</a>
+				<p style="display:none;">자동투자란 투자자가 <span>사전에 설정한 조건에 따라</span> 해당 조건에 맞는 투자상품 오픈 시 <span>투자시작 5분 전에 자동으로 투자에 
+				참여</span>하게 되는 서비스입니다. 자동투자 설정 후 <span>예치금 잔액만 있으면 자동으로 투자</span>되며, 상환받은 원리금으로 다른 상품에 
+				지속적으로 재투자가 가능합니다. </p>
+			</li>
+			<li>
+				<a href="#">자동투자는 어떻게 신청하나요?</a>
+				<p style="display:none;">자동투자는 헬로펀딩 회원 누구나 신청이 가능합니다.
+				<span>투자하기 > 자동투자</span> 메뉴 또는 우측 <span>마이페이지> 자동투자 설정하기</span> 메뉴를 통해 신청하실 수 있습니다.
+				선호하는 상품을 선택 후 1만원 단위로 투자금액 설정이 가능합니다.</p>
+			</li>
+			<li>
+				<a href="#">자동투자 순번은 어떻게 정해지나요?</a>
+				<p style="display:none;">자동투자 <span>순번은 서비스 신청 시간순으로 배정</span>되며, 자동투자 참여가 완료된 투자자는 가장 마지막 순번으로 변경됩니다.
+				만약 예치금 부족 및 투자한도 제한 등의 이유로 투자에 참여하지 못한 경우 다음 순번의 회원이 자동투자 기회를 갖게되며, 예치금 및 투자한도가 투자가능 상태로 변경 된 경우 다음 자동투자 시 우선 기회를 갖게됩니다.
+				</p>
+			</li>
+			<li>
+				<a href="#">자동투자를 설정했는데 투자가 왜 안되나요?</a>
+				<p style="display:none;">자동투자가 되지 않는 경우는 <span>본인의 순번이 오지 않은 경우</span>, 보유한 <span>예치금 잔액이 부족한 경우, 설정한 금액이 상품의 남은 자동투자 모집금액 보다 높은 경우, 투자한도를 초과한 경우 </span>등에는 자동투자가 진행되지 않습니다.
+				</p>
+			</li>
+			<!--li>
+				<a href="#">자동투자 가능한 상품이 정해져 있나요?</a>
+				<p style="display:none;">헬로펀딩의 <span>자동투자는 헬로페이</span>(소상공인 확정매출채권, 면세점 매출채권, 동산담보), 주택담보 <span>상품만 설정이 가능</span>합니다. 부동산 PF 상품의 경우 해당 상품의 상환재원 및 상환방식, 투자 기간 등의 이유로 투자자분들이 직접 상품 설명을 숙지하신 후 일반투자를 해주셔야합니다. 
+				</p>
+			</li-->
+			<!--div style="font-size:12px;">※ 헬로페이 상품은 투자자 분들의 많은 참여를 위하여 지속적으로 추가 중입니다. </div-->
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+// faq
+$(".faq a").click(function() {
+	$(this).next().slideToggle("fast").parent().siblings().children("p").hide();
+	return false;
+});
+</script>
+<div class="notice"><img src="./img/m/img03.jpg" alt=""/></div>
+<div class="auto_btn2"><img src="./img/m/auto_invest_btn.png" alt="" onClick="open_auto_config_pop();"/></div>
+
+
+<script type="text/javascript">
+<?
+if ($member['member_type']=="2") $limit_amt = 999;
+else if ($member['member_type']=="1") {
+	if ($member['member_investor_type']=="1") $limit_amt = 500;
+	else if ($member['member_investor_type']=="2") $limit_amt = 2000; 
+	else $limit_amt = 999;
+}
+?>
+
+      
+function price_cutting(val) {
+	var new_val = 0;
+	var dan = 10000;
+
+	if (val < dan) {
+		new_val = 0;
+	} else {
+		new_val =  val / dan;
+	}
+	return new_val;
+}
+
+</script>
+
+<? 
+
+if ($member["mb_no"]) { 
+	if ($_SESSION['ss_auto_amt']) {
+		?>
+		<script>
+		open_auto_config_pop();
+		move_tab(4,'Y');
+		//alert("설정중인 자동투자 내역이 있습니다.\n\n설정 내용을 확인해 주세요.");
+		//self.location.href="<?=G5_URL?>/deposit/deposit.php?tab=5";
+		</script>
+		<?
+	}
+	unset($_SESSION['ss_auto_amt']);
+	unset($_SESSION['ss_auto_inv']);
+}
+?>
+
+<?
+include_once(G5_THEME_MOBILE_PATH.'/tail.php');
+?>

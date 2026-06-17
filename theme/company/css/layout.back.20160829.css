@@ -1,0 +1,133 @@
+/**************************
+파일 만든이 : 이은숙
+파일 제작일 : 2016.08.19
+파일 최종수정일 :
+***************************/
+
+@charset "utf-8";
+
+@font-face {
+  font-family: 'NG';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nanum Gothic'), local('나눔고딕'), local('나눔고딕 보통');
+  src: url('/fonts/NanumGothic-Regular.eot');
+  src: url('/fonts/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/NanumGothic-Regular.woff') format('woff'),
+       url('/fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NGB';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nanum Gothic Bold'), local('나눔고딕 굵게'), local('나눔고딕');
+  src: url('/fonts/NanumGothic-Bold.eot');
+  src: url('/fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/NanumGothic-Bold.woff') format('woff'),
+       url('/fonts/NanumGothic-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NGEB';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nanum Gothic Bold'), local('나눔고딕 아주 굵게'), local('나눔고딕');
+  src: url('/fonts/NanumGothic-ExtraBold.eot');
+  src: url('/fonts/NanumGothic-ExtraBold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/NanumGothic-ExtraBold.woff') format('woff'),
+       url('/fonts/NanumGothic-ExtraBold.ttf') format('truetype');
+}
+
+body, input, textarea, select, button, table{ margin:0; font-size:13px; font-family:'NG', Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; }
+body, h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, form, fieldset, legend, button { margin: 0; padding:0; }
+
+img, fieldset{ border:0 none; }
+dl, ul, ol, li { list-style: none outside none; }
+button{ border:0 none; cursor:pointer; display: block; }
+table, th, td, div{ border-collapse:collapse; }
+
+a,img,input { outline:none; selector-dummy:expression(this.hideFocus=true); }
+/* 모바일용 */
+input[type=image] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+li img { vertical-align:top; }
+td img { vertical-align:middle; }
+
+a { text-decoration:none; color:#444; }
+a:hover, a:active, a:focus { color:#444; text-decoration:none; }
+table a:link, table a:visited { color:#444; }
+table a:hover, table a:active { color:#444; text-decoration:underline; }
+address, caption, cite, code, dfn, em, var { font-style:normal; }
+
+strong, .strong , b { font-family:'NGB'; }
+.blind, legend, caption { display:none !important; }
+.cursor { cursor: pointer; }
+.clear { clear:both; }
+
+body { background:#191919 url('/images/bg.jpg') no-repeat left top; }
+
+#wrap { width:1300px; margin:70px auto; }
+
+/*** 상단 ***/
+#header { position:relative; height:70px; background-color:#284893;  }
+#header h1 { height:70px; line-height:70px; padding:0 40px; color:#fff; font-size:23px; font-family:'NGEB'; }
+#header h1 a { color:#fff;  }
+#header .navi { position:absolute; top:0; right:40px; overflow:hidden; }
+#header .navi li { float:left; margin-left:65px; line-height:70px; font-size:19px; }
+#header .navi li a { color:#fff; }
+#header .navi li.mem a { color:#00c5b0; }
+
+#header .subMenu { display:none; position:absolute; left:0; top:70px; z-index:120; width:100%; padding:0 12px; box-sizing:border-box; background:#fff url('/images/sub_bg.gif') no-repeat right bottom; border-bottom:3px solid #284893; }
+#header .subMenu:after { content:""; display:block; clear:both; }
+#header .subMenu > div { float:left; width:175px; height:330px; padding:30px 18px; background-color:#fff; border-right:1px solid #f2f2f2; }
+#header .subMenu > div.join { border:0; }
+#header .subMenu > div > a { display:block; margin:7px 0; font-size:16px; font-family:'NGB'; color:#202020; background:url('/images/arrow_black.gif') no-repeat right center;  }
+#header .subMenu > div > a:hover { color:#284893; }
+#header .subMenu > div li { font-size:15px; line-height:22px; }
+#header .subMenu > div li a { color:#707070;  }
+#header .subMenu .nav_close { position:absolute; right:40px; bottom:-40px; cursor:pointer; }
+
+/*** 내용 ***/
+#container { position:relative; margin:20px 0; overflow:hidden; }
+#container .visual { position:relative; z-index:100; width:978px; height:685px; overflow:hidden; }
+#container .visual .slider li { position:relative; width:978px; height:685px;  }
+
+#container .visual .slider li .promise { position:absolute; left:455px; top:240px;  width:479px;  padding:144px 10px 15px 15px; font-size:16px; line-height:22px; color:#707070; background:url('/images/visual_t.png') no-repeat left top; }
+#container .visual .slider li .promise .title { margin-bottom:10px; font-size:20px; line-height:23px; color:#202020; font-family:'NGB'; }
+/*메인비주얼 블릿*/
+#container .visual .bx-pager { text-align:right; position:relative; top:-680px; right:20px; z-index:80; }
+#container .visual .bx-pager-item { display:inline-block; zoom:1; *display:inline; }
+#container .visual .bx-pager-item .bx-pager-link { display:inline-block; width:14px; height:14px; margin:0 3px; font-size:0; line-height:0; border:1px solid #fff; border-radius:10px; }
+#container .visual .bx-pager-item .bx-pager-link.active { background-color:#fff; }
+
+#container .visual .info { position:absolute; left:0; bottom:0; z-index:90; width:100%; text-align:center; background:url('/images/visual_tab.png') repeat-x left top;  }
+#container .visual .info li { display:inline-block; zoom:1; *display:inline; height:63px; line-height:25px; padding:15px 40px; color:#fff; font-size:16px; }
+#container .visual .info li div { font-size:28px; font-family:'NGB'; line-height:30px; }
+
+#container .rMenu { position:absolute; right:0; top:0; color:#fff; }
+#container .rMenu > div { width:233px; height:145px; padding:35px; margin-bottom:20px; }
+#container .rMenu > div h2 { margin-bottom:10px; font-size:30px; color:#fff; font-weight:normal;  }
+#container .rMenu > div .text { height:55px; font-size:14px; line-height:19px;  }
+#container .rMenu > div a { display:inline-block; min-width:80px; padding:0 15px; font-size:13px; line-height:28px; color:#fff; background:url('/images/link_bg.png') no-repeat right center; border:1px solid #fff; }
+#container .rMenu .menu01 { background-color:#636b7e; }
+#container .rMenu .menu02 { background:url('/images/menu02.jpg') no-repeat left top; }
+#container .rMenu .menu03 { background-color:#00a086; }
+
+
+/*** 하단 ***/
+#footer { position:relative; padding:35px 35px 35px 240px; color:#fff; font-size:15px; background-color:#303030; }
+#footer .footLogo { position:absolute; left:35px; top:35px; font-size:24px; font-family:'NGEB'; color:#989898; }
+
+#footer .footLink { margin:8px 0 15px 0; overflow:hidden; }
+#footer .footLink li { float:left; margin-right:15px; font-size:14px;  }
+#footer .footLink li a { color:#fff; }
+#footer .footLink li:after { content:"|"; padding-left:15px; color:#b8b8b8; }
+#footer .footLink li:last-child:after { content:""; }
+
+#footer .contact { margin-bottom:15px;  font-size:12px; color:#adadad; }
+#footer .contact b { display:inline-block; margin-right:15px; white-space:pre; color:#fff; font-size:15px; }
+
+#footer .SNS { margin-top:20px; overflow:hidden; }
+#footer .SNS li { float:left; margin-right:10px; }

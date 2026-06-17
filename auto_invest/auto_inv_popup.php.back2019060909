@@ -1,0 +1,677 @@
+<?
+$conf_sql = "SELECT * FROM cf_auto_invest_config WHERE display='Y'
+			order by case
+			when idx='11' then 1
+			when idx='12' then 4
+			when idx='7'  then 8
+			when idx='8'  then 12
+			when idx='9'  then 16
+			else 100
+			end";
+$conf_res = sql_query($conf_sql);
+$conf_cnt = sql_num_rows($conf_res);
+
+for ($i=0 ; $i<$conf_cnt ; $i++) {
+	$conf_row = sql_fetch_array($conf_res);
+	$get_conf[$i] = $conf_row;
+}
+
+$max_auto_amt = get_max_auto_amt();
+
+if ($member["mb_id"]) {
+	$user_sql = "select count(a.idx) chk_user_cnt from cf_auto_invest_config_user a left join cf_auto_invest_config b on (a.ai_grp_idx=b.idx) where a.member_idx='$member[mb_no]' ";
+	$user_res = sql_query($user_sql);
+	$user_row = sql_fetch_array($user_res);
+	$user_cnt = $user_row['chk_user_cnt'];
+}
+?>
+<link rel="stylesheet" type="text/css" href="/auto_invest/css/landing1.css?ver=20190521_1">
+
+	<!-- The Modal -->
+    <div id="myModal" class="modal">
+	<form name="f_auto_inv" id="f_auto_inv">
+      <!-- Modal content -->
+      <div class="modal-content" style="height:65vh; overflow-y:scroll; margin:20vh auto;">
+            <p class="popup"></p>
+             <div style="position:relative;z-index:1000;cursor:pointer;padding:5px 0;text-align:right;" onClick="close_pop2();">
+               <img src="/auto_invest/img/close_btn.png" alt="닫기"/>
+            </div>
+			<div style="width:838px; text-align:center;">
+				<p style="margin-bottom: 16px;"><img src="/auto_invest/img/tit01.jpg" alt=""/></p>
+				<ul class="tabs" style="margin-bottom: 10px;">
+					<li class="tab01 on" relaa="auto_tab1"><a onclick1="move_tab('1');" style="cursor1:pointer;">자동투자안내</a></li>
+					<li class="line">|</li>
+					<li class="tab02 off" relaa="auto_tab2"><a onclick1="move_tab('2');" style="cursor1:pointer;">자동투자 설정</a></li>
+					<li class="line">|</li>
+					<li class="tab04 off" relaa="auto_tab4"><a onclick1="move_tab('3');" style="cursor1:pointer;">자동투자요약</a></li>
+				</ul>
+
+				<!--자동투자안내-->
+				<div  class="auto01" id="auto_tab1" style="display:block;">
+					<p style="padding-top:30px;"><img src="/auto_invest/img/tab_cont01.jpg" alt=""/></p>
+					<p style="padding:15px 0 20px 0;"><img src="/auto_invest/img/btn001.jpg" alt="다음" onclick="move_tab('2');" style="cursor:pointer;"/></p>
+				</div>
+
+
+				<!--자동투자 설정-->
+				<div  class="auto02" id="auto_tab2" style="display:none; width:560px; margin-left: auto; margin-right: auto;">
+					<p style="padding-top:30px;font-size:18px;text-align:left;">* 상품선택 후 자동투자 금액을 설정해주세요. (중복선택 가능)</p>
+
+					<ul class="select_cont01">
+						<li style="border-bottom:2px solid #d8d8d8;">
+							<input type="checkbox" id="chk_all" name="chk_all" value="Y" onclick="chk_all_btn();"><label for="chk_all"></label>&nbsp;
+							<label for="chk_all"><span>모든상품</span></label>
+							<!-- <p style="float: right; font-weight: 600; margin-right: 42px;">투자금액 설정</p> -->
+
+						</li>
+<?
+for ($i=0 ; $i<count($get_conf) ; $i++) {
+	?>
+						<li>
+							<input type="hidden" name="grp_idx[<?=$i?>]" value="<?=$get_conf[$i]['idx']?>">
+							<input type="hidden" name="chk_item[<?=$i?>]" value="N">
+							<div class="row">
+							<div style="display: inline-block;">
+							<input type="checkbox" id="chk_item[<?=$i?>]" name="chk_item[<?=$i?>]" value="Y" onchange="chk_total_checkbox();">
+							<label for="chk_item[<?=$i?>]"></label>&nbsp;<label for="chk_item[<?=$i?>]"><span id="chk_item_text[<?=$i?>]" style="max-width: 260px; cursor:pointer; margin-left: 4px;"><?=$get_conf[$i]["grp_title"]?></span></label>
+							<span><a id=det_<?=$get_conf[$i]['idx']?> style="cursor:pointer;"><img src="/auto_invest/img/detail_btn02.png" width="20px" height="20px" style="margin-top: 5px;" alt="자세히 보기"></a></span>
+						</div>
+
+							<div style="display: inline-block; float: right; width:165px;">
+							<input type="text" id="auto_money[<?=$i?>]" name="auto_money[<?=$i?>]" onkeyupa="onlyNumb(this.value);" onkeyup="chk_num(<?=$i?>);" onblur="chk_num(<?=$i?>);" class="field" value="<?=$def_money?>" required style="text-align:right;width:102px;padding:4px; font-size: 20px;" />
+							<strong class="txt02">&nbsp;&nbsp;만원</strong>
+							</div>
+						</div>
+						</li>
+	<?
+}
+?>
+					</ul>
+					<p style="padding:20px 0 30px 0;">
+						<img src="/auto_invest/img/btn002.jpg" alt="이전" onclick="move_tab('1');" style="cursor:pointer;"/>&nbsp;&nbsp;
+						<img src="/auto_invest/img/btn001.jpg" alt="다음" onclick="chk_tab3()" style="cursor:pointer;"/>
+					</p>
+				</div>
+
+				<!--투자금액-->
+				<!-- <div  class="auto03" id="auto_tab3" style="display:none;">
+					<p style="padding-top:30px;font-size:18px;text-align:left;">※ 자동투자 금액을 설정하세요.</p>
+					<div class="select_cont02">
+						<input type="text" id="auto_money" name="auto_money" onkeyup="onlyNumb();" class="field" value="<?=$def_money?>" placeholder="자동투자 금액을 설정하세요." required style="text-align:right;width:70px;padding-right:4px;" />
+						<strong class="txt02">&nbsp;&nbsp;만원.</strong>
+					</div>
+					<p style="padding-top:15px;font-size:20px;clear:both;height:195px;" id="msg_money"></p>
+
+					<p style="padding:0 0 30px 0;positionaaa:absolute;bottom:170px;left:0;right:0; ">
+						<img src="/auto_invest/img/btn002.jpg" alt="이전" onclick="move_tab('2');" style="cursor:pointer;"/>&nbsp;&nbsp;
+						<img src="/auto_invest/img/btn001.jpg" alt="다음" onclick="chk_tab3()" style="cursor:pointer;"/>
+					</p>
+				</div> -->
+
+				<script>
+				/*
+				document.getElementById("auto_money").onkeyup = function() {
+					var x = document.f_auto_inv.auto_money.value;
+
+					var anum=/(^\d+$)|(^\d+\.\d+$)/;
+
+					if (anum.test(x)) {
+
+					} else {
+						document.f_auto_inv.auto_money.value = x.replace(/[^0-9]/,'');
+						alert("숫자만 입력가능합니다.");
+					}
+				}
+				*/
+				</script>
+
+				<!--자동투자요약-->
+				<div  class="auto04" id="auto_tab4" style="display:none; width:560px; margin-left: auto; margin-right: auto;">
+					<ul>
+						<li>
+							<p style="padding-bottom:5px; text-align: center; font-size:21px; font-weight: 600;">선택한 상품 및 설정 금액</p>
+							<!-- <p style="padding-bottom:5px; text-align: right; margin-right: 84px; font-size:21px; font-weight: 600;">설정 금액</p> -->
+
+							<div class="div1">
+								<div id="disp_selected" style="display: table-cell; width:393px;">
+								</div>
+								<!--div class="div2" style="display: table-cell; width:393px;">
+									<div style="text-align:right;font-size:20px;line-height:26px;color:#1277f4; margin-bottom: 10px;">
+										<img src="/auto_invest/img/won_icon.png" style="width: 20px; height: 20px; margin-top: 4px;"> <span id="auto_amt"></span>
+									</div>
+								</div-->
+
+							</div>
+						</li>
+
+					</ul>
+					<p style="height:10px;clear:both;"></p>
+					<div class="div1" style="clear:both;background-color:#f3f3f4;font-size:14px;text-align:left !important;padding:15px 22px;">
+						<div style="font-size:16px;font-weight:600;">자동투자 유의사항</div>
+						1. 투자상품의 구조와 투자위험을 충분히 숙지한 후 자동투자를 신청하시기 바랍니다.<br/>
+						2. 자동투자 신청 순번에 따라 자동으로 투자가 진행되며, 자동투자 신청자 수가 많은 경우 본인의 순번이 <br/>
+						   돌아오기까지 다소 시간이 걸릴 수 있습니다.<br/>
+						3. 예치금 잔액 부족 및 투자한도를 초과한 경우 투자가 진행되지 않을 수 있습니다.<br/>
+						4. 자동투자설정 금액은 언제든 변경 가능합니다. 설정금액 변경 시 기존 순번은 그대로 유지되며, 변경된 조건은 다음 투자부터 적용됩니다.<br/>
+					</div>
+					<p style="padding-top:5px;font-size:18px;clear:both;">※위와 같이 자동투자를 설정합니다.</p>
+					<p style="padding:8px 0 20px 0;">
+						<img src="/auto_invest/img/btn003.jpg" alt="처음으로" onclick="move_tab('1');" style="cursor:pointer;"/>&nbsp;&nbsp;
+						<img src="/auto_invest/img/btn001.jpg" alt="다음" onclick="go_auto_conf_save();" style="cursor:pointer;"/>
+					</p>
+				</div>
+			</div>
+      </div>
+    </div>
+
+
+<!-- 투자위험고지 팝업 시작 -->
+<div id="invest_warning_agree" class="popbluetheme" style="height:auto;">
+	<img src="/images/btn_close.gif" alt="close" class="close">
+	<div class="title">※ 투자위험고지</div>
+	<div class="con">
+		<div class="con1">
+			본 투자상품은 원금이 보장되지 않습니다. 모든 투자상품은 현행 법률 상 ‘유사수신 행위의 규제에 관한 법률’에 의거하여 원금과 수익을 보장할 수 없습니다.<br/>
+			또한 차입자가 원금의 전부 또는 일부를 상환하지 못할 경우 발생하게 되는 투자금 손실 등 투자위험은 투자자가 부담하게 됩니다.
+		</div>
+		<div class="con2">
+			<div style="color:#000">상기 내용을 확인하였으며 그 내용에</div>
+			<div style="padding-top:10px;">
+				<input type="text" id="str" maxlength="3" onKeyup="strCheck(this.value);" class="text1">
+				<input type="hidden" name="agree_yn" id="_agree">
+				<div class="con3" style="color:#FF2222"><font class="con3" style="color:black;">※ 빈칸에 '</font>동의함<font class="con3" style="color:black;">' 을 입력하셔야만 자동투자가 가능합니다.</font></div>
+			</div>
+		</div>
+		<div class="con3" style="color:#FF2222">
+		※ 자동투자 설정시 상환방식이 예치금 상환방식으로 변경됩니다.
+		</div>
+		<div class="btnArea">
+			<button type="button" id="invest_warning_agree_btn" class="btn_big_blue2 off" style="ime-mode:active">확인</button>
+		</div>
+	</div>
+</div>
+<input type="hidden" name="yn_agree" id="yn_agree" />
+</form>
+
+
+<script>
+function chk_all_btn() {
+	var chkbx;
+	if ($('#chk_all').is(":checked")) {
+		chkbx = true;
+	} else {
+		chkbx = false;
+	}
+
+	for (var i=0 ; i<<?=count($get_conf)?> ; i++) {
+		$('input:checkbox[name="chk_item['+i+']"]').prop("checked",chkbx);
+	}
+}
+function open_auto_config_pop(flag) {
+<?
+if ($member["mb_no"]) {
+	?>
+	var set_dt = get_auto_inv_conf();
+
+	if (<?=$user_cnt?> >0) {
+		<?
+		if ($_SESSION['ss_auto_amt']) {
+			?>
+			alert("설정된 자동투자 내역이 있습니다.\n\n설정 내용을 확인해 주세요.");
+			self.location.href="<?=G5_URL?>/deposit/deposit.php?tab=5";
+			return;
+			<?
+			//$_SESSION['ss_auto_amt']="";
+		}
+		?>
+	} else  {
+		<?
+		if ($_SESSION['ss_auto_amt']) {
+			?>
+			get_auto_inv_sess();
+			<?
+		} else {
+			?>
+			chk_def();
+			<?
+		}
+		?>
+	}
+	<?
+} else {
+	?>
+	<?
+	if ($_SESSION['ss_auto_amt']) {
+		?>
+		get_auto_inv_sess();
+		<?
+	} else {
+		?>
+		chk_def();
+		<?
+	}
+	?>
+	<?
+}
+?>
+
+open_pop();
+
+}
+function chk_def() {
+	$('#auto_money').val("100");
+	for (var i=0 ; i<<?=count($get_conf)?> ; i++) {
+		$('input:checkbox[name="chk_item['+i+']"]').prop("checked",true);
+	}
+	chk_total_checkbox();
+}
+function get_auto_inv_sess() {
+	<?
+	if (!$_SESSION['ss_auto_amt']) {
+		echo "return;";
+	} else {
+		for ($i=0 ; $i< count($_SESSION['ss_auto_inv']) ; $i++) {
+			?>
+			if ('<?=$_SESSION["ss_auto_inv"][$i]["inv_yn"]?>'=='Y') {
+				$('input:checkbox[name="chk_item['+<?=$i?>+']"]').prop("checked",true);
+			}
+			<?
+		}
+	}
+	?>
+	chk_total_checkbox();
+	$('#auto_money').val("<?=$_SESSION['ss_auto_amt']?>");
+}
+function get_auto_inv_conf() {
+
+	$.ajax({
+		url  : "/deposit/ajax_auto_invest_conf_get.php",
+		type : "POST",
+		dataType : "json",
+		success : function(data) {
+
+			if (data.err_msg) {
+				var yn = confirm("로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?");
+				if (yn)	self.location.href="/bbs/login.php?url=/auto_invest/";
+				return false;
+			}
+
+			if (!data.auto_conf.length) return false;
+
+			var max_amount = 0;
+
+			for (var j =0 ; j<<?=count($get_conf)?>; j++) {
+				$('input:checkbox[name="chk_item['+j+']"]').prop("checked",false);
+			}
+
+			<?
+			for ($j=0 ; $j<count($get_conf) ; $j++) {
+				?>
+			for (var i=0 ; i<data.auto_conf.length ; i++) {
+				if ("<?=$get_conf[$j][idx]?>"==data.auto_conf[i].ai_grp_idx) $('input:checkbox[name="chk_item['+<?=$j?>+']"]').prop("checked",true);
+				}
+				<?
+			}
+			?>
+
+			for (var i=0 ; i<data.auto_conf.length ; i++) {
+
+				if (max_amount<data.auto_conf[i].setup_amount) max_amount = data.auto_conf[i].setup_amount;
+
+				if (data.auto_conf[i].ai_grp_idx=="8") {
+					//$('input:checkbox[name="chk_item['+j+']"]').prop("checked",true);
+				}
+
+			}
+
+			chk_total_checkbox();
+			$('#auto_money').val(max_amount/10000);
+			return true;
+		},
+		error : function (jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+		}
+	});
+}
+
+function chk_total_checkbox() {
+	var yy = 0;
+	var nn = 0;
+	for (var j =0 ; j<<?=count($get_conf)?>; j++) {
+		if ($('input:checkbox[name="chk_item['+j+']"]').is(":checked")) {
+			yy = yy+1;
+			
+			$("#auto_money\\["+j+"\\]").attr("disabled",false);
+		} else {
+			nn = nn+1;
+			
+			$("#auto_money\\["+j+"\\]").val("");
+			$("#auto_money\\["+j+"\\]").attr("disabled",true);
+		}
+	}
+	if (yy==<?=count($get_conf)?>) $('input:checkbox[name="chk_all"]').prop("checked",true);
+	else $('input:checkbox[name="chk_all"]').prop("checked",false);
+	return yy;
+}
+</script>
+
+<script>
+function go_auto_conf_save() {
+
+	var limit_check = check_limit($("#auto_money").val());
+
+	if (!limit_check) {
+		alert("자동투자 설정금액은 투자자 유형별 최대 투자금액을\n초과할 수 없습니다.\n\n회원님의 최대 투자가능 금액은 <?=number_format($max_auto_amt)?>만원 입니다.");
+		return ;
+	}
+
+	<?
+	if(!$member["mb_id"]) {
+		?>
+		alert("로그인 후 이용 가능합니다.");
+		self.location.href = "<?=G5_BBS_URL?>"+"/login.php?url=" + "<?=urlencode($_SERVER[PHP_SELF])?>";
+		return;
+		<?
+	}
+	?>
+
+
+	if (!invest_warning_agree_open()) return;
+
+}
+
+function go_auto_conf_save2() {
+
+	send_data = $("#f_auto_inv").serialize();
+
+
+	$.ajax({
+		url      : "/auto_invest/ajax_auto_invest_conf_set_save.php",
+		type     : "POST",
+		dataType : "json",
+		data     : send_data,
+		success : function(data) {
+			console.log(data);
+			if (data.err_msg) { alert(data.err_msg); return; }
+			if (data.cnt_modi) {
+				alert("설정이 저장되었습니다.");
+				call_reset();
+				self.location.reload();
+			} else alert("변경된 내용이 없습니다.");
+
+		},
+		error : function (jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR);
+			//alert(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+			alert(textStatus+"\n"+errorThrown);
+		}
+	});
+}
+
+function check_limit(new_money) {
+	if (new_money*10000 > <?=$max_auto_amt?>) {
+		return false;
+	} else {
+		return true;
+	}
+}
+</script>
+
+<script type="text/javascript">
+var this_idx = "";
+function chk_tab2() {
+	var selected = chk_total_checkbox();
+	if (selected) {
+		move_tab('3');
+	} else {
+		alert("1개이상 선택해야 합니다.");
+	}
+}
+function chk_tab3() {
+	sess_set();
+	var chk_yn = false;
+<?	
+for ($i=0 ; $i<count($get_conf) ; $i++) {
+	?>
+	var chk_yn = chk_auto_money('<?=$i?>');
+	if (!chk_yn) return false;
+	<?
+}
+?>
+	
+
+	move_tab('4');
+}
+function chk_auto_money(idx) {
+	
+	if ($("#auto_money\\["+idx+"\\]").is(':disabled')) return true;
+	
+	var regex = /[0-9]|\./;
+	var tg_num = $("#auto_money\\["+idx+"\\]").val();
+	
+	if (!tg_num) {
+		alert("자동 투자 금액을 입력해 주세요.");
+		return false;
+	}
+
+	if( !regex.test(tg_num)) {
+		alert("숫자만 입력가능합니다.");
+		return false;
+	}
+	if (tg_num < 1) {
+		alert("1만원 이상만 설정 가능합니다.");
+		return false;
+	}
+	if ($("#auto_money").val()*10000 > <?=$max_auto_amt?>) {
+	<? if ($member['mb_id']) { ?>
+		$("#msg_money").html("회원님의 자동투자 가능금액은 <?=number_format($max_auto_amt/10000)?>만원이며,<br/>투자자유형 변경을 통해 투자한도를 늘릴 수 있습니다.<br/>[<a href='/mypage/mypage.php'><font style='color:blue;'>투자자 유형 변경하기</font></a>]");
+	<? } else { ?>
+		//$("#msg_money").html("소득적격, 전문투자자, 법인 회원만 500만원 초과 입력 가능합니다.<br/><a href='<?=G5_BBS_URL?>/login.php?url=<?=urlencode($_SERVER[PHP_SELF])?>'><font style='color:blue;text-decoration:underline;'>로그인</font></a> 후 이용해 주세요.<br/><br/>");
+		$("#msg_money").html("개인회원은 500만원까지 설정가능합니다.<br/>(소득적격 투자자는 2,000만원 내, 전문/법인 투자자는 제한없이 설정 가능합니다.<br/><a href='<?=G5_BBS_URL?>/login.php?url=<?=urlencode($_SERVER[PHP_SELF])?>'><font style='color:blue;text-decoration:underline;'>로그인</font></a> 후 이용해 주세요.<br/><br/>");
+	<? } ?>
+		return false;
+	}
+	return true;
+
+}
+
+function move_tab(idx,nosess) {
+
+	if (this_idx==idx) return;
+	for (var i=1 ; i<=4 ; i++) {
+		if($(".tab0"+i).hasClass('on'))  $(".tab0"+i).removeClass('on');
+		$("#auto_tab"+i).hide();
+	}
+	if (idx==4) {
+
+		if (nosess!="Y") {
+			sess_set();
+		} else {
+		}
+
+		var limit_check = check_limit($("#auto_money").val());
+		if (!limit_check) {
+			this_idx = 4;
+			move_tab(3);
+			return;
+		}
+		disp_all();
+	}
+
+	$(".tab0"+idx).addClass('on');
+	//$("#auto_tab"+idx).fadeIn();
+	$("#auto_tab"+idx).show();
+	this_idx = idx;
+
+	$(".modal-content").scrollTop(0);
+	//if (idx==3) setTimeout( function() {$(".modal-content").scrollTop(0);alert("abc");}, 1000 );
+}
+function sess_set() {
+
+<? if ($member['mb_no']) echo "return;"; ?>
+
+	send_data = $("#f_auto_inv").serialize();
+
+	$.ajax({
+		url      : "/auto_invest/ajax_sess_set.php",
+		type     : "POST",
+		dataType : "json",
+		data     : send_data,
+		success : function(data) {
+			console.log(data);
+
+		},
+		error : function (jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR);
+			//alert(jqXHR+"\n"+textStatus+"\n"+errorThrown);
+			alert(textStatus+"\n"+errorThrown);
+		}
+	});
+}
+function disp_all() {
+	var html_txt = "<div style='margin:auto 0px;'>";
+	var selected_num = 1;
+<?
+for ($i=0 ; $i<count($get_conf) ; $i++) {
+	?>
+	if ($('input[name="chk_item[<?=$i?>]"]').is(":checked")) {
+		html_txt += "<p>"+selected_num+". <?=$get_conf[$i][grp_title]?></p>";
+		selected_num += 1;
+	}
+	<?
+}
+?>
+	$("#disp_selected").html(html_txt+"</div>");
+	if ($("#auto_money").val()) {
+		var tmp_amt = number_format($("#auto_money").val()*10000);
+	} else {
+		var tmp_amt = 0;
+	}
+	$("#auto_amt").html(tmp_amt+" 원");
+}
+</script>
+<script>
+//팝업 Close 기능
+function close_pop2(flag) {
+
+	close_pop();
+	 <? if ($member['mb_no']) { ?>
+	 auto_invest_config();
+	 move_tab(2);
+	 <? } ?>
+};
+function call_reset() {
+	close_pop();
+	move_tab(2);
+}
+</script>
+
+<?
+function get_max_auto_amt() {
+	global $member;
+	$max_amt = 5000000;
+	if ($member['mb_no']) {
+		if ($member['member_investor_type']=="2") {
+			$max_amt = 20000000;
+		} else if ($member['member_investor_type']=="3") {
+			$max_amt = 9999999999;
+		}
+	}
+	return $max_amt;
+}
+?>
+
+<script>
+function invest_warning_agree_open() {
+	$.blockUI({
+		message: $('#invest_warning_agree'),
+		<? if(G5_IS_MOBILE) { ?>
+		css: { top:'1%',left:'1%', width:'98%', border:0, cursor:'default' }
+		<? } else { ?>
+		css: { top:'16%',left:'33%',width:'605px',border:0, cursor:'default' }
+		<? } ?>
+	});
+}
+function strCheck(arg) {
+	if(arg=='동의함') {
+		var agree_val = '1';
+		var class_val = 'btn_big_blue2';
+		$('#invest_warning_agree_btn').focus();
+	}
+	else {
+		var agree_val = '';
+		var class_val = 'btn_big_blue2 off';
+	}
+	$('#_agree').val(agree_val);
+	$('#invest_warning_agree_btn').attr('class', class_val);
+}
+
+$('#invest_warning_agree_btn').click(function() {
+	if( $('#_agree').val()!='1' ) {
+		alert('빈칸에 "동의함"을 정확히  입력해 주셔야 자동투자 설정이 가능합니다.');
+	}
+	else {
+
+		$.unblockUI();
+		$('#str').val("");
+		$('#yn_agree').val($('#_agree').val());
+		$('#_agree').val("");
+		go_auto_conf_save2();
+	}
+});
+</script>
+<script>
+var msg = "헬로펀딩은 가맹점에서 발생한 확정매출액을 담보로 대출하며, 카드사의 확정정산대금을 지급받아 영업일 기준 1~3일만에 상환받는 초단기 상품입니다.";
+$('#det_8').webuiPopover({ title: "<center>소상공인 확정매출채권</center>", content: msg, closeable: true, width: 780, trigger: "click", placement: 'bottom', backdrop: false, animation:'pop'});
+
+var msg = "헬로펀딩의 동산담보 상품은 헬로펀딩의 안전금고에 보관되며, 연체 및 부실 발생시 매입업체를 통해 즉시 매각하여 상환됩니다.";
+/* $('#det_7').webuiPopover({ title: "동산담보", content: msg, closeable: true, width: 330, height: 50, trigger: "click", placement: 'bottom', backdrop: false}); */
+$('#det_7').webuiPopover({ title: "<center>동산담보</center>", content: msg, closeable: true, width: 700, trigger: "click", placement: 'bottom', backdrop: false, animation:'pop'});
+
+var msg = "본 상품은 소상공인 확정매출채권 외에 온라인, 오프라인, 면세점 등에서 발생한 확정매출채권을 담보로 대출하며, 확정된 정산대금으로 상환받는 상품입니다.";
+/* $('#det_9').webuiPopover({ title: "면세점 매출채권", content: msg, closeable: true, width: 330, height: 50, trigger: "click", placement: 'bottom', backdrop: false}); */
+$('#det_9').webuiPopover({ title: "<center>헬로페이 (확정매출채권)</center>", content: msg, closeable: true, width: 780, height: 35, trigger: "click", placement: 'bottom', backdrop: false, animation:'pop'});
+
+var msg = "헬로펀딩의 부동산 담보 상품은 준공자금, ABL, 브릿지, NPL 상품 등으로 구성되어 있으며, 담보의 근저당권, 우선수익권 등 권리설정을 통해 안전장치를 마련합니다.<br/><br/>*본 상품은 투자에 대한 금리, 기간, 권리설정이 다양하므로 상품출시 후 48시간의 유예기간 내 투자설명을 숙지하시어 자동투자 여부를 결정하시기 바랍니다.";
+// $('#det_11').webuiPopover({ title: "부동산 담보", content: msg, closeable: true, width: 330, height: 50, trigger: "click", placement: 'bottom', backdrop: false});
+$('#det_11').webuiPopover({ title: "<center>부동산 담보</center>", content: msg, closeable: true, width: 750, height: 95, trigger: "click", placement: 'bottom', backdrop: false, animation:'pop'});
+
+var msg = "LTV 85% 이하의 서울 및 수도권, 6대 광역시, 세종시 등 주요지역 아파트 및 서울 오피스텔,다세대 담보 상품을 취급합니다.";
+$('#det_12').webuiPopover({ title: "<center>주택 담보</center>", content: msg, closeable: true, width: 720, height: 35, trigger: "click", placement: 'bottom', backdrop: false, animation:'pop'});
+</script>
+<script type="text/javascript">
+function open_pop(flag) {
+	$('#myModal').show();
+	$('html').css('overflow','hidden');
+};
+//팝업 Close 기능
+function close_pop(flag) {
+	$('#myModal').hide();
+	$('html').css('overflow','visible');
+};
+</script>
+<script>
+function chk_num(ind) {
+	var t_num = ($('input[name="auto_money['+ind+']"]').val());
+	var chk_res = onlyNumb(t_num);
+	if (!chk_res) {
+		var fix_num = t_num.replace(/[^0-9]/,'');
+		$('input[name="auto_money['+ind+']"]').val(fix_num);
+		alert("숫자만 입력가능합니다.");
+	}
+}
+function onlyNumb(x) {
+
+	var anum=/^[0-9]*$/;
+	var ch_res = false;
+
+	if (anum.test(x)) {
+		ch_res = true;
+	} else {
+		ch_res = false;
+		//document.f_auto_inv.auto_money.value = x.replace(/[^0-9]/,'');
+		//alert("숫자만 입력가능합니다.");
+	}
+	return ch_res;
+}
+</script>

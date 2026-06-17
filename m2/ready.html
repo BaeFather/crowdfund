@@ -1,0 +1,82 @@
+<?php include_once('/home/crowdfund/public_html/m2/inc/meta.php');?>
+
+<div id="wrap">
+
+	<?php include_once('/home/crowdfund/public_html/m2/inc/header.php');?>
+
+	<div id="container">
+		<!-- 비주얼 -->
+		<img src="images/sub_ready.jpg" alt="헬로펀딩 투자자가 작은 금액들을 모아서 함께 투자하는 새로운 투자 방식입니다." />
+
+		<div id="content">
+			<div class="location"><b class="blue">헬로펀딩</b></div>
+
+			<div class="content">
+				<div class="ready">
+					<img src="images/icon_ready.gif" alt="ready" />
+					<div class="title">홈페이지 준비중입니다.</div>
+					<div class="text">현재 홈페이지가 준비중에 있습니다.<br>빠른시일 내에 서비스를 제공할 수 있도록  노력하겠습니다.<br>감사합니다.</div>
+					<a href="#" class="btn_big_link" >메인으로</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="footLogo">HELLOFUNDING</div>
+		헬로펀딩
+		<ul class="footLink">
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보취급방침</a></li>
+			<li><a href="#">담보채권원리금수취권매매서비스약관</a></li>
+		</ul>
+
+		<ul class="SNS">
+			<li><a href="#"><img src="images/btn_face.gif" alt="facebook" /></a></li>
+			<li><a href="#"><img src="images/btn_naver.gif" alt="naver" /></a></li>
+			<li><a href="#"><img src="images/btn_k.gif" alt="k" /></a></li>
+			<li><a href="#"><img src="images/btn_call.gif" alt="call" /></a></li>
+		</ul>
+	</div>
+
+</div>
+
+<div id="complete" class="break">
+	<img src="../images/btn_close.gif" alt="close" class="close" />
+	<div class="title">회원탈퇴완료</div>
+	<div class="text pT50">회원탈퇴가 정상적으로 완료되었습니다.</div>
+	<a href="../index.html" class="btn_big_link">메인으로</a>
+</div>
+
+<script>
+$(document).ready(function(){
+
+	$('#check').click(function() {
+		$.blockUI({
+			message: $('#complete'),
+			css: { border:0, cursor:'default' } });
+
+		/*
+		$.ajax({
+			url: 'wait.php',
+			cache: false,
+			complete: function() {
+				// unblock when remote call returns
+				$.unblockUI();
+			}
+		});
+		*/
+
+	});
+
+	$('#complete #yes, #complete .close').click(function() {
+		$.unblockUI();
+		return false;
+	});
+
+});
+</script>
+
+</body>
+</html>

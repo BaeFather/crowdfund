@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>이정준 투자자님</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+		
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/site.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+
+		
+    </head>
+	
+	
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="review-interview">	
+			<div class="container-fluid">
+                <div class="content">
+					<div class="top">
+						<img class="mobile" src="/assets/images/interview/review/review-14-ma.jpg" alt="투자자 이정준님">
+							<div class="top-text" style="background-color: #5b75b4;">
+								<p>수익률과 안정성, <br class="br2">모두 포기 못한다면 헬로펀딩!</p>
+								<p>투자기간 : 22개월<br>투자관리 : P2P, 주식(미국/국내), 코인, 주택청약</p>
+							</div>
+						<img class="web" src="/assets/images/interview/review/review-14-a.jpg" alt="투자자 이정준님">
+					</div>
+					<div class="text">
+						<h5 class="mt-0">P2P 투자에 대한 불안함, <br class="br2"> 헬로펀딩이 해결해 주었습니다.</h5>
+						<p>안녕하세요. 저는 19년도 8월부터 헬로펀딩과 함께한 이정준이라고 합니다.
+							P2P 투자를 시작한 것은 더 이전이지만 입문했던 업체에서 처음으로 연체와 원금 손실이 발생하여 새로운 업체를 찾아야 했습니다.  
+						</p>
+						<p><span style="color:#5b75b4; font-weight: 400;">"누적 대출액이 큰 대형업체이면서도 연체율이 낮은 안전한 업체를 찾다 보니 헬로펀딩을 알게 되었죠.”</span> </p>
+						<p>하지만 손실을 겪고 난 직후이다 보니 100%의 확신은 없어 투자를 망설이다가 투자 기간이 짧고 매출이 확정된 채권만 취급 
+							하는 ‘헬로페이’ 상품을 보고 투자를 결정하게 되었는데요, 처음엔 소액으로 진행하다가 은행에 비해 훨씬 높은 수익률을 제공
+							하면서도 꾸준히 원금과 이자가 들어오는 걸 보고 투자 금액을 조금씩 늘려 나갔습니다.
+						</p>
+						
+						<h5>매일 같은 시간에 모집을 시작하니 <br class="br2"> 어렵지 않게 투자를 진행할 수 있어요.</h5>
+						<p>투자 수단으로는 부동산, 채권, 주식, 펀드, 예금 등 다양한 방법이 있죠. <br>
+							하지만 모든 목적은 수익을 내기 위함이 아니겠어요? <br>
+							그래서 전 개인적으로 리스크가 좀 있더라도 수익률이 높은 투자 수단을 선호하는 편입니다.
+						</p>
+						<p>주식, P2P 펀드와 같은 다소 공격적인 투자 수단을 선택했지만 그 안에서는 안정적인 부분에 무게를 두고 있어서 주식은 
+							장기적으로 배당금을 늘려온 역사가 있거나 꾸준히 상승해온 미국 배당주와 기술주, 우량 국내주를 선택했고 P2P 펀드는 
+							헬로펀딩과 같이 대출 금액 규모가 크고 연체율이 낮은 대형 업체들에만 투자하고 있습니다. 
+						</p>
+						<img class="mobile mt-2 mb-4" src="/assets/images/interview/review/review-14-mb.png" alt="투자자 이정준님">
+						<p>현재 주식에 있어서는 한 번 들어간 돈은 웬만해선 빼지 않는 장기투자를 선호하기 때문에 계좌에 돈을 넣는 것 자체에 굉장히 
+							신중해지는데 고민하는 기간 동안, 또는 여윳돈을 불리기 위한 용도로 P2P에 투자하고 있습니다.
+						</p>
+						<p>그리고 대학원에 재학 중이다 보니 시간을 많이 요하지 않는 투자처가 필요하기도 했습니다.<br>
+							주식은 새벽에 매수를 결정하는 편이라 크게 어려움이 없었으나 그 외 수단에선 제약이 있을 수도 있겠죠. <br>
+							하지만 헬로펀딩은 매일 소상공인 확정 매출채권이나 온라인 쇼핑몰 확정 매출채권이 11시 20분이나 11시 30분쯤 모집을 
+							시작합니다. 딱 점심시간 전이라 이 타이밍에 잠깐 쉬면서 투자를 진행하기 때문에 심각하게 바쁜 상황이 아니면 매일 어렵지 
+							않게 투자를 진행할 수 있는 거죠. <br>
+							만일 이 시간대를 놓친다면 14시에도 상품이 열리는 경우가 있어 이를 잘 활용하고 있습니다. 
+						</p>
+
+						<div class="column">
+							<div class="text">
+								<h5>정준님의 재테크 TIP</h5>
+								<p>저는 수익률과 안정성을 6 : 4 정도로 중요하게 생각합니다.<br>
+									은행 이자 이상의 수익률은 당연하고 최소한 주식 시장 평균 수익률 정도를 목표로 잡고 있습니다. <br>
+									이전에 큰돈을 잃은 경험이 있어 안정성도 무시할 수 없고요.<br> 
+									무엇보다 투자는 이득을 보기 위해 하는 것이라 원금을 잃지 않는것이 가장 중요하니까요. 
+								</p>
+								<p>경제적으로 큰 하락이 보통 10년 주기로 온다는 얘기가 있습니다.
+									개인적으로 이전 금융위기나 IMF, 이번 코로나19처럼 큰 위기가 닥치면 투자에 있어선 곧 기회가 될 것이라 생각하는데요. 
+									이번엔 자산 대부분이 주식에 묶여있었기 때문에 미리 준비를 하지 않으면 기회가 온다는 것을 알아도 잡을 수 없다는 걸 느끼게 되었습니다.
+								</p>
+							</div>	
+							<img class="mobile img2  mt-2 mb-4" src="/assets/images/interview/review/review-14-mc.png" alt="투자자 이정준님">
+							<img class="web img2" src="/assets/images/interview/review/review-14-b.png" alt="투자자 이정준님">
+						</div>
+						<p>그래서 앞으로 취업 후 일정한 수입이 생기면 예/적금을 전체의 30~50% 수준으로 끌어올릴 예정이고 제 목표를 이루는 데엔 
+							헬로펀딩이 큰 역할이 될 것 같습니다. 헬로펀딩은 상품군이 다양해서 소액도 초단기로 투자할 수 있는 최고의 재테크 수단
+							이니까요!
+						</p>
+						<p><span style="color:#5b75b4; font-weight: 400;">
+						   “저는 헬로펀딩 상품들 중에서도 헬로페이를 애용하고 있습니다.”<br>
+							투자 기간이 짧게는 2일에서 길게는 6일을 넘지 않고 상품 이름에서부터 안정적이라는 느낌이 드는데 실제로도 아직까지
+							단 한 건의 연체도 발생하지 않아서 계속해서 신뢰도가 높아지고 있습니다.</span> 
+						</p>
+						<p>부동산 PF, 주택 담보 상품에 비해서는 수익률이 낮다고 볼 수 있겠지만 저는 제 상황에 맞게 단기적으로 운용할 수 있는 상품
+							으로서 수익률과 리스크를 모두 고려해도 상당히 괜찮은 상품이라고 생각합니다.
+						</p>
+						<div class="column type-right">
+							<img class="mobile img1" src="/assets/images/interview/review/review-14-md.jpg" alt="투자자 이정준님">
+							<img class="web img1" src="/assets/images/interview/review/review-14-c.jpg" alt="투자자 이정준님">
+							<div class="text">
+								<h5>P2P 투자, 망설여진다면 이렇게 생각하세요.</h5>
+								<p><span style="color:#5b75b4; font-weight: 400;">“헬로펀딩이 좋은 선택지가 될 수 있을 것 같습니다. ”</span><br> 
+									제가 헬로와 함께한 2년 동안, 저는 단 한 번의 연체나 원금 손실이 없었습니다. 물론 과거의 기록이 미래를 보장하는 것은 아니지만 
+									온투업법이 시행되면서 P2P금융이 제도권 금융이 되어 부실한 기업은 어느 정도 정리가 된 상황이라고 생각합니다.<br>
+									때문에 지금까지 영업을 잘 해오고 있는 헬로펀딩이라면 용기를 내보는 것도 좋지 않을까요?
+								</p>
+								<p>주식은 위험해서 싫고 부동산은 큰돈이 필요해서 어떻게 투자를 시작해야 할지 모르겠다 하는 분들에게 제법 좋은 선택지가 될 수
+								   있을 것 같습니다. 
+								</p>
+								<h5 style="margin-top:50px;">나에게 헬로펀딩이란</h5>
+								<p>잔돈마저 불려주는 나만의 펀드매니저!</p>
+							</div>	
+						</div>
+						
+						
+
+						<div class="back-btn">
+							<button class="btn">back</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+    </body>
+
+</html>

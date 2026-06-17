@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*헬로펀딩 투자자 데이터*/
+#invest_data .tbg {width:94%;border-radius:8px;margin:0 auto;background-color:#00a0e9;font-family:'spoqahansans' !important;}
+#invest_data .tbg tr {border-bottom:1px solid #41c3ff;font-family:'spoqahansans' !important;}
+#invest_data .tbg td {font-family:'spoqahansans' !important;}
+#invest_data .tbg tr:last-child {border-bottom:0px solid #d9e8f0;font-family:'spoqahansans' !important;}
+#invest_data .data_info {color:#fff;font-size:11px;font-family:'spoqahansans' !important;font-weight:400;text-align:center;line-height:20px;}
+#invest_data .data_info span {display:block;color:#fff;font-size:16px;font-family:'spoqahansans' !important;font-weight:700;line-height:20px;}
+#invest_data .data_info2 {color:#fff;font-size:11px;font-family:'spoqahansans' !important;font-weight:400;text-align:center;line-height:20px;border-bottom:0px solid #41c3ff;}
+#invest_data .data_info2 span {display:block;color:#fff;font-size:16px;font-family:'spoqahansans' !important;font-weight:700;line-height:20px;}
+#invest_data .r_line{border-right:1px solid #41c3ff;height:70px;}
+#invest_data .data_bot {width:94%;color:#313131;font-size:12px;font-family:'spoqahansans';margin:0 auto;text-align:center;padding:20px 0 40px 0;line-height:20px;}
+#invest_data .data_info b {width:15px;height:15px;border-radius:50%;background-color:#fff;font-size:12px;font-family:'spoqahansans';font-weight:400;color:#000;display:inline-block;line-height:15px;vertical-align:top;margin-top:2px;}
+#invest_data .data_info2 b {width:15px;height:15px;border-radius:50%;background-color:#fff;font-size:12px;font-family:'spoqahansans';font-weight:400;color:#000;display:inline-block;line-height:15px;vertical-align:top;margin-top:2px;}
+
+#vip_member {width:100%; text-align:center; display:inline-block;}
+
+@media screen and (max-width:320px) {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:102px;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:80%; border:0px solid royalblue}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:102px;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:90%; border:0px solid royalblue}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:102px;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:3%; z-index:5; width:80%; border:0px solid royalblue}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:102px;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:80%; border:0px solid royalblue}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:102px;cursor:pointer; border:0px solid royalblue}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:80%; border:0px solid royalblue}
+
+	/*
+	#content #member_m06 {position:absolute;margin-top:348px;margin-left:240px;width:75px;height:25px;cursor:pointer; border:0px solid royalblue}
+	#content #member_m_info6 {display:none;position:absolute;margin-top:385px;margin-left:130px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:12px; line-height:20px; border:0px solid royalblue}
+	.member_m_info p {font-size:10px;font-family:'spoqahansans' !important;line-height:12px;}
+}
+
+@media screen and (min-width:321px) and (max-width:360px) {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:116px;cursor:pointer; border:0px solid red}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:80%; border:0px solid red}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:116px;cursor:pointer; border:0px solid red}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:90%; border:0px solid red}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:23.5%;width:25%;height:116px;cursor:pointer; border:0px solid red}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:18%; z-index:5; width:80%; border:0px solid red}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:116px;cursor:pointer; border:0px solid red}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:80%; border:0px solid red}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:116px;cursor:pointer; border:0px solid red}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:80%; border:0px solid red}
+
+	/*
+	#content #member_m06 {position:absolute;margin-top:348px;margin-left:240px;width:75px;height:25px;cursor:pointer; border:0px solid red}
+	#content #member_m_info6 {display:none;position:absolute;margin-top:385px;margin-left:130px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:14px; line-height:22px; border:0px solid royalblue}
+	.member_m_info p {font-size:11px;font-family:'spoqahansans' !important;line-height:14px;}
+}
+
+@media screen and (min-width:361px) and (min-width:374px) {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:120px;cursor:pointer; border:0px solid green}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:70%; border:0px solid green}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:120px;cursor:pointer; border:0px solid green}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:80%; border:0px solid green}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:120px;cursor:pointer; border:0px solid green}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:3%; z-index:5; width:70%; border:0px solid green}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:120px;cursor:pointer; border:0px solid green}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:70%; border:0px solid green}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:120px;cursor:pointer; border:0px solid green}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:70%; border:0px solid green}
+
+	/*
+	#content #member_m06 {position:absolute;margin-top:358px;margin-left:240px;width:75px;height:25px;cursor:pointer; border:0px solid green}
+	#content #member_m_info6 {display:none;position:absolute;margin-top:395px;margin-left:130px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:14px; line-height:22px; border:0px solid royalblue}
+	.member_m_info p {font-size:12px;font-family:'spoqahansans' !important;line-height:14px;}
+}
+
+@media screen and (min-width:375px) and (min-width:400px) {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:130px;cursor:pointer; border:0px solid blue}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:70%; border:0px solid blue}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:130px;cursor:pointer; border:0px solid blue}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:80%; border:0px solid blue}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:130px;cursor:pointer; border:0px solid blue}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:3%; z-index:5; width:70%; border:0px solid blue}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.8%;width:25%;height:130px;cursor:pointer; border:0px solid blue}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:70%; border:0px solid blue}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:130px;cursor:pointer; border:0px solid blue}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:70%; border:0px solid blue}
+
+	/*(
+	#content #member_m06 {position:absolute;margin-top:389px;margin-left:280px;width:75px;height:25px;cursor:pointer; border:0px solid blue}
+	#content #member_m_info6 {display:none;position:absolute;margin-top:422px;margin-left:135px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:14px; line-height:22px; border:0px solid royalblue}
+	.member_m_info p {font-size:12px;font-family:'spoqahansans' !important;line-height:16px;}
+}
+
+
+@media screen and (min-width:401px) and (max-width:414px)  {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:130px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:70%; border:0px solid magenta}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:130px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:80%; border:0px solid magenta}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:130px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:3%; z-index:5; width:70%; border:0px solid magenta}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.5%;width:25%;height:130px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:70%; border:0px solid magenta}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:130px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:70%; border:0px solid magenta}
+
+	/*
+	#vip_member #member_m06 {position:absolute;margin-top:405px;margin-left:280px;width:75px;height:25px;cursor:pointer; border:0px solid magenta}
+	#vip_member #member_m_info6 {display:none;position:absolute;margin-top:435px;margin-left:135px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:14px; line-height:22px; border:0px solid royalblue}
+	.member_m_info p {font-size:12px;font-family:'spoqahansans' !important;line-height:16px;}
+}
+
+@media screen and (min-width:415px)  {
+	#vip_member #member_m01 {position:absolute;margin-top:39%;margin-left:23.5%;width:25%;height:1.1%;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info1 {display:none;position:absolute;margin-top:64.2%;margin-left:18%; z-index:5; width:40%; border:0px solid brown}
+
+	#vip_member #member_m02 {position:absolute;margin-top:39%;margin-left:50.7%;width:25%;height:1.1%;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info2 {display:none;position:absolute;margin-top:64.2%;margin-left:8%; z-index:5; width:50%; border:0px solid brown}
+
+	#vip_member #member_m03 {position:absolute;margin-top:73.8%;margin-left:10.2%;width:25%;height:1.1%;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info3 {display:none;position:absolute;margin-top:99.4%;margin-left:3%; z-index:5; width:40%; border:0px solid brown}
+
+	#vip_member #member_m04 {position:absolute;margin-top:73.8%;margin-left:37.5%;width:25%;height:1.1%;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info4 {display:none;position:absolute;margin-top:99.4%;margin-left:6%; z-index:5; width:40%; border:0px solid brown}
+
+	#vip_member #member_m05 {position:absolute;margin-top:73.8%;margin-left:64.8%;width:25%;height:1.1%;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info5 {display:none;position:absolute;margin-top:99.4%;margin-left:20%; z-index:5; width:40%; border:0px solid brown}
+
+	/*
+	#vip_member #member_m06 {position:absolute;margin-top:405px;margin-left:280px;width:75px;height:25px;cursor:pointer; border:0px solid brown}
+	#vip_member #member_m_info6 {display:none;position:absolute;margin-top:435px;margin-left:135px; z-index:5; width:55%;}
+	*/
+
+	.member_m_info {display:none;position:absolute;z-index:5;overflow:hidden; margin:45% 0 0 0; width:92%; height:55%;background:url('/images/company/profile/pro_bg.png') center bottom;color:#fff;padding:5% 5% 0;font-family:'spoqahansans' !important;font-size:14px; line-height:22px; border:0px solid royalblue}
+	.member_m_info p {font-size:12px;font-family:'spoqahansans' !important;line-height:16px;}
+}
+
+table {border-collapse: collapse;}
+div.members {position:absolute; display:none;}
+div.members img {width: 300px;z-index:10;}
+
+#content .content2 { padding:0 0 20px 0 !important; }
+
+.profile {width:95%; margin:0 auto;}
+.profile  ul {padding-top:1.5%; clear:both;}
+.profile  ul li {float:left;width:50%;padding-right:1.5%;}
+
+.member_m {position:absolute; margin:0px; width:50%;height:1.6%;cursor:pointer;overflow:hidden;}

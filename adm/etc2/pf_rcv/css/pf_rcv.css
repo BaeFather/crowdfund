@@ -1,0 +1,44 @@
+
+/* list */
+#frmPfRcvSearch .srch-option {overflow: hidden;}
+#frmPfRcvSearch .srch-option .srch-option-title {padding: 0; margin: 0; display: inline-block; padding: 10px 10px 10px 0;}
+#frmPfRcvSearch .srch-option .checkbox-inline {padding-top: 0;}
+#frmPfRcvSearch .srch-list {margin-top: 15px;}
+#frmPfRcvSearch .srch-list thead tr {border: 1px solid #ddd; border-collapse: collapse;}
+#frmPfRcvSearch .srch-list tbody {font-size: 13px;} 
+#frmPfRcvSearch .srch-list tbody td {text-align: center;}
+#frmPfRcvSearch .srch-list tbody td.txt-right {text-align: right;}
+
+/* form */
+/********* 정보 입력 폼 *********/
+#frmPfRcv {width: 80%; min-width: 1240px;}
+#frmPfRcv input.read-input {border: none; box-shadow: none; pointer-events: none; background-color: #fff;}
+#frmPfRcv .info-title {font-size: 20px; font-weight: 700; letter-spacing: -1px; padding: 5px 0 0; color: #0d3252;}
+#frmPfRcv .info-title::before {content: ''; display: inline-block; width: 5px; height: 16px; margin-right: 7px; background-color: #0d3252;}
+#frmPfRcv .frm-info {text-align: left;}
+#frmPfRcv .frm-info tr td {font-size: 13px; text-align: left;}
+#frmPfRcv .frm-info tr td.rate {padding: 5px 15px;}
+#frmPfRcv .frm-info tr td.rate input {width: 50px; display: inline;}
+#frmPfRcv .frm-info tr td.loan-date input {width: 100px; display: inline; text-align: center;}
+#frmPfRcv .frm-info input[name=loan_amount], #frmPfRcv .frm-info input[name=yet_amount] {display: inline; width: auto;}
+#frmPfRcv .frm-info .comment-txtarea {width: 100%; list-style: none; padding: 0; margin: 10px 0 20px; display: flex;}
+#frmPfRcv .frm-info .comment-txtarea li:first-child {flex: 5;}
+#frmPfRcv .frm-info .comment-txtarea li:first-child textarea {width: 100%; height: 60px;}
+#frmPfRcv .frm-info .comment-txtarea li:last-child {flex: 1; margin-left: 15px;}
+#frmPfRcv .frm-info .comment-txtarea li:last-child button {width: 100%; height: 100%;}
+#frmPfRcv .frm-info tr th .more-info {margin: 0; padding: 0; cursor: pointer;}
+#frmPfRcv .memo-wrap table tbody tr td {font-size: 12px;}
+#frmPfRcv .memo-del-btn {background-color: #a1a1a1; color: #fff; border-radius: 3px; display: inline-block; padding: 3px 10px; margin: 0; cursor: pointer;}
+#frmPfRcv .btn-wrap {text-align: center; margin: 50px 0 70px;}
+#frmPfRcv .btn-wrap .btn-delete {border: 1px solid #919191; background-color: #a1a1a1; color: #fff;}
+#frmPfRcv .btn-add {float: left; margin: 10px 0; border: 1px solid #ccc; padding: 5px 8px; border-radius: 3px; color: #1a1a1a; cursor: pointer; text-decoration: none; line-height: 1.5;}
+#frmPfRcv .btn-del {font-size: 12px; height: 100%; display: inline-block; margin: 10px 13px; cursor: pointer;}
+/* 파일 관련 */
+#frmPfRcv #fileupload {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
+#frmPfRcv label[for='fileupload'] {display: inline-block; padding: .5em .75em; margin:0; font-size: 12px; color: #fff; font-weight: 500; line-height: normal; background-color: #337ab7; cursor: pointer; border-radius: .25em; float: right;}
+#frmPfRcv .file_del_btn, .upload_file_delbtn {color: #777; cursor: pointer; text-decoration: none; border: 1px solid #ccc; border-radius: 5px; font-size: 11px; padding: 3px 5px; line-height: 2.5; margin-left: 3px;}
+#frmPfRcv #fileList div {line-height: 2;}
+#frmPfRcv .file_name_test {margin: 0; padding: 0;}
+/********* 해당 상품 동일 차주 상품 리스트 *********/
+#PrdList {width: 80%; min-width: 1240px; text-align: center; border: 1px solid #ddd; margin-bottom: 20px;}
+#PrdList tr td {font-size: 12px; vertical-align: middle;}

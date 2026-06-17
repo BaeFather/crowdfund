@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+			
+/*************************************왼쪽메뉴******************************************/
+
+.wrapper .left-side-menu {background-color: #fff!important; width:200px; box-shadow: none; background: none; letter-spacing: -0.5px; border-right:#ddd;}
+.wrapper .left-side-menu .h-100 {border-right:1px solid #ddd;}
+.wrapper .left-side-menu .side-nav .header-manu a {color:#555!important; font-size:.9rem;}
+.wrapper .left-side-menu .side-nav .side-nav-link {padding:10px 20px; background-color: #f3f3f3; color:#555!important; border-bottom:1px solid #ddd;}
+.wrapper .left-side-menu .side-nav .side-nav-link .menu-arrow {right:20px;}
+.wrapper .left-side-menu .side-nav .side-nav-second-level a {color:#888!important; padding:5px 20px; font-size:.825rem;}
+.wrapper .left-side-menu .side-nav .side-nav-second-level li:first-child {margin-top:10px;}
+.wrapper .left-side-menu .side-nav .side-nav-second-level li:last-child {margin-bottom:10px;}
+.wrapper .left-side-menu .side-nav .side-nav-third-level li:first-child {margin-top:0;}
+.wrapper .left-side-menu .side-nav .side-nav-third-level li:last-child {margin-bottom:0;}
+.wrapper .left-side-menu .side-nav .side-nav-second-level a:hover, .left-side-menu .side-nav .side-nav-second-level a:focus, .left-side-menu .side-nav .side-nav-second-level a:active {color:#222!important; font-weight: 600;}
+.wrapper .left-side-menu .side-nav .side-nav-second-level .side-nav-item .menu-arrow {right:20px;}
+.wrapper .left-side-menu .side-nav .side-nav-third-level {padding-left:10px;}
+			
+
+
+
+/************************************상단바******************************************/
+
+.wrapper .content-page .navbar-custom {left:0; box-shadow: none; background-color: #393b3f;}
+.wrapper .content-page .navbar-custom .topbar-right-menu .nav-link {margin:0 5px;}
+
+/*로고*/
+.wrapper .content-page .navbar-custom .logo {display: none;} 
+
+/*알람*/
+.wrapper .content-page .navbar-custom .notification-list .mdi-bell-outline { font-size:22px; color:#fefefe; line-height: 70px;}
+.wrapper .content-page .navbar-custom .notification-list .noti-icon-badge {width:6px; height:6px; right:7px; top:30px;}
+
+/*유저*/
+.wrapper .content-page .navbar-custom .notification-list .nav-user {padding:0!important; background-color: #393b3f;  color:#fff!important; border:none; line-height: 69px;}
+.wrapper .content-page .navbar-custom .notification-list .nav-user .account-user-name {display:inline-block; margin-right:20px;}
+.wrapper .content-page .navbar-custom .notification-list .nav-user .account-position {display:inline-block;}
+		
+/*모바일메뉴버튼*/
+.wrapper .content-page .navbar-custom .button-menu-mobile {color:#fff;}
+.wrapper .content-page .navbar-custom .button-menu-mobile.disable-btn {display:inline-block;}
+			
+
+
+
+
+
+
+
+
+
+@media (min-width:900px){
+	
+/*************************************왼쪽메뉴******************************************/	
+.wrapper .left-side-menu {padding-top:50px;}
+	
+	
+/************************************상단바******************************************/	
+	
+.wrapper .content-page .navbar-custom .logo {display:block; line-height:50px;} 
+.wrapper .content-page .navbar-custom {min-height: 50px;}	
+.wrapper .content-page .navbar-custom .topbar-right-menu li {max-height:50px;}
+.wrapper .content-page .navbar-custom .notification-list .mdi-bell-outline {line-height:50px;}	
+.wrapper .content-page .navbar-custom .notification-list .noti-icon-badge { top:21px;}	
+.wrapper .content-page .navbar-custom .notification-list .nav-user {min-height: 50px; line-height: 49px; }	
+.wrapper .content-page .navbar-custom .button-menu-mobile.disable-btn {display:none;}		
+	
+}

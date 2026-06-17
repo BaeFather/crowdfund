@@ -1,0 +1,299 @@
+/***************************************
+             투자후기 이벤트
+***************************************/
+.event-review p, .event-review a, .event-review span , .event-review th , .event-review td , .event-review div, .event-review button, .event-review h4, .event-review h5, .event-review a ,.event-review ul li , .event-review .active{font-family:"NotoSansKR", sans-serif;  margin: 0;}
+
+.event-review {margin-top:30px; padding:0 1rem;}
+.event-review .container-fluid {padding:0;}
+
+/*상단타이틀 및 날짜*/
+.event-review .container-fluid .event-tit {display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid #222;padding-bottom:.5rem; }
+.event-review .container-fluid .event-tit p:first-child {font-size:1.1rem; color:#222;  }
+.event-review .container-fluid .event-tit p:last-child {font-size:.9rem; color:#777; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; }
+
+
+/*상단이미지*/
+.event-review .container-fluid .web-img {display:none;}
+.event-review .container-fluid .m-img img {width:100%;}
+
+
+/*타이틀*/
+.event-review .container-fluid h4 {font-weight:400; color:#222; font-size:1.2rem; margin:1rem 0 2rem; line-height: 1.6rem; letter-spacing: -.5px;}
+.event-review .container-fluid h4 span { color:#00a9a1;}
+
+
+/*이벤트 정보*/
+.event-review .container-fluid .event-info .tit {font-size:1rem; color:#222; font-weight: 500; margin-top:2rem;}
+.event-review .container-fluid .event-info .txt {font-size:1rem; color:#555; font-weight: 300; letter-spacing: -.5px; }
+.event-review .container-fluid .event-info .txt span {font-weight: 500;}
+
+
+/*이벤트 참여방법*/
+.event-review .container-fluid .review-type h4 {font-weight:400; color:#222; font-size:1.2rem; margin:4rem 0 1rem;  border-bottom:1px solid #222; padding-bottom:.5rem;}
+.event-review .container-fluid .review-type .point {font-size:1rem; color:#ee321f; font-weight:500; line-height: 1.2rem; margin-bottom:2rem;}
+.event-review .container-fluid .review-type div	{margin-bottom:3rem;}
+.event-review .container-fluid .review-type div h5 {font-size:1.1rem; color:#222; font-weight: 500; letter-spacing: -.5px;}
+.event-review .container-fluid .review-type .tit {font-size:1.05rem; color:#222; font-weight: 400; margin-top:.5rem; letter-spacing: -.5px; line-height: 1.4rem; }
+.event-review .container-fluid .review-type .description {font-size:.95rem; line-height: 1.2rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; margin:1rem 0 0; letter-spacing: -.5px; }
+
+.event-review .container-fluid .review-type .txt {position: relative; padding-left:10px; font-size:.9rem; line-height:1.3rem; color:#555;  letter-spacing: -.5px; font-weight: 400;}
+.event-review .container-fluid .review-type .txt span {font-weight:500; color:#222;}
+.event-review .container-fluid .review-type .dot::before {width:5px; height:1px;  content:" "; position: absolute; left:0; top:10px;}
+.event-review .container-fluid .review-type .color::before {background-color:#555;}
+
+
+/*버튼*/
+.event-review .container-fluid .review-type button {font-size:.95rem; color:#fff; border:none; padding:.7rem; width:100%; border-radius:30px; font-weight: 400; margin:2rem 0 3rem;}
+.event-review .container-fluid .review-type .interview button {background-color:#0b318f; }
+.event-review .container-fluid .review-type .recommendation-comment button {background-color:#007042;}
+.event-review .container-fluid .review-type .sns button {background-color:#7a2183;}
+
+.event-review .container-fluid .back-btn {width:100%; padding:0; margin:1rem 0;}
+.event-review .container-fluid .back-btn button {font-size:1.1rem; color:#fff; border:none;  width:100%;  padding:.7rem; border-radius:30px; font-weight: 400; margin:3rem 0; background-color:#555; }
+
+
+/*하단 공지*/
+.event-review .container-fluid .event-notice {padding:3px; margin-bottom:3rem;}
+.event-review .container-fluid .event-notice h4 {font-weight:400; color:#222; font-size:1.2rem; margin:0 0 1rem;  border-bottom:1px solid #222; padding-bottom:.5rem;}
+.event-review .container-fluid .event-notice .notice {position: relative; padding-left:10px; margin-bottom:10px; font-size:.85rem;  color:#555; font-weight: 400; }
+.event-review .container-fluid .event-notice .sub {padding-left:20px; font-size:.85rem;  color:#555; font-weight: 400; }
+.event-review .container-fluid .event-notice .top {margin-top:1rem;}
+.event-review .container-fluid .event-notice .bottom {margin-bottom:1rem;}
+.event-review .container-fluid .event-notice .dot::before {width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:10px;}
+.event-review .container-fluid .event-notice .color::before {background-color:#333;}
+
+
+
+/*공통 모달커스텀*/
+.modal {padding-right: 0!important; }
+.modal .modal-dialog {max-width:450px!important; margin:auto; padding:.5rem; border-radius: 1rem;}
+.modal .modal-content .modal-header {padding:.7rem 1rem; align-items: center;}
+.modal .modal-content .modal-header h4 {font-size:1rem; color:#333; font-family:"NotoSansKR", sans-serif; font-weight: 500; letter-spacing: -.5px; }
+.modal .modal-content .modal-header .close {font-size:1rem; color:#333;}
+.modal .modal-content .modal-body {padding:1.5rem;}
+.modal .modal-content .modal-body .agree {margin-top:20px;}
+.modal .modal-content .modal-body .agree label{color: #333; font-size: .85rem; font-family:"NotoSansKR", sans-serif; font-weight: 400; letter-spacing: -.5px; margin-bottom:0; }
+.modal .modal-content .modal-body .agree p {margin-bottom:0;}
+.modal .modal-content .modal-body .gongji {display:flex; margin:5px 0; align-items: flex-start;}
+.modal .modal-content .modal-body .gongji i {color:#ee321f; font-size:1rem; line-height: normal;}
+.modal .modal-content .modal-body .gongji p {color:#ee321f; font-family:"NotoSansKR", sans-serif; font-size:.83rem; letter-spacing: -.3px; margin-left:3px; margin-bottom:0; line-height: 1.1rem; }
+.modal .modal-content .modal-body .gongji2 {position: relative; padding-left:5px; font-size:.8rem; line-height:1.2rem; color:#777;  letter-spacing: -.5px; font-weight: 400; font-family:"NotoSansKR", sans-serif; margin-bottom:.3rem;}
+.modal .modal-content .modal-body .gongji2 .dot::before {width:3px; height:3px;  content:" "; position: absolute; left:-5px; top:9px;}
+.modal .modal-content .modal-body .gongji2 .color::before {background-color:#555;}
+.modal .modal-content .modal-footer {justify-content:center; padding:0 1.5rem 2.5rem; border-top:none;}
+.modal .modal-content .modal-footer button { width:100%; background-color: #ee321f; color:#fff; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; font-size:1rem;}
+
+
+
+
+/*기본 체크박스*/
+.modal .modal-content .modal-body .checkbox input[type="checkbox"] {opacity:0;}
+.modal .modal-content .modal-body .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.modal .modal-content .modal-body .checkbox input[type="checkbox"]:checked + label:before{background: url("../../images/join/check.png") no-repeat center 50%; background-size: contain; background-color:#f64e60; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+
+
+
+/*기본 파일업로드*/
+.modal .modal-content .modal-body .custom-file { height:calc(2.5rem); }
+.modal .modal-content .modal-body .custom-file-input { height:calc(2.5rem); line-height: calc(2.5rem);}
+.modal .modal-content .modal-body .custom-file-label {color:#555;  font-family:"NotoSansKR", sans-serif; font-size:.85rem;}
+.modal .modal-content .modal-body .custom-file-label::after	{content:"이미지선택"; color:#555;}
+
+
+
+
+/*셀렉트박스*/
+.modal .modal-content .modal-body .custom-select {display:block; width:100%; height: calc(2.4rem); padding:.45rem 1rem .45rem .9rem; font-size:.85rem; font-weight: 400; line-height: 1.3; color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .6rem center; background-size: 10px 8px; border:1px solid #ddd; border-radius: .25rem; font-family:"NotoSansKR", sans-serif; }
+
+
+/*텍스트박스*/
+.modal .modal-content .modal-body textarea {display: block; width:100%; padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #ddd; border-radius: .25rem; outline:none; margin-top:.5rem; font-family:"NotoSansKR", sans-serif;}
+.modal .modal-content .modal-body textarea::placeholder {color:#999; font-weight: 400; font-family:"NotoSansKR", sans-serif;}
+
+
+/*인터뷰 모달커스텀*/
+.interview-pop .modal-content .modal-body .info table {width:100%; border:1px solid #ddd;}
+.interview-pop .modal-content .modal-body .info table th {background-color:#f6f6f6; border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding:.6rem 1rem; width:30%; color:#555;  font-size:.92rem; font-family:"NotoSansKR", sans-serif;}
+.interview-pop .modal-content .modal-body .info table td {border-bottom:1px solid #ddd; padding:.6rem 1rem;  font-family:"NotoSansKR", sans-serif; color:#222; font-size:.95rem;}
+.interview-pop .modal-content .modal-body .info table td .input_readonly {border: none; cursor: default;}
+.interview-pop .modal-content .modal-body .info table td .input_readonly:focus {outline: none; cursor: default;}
+
+
+
+/*추천평 모달커스텀*/
+.comment-pop .modal-content .modal-body .tit {font-family:"NotoSansKR", sans-serif; color:#222; font-size:.93rem; margin-bottom:5px; font-weight: 500;}
+.comment-pop .modal-content .modal-body .pro-type, .comment-pop .modal-content .modal-body .img{margin-bottom:1.5rem;}
+.comment-pop .modal-content .modal-body .write-box {margin-bottom:0;}
+
+
+
+/*sns 모달커스텀*/
+.sns-pop .modal-content .modal-body .tit {font-family:"NotoSansKR", sans-serif; color:#222; font-size:.93rem; margin-bottom:5px; font-weight: 500;}
+.sns-pop .modal-content .modal-body input::placeholder {color:#999; font-weight: 400; font-family:"NotoSansKR", sans-serif; font-size: .85rem;}
+.sns-pop p {margin-bottom: 1rem;}
+
+
+
+
+@media (min-width:900px){
+.event-review {margin:50px auto 0; padding:0;}
+.event-review .container-fluid .event-review_wrap {width:1000px; margin:0 auto 100px;}
+
+
+
+/*상단타이틀 및 날짜*/
+.event-review .container-fluid .event-tit {align-items: flex-end; }
+.event-review .container-fluid .event-tit p:first-child {font-size:1.2rem; }
+.event-review .container-fluid .event-tit p:last-child {font-size:1rem; }
+
+/*상단이미지*/
+.event-review .container-fluid .web-img {display:block;}
+.event-review .container-fluid .m-img{display:none;}
+
+
+/*타이틀*/
+.event-review .container-fluid h4 {font-size:1.5rem; line-height: 2rem; margin-bottom: 3.5rem; }
+
+
+/*이벤트 정보*/
+.event-review .container-fluid .event-info .period, .event-review .container-fluid .event-info .target, .event-review .container-fluid .event-info .gift, .event-review .container-fluid .event-info .method{width:1000px; display: flex;}
+.event-review .container-fluid .event-info .tit {font-size:1.2rem; color:#222; font-weight: 400; margin-top:0; margin-right:4rem; }
+.event-review .container-fluid .event-info .txt {font-size:1.2rem; color:#555; font-weight: 300; letter-spacing: -.5px; margin-bottom:2rem;}
+.event-review .container-fluid .event-info .txt span {font-weight: 500;  }
+
+
+
+/*이벤트 참여방법*/
+.event-review .container-fluid .review-type h4 {font-size:1.5rem;  }
+.event-review .container-fluid .review-type .point {font-size:1.2rem; margin:2rem 0 3rem;}
+.event-review .container-fluid .review-type div	{margin-bottom:4rem;}
+.event-review .container-fluid .review-type div h5 {font-size:1.35rem ;}
+.event-review .container-fluid .review-type .tit {font-size:1.15rem;  margin-top:1rem;}
+.event-review .container-fluid .review-type .description {font-size:1.05rem; line-height: 1.5rem; margin:1.5rem 0 0;}
+.event-review .container-fluid .review-type .txt {font-size:1.05rem; line-height:1.8rem;  }
+.event-review .container-fluid .review-type .dot::before {top:14px;}
+
+
+/*버튼*/
+.event-review .container-fluid .review-type button {font-size:1.05rem; width:300px;  margin:2rem 0 2rem;}
+.event-review .container-fluid .review-type .interview button {background-color:#0b318f; }
+.event-review .container-fluid .review-type .recommendation-comment button {background-color:#007042;}
+.event-review .container-fluid .review-type .sns button {background-color:#7a2183;}
+.event-review .container-fluid .back-btn {width:100%; padding:0; margin:1rem 0; text-align: center;}
+.event-review .container-fluid .back-btn button {font-size:1.1rem; color:#fff; border:none;  width:300px;  padding:.7rem; border-radius:30px; font-weight: 400; margin:5rem 0; background-color:#555; }
+
+
+
+/*하단 공지*/
+.event-review .container-fluid .event-notice .notice {font-size:.9rem;line-height: 1.6rem;}
+.event-review .container-fluid .event-notice .sub {font-size:.9rem; }
+.event-review .container-fluid .event-notice h4 {font-size:1.5rem;}
+.event-review .container-fluid .event-notice .dot::before {width:3px; height: 3px; border-radius:3px; content:" "; position: absolute; left:0; top:10px;}
+
+}
+
+
+
+
+/***************************************
+             친구초대 이벤트
+***************************************/
+
+.event-friend p, .event-friend a, .event-friend span, .event-friend div, .event-friend button, .event-friend th, .event-friend td, .event-friend h4, .event-friend h5, .event-friend .active{font-family:"NotoSansKR", sans-serif;  margin: 0;}
+
+.event-friend {margin-top:30px; padding:0 1rem;}
+.event-friend .container-fluid {padding:0;}
+
+
+/*상단타이틀 및 날짜*/
+.event-friend .container-fluid .event-tit {display:flex; justify-content: space-between; align-items: center; border-bottom:1px solid #222;padding-bottom:.5rem; }
+.event-friend .container-fluid .event-tit p:first-child {font-size:1.1rem; color:#222;  }
+.event-friend .container-fluid .event-tit p:last-child {font-size:.9rem; color:#777; font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif; }
+
+
+/*상단이미지*/
+.event-friend .container-fluid .web-img {display:none;}
+.event-friend .container-fluid .m-img img {width:100%;}
+
+
+/*타이틀*/
+.event-friend .container-fluid h4 {font-weight:400; color:#222; font-size:1.2rem; margin:1rem 0 2rem; line-height: 1.6rem; letter-spacing: -.5px;}
+.event-friend .container-fluid h4 span { color:#5c5ac0;}
+
+
+/*이벤트 정보*/
+.event-friend .container-fluid .event-info .tit {font-size:1rem; color:#222; font-weight: 500; margin-top:2rem;}
+.event-friend .container-fluid .event-info .txt {font-size:1rem; color:#555; font-weight: 300; letter-spacing: -.5px; line-height: 1.3rem;}
+.event-friend .container-fluid .event-info .txt span {font-weight: 500; color:#222;}
+.event-friend .container-fluid .event-info .target .txt .event-guide {margin:1rem 0 3rem;}
+.event-friend .container-fluid .event-info .target .txt .event-guide table {margin:.5rem 0; }
+.event-friend .container-fluid .event-info .target .txt .event-guide table th {width:20%; font-size:.85rem; padding:.7rem 1rem 0 0; white-space: nowrap; color:#ee321f; font-weight:500;}
+.event-friend .container-fluid .event-info .target .txt .event-guide table td { font-size:.85rem; line-height: 1.1rem; color:#222;}
+
+
+/*버튼*/
+.event-friend .container-fluid .btn {width:100%; padding:0; margin:1rem 0;}
+.event-friend .container-fluid .btn button {font-size:1.1rem; color:#fff; border:none;  width:100%;  padding:.7rem; border-radius:30px; font-weight: 400; margin:3rem 0; background-color:#3d3c86; }
+
+/*버튼*/
+.event-friend .container-fluid .back-btn {width:100%; padding:0; margin:1rem 0;}
+.event-friend .container-fluid .back-btn button {font-size:1.1rem; color:#fff; border:none;  width:100%;  padding:.7rem; border-radius:30px; font-weight: 400; margin:3rem 0; background-color:#555; }
+
+
+
+/*하단 공지*/
+.event-friend .container-fluid .event-notice { padding:3px; margin-bottom:3rem;}
+.event-friend .container-fluid .event-notice h4 {font-weight:400; color:#222; font-size:1.2rem; margin:0 0 1rem;  border-bottom:1px solid #222; padding-bottom:.5rem;}
+.event-friend .container-fluid .event-notice .notice {position: relative; padding-left:10px; margin-bottom:10px; font-size:.85rem;  color:#555; font-weight: 400; }
+.event-friend .container-fluid .event-notice .dot::before {width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:10px;}
+.event-friend .container-fluid .event-notice .color::before {background-color:#333;}
+
+
+
+
+@media (min-width:900px){
+.event-friend {margin:120px auto 0; padding:0;}
+.event-friend .container-fluid .event-friend_wrap {width:1000px; margin:0 auto 100px;}
+
+
+
+/*상단타이틀 및 날짜*/
+.event-friend .container-fluid .event-tit {align-items: flex-end; }
+.event-friend .container-fluid .event-tit p:first-child {font-size:1.2rem; }
+.event-friend .container-fluid .event-tit p:last-child {font-size:1rem; }
+
+/*상단이미지*/
+.event-friend .container-fluid .web-img {display:block;}
+.event-friend .container-fluid .m-img{display:none;}
+
+
+/*타이틀*/
+.event-friend .container-fluid h4 {font-size:1.5rem; line-height: 2rem; margin-bottom: 3.5rem; }
+
+
+/*이벤트 정보*/
+.event-friend .container-fluid .event-info .period {width:1000px; display: flex; align-items: center; margin-bottom:2rem;}
+.event-friend .container-fluid .event-info .target, .event-friend .container-fluid .event-info .method{width:1000px; display: flex;  align-items: flex-start;}
+.event-friend .container-fluid .event-info .tit {font-size:1.2rem; color:#222; font-weight: 400; margin-top:0; margin-right:4rem; }
+.event-friend .container-fluid .event-info .txt {font-size:1.2rem; color:#555; font-weight: 300; letter-spacing: -.5px; line-height:normal;}
+.event-friend .container-fluid .event-info .txt span {font-weight: 500;  }
+.event-friend .container-fluid .event-info .target .txt .event-guide {margin:1rem 0 3rem;}
+.event-friend .container-fluid .event-info .target .txt .event-guide img {margin-top:1rem;}
+.event-friend .container-fluid .event-info .target .txt .event-guide table {margin:.5rem 0; }
+.event-friend .container-fluid .event-info .target .txt .event-guide table th {width:20%; font-size:1rem; padding:.7rem 1rem 2rem 0; white-space: nowrap; color:#ee321f; font-weight:500; }
+.event-friend .container-fluid .event-info .target .txt .event-guide table td { font-size:1rem; line-height: 1.5rem; color:#222;}
+
+
+/*버튼*/
+.event-friend .container-fluid .btn {width:100%; padding:0; margin:1rem 0;}
+.event-friend .container-fluid .btn button {font-size:1.1rem; color:#fff; border:none;  width:300px;  padding:.7rem; border-radius:30px; font-weight: 400; margin:5rem 0; background-color:#3d3c86; }
+.event-friend .container-fluid .back-btn {width:100%; padding:0; margin:1rem 0; text-align: center;}
+.event-friend .container-fluid .back-btn button {font-size:1.1rem; color:#fff; border:none;  width:300px;  padding:.7rem; border-radius:30px; font-weight: 400; margin:5rem 0; background-color:#555; }
+
+
+/*하단 공지*/
+.event-friend .container-fluid .event-notice .notice{font-size:.9rem; line-height: 1.6rem;}
+.event-friend .container-fluid .event-notice h4 {font-size:1.5rem;}
+.event-friend .container-fluid .event-notice .dot::before {width:3px; height: 3px; border-radius:3px; content:" "; position: absolute; left:0; top:10px;}
+
+}

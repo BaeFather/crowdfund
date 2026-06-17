@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>헬로매거진</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/site.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+    	<!-- Link Swiper's CSS -->
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+		
+		<style>
+			
+/*********************************
+font SET
+**********************************/
+.h-magazine p, .h-magazine a, .h-magazine span , .h-magazine th , .h-magazine td , .h-magazine div, .h-magazine button, .h-magazine h2, .h-magazine h3, .h-magazine h4, .h-magazine h5, .h-magazine ul li , .h-magazine label , .h-magazine .active{font-family:"NotoSansKR", sans-serif;  margin: 0;}
+
+			
+.h-magazine {margin:60px auto 80px;}			
+.h-magazine .container-fluid {padding:0; }
+.h-magazine .container-fluid .top-wrap {padding:40px 1.25rem 40px;	width:100%;   background-color: #f8f8f8; }
+.h-magazine .container-fluid .top-wrap h3 {font-size:1.625rem; font-weight:500; color:#222; text-align: center; margin-bottom:20px;}	
+
+			
+/*swiper 슬라이드*/			
+.h-magazine .container-fluid .top-wrap .slide-wrap {position:relative;  margin: 0 auto; text-align: center;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper {text-align: center; position:static;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide {border:1px solid #ddd; cursor: pointer;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .img {background-color:#000;}			
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide img {width:100%; opacity:.8;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc {padding:1rem 1rem; background-color: #fff; }
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc .cate-news {font-size:.9rem; font-weight: 600; text-align: left; font-family: "Nunito",sans-serif; color:#e93c1e; letter-spacing: -1px; margin-bottom:10px;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc .cate-interview {font-size:.9rem;  font-weight: 600; text-align: left; font-family: "Nunito",sans-serif; color:#3fa515; letter-spacing: -1px; margin-bottom:10px;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc .cate-video {font-size:.9rem; font-weight: 600; text-align: left; font-family: "Nunito",sans-serif; color:#aa3cb7; letter-spacing: -1px; margin-bottom:10px;}			
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc .tit {font-size:1.1rem; color:#222; font-weight: 500;  text-align: left; line-height: 1.35rem;  margin-bottom:10px; height:40px;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper .swiper-slide .desc .by {font-size:.8rem; color:#999; font-weight: 400; text-align: left;font-family: "Nunito",sans-serif;  }
+				
+		
+/*swiper button 커스텀*/					
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next, .swiper-button-prev {display:none;}
+			
+			
+/*swiper pagination 커스텀*/			
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-pagination {color:#fff; text-align: right; bottom:2px; position:absolute; }	
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-pagination-current {border:1px solid #ddd; border-bottom:none; color:#ee321f; padding:.3rem .7rem .2rem;  font-size:.78rem; font-family: "Nunito",sans-serif; font-weight: 600; background-color: #fff;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-pagination-total {border:1px solid #ddd; border-bottom:none; color:#777; padding:.3rem .7rem .2rem; margin-left:-12px; border-left:none; font-size:.78rem; font-family: "Nunito",sans-serif; font-weight: 400;  background-color: #fff;}
+	
+
+			
+/*리스트 탭*/			
+.h-magazine .container-fluid .contents {padding:0 1.25rem; margin:30px 0;}			
+.h-magazine .container-fluid .contents .tab {display:flex; justify-content:center; align-items:center;}
+.h-magazine .container-fluid .contents .tab button {margin:0 3px; font-size:.78rem;  font-family: "Nunito",sans-serif; font-weight: 500; color:#aaa; border:1px solid #ddd; padding:.4rem .7rem .2rem; border-radius: 3rem; letter-spacing: -.5px; background-color: #fff;}			
+.h-magazine .container-fluid .contents .tab button.active {color:#fff;  border:1px solid #222; font-weight: 600;  background-color: #222;}			
+	
+			
+/*리스트 컨텐츠*/	
+.h-magazine .container-fluid .contents .list-wrap {margin:30px 0;}
+.h-magazine .container-fluid .contents .list-wrap .box {margin-bottom:30px; cursor: pointer;}
+.h-magazine .container-fluid .contents .list-wrap .box img {width:100%;}		
+.h-magazine .container-fluid .contents .list-wrap .box .text .info{display: flex; justify-content: space-between; align-items: center; margin-top:15px ;}						
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-news {font-size:.9rem; color:#222; font-weight: 600;  font-family: "Nunito",sans-serif; color:#e93c1e; letter-spacing: -1px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-interview {font-size:.9rem; color:#222; font-weight: 600;  font-family: "Nunito",sans-serif; color:#3fa515; letter-spacing: -1px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-video {font-size:.9rem; color:#222; font-weight: 600; font-family: "Nunito",sans-serif; color:#aa3cb7; letter-spacing: -1px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .by span{font-size:.8rem; color:#999; font-weight: 400;font-family: "Nunito",sans-serif;  letter-spacing: -.5px; }	
+.h-magazine .container-fluid .contents .list-wrap .box .text .desc .tit{font-size:1rem; color:#222; font-weight: 500; letter-spacing: -.5px; margin:5px 0 10px;}				
+.h-magazine .container-fluid .contents .list-wrap .box .text .desc .txt{font-size:.78rem; color:#777; font-weight: 400; letter-spacing: -1px; font-family: "Nunito",sans-serif; line-height: 1.05rem; text-align: justify;}					
+			
+			
+/*더보기버튼*/
+.h-magazine .container-fluid .contents .add-btn {margin:50px auto; text-align: center;}
+.h-magazine .container-fluid .contents .add-btn button {background-color: #222; padding:.3rem 2rem; color:#fff; border-radius:5rem; outline: none;}
+.h-magazine .container-fluid .contents .add-btn button:focus {outline: none; box-shadow: none;}
+			
+			
+	
+			
+			
+			
+			
+@media all and (min-width:500px) {	
+	
+/*리스트 탭*/			
+.h-magazine .container-fluid .contents .tab button {margin:0 10px; font-size:.8rem; padding:.4rem 1rem .2rem; }		
+	
+}
+			
+			
+			
+		
+			
+@media all and (min-width:650px) {
+	
+/*swiper button 커스텀*/						
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next, .swiper-button-prev {display:inline-flex;  position: absolute; top:100%; width:30px; height: 30px; z-index: 10; cursor: pointer; align-items: center; border: 1px solid #ccc; margin-top:0; text-align: center; border-top:none; background-color: #fff;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next {left:100%; margin-left:-30px;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-prev {left:100%; margin-left:-60px; border-right:none;}	
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next::after,
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-prev::after {font-size:.6rem; font-weight: 600; color:#222; line-height: 35px; text-align: center;}
+	
+/*swiper pagination 커스텀*/	
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-pagination {display:none;}
+
+/*리스트 탭*/	
+.h-magazine .container-fluid .contents { margin:40px 0;}		
+.h-magazine .container-fluid .contents .tab button {font-size:.85rem;  padding:.5rem 1rem .3rem;  }		
+
+
+/*리스트 컨텐츠*/	
+.h-magazine .container-fluid .contents .list-wrap {margin:40px 0;}
+.h-magazine .container-fluid .contents .list-wrap .box {display:flex; flex-direction: row-reverse; align-items:center; border-bottom:1px solid #eee; padding-bottom:30px;}
+.h-magazine .container-fluid .contents .list-wrap .box .img	{width:30%;}
+.h-magazine .container-fluid .contents .list-wrap .box .text{width:70%; padding-right:2rem;}		
+.h-magazine .container-fluid .contents .list-wrap .box .text .info{ margin-top:0 ;}						
+	
+}			
+			
+	
+			
+			
+@media all and (min-width:900px) {
+	
+.h-magazine {padding:20px 0 80px; }
+.h-magazine .container-fluid .top-wrap {width:100%; }
+.h-magazine .container-fluid .top-wrap h3 { margin:20px 0 30px;}	
+.h-magazine .container-fluid .top-wrap .slide-wrap  {width:1040px; margin:0 auto; }
+	
+/*swiper button 커스텀*/						
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next, .swiper-button-prev {display:inline-flex;  position: absolute; top:50%; width:30px; height: 30px; z-index: 10; cursor: pointer; align-items: center; border: 1px solid #ccc; margin-top:0; text-align: center;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next {left:100%; margin-left:0px; border-left:none;}
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-prev {left:0%; margin-left:-30px; border-right:none;}	
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-next::after,
+.h-magazine .container-fluid .top-wrap .slide-wrap .swiper-button-prev::after {font-size:.6rem; font-weight: 600; color:#222; line-height: 35px; text-align: center;}	
+	
+		
+/*리스트 탭*/			
+.h-magazine .container-fluid .contents {width:900px; padding:0; margin:50px auto;}	
+	
+/*리스트 컨텐츠*/	
+.h-magazine .container-fluid .contents .list-wrap {margin:50px 0;}
+.h-magazine .container-fluid .contents .list-wrap .box .img	{width:250px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text{width:600px; margin-right:50px;}								
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-news {font-size:.95rem; letter-spacing: -.5px; }
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-interview {font-size:.95rem; letter-spacing: -.5px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .cate-video {font-size:.95rem; letter-spacing: -.5px;}
+.h-magazine .container-fluid .contents .list-wrap .box .text .info .by {font-size:.9rem;   }	
+.h-magazine .container-fluid .contents .list-wrap .box .text .desc .tit{font-size:1.1rem;}				
+.h-magazine .container-fluid .contents .list-wrap .box .text .desc .txt{font-size:.85rem; line-height: 1.25rem;}					
+					
+}		
+	
+	
+</style>
+		
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="h-magazine">	
+			<div class="container-fluid">
+				<div class="top-wrap">
+					<h3>헬로매거진</h3>
+					<div class="slide-wrap">		
+						<!-- Swiper -->
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_01.jpg" alt="한경더펜 최수석 대표의 헬로 P2P #5">
+									</div>	
+									<div class="desc">
+										<p class="cate-news">보도자료</p>
+										<p class="tit">수익성·안정성 둘다 잡는<br>온투금융 '신확채'</p>
+										<p class="by">by. <span class="name">한경닷컴</span></p>
+									</div>		
+								</div>
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_02.jpg" alt="주택담보대출 업무를 담당하고 있습니다.">
+									</div>	
+									<div class="desc">
+										<p class="cate-interview">직원인터뷰</p>
+										<p class="tit">주택담보대출 업무를<br>담당하고 있습니다.</p>
+										<p class="by">by. <span class="name">주택금융사업팀 김단비대리</span></p>
+									</div>		
+								</div>
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_03.jpg" alt="최수석부대표 대체투자 분야 10가지 선정">
+									</div>	
+									<div class="desc">
+										<p class="cate-video">헬로영상</p>
+										<p class="tit">최수석부대표<br>대체투자 분야 10가지 선정</p>
+										<p class="by">by. <span class="name">e대한경제</span></p>
+									</div>		
+								</div>
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_04.jpg" alt="헬로펀딩, 대출취급액 1조 돌파..소상공인과 상생">
+									</div>	
+									<div class="desc">
+										<p class="cate-news">보도자료</p>
+										<p class="tit">헬로펀딩, 대출취급액 1조 돌파..<br>소상공인과 상생</p>
+										<p class="by">by. <span class="name">한경비즈니스</span></p>
+									</div>		
+								</div>
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_05.jpg" alt="금융 빅데이터 활용해 소상공인 대출 지원">
+									</div>	
+									<div class="desc">
+										<p class="cate-news">보도자료</p>
+										<p class="tit">금융 빅데이터 활용해<br>소상공인 대출 지원</p>
+										<p class="by">by. <span class="name">한경</span></p>
+									</div>		
+								</div>
+								<div class="swiper-slide">
+									<div class="img">
+										<img src="assets/images/img/img_06.jpg" alt="최수석 펀딩디자이너 월간굿리치 주관 세미나 강연&인터뷰영상">
+									</div>	
+									<div class="desc">
+										<p class="cate-video">헬로영상</p>
+										<p class="tit">적금으로 재테크?<br>이제는 P2P!</p>
+										<p class="by">by. <span class="name">GoodRich X 사이다경제 주관 세미나</span></p>
+									</div>		
+								</div>
+
+							</div>
+						</div>	
+
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
+					</div>	
+				</div>
+				<div class="contents">
+					<div class="tab">
+						<button class="active">전체</button>
+						<button>보도자료</button>
+						<button>직원인터뷰</button>
+						<button>헬로영상</button>
+					</div>
+					<div class="list-wrap">
+						<div class="box">
+							<div class="img">
+								<img src="assets/images/img/img_01.jpg" alt="수익성·안정성 둘다 잡는 온투금융 '신확채'">
+							</div>
+							<div class="text">
+								<div class="info">
+									<p class="cate-news">보도자료</p>
+									<p class="by"><span class="date">22.10.14</span> <span class="name">한경닷컴</span></p>
+								</div>	
+								<div class="desc">	
+									<p class="tit">수익성·안정성 둘다 잡는 온투금융 '신확채'</p>
+									<p class="txt">SCF(매출망 금융) 관련 상품중의 하나인 일명 신확채, 즉 신용카드 확정매출채권 유동화 상품은 온투금융이 보여줄 수 있는 투자상품의 최정상 상품이라고 할 수 있습니다.</p>   
+								</div>	
+							</div>	
+						</div>
+						<div class="box">
+							<div class="img">
+								<img src="assets/images/img/img_02.jpg" alt="주택담보대출 업무를 담당하고 있습니다.">
+							</div>
+							<div class="text">
+								<div class="info">
+									<p class="cate-interview">직원인터뷰</p>
+									<p class="by"><span class="name">주택금융사업팀 김단비대리</span></p>
+								</div>	
+								<div class="desc">	
+									<p class="tit">주택담보대출 업무를 담당하고 있습니다.</p>
+									<p class="txt">투자자분들께는 확실한 담보를 제공하여 안정적으로 돈을 불릴 수 있는 기회를 제공하며, 좋은 방향으로 돈을 돌게 만들고 모두를 기쁘게 만들어 나가는 사람 김단비 님을 만나보겠습니다.</p>    
+								</div>
+							</div>	
+						</div>
+						<div class="box">
+							<div class="img">
+								<img src="assets/images/img/img_03.jpg" alt="최수석부대표, 대체투자 분야 10가지 선정">
+							</div>
+							<div class="text">
+								<div class="info">
+									<p class="cate-video">헬로영상</p>
+									<p class="by"><span class="name">e대한경제</span></p>
+								</div>	
+								<div class="desc">	
+									<p class="tit">최수석부대표, 대체투자 분야 10가지 선정</p>
+									<p class="txt">향후 대체투자 시장에서 주목해야 할 투자 방식 10가지는?! 좋은 P2P 업체 선정하는 법, 부동산펀드나 리츠 투자 시 유의점 등 재테크에 관심 있는 분들이라면 영상을 통해 확인해 보세요!</p>    
+								</div>	
+							</div>
+						</div>
+					</div>
+					<div class="add-btn">
+						<button class="btn">더보기</button>
+					</div>
+					
+				</div>
+					
+				
+			</div>
+		</section>
+
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+		
+		
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<script>
+		
+		var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,  //초기값 설정 모바일값이 먼저!!
+        spaceBetween: 10,
+		loop: true,	
+		navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },	
+		pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },	
+
+			
+        breakpoints: {
+          650: {
+            slidesPerView: 2,  //브라우저가 768보다 클 때
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 3,  //브라우저가 1024보다 클 때
+            spaceBetween: 10,
+          },
+        },
+		 autoplay: {
+			delay: 3000
+		},	
+      });	
+		
+		</script>
+
+    </body>
+
+</html>

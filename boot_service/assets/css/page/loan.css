@@ -1,0 +1,666 @@
+/********************************************************
+                    datepicker custom
+ ********************************************************/
+ .daily-data input {cursor:pointer;}
+ .daily-data input:focus {-moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; border: 1px solid #ee321f; outline-width: 0;}
+ .datepicker {border-radius: 0px;}
+ .datepicker table {margin:0 auto;}
+ .datepicker table tr td {padding:0 .5rem .5rem;}
+ .datepicker table tr td span {font-size:.76rem!important; color: #555; font-family: "Nunito",sans-serif; font-weight: 400; height: 50px; line-height: 50px;}
+ .datepicker-dropdown {margin-top:0px; width:240px;}
+ .datepicker table tr td.today, span.focused {border-radius: .25rem!important; background-color :#ee321f!important; color:#fff!important; font-family: "Nunito",sans-serif; font-weight: 600; font-size:.78rem!important;}
+
+ .datepicker table tr td .active.disabled:hover[disabled],
+ .datepicker table tr td .active.disabled[disabled],
+ .datepicker table tr td .active:active,
+ .datepicker table tr td .active:hover,
+ .datepicker table tr td .active:hover.active,
+ .datepicker table tr td .active:hover.disabled,
+ .datepicker table tr td .active:hover:active,
+ .datepicker table tr td .active:hover:hover,
+ .datepicker table tr td .active:hover[disabled],
+ .datepicker table tr td .active[disabled],
+ .datepicker table tr td span.active.active,
+ .datepicker table tr td span.active.disabled,
+ .datepicker table tr td span.active.disabled.active,
+ .datepicker table tr td span.active.disabled.disabled,
+ .datepicker table tr td span.active.disabled:active,
+ .datepicker table tr td span.active.disabled:hover,
+ .datepicker table tr td span.active.disabled:hover.active,
+ .datepicker table tr td span.active.disabled:hover.disabled,
+ .datepicker table tr td span.active.disabled:hover:active,
+ .datepicker table tr td span.active.disabled:hover:hover,
+ .datepicker table tr td span.active.disabled:hover[disabled],
+ .datepicker table tr td span.active.disabled[disabled],
+ .datepicker table tr td span.active:active,
+ .datepicker table tr td span.active:hover,
+ .datepicker table tr td span.active:hover.active,
+ .datepicker table tr td span.active:hover.disabled,
+ .datepicker table tr td span.active:hover:active,
+ .datepicker table tr td span.active:hover:hover,
+ .datepicker table tr td span.active:hover[disabled],
+ .datepicker table tr td span.active[disabled],
+ .datepicker table tr td.active.active,
+ .datepicker table tr td.active.disabled,
+ .datepicker table tr td.active.disabled.active,
+ .datepicker table tr td.active.disabled.disabled,
+ .datepicker table tr td.active.disabled:active,
+ .datepicker table tr td.active.disabled:hover,
+ .datepicker table tr td.active.disabled:hover.active,
+ .datepicker table tr td.active.disabled:hover.disabled,
+ .datepicker table tr td.active.disabled:hover:active,
+ .datepicker table tr td.active.disabled:hover:hover,
+ .datepicker table tr td.today.disabled,
+ .datepicker table tr td.today.disabled:hover,
+ .datepicker table tr td.today:hover {border-radius: .25rem !important; background-color :#ee321f!important; color:#fff!important; font-family: "Nunito",sans-serif; font-weight: 600; font-size:.76rem!important;}
+ .datepicker .prev, .datepicker .next, .datepicker-switch {border-radius:0 !important; padding: .5rem !important; text-transform: uppercase; font-size: .9rem!important; color: #222; font-family: "Nunito",sans-serif; font-weight: 600;}
+ .datepicker .prev:hover, .datepicker .next:hover, .datepicker-switch:hover {background-color: inherit !important; opacity: 1;}
+
+
+ @media all and (min-width:900px) {
+
+ .datepicker-dropdown {margin-top:0px; }
+
+ }
+
+
+
+ /*********************************
+ font SET
+ **********************************/
+
+.loan p, .loan a, .loan span , .loan th , .loan td , .loan div, .loan button, .loan h4, .loan h5, .loan .active{font-family: "NotoSansKR", Sans-serif;  margin: 0;}
+.loan-step01 p, .loan-step01 a, .loan-step01 span , .loan-step01 th , .loan-step01 td , .loan-step01 div, .loan-step01 button, .loan-step01 h4, .loan-step01 h5, .loan-step01 .active{font-family: "NotoSansKR", Sans-serif;  margin: 0;}
+.loan-step02 p, .loan-step02 a, .loan-step02 span , .loan-step02 th , .loan-step02 td , .loan-step02 div, .loan-step02 button, .loan-step02 h4, .loan-step02 h5, .loan-step02 .active{font-family: "NotoSansKR", Sans-serif;  margin: 0;}
+.loan-step03 p, .loan-step03 a, .loan-step03 span , .loan-step03 th , .loan-step03 td , .loan-step03 div, .loan-step03 button, .loan-step03 h4, .loan-step03 h5, .loan-step03 .active{font-family: "NotoSansKR", Sans-serif;  margin: 0;}
+
+
+
+/*spiner 수정*/
+#loadingSpinner .loading_box {position:absolute; left: 50%; transform: translate(-50%, 0);}
+
+
+
+
+/*****************************대출하기 메인**************************************/
+.loan .container-fluid {padding:0;}
+
+
+
+/*라디오버튼 커스텀*/
+.loan input[type="radio"] {display: none;}
+.loan input[type="radio"] + label:before {content: ""; display: inline-block; width: 1em;  height: 1em; padding:2px; background-clip: content-box; border: 1px solid #ccc;  background-color: #fff;  border-radius: 50%;
+  margin-right:5px; margin-bottom:4px; line-height: 50px;  vertical-align:middle;}
+.loan input[type="radio"]:checked + label:before { background-color: #ee321f; border: 1px solid #ee321f;}
+
+
+/*셀렉트박스*/
+.loan .custom-select {display:block; width:100%; height: calc(2.5rem); padding:.45rem .5rem; font-size:.85rem; font-weight: 400;  color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .6rem center; background-size: 10px 8px; border:1px solid #d5d5d5; border-radius: 0rem; }
+
+/*인풋박스*/
+.loan .form-control {display: inline-block; width:100%; height: calc(2.5rem); padding:.45rem .5rem; font-size:.85rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem;}
+
+
+.input-invalid {text-align: right; padding-right:10px;; font-size:.78rem; line-height: 20px;  font-weight: 500; font-family:"Pretendard", sans-serif!important }
+
+
+/*대출하기 상단*/
+.loan .container-fluid .top-visual { background-color: #f8f8f8; padding:0 1rem; }
+.loan .container-fluid .top-visual .top .tit h4 { font-size:1.6rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:2rem 0 1rem; text-align: left; }
+.loan .container-fluid .top-visual .top .tit .check {display:flex; align-items: center; margin-bottom:5px;}
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:20px; height: 20px; border-radius: 20px; background-color: #ee321f; margin-right:.5rem;}
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-10px; margin-left:2px; width:90%;}
+.loan .container-fluid .top-visual .top .tit p { font-size:1.1rem; font-weight:600; color:#333; font-family:Pretendard, sans-serif;}
+.loan .container-fluid .top-visual .top .apt-img {text-align:right; margin-top:1rem;}
+.loan .container-fluid .top-visual .top .apt-img img {width:90%; padding-left:1rem;}
+
+
+
+/*한도조회*/
+#tab1:checked ~ #content1, #tab2:checked ~ #content2 {display: block;}
+.loan .container-fluid .form-wrap {padding:0 1rem; text-align: center;}
+.loan .container-fluid .form-wrap h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:2rem 0 .5rem; }
+.loan .container-fluid .form-wrap p {font-size:.95rem; font-weight:500; color:#555; font-family:Pretendard, sans-serif; margin-bottom:10px;}
+.loan .container-fluid .form-wrap .form-check-label{margin:1rem 1rem 0.5rem 1rem; font-size:.9rem; color:#333; font-weight: 500;}
+.loan .container-fluid .form-wrap section {display:none;}
+
+.loan .container-fluid .form-wrap form table{width:100%; border-collapse: separate; border-spacing:.5rem; max-width: 500px; margin:0 auto;}
+.loan .container-fluid .form-wrap form table tr td input::placeholder {font-size:.85rem;}
+.loan .container-fluid .form-wrap form .btn {width:100%; padding:.5rem; max-width: 500px;}
+.loan .container-fluid .form-wrap form .btn button {background-color:#ee321f; border:none; color:#fff; width:100%; padding:.7rem 1rem;}
+.loan .container-fluid .form-wrap form span {font-size:.8rem; font-weight:400; color:#777; text-align:center; display:block;}
+
+
+/*이유*/
+.loan .container-fluid .point-wrap {background-color: #f8f8f8; padding:0 1rem 3rem; text-align: center; margin:3rem 0; }
+.loan .container-fluid .point-wrap h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:3rem 0 2rem; }
+.loan .container-fluid .point-wrap div {margin-bottom:50px;}
+.loan .container-fluid .point-wrap .point_01 img {width:35%;}
+.loan .container-fluid .point-wrap .point_02 img {width:50%;}
+.loan .container-fluid .point-wrap .point_03 img {width:30%;}
+.loan .container-fluid .point-wrap div p {font-size:1.1rem; color:#222; font-weight: 500; margin:1rem 0 0;}
+.loan .container-fluid .point-wrap div span {font-size:.85rem; color:#555; font-weight: 400; line-height: 1.2rem; display: inline-block;}
+.loan .container-fluid .point-wrap div span .br {display:none;}
+
+/*상품안내*/
+.loan .container-fluid .loan-info {width:100%; padding:1rem;}
+.loan .container-fluid .loan-info h5 { font-size:1.3rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; padding:0 0 2rem; text-align: center;}
+.loan .container-fluid .loan-info #toc-content {display:none;}
+.loan .container-fluid .loan-info #toc-content tr th, .loan .container-fluid .loan-info #toc-content tr td {border-top:0!important;}
+.loan .container-fluid .loan-info table {width:100%;}
+.loan .container-fluid .loan-info table tr th, .loan .container-fluid .loan-info table tr td {border:1px solid #ddd;}
+.loan .container-fluid .loan-info table tr th {background-color:#f8f8f8; width:25%; padding:.7rem .5rem; font-size:.8rem; color:#333; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.loan .container-fluid .loan-info table tr td {width:75%; padding:.7rem .5rem; font-size:.8rem; color:#777; line-height:1.2rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.loan .container-fluid .loan-info .loan-notice .notice {position: relative; padding-left:10px; margin-bottom:10px; }
+.loan .container-fluid .loan-info .loan-notice .dot::before {width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:10px;}
+.loan .container-fluid .loan-info .loan-notice .color::before {background-color:#777;}
+.loan .container-fluid .loan-info .more-btn {width:100%; text-align: center;}
+.loan .container-fluid .loan-info .more-btn button {width:100%; border:1px solid #ddd; border-top:none; background-color: #f8f8f8; color:#333; padding:.7rem; font-size:.95rem;  font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; font-weight: 500;}
+
+
+/*배너*/
+.loan .container-fluid .banner {background-color: #e1e3f3; margin:0 1rem 3rem;; padding:1rem 1rem 1.5rem; text-align: center;}
+.loan .container-fluid .banner .text p:first-child {font-size:1.1rem; color:#222; font-weight: 500; letter-spacing: -.5px; margin-top:2px;}
+.loan .container-fluid .banner .text p:first-child span {display:none;}
+.loan .container-fluid .banner .text p:last-child {font-size:.8rem; color:#555; font-weight: 400; letter-spacing: -.5px;margin-top:2px; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+.loan .container-fluid .banner .num {font-size:1.6rem; font-family:Pretendard, sans-serif; font-weight:700; color:#222;}
+.loan .container-fluid .banner .num span {font-size:1.6rem; font-family:Pretendard, sans-serif; font-weight:700; color:#5c4cc6;}
+
+
+
+
+@media (min-width:450px){
+.loan .container-fluid .point-wrap .point_01 img {width:auto;}
+.loan .container-fluid .point-wrap .point_02 img {width:auto;}
+.loan .container-fluid .point-wrap .point_03 img {width:auto;}
+.loan .container-fluid .banner .text p:first-child span {display:inline-block; margin-right:5px;}
+	}
+
+@media (min-width:600px){
+/*대출하기 상단*/
+.loan .container-fluid .top-visual .top .tit h4 { font-size:1.8rem;  padding:3rem 0 1rem; }
+.loan .container-fluid .top-visual .top .tit .check {margin-bottom:5px;}
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:22px; height:22px; border-radius: 22px; margin-right:.8rem; margin-bottom:1px;}
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-12px; width:99%;}
+.loan .container-fluid .top-visual .top .tit p { font-size:1.2rem;}
+.loan .container-fluid .top-visual .top .apt-img img {width:auto; padding-left:0;}
+
+
+/*이유*/
+.loan .container-fluid .point-wrap div p {font-size:1.15rem;}
+.loan .container-fluid .point-wrap div span {font-size:.9rem; margin-top:.5rem;}
+.loan .container-fluid .point-wrap div span .br {display:none;}
+
+
+}
+
+@media (min-width:700px){
+/*배너*/
+.loan .container-fluid .banner {padding:1rem 2rem 1.25rem; display:flex; flex-direction: row-reverse; align-items: center; justify-content: space-between;}
+.loan .container-fluid .banner .text {text-align:left;}
+.loan .container-fluid .banner .text p:first-child {font-size:1.2rem; }
+.loan .container-fluid .banner .text p:last-child {font-size:.9rem; }
+.loan .container-fluid .banner .num {font-size:1.7rem;}
+.loan .container-fluid .banner .num span {font-size:1.7rem;}
+
+}
+
+
+@media (min-width:900px){
+
+
+/*대출하기 상단*/
+.loan .container-fluid .top-visual { background-color: #f8f8f8; padding:0; height:310px;}
+.loan .container-fluid .top-visual .top {width:1000px; margin:0 auto; display: flex; justify-content: space-between; align-items: center;}
+.loan .container-fluid .top-visual .top .tit h4 { font-size:2.2rem;  padding:0 0 1rem;}
+.loan .container-fluid .top-visual .top .tit .check p:first-child {width:24px; height:24px; border-radius: 24px; }
+.loan .container-fluid .top-visual .top .tit .check p:first-child img {margin-top:-16px; width:auto;}
+.loan .container-fluid .top-visual .top .tit p { font-size:1.3rem;}
+.loan .container-fluid .top-visual .top .apt-img {text-align:right; margin-top:0;}
+
+
+
+/*한도조회*/
+.loan .container-fluid .form-wrap h5 { font-size:1.5rem; padding:3rem 0 .7rem; }
+.loan .container-fluid .form-wrap p {font-size:1rem; font-weight:500; color:#777; margin-bottom:1rem;}
+.loan .container-fluid .form-wrap .form-check-label{margin:1rem; font-size:1rem; color:#333; font-weight: 500;}
+.loan .container-fluid .form-wrap section {display:none;}
+
+.loan .container-fluid .form-wrap form table{width:500px;}
+.loan .container-fluid .form-wrap form .btn {width:500px;}
+.loan .container-fluid .form-wrap form .btn button { padding:.7rem; font-size:1.05rem;}
+.loan .container-fluid .form-wrap form span {font-size:.9rem; margin-top:10px;}
+
+
+
+/*이유*/
+.loan .container-fluid .point-wrap .point {width:1000px; margin:0 auto; display:flex; justify-content: space-between;}
+.loan .container-fluid .point-wrap h5 { font-size:1.5rem;  padding:4rem 0; }
+.loan .container-fluid .point-wrap div {margin-bottom:30px;}
+.loan .container-fluid .point-wrap div p {font-size:1.2rem; margin:1.5rem 0 0;}
+.loan .container-fluid .point-wrap div span {font-size:.95rem; line-height: 1.3rem; }
+.loan .container-fluid .point-wrap div span .br {display:inline-block;}
+
+
+
+/*상품안내*/
+.loan .container-fluid .loan-info {width:1000px; padding:0; margin:0 auto 50px;}
+.loan .container-fluid .loan-info h5 { font-size:1.5rem; padding:1rem 0 2rem;}
+.loan .container-fluid .loan-info table tr th {width:250px; padding:1rem; font-size:.85rem;}
+.loan .container-fluid .loan-info table tr td {width:750px; padding:1rem; font-size:.85rem; letter-spacing: -.5px;}
+.loan .container-fluid .loan-info table tr .loan-notice {padding:2rem 1.5rem 2rem 1rem;}
+.loan .container-fluid .loan-info .more-btn {width:1000px; }
+.loan .container-fluid .loan-info .more-btn button {padding:.8rem; font-size:1rem;}
+
+
+
+/*배너*/
+.loan .container-fluid .banner {width:1000px; margin:0 auto 100px; padding:1rem 2rem 1.25rem;}
+
+
+
+}
+
+
+
+/*****************************대출하기 step01**************************************/
+
+/*셀렉트박스*/
+.loan-step01 .custom-select ,.loan-step02 .custom-select {display:block; width:100%; height:auto; padding:0; font-size:.85rem; font-weight: 500;  color:#000; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right .6rem center; background-size: 10px 8px; border:none; border-radius: 0rem; }
+
+/*인풋박스*/
+.loan-step01 .form-control, .loan-step02 .form-control {display: block; width:100%; height:auto; padding:0; font-size:.85rem; font-weight: 500; line-height: 1.5; color:#000; background-color: #fff; background-clip: padding-box; border:none; border-radius: 0rem; }
+
+
+/*기본 체크박스*/
+.loan-step01 .checkbox input[type="checkbox"], .loan-step02 .checkbox input[type="checkbox"]{opacity:0;}
+.loan-step01 .checkbox input[type="checkbox"] + label:before, .loan-step02 .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;}
+.loan-step01 .checkbox input[type="checkbox"]:checked + label:before, .loan-step02 .checkbox input[type="checkbox"]:checked + label:before{background: url("../../images/join/check.png") no-repeat center 50%; background-size: contain; background-color:#ee321f; color: #fff; border: 1px solid #f64e60; box-sizing: border-box; }
+
+
+/*팝오버*/
+.popover-body {font-size:.85rem!important; color:#333; font-family: "NotoSansKR", Dotum, Helvetica, AppleGothic, Sans-serif; letter-spacing: -.5px;}
+
+
+
+
+.loan-step01 {margin:60px auto 0; }
+.loan-step01 .container-fluid {padding:20px 1rem 0 ; background-color: #f8f8f8;}
+
+/*예상한도금액*/
+.loan-step01 .container-fluid .limit-amount {width:100%; max-width:500px; padding:2rem 1rem 1rem; text-align:center; border:1px solid #ccc; margin:0 auto; background-color:#fff; border-bottom:none;}
+.loan-step01 .container-fluid .limit-amount p:nth-child(1) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; }
+.loan-step01 .container-fluid .limit-amount p:nth-child(2) {font-size:1.6rem; font-weight:600; color:#ee321f; font-family:"Pretendard", sans-serif; margin-bottom:0;}
+.loan-step01 .container-fluid .limit-amount p:nth-child(3) {border-bottom:1px solid #ee321f; }
+
+
+.loan-step01 .container-fluid .aptloan-info {width:100%; max-width:500px; margin:0 auto; padding:0 0 1rem; }
+.loan-step01 .container-fluid .aptloan-info table {width:100%; background-color: #fff; border:1px solid #ccc; border-top:none; vertical-align: middle;}
+.loan-step01 .container-fluid .aptloan-info table tr th, .loan-step01 .container-fluid .aptloan-info table tr td {padding:.8rem 1rem;}
+.loan-step01 .container-fluid .aptloan-info table tr th {white-space:nowrap; font-size:.9rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500;}
+.loan-step01 .container-fluid .aptloan-info table tr td {text-align:right; font-size:.9rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; line-height: 1.2rem; letter-spacing: -.5px;}
+.loan-step01 .container-fluid .aptloan-info table tr td i {color:#888; font-size:.9rem;}
+.loan-step01 .container-fluid .aptloan-info table tr .bottom {padding-bottom:2.5rem!important;}
+.loan-step01 .container-fluid .aptloan-info p {font-size:.8rem; color:#ee321f; letter-spacing: -.5px; line-height: 1rem; margin-top:5px;  }
+
+
+
+/*추가정보입력*/
+.loan-step01 .container-fluid .add-info {width:100%; max-width:500px;  margin:30px auto;}
+.loan-step01 .container-fluid .add-info h5 {font-size:1rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; margin-bottom:.5rem;}
+.loan-step01 .container-fluid .add-info	table {width:100%; background-color: #fff; border:1px solid #ccc; border-collapse: collapse;}
+.loan-step01 .container-fluid .add-info	table tr th, .loan-step01 .container-fluid .add-info table tr td {border-bottom:1px solid #ddd; padding: .7rem 1rem;}
+.loan-step01 .container-fluid .add-info table tr th {white-space:nowrap; font-size:.85rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500; border-right:none;}
+.loan-step01 .container-fluid .add-info table tr td {font-size:.85rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; border-left:none;}
+.loan-step01 .container-fluid .add-info table tr td .input-box {display:flex; align-items:center; position:relative;}
+.loan-step01 .container-fluid .add-info table tr td .input-box input {padding-right:40px; text-align: right; font-family:Pretendard, sans-serif; }
+.loan-step01 .container-fluid .add-info table tr td .input-box input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step01 .container-fluid .add-info table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; font-size:.85rem; font-family:"Pretendard", sans-serif;  }
+.loan-step01 .container-fluid .add-info table tr td .date {text-align:right; padding-right:2rem; cursor: pointer; z-index: 100; background-color: rgba( 255, 255, 255, 0.2 );}
+.loan-step01 .container-fluid .add-info table tr td .date-calendar .daily-data {margin-right:10px;}
+.loan-step01 .container-fluid .add-info table tr td .date-calendar .daily-data input {text-align: right;  font-weight: 500; font-size:.85rem; cursor: pointer; font-family:"Pretendard", sans-serif;  color:#222;}
+.loan-step01 .container-fluid .add-info table tr td .date-calendar i {position: absolute; right:0.5rem; cursor: pointer;}
+.loan-step01 .container-fluid .add-info table tr td .amount-after {text-align: right; margin-right:12px;}
+.loan-step01 .container-fluid .add-info table tr td .amount-after span { font-family:"Pretendard", sans-serif; color:#ee321f;}
+
+.loan-step01 .container-fluid .add-info table tr td select { text-align-last:right; padding-right:30px; }
+.loan-step01 .container-fluid .add-info table tr td option { text-align:left;}
+
+
+/*대출신청입력*/
+.loan-step01 .container-fluid .loan-application {width:100%; max-width:500px; margin:30px auto 10px;}
+.loan-step01 .container-fluid .loan-application h5 {font-size:1rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; margin-bottom:.5rem;}
+.loan-step01 .container-fluid .loan-application	table {width:100%; background-color: #fff;  border:1px solid #ccc; border-collapse: collapse; }
+.loan-step01 .container-fluid .loan-application	table tr th, .loan-step01 .container-fluid .loan-application table tr td {border-bottom:1px solid #ddd; padding: .7rem 1rem;  }
+.loan-step01 .container-fluid .loan-application table tr th {white-space:nowrap; font-size:.85rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500; border-right:none;}
+.loan-step01 .container-fluid .loan-application table tr td {font-size:.85rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; border-left:none;  text-align: right;}
+.loan-step01 .container-fluid .loan-application table tr td	input {padding-right:10px; text-align: right; font-family:Pretendard, sans-serif; }
+.loan-step01 .container-fluid .loan-application table tr td input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step01 .container-fluid .loan-application table tr td .input-box {display:flex; align-items:center; position:relative;}
+.loan-step01 .container-fluid .loan-application table tr td .input-box input {padding-right:40px; text-align: right; font-family:"Pretendard", sans-serif; }
+.loan-step01 .container-fluid .loan-application table tr td .input-box input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step01 .container-fluid .loan-application table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; font-size:.85rem; font-family:Pretendard, sans-serif;  }
+.loan-step01 .container-fluid .loan-application table tr .loan-amount {color:#ee321f; padding-right:1.75rem; font-weight: 600; }
+.loan-step01 .container-fluid .loan-application table tr .memo { padding-right:1.5rem; }
+.loan-step01 .container-fluid .loan-application table tr td textarea {display: block; width:100%; height:120px; padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#222; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem; outline:none;}
+.loan-step01 .container-fluid .loan-application table tr td textarea::placeholder {color:#bbb; font-weight:400; font-size:.85rem;}
+.loan-step01 .container-fluid .loan-application table tr td p {text-align:left; font-weight: 400; color:#777; font-size:.78rem; margin:5px 0 10px; padding:0; letter-spacing: -.5px;  line-height:1.2;}
+
+.loan-step01 .container-fluid .loan-application table tr td .amount-after {text-align: right; margin-right:12px; }
+.loan-step01 .container-fluid .loan-application table tr td .amount-after span { font-family:"Pretendard", sans-serif; color:#ee321f;}
+
+
+/*정보동의 및 버튼*/
+.loan-step01 .container-fluid .agree {width:100%; max-width:500px; margin:0 auto;}
+.loan-step01 .container-fluid .agree label{color: #333; font-size: .85rem; font-family:"NotoSansKR", sans-serif; font-weight: 400; letter-spacing: -.5px;}
+
+.loan-step01 .container-fluid .btn	{width:100%; margin:0 auto; padding:0;}
+.loan-step01 .container-fluid .btn button {width:100%; max-width:500px; border:none; background-color: #ee321f; padding:1rem; color:#fff; margin:1rem 0 3rem; font-size:1rem;}
+
+
+
+@media (min-width:600px){
+
+/*예상한도금액*/
+.loan-step01 .container-fluid .limit-amount p:nth-child(1) {font-size:1.1rem;}
+.loan-step01 .container-fluid .limit-amount p:nth-child(2) {font-size:1.8rem;}
+.loan-step01 .container-fluid .limit-amount p:nth-child(3) {margin-bottom:1rem; }
+
+.loan-step01 .container-fluid .aptloan-info table tr th, .loan-step01 .container-fluid .aptloan-info table tr td {padding:1rem;}
+.loan-step01 .container-fluid .aptloan-info table tr th {font-size:.95rem; color:#555;}
+.loan-step01 .container-fluid .aptloan-info table tr td {font-size:.95rem; color:#000;}
+.loan-step01 .container-fluid .aptloan-info table tr td i { font-size:.95rem;}
+.loan-step01 .container-fluid .aptloan-info table tr .bottom {padding-bottom:3rem!important;}
+.loan-step01 .container-fluid .aptloan-info p {font-size:.8rem; margin-top:10px; display: flex; align-items: center;}
+.loan-step01 .container-fluid .aptloan-info p i {font-size:.95rem; margin-right:3px;}
+
+
+/*추가정보입력*/
+.loan-step01 .container-fluid .add-info h5 {font-size:1.1rem; margin-bottom:.7rem;}
+.loan-step01 .container-fluid .add-info	table tr th, .loan-step01 .container-fluid .add-info table tr td {padding: .7rem 1rem;}
+.loan-step01 .container-fluid .add-info table tr th {font-size:.95rem;}
+.loan-step01 .container-fluid .add-info table tr td {font-size:.95rem;}
+.loan-step01 .container-fluid .add-info table tr td .input-box input::placeholder {font-size:.95rem;}
+.loan-step01 .container-fluid .add-info table tr td .input-box span {font-size:.95rem; }
+.loan-step01 .container-fluid .add-info table tr td .custom-select {font-size:.95rem; }
+.loan-step01 .container-fluid .add-info table tr td .form-control {font-size:.95rem; }
+.loan-step01 .container-fluid .add-info table tr td .amount-after {text-align:right; margin-right:12px;}
+.loan-step01 .container-fluid .add-info table tr td .date-calendar .daily-data{display:flex; align-items:center; border-bottom:none; position:relative;}
+.loan-step01 .container-fluid .add-info table tr td .date-calendar .daily-data input {text-align: right; font-weight:400; font-size:.9rem; cursor: pointer;}
+
+/*대출신청입력*/
+.loan-step01 .container-fluid .loan-application h5 {font-size:1.1rem; margin-bottom:.7rem;}
+.loan-step01 .container-fluid .loan-application	table tr th, .loan-step01 .container-fluid .loan-application table tr td { padding: .7rem 1rem;}
+.loan-step01 .container-fluid .loan-application table tr th {font-size:.95rem; width:100px;}
+.loan-step01 .container-fluid .loan-application table tr td {font-size:.95rem;}
+.loan-step01 .container-fluid .loan-application table tr td input::placeholder {font-size:.95rem;}
+.loan-step01 .container-fluid .loan-application table tr td .input-box input::placeholder {font-size:.95rem;}
+.loan-step01 .container-fluid .loan-application table tr td .input-box span {font-size:.95rem; }
+.loan-step01 .container-fluid .loan-application table tr td .form-control {font-size:.95rem; }
+
+.loan-step01 .container-fluid .loan-application table tr td textarea {font-size:.9rem; }
+.loan-step01 .container-fluid .loan-application table tr td textarea::placeholder {font-size:.95rem;}
+.loan-step01 .container-fluid .loan-application table tr td p {color:#333; font-size:.85rem; margin:10px 0; }
+
+.loan-step01 .container-fluid .loan-application table tr td .amount-after {text-align:right; margin-right:12px;}
+
+/*정보동의 및 버튼*/
+.loan-step01 .container-fluid .agree label{font-size: .9rem;}
+
+.loan-step01 .container-fluid .btn button { padding:1rem; color:#fff; margin:2rem 0 5rem; font-size:1rem;}
+
+
+}
+
+
+
+
+/*****************************대출하기 step02**************************************/
+
+.loan-step02 {margin:0 auto 0; }
+.loan-step02 .container-fluid {padding:20px 1rem 0 ; background-color: #f8f8f8;}
+
+
+/*예상한도금액*/
+.loan-step02 .container-fluid .limit-amount {width:100%; max-width:500px; padding:2rem 1rem 1rem; text-align:center; border:1px solid #ccc; margin:0 auto; background-color:#fff; border-bottom:none;}
+.loan-step02 .container-fluid .limit-amount p:nth-child(1) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; }
+.loan-step02 .container-fluid .limit-amount p:nth-child(2) {font-size:1.5rem; font-weight:600; color:#ee321f; font-family:Pretendard, sans-serif; margin-bottom:2rem;}
+.loan-step02 .container-fluid .limit-amount p:nth-child(3) {border-bottom:1px solid #ee321f; }
+
+
+.loan-step02 .container-fluid .aptloan-info {width:100%; max-width:500px; margin:0 auto; padding:0; }
+.loan-step02 .container-fluid .aptloan-info table {width:100%; background-color: #fff; border:1px solid #ccc; border-top:none; vertical-align: middle;}
+.loan-step02 .container-fluid .aptloan-info table tr th, .loan-step02 .container-fluid .aptloan-info table tr td {padding:.8rem 1rem;}
+.loan-step02 .container-fluid .aptloan-info table tr th {white-space:nowrap; font-size:.9rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500;}
+.loan-step02 .container-fluid .aptloan-info table tr td {text-align:right; font-size:.9rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; line-height: 1.2rem; letter-spacing: -.5px;}
+.loan-step02 .container-fluid .aptloan-info table tr .bottom {padding-bottom:2.5rem!important;}
+
+
+
+
+/*추가정보입력*/
+.loan-step02 .container-fluid .add-info {width:100%; max-width:500px;  margin:30px auto;}
+.loan-step02 .container-fluid .add-info h5 {font-size:1rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; margin-bottom:.5rem;}
+.loan-step02 .container-fluid .add-info	table {width:100%; background-color: #fff; border:1px solid #ccc; border-collapse: collapse;}
+.loan-step02 .container-fluid .add-info	table tr th, .loan-step02 .container-fluid .add-info table tr td {border-bottom:1px solid #ddd; padding:.7rem 1rem;  }
+.loan-step02 .container-fluid .add-info table tr th {white-space:nowrap; font-size:.85rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500; border-right:none;}
+.loan-step02 .container-fluid .add-info table tr td {font-size:.85rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; border-left:none;}
+.loan-step02 .container-fluid .add-info table tr td .input-box {display:flex; align-items:center; position:relative;}
+.loan-step02 .container-fluid .add-info table tr td .input-box input {padding-right:40px; text-align: right; font-family:"Pretendard", sans-serif; }
+.loan-step02 .container-fluid .add-info table tr td .input-box input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step02 .container-fluid .add-info table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; font-size:.85rem; font-family:Pretendard, sans-serif;  }
+.loan-step02 .container-fluid .add-info table tr td .date {text-align:right; padding-right:2rem; cursor: pointer; z-index: 100; background-color: rgba( 255, 255, 255, 0.2 );}
+.loan-step02 .container-fluid .add-info table tr td .date-calendar i {position: absolute; right:0.5rem; cursor: pointer;}
+.loan-step02 .container-fluid .add-info table tr td select { text-align-last:right; padding-right:30px; }
+.loan-step02 .container-fluid .add-info table tr td option { text-align:left;}
+.loan-step02 .container-fluid .add-info table tr td .amount-after {text-align: right; margin-right:12px;}
+.loan-step02 .container-fluid .add-info table tr td .amount-after span { font-family:"Pretendard", sans-serif; color:#ee321f;}
+.loan-step02 .container-fluid .add-info table tr td .date-calendar .daily-data{display:flex; align-items:center; border-bottom:none; position:relative;}
+.loan-step02 .container-fluid .add-info table tr td .date-calendar .daily-data input {text-align: right; margin-right:10px; font-weight: 500; font-size:.85rem; cursor: pointer; font-family:"Pretendard", sans-serif;  color:#222;}
+
+
+/*대출신청입력*/
+.loan-step02 .container-fluid .loan-application {width:100%; max-width:500px; margin:30px auto 10px;}
+.loan-step02 .container-fluid .loan-application h5 {font-size:1rem; font-weight:700; color:#222; font-family:Pretendard, sans-serif; margin-bottom:.5rem;}
+.loan-step02 .container-fluid .loan-application	table {width:100%; background-color: #fff;  border:1px solid #ccc; border-collapse: collapse; }
+.loan-step02 .container-fluid .loan-application	table tr th, .loan-step02 .container-fluid .loan-application table tr td {border-bottom:1px solid #ddd; padding: .7rem 1rem;   }
+.loan-step02 .container-fluid .loan-application table tr th {white-space:nowrap; font-size:.85rem; color:#555; font-family:Pretendard, sans-serif; font-weight: 500; border-right:none;}
+.loan-step02 .container-fluid .loan-application table tr td {font-size:.85rem; color:#000; font-family:Pretendard, sans-serif; font-weight: 500; border-left:none;  text-align: right;}
+.loan-step02 .container-fluid .loan-application table tr td	input {padding-right:10px; text-align: right; font-family:Pretendard, sans-serif; }
+.loan-step02 .container-fluid .loan-application table tr td input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step02 .container-fluid .loan-application table tr td .input-box {display:flex; align-items:center; position:relative;}
+.loan-step02 .container-fluid .loan-application table tr td .input-box input {padding-right:40px; text-align: right; font-family:"Pretendard", sans-serif; }
+.loan-step02 .container-fluid .loan-application table tr td .input-box input::placeholder {font-weight:400; font-size:.85rem;}
+.loan-step02 .container-fluid .loan-application table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; font-size:.85rem; font-family:Pretendard, sans-serif;  }
+.loan-step02 .container-fluid .loan-application table tr .memo { padding-right:1.5rem; }
+.loan-step02 .container-fluid .loan-application table tr td .amount-after {text-align: right; margin-right:12px;}
+.loan-step02 .container-fluid .loan-application table tr td .amount-after span { font-family:"Pretendard", sans-serif; color:#ee321f;}
+.loan-step02 .container-fluid .loan-application table tr td textarea {display: block; width:100%; height:120px; padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#222; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem; outline:none;}
+.loan-step02 .container-fluid .loan-application table tr td textarea::placeholder {color:#bbb; font-weight:400; font-size:.85rem;}
+.loan-step02 .container-fluid .loan-application table tr td p {text-align:left; font-weight: 400; color:#777; font-size:.78rem; margin:5px 0 10px; padding:0; letter-spacing: -.5px;  line-height:1.2;}
+
+
+/*정보동의 및 버튼*/
+.loan-step02 .container-fluid .agree {width:100%; max-width:500px; margin:0 auto;}
+.loan-step02 .container-fluid .agree label{color: #333; font-size: .85rem; font-family:"NotoSansKR", sans-serif; font-weight: 400; letter-spacing: -.5px;}
+
+.loan-step02 .container-fluid .btn	{width:100%; margin:0 auto; padding:0;}
+.loan-step02 .container-fluid .btn button {width:100%; max-width:500px; border:none; background-color: #ee321f; padding:1rem; color:#fff; margin:1rem 0 3rem; font-size:1rem;}
+
+
+
+@media (min-width:600px){
+
+/*예상한도금액*/
+.loan-step02 .container-fluid .limit-amount p:nth-child(1) {font-size:1.1rem;}
+.loan-step02 .container-fluid .limit-amount p:nth-child(2) {font-size:1.8rem;}
+.loan-step02 .container-fluid .limit-amount p:nth-child(3) {margin-bottom:1rem; }
+
+.loan-step02 .container-fluid .aptloan-info table tr th, .loan-step02 .container-fluid .aptloan-info table tr td {padding:0 1rem;}
+.loan-step02 .container-fluid .aptloan-info table tr th {font-size:.95rem; color:#888;}
+.loan-step02 .container-fluid .aptloan-info table tr td {font-size:.95rem; color:#000;}
+.loan-step02 .container-fluid .aptloan-info table tr .bottom {padding-bottom:2rem!important;}
+
+
+
+/*추가정보입력*/
+.loan-step02 .container-fluid .add-info h5 {font-size:1.1rem; margin-bottom:.7rem;}
+.loan-step02 .container-fluid .add-info	table tr th, .loan-step02 .container-fluid .add-info table tr td {padding: .7rem 1rem;}
+.loan-step02 .container-fluid .add-info table tr th {font-size:.95rem;}
+.loan-step02 .container-fluid .add-info table tr td {font-size:.95rem;}
+.loan-step02 .container-fluid .add-info table tr td .input-box input::placeholder {font-size:.95rem;}
+.loan-step02 .container-fluid .add-info table tr td .input-box span {font-size:.95rem; margin-bottom:2px;}
+.loan-step02 .container-fluid .add-info table tr td .custom-select {font-size:.95rem; }
+.loan-step02 .container-fluid .add-info table tr td .form-control {font-size:.95rem; }
+.loan-step02 .container-fluid .add-info table tr td .date-calendar .daily-data input {font-size:.95rem;}
+
+
+/*대출신청입력*/
+.loan-step02 .container-fluid .loan-application h5 {font-size:1.1rem; margin-bottom:.7rem;}
+.loan-step02 .container-fluid .loan-application	table tr th, .loan-step02 .container-fluid .loan-application table tr td { padding: .7rem 1rem;}
+.loan-step02 .container-fluid .loan-application table tr th {font-size:.95rem; width:100px;}
+.loan-step02 .container-fluid .loan-application table tr td {font-size:.95rem;}
+.loan-step02 .container-fluid .loan-application table tr td input::placeholder {font-size:.95rem;}
+.loan-step02 .container-fluid .loan-application table tr td .input-box input::placeholder {font-size:.95rem;}
+.loan-step02 .container-fluid .loan-application table tr td .input-box span {font-size:.95rem; }
+.loan-step02 .container-fluid .loan-application table tr td .form-control {font-size:.95rem; }
+
+.loan-step02 .container-fluid .loan-application table tr td textarea {font-size:.9rem; }
+.loan-step02 .container-fluid .loan-application table tr td textarea::placeholder {font-size:.95rem;}
+.loan-step02 .container-fluid .loan-application table tr td p {color:#333; font-size:.85rem; margin:10px 0; }
+
+
+
+/*정보동의 및 버튼*/
+.loan-step02 .container-fluid .agree label{font-size: .9rem;}
+
+.loan-step02 .container-fluid .btn button { padding:1rem; color:#fff; margin:2rem 0 5rem; font-size:1rem;}
+
+
+}
+
+
+
+
+
+
+
+/*****************************대출하기 step03**************************************/
+
+.loan-step03 {margin:0 auto 0; }
+.loan-step03 .container-fluid {padding:20px 1rem 0 ; background-color: #f8f8f8;}
+
+
+.loan-step03 .container-fluid .complete {width:100%; max-width:500px; padding:2rem 1rem 2.5rem; text-align:center; border:1px solid #ccc; margin:0 auto; background-color:#fff;}
+.loan-step03 .container-fluid .complete .mdi {font-size:2rem; color:#ee321f;  margin-bottom:10px; display: block;}
+.loan-step03 .container-fluid .complete p:nth-child(2) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem; margin-bottom:5px;}
+.loan-step03 .container-fluid .complete p:nth-child(2) span {display:none;}
+.loan-step03 .container-fluid .complete p:nth-child(3) {font-size:1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem;}
+.loan-step03 .container-fluid .complete p:nth-child(4) {border-bottom:1px solid #ee321f; margin:1.5rem 0;}
+.loan-step03 .container-fluid .complete p:nth-child(5){font-size:.75rem; color:#777; font-family: Nunito,sans-serif; letter-spacing: -.3px; text-align: center; line-height: 1.05rem; }
+
+.loan-step03 .container-fluid .customer {width:100%; max-width:500px; padding:1rem 1rem 1rem; text-align:center;  margin:10px auto 0; background-color:#fff; border:1px solid #ccc; }
+.loan-step03 .container-fluid .customer .txt p:nth-child(1) {font-size:.95rem; font-weight:500; color:#222; letter-spacing: -.5px; font-family:Pretendard, sans-serif;}
+.loan-step03 .container-fluid .customer .txt p:nth-child(2) {font-size:.85rem; font-weight:500; color:#777; font-family:Pretendard, sans-serif; letter-spacing: -.5px;}
+.loan-step03 .container-fluid .customer .txt p span {display:none;}
+.loan-step03 .container-fluid .customer .tel {margin-top:10px; }
+.loan-step03 .container-fluid .customer .tel a{font-size:1.4rem;  font-family:Pretendard, sans-serif;  font-weight:800; color:#222;}
+.loan-step03 .container-fluid .customer .tel span{font-size:1.4rem;  font-family:Pretendard, sans-serif;  font-weight:800; color:#ee321f; margin-top:10px; }
+
+.loan-step03 .container-fluid .loan-btn	{display:flex; justify-content:center;}
+.loan-step03 .container-fluid .loan-btn button {width:100%; max-width:500px; border:none; background-color: #ee321f; padding:1rem; color:#fff; margin:1rem 0 3rem; font-size:1rem;}
+
+
+
+@media (min-width:500px){
+.loan-step03 .container-fluid .complete .mdi {font-size:2.5rem;  margin-bottom:15px; }
+.loan-step03 .container-fluid .complete p:nth-child(2) {font-size:1.1rem;}
+.loan-step03 .container-fluid .complete p:nth-child(2) span {display:inline-block; font-size:1.1rem; font-weight:500; color:#222; font-family:Pretendard, sans-serif; letter-spacing: -.5px; line-height: 1.3rem;}
+.loan-step03 .container-fluid .complete p:nth-child(3) {font-size:1.1rem; }
+.loan-step03 .container-fluid .complete p:nth-child(4) {margin:2rem 0;}
+.loan-step03 .container-fluid .complete p:nth-child(5){text-align: center; padding:0 10px;}
+
+.loan-step03 .container-fluid .customer {padding:1.5rem 1rem 1.5rem;  }
+.loan-step03 .container-fluid .customer .txt p:nth-child(1) {font-size:1rem;}
+.loan-step03 .container-fluid .customer .txt p:nth-child(2) {font-size:.9rem; letter-spacing: 0px; margin-top:3px;}
+.loan-step03 .container-fluid .customer .txt p span {display:inline-block; font-size:1rem; font-weight:500; color:#222; letter-spacing: -.5px; font-family:Pretendard, sans-serif;}
+.loan-step03 .container-fluid .customer .tel {margin-top:15px; }
+.loan-step03 .container-fluid .customer .tel a{font-size:1.6rem;}
+.loan-step03 .container-fluid .customer .tel span{font-size:1.6rem;}
+}
+
+
+@media (min-width:600px){
+
+.loan-step03 .container-fluid .loan-btn button { padding:1rem; color:#fff; margin:2rem 0 5rem; font-size:1rem; width:500px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+/*****************************대출서류 안내**************************************/
+
+.loan-docu {margin:0 auto; width:100%; max-width:750px; }
+.loan-docu .content h1 {margin-top:40px; color:#222; font-size:1.5rem; text-align: center; letter-spacing: -.5px; font-weight: 700; font-family:"Pretendard", sans-serif;}
+.loan-docu .content h1 span {color:#ee321f; font-family:"Pretendard", sans-serif;}
+.loan-docu .content .tit {display:flex; align-items: center; text-align:left; font-size:1.15rem; letter-spacing:-.5px; margin:30px 0 5px; color:#222; font-weight:600; font-family:"Pretendard", sans-serif; }
+.loan-docu .content .tit img {margin-right:5px; margin-bottom:2px;}
+.loan-docu .content table tr td:first-child p {font-size:.95rem; color:#222; font-weight: 400; margin:12px 0 10px; letter-spacing: -.5px; line-height: 1.2rem;}
+.loan-docu .content table tr td:first-child p span {font-size:.85rem; color:#555; font-weight: 400; }
+.loan-docu .content table tr td:last-child p {font-size:.9rem; color:#222; font-weight: 400; margin-bottom:0; letter-spacing: -.5px; line-height: 1.1rem; }	
+.loan-docu .content table tr td .docu {position: relative; padding-left:10px; margin-bottom:10px; font-size:.85rem;  color:#555; font-weight: 400; }
+.loan-docu .content table tr td .dot::before {width:2px; height: 2px; border-radius:2px; content:" "; position: absolute; left:0; top:7px;}
+.loan-docu .content table tr td .color::before {background-color:#555;}		
+
+
+.loan-docu .content .basic {padding:0 .5rem;}
+.loan-docu .content .basic table {width:100%; border:1px solid #e1a7a6; border-spacing:0; margin:0 1;  }
+.loan-docu .content .basic table tr td:first-child {width:65%; text-align:left;  border-bottom:1px solid #e9e9e9; box-sizing:border-box; padding:.7rem .5rem; vertical-align: middle;}
+.loan-docu .content .basic table tr td:last-child {width:35%; text-align:left; background-color: #ffe8ea; border-bottom:1px solid #e6cccf; box-sizing: border-box; padding:.7rem; vertical-align: middle;} 
+.loan-docu .content .basic table tr:last-child td {border-bottom:1px solid #e1a7a6; }	
+.loan-docu .content .basic table tr td .choice {background-color: #ffe8ea; padding:.3rem 1rem; text-align: center; font-size:.85rem; width:50%;}	
+
+
+.loan-docu .content .etc-business {padding:0 .5rem;}
+.loan-docu .content .etc-business table {width:100%; border:1px solid #c9c9c9; border-spacing:0; margin:0 auto;}
+.loan-docu .content .etc-business table tr td:first-child {width:65%; text-align: left; box-sizing: border-box; padding:.7rem .5rem; vertical-align: middle;}
+.loan-docu .content .etc-business table tr td:last-child {width:35%; text-align: left; background-color: #f5f5f5; box-sizing: border-box; padding:.7rem; vertical-align: middle;} 
+
+
+.loan-docu .content .etc-name  {padding:0 .5rem;}
+.loan-docu .content .etc-name table {width:100%; border:1px solid #c9c9c9; border-spacing:0; margin:0 auto;}
+.loan-docu .content .etc-name table tr td:first-child {width:65%; text-align: left; box-sizing: border-box; padding:.7rem .5rem; vertical-align: middle;}
+.loan-docu .content .etc-name table tr td:last-child {width:35%; text-align: left; background-color: #f5f5f5; box-sizing: border-box; padding:.7rem; vertical-align: middle;} 
+
+
+.loan-docu .content .agree p{text-align:right;  font-size:.85rem; color:#222;  font-family:"Pretendard", sans-serif; margin:5px .6rem 0 0 ; font-weight: 600;}
+
+.loan-docu .content .bottom {width:100%;  background-color: #f5f5f5; margin:50px auto 0; padding:1.5rem 1rem; text-align: center;}
+.loan-docu .content .bottom p {font-size:.9rem; color:#555; font-weight: 500; margin-bottom:0; font-family:"Pretendard", sans-serif; letter-spacing: -.5px; word-spacing: -.5px; line-height: 1.4rem;}	
+.loan-docu .content .bottom img {margin-top:20px;}	
+
+
+@media (min-width:550px){
+.loan-docu .content h1 {margin-top:60px; font-size:1.8rem;}
+.loan-docu .content .tit {font-size:1.25rem;  margin:35px 0 10px;}
+.loan-docu .content table tr td:first-child p {font-size:1.1rem;  margin:12px .5rem 10px; line-height: 1.5rem;}
+.loan-docu .content table tr td:first-child p span {font-size:.95rem; }
+.loan-docu .content table tr td:last-child p {font-size:1.05rem; line-height: 1.3rem; margin:.5rem;}	
+.loan-docu .content table tr td .dot::before {width:3px; height: 3px; border-radius:3px; top:11px;}
+.loan-docu .content .br {display:none;}	
+.loan-docu .content .agree p{font-size:1rem;}
+.loan-docu .content .bottom {display: flex; justify-content:space-between; text-align: left; padding:2rem;}	
+.loan-docu .content .bottom p {font-size:1rem; line-height: 1.5rem;}		
+.loan-docu .content table tr .choice-wrap {width:100%!important; display:flex; border-bottom:none!important; align-items: center;}	
+.loan-docu .content table tr .choice-wrap .choice {margin:0; width:100%!important; font-size:1.1rem!important; padding:1rem!important; border-radius:4rem;}	
+.loan-docu .content table tr .choice-wrap div:first-child {margin-left:.5rem;}	
+.loan-docu .content table tr .choice-wrap div:last-child {margin-left:1rem;}	
+}
+		

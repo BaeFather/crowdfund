@@ -1,0 +1,1 @@
+java -Du=sbmiddle -DcorpInfoFile=../conf/corpInfoFile.properties -classpath .:../lib/log4j-1.2.8.jar:../lib/seed.jar:../lib/jce1_2_2.jar:../lib/local_policy.jar:../lib/sunjce_provider.jar:../lib/US_export_policy.jar EnDeServer

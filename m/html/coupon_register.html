@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>쿠폰등록</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/point.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" /> <!-- modal(popup) css -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <h2>쿠폰등록</h2>
+            <div class="close_btn">
+                <a href="#"><img src="img/close_icon.png" /></a>
+            </div>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### CouponReg Start -->
+        <div id="CouponReg">
+            <div class="coupon_reg_title">
+                <h2>보유하신 쿠폰번호를 입력해주세요
+                </h2>
+            </div>
+            <form>
+                <div class="form_wrap">
+                    <input type="text" name="" id="" placeholder="쿠폰번호를 입력해주세요">
+                    <button><img src="img/reset_icon.png" /></button>
+                </div>
+            </form>
+        </div>
+        <!-- ### CouponReg End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button class="md-trigger" data-modal="ConfirmPopup">확인</button>
+        </div>
+        <!-- ### BottomBtn End -->
+
+        <!-- ### ConfirmPopup Start-->
+        <div class="md-modal md-effect-3" id="ConfirmPopup">
+			<div class="md-content">
+                <h2>
+                    쿠폰을 <span>등록</span>하시겠습니까?<br />
+                    <span class="small">(등록 후에는 취소가 불가합니다. )</span>
+                </h2>
+                <p>
+                    <span>쿠폰지급처</span>
+                    아이템베이 회원가입 이벤트
+                </p>
+                <p>
+                    <span>포인트</span>
+                    3,000P
+                </p>
+                <div class="btn">
+                    <input type="button" value="아니요" class="md-close" />
+                    <input type="button" value="예" />
+                </div>
+			</div>
+		</div>
+        <div class="md-overlay"></div><!-- the overlay element -->
+        <!-- ### ConfirmPopup end-->
+
+        <!-- modal(popup) script -->
+        <script src="js/classie.js"></script>
+        <script src="js/modalEffects.js"></script>
+    </body>
+</html>

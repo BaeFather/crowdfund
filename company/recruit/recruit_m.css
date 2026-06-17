@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+/* 모바일 */
+* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0;}
+#m_recruit {width:100%; margin:0 auto; padding:0; border: 0; text-align: center;}
+#m_recruit img { width:100%;}
+#m_recruit ul {padding:0; list-style: none;}
+
+	
+	
+/*채용공고확인버튼 */
+.button{display:block; background-color:#1a1c47; width:80%; margin:50px auto 0; padding:30px 80px 30px 30px; box-sizing: border-box;}
+.button a {position:relative; color:#fff; font-size: 22px; font-weight: 300; text-decoration: none; word-spacing: -1px;}	
+.num {position: absolute;  top:-7px; right:-60px; background-color:#fff; width:50px; height: 50px;  color:#1a1c47; font-size: 22px; font-weight: 400; border-radius:50%; padding-top:7px; box-sizing: border-box;}
+
+	
+
+.title {padding-top:70px;}
+/*
+.text2 {width:100%; margin:0 auto;}
+.benefit {width:48%;  margin:0 auto; display: inline-block; text-align:center; box-sizing: border-box; font-size: 16px; color:#777; font-weight: 300; line-height: 18px; }
+.benefit .left {text-align:left; margin: 0 auto;}
+.benefit .b01{font-size:18px; color:#222; font-weight: 300; vertical-align: bottom; word-spacing: -2px; }
+.benefit .b01 span {color:#00a0e9; font-size: 22px; font-weight:400; padding-right: 10px;}
+*/
+
+
+.text2 {margin:0 auto; text-align: center; padding: 50px 0; }
+.text2 ul li { width:50%; float:left; text-align: left;box-sizing: border-box; font-size: 16px; color:#777; font-weight: 300; line-height: 18px; padding-bottom: 40px;}
+.benefit p{font-size:18px; color:#222; font-weight: 300; vertical-align: bottom; word-spacing: -2px;  padding-bottom:20px;}
+.benefit p span {color:#222; font-size: 22px; font-weight:400; padding-right: 10px;}
+
+.t01,.t02 {font-size: 20px; color:#777; font-weight: 300; line-height: 24px; }
+.t01 p ,.t02 p ,.t03 p{padding:55px 0 30px; font-size: 28px; color:#222; font-weight: 300; }
+.t03 {font-size: 20px; color:#777; font-weight: 300; line-height: 24px; padding-bottom:80px;}
+
+
+.b02,.b04,.b06 {padding-left:20px;}
+.b01,.b03,.b05,.b07 {padding-left:30px;}
+	
+#list {padding:70px 0 30px; font-size: 28px; font-weight: 300; word-spacing: -1px; color:#222;}	
+
+select{
+width: 90%;
+padding: 10px 10px;
+border: 1px solid #CCC;
+border-radius: 0px;
+background: url('img/arrow.jpg') no-repeat 95% 50%;
+font-size:20px;	
+color:#222;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+text-align-last: center;
+
+}	
+
+select::-ms-expand {display:none;}
+
+
+
+
+.board {width:95%; padding: 50px 0 100px; }
+.board table {width:95%; border-top:2px solid #555; border-collapse: separate; border-spacing: 0px;}
+.board table tr td {border-bottom:1px solid #ddd; height: 70px;}
+.board .type {width:15%;   font-size:16px; color:#555; font-weight: 300; letter-spacing: -1px;}
+.board .subject {width:65%;  font-size:18px; color:#222; text-align: left; letter-spacing: -1px;}
+.board .date {width:20px;  font-size:16px; color:#777; text-align: center; font-weight: 300; letter-spacing: -1px;}
+
+
+
+
+@media (max-width:400px) {
+	
+/*채용공고확인버튼 */
+.button{display:block; background-color:#073190; width:80%; margin:30px auto 0; padding:20px 60px 20px 20px; box-sizing: border-box;}
+.button a {position:relative; color:#fff; font-size: 18px; font-weight: 300; text-decoration:none; word-spacing: -1px;}	
+.num {position: absolute;  top:0; right:-40px; background-color:#fff; width:30px; height: 30px;  color:#073190; font-size: 16px; font-weight: 400; border-radius:50%;  padding-top:2px; box-sizing: border-box;}
+
+	
+.text2 {margin:0 auto; text-align: center; padding: 50px 0;}
+.text2 ul li { width:50%; float:left; text-align: left;box-sizing: border-box; font-size: 14px; color:#777; font-weight: 300; line-height: 16px; padding-bottom: 40px;}
+.benefit p{font-size:16px; color:#222; font-weight: 300; vertical-align: bottom; word-spacing: -2px;  padding-bottom:20px;}
+.benefit p span {color:#00a0e9; font-size: 18px; font-weight:400; padding-right: 5px;}
+	
+	
+.b02,.b04,.b06 {padding-left:15px;}
+.b01,.b03,.b05,.b07 {padding-left:30px;}
+		
+	
+.t01,.t02 {font-size: 18px; color:#777; font-weight: 300; line-height: 22px; }
+.t01 p ,.t02 p ,.t03 p{padding:40px 0 20px; font-size: 24px; color:#222; font-weight: 300; }
+.t03 {font-size: 18px; color:#777; font-weight: 300; line-height: 22px; padding-bottom:60px;}
+
+	
+	
+	
+#list {padding:50px 0 30px; font-size: 24px; font-weight: 300; word-spacing: -1px; color:#222;}	
+	
+	
+.board .type {width:15%;   font-size:15px; color:#555; font-weight: 300; letter-spacing: -1px;}
+.board .subject {width:65%;  font-size:17px; color:#222; text-align: left; letter-spacing: -1px;}
+.board .date {width:20px;  font-size:14px; color:#777; text-align: center; font-weight: 300; letter-spacing: -1px;}
+
+
+	
+	
+			
+}
+
+
+
+
+@media (max-width:350px) {
+
+	
+.b02,.b04,.b06 {padding-left:10px;}
+.b01,.b03,.b05,.b07 {padding-left:20px;}
+
+.board .type {width:15%;   font-size:13px; color:#555; font-weight: 300; letter-spacing: -1px;}
+.board .subject {width:65%;  font-size:15px; color:#222; text-align: left; letter-spacing: -1px;}
+.board .date {width:20px;  font-size:13px; color:#777; text-align: center; font-weight: 300; letter-spacing: -1px;}	
+	
+			
+}	
+	

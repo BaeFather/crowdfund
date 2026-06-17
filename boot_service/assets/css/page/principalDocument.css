@@ -1,0 +1,36 @@
+
+/********************원리금수취증서**************************************************************************************************************************************/
+
+.principal-interest-modal .modal-dialog {width: 21cm; max-width:21cm; margin:0 auto; height: 29.7cm; min-height: 29.7cm; padding:1cm; margin: 1cm auto; background:#fff;}
+.principal-interest-modal .modal-header {display:flex; align-items: flex-end; justify-content: space-between; border-bottom:1px solid #ee321f; padding:0;}
+.principal-interest-modal .modal-header p {margin-bottom:10px;  font-family: "Nunito",sans-serif; color:#555; font-weight: 600; font-size:.9rem; letter-spacing: -.5px;}
+.principal-interest-modal .modal-header p span {font-family: "Nunito",sans-serif; }
+.principal-interest-modal .modal-body {padding:0; position:relative;}
+.principal-interest-modal .modal-body h1 {font-size:2.3rem; color:#333; text-align: center; margin: 50px 0 30px; font-weight:600; font-family: "NotoSansKR",Sans-serif; }
+.principal-interest-modal .modal-body table {width:100%; border-top:2px solid #333; margin-bottom:30px;}
+.principal-interest-modal .modal-body table tr th {width:20%; padding:.6rem 1rem; border-right:1px solid #ddd; border-bottom:1px solid #ddd; font-family: "Pretendard", Sans-serif; font-size:.85rem; color:#222;font-weight: 600;}
+.principal-interest-modal .modal-body table tr td {width:30%; padding:.6rem 1rem; border-right:1px solid #ddd; border-bottom:1px solid #ddd; font-family: "Pretendard", Sans-serif; font-size:.85rem; color:#555;font-weight: 500; letter-spacing: -.3px;}
+.principal-interest-modal .modal-body table tr th:nth-of-type(1) {width:18%; background-color: #f6f6f6;}
+.principal-interest-modal .modal-body table tr td:nth-of-type(1) {width:42%;}
+.principal-interest-modal .modal-body table tr th:nth-of-type(2) {width:18%; background-color: #f6f6f6;}
+.principal-interest-modal .modal-body table tr td:nth-of-type(2) {width:22%;}
+.principal-interest-modal .modal-body table tr td:nth-child(4n) {border-right:none;}
+.principal-interest-modal .modal-body table .border-none {border-right:none;}
+.principal-interest-modal .modal-body .table-info-01 tr th {width:18%!important; background-color: #fff;}
+.principal-interest-modal .modal-body .table-info-01 tr td {width:82%!important; background-color: #fff;}
+.principal-interest-modal .modal-body .table-info-03 {margin-bottom:10px;}
+.principal-interest-modal .modal-body .tit {font-size:1rem; color:#222; font-family: "Pretendard", Sans-serif; font-weight: 600; margin-bottom:5px;}
+.principal-interest-modal .modal-body .notice {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align:right; letter-spacing: -.5px;}
+
+.principal-interest-modal .modal-body .page-bottom {margin:50px auto 30px; text-align: center; }
+.principal-interest-modal .modal-body .page-bottom p {color:#222; font-family: "Pretendard", Sans-serif; font-weight: 500;}
+.principal-interest-modal .modal-body .page-bottom p:nth-child(1) {font-size:1.1rem;}
+.principal-interest-modal .modal-body .page-bottom p:nth-child(2) {font-size:1rem; }
+.principal-interest-modal .modal-body .page-bottom p:nth-child(3) {font-size:1.6rem; font-weight: 600; margin-top:30px;}
+.principal-interest-modal .modal-body .logo-bg {position: absolute; top:50%; left:50%; transform : translate(-50%, -50%);}
+
+
+.principal-interest-modal .modal-footer {border-top:none; margin:20px 0 30px; display:flex; justify-content: space-between; bottom:0;}
+.principal-interest-modal .modal-footer .btn-confirm {margin:0; background-color:#ee321f; color:#fff; width:30%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+.principal-interest-modal .modal-footer .btn-cancel {margin:0; background-color:#aaa; color:#fff; width:30%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none;}
+

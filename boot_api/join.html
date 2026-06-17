@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>회원가입</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/join.js"></script>
+
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer, reset css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+
+		<!-- contents css -->
+		<link href="./assets/css/page/member.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+
+    </head>
+
+    <body>
+    	<section class="join">
+            <div class="container">
+                <div class="head-title">
+					<h4><img src="assets/images/logo/hello_logo_red.png" alt="헬로펀딩"></h4>
+					<p>API 회원가입</p>
+                </div>
+                <form action="#">
+                    <div class="join-wrap">
+                        <div class="form-group">
+                            <label for="co-id" class="form-label">아이디</label>
+                            <input class="form-control" type="text" id="co-id" placeholder="아이디">	
+							<div id="" class="invalid-feedback">아이디를 입력해주세요</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="co-name" class="form-label">업체명</label>
+                            <input class="form-control" type="text" id="co-name"  placeholder="업체명">
+							<div id="" class="invalid-feedback">업체명을 입력해주세요</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="co-number" class="form-label">사업자번호</label>
+                            <input class="form-control" type="text" id="co-number"  placeholder="사업자번호 (숫자만 가능)">
+							<div id="" class="invalid-feedback">사업자번호를 입력해주세요</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="co-manager" class="form-label">담당자</label>
+                            <input class="form-control" type="text" id="co-manager"  placeholder="담당자">
+							<div id="" class="invalid-feedback">담당자를 입력해주세요</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="co-hp" class="form-label">휴대폰 번호</label>
+                            <input class="form-control" type="text" id="co-hp"  placeholder="휴대폰번호 (숫자만 가능)">
+							<div id="" class="invalid-feedback">휴대폰 번호를 입력해주세요</div>
+                        </div>
+                        <div class="form-group">                                     
+                            <label for="email" class="form-label">이메일</label>
+                            <input class="form-control" type="email" id="email"  placeholder="이메일 주소">
+							<div id="" class="invalid-feedback">이메일을 입력해주세요</div>
+                        </div>
+						<div class="form-group">                                     
+                            <label class="form-label">사업자 등록증</label>
+							<div class="filebox">
+								<input class="upload-name" placeholder="사업자등록증 첨부" disabled="disabled">
+								<label for="ex_filename">파일첨부</label> 
+							    <input type="file" id="ex_filename" class="upload-hidden"> 
+							</div>
+							<div id="" class="invalid-feedback">사업자 등록증을 첨부해주세요</div>
+
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="submit">가입신청하기</button>
+                        </div>
+                    </div>
+                </form>
+				<div class="go-login">
+                    <a href="login.html">로그인하기</a>
+                </div> 
+            </div>
+		</section>
+
+        <!-- bundle -->
+		
+		<script>
+		$(document).ready(function(){
+		  var fileTarget = $('.filebox .upload-hidden');
+
+		  fileTarget.on('change', function(){  // 값이 변경되면
+			if(window.FileReader){  // modern browser
+			  var filename = $(this)[0].files[0].name;
+			} 
+			else {  // old IE
+			  var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
+			}
+
+			// 추출한 파일명 삽입
+			$(this).siblings('.upload-name').val(filename);
+		  });
+		}); 
+		</script>
+		
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+
+    </body>
+</html>

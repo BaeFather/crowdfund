@@ -1,0 +1,224 @@
+<?
+include_once('./_common.php');
+include_once($_SERVER["DOCUMENT_ROOT"].'/lib/p2pctr.lib.php');
+//include_once($_SERVER["DOCUMENT_ROOT"].'/lib/repay_calculation_new.php');
+foreach($_REQUEST as $k=>$v) { $$_REQUEST[$k] = $v; }
+?>
+<?
+$apiNo = "4.4.7";
+$apiTitle = "원리금지급 기록";
+?>
+<?
+$url  = $p2p_host . "investments/payment";
+$method = "POST";
+
+$sql = "SELECT goods_id  FROM cf_product where idx='$product_idx'";
+$res = sql_query($sql);
+$row = sql_fetch_array($res);
+
+$give_sql = "SELECT DATE, turn, SUM(interest) sum_int , SUM(principal) sum_prin, SUM(interest_tax) int_tax, SUM(local_tax) loc_tax, SUM(fee) sum_fee 
+			   FROM cf_product_give WHERE product_idx='$product_idx' GROUP BY turn ORDER BY turn";
+
+// 특정 회차만
+/*
+$give_sql = "SELECT DATE, turn, SUM(interest) sum_int , SUM(principal) sum_prin, SUM(interest_tax) int_tax, SUM(local_tax) loc_tax, SUM(fee) sum_fee 
+			   FROM cf_product_give WHERE product_idx='$product_idx' and turn='11' GROUP BY turn ORDER BY turn";
+*/
+$give_res = sql_query($give_sql);
+$give_cnt = sql_num_rows($give_res);
+?>
+<?
+include_once (G5_ADMIN_PATH.'/admin.head.nomenu.php');
+?>
+<div class="tbl_head02 tbl_wrap" style="margin-top:10px;">
+<table class="table table-bordered table-condensed">
+
+<?
+for ($i=0 ; $i<$give_cnt ; $i++) {
+
+	$grow = sql_fetch_array($give_res);
+
+	$strApiTrxNo  = get_p2pord_no(); // API거래고유번호
+	$strApiTrxDtm = get_dtm_no();    // 거래일시 (밀리세컨드)
+
+	unset($headers);
+	$headers[] = "Content-Type: application/json; charset=UTF-8";
+	ARRAY_PUSH($headers,"Authorization: Bearer ".$access_token);
+	ARRAY_PUSH($headers,"api_trx_no: ".$strApiTrxNo);
+	ARRAY_PUSH($headers,"api_trx_dtm: ".$strApiTrxDtm);
+
+	$data = array(); $data1 = array();
+	$data["pni_payment_common_info"] = array();
+	$data["pni_payment_list"] = array();
+
+	$data["pni_payment_common_info"]["goods_id"] = $row["goods_id"];
+	$data["pni_payment_common_info"]["securities_n_count"] = (int)$grow["turn"];
+	$data["pni_payment_common_info"]["pay_date"] = check_int($grow["DATE"]);
+
+	/*
+	$sqld = "SELECT A.* , B.contract_id 
+			   FROM cf_product_give A
+		  LEFT JOIN cf_product_invest_detail B ON(B.product_idx=A.product_idx AND B.member_idx=A.member_idx AND B.invest_state<>'N' AND)
+		      WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' 
+		   ORDER BY A.idx";
+	$sqld = "SELECT A.* 
+			   FROM cf_product_give A
+		      WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' 
+		   ORDER BY A.idx";
+
+	$sqld = "SELECT A.* , B.contract_id 
+			   FROM cf_product_give A
+		  LEFT JOIN cf_product_invest B ON(B.product_idx=A.product_idx AND B.member_idx=A.member_idx AND B.invest_state='Y')
+		      WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' 
+		   ORDER BY A.idx";
+	*/
+
+	if ($mode=="send") {
+		$sqld = "SELECT A.* , B.contract_id 
+				   FROM cf_product_give A
+			  LEFT JOIN cf_product_invest B ON(B.product_idx=A.product_idx AND B.member_idx=A.member_idx AND B.invest_state='Y')
+				  WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' AND A.p2pCtr_date=''
+			   ORDER BY A.idx LIMIT 100";
+	} else {
+		$sqld = "SELECT A.* , B.contract_id 
+				   FROM cf_product_give A
+			  LEFT JOIN cf_product_invest B ON(B.product_idx=A.product_idx AND B.member_idx=A.member_idx AND B.invest_state='Y')
+				  WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' 
+			   ORDER BY A.idx ";
+		$sqld = "SELECT A.* , B.contract_id 
+				   FROM cf_product_give A
+			  LEFT JOIN cf_product_invest B ON(B.product_idx=A.product_idx AND B.member_idx=A.member_idx AND B.invest_state='Y')
+				  WHERE A.product_idx='$product_idx' AND A.turn='$grow[turn]' AND A.p2pCtr_date=''
+			   ORDER BY A.idx ";
+			   
+	}
+
+	$resd = sql_query($sqld);
+	$cntd = sql_num_rows($resd);
+
+	$total_pay_p_amount=0; $total_pay_interest=0 ; $total_actual_pay_amount=0;
+
+	for ($j=0 ; $j<$cntd ; $j++) {
+
+		$rowd = sql_fetch_array($resd);
+
+		$data1["pni_payment_list"][$j]["member_idx"] = $rowd["member_idx"];
+		$data1["give_idx"][$j] = $rowd["idx"];
+
+		$data["pni_payment_list"][$j]["investment_contract_id"] = $rowd["contract_id"];
+		$data["pni_payment_list"][$j]["pay_p_amount"] = (int)$rowd["principal"];
+		$data["pni_payment_list"][$j]["pay_interest"] = (int)$rowd["interest"];
+		$data["pni_payment_list"][$j]["actual_pay_amount"] = (int)($rowd["principal"]+$rowd["interest"]);
+
+		$total_pay_p_amount += $data["pni_payment_list"][$j]["pay_p_amount"];
+		$total_pay_interest += $data["pni_payment_list"][$j]["pay_interest"];
+		$total_actual_pay_amount += $data["pni_payment_list"][$j]["actual_pay_amount"];
+
+	}
+
+
+	if ($mode=="send" and count($data["pni_payment_list"])) {
+
+
+		$res = curl_p2pctr($url , $method , $data , $headers);
+
+		$intEtime = time();
+		$thrSec = $intStime - $intEtime;
+		fn_log($apiNo, $apiTitle, $mb_no, $url, $res["req_body"] , $res["body"], $res["http_code"], $thrSec);
+
+		$resj = json_decode($res["body"] , true);
+		if ($resj["rsp_code"] == "A0000") {
+
+			for ($k=0 ; $k<count($data1["give_idx"]) ; $k++) {
+				$up_sql = "UPDATE cf_product_give SET p2pCtr_date='".date("YmdHis")."' WHERE idx='".$data1["give_idx"][$k]."'";
+				sql_query($up_sql);
+			}
+
+			echo "기록 성공<br/><br/>";
+			echo "<pre>"; print_r($res); echo "</pre><br/><br/>";		
+		} else {
+			echo "기록 실패<br/><br/>";
+			echo "<pre>"; print_r($res); echo "</pre><br/><br/>";
+		}
+
+	}
+	$nno = count($data["pni_payment_list"]);
+	?>
+	<tr>
+		<td style="text-align:center;vertical-align:middle;">
+			<?=$data["pni_payment_common_info"]["securities_n_count"]?>
+		</td>
+		<td style="text-align:center;vertical-align:middle;">
+			<?=$data["pni_payment_common_info"]["pay_date"]?>
+		</td>
+		<td style="text-align:center;vertical-align:middle;">
+			<table>
+				<tr>
+					<th>no</th>
+					<th>회원번호</th>
+					<th>투자계약ID</th>
+					<th>원금</th>
+					<th>이자</th>
+					<th>실지급액</th>
+				</tr>
+			<? for ($k=0 ; $k<count($data["pni_payment_list"]) ; $k++) { ?>
+				<tr>
+					<td style="text-align:center;vertical-align:middle;">
+						<?=$nno--?>
+					</td>
+					<td style="text-align:center;vertical-align:middle;">
+						<?=$data1["pni_payment_list"][$k]["member_idx"]?>
+					</td>
+					<td style="text-align:center;vertical-align:middle;">
+						<?=$data["pni_payment_list"][$k]["investment_contract_id"]?>
+					</td>
+					<td style="text-align:right;vertical-align:middle;">
+						<?=number_format($data["pni_payment_list"][$k]["pay_p_amount"])?>
+					</td>
+					<td style="text-align:right;vertical-align:middle;">
+						<?=number_format($data["pni_payment_list"][$k]["pay_interest"])?>
+					</td>
+					<td style="text-align:right;vertical-align:middle;">
+						<?=number_format($data["pni_payment_list"][$k]["actual_pay_amount"])?>
+					</td>
+				</tr>
+			<? } ?>
+				<tr>
+					<td style="text-align:center;vertical-align:middle;" colspan=3>합 계</td>
+					<td style="text-align:right;vertical-align:middle;"><?=number_format($total_pay_p_amount)?></td>
+					<td style="text-align:right;vertical-align:middle;"><?=number_format($total_pay_interest)?></td>
+					<td style="text-align:right;vertical-align:middle;"><?=number_format($total_actual_pay_amount)?></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<?
+	//echo "<pre>"; print_r($data); echo "</pre>";
+
+}
+?>
+
+</table>
+
+<table style="width:100%;border:0;">
+	<tr>
+		<td style="text-align:center; border:0;">
+			<form method="post" name="ff">
+			<input type=hidden name="mode" value=""/>
+			<input type=hidden name="product_idx" value="<?=$product_idx?>"/>
+			<input type="button" class="btn btn-sm btn-warning" onclick="go_send();" value="전송"/>
+			</form>
+		</td>
+	</tr>
+</table>
+
+<script>
+function go_send() {
+	var yn = confirm("이대로 전송하시겠습니까?");
+	if (!yn) return;
+
+	var f = document.ff;
+	f.mode.value="send";
+	f.submit();
+}
+</script>

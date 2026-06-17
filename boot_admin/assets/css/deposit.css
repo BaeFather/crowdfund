@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/********************************출금내역*******************************************/
+
+.wrapper .content-page .container-fluid .withdrawal-search	{padding:0 30px; }	
+.wrapper .content-page .container-fluid .withdrawal-search form {width:100%; display:flex; flex-wrap: nowrap;}
+.wrapper .content-page .container-fluid .withdrawal-search .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .withdrawal-search .search-table {width:60%; margin-right:50px;}
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;  white-space: nowrap;}	
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table tr td{border-bottom: 1px solid #ddd; height: 50px;}
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px; }
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap .date-line {display:flex; }
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap .date-select {width:200px; margin:0 .5rem 0 0; }
+
+	
+/*출금상태*/
+.wrapper .content-page .container-fluid .withdrawal-search .withdrawal-status .custom-select {width:180px; margin-left:10px;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap {display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+/*상단 미니테이블*/	
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper {width:35%; }
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table {margin-top:20px!important;  width:100%;  white-space: nowrap; text-align: center; line-height: 30px;}	
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table thead th{border:1px solid #888;background-color: #f6f6f6; padding:0 1rem; }
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table tr td{border: 1px solid #ddd; height: 30px; color:#222; font-size:.8rem; white-space: nowrap; padding:0 1rem; }
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table tbody tr:first-child td {background-color: #fff2f1; height: 30px; border:1px solid #888;}
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table tbody tr td:nth-child(1) {width:20%;}
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table tbody tr td:nth-child(2) {width:30%;}
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper table tbody tr td:nth-child(3) {text-align: right;}
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .withdrawal-search {padding:0;}
+.wrapper .content-page .container-fluid .withdrawal-search form {flex-wrap:wrap;}	
+.wrapper .content-page .container-fluid .withdrawal-search .search-table {width:100%; margin-right:0;}	
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table {border-top: none; margin-top:0;  white-space: nowrap;}	
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .withdrawal-search .search-table table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap .date-line .date-select {width:100%; margin:0;}
+.wrapper .content-page .container-fluid .withdrawal-search .date-search .date-search-wrap .date-select-bt {width:100%; margin:5px 0; }
+
+
+
+/*출금상태*/
+.wrapper .content-page .container-fluid .withdrawal-search .withdrawal-status .custom-select {width:100%; margin-left:0; margin-bottom: 5px;}
+	
+	
+/*상단 미니테이블*/	
+.wrapper .content-page .container-fluid .withdrawal-search .dataTables_wrapper {width:100%; }
+
+	
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .withdrawal-search .word-search .word-search-wrap .input-group {margin-left:1%; width:49%;}	
+	
+
+
+
+}
+
+

@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+    
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; }
+
+
+
+	/*웹*/
+
+	.event-friends {margin:0 auto; width:1150px; text-align: left;}
+	.event-friends ul li {list-style:none; float: left;}
+	.event-friends .event-header img {margin-top:20px;}
+	.event-friends .event-header .event-title-date {font-size:26px; color:#222; font-weight: 300; border-bottom: solid 1px #222; padding: 30px 0 10px;}
+	.event-friends .event-header .event-title-date span {float:right; font-size:18px; color:#777; padding-top:5px; }
+
+
+	.event-friends .event-contents .main-title {font-size:34px; color:#222; padding:45px 0 20px; line-height:40px; letter-spacing: -1px;}
+	.event-friends .event-contents .main-title .red {color:#5c5ac0!important;}
+	.event-friends .event-contents .event-info { display: flex; padding-top:40px; }
+	.event-friends .event-contents .event-info .sub {font-size:24px; color:#222; flex-shrink: 0; width: 150px;}
+	.event-friends .event-contents .event-info .text {font-size:24px; color:#222; font-weight: 300; line-height:30px; padding-top: 3px; letter-spacing: -0.5px; flex-grow: 1;}
+	.event-friends .event-contents .event-info .text img {margin-top:50px;}
+	.event-friends .event-contents .event-info .text span {color:#222; font-weight: 400; }
+	.event-friends .event-contents .bt {text-align: center; padding:93px 0 30px;}
+	
+
+	.event-friends .event-footer .event-notice {font-size:24px; color:#222; padding:50px 0 13px; border-bottom: 1px solid #222;}
+	.event-friends .event-footer .event-notice-text  {font-size:18px; color:#555; padding-top:48px; line-height: 26px;}
+	.event-friends .event-footer .event-notice-text p {padding-bottom:17px;}
+	.event-friends .event-footer .event-notice-text span {padding-left:15px;}
+	.event-friends .event-footer .bt { text-align: center; padding:93px 0 100px;}
+	
+	
+
+
+
+	/*모바일*/
+	
+	.event-friends-m {width:100%; margin:0 auto; padding:0; border: 0; text-align:left;}
+	.event-friends-m ul li {list-style:none; }
+	
+	.event-friends-m .event-header .event-title-date {font-size:20px; color:#222; font-weight: 300; border-bottom: solid 2px #222; padding: 10px;}
+	.event-friends-m .event-header img { width:100%;}
+
+	.event-friends-m .event-contents .main-title {font-size:24px; color:#222; padding:35px 10px 20px 10px; line-height:30px; letter-spacing: -1px;}
+	.event-friends-m .event-contents .main-title .red {color:#5c5ac0!important;}
+	.event-friends-m .event-contents .event-info  {padding:15px 10px;}
+	.event-friends-m .event-contents .event-info .sub {font-size:20px; color:#222;  }
+	.event-friends-m .event-contents .event-info .text {font-size:20px; color:#222; font-weight: 300; line-height:24px;  letter-spacing: -1px;}
+	.event-friends-m .event-contents .event-info .text span {color:#222; font-weight: 400; }
+	.event-friends-m .event-contents .event-info .text img {width:100%; margin-top:20px;}
+	.event-friends-m .event-contents .m_bt {text-align: center; padding:70px 0 60px;}
+	.event-friends-m .event-contents .m_bt img { width:100%;}
+
+
+
+
+	.event-friends-m .event-footer .event-notice {font-size:24px; color:#222; padding:50px 0 10px 10px; border-bottom: 1px solid #222;}
+	.event-friends-m .event-footer .event-notice-text {font-size:16px; color:#555; padding:35px 10px 0 10px; line-height: 22px;}
+	.event-friends-m .event-footer .event-notice-text p {padding-bottom:17px; letter-spacing: -1px;}
+	.event-friends-m .event-footer .event-notice-text .notice {position: relative; padding-left:10px;}
+	.event-friends-m .event-footer .event-notice-text .dot::before {width:4px; height: 4px; border-radius:4px; content:" "; position: absolute; left:0; top:8px;}
+	.event-friends-m .event-footer .event-notice-text .color::before {background-color:#333;}
+	.event-friends-m .event-footer .event-notice-text .bold {font-size:22px;}
+	.event-friends-m .event-footer .m_bt {text-align: center; padding:70px 0 100px;}
+	.event-friends-m .event-footer .m_bt img { width:100%;}
+
+
+
+
+.event-friends {display:block;}
+.event-friends-m {display:none;}
+
+@media all and (max-width: 900px){
+	.event-friends {display:none;}
+	.event-friends-m {display:block;}
+}

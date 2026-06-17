@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>자동투자설정</title>
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        <link type="text/css" rel="stylesheet" href="css/auto.css" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <div class="back_btn">
+                <a href="#"><img src="img/back_icon.png" /></a>
+            </div>
+            <h2>자동투자설정</h2>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### AutoDepositConfirm Start -->
+        <div id="AutoDepositConfirm">
+            <div class="title">
+                <p>선택한 상품 및 설정 금액</p>
+            </div>
+            <div class="info">
+                <p>1. 헬로페이 (소상공인)<span>1 만원 ~ 100 만원</span></p>
+                <p>2. 주택담보<span>1 만원 ~ 1500 만원</span></p>
+            </div>
+
+            <div class="agreement">
+                위와 같이 자동투자 설정에 동의합니다. <input type="checkbox" />
+            </div>
+
+            <!-- ### Guide Start -->
+			
+			
+			
+            <div id="Guide">
+                <div class="accordion_in">
+                    <div class="acc_head">
+                        자동투자 유의사항
+                    </div>
+                    <div class="acc_content">
+                        <ul class="auto_info">
+                            <li>
+                                <span>&middot;</span>
+                                <p>투자상품의 구조와 투자위험을 충분히 숙지한 후 자동투자를 신청
+                                    하시기 바랍니다.</p>
+                            </li>
+                            <li>
+                                <span>&middot;</span>
+                                <p>자동투자 신청 순번에 따라 자동으로 투자가 진행되며, 자동투자 신청자
+                                    수가 많은 경우 본인의 순번이 돌아오기까지 다소 시간이 걸릴 수 있습니다.</p>
+                            </li>
+                            <li>
+                                <span>&middot;</span>
+                                <p>예치금 잔액 부족 및 투자한도를 초과한 경우 투자가 진행되지 않을 수
+                                    있습니다.</p>
+                            </li>
+                            <li>
+                                <span>&middot;</span>
+                                <p>자동투자설정 금액은 언제든 변경 가능합니다. 설정금액 변경 시 기존
+                                    순번은 그대로 유지되며, 변경된 조건은 다음 투자부터 적용됩니다.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ### Guide End -->
+        </div>
+        <!-- ### AutoDepositConfirm End -->
+
+        <!-- ### BottomBtn Start -->
+        <div id="BottomBtn">
+            <button class="md-trigger" data-modal="ConfirmPopup">확인</button>
+        </div>
+        <!-- ### BottomBtn End -->
+
+        <!-- sccordion script -->
+        <script src="js/smk-accordion.js"></script>
+        <script>
+            $(document).ready(function($){
+                $("#Guide").smk_Accordion({
+                    closeAble: true //boolean
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+    
+	* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; }
+
+
+
+	/*웹*/
+
+	#event {margin:0 auto; width:1150px; text-align: left;}
+	#event ul li {list-style:none; float: left;}
+	.title {font-size:24px; color:#222; width:150px; }
+	.text {font-size:24px; color:#222; font-weight: 300; line-height:30px; padding-top: 3px; letter-spacing: -0.5px;}
+	
+
+	.event1 {font-size:26px; color:#00a0e9; font-weight: 300; border-bottom: solid 2px #00a0e9; padding: 60px 0 20px;}
+	.event1 span {float:right; font-size:18px; color:#777; padding-top:5px; }
+	.event2 {font-size:26px; color:#222; font-weight: 300; letter-spacing: -0.5px; padding: 12px 0 14px; }
+	.event4,.event10,.event16 {font-size:26px; color:#222; padding:72px 0 13px; border-bottom: 1px solid #222;}
+	.event5 {font-size:30px; color:#222; padding:45px 0 20px; line-height:38px; letter-spacing: -0.5px; }
+	.event5 span {color:#222; font-weight: 400;}
+	.event_num {font-size:24px;  background-color: #39a4ff; width:140px; margin:0 0; height: 42px; line-height: 42px; border-radius: 21px; text-align: center; margin-bottom: 10px; color:#fff;}
+	.event6 {padding-top:20px;}
+	.event6 .text span {color:#cc3226; font-weight: 400; }
+	.event7 {clear: both; padding-top:60px;}
+	.event7 .mask li {text-align:center;}
+	.event7 .mask p {font-size:20px; font-weight: 300; line-height: 24px; text-align: center; letter-spacing: -0.5px; padding-top: 20px; color:#555;}
+	.event7 .mask p span {font-weight: 500; color:#222;}
+	.event7 .mask img {border:1px solid #ccc; padding:20px 20px 10px; border-radius: 10px; margin-top:10px;}
+	.event7 .mask li:nth-child(even){width:40px; height: 40px; background-color: #ccc; border-radius: 20px; margin:80px 30px 0; color:#fff; font-size:34px; line-height: 40px; text-align: center;}
+	.event8 {clear: both; padding-top:60px;}
+	.event8 span {color:#127bfe; font-weight: 400;}
+	.event9 {clear: both; padding-top:60px;}
+	.bt {clear: both; text-align: center; padding:93px 0 30px;}
+	.event11 {font-size:34px; color:#222; padding:45px 0 20px; line-height:40px; letter-spacing: -1px;}
+	.event11 span {color:#07a262;}
+	.event12 {clear: both; padding-top:18px;}
+	.event13 {clear: both; padding-top:36px;}
+	.event13 .text span {color:#07a262; font-weight: 400; }
+	.event14 {clear: both; padding-top:38px;}
+	.event15 {clear: both; padding-top:36px;}
+	.event17 {font-size:18px; color:#555; padding-top:48px; line-height: 26px;}
+	.event17 p {padding-bottom:17px;}
+	.event17 span {padding-left:15px;}
+	
+	
+	
+	/*모바일*/
+	
+	#event_m {width:100%; margin:0 auto; padding:0; border: 0; text-align:left;}
+	#event_m img { width:100%;}
+	#event_m ul li {list-style:none; }
+	.m_bt {text-align: center; padding:70px 0 60px;}
+	.m_title {font-size:20px; color:#222;  }
+	.m_text {font-size:20px; color:#222; font-weight: 300; line-height:24px;  letter-spacing: -1px;}
+	.m_event1 {font-size:20px; color:#00a0e9; font-weight: 300; border-bottom: solid 2px #00a0e9; padding: 10px;}
+	.m_event1 span {float:right; font-size:14px; color:#777; padding-top:5px; }
+	.m_event2 {font-size:24px; color:#222; font-weight: 300; letter-spacing: -0.5px; padding: 10px; }
+	.m_event4,.m_event10,.m_event16 {font-size:24px; color:#222; padding:50px 0 10px 10px; border-bottom: 1px solid #222;}
+	.m_event7 {clear: both; padding-top:60px;}
+	.m_event7 .m_title {margin-left:10px; }
+	.m_event7 .mask2 {text-align:left; border:1px solid #ccc; padding:20px 20px 10px; border-radius: 10px; margin:10px 10px 0;}
+	.m_event7 .mask2 {font-size:18px; font-weight: 300; line-height: 22px; text-align: center; letter-spacing: -0.5px; padding-top: 20px; color:#555;}
+	.m_event7 .mask2 .mask_text {padding:10px 0 5px;}
+	.m_event7 .mask2 span {font-weight: 500; color:#127bfe;}
+	.m_event7 .mask2 img {width:60%!important;}
+	.m_event7 .plus{width:30px; height: 30px; background-color: #ccc; border-radius: 15px; margin:30px auto 30px; color:#fff; font-size:30px; line-height: 30px; text-align: center;}
+	.m_event10 .num {float:left; background-color:#07a262; width:32px; height: 32px;  color:#fff; font-size: 20px; font-weight: 400; border-radius:50px; vertical-align: middle; box-sizing: border-box; text-align: center; margin:3px 10px 0 0;}
+	.m_event5 {font-size:24px; color:#222; padding:35px 10px 20px 10px; line-height:32px; letter-spacing: -1px; text-align: center; font-weight: 300;}
+	.m_event5 span {color:#222; font-weight: 400;}
+	.m_event_num {font-size:20px; background-color: #39a4ff; width:30%; height: 40px; line-height: 40px; border-radius: 20px; text-align: center; color:#fff; margin:0 auto 10px; font-weight: 400;}
+	.m_event9{padding:40px 10px 0 10px;}
+	.m_event9 span {color:#127bfe; font-weight:400;}
+	.m_event13 .m_text span {color:#07a262; font-weight: 400; }
+	.m_event17 {font-size:16px; color:#555; padding:35px 10px 0 10px; line-height: 22px;}
+	.m_event17 p {padding-bottom:17px; letter-spacing: -1px;}
+	.m_event17 .notice {position: relative; padding-left:10px;}
+	.m_event17 .dot::before {width:4px; height: 4px; border-radius:4px; content:" "; position: absolute; left:0; top:8px;}
+	.m_event17 .color::before {background-color:#333;}
+	.m_event17 .bold {font-size:22px;}
+
+
+
+#event {display:block;}
+#event_m {display:none;}
+
+@media all and (max-width: 900px){
+	#event {display:none;}
+	#event_m {display:block;}
+}

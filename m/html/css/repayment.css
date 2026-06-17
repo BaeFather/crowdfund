@@ -1,0 +1,150 @@
+/* list_more_btn */
+.list_more_btn {
+    text-align: center;
+    margin-top: 50px;
+}
+.list_more_btn button{
+    border: 1px solid #333;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 170px;
+    height: 40px;
+}
+/* ### Repayment */
+#Repayment{
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    background-color: #3e50b4;
+}
+
+#Repayment .one_slide{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#Repayment .one_slide h2{
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+    font-weight: normal;
+}
+#Repayment .one_slide > div{
+    float: left;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 20px 0px;
+    width: 43.4%;
+    text-align: center;
+    color: #222;
+    margin-left: 4.6%;
+}
+#Repayment .one_slide > div:last-child{
+    margin-left: 4%;
+}
+#Repayment .one_slide > div p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+#Repayment .one_slide > div h3{
+    font-size: 20px;
+	font-weight: 400;
+}
+
+#Repayment .go_to_schedule {
+    float: left;
+    width: 100%;
+    text-align: right;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Repayment Slider init */
+.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    background: none;
+    margin-bottom: 0px;
+}
+.bx-wrapper .bx-controls-direction a {
+    top: 0px;
+    margin-top: 0px;
+    width: 20px;
+    height: 20px;
+}
+.bx-wrapper .bx-prev {
+    left: 50%;
+    margin-left: -70px;
+    background: none;
+    background-image: url(../img/slide_arrow.png);
+    background-repeat: repeat;
+    background-size: 100% auto;
+}
+.bx-wrapper .bx-next {
+    right: 50%;
+    margin-right: -70px;
+    transform: rotate(180deg);
+    background: none;
+    background-image: url(../img/slide_arrow.png);
+    background-repeat: repeat;
+    background-size: 100% auto;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: 0 0;
+}
+.repayment_tb{
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 4.6%;
+    box-sizing: border-box;
+}
+.repayment_tb table{
+    width: 100%;
+}
+.repayment_tb table th{
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    color: #222;
+    background-color: #f8f8f9;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #eee;
+    line-height: 50px;
+}
+.repayment_tb table td{
+    text-align: center;
+    font-size: 14px;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    line-height: 45px;
+}
+.repayment_tb table td:first-child,
+.repayment_tb table td:last-child{
+    font-weight: normal;
+}
+.repayment_tb table tr.com td:first-child,
+.repayment_tb table tr.com td:last-child{
+    color: #e6474d;
+}
+.repayment_tb table td:nth-child(3),
+.repayment_tb table td:nth-child(4){
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.none_list {
+    font-size: 16px;
+    padding: 80px 0px;
+    text-align: center;
+    color: #888888;
+}

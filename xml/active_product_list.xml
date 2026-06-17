@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<result>
+	<version>202206141750</version>
+	<product_count>2</product_count>
+	<product_list>
+	<product>
+		<gubun>normal</gubun>
+		<idx>9102</idx>
+		<category>2</category>
+		<state></state>
+		<title><![CDATA[[제8539호]수원 권선동 보성유원아파트]]></title>
+		<title_image_url><![CDATA[/data/product/CP_l4LqPT]]></title_image_url>
+		<title_image_url_m><![CDATA[/data/product/CP_90pYYK]]></title_image_url_m>
+		<detail_url><![CDATA[/investment/investment.php?prd_idx=9102]]></detail_url>
+		<invest_amount></invest_amount>
+		<invest_profit></invest_profit>
+		<invest_return>8.50</invest_return>
+		<total_return_amount></total_return_amount>
+		<recruit_amount>53000000</recruit_amount>
+		<recruit_period_start>2022-06-15</recruit_period_start>
+		<recruit_period_end>2022-06-30</recruit_period_end>
+		<start_datetime>2022-06-15 16:00:00</start_datetime>
+		<evaluate_score1>0</evaluate_score1>
+		<evaluate_score2>0</evaluate_score2>
+		<evaluate_score3>0</evaluate_score3>
+		<evaluate_score4>0</evaluate_score4>
+		<purchase_guarantees>N</purchase_guarantees>
+		<advanced_payment>N</advanced_payment>
+		<auto_invest></auto_invest>
+		<total_invest_amount>0</total_invest_amount>
+		<invest_percent>0</invest_percent>
+		<invest_period><![CDATA[12개월]]></invest_period>
+		<state_code>B01</state_code>
+		<detail_state><![CDATA[투자대기중]]></detail_state>
+		<button_caption><![CDATA[상품상세보기]]></button_caption>
+		<cover_caption><![CDATA[]]></cover_caption>
+		<advance_invest>N</advance_invest>
+		<advance_invest_ratio>0.00</advance_invest_ratio>
+		<stream_url1><![CDATA[]]></stream_url1>
+		<stream_url2><![CDATA[]]></stream_url2>
+	</product>
+	<product>
+		<gubun>normal</gubun>
+		<idx>9103</idx>
+		<category>2</category>
+		<state></state>
+		<title><![CDATA[[제8540호]수원 권선동 보성유원아파트]]></title>
+		<title_image_url><![CDATA[/data/product/CP_7aCMqA]]></title_image_url>
+		<title_image_url_m><![CDATA[/data/product/CP_tlAHJh]]></title_image_url_m>
+		<detail_url><![CDATA[/investment/investment.php?prd_idx=9103]]></detail_url>
+		<invest_amount></invest_amount>
+		<invest_profit></invest_profit>
+		<invest_return>8.50</invest_return>
+		<total_return_amount></total_return_amount>
+		<recruit_amount>17000000</recruit_amount>
+		<recruit_period_start>2022-06-15</recruit_period_start>
+		<recruit_period_end>2022-06-30</recruit_period_end>
+		<start_datetime>2022-06-15 16:00:00</start_datetime>
+		<evaluate_score1>0</evaluate_score1>
+		<evaluate_score2>0</evaluate_score2>
+		<evaluate_score3>0</evaluate_score3>
+		<evaluate_score4>0</evaluate_score4>
+		<purchase_guarantees>N</purchase_guarantees>
+		<advanced_payment>N</advanced_payment>
+		<auto_invest></auto_invest>
+		<total_invest_amount>0</total_invest_amount>
+		<invest_percent>0</invest_percent>
+		<invest_period><![CDATA[12개월]]></invest_period>
+		<state_code>B01</state_code>
+		<detail_state><![CDATA[투자대기중]]></detail_state>
+		<button_caption><![CDATA[상품상세보기]]></button_caption>
+		<cover_caption><![CDATA[]]></cover_caption>
+		<advance_invest>N</advance_invest>
+		<advance_invest_ratio>0.00</advance_invest_ratio>
+		<stream_url1><![CDATA[]]></stream_url1>
+		<stream_url2><![CDATA[]]></stream_url2>
+	</product>
+	</product_list>
+</result>

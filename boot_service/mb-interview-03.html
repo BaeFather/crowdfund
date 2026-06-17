@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>홍보전략팀 최선희과장</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/site.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+		
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="mb-interview">	
+			<div class="container-fluid">
+                <div class="content">
+					<h3>회사와 고객들의 사이에서 소통을 담당합니다.</h3>
+					<div class="top web reverse">
+						<div class="img"><img src="assets/images/interview/mb/mb03_interview-a.jpg" alt="최선희과장"></div> 
+						<div class="bg-03 txt">
+							<p><i class="mdi mdi-microphone"></i>헬로펀딩 직원인터뷰</p>
+							<p>홍보전략팀 최선희 과장이 말하는<br><span>마케터의 업무</span></p>
+						</div>
+					</div>
+					<div class="text">
+						<p>비대면 시대가 지속되는 요즘, “소통”의 중요성이 더욱 커져가고 있습니다.<br>
+						   같은 말을 두고도 표현방식과 대상자에 따라 의미가 달라지는 만큼 커뮤니케이션 능력과
+						   원활한 대처능력이 중요한데요.</p>
+						<p>오늘은 헬로펀딩에서 고객과의 소통을 담당하는 홍보전략팀 최선희 과장을 만나
+						   마케터의 주된 업무 내용, 앞으로의 헬로펀딩에 대한 개인적인 이야기를 나눠보았습니다.</p>
+						<p class="b">안녕하세요 <br>
+						   저는 기업 홍보와 전반적인 마케팅 관련 운영/관리 업무를 담당하고 있는 홍보전략팀 최선희입니다.</p>
+						
+						<h5>홍보전략팀의 업무에 대해 더욱 자세하게 말씀해 주신다면</h5>
+						<p>홍보전략팀에서는 브랜드 인지도 상승과 기업 PR 위주의 업무를 합니다.<br>
+						   예를 들면 다양한 채널과 제휴 광고를 통해 홍보를 하고 브랜드 경쟁력에 도움이 될 만한 자료를
+						   개발하여 기사화하는 형태로 커뮤니케이션을 하기도 합니다.<br>
+						   또 투자자분들을 위해 이벤트를 기획하고 진행하기도 하죠.</p>
+						<p><span>한마디로 회사와 고객들의 사이에서 서로의 의견을 대변하는 팀입니다.</span></p>
+						
+						<h5>마케팅 업계에서만 벌써 10년째 계시다고 들었습니다.<br>헬로펀딩과 함께하게 된 계기가 있을까요?</h5>
+						<p>마케팅에도 다양한 분야가 있는데 처음엔 온라인 종합광고 대행사에서 디자이너로 시작하여 기획, AE를
+						   거쳐 광고팀장을 하며 광고주에 맞는 목표 설정, 세부 전략, 광고주 커뮤니케이션 등의 업무를 담당하였습니다.</p>
+						<p>업무의 특성상 많은 AE와 여러 광고주를 관리하고 광고주가 성공하는 것을 보며 그만큼 성취감과 희열도 크게
+						   느껴졌지만 너무 앞만 보고 달려왔던 탓인지 스스로가 안쓰럽게 느껴지고 어느 순간 무기력증이 왔던 것 같아요.</p>
+						<p>잠깐의 쉼을 가지면서 남을 위해서가 아닌 오롯이 나와 내 회사를 위해 일한다면 지금보다 더 잘 할 것 같다는
+						   생각이 들었습니다. 그쯤 헬로펀딩을 알게 되었고 내가 겪어온 다양한 경험들이 이 회사에 도움이 되지 않을까
+						   하는 마음이 들더라고요. 지금 생각하면 그 자신감이 어디서 나온 건지 모르겠지만 헬로펀딩에서는 내가 원하는
+						   방향으로 일을 할 수 있을 것 같아 지원했던 것 같습니다.^^</p>
+						
+						<div class="img"><img src="assets/images/interview/mb/mb03_interview-b.jpg" alt="최선희과장"></div> 
+
+						
+						<h5>업무에 대한 자신감과 자부심이 느껴집니다.<br>일하실 때 가장 중요하게 생각하는 부분이 있다면요?</h5>
+						<p><span>첫 번째로는“믿음”</span><br>
+						   성과도 물론 중요하지만 우선적으로 회사에 대한 자부심, 상품에 대한 믿음, 그것이 기본이 되어 나부터 진심
+						   이어야 당당하게 홍보할 수 있고 신뢰를 얻고 소통할 수 있다고 생각해요.</p>
+						<p>또 회사의 사명 중 하나가 <span>“직접 투자할 수 있는 상품만을 취급한다</span> 인데요, 저 또한 마케팅을 하면서 내가
+						   고객이라면 어느 부분에서 믿음을 가지게 될까? 를 먼저 고민하게 됩니다. 내가 투자자라고 생각하고 보완점과
+						   더 개발해야 할 부분을 찾고 있어요.</p>
+						<p><span>두 번째로는“능동적 행동, 꼼꼼함, 관심”</span><br>
+						   마케터는 내가 알리고자 하는, 나를 알고자 하는 고객을 끊임없이 찾아가고 다가가야 돼요. 그러기 위해서는
+						   능동적 행동과 꼼꼼함, 관심이 중요하죠.</p>
+						<p>태도가 실력이라는 말을 좋아하는데 어떤 것에 관심을 가지게 되면 궁금증이 생기고 더 알고 싶고 더 잘하고
+						   싶고 집중하게 되고 귀 기울이게 되고 스스로 능동적인 행동을 하게 되죠.</p>
+						<p>그것이 곧 실력으로 이어지고 업무에 있어 중요한 부분이라고 생각해요.</p>
+						
+						
+						<h5>얼마 전 헬로펀딩이 온투업 등록을 완료하였습니다.<br>이전과 다른 방향의 광고를 준비하고 계시다고요!</h5>
+						<p>그간 사회적 제약도 많았고 부실한 몇몇 P2P업체로 인해 다소 부정적 인식이 높아 건실한 P2P 업체도 자신
+						   들을 알리기엔 소극적일 수밖에 없었다고 생각합니다.</p>
+						<p>내부인으로서 헬로펀딩이 얼마나 많은 노력을 기울이는지 알기에 안타까운 마음도 있었는데요.<br>
+						   이제는 온라인투자연계금융업 등록으로 사회의 인식도 많이 변화되고 있고 다양한 제휴 광고도 가능해져
+						   금융소비자들에게 헬로펀딩을 적극적으로 알릴 수 있을 것이라 기대하고 있어요.</p>
+						<p>앞으로 좀 더 <span>온라인투자연계금융사로써 다양한 채널과 제휴를 통해 우리만의 강점을 최대한 알리고 고객에게
+						   더 많은 혜택을 줄 수 있도록</span> 저희 팀 모두 많이 고민하고 노력하고 있습니다.</p>
+
+
+						<div class="column">
+							<div class="text">
+								<h5>지금까지 함께한 헬로펀딩은 어떤 회사인가요?</h5>
+								<p class="b">제가 느끼는 헬로펀딩의 특별함은 임직원이에요.</p>	
+								<p>세분화된 부서, 다양한 연령대, 전문 지식과 실무 역량을
+								   갖춘 자들이 모여있어 어떻게 보면 서로 각자 플레이를
+								   할 듯하지만 모두가 한마음 한뜻으로 서로를 의지하고
+								   존중하며 긍정적인 기운과 따뜻함을 줘요.</p>
+								<p>물론 각자의 분야에서 최선을 다하는 만큼 서로 피 터지게 고민하고 싸우기도 하지만 목표는 하나예요.<br>
+								   고객 입장에서 생각하고 고객의 시선으로 바라보고 고객을 위해 진심을 다합니다.</p>
+							</div>	
+							<div class="img2"><img src="assets/images/interview/mb/mb03_interview-c.jpg" alt="최선희과장"></div> 
+						</div>
+						
+						<p>헬로펀딩이 앞으로도 지금처럼 우리의 자리에서 나아가고자 하는 방향으로 묵묵히 나아간다면 저희의 사훈대로
+						   정직하고 바르게 성장하며 신뢰를 사는 기업이 되어 있을 것이란 확신이 들어요.</p>
+
+						
+						<h5>헬로에는 이런 것도 있다! 하는 부분도 있을까요?</h5>
+						<p>지극히 개인적인 입장에서 복지에 관한 몇 가지 자랑을 해도 될까요?<br>
+						   일단 배고픔이 없어요. 빈속으로 출근했을 때나 엄청난 집중력으로 당이 떨어질 때 모든 것이 준비되어 있는
+						   카페테리아로 가면 돼요. 다만 하루가 다르게 불어나는 몸은 본인 책임입니다!</p>
+						<p>모든 분들이 열정적이셔서 다 같이 일할 땐 집중해서 일하고 놀 땐 미친 듯이 논다는 것도 장점입니다.<br>
+					       정말 누구 하나 빼지 않고 일이면 일, 즐길 땐 확실히. 어떻게 이런 인재들을 알아보시는지, 임원분들의 눈도
+					       대단하신 것 같아요^^ 얼른 코로나가 잠식되어 내일이 없는 듯 다 같이 파이팅 하며 즐기고 싶네요.</p>
+						<p>마지막으로는 워라밸을 누릴 수 있다는 건데요, 야근이 없어요!<br>
+					       그만큼 주어진 시간에 스스로 최선을 다해 잘 한다는 게 아닐까 싶습니다. 근속에 따른 리프레시 휴가도 제공
+					       되어서 전체적으로 내가 열심히 일한 만큼 보답을 받을 수 있는, 열정적이면서 따뜻한 회사랍니다.</p>
+
+						
+						<h5>앞으로 헬로펀딩에서 이루고 싶은 목표가 있으실까요?</h5>
+						<p>그동안 몇몇 업체의 옳지 않은 운영과 사회 이슈로 P2P금융을 많이 알리지 못한 아쉬움이 컸어요.<br>
+						   2021년은 P2P금융이 공식적으로 법의 테두리 안에 들어온 뜻깊은 한 해로 저희 팀 모두 앞으로 다양한 채널을
+						   통해 고객에게 다가갈 수 있음에 기대가 큽니다.</p>
+						<p><span>개인적으로 '고객유치' 만큼 중요한 건‘고객유지'라고 생각하는데요.</span><br>
+						   더욱이 금융회사에서의 마케팅은 단순히 관심을 끄는 것보다 꾸준히 이용하실 수 있게 만들어야 합니다.
+						   헬로펀딩을 모르는 분들에게도 광고를 통해 저희를 알려드리는 만큼 책임감을 가지고 내부 시스템 개발에도
+						   더욱 힘쓰고 싶습니다.</p>
+						
+
+						<div class="column">
+							<div class="img1"><img src="assets/images/interview/mb/mb03_interview-d.jpg" alt="최선희과장"></div> 
+							<div class="text">
+								<h5>나에게 헬로펀딩이란?</h5>
+								 <p class="b">“배움의 과정”</p>
+								 <p>저는 일, 삶, 재테크 모두 매일매일 새롭게 배워가는 중입니다.<br>
+									업무와 내가 원하는 분야를 배우는 것을 병행하는 건 쉽지 않은 일이라고 생각해요. 지금 제가 원하는 방향으로서의
+									업무와 재테크를 같이 할 수 있다는 것.<br>정말 큰 행운이 아닐까요?</p>
+							</div>	
+						</div>
+						
+						<div class="back-btn">
+							<button class="btn">뒤로 가기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+    </body>
+
+</html>

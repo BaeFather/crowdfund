@@ -1,0 +1,348 @@
+<?
+
+include_once('../common.php');
+include_once('../lib/common.lib.php');
+include_once('../lib/sms.lib.php');
+include_once(G5_LIB_PATH.'/nujuk_state.lib.php');
+
+//Check Mobile
+$mAgent = array("iPhone","iPod","Android","Blackberry", "Opera Mini", "Windows ce", "Nokia", "sony" );
+$chkMobile = false;
+for($i=0; $i<sizeof($mAgent); $i++){
+    if(stripos( $_SERVER['HTTP_USER_AGENT'], $mAgent[$i] )){
+        $chkMobile = true;
+        break;
+    }
+}
+
+if (G5_IS_MOBILE ) {
+	include "index_m.html";
+	exit;
+}
+
+// 헬로펀딩 투자현황 (통계데이터)
+$NUJUK_CACHE = getNujukState();
+$inv_money   = floor( $NUJUK_CACHE["investAmount"] / 100000000 );
+$draw_money  = floor( $NUJUK_CACHE["repayPrincipal"] / 100000000 );
+
+if ($_REQUEST['tvid']) {$syndi_id = "TvTalk"; $tvtalk_id=$_REQUEST['tvtalkid'];}
+if ($_REQUEST['pid'])  {$syndi_id = "TvTalk"; $tvtalk_id=$_REQUEST['tvtalkid'];}
+
+/**************************************************************************************************************/
+/*                                 NICE 평가정보 체크플러스 - 안심본인인증                                    */
+
+$sitecode   = "AB917";					// NICE로부터 부여받은 사이트 코드
+$sitepasswd = "8vJBrEtmUvdb";	    	// NICE로부터 부여받은 사이트 패스워드
+$authtype   = "M";						// 없으면 기본 선택화면, X: 공인인증서, M: 핸드폰, C: 카드
+$popgubun 	= "N";						// Y : 취소버튼 있음 / N : 취소버튼 없음
+$customize 	= "Mobile";					// 없으면 기본 웹페이지 / Mobile : 모바일페이지
+$reqseq     = get_cprequest_no($sitecode);
+$returnurl  = G5_URL."/gnitekram/join_sign_succ.php";	// 성공시 이동될 URL
+$errorurl   = G5_URL."/member/join_sign_fail.php";		// 실패시 이동될 URL
+
+$_SESSION["REQ_SEQ"] = $reqseq;
+
+// 입력될 plain 데이타를 만든다.
+$plaindata = "7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq .
+             "8:SITECODE" . strlen($sitecode) . ":" . $sitecode .
+             "9:AUTH_TYPE" . strlen($authtype) . ":". $authtype .
+             "7:RTN_URL" . strlen($returnurl) . ":" . $returnurl .
+             "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl .
+             "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun .
+             "9:CUSTOMIZE" . strlen($customize) . ":" . $customize ;
+
+$enc_data = get_encode_data($sitecode, $sitepasswd, $plaindata);
+/**************************************************************************************************************/
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" >
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+<title>헬로펀딩, 대한민국 P2P 금융의 표준, P2P투자, P2P대출, 소액투자의 시작 헬로펀딩</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.hellofunding.kr/favicon.ico?ver=20180826">
+<link rel="stylesheet" type="text/css" href="css/landing.css">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+<script type="text/javascript">
+var auth_mb_id = '';
+var auth_mb_id1 = '';
+var auth_mb_id2 = '';
+</script>
+
+<script type="text/javascript">
+function ch_m() {
+
+	if ($('#ifm').val()=="10") { $('#gaeEdk').text('16,000'); }
+	else if ($('#ifm').val()=="100") { $('#gaeEdk').text('160,000'); }
+	else if ($('#ifm').val()=="500") { $('#gaeEdk').text('800,000'); }
+	else if ($('#ifm').val()=="1000") { $('#gaeEdk').text('1,600,000'); }
+	else if ($('#ifm').val()=="2000") { $('#gaeEdk').text('3,200,000'); }
+
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- 상단 시작 -->
+<div class="top">
+	<ul class="earn">
+		<li>
+			<select name="ifm" id="ifm" class="earn_numb" onchange="ch_m();">
+				<option value="10">10만원</option>
+				<option value="100">100만원</option>
+				<option value="500" selected>500만원</option>
+				<option value="1000">1,000만원</option>
+				<option value="2000">2,000만원</option>
+			</select>
+			을 헬로펀딩에 투자한다면?
+		</li>
+		<li>
+			<p><img src="./img/earn_tit01.png" alt=""/></p>
+			<p><span id="gaeEdk">800,000</span> 원</p>
+			<p><span>16%</span>&nbsp;&nbsp;수익률 <span>&nbsp;&nbsp;&nbsp;&nbsp;12개월</span>&nbsp;&nbsp;만기</p>
+			<p>은행예금 대비 <span>8배</span> 수익<br/>※세전수익률 기준</p>
+		</li>
+	</ul>
+	<ul class="btn">
+		 <li><a href="/bbs/company.php" target="_blank"><img src="./img/comp_info_btn01.png " alt=""/></a></li>
+		 <li><a href="/investment/invest_list.php" target="_blank"><img src="./img/invest_list_btn01.png " alt=""/></a></li>
+    </ul>
+	<div class="tel"><a href="tel:1588-6760" target="_blank"></a></div>
+</div>
+
+<!-- 상단 배너 -->
+<div class="banner"> </div>
+
+<!-- 간편 회원가입 -->
+<div class="quick_join">
+
+	<form method="post" name="frmJoin1" id="frmJoin1">
+
+	<input type="hidden" name="member_type" value="1">
+
+
+	<input type="hidden" name="c_is_sign"     value="N"><!-- 인증 YN -->
+	<input type="hidden" name="c_mb_dupinfo"  value="">
+	<input type="hidden" name="c_mb_reqnum"  value="">
+
+	<input type="hidden" name="c_auth_mb_name">
+	<input type="hidden" name="c_auth_birthday">
+	<input type="hidden" name="c_mb_sex" value="" />
+	<input type="hidden" name="c_auth_telecom">
+	<input type="hidden" name="c_auth_mb_hp">
+
+
+	<input type="hidden" name="c_mb_mailling" value="1">
+	<input type="hidden" name="c_mb_sms"      value="1">
+
+	<input type="hidden" name="syndi_id" value="<?=$syndi_id?>" />
+	<input type="hidden" name="tvtalk_id" value="<?=$tvtalk_id?>" />
+	<ul>
+		<li><img src="./img/quick_join_tit01.jpg" alt=""/></li>
+		<li class="join_form">
+
+			<p><span>아이디</span>
+			<input type="text" name="c_mb_id" required="required" class="id" placeholder="영문,숫자 조합 최대16자까지">
+			<a onclick="auth_id('frmJoin1');" style="cursor:pointer;"><span class="repeat_btn">중복체크</span></a></p>
+
+			<p><span>비밀번호</span>
+			<input type="password" name="c_mb_password" required="required" class="id" placeholder="영문,숫자 조합 최대16자까지"></p>
+
+			<p><span>이메일</span>
+			<input type="text" name="c_mb_email" required="required" class="id" placeholder="이메일을 입력해주세요."></p>
+
+			<p><span>이름</span>
+			<input type="text" name="c_mb_name" required="required" class="id" placeholder="홍길동"></p>
+
+			<p><span>생년월일</span>
+			<input type="birth" name="c_mb_birthday" required="required" class="id" placeholder="ex) 19800101" onKeyUp="onlyDigit(this);">
+			<a onclick="select_sex1('M');" style="cursor:pointer;"><span id="sex_btn1_1" class="sex_btn1">남</span></a>
+			<a onclick="select_sex1('F');" style="cursor:pointer;"><span id="sex_btn1_2" class="sex_btn2">여</span></a>
+			</p>
+
+			<p>
+				<span>휴대폰 번호</span>
+				<select name="c_hp_comp" >
+					<option value="">통신사</option>
+					<option value="1">SKT</option>
+					<option value="2">KT</option>
+					<option value="3">LGU+</option>
+					<option value="5">알뜰폰(SKT)</option>
+					<option value="6">알뜰폰(KT)</option>
+					<option value="7">알뜰폰(LGU+)</option>
+				</select>
+
+				<input type="phonenumb" class="ph_num" name="c_mb_hp1"> -
+				<input type="phonenumb" class="ph_num" name="c_mb_hp2"> -
+				<input type="phonenumb" class="ph_num" name="c_mb_hp3">
+				<span class="certify_btn" onClick="NiceSock('frmJoin1');">인증요청</span>
+				<span class="certify_numb" id="span_confirm11"><input type="certify_numb" name="c_authnum" required="required" class="id" placeholder="인증번호6자리"></span><span class="certify_btn2" onclick="NiceSock2('frmJoin1');" id="span_confirm12">확인</span>
+			</p>
+
+
+		</li>
+		<li class="agree">
+			<p>
+              서비스 정책동의
+			</p>
+			<p>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_provision" checked="checked"> [필수] 서비스이용약관에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/provision.php" target="_blank">보기</a></span>
+				 </span>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_privacy" checked="checked"> [필수] 개인정보처리방침에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/privacy.php" target="_blank">보기</a></span>
+				</span>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_marketing" checked="checked"> [필수] 마케팅 정보 수집 및 활용에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/marketing_agreement.php" target="_blank">보기</a></span>
+				</span>
+			</p>
+			<a onclick="go_submit('frmJoin1');" style="cursor:pointer;"><p class="join_btn">회원가입하기</p></a>
+		</li>
+		<li><img src="./img/quick_join_bottom.jpg" alt=""/></li>
+	</ul>
+	</form>
+</div>
+
+
+
+<!-- 누적 투자금액 -->
+<div class="invest_total">
+	<ul>
+		<li>누적투자금액 <strong class="total_1"><?=$inv_money?></strong>억원</li>
+		<li>상환원금 <strong class="total_2"><?=$draw_money?></strong>억원</li>
+		<li>연체율 <strong class="total_3">0</strong>%</li>
+		<li><span class="date"><?=date("Y. m. d")?> 기준</span></li>
+	</ul>
+</div>
+
+<!-- 헬로펀딩 투자자 인터뷰 -->
+<div class="review"> </div>
+<div class="more"><a href="/bbs/epilogue.php" target="_blank"><img src="./img/more_btn01.jpg " alt=""/></a></div>
+
+<!-- 헬로펀딩 상품 카테고리 -->
+<div class="cate"> </div>
+
+<!-- 헬로펀딩이 극찬받는 이유 -->
+<div class="reason"> </div>
+
+<!-- 헬로펀딩 제휴사 -->
+<div class="partner"> </div>
+
+<!-- 간편 회원가입 -->
+<div class="quick_join">
+
+	<form method="post" name="frmJoin2" id="frmJoin2">
+
+	<input type="hidden" name="member_type" value="1">
+
+	<input type="hidden" name="c_is_sign"     value="N"><!-- 인증 YN -->
+	<input type="hidden" name="c_mb_dupinfo"  value="">
+	<input type="hidden" name="c_mb_reqnum"  value="">
+
+	<input type="hidden" name="c_auth_mb_name">
+	<input type="hidden" name="c_auth_birthday">
+	<input type="hidden" name="c_mb_sex" value="" />
+	<input type="hidden" name="c_auth_telecom">
+	<input type="hidden" name="c_auth_mb_hp">
+
+
+	<input type="hidden" name="c_mb_mailling" value="1">
+	<input type="hidden" name="c_mb_sms"      value="1">
+
+	<input type="hidden" name="syndi_id" value="<?=$syndi_id?>" />
+	<input type="hidden" name="tvtalk_id" value="<?=$tvtalk_id?>" />
+	<ul>
+		<li><img src="./img/quick_join_tit01.jpg" alt=""/></li>
+		<li class="join_form">
+
+			<p><span>아이디</span>
+			<input type="text" name="c_mb_id" required="required" class="id" placeholder="영문,숫자 조합 최대16자까지">
+			<a onclick="auth_id('frmJoin2');" style="cursor:pointer;"><span class="repeat_btn">중복체크</span></a></p>
+
+			<p><span>비밀번호</span>
+			<input type="password" name="c_mb_password" required="required" class="id" placeholder="영문,숫자 조합 최대16자까지"></p>
+
+			<p><span>이메일</span> <input type="text" name="c_mb_email" required="required" class="id" placeholder="이메일을 입력해주세요."></p>
+
+			<p><span>이름</span> <input type="text" name="c_mb_name" required="required" class="id" placeholder="홍길동"></p>
+
+			<p><span>생년월일</span> <input type="birth" name="c_mb_birthday" required="required" class="id" placeholder="ex) 19800101" onKeyUp="onlyDigit(this);">
+			<a onclick="select_sex2('M');" style="cursor:pointer;"><span class="sex_btn1" id="sex_btn2_1">남</span></a>
+			<a onclick="select_sex2('F');" style="cursor:pointer;"><span class="sex_btn2" id="sex_btn2_2">여</span></a></p>
+
+			<p>
+				<span>휴대폰 번호</span>
+				<select name="c_hp_comp" >
+					<option value="">통신사</option>
+					<option value="1">SKT</option>
+					<option value="2">KT</option>
+					<option value="3">LGU+</option>
+					<option value="5">알뜰폰(SKT)</option>
+					<option value="6">알뜰폰(KT)</option>
+					<option value="7">알뜰폰(LGU+)</option>
+				</select>
+
+				<input type="phonenumb" class="ph_num" name="c_mb_hp1" maxlength="3" onKeyUp="onlyDigit(this);"> -
+				<input type="phonenumb" class="ph_num" name="c_mb_hp2" maxlength="4" onKeyUp="onlyDigit(this);"> -
+				<input type="phonenumb" class="ph_num" name="c_mb_hp3" maxlength="4" onKeyUp="onlyDigit(this);">
+				<span class="certify_btn" onClick="NiceSock('frmJoin2');">인증요청</span>
+				<span class="certify_numb" id="span_confirm21"><input type="certify_numb" name="c_authnum" required="required" class="id" placeholder="인증번호6자리"></span><span class="certify_btn2" id="span_confirm22" onclick="NiceSock2('frmJoin2');">확인</span>
+			</p>
+
+
+		</li>
+		<li class="agree">
+			<p>
+              서비스 정책동의
+			</p>
+			<p>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_provision" checked="checked"> [필수] 서비스이용약관에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/provision.php" target="_blank">보기</a></span>
+				 </span>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_privacy" checked="checked"> [필수] 개인정보처리방침에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/privacy.php" target="_blank">보기</a></span>
+				</span>
+				<span class="agree_list">
+					<label><input type="checkbox" name="c_agree_marketing" checked="checked"> [필수] 마케팅 정보 수집 및 활용에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/marketing_agreement.php" target="_blank">보기</a></span>
+				</span>
+			</p>
+			<a onclick="go_submit('frmJoin2');" style="cursor:pointer;"><p class="join_btn">회원가입하기</p></a>
+		</li>
+		<li><img src="./img/quick_join_bottom.jpg" alt=""/></li>
+	</ul>
+	</form>
+</div>
+
+<!-- 본인인증 서비스 팝업을 호출하기 위해서는 다음과 같은 form이 필요합니다. -->
+<form name="form_chk" method="post">
+	<input type="hidden" name="m" value="checkplusSerivce">			<!-- 필수 데이타로, 누락하시면 안됩니다. -->
+	<input type="hidden" name="EncodeData" value="<?=$enc_data?>">		<!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
+	<!-- 업체에서 응답받기 원하는 데이타를 설정하기 위해 사용할 수 있으며, 인증결과 응답시 해당 값을 그대로 송신합니다. 해당 파라미터는 추가하실 수 없습니다. -->
+	<input type="hidden" name="param_r1" value="1">
+	<input type="hidden" name="param_r2" value="2">
+	<input type="hidden" name="param_r3" value="3">
+</form>
+
+<script type="text/javascript" src="js/hello.js?ver=02"></script>
+
+<iframe name="tvtalk_hidden" id="tvtalk_hidden" style="width:100%;height:200;display:none;"></iframe>
+
+<!-- 헬로펀딩 하단정보 -->
+<div class="copyright">
+	<img src="./img/copy_right.jpg" alt=""/>
+</div>
+
+</body>
+</html>

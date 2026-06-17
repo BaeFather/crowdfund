@@ -1,0 +1,368 @@
+/* CSS Document */
+
+/*비활성화*/
+.disable {background-color: gray !important;}
+.trans {transition: background-color 0.5s ease;}
+
+/*기본버튼*/
+.product-detail .basic-bt {display:inline-block; height: calc(2rem); font-weight: 400; color:#222; text-align: left; vertical-align: middle; user-select: none; padding:0.4rem 1rem 0.35rem; font-size:.8rem; border-radius: .25rem; border:1px solid #d5d5d5; background-color:#fff; box-shadow: none;  }
+.product-detail .basic-bt:focus, .product-detail .basic-bt:active, .product-detail .basic-bt:hover {box-shadow:none!important; outline:none; background-color:#fff; border:1px solid #ee321f; color:#ee321f!important;}
+
+/*인풋박스*/
+.product-detail .form-control {display: block; width:100%; height: calc(2.3rem); padding:.45rem .5rem; font-size:.8rem; font-weight: 400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #d5d5d5; border-radius: 0rem;}
+
+
+/*체크박스*/
+input[type="checkbox"] {opacity:0;}
+input[type="checkbox"] + label:before{content: ' '; display:inline-block; width:17px; height:17px; text-align:center; line-height:17px; font-size:13px; vertical-align:middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-3px; border-radius:.15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; }
+input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#ff4459; color: #fff; border:3px solid #ff4459; box-sizing: border-box; border-radius:.2rem;}
+input[type="checkbox"] + label {margin-bottom:0; }
+
+
+/*셀렉트박스*/
+
+.form-select {
+	margin:0.5rem 0;
+    padding: .45rem 3rem .45rem 1rem ;
+    font-size: .9rem;
+    background-color:#eee;
+	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg height='512px' id='Layer_1' style='enable-background:new 0 0 512 512;' version='1.1' viewBox='0 0 512 512' width='512px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpolygon points='396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 '/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .9rem center;
+    background-size: 14px 10px;
+    border: none;
+    border-radius: 0;
+    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+
+.form-select:focus {outline:none;}
+
+
+
+/*********************************
+상품 리스트
+**********************************/
+.cart-list p, .cart-list a, .cart-list span , .cart-list th , .cart-list td , .cart-list div, .cart-list button, .cart-list h4, .cart-list h5, .cart-list a ,.cart-list ul li {font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+
+.cart-list .container-fluid {padding:0;}
+.cart-list .container-fluid h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center; margin: 40px 0 20px; font-family:"NotoSansKR", sans-serif;}
+.cart-list .container-fluid .cart-list-table{padding:0 1rem; margin-bottom:100px;}
+
+/*테이블 헤더*/
+.cart-list .container-fluid .cart-list-table .table-header {border-bottom:2px solid #222; }
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(1) {display:block; padding:.5rem 0; vertical-align: middle; }
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(1) span {margin-left:.5rem; font-size:.95rem; color:#222; font-weight:400;}
+.cart-list .container-fluid .cart-list-table .table-header div {display:none;}
+
+/*테이블 바디*/
+.cart-list .container-fluid .cart-list-table .table-body li {width:100%; display:inline-flex; flex-wrap:wrap; align-items: center; border-bottom:1px solid #ddd; padding:1rem 0;}
+.cart-list .container-fluid .cart-list-table .table-body li .checkbox {width:8%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap{width:92%; display: flex; flex-wrap:wrap; align-items: center;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(1) {width:100%;  font-size:.9rem; color:#222; letter-spacing: -.5px;  text-align:left;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(2) {width:25%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(3) {width:75%; padding:.8rem 0 .8rem .5rem; font-size:.9rem; line-height:1.1rem; text-align: justify;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(4) {width:25%; text-align: left; font-size:.9rem; color:#222;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(5) {width:25%; text-align: left; font-size:.9rem; color:#222;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(6) {width:50%; text-align: right; font-size:.9rem; color:#222;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap a {color:#777; border-bottom:1px solid #888; font-size:.9rem; font-weight:400;}
+.cart-list .container-fluid .cart-list-table .table-body li .scf {max-width:75px; background-color:#a1adc5; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center; }
+.cart-list .container-fluid .cart-list-table .table-body li .judam {max-width:75px; background-color:#78afa9; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center; }
+.cart-list .container-fluid .cart-list-table .table-body li .dongsan {max-width:75px; background-color:#9f8689; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center;}
+
+/*하단 고정*/
+.cart-list .container-fluid .cart-bottom {width:100%; background-color:#fff; padding:2rem 1rem;  position:sticky; position: -webkit-sticky;  bottom:0; border:1px solid #ddd; box-shadow: 0 -7px 20px 0 rgba(0,0,0,.15);}
+.cart-list .container-fluid .cart-bottom .bottom-wrap div p {font-size:1rem; color:#222; font-weight: 500; margin-bottom:1rem; text-align: center;}
+.cart-list .container-fluid .cart-bottom .bottom-wrap div p span {color:#ee321f;}
+.cart-list .container-fluid .cart-bottom .bottom-wrap div button {width:100%; padding:1rem 1.5rem; font-size:1rem;  font-weight: 500; border:none; color:#fff; background-color:#ee321f;}
+.cart-list .container-fluid .cart-bottom .bottom-wrap div button.disable {cursor: not-allowed;}
+
+
+
+@media (min-width:700px){
+
+/*테이블 헤더*/
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(1) {padding:.5rem 1rem; }
+
+/*테이블 바디*/
+.cart-list .container-fluid .cart-list-table .table-body li {padding:1rem;}
+.cart-list .container-fluid .cart-list-table .table-body li .checkbox {width:5%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap{width:95%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(1) {width:20%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(2) {width:10%;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(3) {width:70%; padding:1rem 0 1rem .5rem; }
+
+}
+
+
+
+@media (min-width:900px){
+.cart-list {margin:60px auto 0; padding:0;}
+.cart-list .container-fluid .cart-list-table {width:1050px; margin:0 auto 100px; padding:0;}
+.cart-list .container-fluid h4 {margin: 40px 0;}
+
+/*테이블 헤더*/
+.cart-list .container-fluid .cart-list-table .table-header{width:1050px; display:flex; flex-wrap:nowrap; align-items: center; padding:15px 20px; background-color:#f5f5f5; border-bottom:none; border-radius:5px;}
+.cart-list .container-fluid .cart-list-table .table-header div{display:block; color:#222; font-size:.95rem; font-weight:500;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(1) {min-width:30px; padding:0;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(1) span {display:none;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(2) {min-width:160px; text-align: center;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(3) {min-width:80px; text-align: center;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(4) {min-width:400px; text-align: center;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(5) {min-width:100px; text-align: center;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(6) {min-width:100px; text-align: center;}
+.cart-list .container-fluid .cart-list-table .table-header div:nth-child(7) {min-width:140px; text-align: right;}
+
+
+/*테이블 바디*/
+.cart-list .container-fluid .cart-list-table .table-body li{width:1050px; display:flex; flex-wrap:nowrap; align-items: center; border-bottom:1px solid #eee; padding:20px;}
+.cart-list .container-fluid .cart-list-table .table-body li .checkbox {min-width:30px;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap {display:flex; width:1000px; flex-wrap:nowrap;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(1) {min-width:160px; text-align: center;  }
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(2) {min-width:80px;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(3) {min-width:400px; padding: 0 2rem;}
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(4) {min-width:100px; text-align: center; font-size:.925rem; }
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(5) {min-width:100px; text-align: center; font-size:.925rem; }
+.cart-list .container-fluid .cart-list-table .table-body li .m-wrap div:nth-child(6) {min-width:140px; text-align: right; font-size:.925rem; }
+
+
+/*하단 고정*/
+.cart-list .container-fluid .cart-bottom {width:100%;}
+.cart-list .container-fluid .cart-bottom .bottom-wrap {width:1050px; margin:0 auto;  display:flex; justify-content: space-between; align-items:center; padding:1rem; }
+.cart-list .container-fluid .cart-bottom .bottom-wrap div p {font-size:1.1rem; margin-bottom:0;}
+.cart-list .container-fluid .cart-bottom .bottom-wrap div button { padding:1rem 5rem; font-size:1.1rem;}
+
+
+
+}
+
+
+
+
+
+/*********************************
+투자 장바구니
+**********************************/
+.cart-invest p, .cart-invest a, .cart-invest span , .cart-invest th , .cart-invest td , .cart-invest div, .cart-invest button, .cart-invest h4, .cart-invest h5, .cart-invest a ,.cart-invest ul li {font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+
+.cart-invest .container-fluid .header-tit {display:flex; justify-content: space-between; align-items: flex-end; margin: 40px 0;}
+.cart-invest .container-fluid .header-tit h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center;  font-family:"NotoSansKR", sans-serif;}
+
+.cart-invest .container-fluid .cart-invest-table .table-header {display:flex; justify-content: space-between; align-items:center; border-bottom:2px solid #222;}
+
+
+
+.cart-invest .container-fluid .cart-invest-table .table-header .save-bt button{border:1px solid #ddd; padding:.39rem 1rem; font-size:.9rem; color:#222; background-color: #fff; white-space:nowrap;}
+
+.cart-invest .container-fluid .cart-invest-table .table-header ul {display:flex; margin-bottom:0; justify-content: center;}
+.cart-invest .container-fluid .cart-invest-table .table-header ul li{margin-left:10px; color:#999;}
+.cart-invest .container-fluid .cart-invest-table .table-header ul li:first-child {margin-left:0;}
+.cart-invest .container-fluid .cart-invest-table .table-header ul li a{font-size:.9rem; color:#999;}
+.cart-invest .container-fluid .cart-invest-table .table-header ul .on a{color:#ee321f; font-weight:600;}
+
+
+
+/*테이블 바디*/
+.cart-invest .container-fluid .cart-invest-table .table-body .date {font-size:.9rem; color:#222;  text-align:right; border-bottom:1px solid #ddd; margin-top:1.5rem; padding-bottom:5px;}
+.cart-invest .container-fluid .cart-invest-table .table-body li {width:100%; display:inline-flex; flex-wrap:wrap; align-items: center; border-bottom:1px solid #ddd; padding:1rem 0;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info{width:100%; display: flex; flex-wrap:wrap; align-items: center; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(1) {width:20%;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(2) {width:80%; padding:0 .5rem; font-size:.9rem; line-height:1.2rem; text-align:justify;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(3) {width:30%; text-align: left; font-size:.9rem; color:#222; padding:.5rem 0;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(4) {width:30%; text-align: center; font-size:.9rem; color:#222;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(5) {width:40%; text-align: right;font-size:.9rem; color:#222; padding-right:.5rem;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(6) {width:100%;  font-size:.9rem; color:#777;  text-align:left;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(6) span {color:#ee321f;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info a {color:#777; border-bottom:1px solid #888; font-size:.9rem; font-weight:400;}
+
+
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input {width:100%; display:flex; align-items: center;  margin-top:.8rem; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .input-box {width:100%; display:flex; flex-wrap:wrap; align-items: center; position: relative; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .input-box input {padding-right:60px; text-align: right; font-size:.9rem; background-color: #fff!important;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .input-box input::placeholder {text-align: left; font-size:.85rem; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .input-box input:focus {border:1px solid #777;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .input-box span {position: absolute; right: 0px; top:8px; padding: 0 20px; pointer-events: none; font-size:.85rem;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input .delete-bt button{padding-left:.5rem; background-color:#fff; border:none;}
+
+.cart-invest .container-fluid .cart-invest-table .now .invest-bt {text-align: center; margin:10px 0 50px;}
+.cart-invest .container-fluid .cart-invest-table .now .invest-bt button {width:50%;  padding:.7rem 1.5rem;  font-size:.95rem;  font-weight: 500; border:none; color:#fff; background-color:#ee321f; }
+
+.cart-invest .container-fluid .cart-invest-table .wait .invest-wait-bt {text-align:center; margin:10px 0 50px;}
+.cart-invest .container-fluid .cart-invest-table .wait .invest-wait-bt button {width:50%;  padding:.7rem 1.5rem;  font-size:.95rem;  font-weight: 500; border:none; color:#fff; background-color:#ff9d92;  }
+
+
+.cart-invest .container-fluid .cart-invest-table .table-body li .scf {max-width:75px; background-color:#a1adc5; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .judam {max-width:75px; background-color:#78afa9; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center; }
+.cart-invest .container-fluid .cart-invest-table .table-body li .dongsan {max-width:75px; background-color:#9f8689; color:#fff; border-radius:20px; font-size:.8rem; padding:.2rem .3rem; font-weight: 400; text-align:center;}
+
+s
+
+/*유의사항*/
+.cart-invest .container-fluid .notice {margin:100px 0;}
+.cart-invest .container-fluid .notice .para-hide { display:none;}
+.cart-invest .container-fluid .notice button.btn-toggle-show {display:flex; align-items:center; justify-content: space-between; width:100%; background-color:#fff; cursor: pointer; border:1px solid #bbb; padding:.7rem 2rem!important;}
+.cart-invest .container-fluid .notice button.btn-toggle-show span {color:#555; font-size:.95rem; text-align: left; font-weight: 500; }
+.cart-invest .container-fluid .notice button.btn-toggle-show i {font-size:1.1rem; }
+.cart-invest .container-fluid .notice .rotate {transform: rotate(180deg);}
+.cart-invest .container-fluid .notice .p-1 {padding: 1rem 2rem!important;  border:1px solid #bbb; border-top:none;}
+.cart-invest .container-fluid .notice .p-1 p {color: #555; font-size:.8rem; font-family: Nunito,sans-serif!important; display: flex; align-items: flex-start; margin-bottom:10px;}
+.cart-invest .container-fluid .notice .p-1 p span {font-size:.8rem; color: #555; font-family: Nunito,sans-serif!important; margin-top:-2px; margin-right:5px;}
+
+
+
+.cart-invest .cart-bottom {margin-top:50px; width:100%; background-color:#fff; padding:2rem 1rem; position:sticky; position: -webkit-sticky; bottom:0; border-top:1px solid #ddd; box-shadow: 0 -7px 20px 0 rgba(0,0,0,.15);}
+.cart-invest .cart-bottom .bottom-wrap div {display:flex; justify-content: space-between;}
+.cart-invest .cart-bottom .bottom-wrap div:first-child {border-bottom:1px solid #ddd; margin-bottom:1rem; padding-bottom:1rem; }
+.cart-invest .cart-bottom .bottom-wrap .cart-total p {font-size:1.05rem; color:#222; font-weight: 500; margin-bottom:0; text-align: center;}
+.cart-invest .cart-bottom .bottom-wrap .deposit p:first-child, .cart-invest .cart-bottom .bottom-wrap .invest-limit p:first-child {font-size:.9rem; color:#555; font-weight: 400; margin-bottom:0; text-align: center;}
+.cart-invest .cart-bottom .bottom-wrap .deposit p:last-child, .cart-invest .cart-bottom .bottom-wrap .invest-limit p:last-child  {font-size:.9rem; color:#222; font-weight: 500; margin-bottom:0; text-align: center;}
+.cart-invest .cart-bottom .bottom-wrap .deposit span, .cart-invest .cart-bottom .bottom-wrap .invest-limit span{color:#ee321f; font-size:.85rem;  margin-left:.5rem;}
+.cart-invest .cart-bottom .bottom-wrap div i {font-size:1rem;}
+
+
+
+/*투자신청 확인 팝업*/
+.invest-agree-modal .modal-dialog {max-width:500px!important; margin:0 auto;}
+.invest-agree-modal .modal-header { display: flex; align-items: center;}
+.invest-agree-modal .modal-header h4 {font-size:1rem; color:#222; font-weight:500;}
+.invest-agree-modal .modal-header .close {opacity:1; color:#222; font-size:1rem;  font-weight: 400;}
+.invest-agree-modal .modal-body {padding:0 2rem; }
+.invest-agree-modal .modal-body h3 {font-size:1.15rem; color:#333; text-align: center; margin: 30px 0 20px; font-weight:600;}
+.invest-agree-modal .modal-body table {width:100%;}
+.invest-agree-modal .modal-body table tr th {border:1px solid #ddd; width:45%; padding:.5rem .8rem; font-size:.875rem; background-color: #f8f8f8; color:#555; font-weight:500; font-family: "Pretendard", Sans-serif; }
+.invest-agree-modal .modal-body table tr td {border:1px solid #ddd; width:55%; text-align: right; padding:.5rem .8rem; font-size:.9rem; color:#222; font-weight:500; font-family: "Pretendard", Sans-serif;}
+
+.invest-agree-modal .modal-body .agree h5 {font-size:1rem; color:#333; margin: 40px 0 10px; font-weight:600;}
+.invest-agree-modal .modal-body .agree p {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align: justify; letter-spacing: -.5px;}
+.invest-agree-modal .modal-body .agree .input-wrap {background-color:#f8f8f8; border:1px solid #aaa; padding: 1rem 2rem;}
+.invest-agree-modal .modal-body .agree .input-wrap input {width:50%; margin:0 auto; text-align: center; color:#222; font-size:.85rem; font-weight: 500; font-family:"NotoSansKR", sans-serif;}
+.invest-agree-modal .modal-body .agree .input-wrap input::placeholder {color:#aaa; font-size:.85rem; font-weight: 400; text-align: center;  font-family:"NotoSansKR", sans-serif;}
+.invest-agree-modal .modal-body .agree .input-wrap p {display:flex; align-items: center; justify-content:center; text-align: center; font-size:.85rem; color:#555; font-weight: 500; font-family:"NotoSansKR", sans-serif; letter-spacing: 0;}
+
+.invest-agree-modal .modal-body .agree .checkbox {text-align:center; margin-top:10px;}
+.invest-agree-modal .modal-body .agree .checkbox label {font-size:.9rem; font-weight:500; color:#333;  font-family: "Pretendard", Sans-serif;}
+.invest-agree-modal .modal-body .agree .checkbox label:before {margin-right:5px;}
+.invest-agree-modal .modal-footer {border-top:none; margin:20px 1rem 30px; display:flex; justify-content: space-between;}
+.invest-agree-modal .modal-footer .btn-confirm {margin:0; background-color:#ee321f; color:#fff; width:69%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+.invest-agree-modal .modal-footer .btn-cancel {margin:0; background-color:#aaa; color:#fff; width:29%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none;}
+
+
+
+
+/*투자한도초과, 예치금잔액부족 팝업*/
+.invest-pop-modal .modal-dialog {max-width:380px!important; margin:0 auto;}
+.invest-pop-modal .modal-header { display: flex; align-items: center;}
+.invest-pop-modal .modal-header h4 {font-size:1rem; color:#222; font-weight:500;}
+.invest-pop-modal .modal-header .close {opacity:1; color:#222; font-size:1rem;  font-weight: 400;}
+.invest-pop-modal .modal-body {padding:0 2rem; }
+.invest-pop-modal .modal-body h3 {font-size:1.15rem; color:#ee321f; text-align: center; margin: 30px 0 30px; font-weight:600;}
+.invest-pop-modal .modal-body table {width:100%; margin-bottom:30px;}
+.invest-pop-modal .modal-body table tr:first-child th {width:45%; padding:.2rem 0 .5rem; font-size:1rem; color:#222; font-weight:500; font-family: "Pretendard", Sans-serif; }
+.invest-pop-modal .modal-body table tr:first-child td {width:55%; text-align: right; font-size:1.025rem; color:#222; font-weight:600; font-family: "Pretendard", Sans-serif;}
+.invest-pop-modal .modal-body table tr th {width:45%; font-size:.85rem; color:#777; font-weight:500; font-family: "Nunito",sans-serif; letter-spacing: -.5px; }
+.invest-pop-modal .modal-body table tr td {width:55%; text-align: right;  font-size:.9rem; color:#666; font-weight:400; font-family: "Pretendard", Sans-serif;}
+
+.invest-pop-modal .modal-body p {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align: center; margin-bottom:.5rem;}
+.invest-pop-modal .modal-body p:last-child {font-family: "Nunito",sans-serif; color:#222; font-size:.8rem; font-weight:600;}
+.invest-pop-modal .modal-body p a {font-family: "Nunito",sans-serif; color:#222; border-bottom:1px solid #888; font-size:.8rem; font-weight:600;}
+
+.invest-pop-modal .modal-footer {width:100%; border-top:none; margin:20px auto 30px;}
+.invest-pop-modal .modal-footer .btn-confirm {margin:0 auto; background-color:#ee321f; color:#fff; width:50%; padding:.5rem 0; font-size:.9rem; font-family:"NotoSansKR", sans-serif; outline: none; box-shadow:none; }
+
+
+
+@media (min-width:650px){
+
+
+.cart-invest {margin:0 auto; background-color: #fafafa; padding:50px 0 0; }
+.cart-invest .container-fluid {margin:0 auto; padding:0 2rem; max-width:650px; background-color: #fff; border:1px solid #ddd; padding-bottom:100px;}
+
+
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info {width:55%; margin-right:10%;}
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-info div:nth-child(3) {padding:.8rem 0;}	
+.cart-invest .container-fluid .cart-invest-table .table-body li .invest-input {width:35%; display:flex; margin-left:0;}
+.cart-invest .container-fluid .cart-invest-table .now .invest-bt button {width:200px; font-size:1rem; }
+.cart-invest .container-fluid .cart-invest-table .wait .invest-wait-bt button {width:200px; font-size:1rem; }
+
+.cart-invest .cart-bottom {margin:0;}
+.cart-invest .cart-bottom .bottom-wrap {margin:0 auto; max-width:650px; }
+.cart-invest .cart-bottom .bottom-wrap .cart-total p {font-size:1.1rem; }
+.cart-invest .cart-bottom .bottom-wrap .deposit p:first-child, .cart-invest .cart-bottom .bottom-wrap .invest-limit p:first-child {font-size:.95rem; color:#777; font-weight: 500; }
+.cart-invest .cart-bottom .bottom-wrap .deposit p:last-child, .cart-invest .cart-bottom .bottom-wrap .invest-limit p:last-child  {font-size:.95rem; color:#222; font-weight: 500;}
+.cart-invest .cart-bottom .bottom-wrap .deposit span, .cart-invest .cart-bottom .bottom-wrap .invest-limit span{ font-size:.95rem; }
+
+}
+
+
+
+/*********************************
+투자 장바구니 - 상품없음
+**********************************/
+.cart-none p, .cart-none a, .cart-none span , .cart-none th , .cart-none td , .cart-none div, .cart-none button, .cart-none h4, .cart-none h5, .cart-none a ,.cart-none ul li {font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+
+.cart-none .container-fluid .header-tit {display:flex; justify-content: space-between; align-items: flex-end; margin: 40px 0;}
+.cart-none .container-fluid .header-tit h4 {font-size:1.625rem; font-weight:500; color:#222; text-align: center;  font-family:"NotoSansKR", sans-serif;}
+.cart-none .container-fluid .header-tit ul {display:flex; margin-bottom:0; justify-content: center;}
+.cart-none .container-fluid .header-tit ul li{margin-left:10px; color:#999;}
+.cart-none .container-fluid .header-tit ul li a{font-size:.9rem; color:#999;}
+.cart-none .container-fluid .header-tit ul .on a{color:#ee321f; font-weight:600;}
+
+.cart-none .container-fluid .cart-invest-table .table-header {display:flex; justify-content: space-between; align-items:flex-end; border-bottom:2px solid #222;}
+.cart-none .container-fluid .cart-invest-table .table-header div:nth-child(1) {display:block; padding:.5rem 0; vertical-align: middle; }
+.cart-none .container-fluid .cart-invest-table .table-header div:nth-child(1) span {margin-left:.5rem; font-size:.95rem; color:#222; font-weight:400;}
+
+
+.cart-none .container-fluid .cart-invest-table .table-none {margin:100px auto; text-align: center;}
+.cart-none .container-fluid .cart-invest-table .table-none ul li {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align: center; margin:1rem;}
+.cart-none .container-fluid .cart-invest-table .table-none ul li button{margin-top:20px; background-color:#eeeeee; color:#333; width:180px; padding:.7rem 1rem; font-size:.95rem; font-weight:500; outline: none; box-shadow:none; border:none;}
+
+
+
+
+@media (min-width:650px){
+
+.cart-none {margin:0 auto; background-color: #fafafa; padding:50px 0 100px; }
+.cart-none .container-fluid {margin:0 auto; padding:0 1.25rem; max-width:650px; background-color: #fff; border:1px solid #ddd; }
+
+
+
+
+}
+
+
+
+
+/*********************************
+투자 신청중 - 로딩바
+**********************************/
+.cart-loading p, .cart-loading a, .cart-loading span , .cart-loading th , .cart-loading td , .cart-loading div, .cart-loading button, .cart-loading h4, .cart-loading h5, .cart-loading a ,.cart-loading ul li {font-family: "Pretendard", Dotum, Helvetica, AppleGothic, Sans-serif;  margin: 0;}
+
+
+.cart-loading .container-fluid .cart-loading-table .table-loading {margin:200px auto 200px; text-align: center;}
+.cart-loading .container-fluid .cart-loading-table .table-loading ul li {font-size:.8rem; color:#555; font-family: "Nunito",sans-serif; text-align: center; margin:1rem;}
+.cart-loading .container-fluid .cart-loading-table .table-loading ul li .load{display: flex; justify-content: center;}
+.cart-loading .container-fluid .cart-loading-table .table-loading ul li .load div{width:20px; height:20px; background-color:#ee321f; border-radius: 50%; margin: 0 5px; animation-name: up-and-down; animation-duration: 0.8s; animation-iteration-count: infinite; animation-direction: alternate;}
+.cart-loading .container-fluid .cart-loading-table .table-loading ul li .load .two{animation-delay: 0.3s;}
+.cart-loading .container-fluid .cart-loading-table .table-loading ul li .load .three{ animation-delay: 0.6s;}
+
+@keyframes up-and-down {
+    to{
+        opacity: 0.2;
+        transform: translateY(-20px);
+    }
+}
+
+
+
+
+
+
+
+
+

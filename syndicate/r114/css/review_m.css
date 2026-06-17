@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* 최근게시물 스킨 (latest) */
+.lt {position:relative;padding:35px 20px ;background:#3e3c52}
+.lt ul {margin:0 0 10px;padding:0;list-style:none}
+.lt a {text-decoration:none;color:#fff;}
+.lt h2{position:relative;background:url(img/bd_bg.gif) repeat-x 50% ;margin-bottom:10px}
+.lt h2 .lt_title {display:inline-block;padding: 0;line-height:25px;padding-left:28px;font-size:1.333em;background:#3e3c52;padding-right:10px;}
+.lt h2 .lt_title span{background:url(img/bd.gif ) no-repeat 50% 50%;width:20px;height:20px;border-radius:30px;border:1px solid #fff;display:inline-block;position:absolute;top:0;left:0}
+.lt .lt_more {position:absolute;top:5px;right:10px}
+.lt .cnt_cmt {display:inline-block;margin:0 0 0 3px;font-weight:bold}
+.lt li{border-bottom:1px solid #5c5a6d;line-height:35px;height:35px;font-size:1.083em;position:relative;}
+.lt li.no_lt{color:#e9e9e9;text-align:center;padding:20px 0 30px }
+.lt li a{margin-right:35px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display:block;color:#e9e9e9}
+.lt  .lt_date{position:absolute;top:0;right:0;color:#3d96d6}
+
+/*** 헬로펀딩 공지사항 ***/
+.notice {width:100%;margin:0 auto;}
+.notice p {font-size:22px;font-family:'spoqahansans';font-weight:300;color:#000;width:100%;text-align:center;}
+.notice p span {display:block;border-bottom:2px solid #073190;width:30px;height:10px;margin:0 auto;text-align:bottom;}
+.notice .tabs {text-align: center;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;height:50px;margin-top:7%;}
+.notice .tabs li {float:left;width:49%;font-size:16px;line-height:50px;cursor:pointer;}
+.notice .tabs li.on {border-bottom: 5px solid #1175D1;color: #0B7DDF !important;font-weight: 500;}
+.notice .tabs li.off {border-bottom: 5px solid #B7D5F1;color: #797979 !important;}
+.notice .tabs li.line {float:left;width:6px;height:60px;line-height:60px;font-size:20px;font-family:'spoqahansans';font-weight:300;color:#C7C7C7;}
+.notice .tabs li {float:left;width:49%;height:53px;font-size:14px;font-family:'spoqahansans';font-weight:400;color:#000;cursor:pointer;}
+
+.notice table {width: 97%;text-align:left;margin-left:150px;margin: 0 auto;}
+.notice table tr {height:48px;}
+.notice table tr td {height:48px;text-align:left;border-bottom:1px solid #EAEAEA;}
+.notice table tr td > div {height:25px;line-height:25px;overflow:hidden;cursor:pointer;}
+.notice table tr td img {line-height:48px;vertical-align:top;padding-top:6px;}
+.notice table tr td:last-child {height:48px;text-align:right;}
+.notice .b_r_btn_c {margin:0 auto;clear:both;width:126px;padding-top:50px;}
+.notice .b_r_btn_c .b_r_btn a {width:126px;height:42px;border:1px solid #143FA8;border-radius:5px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#143fa8;line-height:42px;display:block;cursor:pointer;text-align:center;}
+.notice .b_r_btn_c .b_r_btn a:hover {width:126px;height:42px;background-color:#143FA8;border-radius:5px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#fff;line-height:42px;display:block;cursor:pointer;}
+.notice .b_r_btn_c .b_r_btn b {font-size:10px;font-family:'Sans-serif';font-weight:400;color:#143FA8;vertical-align:top;}
+.notice .b_r_btn_c .b_r_btn a:hover b {font-size:10px;font-family:'Sans-serif';font-weight:400;color:#fff;vertical-align:top;}
+
+.notice .funding-news-list {position: relative;overflow: hidden;width: 95%; max-height: 320px;margin: 0 auto;}
+.notice .funding-news-list .content {float: left;border: 1px solid #CCC;margin-top:20px;min-height: 300px;}
+.notice .funding-news-list .content div {padding: 0 10px;}
+.notice .funding-news-list .content .thumb {width: 100%;height: 190px;}
+.notice .funding-news-list .content .logo {width: 48px;height: auto;padding: 10px 0;}
+.notice .funding-news-list .content .datetime {margin: 10px;display: block;}
+.notice .funding-news-list .content .subject {text-align: left !important;}
+.notice .funding-news-list .content .subject a {display: block;padding: 0 12px 12px 12px;}
+
+/*** 헬로펀딩 투자후기***/
+.review_wrap {position: relative;width:100%;background:url('../../../../img/main_m/review_bg01.png') center top repeat-x;background-size:100% 100%;margin: 7% 0;padding: 0;}
+.review_wrap .navigation {position: relative;margin: 0 auto;z-index: 1;top: -400px;overflow: inherit;}
+.review_wrap .review_list {width:80%;margin:0 auto;padding-top:90px;text-align: left;}
+.review_wrap .review_list .review_cont {position: relative;width: 80%;float:left;background-color:#FFF;}
+.review_wrap .review_list .review_cont:first-child {float:left;}
+.review_wrap .review_list .review_cont .review_img {width: 100%;display:block;}
+.review_wrap .review_list .review_cont .review_img img.thumbnail {width: 100%;height: auto;}
+.review_wrap .review_list .review_cont .review_img span {position:absolute;top: 10px;right: 10px;display:block;z-index:100;}
+.review_wrap .review_list .review_cont .review_img span > img.best {height: auto;}
+.review_wrap .review_list .review_cont .review_ti {clear:both;padding: 12px 20px 0 20px;font-size:15px;font-family:'spoqahansans';font-weight:400;color:#358DE3;display:block;}
+.review_wrap .review_list .review_cont .review_tit {clear:both;padding: 8px 20px;font-size:14px;font-family:'spoqahansans';font-weight:400;color:#000;display:block;}
+.review_wrap .review_list .review_cont .review_id {padding: 0 20px;font-size:14px;font-family:'spoqahansans';font-weight:400;color:#7B7B7B;display:block;float: left}
+.review_wrap .review_list .review_cont .review_date {padding: 0 20px;font-size:13px;font-family:'spoqahansans';font-weight:400;color:#7B7B7B;display:block;float: right;}
+.review_wrap .review_list .review_cont .review_contents {padding:5px 22px 0 22px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#7B7B7B;display:block;}
+.review_wrap .review_list .review_cont .review_btn {clear: both;display: block;margin: 15px auto;width: 90%;height:38px;border:1px solid #0b7ddf;border-radius:5px;}
+.review_wrap .review_list .review_cont .review_btn a {display: block;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#0B7DDF;text-align:center;line-height:38px;cursor:pointer;}
+.review_wrap .review_list .review_cont .review_btn a:hover ,
+.review_wrap .review_list .review_cont .review_btn a:focus {background-color: #0B7DDF;color: #FFF;}
+
+/*
+.review .review_wrap .review_list .review_cont .review_ti {padding: 10px 20px 3px 20px;font-size:18px;font-family:'spoqahansans';font-weight:400;color:#358DE3;display:block;}
+.review .review_wrap .review_list .review_cont .review_tit {clear:both;padding: 0 20px;font-size:18px;font-family:'spoqahansans';font-weight:400;color:#000;display:block;}
+.review .review_wrap .review_list .review_cont .review_id {text-align: center;padding: 10px 20px;font-size:17px;font-family:'spoqahansans';font-weight:600;color:#7B7B7B;display:block;float: left;}
+.review .review_wrap .review_list .review_cont .review_contents {padding: 0 20px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#7b7b7b;display:block;}
+.review .review_wrap .review_list .review_cont .review_date {color: #AEAEAE;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#7B7B7B;display:block;float: right;padding: 10px 20px;}
+.review .review_wrap .review_list .review_cont .review_btn {clear: both;display: block;margin: 0 auto;width:313px;height:38px;border:1px solid #0b7ddf;border-radius:5px;}
+.review .review_wrap .review_list .review_cont .review_btn a {display: block;padding: 0 20px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#0B7DDF;text-align:center;line-height:38px;cursor:pointer;}
+.review .review_wrap .review_list .review_cont .review_btn a:hover ,
+.review .review_wrap .review_list .review_cont .review_btn a:focus {background-color: #0B7DDF;color: #FFF;}
+*/
+
+
+
+.review_wrap .b_r_btn_c {margin:60px auto;width:146px;clear:both;text-align:center;}
+.review_wrap .b_r_btn_c .b_r_btn a {width:146px;height:42px;border:1px solid #143fa8;border-radius:5px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#143fa8;line-height:42px;display:block;cursor:pointer;}
+.review_wrap .b_r_btn_c .b_r_btn a:hover {width:146px;height:42px;background-color:#143fa8;border-radius:5px;font-size:16px;font-family:'spoqahansans';font-weight:400;color:#fff;line-height:42px;display:block;cursor:pointer;}
+.review_wrap .b_r_btn_c .b_r_btn b {font-size:10px;font-family:'Sans-serif';font-weight:400;color:#143fa8;vertical-align:top;}
+.review_wrap .b_r_btn_c .b_r_btn a:hover b {font-size:10px;font-family:'Sans-serif';font-weight:400;color:#fff;vertical-align:top;}
+
+.s1 { width: 80%; height: auto;}
+.s2 { width: 100%; height: auto;}
+.s2 .swiper-slide {width: 100%; height: auto;}
+.s2 .swiper-pagination {bottom: 130px !important;}

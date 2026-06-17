@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/*천억이벤트1*/
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:600px;}
+#content .content .hello_lucky01 .start_btn01 {border-radius:3px;background-color:#e4ec00;width:88%;height:36px;line-height:36px;text-align:center;margin:0 auto;font-size:18px;font-weight:600;margin-top:89%;}
+#content .content .hello_lucky01 .start_btn01 a {border-radius:3px;background-color:#e4ec00;width:88%;height:36px;line-height:36px;text-align:center;margin:0 auto;font-size:18px;font-weight:600;margin-top:89%;display:block;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:35px;}
+#content .content .hello_lucky01 .sns_btn li {float:left;width:25%;text-align:center;}
+#content .content .hello_lucky01 .sns_btn li img {height:40px;}
+
+
+/*천억이벤트2*/
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:600px;}
+#content .content .hello_lucky02 .start_btn02 {border-radius:3px;background-color:#e4ec00;width:88%;height:36px;line-height:36px;text-align:center;margin:0 auto;font-size:18px;font-weight:600;margin-top:89%;}
+#content .content .hello_lucky02 .start_btn02 a {border-radius:3px;background-color:#e4ec00;width:88%;height:36px;line-height:36px;text-align:center;margin:0 auto;font-size:18px;font-weight:600;margin-top:89%;display:block;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:40px;}
+#content .content .hello_lucky02 .sns_btn li {float:left;width:25%;text-align:center;}
+#content .content .hello_lucky02 .sns_btn li img {height:40px;}
+
+@media screen and (min-width:320px) {
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:550px;}
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:550px;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:23px;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:28px;}
+}
+
+
+@media screen and (min-width:360px) {
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:630px;}
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:630px;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:33px;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:37px;}
+}
+
+@media screen and (min-width:375px) {
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:640px;}
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:640px;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:35px;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:40px;}
+}
+
+@media screen and (min-width:400px) {
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:690px;}
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:690px;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:40px;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:45px;}
+}
+
+@media screen and (min-width:414px) {
+#content .content .hello_lucky01 {background:url("/images/event/hello_lucky01.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:708px;}
+#content .content .hello_lucky02 {background:url("/images/event/hello_lucky02.jpg") no-repeat center top;background-size:100% auto;z-index:2;overflow:hidden;width:100%;min-height:708px;}
+#content .content .hello_lucky01 .sns_btn {width:80%;margin:0 auto;padding-top:45px;}
+#content .content .hello_lucky02 .sns_btn {width:80%;margin:0 auto;padding-top:50px;}
+}
+
+
+#content .content .certify_tit01 {font-size:20px;font-weight:400;text-align:center;line-height:24px;}
+#content .content .line01 {border-bottom:1px solid #070707;height:16px;}
+
+#content .content .authDiv_01 {display:inline-block;border-radius:5px;padding:20px 20px 5px 20px;}
+#content .content .authDiv_01 ul {clear:both; width:100%; display:inline-block;}
+#content .content .authDiv_01 ul > li {float:left}
+#content .content .authDiv_01 .inp {border:0px solid #e4e4e4;background-color:#e4e4e4;height:30px;line-height:30px;border-radius:2px;padding:0 4px; }
+#content .content .authDiv_01 .hp  {width:30%;border:0px solid #e4e4e4;background-color:#e4e4e4;}
+#content .content .authDiv_01 .auth_num {width:220px; background-color:#e4e4e4;}
+#content .content .authDiv_01 .auth_num:focus {border:1px solid #0f81e8;}
+#content .content .authDiv_01 .hp:focus, select:focus {border:1px solid #0f81e8;}
+#content .content .authDiv_01 select {border:0px solid #e4e4e4;height:30px;border-radius:2px;background-color:#e4e4e4;}
+#content .content .authDiv_01 button {border:0px solid #e4e4e4;height:30px;text-align:center;line-height:30px;border-radius:3px;cursor:pointer;}
+#content .content .authDiv_01 button.auth_request {width:95%;height:30px;border-radius:2px;border:0px solid #6A92B6;background-color:#333333;color:#fff;margin-left:5px;}
+#content .content .authDiv_01 button.auth_submit  {height:30px;border-radius:2px;border:0px solid #6A92B6;background-color:#0f81e8;color:#fff; margin-left:5px; width:28%;display:inline-block;float:right;}
+#content .content #auth_num::placeholder { font-size:12px; }
+
+
+#content .content .divBogi {display:inline-block;width:100%;border:0px solid #d2d2d2;border-radius:3px;background:#fff;padding:20px 20px 20px 20px;margin:10px 0;box-shadow:1px 1px 3px 1px #dddddd;}
+#content .content .divBogi ul {clear:both; width:100%; display:inline-block;}
+#content .content .divBogi ul > li {float:left}
+#content .content .divBogi .inp { border:1px solid #c6c6c6;height:30px;line-height:30px;border-radius:3px;padding:0 4px; }
+#content .content .divBogi select {border:1px solid #c6c6c6;height:30px;border-radius:3px;}
+
+#content .content .divLogin {display:inline-block;width:100%;border:0px solid #d2d2d2;background:#fff;border-radius:3px;padding:20px 20px 20px 20px;margin:10px 0; font-size:14px;box-shadow:1px 1px 3px 1px #dddddd;}
+#content .content .divLogin ul {clear:both; width:100%; display:inline-block;}
+#content .content .divLogin ul > li {float:left; height:32px;border:1px solid #ccc}
+#content .content .divLogin .inp { border:1px solid #c6c6c6;width:100%;height:30px;line-height:30px;border-radius:3px;padding:0 8px 0 8px; }
+#content .content .divLogin button {width:100%;height:40px;border-radius:3px;font-size:16px;border:1px solid #ccc;background-color:#CCFF00;margin:0; color:#000;}
+
+
+#content .content button {border:1px solid #c6c6c6;height:40px;text-align:center;line-height:30px;border-radius:3px;cursor:pointer;}
+#content .content button.answer_button {width:100%;height:40px;border-radius:3px;font-size:16px;border:0px solid #ccc;background-color:#0f81e8;margin:0; color:#fff;}
+#content .content button.next_button   {width:100%;height:40px;border-radius:3px;font-size:16px;border:0px solid #ccc;background-color:#0f81e8;margin:0; color:#fff;}
+
+#content .content #notiDiv { display:none; }
+#content .content #gift_point { font-size:28px;font-weight:600; color:#006ef5; }
+
+#content .content .select_board input[type="radio"] { display:none;}
+#content .content .select_board input[type="radio"] + label { display: inline-block; cursor: pointer;background: url('/auto_invest/img/m/check_off1.png') center top no-repeat; background-size:100%; width:22px;height:22px;margin-bottom:3px;}
+#content .content .select_board input[type="radio"]:checked + label { background: url('/auto_invest/img/m/check_on1.png');background-size:100%; width:22px;height:22px;margin-bottom:3px;}
+

@@ -1,0 +1,36 @@
+.form_write {width: 70%; min-width: 1200px; margin-left: 10px;}
+.form_write ul {list-style: none; margin: 0; padding: 0;}
+.form_write table {margin-bottom: 50px;}
+.form_write table:last-of-type tbody tr td {text-align: center;}
+.form_write input.read-input {border: none; box-shadow: none; pointer-events: none; background-color: #fff;}
+.form_write h2 {text-align: center; font-size: 24px; font-weight: bold; padding: 10px 0 0;}
+.form_write p.sub-title {color: #000; padding: 0;}
+.form_write .f-table tr th, .form_write .f-table tr td {border: 1px solid #000; padding: 7px 10px;}
+.form_write .f-table input {text-align: center;}
+.form_write .ft01 tr th {width: 15%;}
+.form_write .ft02 tr td, .form_write .ft02 tr td input {text-align: center;}
+.form_write .f-table .price-txt {text-align: right;}
+.form_write .f-table .price-txt input {text-align: right;}
+.form_write .f-table tbody td input.read-input {width: 100%; text-align: center;}
+.form_write .input01 {width: auto; display: inline-block;}
+.form_write .input-width-auto {display: inline-block; width: auto;}
+.form_write p.today {float: right; padding: 0;}
+.form_write .del-btn {color: #333; font-size: 12px; cursor: pointer;}
+.form_write .add-btn {border-radius: 5px; background-color: #333; color: #fff; border: none; margin-top: 15px; font-size: 13px; padding: 4px 10px;}
+.form_write .recnt-btn {border-radius: 5px; background-color: #ff7100; color: #fff; border: none; font-size: 13px; margin-left: 12px;}
+.form_write .bottom-txt {margin-bottom: 20px;}
+.form_write .bottom-txt li {line-height: 2.5;}
+.form_write .bottom-txt li input[type=radio] {margin: 0;}
+.form_write .bottom-fix-txt {text-align: center; padding: 40px 0 20px;}
+.form_write .bottom-fix-txt li:first-child {font-size: 18px;}
+.form_write .bottom-fix-txt li:nth-child(2) {font-size: 26px; padding-top: 44px;}
+.form_write .bottom-info {margin-top: 50px;}
+.form_write .btn-box {overflow: hidden; padding-top: 30px;}
+.form_write .btn-box li {float: left;}
+.form_write .btn-box li:last-child {float: right;}
+.form_write .txt02 {float: left;}
+.form_write .txt03 {text-align: center; padding: 20px 0;}
+.form_write .overdue-txt-box {padding-bottom: 25px;}
+.form_write .overdue-txt-box .txt01 {padding: 0; margin: 0;}
+.form_write .overdue-tbl tbody tr td {text-align: center;}
+.form_write .tbl-cf-txt {float: right; margin-right: 62px; font-size: 12px;}

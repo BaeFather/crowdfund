@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>도움말</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="./assets/css/common/reset.css">
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="./assets/css/page/site.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+		
+		<script>
+			$(document).ready(function(){
+				// Add minus icon for collapse element which is open by default
+				$(".collapse.show").each(function(){
+					$(this).prev(".card-header").addClass("highlight");
+				});
+
+				// Highlight open collapsed element 
+				$(".card-header .btn").click(function(){
+					$(".card-header").not($(this).parents()).removeClass("highlight");
+					$(this).parents(".card-header").toggleClass("highlight");
+				});
+			});
+		</script>
+
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+		
+		<section class="faq">	
+			<div class="container-fluid">
+				<h4>도움말</h4>
+				<div class="top-tap">
+					<ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a href="#faq" data-toggle="tab" aria-expanded="true" class="nav-link active">자주 묻는 질문</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#invest" data-toggle="tab" aria-expanded="false" class="nav-link">투자</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#loan" data-toggle="tab" aria-expanded="false" class="nav-link">대출</a>
+                        </li>
+						<li class="nav-item">
+                            <a href="#etc" data-toggle="tab" aria-expanded="false" class="nav-link">기타</a>
+                        </li>
+                    </ul>
+				</div>	
+				<div class="tab-content">
+					<div class="tab-pane show active" id="faq">
+						<div class="accordion" id="accordionNotice">
+							<div class="card">
+								<div class="card-header" id="heading1">
+									<h2 class="clearfix">
+										<a class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">법인도 회원가입이 가능한가요? <i class="mdi mdi-chevron-down accordion-arrow"></i></a>									
+									</h2>
+								</div>
+								<div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>헬로펀딩 홈페이지 '회원가입' 페이지에서 가능합니다.<br>
+                                           법인사업자가 아닌 경우 개인회원으로 가입 후 문의주시기 바랍니다.<br><br>
+                                           1. 회원 유형 선택<br>
+                                           법인 회원가입을 선택 합니다.<br><br>
+                                           2. 담당자 회원가입<br>
+                                           법인 회원은 일반회원과 달리 상호명과 사업자번호를 입력합니다.<br><br>
+                                           3. 서류 첨부<br>
+                                           법인회원은 회원가입 시 사업자 등록증, 법인등기부등본, 법인 통장사본, 대표자 신분증, 실제 소유자 정보양식 및 증빙서류 등을 첨부해주세요.<br>
+                                           *대부 업체인 경우 대부업 등록증도 첨부해주세요.<br><br>
+                                           4. 승인 처리<br>
+                                           첨부문서 확인 후 법인회원으로 승인처리되며, 법인회원으로 투자 가능합니다.<br>
+                                           사실여부와 다를 경우 발생하는 법적 책임은 가입회원 본인에게 있습니다.<br>
+                                           법인 확인이 어려운 경우 회원 가입이 제한될 수 있습니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading2">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">투자한도를 늘리고 싶어요 <i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>개인투자자인 경우 소득적격 투자자(투자한도 : 업권 내 3,000만원), 전문투자자(무제한, 상품별 40%)로 유형 변경을 통해 투자한도를 늘릴수 있습니다.<br>
+										   소득적격 투자자는 이자 및 배당소득이 2천만원 초과하거나 사업 및 근로소득이 1억원을 초과하는 경우 해당하며,<br>
+										   전문투자자는 금융투자회사(증권사)에서 인정한 전문투자자일 경우 해당합니다.<br><br>
+
+									       투자자 유형 변경 신청은 회원정보에서 가능하며, 각 조건에 부합하는 증빙서류를 첨부해주시면 됩니다.<br><br>
+										   법인투자자의 경우 한도 제한없이 투자가 가능하며, 법인 설립 및 투자관련 상담을 원하시는 경우 1588-6760으로 문의남겨주시기 바랍니다.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading3">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">일반 투자자, 소득적격 투자자, 전문 투자자의 차이를 알려주세요<i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionNotice">
+									<div class="card-body">
+									<p>헬로펀딩의 개인 투자자 유형은 자격요건에 따라 일반, 소득적격, 전문투자자로 구분되며, 유형별 투자한도가 달라집니다.<br>
+                                       투자자 유형은 회원가입 시 또는 회원정보 페이지에서 변경 신청이 가능합니다.<br><br></p>
+									<table>
+										<thead>
+											<tr>
+												<th>구분</th>
+												<th>일반</th>
+												<th>소득적격</th>
+												<th>전문</th>
+											</tr>
+											<tr>
+												<td>투자한도</td>
+												<td>3,000만원</td>
+												<td>1억원</td>
+												<td rowspan="2">
+													총한도 : 없음
+													<p>*상품당 모집금액의 40%이내<br>여신 및 금융기관의 경우 부동산 담보 상품은 상품당 모집금액의 20%)</p>
+												</td>
+											</tr>
+											<tr>
+												<td>상품별한도</td>
+												<td>500만원</td>
+												<td>2,000만원</td>
+											</tr>
+										</thead>	
+										
+									</table>
+									<br><br>	
+									<p>1. 일반투자자<br>
+                                       1) 자격요건<br>
+                                       - 만 19세 이상의 성인으로 헬로펀딩 가입 시 기본 투자자 유형<br><br>
+
+                                       2) 투자한도<br>
+                                       - 업권 내 3,000만원 (상품당 500만원 투자 가능 - 부동산, 주택담보 카테고리 1,000만원 가능)<br><br>
+
+                                       3) 증빙서류<br>
+                                       - 없음<br><br><br>
+
+										
+                                      2. 소득적격 투자자<br>
+                                       1) 자격요건 (아래 요건 중 1가지 요건만 충족해도 가능)<br>
+                                        ① 근로소득이 1억원을 초과하는 경우<br>
+                                        ② 사업소득이 1억원을 초과하는 경우<br>
+                                        ③ 금융소득(이자소득 + 배당소득)이 2천만원을 초과하는 경우<br><br>
+
+                                       2) 투자한도<br>
+                                       - 업권 내 1억원 (상품당 2,000만원 투자 가능)<br><br>
+
+                                       3) 증빙서류<br>
+                                       ① 전년도 종합소득 과세표준 확정신고서<br>
+                                       ② 전년도 종합소득세 신고서 접수증<br>
+                                       ③ 근로소득원천징수 영수증<br><br><br>
+										
+
+                                      3. 전문투자자<br>
+                                       1) 자격요건 (①+②, ①+③ 또는 ①+④ 항목 충족시)<br>
+                                       ① 최근 5년 중 1년 이상 투자계좌를 유지하고, 금융위가 고시하는 금융투자상품 잔고를 5천만원 이상(월말평균잔고 기준) 보유 경험이 있을 것 <br>
+                                       ② 연소득 1억 이상 개인(부부합산시 1.5억원) <br>
+                                       ③ 순자산(거주주택 제외) 5억원 이상<br>
+                                       ④ 금융관련 전문성 <br><br>
+
+                                       2) 투자한도<br>
+                                       - 총 한도 : 없음<br>
+                                       - 상품 별 대출금액의 40% <br><br>
+
+                                       3) 증빙서류<br>
+                                       - 전문 투자자 확인증<br>
+										(전문투자자 확인증은 2019.11.21 부터 각 증권사에서 신청 및 발급이 가능합니다.)</p>	
+										
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading4">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">출금제한 정책으로 출금이 되지 않아요  <i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>안전한 금융환경 조성을 위하여 예치금 입금 일시 기준 24시간 후부터 출금이 가능합니다.<br>
+                                           본 정책은 금융감독원 및 헬로펀딩 예치금 신탁관리사인 신한은행 보안지침을 기반으로 적용되며,<br>
+                                           예치금 입/출금 시 참고해주세요</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading5">
+									<h2>
+										<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">투자 가능한도가 현재 투자금액과 맞지 않아요<i class="mdi mdi-chevron-down accordion-arrow"></i></a>
+									</h2>
+								</div>
+								<div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionNotice">
+									<div class="card-body">
+										<p>투자내역 및 한도는 중앙기록관리기관을 통해 온투업권의 모든 업체들이 통합 관리되며 헬로펀딩에 표시되는 투자 가능한도는 중앙기록관리기관에서 실시간으로 조회하여 제공됩니다.<br>
+                                           따라서 타 업체에 투자내역이 있으신 경우 헬로펀딩 투자금액과 투자가능한도가 일치하지 않을 수 있습니다.<br><br>
+                                           중앙기록관리기관 홈페이지 www.p2pcenter.or.kr 에서 투자내역 통합 조회가 가능하며,<br>
+                                           조회된 투자 내역과 헬로펀딩 홈페이지에 표시되는 투자 가능한도가 일치하지 않는 경우 고객센터로 문의 남겨주시기 바랍니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab-pane" id="invest">
+
+					</div>
+					<div class="tab-pane" id="loan">
+
+					</div>
+					<div class="tab-pane" id="etc">
+
+					</div>
+              	</div>
+				
+				<div class="banner">
+					<div class="tit">
+						<p>원하시는 답변을 얻지 못하셨나요?</p>
+						<span>헬로펀딩에서 제공하는 다양한 서비스로 원하시는 답변을 받아보세요.</span>
+					</div>
+					<div class="kakao">
+						<a href="http://pf.kakao.com/_xgAdWu/chat" alt="카카오톡 실시간 문의" target="_blank"><p><i class="mdi mdi-chat-processing"></i>카카오톡 <span>실시간</span> 문의<i class="uil uil-angle-right"></i></p></a>
+					</div>
+					<div class="tel mobile">
+						<a href="tel:1588-6760" alt="고객센터 1588-6760"><p><i class="mdi mdi-phone-message"></i>고객센터 1588-6760<i class="uil uil-angle-right"></i></p></a>
+					</div>
+					<div class="tel web">
+						<p><i class="mdi mdi-phone-message"></i>고객센터 1588-6760<i class="uil uil-angle-right"></i></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+
+
+		
+		
+		
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+    </body>
+
+</html>

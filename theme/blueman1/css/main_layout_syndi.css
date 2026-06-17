@@ -1,0 +1,174 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+@font-face {
+  font-family: 'NG';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nanum Gothic'), local('나눔고딕'), local('나눔고딕 보통');
+  src: url('/theme/company/css/fonts/NanumGothic-Regular.eot');
+  src: url('/theme/company/css/fonts/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/theme/company/css/fonts/NanumGothic-Regular.woff') format('woff'),
+       url('/theme/company/css/fonts/NanumGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NGB';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nanum Gothic Bold'), local('나눔고딕 굵게'), local('나눔고딕');
+  src: url('/theme/company/css/fonts/NanumGothic-Bold.eot');
+  src: url('/theme/company/css/fonts/NanumGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/theme/company/css/fonts/NanumGothic-Bold.woff') format('woff'),
+       url('/theme/company/css/fonts/NanumGothic-Bold.ttf') format('truetype');
+}
+
+body, input, textarea, select, button, table { margin:0; font-size:13px; font-family:'NG', Dotum, Helvetica, AppleGothic, Sans-serif; color:#444; }
+body, h1, h2, h3, h4, h5, dl, dt, dd, ul, li, ol, th, td, p, form, fieldset, legend, button { margin:0; padding:0; font-weight:normal; }
+
+img, fieldset { border:0 none; }
+dl, ul, ol, li { list-style: none outside none; }
+button { border:0 none; cursor:pointer; display: block; }
+table, th, td, div { border-collapse:collapse; }
+textarea { outline:0; }
+
+
+/*** 공통 ***/
+a { text-decoration:none; }
+
+
+/*** btn ***/
+.btn_green     { display:inline-block; min-width:64px; padding:0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#00c5b0; border:0; vertical-align:middle; cursor:pointer; }
+.btn_green:hover, .btn_green:active { color:#fff; background-color:#00b4a0; }
+a.btn_green { color:#fff; }
+
+.btn_blue      { display:inline-block; min-width:90px; padding:0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#284893; border:0; vertical-align:middle; cursor:pointer; }
+.btn_blue:hover, .btn_blue:active { color:#fff; background-color:#173793; }
+a.btn_blue { color:#fff; }
+
+.btn_gray      { display:inline-block; min-width:84px; padding:0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#aaa; border:0; vertical-align:middle; cursor:pointer; }
+.btn_gray:hover, .btn_gray:active { color:#fff; background-color:#999; }
+a.btn_gray { color:#fff; }
+
+.btn_blue_dis  { display:inline-block; min-width:90px; padding:0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#ccc; border:0; vertical-align:middle; cursor:pointer; }
+.btn_blue_dis:hover, .btn_blue_dis:active { color:#fff; background-color:#aaa; }
+a.btn_blue_dis { color:#fff; }
+
+.btn_link      { display:inline-block; padding:0 25px 0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#202020; background:#fff url('/images/arrow_black2.gif') no-repeat right center; border:1px solid #999; cursor:pointer; }
+.btn_link:hover, .btn_link:active { color:#202020; }
+a.btn_link { color:#202020; }
+
+.btn_big_link  { display:inline-block; min-width:160px; line-height:46px; text-align:center; font-family:'NGB'; font-size:16px; color:#202020; border-radius:3px; background-color:#fff; border:1px solid #ccc; cursor:pointer; }
+.btn_big_link:hover, .btn_big_link:active   { color:#202020; background-color:#eee; }
+a.btn_big_link { color:#202020; }
+
+.btn_big_blue  { display:inline-block; min-width:160px; line-height:46px; text-align:center; font-family:'NGB'; font-size:16px; color:#fff; border-radius:3px; background-color:#284893; border:1px solid #284893; cursor:pointer; }
+.btn_big_blue:hover, .btn_big_blue:active   { color:#fff; background-color:#052981; }
+a.btn_big_blue { color:#fff; }
+
+.btn_big_green { display:inline-block; min-width:160px; line-height:46px; text-align:center; font-family:'NGB'; font-size:16px; color:#fff; border-radius:3px; background-color:#00c5b0; border:1px solid #00c5b0; cursor:pointer; }
+.btn_big_green:hover, .btn_big_green:active { color:#fff; background-color:#00b4a0; }
+a.btn_big_green { color:#fff; }
+
+.btn_big_gray  { display:inline-block; min-width:160px; line-height:46px; text-align:center; font-family:'NGB'; font-size:16px; color:#fff; border-radius:3px; background-color:#aaa; border:1px solid #aaa; cursor:pointer; }
+.btn_big_gray:hover, .btn_big_gray:active   { color:#fff; background-color:#999; }
+a.btn_big_gray { color:#fff; }
+
+.btn_blue2  { display:inline-block; min-width:30px; padding:0 8px; line-height:28px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#284893; cursor:pointer; vertical-align:middle; }
+.btn_blue2:hover, .btn_blue2:active { color:#fff; background-color:#173793; }
+a.btn_blue2 { color:#fff; }
+
+.btn_orange { display:inline-block; min-width:30px; padding:0 8px; line-height:28px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#FF6633; cursor:pointer; vertical-align:middle; }
+.btn_orange:hover, .btn_orange:active { color:#fff; background-color:#EE6633; }
+a.btn_orange { color:#fff; }
+
+.btn_green2 { display:inline-block; min-width:90px; padding:0 15px; line-height:35px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#00c5b0; border:0; vertical-align:middle; cursor:pointer; }
+.btn_green2:hover, .btn_green2:active { color:#fff; background-color:#00b4a0; }
+a.btn_green2 { color:#fff; }
+
+.btn_green3 { display:inline-block; min-width:30px; padding:0 8px; line-height:28px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#00c5b0; cursor:pointer; vertical-align:middle; }
+.btn_green3:hover, .btn_green3:active { color:#fff; background-color:#00b4a0; }
+a.btn_green3 { color:#fff; }
+
+.btn_gray3  { display:inline-block; min-width:30px; padding:0 8px; line-height:28px; text-align:center; font-family:'NG'; font-size:14px; color:#fff; border-radius:3px; background-color:#ababab; cursor:pointer; vertical-align:middle; }
+.btn_gray3:hover, .btn_gray3:active { color:#fff; background-color:#999; }
+a.btn_gray3 { color:#fff; }
+
+.btn_big_gray2 { display:inline-block; min-width:160px; line-height:46px; text-align:center; font-family:'NG'; font-size:15px; color:#fff; border-radius:3px; background-color:#aaa; border:1px solid #aaa; cursor:pointer; }
+.btn_big_gray2:hover, .btn_big_gray2:active { color:#fff; background-color:#999; }
+a.btn_big_gray2 { color:#fff; }
+
+
+/*** color ***/
+.blue  { color:#284893 !important; }
+.blue2 { color:#2a54b1 !important; }
+.blue3 { color:#0071bc !important; }
+.green { color:#00c5b0 !important; }
+.black { color:#202020 !important; }
+.red   { color:#ee1d1d !important; }
+.gray  { color:#707070 !important; }
+
+/*** align ***/
+.alignL { text-align:left !important; }
+.alignR { text-align:right !important; }
+.alignC { text-align:center !important; }
+
+/*** margin ***/
+.mt10 { margin-top:10px !important; }
+.mt20 { margin-top:20px !important; }
+.mt40 { margin-top:40px !important; }
+
+.mr20 { margin-right:20px !important; }
+
+.mb10 { margin-bottom:10px !important; }
+.mb20 { margin-bottom:20px !important; }
+.mb30 { margin-bottom:30px !important; }
+.mb40 { margin-bottom:40px !important; }
+.mb80 { margin-bottom:80px !important; }
+.mb100 { margin-bottom:100px !important; }
+
+.mt50{ margin-top: 50px !important;}
+.mt80{ margin-top: 80px !important;}
+
+#content { width:100%; margin:0; padding:0; }
+#content .content { width:940px; margin:0 0 0 38px; position:relative; display:inline-block; }
+#content .content  h2{ margin-bottom:15px; font-size:30px; color:#202020; font-family:'NGB'; }
+#content .content  h2.small { position:relative; margin-bottom:20px; text-align:center; font-size:25px; color:#202020; font-family:'NGB'; }
+#content .content  h3 { position:relative; margin-bottom:10px; font-size:18px; color:#202020; font-family:'NGB'; }
+
+
+/*** 테이블 ***/
+.type01 { width:100%; border-top:2px solid #284893; }
+.type01 table { width:100%; }
+.type01 th,
+.type01 td { height:32px; padding:10px; text-align:left; font-size:14px; color:#707070;  border-bottom:1px solid #ddd; }
+.type01 th { font-family:'NGB'; color:#202020; }
+.type01 td input.text { height:33px; padding:0 5px; border:1px solid #ddd; background-color:#f8f8f8; vertical-align:middle; }
+.type01 td input.price { min-width:180px; text-align:right; }
+.type01 td select { height:35px; padding:0 5px; border:1px solid #ddd; background-color:#f8f8f8; vertical-align:middle; }
+.type01 td textarea { height:180px; padding:10px; border:1px solid #ddd; background-color:#f8f8f8; }
+.type01.bbs { border-bottom:1px solid #707580; }
+.type01.bbs tr:last-child td,
+.type01.bbs tr:last-child th{ border-bottom:0; }
+
+/*** 페이징 ***/
+#paging_span { margin-top:30px; text-align:center; }
+#paging_span span { display:inline-block; min-width:23px; padding:0 5px; color:#585657; line-height:33px; border:1px solid #d0d0d0; }
+#paging_span span.now { color:#fff; background-color:#284893; border-color:#284893; }
+#paging_span span.btn_paging { cursor:pointer; }
+#paging_span span.arrow { padding:0; border:0; line-height:33px; }
+
+#paging { margin-top:30px; text-align:center; }
+#paging a { display:inline-block; min-width:23px; padding:0 5px; color:#585657; line-height:33px; border:1px solid #d0d0d0; vertical-align:middle; }
+#paging a.now { color:#fff; background-color:#284893; border-color:#284893; }
+#paging a.arrow { padding:0; border:0; line-height:0; }
+
+
+.preList { margin-top:30px; border-top:1px solid #d6d6d6; }
+.preList li { position:relative; padding-left:120px; font-size:16px; color:#707070; line-height:41px; border-bottom:1px solid #d6d6d6; }
+.preList li a { color:#707070; }
+.preList li .prev,
+.preList li .next { position:absolute; left:0; top:0; padding:0 45px 0 15px; color:#202020;  line-height:41px; border-right:1px solid #d6d6d6; }
+.preList li .prev { background:#f9f9f9 url('/images/bbs/arrow_updown.gif') no-repeat right top; }
+.preList li .next { background:#f9f9f9 url('/images/bbs/arrow_updown.gif') no-repeat right bottom; }
+.preList li .date { position:absolute; right:15px; top:0; line-height:41px; }
+

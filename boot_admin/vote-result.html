@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>만기연장 투표 결과</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		
+        <!-- third party css -->
+        <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+		
+		 <!-- 추가 css -->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/header.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/vote.css" rel="stylesheet" type="text/css" />
+		
+		
+		
+        <!-- App css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+
+		
+		
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper porduct-list">
+            <!-- ========== 좌측메뉴 Start ========== -->
+            <div class="left-side-menu">
+                <div class="h-100" id="left-side-menu-container" data-simplebar>
+                    <!--- Sidemenu -->
+                    <ul class="metismenu side-nav">
+                        <li class="side-nav-item header-manu">
+                            <a href="javascript: void(0);" class="side-nav-link">
+                                <span> 회원 </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="">회원정보</a>
+                                </li>
+								<li class="side-nav-item">
+                                    <a href="javascript: void(0);" aria-expanded="false">승인관리
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="side-nav-third-level" aria-expanded="false">
+                                        <li>
+                                            <a href="">개인투자자 유형 변경</a>
+                                        </li>
+                                        <li>
+                                            <a href="">KYC 승인</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="side-nav-item header-manu">
+                            <a href="javascript: void(0);" class="side-nav-link">
+                                <span> 통계 </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li class="side-nav-item">
+                                    <a href="javascript: void(0);" aria-expanded="false">서비스통계
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="side-nav-third-level" aria-expanded="false">
+                                        <li>
+                                            <a href="">전체 통계</a>
+                                        </li>
+                                        <li>
+                                            <a href="">채널별 통계</a>
+                                        </li>
+										<li>
+                                            <a href="">회원 통계</a>
+                                        </li>
+										<li>
+                                            <a href="">광고 통계</a>
+                                        </li>
+										<li>
+                                            <a href="">투자 통계</a>
+                                        </li>
+										<li>
+                                            <a href="">대출 통계</a>
+                                        </li>
+										<li>
+                                            <a href="">매출 통계</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="side-nav-item header-manu">
+                            <a href="javascript: void(0);" class="side-nav-link">
+                                <span> 예치금 </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="">예치금 리스트</a>
+                                </li>
+                                <li>
+                                    <a href="">입금내역</a>
+                                </li>
+								<li>
+                                    <a href="">출금내역</a>
+                                </li>
+								<li>
+                                    <a href="">카카오송금</a>
+                                </li>
+                            </ul>
+                        </li>
+
+						<li class="side-nav-item header-manu">
+                            <a href="javascript: void(0);" class="side-nav-link">
+                                <span> 시스템관리 </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="">메뉴관리</a>
+                                </li>
+                                <li>
+                                    <a href="">권한관리</a>
+                                </li>
+								<li>
+                                    <a href="">임직원관리</a>
+                                </li>
+                            </ul>
+                        </li>
+						
+						<li class="side-nav-item header-manu">
+                            <a href="javascript: void(0);" class="side-nav-link">
+                                <span> 설정 </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="">내정보 수정</a>
+                                </li>
+
+                            </ul>
+                        </li>   
+
+
+                    </ul>
+                    <!-- End Sidebar -->
+
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- ========== 좌측메뉴 End ==========-->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <!-- 상단바 시작-->
+                    <div class="navbar-custom">
+						 <!-- 로고 시작 -->
+						<div class="logo">
+                            <a href=""><img src="assets/images/header/hello_logo.png" alt="" height="30"></a>
+						</div>
+						<!-- 로고 끝 -->
+						
+                        <ul class="list-unstyled topbar-right-menu float-right">
+							<!--알람설정 시작-->
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-bell-outline"></i>
+                                    <span class="noti-icon-badge"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
+
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="m-0">
+                                            <span class="float-right">
+                                                <a href="javascript: void(0);" class="text-dark">
+                                                    <small>Clear All</small>
+                                                </a>
+                                            </span>Notification
+                                        </h5>
+                                    </div>
+
+                                    <div style="max-height: 230px;" data-simplebar>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">1 min ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-account-plus"></i>
+                                            </div>
+                                            <p class="notify-details">New user registered.
+                                                <small class="text-muted">5 hours ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                            <p class="notify-details">Cristina Pride</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Hi, How are you? What about our next meeting</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">4 days ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                            <p class="notify-details">Karen Robinson</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Wow ! this admin looks good and awesome design</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-heart"></i>
+                                            </div>
+                                            <p class="notify-details">Carlos Crouch liked
+                                                <b>Admin</b>
+                                                <small class="text-muted">13 days ago</small>
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <!-- All-->
+                                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                                        View All
+                                    </a>
+
+                                </div>
+                            </li>
+							<!--알람설정 끝-->
+
+
+							<!--이름 및 소속 시작-->
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span>
+										<span class="account-position">홍보전략팀</span>
+                                        <span class="account-user-name">김미선</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Welcome !</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-circle mr-1"></i>
+                                        <span>My Account</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-edit mr-1"></i>
+                                        <span>Settings</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-lifebuoy mr-1"></i>
+                                        <span>Support</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-lock-outline mr-1"></i>
+                                        <span>Lock Screen</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-logout mr-1"></i>
+                                        <span>Logout</span>
+                                    </a>
+
+                                </div>
+                            </li>
+							<!--이름 및 소속 끝-->
+                        </ul>
+                        <button class="button-menu-mobile open-left disable-btn">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+
+                    </div>
+                    <!-- 상단바 끝-->
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+						<!-- 페이지 네비게이션 시작-->
+						<div class="page-nav">
+							<div class="row">
+								<div class="col-12">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a href="javascript: void(0);">상품</a></li>
+										<li class="breadcrumb-item active">연장/매각</li>
+										<li class="breadcrumb-item active">결과</li>
+									</ol>
+								</div>
+							</div>  
+						</div>	
+                        <!-- 페이지 네비게이션 끝-->
+						
+						<!-- 페이지 타이틀 시작-->
+						<div class="page-tit">
+							<div class="row">
+								<div class="col-12">
+									<h4>만기연장 투표 결과</h4>
+								</div>
+							</div>  
+						</div>	
+                        <!-- 페이지 타이틀 끝-->
+						
+						<!-- 컨텐츠 시작-->
+					    <div class="vote-result">
+                            <form>
+                                <div class="pro-info">
+                                    <div>
+                                        <h3>상품 정보</h3>
+                                    </div>	
+                                    <div class="pro-info-wrap">
+										<table>
+											<tr>
+												<th>상품명</th>
+												<td>[제8430호] 김포 장기동 중흥에스클래스리버티아파트</td>
+											</tr>
+											<tr>
+												<th>차주명</th>
+												<td>홍길동</td>
+											</tr>
+											<tr>
+												<th>대출잔액</th>
+												<td>100,000,000원</td>
+											</tr>
+										</table>
+                                    </div>
+                                </div>
+								<div class="vote-info">
+                                    <div>
+                                        <h3>투표 정보</h3>
+                                    </div>	
+                                    <div class="vote-info-wrap">
+										<table>
+											<tr>
+												<th>구분</th>
+												<td>연장</td>
+											</tr>
+											<tr>
+												<th>노출 여부</th>
+												<td>노출</td>
+											</tr>
+											<tr>
+												<th>투표 기간</th>
+												<td>2023-01-02 11:00 ~ 2023-01-05 18:00</td>
+											</tr>
+											<tr>
+												<th>투표 상태</th>
+												<td>진행중</td>
+											</tr>
+											<tr>
+												<th>찬/반 비율</th>
+												<td>
+													<div>
+														<p>찬성 : 70% (70,000,000원)</p>
+														<p>반대 : 30% (30,000,000원)</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+                                    </div>
+                                </div>
+								<div class="vote-table">
+                                    <table>
+										<thead>
+											<tr>
+												<th>no</th>
+												<th>회원 유형</th>
+												<th>회원 IDX</th>
+												<th>회원 성명</th>
+												<th>회원 ID</th>
+												<th>투자 잔액</th>
+												<th>투표</th>
+												<th>투표 일시</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>5</td>
+												<td>일반</td>
+												<td>2134</td>
+												<td>홍길동</td>
+												<td>abcd</td>
+												<td>10,000</td>
+												<td>찬성</td>
+												<td>2023-01-03 11:03</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>소득적격</td>
+												<td>215168</td>
+												<td>김철수</td>
+												<td>esag</td>
+												<td>2,450,000</td>
+												<td>찬성</td>
+												<td>2023-01-03 11:03</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>전문</td>
+												<td>1452</td>
+												<td>이영희</td>
+												<td>zcvfa</td>
+												<td>140,000</td>
+												<td>반대</td>
+												<td>2023-01-03 11:03</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>법인</td>
+												<td>15448</td>
+												<td>정우성</td>
+												<td>caveer</td>
+												<td>5,000,000</td>
+												<td>-</td>
+												<td>-</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>법인</td>
+												<td>49458</td>
+												<td>이정재</td>
+												<td>ase234</td>
+												<td>7,400,000</td>
+												<td>-</td>
+												<td>-</td>
+											</tr>
+										</tbody>
+                                    </table>
+                                </div>
+								
+                                <!-- 하단버튼 시작-->
+                                <div class="result-btn-wrap">
+                                    <button type="button" class="list" id="">목록</button>
+									<button type="button" class="send" id="" data-toggle="modal" data-target="#sms-pop">결과 SMS 발송</button>
+                                </div>
+                                <!-- 하단버튼 끝-->
+                            </form>
+						</div>
+						<!-- 컨텐츠 끝-->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- content -->
+			
+				<!--  결과 SMS발송 팝업 시작-->
+                <div class="modal fade sms-pop" id="sms-pop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">결과 SMS 발송</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+								<div class="sms-text">
+									<p class="start">안녕하세요 헬로펀딩입니다.</p>
+									<p><span>[상품명]</span>의 <span>[만기연장 or 매각동의]</span> 투표가 완료되어 결과 안내드립니다.</p>
+									
+									<div class="result-sms">
+										<p>투표결과</p>
+										<p><span>- 찬성 : 70% (70,000,000원)</span></p>
+										<p><span>- 반대 : 30% (30,000,000원)</span></p>
+									</div>
+									
+									<p>투표 결과에 2/3 이상 찬성에 동의하여 <span>[상품명]</span>의 만기일을 아래와 같이 연장합니다.</p>
+									
+									<div class="result-extend">
+										<p><span>- 기존 : 연 00% / 만기일 0000년 00월 00일</span></p>
+										<p><span>- 변경 : 연 00% / 만기일 0000년 00월 00일</span></p>
+									</div>
+									
+									<p>기존 상환일에 맞춰 상환이 될 수 있도록 노력하겠습니다. 
+									다만, 차주의 사정으로 지연 또는 연체가 발생할 수 있으며, 기한이익 상실 시 채권매각 또는 경매가 진행될 수 있습니다.</p>
+									
+									<p class="end">회원님의 소중한 의견 감사드립니다.</p>
+								</div> 
+                            </div>
+                            <div class="modal-footer">
+								<button type="button" class="btn btn-link">발송</button>
+                                <button type="button" class="btn btn-cancel" data-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <!--  결과 SMS발송 팝업 끝-->
+
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+		 <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+        <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+        <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+        <script src="assets/js/vendor/dataTables.select.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.datatable-init.js"></script>
+        <!-- end demo js-->
+
+    </body>
+</html>

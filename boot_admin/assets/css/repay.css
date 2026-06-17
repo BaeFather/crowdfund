@@ -1,0 +1,870 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+
+
+/********************************데이터테이블 css !!!!!!!!!!!!!!!!개발진행시 삭제!!!!!!!!!!!!!!!!!!!!!!!!*******************************************/
+.datatable {margin-top:50px; padding:0 30px;}
+.datatable table {width:100%; border:1px solid #ddd;}
+.datatable table thead tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; text-align: center; font-size:.8rem; line-height: 30px; height: 30px;}	
+.datatable table tbody tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; text-align: center; font-size:.8rem; line-height: 30px; height: 30px;}
+.datatable table tbody tr td a{color:#555; border-bottom:1px solid #aaa;}
+.datatable table tbody tr td a:hover{color:#ee321f; border-bottom:1px solid #ee321f;}
+.datatable table tbody tr td button {margin:5px; padding:0 1rem; font-size:.78rem;}
+.datatable table tbody tr td .detail {border:none; background-color: #313a46; color:#fff;}
+.datatable table tbody tr td .modify {border:none; background-color: #08a679; color:#fff;}
+.datatable table tbody tr td .cancel {border:none; background-color: #fa5c7c; color:#fff;}
+.datatable table tbody tr td .basic {border:none; border:1px solid #aaa; color:#555; background-color:#fff; }
+
+
+@media (max-width:992px){
+.datatable {padding:0; overflow:auto; white-space: nowrap;}	
+}
+
+
+
+/********************************원리금 지급 스케줄*******************************************/
+
+
+
+.wrapper .content-page .container-fluid .repay-schedule {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-schedule .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-schedule table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-schedule table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-schedule table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-schedule .audit-type .audit-type-wrap {display:flex; padding-left:10px;} 
+.wrapper .content-page .container-fluid .repay-schedule .audit-type .audit-type-wrap div {font-size:.8rem; color:#555;}
+.wrapper .content-page .container-fluid .repay-schedule .audit-type .audit-type-wrap div label {margin-right:30px;}
+
+
+/*라디오버튼 커스텀*/
+.wrapper input[type="radio"] {display: none;}
+.wrapper input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 1.112em;
+  height: 1.112em;
+  padding:3px;
+  background-clip: content-box;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right:5px;
+  margin-bottom:4px;
+  line-height: 50px;
+  vertical-align:middle;
+}
+
+.wrapper input[type="radio"]:checked + label:before {
+  background-color: #fa5c7c; border: 1px solid #fa5c7c;
+}
+
+
+/*회원관리버튼*/
+.wrapper .content-page .container-fluid .repay-schedule .repay_button {padding-left:10px; }
+.wrapper .content-page .container-fluid .repay-schedule .repay_button .basic-bt {margin-right:5px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-schedule {padding:0;}
+.wrapper .content-page .container-fluid .repay-schedule table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-schedule table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-schedule table tr td:first-child {display:none;}
+	
+	
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-line .custom-select {width:40%;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-line .date-select {width:59%; margin:0 0 0 1%;}
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-select-bt {width:100%; margin:5px 0; }
+.wrapper .content-page .container-fluid .repay-schedule .date-search .date-search-wrap .date-select-bt .btn:nth-child(7) {display:inline-block;;}
+
+
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-schedule .audit-type .audit-type-wrap {justify-content: center; margin:15px 0;} 
+
+
+
+/*회원관리버튼*/
+.wrapper .content-page .container-fluid .repay-schedule .repay_button {padding-left:0; width:100%;}
+.wrapper .content-page .container-fluid .repay-schedule .repay_button .basic-bt {width:32.5%; margin-bottom:5px; text-align: center; margin-right:0;}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/********************************원리금 배분요청 등록 *******************************************/
+
+
+
+.wrapper .content-page .container-fluid .repay-regi {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-regi .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-regi table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-regi table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-regi table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*등록버튼*/
+.wrapper .content-page .container-fluid .repay-regi .basic-bt{margin-left:10px; }
+
+
+
+/*기타비용등록 모달 커스텀 */
+.cost-pop .modal-dialog {max-width:400px;}
+.cost-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.cost-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+
+.cost-pop .modal-content .modal-body .input-box {display:flex; align-items: center; position: relative;} 	
+.cost-pop .modal-content .modal-body .input-box input {padding-right:35px; text-align: right; height:calc(2.3rem);}			
+.cost-pop .modal-content .modal-body .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; color:#222;}	
+
+.cost-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.cost-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.cost-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.cost-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+/*발송등록 모달 커스텀 */
+.send-pop .modal-dialog {max-width:1000px;}
+.send-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.send-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.send-pop .modal-content .modal-body {text-align:center;}	
+.send-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.send-pop .modal-content .modal-body table tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; }	
+.send-pop .modal-content .modal-body table tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}	
+			
+
+.send-pop .modal-content .modal-body .list table thead tr th {background-color:#f1f1f1; height:30px; line-height:30px; text-align: center; font-size:.78rem; padding:0 .7rem;}	
+.send-pop .modal-content .modal-body .list table tr td{height:30px; line-height:30px; text-align:right; font-size:.78rem; padding:0 .7rem; }	
+.send-pop .modal-content .modal-body .list table tr td:nth-child(1), .send-pop .modal-content .modal-body .list table tr td:nth-child(2){text-align:center;}
+
+.send-pop .modal-content .modal-body .date {display:flex; justify-content:center; margin:20px auto 10px; align-items: center;}
+.send-pop .modal-content .modal-body .date p{margin-bottom:0; color:#222; font-size:.85rem; margin-right:5px;}
+.send-pop .modal-content .modal-body .date div{width:400px;}
+.send-pop .modal-content .modal-body .date div input{margin-left:5px;}
+
+.send-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.send-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.send-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.send-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-regi {padding:0;}
+.wrapper .content-page .container-fluid .repay-regi table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-regi table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-regi table tr td:first-child {display:none;}
+	
+	
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap {display:flex; flex-wrap: wrap; padding-left:0px;}	
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}	
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap .custom-select:nth-child(1){width:50%; margin-right:1%;}	
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap .custom-select:nth-child(2){width:49%;}
+.wrapper .content-page .container-fluid .repay-regi .condition-search .condition-search-wrap .custom-select:nth-child(3){width:100%;}
+
+
+
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-regi .regi-bt .basic-bt {width:100%; text-align: center; margin:0 0 5px;}
+
+	
+	
+/*발송등록 모달 커스텀 */
+.send-pop .modal-content .modal-body .list {overflow:auto;}
+.send-pop .modal-content .modal-body .date div{width:80%;}
+
+	
+	
+
+}
+
+
+
+
+
+
+
+/********************************원리금 배분요청 로그*******************************************/
+
+.wrapper .content-page .container-fluid .repay-log {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-log .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-log table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-log table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-log table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-log .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-log .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .repay-log .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+
+
+/*상세보기 모달 커스텀 */
+.detail-pop .modal-dialog {max-width:1400px;}
+.detail-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.detail-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.detail-pop .modal-content .modal-body {text-align:center;}	
+.detail-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.detail-pop .modal-content .modal-body table tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px;}	
+.detail-pop .modal-content .modal-body table tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}	
+	
+.detail-pop .modal-content .modal-body .list {overflow:auto;}		
+.detail-pop .modal-content .modal-body .list table thead tr th {background-color:#f1f1f1; height:30px; line-height:30px; text-align: center; font-size:.78rem; padding:0 .7rem;}	
+.detail-pop .modal-content .modal-body .list table tr td{height:30px; line-height:30px; text-align:right; font-size:.78rem; padding:0 .7rem; }	
+.detail-pop .modal-content .modal-body .list table tr td:nth-child(1), .detail-pop .modal-content .modal-body .list table tr td:nth-child(2), .detail-pop .modal-content .modal-body .list table tr td:nth-child(3), .detail-pop .modal-content .modal-body .list table tr td:nth-child(4),.detail-pop .modal-content .modal-body .list table tr td:nth-child(5), .detail-pop .modal-content .modal-body .list table tr td:nth-child(6){text-align:center;}
+
+.detail-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.detail-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.detail-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+/*수정 모달 커스텀 */
+.modify-pop .modal-dialog {max-width:500px;}
+.modify-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.modify-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.modify-pop .modal-content .modal-body {text-align:center;}	
+.modify-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.modify-pop .modal-content .modal-body table tr td{padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#555; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px;}	
+.modify-pop .modal-content .modal-body table tr th{padding:.3rem .7rem; border:1px solid #e0e0e0; height: 45px; color:#222; font-size:.8rem; letter-spacing: -0.5px; line-height: 45px; background-color:#f8f8f8; font-weight: 600;}			
+
+.modify-pop .modal-content .modal-body input:first-child {margin-right:10px;}
+
+.modify-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.modify-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.modify-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.modify-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+/*취소 모달 커스텀 */
+.cancel-pop .modal-dialog {max-width:1000px;}
+.cancel-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.cancel-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.cancel-pop .modal-content .modal-body {text-align:center;}	
+.cancel-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.cancel-pop .modal-content .modal-body table tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px;}	
+.cancel-pop .modal-content .modal-body table tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}	
+			
+.cancel-pop .modal-content .modal-body .list {overflow:auto;}
+.cancel-pop .modal-content .modal-body .list table thead tr th {background-color:#f1f1f1; height:30px; line-height:30px; text-align: center; font-size:.78rem; padding:0 .7rem;}	
+.cancel-pop .modal-content .modal-body .list table tr td{height:30px; line-height:30px; text-align:right; font-size:.78rem; padding:0 .7rem; }	
+.cancel-pop .modal-content .modal-body .list table tr td:nth-child(1), .cancel-pop .modal-content .modal-body .list table tr td:nth-child(2){text-align:center;}
+
+.cancel-pop .modal-content .modal-body .date {display:flex; justify-content:center; margin:20px auto 10px; align-items: center;}
+.cancel-pop .modal-content .modal-body .date p{margin-bottom:0; color:#222; font-size:.85rem; margin-right:5px;}
+.cancel-pop .modal-content .modal-body .date div{width:400px;}
+.cancel-pop .modal-content .modal-body .date div input{margin-left:5px;}
+
+.cancel-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.cancel-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.cancel-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.cancel-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-log {padding:0;}
+.wrapper .content-page .container-fluid .repay-log table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-log table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-log table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-log .date-search .date-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .repay-log .date-search .date-search-wrap .date-select {width:100%; margin:0; }
+	
+	
+/*취소 모달 커스텀 */
+.cancel-pop .modal-content .modal-body .list {overflow:auto;}
+.cancel-pop .modal-content .modal-body .date div{width:80%;}	
+	
+
+}
+
+
+/********************************정산리스트*******************************************/
+
+.wrapper .content-page .container-fluid .repay-list {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-list .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-list table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-list table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-list table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+	
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .repay-list .custom-control-input {left:10px; z-index:10;}
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-list .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-list .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+/*관리버튼*/
+.wrapper .content-page .container-fluid .repay-list .management-bt .basic-bt {margin-right:5px; margin-left:10px;}
+
+
+
+
+
+
+
+@media (max-width:992px){
+
+.wrapper .content-page .container-fluid .repay-list {padding:0;}
+.wrapper .content-page .container-fluid .repay-list table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-list table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-list table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .date-line .custom-select {width:40%;}
+.wrapper .content-page .container-fluid .repay-list .date-search .date-search-wrap .date-line .date-select {width:59%; margin:0 0 0 1%;}
+
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .repay-list .state .row {margin:15px 0;}	
+	
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-list .condition-search .condition-search-wrap {display:flex; flex-wrap: wrap; padding-left:0px;}	
+.wrapper .content-page .container-fluid .repay-list .condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}	
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .repay-list .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; margin-bottom:5px;}	
+	
+	
+/*관리버튼*/
+.wrapper .content-page .container-fluid .repay-list .management-bt .basic-bt {width:100%; margin-right:0; margin-left:0; text-align: center;}
+
+	
+	
+
+}
+
+
+
+
+/*******************************정산페이지*******************************************/
+
+.wrapper .content-page .container-fluid .repay-list-detail {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-list-detail h3 {font-size:1rem; color:#222; margin:30px 0 5px;}
+.wrapper .content-page .container-fluid .repay-list-detail table{border:1px solid #aaa; width:100%;}	
+.wrapper .content-page .container-fluid .repay-list-detail table tr td{height:30px; line-height:30px;}
+.wrapper .content-page .container-fluid .repay-list-detail table tr th{height:30px; line-height:30px; border-bottom:1px solid #222;}
+
+/*테이블*/
+.wrapper .content-page .container-fluid .repay-list-detail div table tr th {background-color:#f6f6f6; color:#222; font-size:.78rem; border:1px solid #aaa; text-align:center; font-weight: 600;}
+.wrapper .content-page .container-fluid .repay-list-detail div table tr td { color:#555; font-size:.8rem; border:1px solid #aaa; text-align:center;}
+
+
+
+/*테이블 정렬*/
+.wrapper .content-page .container-fluid .repay-list-detail .invest-info table tr td:nth-child(5),
+.wrapper .content-page .container-fluid .repay-list-detail .invest-info table tr td:nth-child(6),
+.wrapper .content-page .container-fluid .repay-list-detail .invest-info table tr td:nth-child(7),
+.wrapper .content-page .container-fluid .repay-list-detail .invest-info table tr td:nth-child(8),
+.wrapper .content-page .container-fluid .repay-list-detail .withdrawal-history table tr td:nth-child(5), 
+.wrapper .content-page .container-fluid .repay-list-detail .withdrawal-history table tr td:nth-child(6),
+.wrapper .content-page .container-fluid .repay-list-detail .repayment-history table tr td:nth-child(5), 
+.wrapper .content-page .container-fluid .repay-list-detail .repayment-history table tr td:nth-child(6),
+.wrapper .content-page .container-fluid .repay-list-detail .repayment-history table tr td:nth-child(7)
+{text-align:right; padding-right:1rem;}
+
+
+.wrapper .content-page .container-fluid .repay-list-detail .withdrawal-history table tr td:nth-child(4) {text-align:left; padding-left:1rem;}
+
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap {text-align:center; margin-top:30px; }
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap button {width:200px; padding:.7rem 0 .5rem; margin:0 5px; border-radius: 0rem; font-size:.8rem;}			
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap .history-regi {border:none; background-color: #d74435; color:#fff;}
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap .repay-regi {border:none; background-color: #7855b5; color:#fff;}
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap .change {border:none; background-color: #39c0d1; color:#fff;}
+.wrapper .content-page .container-fluid .repay-list-detail .btn-wrap .loss {border:none; background-color: #555; color:#ffff;}		
+
+
+
+/*상세보기 모달 커스텀*/
+.detail3-pop .modal-dialog {max-width:1600px;}
+.detail3-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.detail3-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+
+.detail3-pop .modal-content .modal-body {text-align:center;}	
+.detail3-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.detail3-pop .modal-content .modal-body table tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; }	
+.detail3-pop .modal-content .modal-body table tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}			
+.detail3-pop .modal-content .modal-body .repay-detail .search_button {text-align: center; margin:10px 0 50px;}
+.detail3-pop .modal-content .modal-body .repay-detail table {border-top:1px solid #888; border-spacing: 0; width:100%;}	
+.detail3-pop .modal-content .modal-body .repay-detail table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.detail3-pop .modal-content .modal-body .repay-detail table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+.detail3-pop .modal-content .modal-body .repay-detail .num-search .search-wrap {display:flex; padding-left:10px; align-items: center;}
+.detail3-pop .modal-content .modal-body .repay-detail .num-search .search-wrap .custom-select {width:120px;}
+.detail3-pop .modal-content .modal-body .repay-detail .num-search .search-wrap  span {margin:0 5px;}
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap .custom-select {width:180px;}	
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+.detail3-pop .modal-content .modal-body .num-info, .detail3-pop .modal-content .modal-body .num-info-detail {overflow:auto;}	
+.detail3-pop .modal-content .modal-body .num-info-detail table {margin-top:30px;}
+.detail3-pop .modal-content .modal-body .num-info-detail table thead tr th {border-bottom:1px solid #222;}
+.detail3-pop .modal-content .modal-body .num-info table thead tr th, .detail3-pop .modal-content .modal-body .num-info-detail table thead tr th {background-color:#f1f1f1; height:30px; line-height:30px; text-align: center; font-size:.78rem; padding:0 .7rem;}	
+.detail3-pop .modal-content .modal-body .num-info table tr td, .detail3-pop .modal-content .modal-body .num-info-detail table tr td{height:30px; line-height:30px; text-align:center; font-size:.78rem; padding:0 .7rem; }	
+.detail3-pop .modal-content .modal-body .num-info-detail table tr:first-child td {background-color:#fff2f1; color:#222; font-weight:600;}
+.detail3-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.detail3-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.detail3-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px; margin:40px 0 20px;}
+
+
+
+
+/*상환금 입출금내역 등록 모달 커스텀 */
+.history-regi-pop .modal-dialog {max-width:500px;}
+.history-regi-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.history-regi-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.history-regi-pop .modal-content .modal-body {text-align:center;}	
+.history-regi-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.history-regi-pop .modal-content .modal-body table tr th{height:50px; width:20%; border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; font-size:.8rem; text-align:left; padding:.5rem 1rem; }	
+.history-regi-pop .modal-content .modal-body table tr td{height:50px; width:80%; border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; padding:.5rem 1rem;  font-size:.8rem;}	
+.history-regi-pop .modal-content .modal-body table tr td .input-group input:first-child {margin-right:5px;}
+.history-regi-pop .modal-content .modal-body table tr td .input-box {display:flex; align-items: center; position: relative;} 	
+.history-regi-pop .modal-content .modal-body table tr td .input-box input {padding-right:35px; text-align: right; height:calc(2rem);}			
+.history-regi-pop .modal-content .modal-body table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; color:#222;}	
+.history-regi-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.history-regi-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.history-regi-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.history-regi-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+/*부분상환 등록 모달 커스텀 */
+.repay-regi-pop .modal-dialog {max-width:500px;}
+.repay-regi-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.repay-regi-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.repay-regi-pop .modal-content .modal-body {text-align:center;}	
+.repay-regi-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.repay-regi-pop .modal-content .modal-body table tr th{height:50px; width:20%; border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; font-size:.8rem; text-align:left; padding:.5rem 1rem; }	
+.repay-regi-pop .modal-content .modal-body table tr td{height:50px; width:80%; border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; padding:.5rem 1rem;  font-size:.8rem;}	
+.repay-regi-pop .modal-content .modal-body table tr td .input-box {display:flex; align-items: center; position: relative;} 	
+.repay-regi-pop .modal-content .modal-body table tr td .input-box input {padding-right:35px; text-align: right; height:calc(2rem);}			
+.repay-regi-pop .modal-content .modal-body table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; color:#222;}	
+.repay-regi-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.repay-regi-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.repay-regi-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.repay-regi-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+/*상환일자변경 모달 커스텀 */
+.change-pop .modal-dialog {max-width:500px;}
+.change-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.change-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.change-pop .modal-content .modal-body {text-align:center;}	
+.change-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.change-pop .modal-content .modal-body table tr th{height:50px; width:20%; border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; font-size:.8rem; text-align:left; padding:.5rem 1rem; }	
+.change-pop .modal-content .modal-body table tr td{height:50px; width:80%; border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; padding:.5rem 1rem; font-size:.8rem;}	
+.change-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.change-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.change-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.change-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+/*손실 모달 커스텀 */
+.loss-pop .modal-dialog {max-width:500px;}
+.loss-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.loss-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.loss-pop .modal-content .modal-body {text-align:center;}	
+.loss-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.loss-pop .modal-content .modal-body table tr th{height:50px; width:20%; border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600; font-size:.8rem; text-align:left; padding:.5rem 1rem; }	
+.loss-pop .modal-content .modal-body table tr td{height:50px; width:80%; border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; padding:.5rem 1rem; font-size:.8rem;}	
+.loss-pop .modal-content .modal-body table tr td .input-box {display:flex; align-items: center; position: relative;} 	
+.loss-pop .modal-content .modal-body table tr td .input-box input {padding-right:35px; text-align: right; height:calc(2rem);}			
+.loss-pop .modal-content .modal-body table tr td .input-box span { position: absolute; right: 0px; padding: 10px 12px; pointer-events: none; color:#222;}	
+.loss-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.loss-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.loss-pop .modal-content .btn-confirm {background-color: #ee321f; color:#fff; width:120px;}
+.loss-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-platform-fee-list-detail {padding:0;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list-detail .scroll-div {overflow:auto; white-space: nowrap;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list-detail .btn-wrap {display:flex; width:100%; flex-wrap: wrap; justify-content: center;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list-detail .btn-wrap button {width:45%; margin-bottom:5px;}	
+	
+	
+	
+/*상세보기 모달 커스텀*/
+.detail3-pop .modal-content .modal-body .repay-detail {padding:0;}
+.detail3-pop .modal-content .modal-body .repay-detail table {border-top:none;}	
+.detail3-pop .modal-content .modal-body .repay-detail table tr td {border:none; height:auto;}
+.detail3-pop .modal-content .modal-body .repay-detail table tr td:first-child {display:none;}		
+.detail3-pop .modal-content .modal-body .repay-detail .num-search .search-wrap {padding-left:0; margin-bottom:5px;}
+.detail3-pop .modal-content .modal-body .repay-detail .num-search .search-wrap .custom-select {width:50%;}
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap{padding-left:0; margin:0;}
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap .custom-select {width:50%;}	
+.detail3-pop .modal-content .modal-body .repay-detail .mb-search .word-search-wrap .input-group {width:50%; }	
+
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************세금계산서 발행 내역*******************************************/
+
+.wrapper .content-page .container-fluid .repay-tax {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-tax .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-tax table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-tax table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-tax table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap .date-select {width:150px; margin:0 .5rem; }
+
+
+/*상세보기 모달 커스텀 */
+.detail2-pop .modal-dialog {max-width:1400px;}
+.detail2-pop .modal-content .modal-header {padding:15px 1rem 10px; align-items: center;}
+.detail2-pop .modal-content .modal-header h4 {font-size:1rem; color:#222;}
+.detail2-pop .modal-content .modal-body {text-align:center;}	
+.detail2-pop .modal-content .modal-body table {width:100%; white-space: nowrap; margin-top:0;}
+.detail2-pop .modal-content .modal-body table tr td{border:1px solid #e0e0e0; color:#555; letter-spacing: -0.5px; }	
+.detail2-pop .modal-content .modal-body table tr th{border:1px solid #e0e0e0; color:#222; letter-spacing: -0.5px; background-color:#f8f8f8; font-weight: 600;}			
+
+.detail2-pop .modal-content .modal-body .list {overflow:auto;}		
+.detail2-pop .modal-content .modal-body .list table thead tr th {background-color:#f1f1f1; height:30px; line-height:30px; text-align: center; font-size:.78rem; padding:0 .7rem;}	
+.detail2-pop .modal-content .modal-body .list table tr td{height:30px; line-height:30px; text-align:center; font-size:.78rem; padding:0 .7rem; }	
+.detail2-pop .modal-content .modal-body .list table .etc {background-color:#fff2f1;}
+
+.detail2-pop .modal-content .modal-footer {justify-content:center; padding:0 0 1.5rem; border-top:none;}
+.detail2-pop .modal-content .modal-footer button {margin:0 .3rem; padding:.45rem .9rem .35rem;}
+.detail2-pop .modal-content .modal-footer .btn-cancel {background-color: #ededed; color:#222; width:120px;}
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-tax {padding:0;}
+.wrapper .content-page .container-fluid .repay-tax table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-tax table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-tax table tr td:first-child {display:none;}
+	
+	
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap .date-line {margin:0; width:100%;}
+.wrapper .content-page .container-fluid .repay-tax .date-search .date-search-wrap .date-line .date-select{width:100%;}
+
+	
+
+}
+
+
+
+
+
+
+/********************************대출자플랫폼수수료 내역*******************************************/
+
+.wrapper .content-page .container-fluid .repay-platform-fee-list {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .search_button {text-align: center; margin-top:10px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list table {border-top:1px solid #888; margin-top:20px; border-spacing: 0; width:100%;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list table tr td{border-bottom: 1px solid #ddd; height: 50px; }
+.wrapper .content-page .container-fluid .repay-platform-fee-list table tr td:first-child {background-color: #f6f6f6; text-align: left; color:#222; font-size:.8rem; white-space: nowrap; padding:0 2rem 0 1rem; width:150px;}
+
+
+/*기간검색*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap {display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .date-line {display:flex;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .custom-select {width:180px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .date-select {width:300px; margin:0 .5rem; }
+	
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .custom-control-input {left:10px; z-index:10;}
+
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .condition-search .condition-search-wrap{display:flex; padding-left:10px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .condition-search .condition-search-wrap .custom-select {width:180px; margin-right:.5rem;}
+
+
+/*검색어*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap{display:flex; padding-left:10px; margin:0;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap .custom-select {width:180px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap .input-group {width:300px; margin-left:.5rem; }	
+
+
+/*관리버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .management-bt .basic-bt:first-child {margin-left:10px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .management-bt .basic-bt {margin-right:5px;}
+
+
+
+
+
+
+
+@media (max-width:992px){
+
+.wrapper .content-page .container-fluid .repay-platform-fee-list {padding:0;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list table {border-top: none; margin-top:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list table tr td{border-bottom: none; height:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list table tr td:first-child {display:none;}
+	
+/*기간검색*/	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap {display:flex; flex-wrap: wrap; padding-left:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .date-line {width:100%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .date-line .custom-select {width:40%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .date-search .date-search-wrap .date-line .date-select {width:59%; margin:0 0 0 1%;}
+
+
+/*진행현황*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .state .row {margin:15px 0;}	
+	
+	
+/*조건검색*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .condition-search .condition-search-wrap {display:flex; flex-wrap: wrap; padding-left:0px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .condition-search .condition-search-wrap .custom-select {width:100%; margin-right:0; margin-bottom:5px;}	
+
+	
+/*검색어*/	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap {padding-left:0;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap .custom-select {width:50%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-list .word-search .word-search-wrap .input-group {margin-left:1%; width:49%; margin-bottom:5px;}	
+	
+	
+/*관리버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-list .management-bt .basic-bt:first-child {margin-left:0; margin-bottom:5px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-list .management-bt .basic-bt {width:100%; margin-right:0; margin-left:0; text-align: center;}
+
+	
+	
+
+}
+
+
+
+
+
+
+
+/*******************************대출자플랫폼수수료 등록*******************************************/
+
+.wrapper .content-page .container-fluid .repay-platform-fee-regi {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul{width:100%; margin-top:20px; display:flex; flex-wrap:wrap; align-items:center; padding:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li {list-style:none; height:45px; line-height:45px; }
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li div {height:45px; line-height:45px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(2n+1){ width:10%; background-color:#f6f6f6; color:#222; font-size:.78rem;  text-align:center; font-weight: 600; border:1px solid #aaa; border-top:none; }
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(2n){width:15%; color:#222; font-size:.78rem; text-align:center;  border-bottom:1px solid #aaa; padding:0 .5rem;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(-n+6){border-top:1px solid #aaa;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(3),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(9)
+{width:20%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(4),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(10)
+{width:30%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(30) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(34) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(36) .form-control 
+{text-align:center;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(24),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(26),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(38),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(40),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(42)
+{text-align:right; padding-right:1rem;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(6),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(12),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(20),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(28),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(36),
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(44)
+{border-right:1px solid #aaa;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li .custom-select{display:inline-block; line-height:1.5; vertical-align: inherit; }
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li .form-control {display:inline-block;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-regi .input-box {display:flex; align-items:center; position: relative;} 	
+.wrapper .content-page .container-fluid .repay-platform-fee-regi .input-box input {padding-right:35px; text-align: right; }			
+.wrapper .content-page .container-fluid .repay-platform-fee-regi .input-box span { position: absolute; right: 0px; padding: 2px 12px 0; pointer-events: none; color:#222;}	
+
+
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-regi .save-button {text-align: center; margin-top:30px;}		
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-platform-fee-regi {padding:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(2n+1){width:30%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(2n){width:70%; border-right:1px solid #aaa;}
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(-n+6){border-top:none;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-regi ul li:nth-child(-n+2){border-top:1px solid #aaa;}		
+
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-regi .save-button {margin-bottom:30px;}	
+	
+	
+	
+}
+
+
+
+
+/*******************************대출자플랫폼수수료 수정*******************************************/
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify {padding:0 30px;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul{width:100%; margin-top:20px; display:flex; flex-wrap:wrap; align-items:center; padding:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li {list-style:none; height:45px; line-height:45px; }
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li div {height:45px; line-height:45px;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(2n+1){ width:10%; background-color:#f6f6f6; color:#222; font-size:.78rem;  text-align:center; font-weight: 600; border:1px solid #aaa; border-top:none; }
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(2n){width:15%; color:#222; font-size:.78rem; text-align:center;  border-bottom:1px solid #aaa; padding:0 .5rem;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:last-child {width:90%; border-right:1px solid #aaa;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(3),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(9) 
+{width:20%;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(4),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(10)
+{width:30%;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(30) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(34) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(36) .form-control 
+{text-align:center;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(38),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(40),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(42)
+{text-align:right; padding-right:1rem;}
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(-n+6){border-top:1px solid #aaa;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(6),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(12),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(20),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(28),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(36),
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(44)
+{border-right:1px solid #aaa;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li .form-control {display:inline-block; }
+
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .input-box {display:flex; align-items:center; position: relative;} 	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .input-box input {padding-right:35px; text-align: right; }			
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .input-box span { position: absolute; right: 0px; padding: 2px 12px 0; pointer-events: none; color:#222;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .pro-name {line-height:normal; display:inline-block; padding-top:3px;}	
+
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .save-button {text-align: center; margin-top:30px;}		
+
+
+
+
+
+@media (max-width:992px){
+.wrapper .content-page .container-fluid .repay-platform-fee-modify {padding:0;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(2n+1){width:30%;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(2n){width:70%; border-right:1px solid #aaa; text-align: right;}
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(-n+6){border-top:none;}	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(-n+2){border-top:1px solid #aaa;}		
+	
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(30) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(34) .form-control,
+.wrapper .content-page .container-fluid .repay-platform-fee-modify ul li:nth-child(36) .form-control 
+{text-align:right;}
+	
+/*버튼*/
+.wrapper .content-page .container-fluid .repay-platform-fee-modify .save-button {margin-bottom:30px;}	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>본인확인</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+        <!-- jquery js -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+		
+        
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+	
+		<!-- header, footer, common css -->
+		<link rel="stylesheet" href="./assets/css/common/header.css">
+		<link rel="stylesheet" href="./assets/css/common/footer.css">
+		<link rel="stylesheet" href="./assets/css/common/common.css">
+
+		<!-- contents css -->
+		<link href="./assets/css/page/member.css" rel="stylesheet" type="text/css">
+
+
+		<!-- common css -->
+		<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="./assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+		
+		
+		
+		
+		<script>
+		$(document).ready(function() {
+
+			// 다음 버튼 클릭 시
+			 $('.next-btn').on('click', function () {
+				 if ($(this).parents('.kyc-step').css('display', 'block')) {
+					 $(this).parents('.kyc-step').next().css('display', 'block');
+					 $(this).parents('.kyc-step').css('display', 'none');
+				 }
+			});
+
+			// 이전 버튼 클릭 시	
+			 $('.prev-btn').on('click', function () {
+				 if ($(this).parents('.kyc-step').css('display', 'block')) {
+					 $(this).parents('.kyc-step').prev().css('display', 'block');
+					 $(this).parents('.kyc-step').css('display', 'none');
+				 }
+			});
+		});
+		</script>	
+		
+		
+		
+<style>
+/************************************************************ kyc 개인 *****************************************************************************/
+/*********************************
+font SET
+**********************************/
+.kyc p, .kyc a, .kyc span , .kyc th , .kyc td , .kyc div, .kyc button, .kyc h2, .kyc h3, .kyc h4, .kyc h5, .kyc ul li , .kyc label , .kyc input , .kyc .active{font-family:"NotoSansKR", sans-serif; }
+
+			
+			
+/* 페이지별 노출/비노출 */
+.kyc .container .row .card .card-body .kyc-step:first-of-type {display: block;}
+.kyc .container .row .card .card-body .kyc-step {display: none;}			
+
+/*셀렉트박스*/
+.kyc .custom-select {display:block; width:100%; height:calc(2.8rem); padding:.45rem 1rem; font-size:.85rem; font-weight:400; line-height: 1.5; color:#555; background-color: #fff; background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 10px 8px; border:1px solid #ddd; border-radius:.25rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+
+/*인풋박스*/
+.kyc .form-control {display: block; width:100%; height:calc(2.8rem); padding:.45rem 1rem; font-size:.85rem; font-weight:400; line-height: 1.5; color:#555; background-color: #fff; background-clip: padding-box; border:1px solid #ddd; border-radius:.25rem; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif;}
+						
+
+/*기본 체크박스*/
+.kyc .checkbox input[type="checkbox"] {opacity:0;}
+.kyc .checkbox input[type="checkbox"] + label:before{content: ' '; display: inline-block; width: 15px; height: 15px; text-align: center; line-height: 14px; font-size: 13px;vertical-align: middle; box-sizing: border-box; border: 1px solid #aaa; background-color: #fff; margin-left:-15px; margin-top:-2px; margin-right: 5px; border-radius: .15rem; transition:background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; }
+.kyc .checkbox input[type="checkbox"]:checked + label:before{background: url(../../images/join/check.png) no-repeat center 50%; background-size: contain; background-color:#ee321f; color: #fff; border: 1px solid #ee321f; box-sizing: border-box; }
+	
+
+/*라디오버튼 커스텀*/			
+.kyc input[type="radio"] {display: none;}
+.kyc input[type="radio"] + label:before{content: ""; display: inline-block;  width: 12px; height: 12px; padding:2px; background-clip: content-box; border: 1px solid #ccc; background-color: #fff;
+border-radius: 50%; margin-right:3px; margin-bottom:3px; vertical-align:middle;}				
+.kyc input[type="radio"]:checked + label:before {background-color: #ee321f; border: 1px solid #ee321f;}				
+.kyc input[type="radio"]:disabled + label:before {background-color: #fff; border: 1px solid #ccc;}		
+.kyc input[type="radio"]:disabled + label {opacity:1;}			
+			
+	
+			
+/*파일업로드*/
+.kyc .container .row .card .card-body form .kyc-step .custom-file {margin-bottom:1.5rem; height: calc(2.8rem);  }
+.kyc-other .container .row .card .card-body form .kyc-step .custom-file {margin-bottom:10px;  }				
+.kyc .container .row .card .card-body form .kyc-step .custom-file-label {height: calc(2.8rem); color:#555; background-color: #fff; border:1px solid #ddd; font-size:.85rem; line-height:2;  }	
+.kyc .container .row .card .card-body form .kyc-step .custom-file-label::after{height: calc(2.8rem); color:#555; background-color: #eee;  font-size:.85rem; line-height:2;  }
+.kyc .container .row .card .card-body form .kyc-step .custom-file-input:lang(en)~.custom-file-label::after {content:"이미지선택";}
+					
+			
+/* 페이지공통 */			
+.kyc .container .row .card {box-shadow: none; width:100%; background-color: #fff; margin:80px 0;}
+.kyc .container .row .card .card-body {padding:0;}
+.kyc .container .row .card .card-body .head-title h4 {text-align:left; font-size:1.2rem; color:#222; font-weight: 500;  padding-left:1rem;  border-bottom:1px solid #ddd; padding-bottom:1rem; margin-bottom:30px;}
+.kyc .container .row .card .card-body form .kyc-step {padding:0 1rem;}
+.kyc .container .row .card .card-body form .kyc-step h5 {text-align:left; font-size:1.05rem; color:#222; font-weight: 500;  margin-bottom:10px;}
+.kyc .container .row .card .card-body form .kyc-step p {font-size:.85rem; color:#777; font-weight: 400;}
+			
+
+			
+/*********************************
+신분증 KYC
+**********************************/			
+/* 신분증선택 */			
+.kyc .container .row .card .card-body form .id-choice .box-wrap {display:flex; justify-content: space-between; width:100%; margin:30px 0 50px; text-align: center;}
+.kyc .container .row .card .card-body form .id-choice .box-wrap label { cursor:pointer; border-radius:.25rem; width:48.5%;}	
+.kyc .container .row .card .card-body form .id-choice .box-wrap label input[type="radio"] {position: absolute;opacity: 0;}		
+.kyc .container .row .card .card-body form .id-choice .box-wrap label .content {padding:1rem 0 1.5rem; border: 1px solid #ccc; border-radius:.5rem; position: relative;}	
+.kyc .container .row .card .card-body form .id-choice .box-wrap label .content i {font-size:2.5rem; color:#aaa; font-weight: 500;}			
+.kyc .container .row .card .card-body form .id-choice .box-wrap label .content p {font-size:.9rem; color:#aaa; font-weight: 500; margin-bottom:0;}			
+
+.kyc .container .row .card .card-body form .id-choice .box-wrap label input[type="radio"]:checked + .content:after {content: ""; position: absolute; height: 12px; width: 12px; background: #ee321f; right: 18px;
+  top: 16px; border-radius: 100%; border: 2px solid #fff; -webkit-box-shadow: 0px 0px 0px 1px #ee321f; box-shadow: 0px 0px 0px 1px #ee321f;}					
+.kyc .container .row .card .card-body form .id-choice .box-wrap label input[type="radio"]:checked + .content {border: 1px solid #ee321f; background: #fff;}						
+.kyc .container .row .card .card-body form .id-choice .box-wrap label input[type="radio"]:checked + .content i{color:#222; }
+.kyc .container .row .card .card-body form .id-choice .box-wrap label input[type="radio"]:checked + .content p{color:#222; }
+			
+		
+/*신분증등록*/
+.kyc .container .row .card .card-body form .id-check .img-card {text-align: center; margin:10px 0 30px;}
+.kyc .container .row .card .card-body form .id-check img {width:70%; }
+.kyc .container .row .card .card-body form .id-check .notice {margin-bottom:50px; padding:0 5px;}			
+.kyc .container .row .card .card-body form .id-check .notice p {font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif;  text-align: justify; line-height: 1rem; letter-spacing: -.5px;}  	
+.kyc .container .row .card .card-body form .id-check .notice p span {color:#ee321f; font-family: "Nunito",sans-serif;}		
+.kyc .container .row .card .card-body form .id-check .notice p .bold {color:#222; font-weight: 600; text-decoration: underline; font-family: "Nunito",sans-serif;}			
+
+		
+/*신분증정보확인*/			
+.kyc .container .row .card .card-body form .id-photo .img-photo {width:100%; background-color: #f8f8f8; height: 200px; }	
+.kyc .container .row .card .card-body form .id-photo .id-info {width:100%; margin:20px 0; border:1px solid #aaa; background-color: #f8f8f8; padding:.7rem 1rem .5rem;  }			
+.kyc .container .row .card .card-body form .id-photo .id-info table tr th {font-size:.8rem; color:#777; font-weight:400; font-family: "Nunito",sans-serif; padding:0 1rem;  line-height: 30px; }		
+.kyc .container .row .card .card-body form .id-photo .id-info table tr td {font-size:.8rem; color:#222; font-weight:600; font-family: "Nunito",sans-serif; padding:0 1rem; }	
+.kyc .container .row .card .card-body form .id-photo .notice {margin-bottom:50px; padding:0 5px;}			
+.kyc .container .row .card .card-body form .id-photo .notice p{font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif;  text-align: justify; line-height: 1rem; letter-spacing: -.5px;}  
+.kyc .container .row .card .card-body form .id-photo .notice p a {color:#ee321f; font-family: "Nunito",sans-serif;}					
+		
+			
+/*출금계좌등록*/					
+.kyc .container .row .card .card-body form .account-regi .account-info {margin:30px 0 50px;}			
+.kyc .container .row .card .card-body form .account-regi .account-info .form-group {margin-bottom:20px;}
+.kyc .container .row .card .card-body form .account-regi .account-info .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc .container .row .card .card-body form .account-regi .account-info .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+				
+				
+/*본인계좌인증*/		
+.kyc .container .row .card .card-body form .account-1won .ex-img {display:flex; justify-content: space-between;  border:1px solid #aaa;   background-color: #f8f8f8; padding:1rem 1.5rem 1.5rem; align-items: center; }
+.kyc .container .row .card .card-body form .account-1won .ex-img .name p:first-child {margin-bottom:15px; font-size:.8rem; color:#777; font-weight: 400; }	
+.kyc .container .row .card .card-body form .account-1won .ex-img .name p:last-child {margin-bottom:0; font-size:.9rem; color:#222; font-weight: 500;  }			
+.kyc .container .row .card .card-body form .account-1won .ex-img .name p span{border:1px solid #222; padding:.3rem .5rem; margin-left:5px;  background-color: #fff; font-weight: 600; color:#222; font-size:.7rem;}
+.kyc .container .row .card .card-body form .account-1won .ex-img .won {text-align:right;}			
+.kyc .container .row .card .card-body form .account-1won .ex-img .won p:first-child {margin-bottom:15px; font-size:.8rem; color:#777; font-weight: 400;  }	
+.kyc .container .row .card .card-body form .account-1won .ex-img .won p:last-child {margin-bottom:0;font-size:.9rem; color:#222; font-weight: 500; }		
+.kyc .container .row .card .card-body form .account-1won .form-group {margin:20px 0 50px;}			
+.kyc .container .row .card .card-body form .account-1won .form-group p {margin-top:10px; font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif; line-height: 1rem; letter-spacing: -.5px;} 
+.kyc .container .row .card .card-body form .account-1won .form-group input {font-size:.9rem; font-weight: 400; color:#222;}		
+			
+
+/*본인계좌확인*/					
+.kyc .container .row .card .card-body form .account-check .bank-info{border:1px solid #aaa; background-color: #f8f8f8; padding:1.5rem; align-items: center; margin-bottom: 50px;}				
+.kyc .container .row .card .card-body form .account-check .bank-info p:first-child {margin-bottom:10px; font-size:.9rem; color:#777; font-weight: 500; font-family:"Pretendard", sans-serif;}	
+.kyc .container .row .card .card-body form .account-check .bank-info p:last-child {margin-bottom:0; font-size:1rem; color:#222; font-weight: 600; font-family:"Pretendard", sans-serif; }				
+.kyc .container .row .card .card-body form .account-check .bank-info p span {margin-bottom:0; margin-left:.5rem; font-size:1.05rem; color:#222; font-weight: 600; font-family:"Pretendard", sans-serif; }				
+
+			
+
+/*본인정보입력*/	
+.kyc .container .row .card .card-body form .info-form .input-wrap {margin:30px 0 0;}			
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group {margin-bottom:30px;}
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name {display:flex; }		
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name input{width:49%;}				
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .eng-name input:first-child{margin-right:2%;}										
+/*본인정보입력 - 주소*/
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap {display:flex;}			
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap button {width:40%; border-radius:.25rem; box-shadow: none; font-size:.9rem; background-color: #444; color:#fff;  margin-bottom:5px; height: calc(2.8rem); border-top-left-radius:0;  border-bottom-left-radius:0;}
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .co-add-zip-wrap input {width:58%; margin-right:1%;}			
+.kyc .container .row .card .card-body form .info-form .input-wrap .form-group .postcode{margin-bottom: 5px; }			
+/*본인정보입력 - 서비스동의*/			
+.kyc .container .row .card .card-body form .info-form .agree-info {margin-bottom:50px;}
+.kyc .container .row .card .card-body form .info-form .agree-info p {font-size:.85rem; font-weight:500; color:#222; margin-bottom: .5rem; font-family:"NotoSansKR", sans-serif; }			
+.kyc .container .row .card .card-body form .info-form .agree-info label {color:#555; font-size:.8rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }			
+.kyc .container .row .card .card-body form .info-form .agree-info label a {color:#555; text-decoration: underline; font-size:.8rem; font-weight:500; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+
+			
+/*완료*/			
+.kyc .container .row .card .card-body form .id-end p {margin:30px 0 80px;}		
+			
+			
+
+/*하단 버튼 1열*/			
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap1 {text-align:center; margin-bottom:70px;}
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap1 .next-btn {width:100%!important; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none;}
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap1 .other-btn{ border:none; background-color:#fff; color:#777;  font-size:.85rem; padding:0; margin-top:1.5rem;  font-weight: 500; border-bottom: 1px solid #999;} 
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap1 .main-btn {width:100%; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none;}			
+
+/*하단 버튼 2열*/
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap2 {display:flex; justify-content:center;  text-align:center; margin-bottom:70px; flex-wrap: wrap; }
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap2 .next-btn {width:49%; background-color: #ee321f; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; }
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap2 .prev-btn {width:49%; background-color: #aaa; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; margin-right:2%;} 
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap2 .modify-btn {width:49%; background-color: #aaa; color:#fff;  font-size:1rem; padding:.7rem 0; font-family: "SpoqaHanSans", Dotum, Helvetica, AppleGothic, Sans-serif; border:none; margin-right:2%;} 			
+.kyc .container .row .card .card-body form .kyc-step .btn-wrap2 .other-btn{ border:none; background-color:#fff; color:#777;  font-size:.85rem; padding:0; margin-top:1.5rem;  font-weight: 500; border-bottom: 1px solid #999; text-align: center;} 			
+			
+			
+			
+			
+/*********************************
+신분증 외 KYC
+**********************************/						
+			
+/*서류제출*/
+.kyc .container .row .card .card-body form .docu-check .docu-detail {margin:1rem 0;}		
+.kyc .container .row .card .card-body form .docu-check .docu-detail table {width:100%;}		
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tr th,.kyc-other .container .row .card .card-body form .docu-check .docu-detail table tr td {border:1px solid #ddd;}	
+.kyc .container .row .card .card-body form .docu-check .docu-detail table thead {background-color: #f8f8f8; }			
+.kyc .container .row .card .card-body form .docu-check .docu-detail table thead th {color:#222; font-weight: 500; font-size:.825rem; text-align: center; padding:.6rem 1rem; border-bottom:1px solid #999;}
+.kyc .container .row .card .card-body form .docu-check .docu-detail table thead th span {color:#ee321f; font-weight:500; font-size:.825rem;}			
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr th {border:1px solid #ddd; width:25%; padding:.7rem .5rem .2rem; vertical-align: middle; text-align: center; white-space: nowrap;}	
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr th label{font-size:.825rem; color:#222; font-weight: 500; }			
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr td {border:1px solid #ddd; width:75%; padding:.7rem 1rem;}
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr td label{font-size:.825rem; color:#222; font-weight: 500;  }		
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr td p {font-family: "Nunito",sans-serif; font-size:.78rem; color:#555; font-weight: 400; letter-spacing: -.5px; margin-bottom:0;}
+.kyc .container .row .card .card-body form .docu-check .docu-detail table tbody tr td p span {font-family: "Nunito",sans-serif; font-size:.825rem; color:#666; font-weight: 400; margin-top:-3px; vertical-align: middle; display: inline-block;}			
+
+.kyc .container .row .card .card-body form .docu-check .notice {margin:10px 0 50px; padding:0 5px;}			
+.kyc .container .row .card .card-body form .docu-check .notice p {font-size:.78rem; color:#555; font-weight: 400; font-family: "Nunito",sans-serif;  text-align: justify; line-height: 1rem; letter-spacing: -.5px;}  		
+						
+			
+/*인적정보입력*/					
+.kyc .container .row .card .card-body form .info-regi .my-info {margin:30px 0 50px;}			
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group {margin-bottom:20px;}
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group label {font-size:.85rem; font-weight:400; color:#222; margin-bottom: 0.3rem; font-family:"NotoSansKR", sans-serif; }
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group input {font-size:.9rem; font-weight: 400; color:#222;}
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group .id-num {display:flex; }		
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group .id-num input{width:49%;}				
+.kyc .container .row .card .card-body form .info-regi .my-info .form-group .id-num input:first-child{margin-right:2%;}				
+								
+					
+/*출금계좌등록*/				
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num {display:flex; }		
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num input{width:49%;}				
+.kyc-other .container .row .card .card-body form .account-regi .account-info .form-group .id-num input:first-child{margin-right:2%;}					
+			
+
+			
+			
+			
+			
+@media all and (min-width:500px) {
+/*페이지공통*/
+.kyc {margin:60px 0 0; background-color: #fafafa;}
+.kyc .container .row .card {box-shadow: none; border:1px solid #ddd; width:500px; margin:40px 0 100px; border-radius: 0;}
+.kyc .container .row .card .card-body .head-title h4 {font-size:1.4rem; margin:40px 0 20px; border-bottom: none; padding-left:1.5rem;}
+.kyc .container .row .card .card-body form .kyc-step p {font-size:.9rem; }	
+.kyc .container .row .card .card-body form .kyc-step {padding:0 1.5rem;}
+
+	
+/*신분증등록*/
+.kyc .container .row .card .card-body form .id-check img {width:auto; }
+.kyc .container .row .card .card-body form .id-check .notice p {font-size:.8rem; line-height: 1.1rem; }  			
+
+/*서류제출*/
+.kyc .container .row .card .card-body form .docu-check .notice p {font-size:.8rem; line-height: 1.1rem; }
+	
+/*신분증정보확인*/				
+.kyc .container .row .card .card-body form .id-photo .notice p{font-size:.8rem; line-height: 1.1rem; }			
+	
+	
+}
+		
+
+
+@media all and (min-width:900px) {
+.kyc {margin:80px 0 0; background-color: #fafafa;}
+
+.tail {display:block;}
+
+
+}
+
+
+
+	
+			
+		</style>
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<header>
+			<div class="header_wrap">
+				<h1><a href=""></a></h1>
+				<nav>
+					<ul class="depth1">
+						<li><a href="">투자하기</a> 
+							<ul class="depth2">
+								<li><a href="">투자 상품 보기</a></li>
+								<li><a href="">법인 투자 안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">대출하기</a></li>
+					</ul>
+					<ul class="depth1">
+						<li><a href="">회사소개</a>
+							<ul class="depth2">
+								<li><a href="">회사소개</a></li>
+								<li><a href="">사업공시</a></li>
+								<li><a href="">채용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="">이용안내</a>
+							<ul class="depth2">
+								<li><a href="">공지사항</a></li>
+								<li><a href="">이벤트</a></li>
+								<li><a href="">투자후기</a></li>
+								<li><a href="">도움말</a></li>
+								<li><a href="">투자자유형</a></li>
+							</ul>
+						</li>
+						<li><a href="">헬로매거진</a></li>
+					</ul>
+				</nav>
+				<div class="pre_login btn_box" style="display: none;">
+					<button class="login_btn">로그인</button>
+					<button class="join_btn">회원가입</button>
+				</div>
+                <div class="after_login myinfo_box">
+                    <div class="user_nick" onclick="infoDisplay();">
+                        윤선미님
+                    </div>
+                    <aside class="user_box">
+                        <ul class="user_info">
+                            <li>예치금</li>
+                            <li>10,151,041원</li>
+                            <li><p>신한 46213894516843548</p><i class="mdi mdi-content-copy"></i></li>
+                        </ul>
+                        <div class="limit_box">
+                            <ul class="mylimit_detail">
+                                <li>나의 투자한도</li>
+								<li>3,000만원</li>
+                            </ul>
+                            <ul class="mylimit_detail">
+                                <li>나의 잔여한도</li>
+                                <li>2,400만원</li>
+                            </ul>
+                            <ul class="limit_cf">
+                                <li>부동산, 주택담보</li>
+                                <li>1,000만원</li>
+                            </ul>                           
+                            <ul class="limit_cf">
+                                <li>SCF, 동산</li>
+                                <li>3,000만원</li>
+                            </ul>
+                        </div>
+                        <div class="user_info_btn_box">
+                            <button type="button" class="mypage_btn">마이페이지</button>
+                            <ul class="user_active_btn_box">
+                                <li><a href="">정보수정</a></li>
+                                <li><a href="">로그아웃</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+			</div>
+            
+            <!-- Tablet, Mobile -->
+			<div class="m_header_wrap">
+				<h1><a href=""></a></h1>
+				<div class="m_menu_box">
+					<div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+				</div>
+				<div id="menuList" class="menu_list_container">
+					<div class="menu_top">
+						<div class="menu_logo">
+                            <a href="">
+                                <img src="./assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+						<div class="menu_bar"><i class="mdi mdi-close"></i></div>
+					</div>
+					<div class="menu_top_content">
+						<div class="pre_login btn_box" style="display: none;">
+							<button class="login_btn">로그인</button>
+							<button class="join_btn">회원가입</button>
+						</div>
+						<div class="after_login myinfo_box">
+							<div class="myinfo">
+								<p class="info_name">윤선미님</p>
+								<ul class="btn_box">
+									<li><a href="">수정</a></li>
+									<li><a href="">로그아웃</a></li>
+								</ul>
+							</div>
+							<ul class="myinfo_detail">
+								<li>예치금</li>
+								<li>10,151,041원</li>
+							</ul>
+							<ul class="myinfo_detail">
+								<li>계좌</li>
+								<li>신한은행 56218165151951<i class="mdi mdi-content-copy"></i></li>
+							</ul>
+							<div class="mylimit_info">
+								<ul class="mylimit_detail">
+									<li>나의 투자한도</li>
+									<li>3,000만원</li>
+								</ul>
+								<ul class="mylimit_detail">
+									<li>나의 잔여한도</li>
+									<li>2,400만원</li>
+								</ul>
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> 부동산, 주택담보</li>
+									<li>1,000만원</li>
+								</ul>                           
+								<ul class="limit_cf">
+									<li><span>투자가능한도 -</span> SCF, 동산</li>
+									<li>3,000만원</li>
+								</ul>
+							</div>
+							<button type="button" class="mypage_btn">마이페이지</button>
+						</div>
+					</div>
+					<nav>
+						<ul class="depth1">
+							<li><a href="">투자하기<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 투자 상품 보기</a></li>
+									<li><a href="">- 법인 투자 안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">대출하기</a></li>
+						</ul>
+						<ul class="depth1">
+							<li><a href="">회사소개<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 회사소개</a></li>
+									<li><a href="">- 사업공시</a></li>
+									<li><a href="">- 채용안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">이용안내<span></span></a>
+								<ul class="depth2">
+									<li><a href="">- 공지사항</a></li>
+									<li><a href="">- 이벤트</a></li>
+									<li><a href="">- 투자후기</a></li>
+									<li><a href="">- 도움말</a></li>
+									<li><a href="">- 투자유형안내</a></li>
+								</ul>
+							</li>
+							<li><a href="">헬로매거진</a></li>
+						</ul>
+						<div class="menu_bottom_content">
+							<ul>
+								<li>헬로펀딩 고객센터</li>
+								<li>1588-6760</li>
+								<li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+							</ul>
+							<div><p>카카오톡<br />채팅상담</p></div>
+						</div>
+					</nav>
+				</div>
+				
+			</div>     
+		</header>
+		<!-- header end -->	
+
+		                    
+		<!-- kyc personal start -->
+		<section class="kyc-p kyc">
+            <div class="container">
+                <div class="row justify-content-center">
+                     <div class="card">
+                     	<div class="card-body"> 
+							<div class="head-title">
+                        		<h4>본인확인</h4>
+							</div>
+							 <form action="#">
+								<div class="id-choice kyc-step">
+									<h5>신분증 선택</h5>
+									<p>본인확인을 위해 촬영하거나 신분증 종류를 선택해주세요.</p>
+									<div class="box-wrap">
+										<label class="idcard" for="idcard">
+											<input checked type="radio" name="id-choice" id="idcard" />
+											<div class="content">
+												<i class="mdi mdi-account"></i>
+												<p>주민등록증</p>
+											</div>
+										</label>
+										<label class="drivercard" for="drivercard">
+											<input type="radio"  name="id-choice" id="drivercard"  />
+											<div class="content">
+												<i class="mdi mdi-car"></i>
+												<p>운전면허증</p> 
+											</div>
+										</label>
+									</div>
+									<div class="btn-wrap1">
+										<button type="button" class="next-btn">다음</button>
+										<button type="button" class="other-btn"  onclick="location.href='kyc-other.html';">신분증 확인이 어려울 경우 본인 확인</button>
+									</div>
+								</div>
+								<div class="id-check kyc-step">
+									<h5>신분증 확인</h5>
+									<p>신분증의 촬영 또는 스캔 이미지를 등록합니다.</p>
+									<div class="custom-file">
+                                    	<input type="file" class="custom-file-input" id="" name="filename">
+                                    	<label class="custom-file-label" for="customFile">선택된 이미지 없음</label>
+                                    </div>
+									<div class="img-card">
+										<img src="assets/images/join/idcard.png" alt="신분증 이미지">
+									</div>
+									<div class="notice">
+										<p>1. 신분증 원본을 스캔 또는 촬영한 사진을 업로드해 주세요.</p>	
+										<p><span>2. 사진의 배경의 비중이 큰 경우 복사본으로 인식되어 판별이 거부될 수 있사오니, 최대한 신분증 중심인 이미지를 업로드해 주세요.</span></p>
+										<p>3. 파일의 용량은 <span>10Mbyte 미만</span>의 파일을 업로드해 주세요.</p>
+										<p>4. 훼손 또는 열화 된 신분증은 OCR 판독이 정상적으로 진행되지 않을 수 있으며 해당 경우 발생 시, 아래의 <span class="bold">"신분증 확인이 어려울 경우 본인확인"</span>을 클릭하여 신분증
+										확인 절차를 진행해 주세요.</p>
+										<p>5. 본인 신분증이 아닌 경우 거래가 제한될 수 있습니다.</p>
+									
+									</div>
+
+									<div class="btn-wrap2">
+										<button type="button" class="prev-btn">이전</button>
+										<button type="button" class="next-btn">다음</button>
+										<button type="button" class="other-btn">신분증 확인이 어려울 경우 본인 확인</button>
+									</div>
+								</div>
+                               	<div class="id-photo kyc-step">
+                                	<h5>신분증 정보 확인</h5>
+                                  	<p>아래 등록하신 신분증 정보를 반드시 확인하세요.</p>
+                                  	<div class="img-photo"></div>
+                                  	<div class="id-info">
+                                    	<table>
+                                        	<tr>
+                                            	<th>성명</th>
+                                              	<td>이상규</td>
+                                          	</tr>
+                                          	<tr>
+                                              	<th>주민번호</th>
+                                              	<td>000000-0000000</td>
+                                          	</tr>
+                                          	<tr>
+                                              	<th>면허번호</th>
+                                              	<td>00-00-000000-00</td>
+                                          	</tr>
+                                     	 </table>
+                                  	</div>
+                                   	<div class="notice">
+                                       	<p>1. 표기된 내용이 신분증과 다른 경우 사진 수정을 통하여 다른 사진으로 재등록해 주세요.</p>
+                                       	<p>2. 다음 단계로의 진행이 어려우신 분은 <a href="tel:1588-6760">고객센터(1588-6760)</a>으로 연락 주세요.</p>
+                                  	</div>
+                                  	<div class="btn-wrap2">
+                                      	<button type="button" class="modify-btn">사진수정</button>
+                                      	<button type="button" class="next-btn">확인</button>
+                                      	<button type="button" class="other-btn">신분증 판독 내용이 실제정보와 다른 경우</button>
+                                  	</div>
+                              	</div>
+								<div class="account-regi kyc-step">
+                                	<h5>출금 계좌 등록</h5>
+                                  	<p>본인확인이 가능한 본인 명의의 계좌정보를 입력해주세요.<br>
+									   인증된 계좌는 예치금 환급계좌로 사용됩니다.</p>
+
+                                  	<div class="account-info">
+										<div class="form-group">                                     
+											<label for="account" class="form-label">은행</label>
+											<select class="custom-select">
+												<option value="">은행선택</option>
+												<option value="1"></option>
+												<option value="2"></option>
+											</select>
+										</div>
+										<div class="form-group">                                     
+											<label for="account-name" class="form-label">계좌번호</label>
+											<input class="form-control" type="text" id="account-num"   placeholder="계좌번호 입력" >
+										</div>
+									</div>
+                                  	<div class="btn-wrap1">
+                                      	<button type="button" class="next-btn">내 계좌로 1원 보내기</button>
+                                  	</div>
+                              	</div> 
+								<div class="account-1won kyc-step">
+                                	<h5>본인 계좌 인증</h5>
+                                  	<p>인증하신 계좌로 1원을 보내드렸습니다.<br>
+									   계좌의 입금내역에 표시된 4자리를 입력해주세요.</p>
+									<div class="ex-img">
+										<div class="name">
+											<p>입금자명</p>
+											<p>헬로<span>＊</span><span>＊</span><span>＊</span><span>＊</span></p>
+										</div>
+										<div class="won">
+											<p>입금</p>
+											<p>1원</p>
+										</div>
+									</div>
+									<div class="form-group">                                     
+										<input class="form-control" type="text" id=""  placeholder="헬로 뒤 4자리 숫자 입력">
+										<p>입금내역이 없다면 등록하신 계좌 정보를 다시 확인해주세요.</p>
+									</div>
+                                  	<div class="btn-wrap2">
+                                      	<button type="button" class="modify-btn">계좌변경</button>
+                                      	<button type="button" class="next-btn">확인</button>
+                                  	</div>
+                              	</div> 
+								<div class="account-check kyc-step">
+                                	<h5>본인 계좌 확인</h5>
+                                  	<p>등록하신 계좌의 인증이 완료되었습니다.</p>
+									<div class="bank-info">
+										<p>환급계좌</p>
+										<p>카카오뱅크 <span>5465456455615</span></p>
+									</div>
+
+                                  	<div class="btn-wrap1">
+                                      	<button type="button" class="next-btn">확인</button>
+                                  	</div>
+                              	</div> 
+								<div class="info-form kyc-step">
+									<h5>본인 정보 입력</h5>
+									<div class="input-wrap">
+										<div class="form-group">                                     
+											<label for="account-name" class="form-label">영문명 (영문 입력 필수)</label>
+											<div class="eng-name">
+												<input class="form-control" type="text" id=""  placeholder="성">
+												<input class="form-control" type="text" id=""  placeholder="이름">
+											</div>	
+										</div>
+										<div class="form-group">
+                                            <label class="form-label">자택 주소</label>
+                                            <div class="co-add-zip-wrap input-group">
+                                                <input class="form-control postcode" type="text" name="postcode_c" id="postcode_c" placeholder="우편번호">
+                                                <button class="btn" type="button" onclick="execDaumPostcode(1);">주소검색</button>
+                                            </div>
+                                            <input class="form-control postcode"  type="text" id="addr_c" placeholder="주소">
+                                            <input class="form-control postcode"  type="text" id="detailAddr_c" placeholder="상세주소">
+                                        </div>
+                                        <div class="form-group">        
+                                            <div class="job">
+												<label for="job" class="form-label">직업</label>
+												<select class="custom-select">
+													<option value="">직업 선택</option>
+													<option value="1"></option>
+													<option value="2"></option>
+												</select>
+                                            </div>	
+                                        </div>
+										<div class="form-group">        
+                                            <div class="purpose">
+												<label for="purpose" class="form-label">거래목적</label>
+												<select class="custom-select">
+													<option value="">거래목적 선택</option>
+													<option value="1"></option>
+													<option value="2"></option>
+												</select>
+                                            </div>	
+                                        </div>
+										<div class="form-group">        
+                                            <div class="source">
+												<label for="source" class="form-label">거래자금출처</label>
+												<select class="custom-select">
+													<option value="">자금출처 선택</option>
+													<option value="1"></option>
+													<option value="2"></option>
+												</select>
+                                            </div>	
+                                        </div>
+										<div class="form-group">        
+                                            <div class="source">
+												<label for="source" class="form-label">국적</label>
+												<select class="custom-select">
+													<option value="">국적 선택</option>
+													<option value="1" selected>대한민국</option>
+													<option value="2"></option>
+												</select>
+                                            </div>	
+                                        </div>
+									</div>
+									<div class="agree-info">
+										<p>서비스정책동의</p>
+										<div class="form-group">
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-01">
+												<label for="checkbox-manual">[필수] <a href="">서비스 이용약관</a> 동의</label>
+											</div>
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-02">
+												<label for="checkbox-manual">[필수] <a href="">온라인연계투자약관</a> 동의</label>
+											</div>
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-03">
+												<label for="checkbox-manual">[필수] <a href="">개인(신용)정보 수집 및 이용</a> 동의</label>
+											</div>
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-04">
+												<label for="checkbox-manual">[필수] <a href="">개인정보 제 3자 제공</a> 동의</label>
+											</div>
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-05">
+												<label for="checkbox-manual">[필수] <a href="">고유식별정보 처리</a> 동의</label>
+											</div>
+											<div class="investment-manual checkbox">
+												<input type="checkbox"  id="checkbox-06">
+												<label for="checkbox-manual">[선택] <a href="">마케팅 정보 수집 및 활용</a> 동의</label>
+											</div>
+										</div>	
+									</div>	
+									<div class="btn-wrap1">
+                                      	<button type="button" class="next-btn">확인</button>
+                                  	</div>
+
+								</div>
+								<div class="id-end kyc-step">
+                                	<h5>본인 확인 완료</h5>
+                                  	<p>
+										온라인투자연계금융법 및 이용자 보호<br>
+										관한 법률 제21조 (투자자에 대한 정보 확인)에 의한<br>
+										본인 확인 인증 절차가 완료되었습니다.<br><br>
+										투자 및 서비스(출금, 상환 등) 이용이 가능합니다.<br>
+									</p>
+                                  	<div class="btn-wrap1">
+                                      	<button type="button" class="main-btn" onclick="location.href='index.html';">메인으로 가기</button>
+                                  	</div>
+                              	</div> 
+								 
+							</form>
+
+                            						
+                        </div> <!-- end card-body -->
+                    </div><!-- end card -->
+                </div> <!-- end row -->
+            </div><!-- end container -->
+		</section>
+ 		<!-- member-modify end -->
+		
+
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+
+
+
+		<script>
+		// 파일업로드 커스텀
+		$(".custom-file-input").on("change", function() {
+		  var fileName = $(this).val().split("\\").pop();
+		  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
+		</script>
+		
+			
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+
+    </body>
+</html>

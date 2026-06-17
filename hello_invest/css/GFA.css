@@ -1,0 +1,412 @@
+@charset "utf-8";
+/* CSS Document */
+
+		
+
+
+* {margin:0 auto; font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; padding:0; border:0; list-style:none;}	
+#event {width:100%; text-align: center; position: relative;}
+#event img { width:100%; display: block;}
+a {text-decoration: none;}
+
+
+
+
+
+
+.slides {animation-duration: 1s;  animation-delay: 0.5s; animation-name: box;}
+
+@keyframes box {
+   0% { opacity: 0; transform: translateY(150px); }
+   100% {opacity: 1;  transform: translateY(0);}
+} 	
+		
+
+.text01 {animation-duration: 1s;  animation-delay: 1.5s; animation-name: title01;}
+
+@keyframes title01 {
+   0% { opacity: 0; transform: translateX(-250px); }
+   100% {opacity: 1;  transform: translateX(0);}
+} 
+
+
+.text02 {animation-duration: 1s;  animation-delay: 1.5s; animation-name: title02;}
+
+@keyframes title02 {
+   0% { opacity: 0; transform: translateX(250px); }
+   100% {opacity: 1;  transform: translateX(0);}
+} 
+
+
+
+
+
+
+
+/*폰트사이즈 및 칼라*/
+
+h3 {font-size:20px; font-weight: 300; letter-spacing: -1px;}
+h4 {font-size:18px; font-weight: 300;}
+.purple {color: #250be2;}
+.gray {color: #777;}
+.yellow {color:#ffe033;}
+.orange {color:#ff5400;}
+.ft14 {font-size:14px;}
+.fw600 {font-weight: 600;}
+
+
+
+
+
+
+/*상단비주얼*/
+.visual {width:100%; height: 570px; background-image: url("../img/bg.png"); background-position: top center; background-repeat: no-repeat; background-size:cover; overflow: hidden;}	
+.visual ul li {float:left;}
+.visual ul li:nth-child(1) {text-align:left; width:20%; padding:5% 3%;}
+.visual ul li:nth-child(2) {float:right!important; color:#fff; font-size:16px; border-radius: 20px;  border:1px solid #fff; padding:3px 8px; margin:4% 3%;}
+.visual ul li a {color:#fff;}
+.title01{clear:both; width:40%; margin:20px 30% 5px; display: inline-block;}
+.title02{width:60%;}
+
+
+/*투자현황*/
+
+.status {clear: both; }
+.status ul {margin:0 3%; }
+.status h2 {padding:30px 0 20px; font-size: 30px; font-weight: 600;}
+.status .status-box {
+	width:33.3%;
+	background-color: rgb(255, 255, 255);
+    text-align: center;
+	float:left;
+	margin-bottom:45px;
+}
+.status-box ul li:nth-child(odd) {font-size:18px; color:#333;}
+.status-box ul li:nth-child(even) {font-size:30px; color:#250be2;}
+.status-box ul li .black {font-size:20px;}
+
+
+
+
+
+
+/*이유있는 선택*/
+.safe {clear:both; background-color:#f9f9f9; display: inline-block; width:100%;}
+.safe h2 {margin:0 0 20px; font-size: 30px; font-weight: 600;}
+.safe h4 {margin:40px 0 0; font-size: 18px; font-weight: 400; letter-spacing: -1px;}
+.safe ul {margin:0 3%; }
+.safe .safe-box{
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	width:47%;
+	box-sizing: border-box;
+	border:1px solid #ff5400;
+	font-size:17px;
+	height: 150px;
+	margin-bottom: 15px;
+	letter-spacing: -1.5px;
+	box-shadow: 2px 2px 0px 3px rgba(255, 84, 0, 0.15);
+	background-color: #fff;
+}
+
+.safe-box ul li:nth-child(3) {font-size:15px; color:#222; line-height: 18px; padding:5px 0;}
+
+.safe .left {margin-left:4%;}
+.safe ul li:nth-child(6) {margin-bottom: 55px;}
+.safe img{width:40px!important; margin:15px auto 10px;}
+
+
+
+
+
+
+/*이벤트*/
+
+.event {clear: both; margin-bottom:25px;}
+
+.event h2 {margin:0 0 20px; font-size: 30px; font-weight: 600;}
+.event h4 {margin:40px 0 0; font-size: 18px; font-weight: 400; letter-spacing: -1px;}
+.event_box {width:94%; background-color: #fff; text-align: left;}
+.event_box p {color:#222; font-size:15px; line-height: 17px; letter-spacing: -1px; padding:10px 0 25px; }
+
+
+
+/*투자상품*/
+
+.product {background-color: #f9f9f9; display: inline-block; padding-bottom:35px; width:100%;}
+
+.product h2 {margin:0 0 20px; font-size: 30px; font-weight: 600;}
+.product h4 {margin:40px 0 0; font-size: 18px; font-weight: 400; letter-spacing: -1px;}
+.product_box {width:94%; background-color: #fff; box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.15); display: inline-block; text-align: left; margin-bottom:15px;}
+.product_box ul li {float:left; width:47%;}
+.product_box ul li:nth-child(2) {padding-left:15px;}
+.product_box h3 {font-size:20px; padding:10px 0 5px; color:#333;}
+.product_box h5 {font-size:18px; padding:0 0 5px; color:#333; font-weight: 400; letter-spacing: -1px; text-decoration: underline;}
+.product_box p {color:#777; font-size:14px; line-height: 16px; padding:0 0 15px; letter-spacing: -1px;}
+
+
+
+
+/*하단*/
+.footer {padding:30px 0 80px; letter-spacing: -1px; clear:both;}
+.footer h3 {font-size:16px; color:#555; line-height: 19px; font-weight: 400;}
+.footer p {font-size:15px; line-height: 17px; padding:20px;}
+
+
+	
+/*버튼*/
+
+.tjoin_bt {
+  background-color:#250be2;;
+  color: white;
+  height: 65px;
+  line-height: 65px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 600;
+  font-size: 22px;
+  border: none;
+  position:fixed;
+  bottom:0;
+  z-index: 100;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------회원가입 폼------------------------------------------------------------------------*/
+
+
+	
+a{color:#222;}	
+#join {width:100%; text-align: center; margin: 0 auto; box-sizing: border-box;}
+#join img {width:100%;}
+.logo {width:30%; padding:20px 0 40px;}
+#join h2 {font-size:18px; color:#555; font-weight: 400; padding-bottom: 10px; line-height: 22px; letter-spacing: -1px;}
+#join h2 span {color:#1a4bc2;}	
+.quick_join {width:100%; border-top:1px solid #ddd;}
+.label {font-size:18px; color:#222; width:95%; display: block; padding: 30px 2.5% 5px; text-align:left;}
+.join_form {padding: 0 2.5%;}
+	
+	
+	
+	
+/*중복체크 버튼*/
+.cheak_btn {width:24%; background-color: #93a4cc; color:#fff; border-radius: 3px; height: 45px; font-size:16px;}
+	
+/*인증번호 확인 버튼*/	
+.repeat_btn {width:24%; background-color: #0a3190; color:#fff; border-radius: 3px; height: 45px; font-size:16px;}	
+	
+/*인증번호 받기 버튼*/	
+.certify_btn {display:block; width:95%; background-color: #93a4cc; color:#fff; font-size:16px; text-align: center; height: 45px;  line-height: 45px;  
+border-radius: 3px; margin:10px 2.5%;}
+
+/*하단 가입하기 버튼*/	
+.njoin_btn { background-color: #0a3190; color: white; height: 65px; line-height: 65px; width: 90%; margin-left:5%;  margin: 30px 0 70px 5%;
+  border-radius: 3px;  display: inline-block;   text-align: center; vertical-align: bottom; cursor: pointer; padding-left: 6px; padding-right: 6px;
+  font-weight: 400; font-size: 20px;}	
+	
+	
+/*성별*/		
+.sex_btn1, .sex_btn2 {border:1px solid #ccc; width:15%; margin-left: 1%; height: 43px; display: inline-block; border-radius: 3px; line-height: 45px; vertical-align: bottom;}
+.sex_btn1 {border:1px solid #0a3190!important; color:#0a3190;}
+
+	
+/*수집동의*/		
+.agree {text-align:left; padding-left: 5%; margin:20px 0;}
+.agree p {margin:10px 0; font-size:17px; color:#222;}
+.agree span {margin:2px 0; font-size:15px;}	
+
+	
+	
+	
+	
+	input[type=text]{
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    height: 45px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+	
+
+	input[type=text].id {
+	width:70%;
+	margin-right:0.5%;
+	}	
+	
+	
+	
+	input[type=text].name {
+	width:65%!important;
+	margin-right:0.5%;
+	}	
+	
+	
+	input[type=text].num {
+	width:70%!important;
+	}	
+	
+	
+	input[type=birth] {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+	width:60%!important;
+    height: 45px;
+	line-height: 45px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+	
+	
+	input[type=phonenumb] {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+	width:30.5%!important;
+    height: 45px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	margin-top:10px;
+	}
+	
+	
+	input[type=password] {
+	-moz-appearance:none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+	width:95%!important;
+    height: 45px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    padding: 0 1em;
+	border-radius: 3px;
+	}
+	
+
+	/* 내/외국인 셀렉트박스 */
+	#foreigner {
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ccc;
+    height: 45px;
+    font-size: 16px;
+	font-weight: 500;
+	line-height: 45px;
+	width:29%;
+    color: #555;
+    box-sizing: border-box;
+    padding: 0 1em;
+	background-image: url("../img/j_arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+	vertical-align: bottom;
+	background-color: #fff;
+
+
+	}
+	
+	/* 통신사 셀렉트박스 */
+	#hp_comp {
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	border: 1px solid #ccc;
+    height: 45px;
+    font-size: 16px;
+	font-weight: 500;
+	line-height: 45px;
+	width:95%;
+    color: #555;
+    box-sizing: border-box;
+    padding: 0 1em;
+
+	background-image: url("../img/j_arrow.jpg"); background-position: center right 1em; background-repeat: no-repeat;
+	border-radius: 3px;
+	background-color: #fff;
+
+	}
+	
+
+	/*체크박스 */
+	input[type="checkbox"] {display: none;}
+
+
+	input[type="checkbox"]:checked + span:before {
+    border-color: #0a3190;
+			
+	}	
+
+
+	input[type="checkbox"] + span {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    line-height: 26px;
+	color: #383838;
+	}
+
+
+	input[type="checkbox"] + span:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all .3s;
+    background-color: #fff;
+	}
+
+
+	input[type="checkbox"] + span:after {
+    content: "";
+    transition: all .2s;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+	}
+
+
+	input[type="checkbox"]:checked + span:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 5px;
+    background-image: url("../img/j_check.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 1;	
+	}	
+	
+	
+	

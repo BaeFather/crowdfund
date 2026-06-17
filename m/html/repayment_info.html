@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta charset="utf-8" />
+        <title>상환스케줄</title>
+        <link rel="stylesheet" href="css/jquery.bxslider.css">
+        <link type="text/css" rel="stylesheet" href="css/repayment.css" />
+        <link type="text/css" rel="stylesheet" href="css/sub.css" />
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.payment_slider').bxSlider({
+                    pager: false
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <!-- ### PageTitle Start -->
+        <div id="PageTitle">
+            <div class="back_btn">
+                <a href="#"><img src="img/back_icon.png" /></a>
+            </div>
+            <h2>상환스케줄</h2>
+        </div>
+        <!-- ### PageTitle End -->
+
+        <!-- ### Repayment Start -->
+        <div id="Repayment">
+            <div class="payment_slider">
+                <div class="one_slide">
+                    <h2>2019.01</h2>
+                    <div>
+                        <p>지급예정 금액</p>
+                        <h3>3,321,650원</h3>
+                    </div>
+                    <div>
+                        <p>지급완료 금액</p>
+                        <h3>18,900,320원</h3>
+                    </div>
+                </div>
+                <div class="one_slide">
+                    <h2>2018.02</h2>
+                    <div>
+                        <p>지급예정 금액</p>
+                        <h3>3,321,650원</h3>
+                    </div>
+                    <div>
+                        <p>지급완료 금액</p>
+                        <h3>18,900,320원</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list없을때 -->
+        <div class="none_list" style="display: none;">
+            <p>상환 스케줄 내역이 없습니다.</p>
+        </div>
+        <div class="repayment_tb">
+            <table>
+                <tr>
+                    <th>구분</th>
+                    <th>날짜</th>
+                    <th>원금</th>
+                    <th>이자</th>
+                </tr>
+                <tr class="com">
+                    <td>지급</td>
+                    <td>01.11</td>
+                    <td>1억 3,500만원</td>
+                    <td>1,432,450원</td>
+                </tr>
+                <tr>
+                    <td>예정</td>
+                    <td>01.11</td>
+                    <td>50만원</td>
+                    <td>1,432원</td>
+                </tr>
+                <tr>
+                    <td>예정</td>
+                    <td>01.11</td>
+                    <td>550만원</td>
+                    <td>11,432원</td>
+                </tr>
+                <tr>
+                    <td>예정</td>
+                    <td>01.11</td>
+                    <td>250만원</td>
+                    <td>11,432원</td>
+                </tr>
+                <tr>
+                    <td>예정</td>
+                    <td>01.11</td>
+                    <td>550만원</td>
+                    <td>11,432원</td>
+                </tr>
+            </table>
+        </div>
+        <!-- ### Repayment End -->
+
+        <!-- modal(popup) script -->
+        <script src="js/classie.js"></script>
+		<script src="js/modalEffects.js"></script>
+    </body>
+</html>

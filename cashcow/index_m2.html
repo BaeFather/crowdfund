@@ -1,0 +1,292 @@
+<?
+include_once("_common.php");
+
+if( preg_match("/index_m\./i", $_SERVER['PHP_SELF']) ) { msg_replace("", "/cashcow/"); }
+
+include_once(G5_LIB_PATH.'/nujuk_state.lib.php');
+
+// 헬로펀딩 투자현황 (통계데이터)
+$NUJUK_CACHE = getNujukState();
+$NUJUK_STATUS['investAmount']       = price_cutting($NUJUK_CACHE["investAmount"]);				// 누적대출액
+$NUJUK_STATUS['repayPrincipal']     = price_cutting($NUJUK_CACHE["repayPrincipal"]);			// 누적상환액
+$NUJUK_STATUS['overduePerc']        = floatRtrim($NUJUK_CACHE["overduePerc"]);						// 연체율
+
+$app_id = trim($_REQUEST['app_id']);
+$response_idx = trim($_REQUEST['response_idx']);
+
+$DUPREQ = sql_fetch("SELECT count(mb_no) AS cnt FROM g4_member WHERE pid='".$app_id." AND mb_3='".$_REQUEST['response_idx']."'");
+if($DUPREQ['cnt']) {
+	$dup_request = 1;
+}
+
+if( preg_match("/dev\.hellofunding/i", $_SERVER['HTTP_HOST']) ) {
+	$callback_url = "https://devapi.cash-cow.co.kr/event/hellofunding/receiver";
+}
+else {
+	$callback_url = "https://api.cash-cow.co.kr/event/hellofunding/receiver";
+}
+
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes" />
+<title>캐시카우-헬로펀딩</title>
+<link rel="stylesheet" type="text/css" href="css/landing_m.css" />
+<link rel="stylesheet" type="text/css" href="css/default_mobile.css" />
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript">
+var idpw_type = "<?=$idpw_type?>";
+var id_min_length = <?=$ID_LIMIT[$idpw_type]['min_length']?>;
+var id_max_length = <?=$ID_LIMIT[$idpw_type]['max_length']?>;
+var pw_min_length = <?=$PW_LIMIT[$idpw_type]['min_length']?>;
+var pw_max_length = <?=$PW_LIMIT[$idpw_type]['max_length']?>;
+var pw_describe   = "<?=$PW_LIMIT[$idpw_type]['describe']?>";
+var cashcow_curl  = "<?=$callback_url?>";
+</script>
+<script type="text/javascript" src="/cashcow/join.js"></script>
+<? if($dup_request) { ?>
+<script type="text/javascript">
+function dupMsg() {
+	alert('이미 참여하신 이벤트 입니다.');
+}
+</script>
+<? } ?>
+</head>
+
+<body>
+
+<!-- 상단 시작 -->
+<div class="top">
+	<div class="head"></div>
+	<ul class="top_data">
+		<li>
+			<select id="principal" class="earn_numb" style="text-align:right" onChange="simulation();return false;" onFocus="blur();">
+				<option value="500000">50만원</option>
+				<option value="1000000" selected>100만원</option>
+				<option value="3000000">300만원</option>
+				<option value="5000000">500만원</option>
+				<option value="10000000">1,000만원</option>
+			</select>
+			을 헬로펀딩에 투자한다면?
+		</li>
+		<li>
+			<p><img src="./img/m/earn_tit01.jpg" height="22" alt="" /></p>
+			<p><span id="TotalInterestPrice" style="color:#3366FF"></span> 원 (세전)</p>
+			<p><span>15%</span>&nbsp;&nbsp;수익률 <span>&nbsp;&nbsp;&nbsp;&nbsp;12개월</span>&nbsp;&nbsp;만기</p>
+			<p>은행예금 대비 <span id="DiffEarning" style="color:#3366FF"></span> 수익<br/>※세전수익률 기준</p>
+		</li>
+	</ul>
+	<ul class="top_btn">
+		<li><a href="/company/introduce.php" target="_blank">헬로펀딩 소개</a></li>
+		<li><a href="/investment/invest_list.php" target="_blank">투자상품 살펴보기</a></li>
+	</ul>
+	<div class="tel"><a href="tel:1588-6760" target="_blank">1588-6760</a></div>
+</div>
+
+<script>
+simulation = function() {
+
+	$('#TotalInterestPrice').fadeOut();
+	$('#DiffEarning').fadeOut();
+
+	var principal = Number($('#principal').val());
+	var invest_return_perc = 15;
+	var invest_period = 365;
+
+	day_interest = (principal * ( invest_return_perc / 100)) / 365
+
+	Interest = day_interest * invest_period;
+	principal_interest = principal +Interest;
+	print_principal_interest = number_format(principal_interest);
+
+	bank_interest = ((principal * 0.017 / 365) * 0.725) * invest_period;
+
+	earning_diff = bank_interest / Interest * 100;
+
+	$('#TotalInterestPrice').html(print_principal_interest);
+	$('#DiffEarning').html(Math.round(earning_diff) + '%');
+
+	setInterval(function() {
+		$('#TotalInterestPrice').fadeIn();
+		$('#DiffEarning').fadeIn();
+	}, 500);
+
+	return;
+}
+
+$(document).ready(function() {
+	simulation();
+});
+</script>
+
+<style>
+#mb_id::placeholder { font-size:11px; }
+#mb_password::placeholder { font-size:11px; }
+#cfm_password::placeholder { font-size:11px; }
+#mb_email::placeholder { font-size:11px; }
+#mb_name::placeholder { font-size:11px; }
+#mb_birth::placeholder { font-size:11px; }
+#mb_hp1::placeholder { font-size:11px; }
+#auth_num::placeholder { font-size:11px; }
+</style>
+
+<!-- 상단 배너 -->
+<div style="clear:both;padding-top:10px;">
+	<img src="./img/m/cont_img01.jpg" width="100%" alt=""/>
+</div>
+<div>
+	<img src="./img/m/cont_img02.jpg" width="100%" alt=""/>
+</div>
+<div id="joins">
+	<a href="#" class="join_btn">3,000 포인트 받기 ></a>
+<!-- 간편 회원가입 -->
+<div class="quick_join" id="quick_join" style="display:none;">
+	<form name="frmJoin" id="frmJoin">
+		<input type="hidden" id="ordertime"   name="ordertime"   value="<?=time()?>" />
+		<input type="hidden" id="member_type" name="member_type" value="1" />
+		<input type="hidden" id="is_sign"     name="is_sign"     value="N" />
+		<input type="hidden" id="mb_dupinfo"  name="mb_dupinfo"  value="" />
+		<input type="hidden" id="mb_reqnum"   name="mb_reqnum"   value="" />
+		<input type="hidden" id="gender"      name="gender"      value="" />
+		<input type="hidden" id="app_id"      name="app_id"      value="<?=$app_id?>" />
+		<input type="hidden" id="response_idx" name="response_idx" value="<?=$response_idx?>" />
+	<ul>
+		<li><img src="./img/m/tit01.jpg" width="100%" alt=""/></li>
+		<li class="join_form">
+			<p>
+				<span>아이디</span>
+				<input type="text" name="mb_id" id="mb_id" placeholder="영문,숫자 조합 최대16자까지"> <span class="repeat_btn" onClick="id_check();">중복체크</span>
+			</p>
+			<p>
+				<span>비밀번호</span>
+				<input type="password" name="mb_password" id="mb_password" placeholder="<?=$PW_LIMIT[$idpw_type]['describe']?>" onBlur="passwd_check();">
+			</p>
+			<div id="mb_password_error" style="display:none;margin:0;padding:0;width:100%;font-size:11px;text-align:center;"></div>
+			<p>
+				<span>비밀번호확인</span>
+				<input type="password" name="cfm_password" id="cfm_password" placeholder="비밀번호를 한번 더 입력해주세요." onBlur="passwd_check();">
+			</p>
+			<div id="cfm_password_error" style="display:none;margin:0;padding:0;width:100%;font-size:11px;text-align:center;"></div>
+			<p>
+				<span>이메일</span>
+				<input type="text" name="mb_email" id="mb_email" placeholder="이메일을 입력해주세요.">
+			</p>
+			<p>
+				<span>성명</span>
+				<input type="text" name="mb_name" id="mb_name" style="width:103px;" placeholder="홍길동">
+				<select id="foreigner" name="foreigner" style="width:60px;height:33px">
+					<option value="">내국인</option>
+					<option value="1">외국인</option>
+				</select>
+			</p>
+			<p>
+				<span>생년월일</span>
+				<input type="birth" name="mb_birth" id="mb_birth" onKeyUp="onlyDigit(this);" placeholder="ex.19800101">
+				<span class="sex_btn1" id="gender_btn1" onClick="selectGender('m');">남</span>
+				<span class="sex_btn2" id="gender_btn2" onClick="selectGender('w');">여</span>
+			</p>
+			<p>
+				<span>휴대폰 번호</span>
+				<select id="hp_comp" name="hp_comp" style="height:33px;" onChange="provisionBlind();">
+					<option value="">통신사</option>
+					<option value="1">SKT</option>
+					<option value="2">KT</option>
+					<option value="3">LGU+</option>
+					<option value="5">알뜰폰(SKT)</option>
+					<option value="6">알뜰폰(KT)</option>
+					<option value="7">알뜰폰(LGU+)</option>
+				</select> &nbsp;
+				<input type="phonenumb" id="mb_hp1" name="mb_hp1" maxlength="3" onKeyUp="onlyDigit(this); if(this.value.length==3){document.frmJoin.mb_hp2.focus();}"> -
+				<input type="phonenumb" id="mb_hp2" name="mb_hp2" maxlength="4" onKeyUp="onlyDigit(this); if(this.value.length==4){document.frmJoin.mb_hp3.focus();}"> -
+				<input type="phonenumb" id="mb_hp3" name="mb_hp3" maxlength="4" onKeyUp="onlyDigit(this);">
+				<span class="certify_btn" id="auth_request" onClick="NiceSockStep1();">인증번호받기</span>
+
+				<input type="text" id="auth_num" name="auth_num" placeholder="인증번호 6자리" style="width:103px;margin:8px 0 0 73px;">
+				<span class="repeat_btn" id="auth_submit" onClick="NiceSockStep2();">확 인</span>
+
+				<div id="member_sign" class="error-block"></div>
+			</p>
+		</li>
+
+		<li class="agree">
+			<p>서비스 정책동의</p>
+			<p>
+				<span class="agree_list">
+					<label><input type="checkbox" id="agree_provision" name="agree_provision" checked="checked"> [필수] 서비스이용약관에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/provision.php" target="_blank">보기</a></span>
+				 </span>
+				<span class="agree_list">
+					<label><input type="checkbox" id="agree_privacy" name="agree_privacy" checked="checked"> [필수] 개인정보처리방침에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/privacy.php" target="_blank">보기</a></span>
+				</span>
+				<span class="agree_list">
+					<label><input type="checkbox" id="agree_marketing" name="agree_marketing" checked="checked"> [필수] 마케팅 정보 수집 및 활용에 동의합니다.</label>
+					<span class="view_btn"><a href="/company/marketing_agreement.php" target="_blank">보기</a></span>
+				</span>
+			</p>
+			<p class="join_btn" onClick="go_submit();">회원가입하고 포인트 받기</p>
+		</li>
+	</ul>
+	</form>
+
+	<form name="frmAuthRes">
+		<input type="hidden" name="auth_mb_name" />
+		<input type="hidden" name="auth_foreigner" />
+		<input type="hidden" name="auth_mb_birth" />
+		<input type="hidden" name="auth_gender" />
+		<input type="hidden" name="auth_hp_comp" />
+		<input type="hidden" name="auth_mb_hp" />
+	</form>
+
+</div>
+</div>
+<script type="text/javascript">
+// join_btn
+$("#joins a").click(function() {
+	$(this).next().slideToggle("fast").parent().siblings().children("#quick_join").hide();
+	return false;
+});
+</script>
+<!-- 누적투자액 -->
+<div class="invest_total">
+	<ul>
+		<li>누적투자금액 <strong class="total_1"><?=explode("억", $NUJUK_STATUS['investAmount'])[0]?></strong>억원</li>
+		<li>상환원금 <strong class="total_2"><?=explode("억", $NUJUK_STATUS['repayPrincipal'])[0]?></strong>억원</li>
+		<li>연체율 <strong class="total_3"><?=$NUJUK_STATUS['overduePerc']?></strong>%</li>
+		<li><strong class="date"><?=date("Y. m. d")?> 기준</strong></li>
+	</ul>
+</div>
+
+<!-- 헬로펀딩 인터뷰 -->
+<div class="interview">
+	<ul>
+		 <li><img src="./img/m/cont_img04.jpg" width="100%" alt=""/></li>
+		 <li class="more_btn"><a href="/bbs/epilogue.php" target="_blank">더 많은 투자후기 보기</a></li>
+	</ul>
+</div>
+
+<!-- 헬로펀딩 상품 카테고리 -->
+<div style="padding-top:30px;">
+	<img src="./img/m/cont_img05.jpg" width="100%" alt=""/>
+</div>
+
+<!-- 헬로펀딩이 극찬받는 이유 -->
+<div>
+	<img src="./img/m/tit02.jpg" width="100%" alt=""/>
+</div>
+<div>
+	<img src="./img/m/cont_img06.jpg" width="100%" alt=""/>
+</div>
+
+<!-- 헬로펀딩 제휴사 -->
+<div>
+	<img src="./img/m/cont_img07.jpg" width="100%" alt=""/>
+</div>
+
+</body>
+</html>

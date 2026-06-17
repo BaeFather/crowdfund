@@ -1,0 +1,572 @@
+/* ### Invest > .invest_title */
+.invest_title {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20px 4.6% 30px;
+}
+.invest_title h2{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* ### Invest > .invest_info */
+.invest_info{
+    width: 100%;
+    font-weight: normal;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 4.6%;
+}
+.invest_info p{
+    font-size: 18px;
+    overflow: hidden;
+    color: #222;
+    text-align: right;
+    margin-bottom: 15px;
+}
+.invest_info p:last-child{
+    color: #3e50b4;
+}
+.invest_info p span{
+    float: left;
+    color: #222;
+}
+
+
+/* ### Invest > form */
+#Invest .form_wrap{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 4.6%;
+    height: 40px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 55px;
+}
+#Invest .form_wrap input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #222222;
+    font-weight: bold;
+    text-align: right;
+    color: #3e50b4;
+    font-size: 25px;
+    padding-right: 18%;
+}
+#Invest .form_wrap input::placeholder{
+    font-size: 17px!important;
+    text-align: left;
+    font-weight: normal;
+    color: #aaaaaa;
+	height: 30px!important;
+	line-height: 30px!important;
+
+
+}
+#Invest .form_wrap button{
+    position: absolute;
+    top: 0;
+    right: 4.6%;
+    border: none;
+    background: none;
+    background-color: none;
+    height: 100%;
+    vertical-align: middle;
+    padding: 0;
+}
+#Invest .form_wrap button img{
+    height: 20px;
+    width: auto;
+}
+#Invest .form_wrap span.unit{
+    color: #3e50b4;
+    font-size: 17px;
+    line-height: 40px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    right: 11%;
+    height: 100%;
+}
+/* ### invest_acc */
+#Invest .accordion_in{
+    border-bottom: 1px solid #fff;
+}
+#Invest .accordion_in .acc_head {
+    position: relative;
+    background: #f3f3f5;
+    color: #222;
+    padding: 0px 4.6%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+#Invest .accordion_in.com .acc_head {
+    background: #3e50b4;
+    color: #fff;
+}
+#Invest .accordion_in .acc_head .acc_icon_expand {
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    left: auto;
+    top: 50%;
+    right: 4.6%;
+    margin-top: -9px;
+    background-image: url('../img/black_arrow.png');
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+#Invest .accordion_in.acc_active .acc_head .acc_icon_expand {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#Invest .accordion_in .acc_content {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 4.6%;
+}
+#Invest .accordion_in .acc_content .use_point{
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+#Invest .accordion_in .acc_content .use_point span{
+    float: left;
+    width: 25%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 30px;
+}
+#Invest .accordion_in .acc_content .use_point input{
+    float: left;
+    width: 75%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #777;
+    font-size: 14px;
+}
+#Invest .accordion_in .acc_content .use_point input::placeholder{
+    color: #aaaaaa;
+	font-size:14px!important;
+	left: 0!important;
+}
+#Invest .accordion_in .acc_content .use_point button{
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+#Invest .accordion_in .acc_content .use_point button img{
+    width: 17px;
+    height: auto;
+}
+#Invest .accordion_in .acc_content p.info{
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    line-height: 30px;
+	color:#777;
+}
+#Invest .accordion_in .acc_content p.info img{
+    width: 13px;
+    height: auto;
+    margin-right: 7px;
+    vertical-align: middle;
+}
+#Invest .accordion_in .acc_content table{
+    width: 100%;   
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    border-top: 1px solid #777;
+}
+#Invest .accordion_in .acc_content table tr{
+    border-bottom: 1px solid #777;
+}
+#Invest .accordion_in .acc_content table th{ 
+    background-color: #f3f3f5;
+    padding: 10px 5px;
+    font-weight: normal;
+}
+#Invest .accordion_in .acc_content table td{ 
+    padding: 10px 5px;
+    font-size: 13px;
+}
+#Invest .accordion_in .acc_content table th:first-child,
+#Invest .accordion_in .acc_content table td:first-child{ 
+    border-right: 1px solid #777;
+}
+#Invest .accordion_in .acc_content table td:first-child{ 
+    text-align: left;
+}
+
+#Invest .agreement{ 
+    text-align: center;
+    font-size: 15px;
+    padding: 40px 0px;
+}
+#Invest .agreement input[type="checkbox"] { 
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid #333;
+    position: relative;
+    margin-left: 5px;
+    bottom: -2px;
+}
+
+
+
+/* ### MyInvest */
+#MyInvest{
+    width: 100%;
+    overflow: hidden;
+}
+#MyInvest .search_form{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 4.6%;
+    margin: 35px 0px;
+    position: relative;
+}
+#MyInvest .search_form form{
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+}
+#MyInvest .search_form select{    
+    width: 48%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #222;
+    float: left;
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-color: #fff;
+    background-image: url('../img/select_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 11px auto;
+    background-position: 95% 50%;
+    border-radius: 0px;
+    font-size: #222;
+    box-sizing: border-box;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */ 
+#MyInvest .search_form select::-ms-expand { display: none; }
+
+#MyInvest .search_form input[type="text"] {    
+    width: 48%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #222;
+    float: right;
+    background-color: #fff;
+    border-radius: 0px;
+    font-size: #222;
+}
+#MyInvest .search_form input::placeholder {    
+    color: #999;
+}
+#MyInvest .search_form input[type="button"] {
+    position: absolute;
+    right: 4.6%;
+    background-color: transparent;
+    background-image: url('../img/search_icon.png');
+    background-repeat: no-repeat;
+    background-size: 14px auto;
+    background-position: 50% 50%;
+    border: none;
+    width: 30px;
+    height: 100%;
+}
+
+#MyInvest .invest_list_wrap{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px 4.6%;
+}
+#MyInvest .invest_summary{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+#MyInvest .invest_summary p{
+    font-size: 13px;
+    color: #222;
+    float: left;
+    font-weight: bold;
+}
+#MyInvest .invest_summary p span{
+    font-size: 13px;
+    color: #3e50b4;
+}
+#MyInvest .invest_summary p.right{
+    float: right;
+}
+#MyInvest .invest_list{
+    width: 100%;
+    overflow: hidden;
+}
+#MyInvest .invest_list li{
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #777777;
+    box-sizing: border-box;
+    padding: 15px 10px 10px 75px;
+    margin-bottom: 20px;
+    position: relative;
+}
+#MyInvest .invest_list li .state_icon{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 65px;
+    height: 32px;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: -1px;
+    text-align: center;
+    font-size: 13px;
+}
+#MyInvest .invest_list li.invest_ing .state_icon{ background-color: #3e50b4; }
+#MyInvest .invest_list li.recruit_ing .state_icon{ background-color: #20835e; }
+#MyInvest .invest_list li.recruit_com .state_icon{ background-color: #01a4b3; }
+#MyInvest .invest_list li.invest_com .state_icon{ background-color: #463f9c; }
+#MyInvest .invest_list li.invest_cancel .state_icon{ background-color: #555555; }
+
+#MyInvest .invest_list li .title{
+    font-size: 15px;
+    line-height: 19px;
+    color: #555;
+    margin-bottom: 15px;
+}
+#MyInvest .invest_list li table{
+    font-size: 13px;
+    line-height: 21px;
+    margin-bottom: 15px;
+}
+#MyInvest .invest_list li table th{
+    color: #777777;
+    font-weight: normal;
+}
+#MyInvest .invest_list li table td{
+    color: #222;
+    padding-left: 15px;
+}
+#MyInvest .invest_list li table th:nth-child(3){
+    padding-left: 25px;
+}
+#MyInvest .invest_list li .btn_box{
+    text-align: right;
+    margin-top: 10px;
+}
+#MyInvest .invest_list li .btn_box button{
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    height: 30px;
+    padding: 0px 15px;
+    letter-spacing: -1px;
+    border-radius: 4px;
+}
+#MyInvest .invest_list li.invest_ing .btn_box button{ background-color: #3e50b4; }
+#MyInvest .invest_list li.recruit_ing .btn_box button{ background-color: #20835e; }
+#MyInvest .invest_list li.recruit_com .btn_box button{ background-color: #01a4b3; }
+#MyInvest .invest_list li.invest_com .btn_box button{ background-color: #463f9c; }
+#MyInvest .invest_list li.invest_cancel .btn_box button{ background-color: #555555; }
+#MyInvest .invest_list li .btn_box button.cancel{ background-color: #777777; }
+
+#MyInvest .none_list {
+    font-size: 16px;
+    padding: 80px 0px;
+    text-align: center;
+    color: #888888;
+}
+
+/* ### InvestDetail */
+#InvestDetail{
+    width: 100%;
+    overflow: hidden;
+}
+#InvestDetail .invest_detail{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 30px 4.6%;
+}
+#InvestDetail .invest_detail .title{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+#InvestDetail .invest_detail .title span{
+    float: left;
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background-color: #3e50b4;
+}
+#InvestDetail .invest_detail .title p{
+    float: left;
+    color: #222;
+    font-size: 15px;
+    line-height: 17px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+#InvestDetail .invest_detail table{
+    width: 100%;
+    font-size: 15px;
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #777;
+    table-layout: fixed;
+    letter-spacing: -1px;
+}
+#InvestDetail .invest_detail table tr{
+    border-bottom: 1px solid #777;
+}
+#InvestDetail .invest_detail table th{
+    background-color: #f3f3f5;
+    font-weight: 100;
+}
+#InvestDetail .invest_detail table th:first-child{
+    border-right: 1px solid #777;
+}
+#InvestDetail .invest_detail table td{
+    color:#222;
+    font-weight: bold;
+}
+#InvestDetail .invest_detail table td:first-child{
+    border-right: 1px solid #777;
+}
+#InvestDetail .accordion_in{
+    border-bottom: 1px solid #ccc;
+}
+#InvestDetail .accordion_in .acc_head {
+    position: relative;
+    background: #f3f3f5;
+    color: #222;
+    padding: 0px 4.6%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+#InvestDetail .accordion_in.com .acc_head {
+    background: #3e50b4;
+    color: #fff;
+}
+#InvestDetail .accordion_in .acc_head .acc_icon_expand {
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    left: auto;
+    top: 50%;
+    right: 4.6%;
+    margin-top: -9px;
+    background-image: url('../img/black_arrow.png');
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+#InvestDetail .accordion_in.acc_active .acc_head .acc_icon_expand {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#InvestDetail .accordion_in.com .acc_head .acc_icon_expand {
+    background-image: url('../img/white_arrow.png');
+}
+#InvestDetail .accordion_in .acc_content {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 4.6%;
+}
+#InvestDetail .accordion_in .acc_content p {
+    width: 100%;
+    line-height: 32px;
+    padding: 0px 4.6%;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    color: #222;
+    text-align: right;
+    box-sizing: border-box;
+}
+#InvestDetail .accordion_in .acc_content p.red {
+    color: #e6474d;
+}
+#InvestDetail .accordion_in .acc_content p span{
+    color: #777;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

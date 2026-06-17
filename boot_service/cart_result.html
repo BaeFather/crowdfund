@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>투자신청 결과</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+		<meta name="format-detection" content="telephone=no" />
+          
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
+        <!-- jquery js -->
+		<script defer src="./assets/js/vendor.min.js"></script>
+        <script defer src="./assets/js/app.min.js"></script>
+        <script defer src="./assets/js/app/header.js"></script>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico">
+
+		<!-- header, footer css -->
+		<link rel="stylesheet" href="assets/css/common/reset.css">
+		<link rel="stylesheet" href="assets/css/common/header.css">
+		<link rel="stylesheet" href="assets/css/common/footer.css">
+
+		<!-- main contents css -->
+		<link href="assets/css/page/cart.css" rel="stylesheet" type="text/css" />
+
+		<!-- common css -->
+		<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+		<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+
+		
+    </head>
+
+    <body>
+        <!-- header start -->
+        <!-- PC -->
+		<section class="header">
+        <header>
+            
+            <div class="header_wrap">
+                <h1><a href="/sp/main"></a></h1>
+                <nav>
+                    <ul class="depth1">
+                        <li><a href="/sp/product/productList">투자하기</a></li>
+                        <li><a href="/sp/loan">대출하기</a></li>
+                    </ul>
+                    <ul class="depth1">
+                        <li><a href="/sp/introduce/company">회사소개</a>
+                            <ul class="depth2">
+                                <li><a href="/sp/introduce/company">회사소개</a></li>
+                                <li><a href="/sp/introduce/status">사업공시</a></li>
+                                <!--                                <li><a href="">채용안내</a></li>-->
+                            </ul>
+                        </li>
+                        <li><a href="/sp/introduce/userguide">이용안내</a>
+                            <ul class="depth2">
+                                <li><a href="/sp/introduce/userguide">이용가이드</a></li>
+                                <li><a href="/sp/information/notice">공지사항</a></li>
+                                <li><a href="/sp/information/faq">도움말</a></li>
+                                <li><a href="/sp/information/investType">투자유형 안내</a></li>
+                                <li><a href="/sp/invest/corpInvestGuide">법인투자 안내</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/sp/magazine">헬로매거진</a>
+                            <ul class="depth2">
+                                <li><a href="/sp/magazine">헬로매거진</a></li>
+                                <li><a href="/sp/event/reviewList">투자후기</a></li>
+                                <li><a href="/sp/event/eventList">이벤트</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="pre_login btn_box">
+                    <a href="/sp/login"><button class="login_btn">로그인</button></a>
+                    <a href="/sp/join"><button class="join_btn">회원가입</button></a>
+                </div>
+                
+            </div>
+
+            <!-- Tablet, Mobile -->
+            <div class="m_header_wrap">
+                <div class="dimmed"></div>
+                <h1><a href="/sp/main"></a></h1>
+                <div class="m_menu_box">
+                    <div class="menu_bar"><i class="mdi mdi-menu"></i></div>
+                </div>
+                <div id="menuList" class="menu_list_container">
+                    <div class="menu_top">
+                        <div class="menu_logo">
+                            <a href="/sp/main">
+                                <img src="/assets/images/header/hello_logo.png" alt="hellofunding logo">
+                            </a>
+                        </div>
+                        <div class="menu_bar"><i class="mdi mdi-close"></i></div>
+                    </div>
+                    <div class="menu_top_content">
+                        <div class="pre_login btn_box">
+                            <a href="/sp/login"><button class="login_btn">로그인</button></a>
+                            <a href="/sp/join"><button class="join_btn">회원가입</button></a>
+                        </div>
+                        
+                    </div>
+                    <nav>
+                        <ul class="depth1">
+                            <li><a href="/sp/product/productList">투자하기</a></li>
+                            <li><a href="/sp/loan">대출하기</a></li>
+                        </ul>
+                        <ul class="depth1">
+                            <li><p>회사소개<span></span></p>
+                                <ul class="depth2">
+                                    <li><a href="/sp/introduce/company">- 회사소개</a></li>
+                                    <li><a href="/sp/introduce/status">- 사업공시</a></li>
+                                    <!--                                    <li><a href="">- 채용안내</a></li>-->
+                                </ul>
+                            </li>
+                            <li><p>이용안내<span></span></p>
+                                <ul class="depth2">
+                                    <li><a href="/sp/introduce/userguide">- 이용가이드</a></li>
+                                    <li><a href="/sp/information/notice">- 공지사항</a></li>
+                                    <li><a href="/sp/information/faq">- 도움말</a></li>
+                                    <li><a href="/sp/information/investType">- 투자유형 안내</a></li>
+                                    <li><a href="/sp/invest/corpInvestGuide">- 법인투자 안내</a></li>
+                                </ul>
+                            </li>
+                            <li><p>헬로매거진<span></span></p>
+                                <ul class="depth2">
+                                    <li><a href="/sp/magazine">- 헬로매거진</a></li>
+                                    <li><a href="/sp/event/eventList">- 이벤트</a></li>
+                                    <li><a href="/sp/event/reviewList">- 투자후기</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="menu_bottom_content">
+                            <ul>
+                                <li>헬로펀딩 고객센터</li>
+                                <li>1588-6760</li>
+                                <li>월 - 목 : 10시 - 19시 | 금 : 10시 - 17시</li>
+                            </ul>
+                            <div><p><a href="https://pf.kakao.com/_xgAdWu">카카오톡<br />채팅상담</a></p></div>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </header>
+		</section>	
+		<!-- header end -->	
+		
+		<section class="cart-result">	
+			<div class="container-fluid">
+				<div class="header-tit">
+					<h4>투자신청 결과</h4>
+				</div>				
+				<div class="cart-result-table">
+					<div class="table-header">
+						<div></div>
+						<div>투자상품</div>
+						<div>신청금액</div>
+						<div>결과</div>
+					</div>
+					<ul class="table-body">
+						<li>
+							<div class="scf">SCF</div>
+							<div class="m-wrap">
+								<div><a href="">[제11996호] 소상공인 확정매출채권V</a></div>
+								<div>500만원</div>
+								<div>투자성공</div>
+							</div>	
+						</li>
+						<li>
+                            <div class="scf">SCF</div>
+							<div class="m-wrap">
+								<div><a href="">[제11999호] 소상공인 확정매출채권S</a></div>
+								<div>500만원</div>
+								<div>투자성공</div>
+							</div>	
+						</li>
+						<li>
+                            <div class="scf">SCF</div>
+							<div class="m-wrap">
+								<div><a href="">[제12000호] 소상공인 당일새벽매출지원S</a></div>
+								<div>500만원</div>
+								<div class="failure">모집마감</div>
+							</div>	
+						</li>
+						<li>
+                            <div class="scf">SCF</div>
+							<div class="m-wrap">
+								<div><a href="">[제12001호] 소상공인 확정매출채권X</a></div>
+								<div>500만원</div>
+								<div class="failure">동일차주 한도초과</div>
+							</div>	
+						</li>
+						<li>
+                            <div class="scf">SCF</div>
+							<div class="m-wrap">
+								<div><a href="">[제12002호] 소상공인 확정매출채권AF</a></div>
+								<div>500만원</div>
+								<div class="failure">한도초과</div>
+							</div>	
+						</li>
+						<li>
+                            <div class="judam">주택담보</div>
+							<div class="m-wrap">
+								<div><a href="">[제12033호] 평택 동삭동 더샵지제역센트럴파크아파트</a></div>
+								<div>500만원</div>
+								<div>투자성공</div>
+							</div>
+						</li>
+					</ul>
+					<div class="table-footer">
+						<div class="cart-total">
+							<p>투자완료 금액</p>
+							<p><span>500만원</span> / <span>15건</span></p>
+						</div>	
+						<div class="deposit">
+							<p>잔여 예치금</p>
+							<p>10,140,074원</p>
+						</div>
+						<div class="invest-limit">
+							<p>잔여 투자한도</p>
+							<p>2,999만원</p>
+						</div>	
+					</div>
+					
+				</div>
+				<div class="bt-wrap">
+					<button class="go-mypage"><a href="">투자내역 확인</a></button>
+					<button class="go-cart"><a href="">투자 장바구니 가기</a></button>
+				</div>
+			</div>				
+		</section>
+
+
+		
+		<!-- footer start -->
+        <section class="tail">
+            <div class="container">
+                <div class="row">
+                    <div class="tail-nav-sns">
+						<div class="tail-nav">
+							<p><a href="">회사소개</a></p>
+							<p><a href="">사업정보공시</a></p>
+							<p><a href="">채용안내</a></p>
+						</div>
+						
+						<div class="tail-sns">
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-face-icon.png" alt="페이스북 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-insta-icon.png" alt="인스타그램 바로가기"></a></p>
+							<p><a href="#" target="_blank"><img src="./assets/images/main/sns-blog-icon.png" alt="네이버블로그 바로가기"></a></p>
+						</div>
+                    </div>
+
+                    <div class="tail-cs">
+                        <h5>고객센터 <a href="tel:1588-6760"><span>1588-6760</span></a><a href="#" target="_blank"><img src="./assets/images/main/kakao.png" alt="카카오톡채널상담"></a></h5>
+						<p class="text-white-50">월 - 목요일&nbsp;&nbsp;10:00 - 19:00<span>금요일&nbsp;&nbsp;10:00 - 17:00</span><br>점심&nbsp;&nbsp;13:00 - 14:00</p>
+                    </div>
+					
+					<div class="tail-info">
+                        <p class="text-white-50">
+						(주)헬로핀테크 대표 : 최수석<span>|</span><br>
+						사업자번호 : 789-81-00529<span>|</span><br>
+						온라인투자연계금융업 등록번호 : 2022-21<span>|</span><br>
+						주소 : 서울시 강남구 대치동 945-10(테헤란로 98길 8) KT&G 대치타워 5층</p>
+						<p class="text-white">헬로펀딩은 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.</p>
+                    </div>
+					
+                    <div class="tail-go-terms">
+							<p class="text-white"><a href="">개인정보처리방침</a></p>
+							<p class="text-white"><a href="">신용정보 활용체제</a></p>
+							<p class="text-white-50"><a href="">이용약관</a></p>
+							<p class="text-white-50"><a href="">투자이용약관</a></p>
+							<p class="text-white-50"><a href="">대출이용약관</a></p>
+							<p class="text-white-50"><a href="">전자금융거래기본약관</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- footer end -->
+		<!-- bundle -->
+		
+        <script type="text/javascript">
+			
+			//전체선택 script
+			$(document).ready(function() {
+				$("#allcartCheck").click(function() {
+					if($("#allcartCheck").is(":checked")) $("input[name=cartCheck]").prop("checked", true);
+					else $("input[name=cartCheck]").prop("checked", false);
+				});
+
+				$("input[name=cartCheck]").click(function() {
+					var total = $("input[name=cartCheck]").length;
+					var checked = $("input[name=cartCheck]:checked").length;
+
+					if(total != checked) $("#allcartCheck").prop("checked", false);
+					else $("#allcartCheck").prop("checked", true); 
+				});
+			});
+			
+			
+			//유의사항 script
+			$(".btn-toggle-show").click(toggleText(".inner-content"));
+
+			function toggleText(element) {
+			  return function(e){
+				$(this).parent().find(element).slideToggle(200);  
+				$(this).parent().find(element).toggleClass("para-hide");
+				$(this).find("i").toggleClass("rotate");
+			  }
+			}
+        </script>
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+    </body>
+
+</html>

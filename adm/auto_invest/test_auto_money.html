@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+<center><br/><br/><br/>
+<span id="hellopay_amt"></span>  <button onclick="get_auto_passble_money('17')">헬로페이 (소상공인 확정매출채권-초단기) 자동투자 가능금액 실시간 조회</button>
+</center>
+
+</body>
+
+</html>
+
+<script>
+function get_auto_passble_money(s_type) {
+	
+	$.ajax({
+		url: 'ajax_auto_inv_money.php',
+		type: 'POST',
+		data: {s_type:s_type},
+		dataType: "json",
+		success: function(res , textStatus, jqXHR) {
+			console.log(res);
+			//console.log(textStatus);
+			//console.log(jqXHR);
+			//alert(res.total_amount);
+			$("#hellopay_amt").text(res["total_amount"]);
+		},
+		error: function(e) { alert("네트워크 오류 입니다. 잠시 후 다시 요청하십시요."); return; }
+	});
+}
+</script>

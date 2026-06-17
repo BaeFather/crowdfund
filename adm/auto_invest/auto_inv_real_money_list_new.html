@@ -1,0 +1,152 @@
+<?php
+include_once('./_common.php');
+
+if ($is_admin != 'super' && $w == '') {
+	alert('최고관리자만 접근 가능합니다.');
+}
+
+include_once (G5_ADMIN_PATH.'/admin.head.nomenu.php');
+
+$s_type = $_GET['s_type'];
+
+$strQuery = query_get_auto_real_money($s_type);
+$Result = sql_query($strQuery);
+
+$i = 0;
+WHILE($Row=sql_fetch_array($Result))
+{
+	$RowIdx					=	$Row["idx"];
+	$RowMemberIdx			=	$Row["member_idx"];
+	$RowAiGrpIdx			=	$Row["ai_grp_idx"];
+	$RowMbPoint				=	$Row["mb_point"];
+	$RowMemberType			=	$Row["member_type"];
+	$RowMemberInvestorType	=	$Row["member_investor_type"];
+	$RowMbName				=	$Row["mb_name"];
+	$RowMbConame			=	$Row["mb_co_name"];
+	$RowSendPoint			=	$Row["send_point"];	//실제 투자가능금액 (설정금액)
+	$RowOneCnt				=	$Row["onecnt"];
+	$RowMidCnt				=	$Row["midcnt"];
+	$RowMaxCnt				=	$Row["maxcnt"];
+	$RowUsePoint1			=	$Row["use_point1"];	//현재 부동산 투자포인트
+	$RowUsePoint2			=	$Row["use_point2"];	//현재 부동산 외 투자포인트
+	$RowCategory			=	$Row["category"];
+	$RowTcategory			=	$Row["tcategory"];	// 1 부동산 2, 그외
+
+	$RowSetupAmount			=	$Row["setup_amount"];
+	$RowSetupAmount2		=	$Row["setup_amount2"];
+
+	$intReturnMoney	=	fn_get_auto_real_money_calc(
+														$RowMemberType,
+														$RowMemberInvestorType,
+														$RowOneCnt,
+														$RowMidCnt,
+														$RowMaxCnt,
+														$RowSendPoint,
+														$RowUsePoint1,
+														$RowUsePoint2,
+														$RowSetupAmount,
+														$RowSetupAmount2,
+														$RowTcategory
+													);
+
+	// intReturnMoney[0]  카테고리 투자금액  intReturnMoney[0] 상품 투자금액
+
+	$intSetupAmountSum		+=	$RowSetupAmount;
+	$intSetupAmountSum2		+=	$RowSetupAmount2;
+	$intSendPointSum		+=  $RowSendPoint;
+	$intMemberPointSum		+=	$RowMbPoint;
+	$intUsePointSum1		+=  $RowUsePoint1;
+	$intUsePointSum2		+=  $RowUsePoint2;
+
+	$intCategroySum			+=  $intReturnMoney[0];
+	$intProductSum			+=  $intReturnMoney[1];
+
+	$strName				=	"";
+	SWITCH($RowMemberType)
+	{
+		CASE "2" : $strName		=	$RowMbConame;	BREAK;
+		DEFAULT :   $strName		=	$RowMbName;		BREAK;
+	}
+	$strInvTyepName			=	get_max_inv_new($RowMemberType, $RowMemberInvestorType);
+
+	$strRetVal[]				=	ARRAY(
+										$RowMemberIdx,
+										$strName,
+										$strInvTyepName["name"],
+										$RowSetupAmount,
+										$RowSetupAmount2,
+										$RowMbPoint,
+										$RowUsePoint1,
+										$RowUsePoint2,
+										$intReturnMoney[0],
+										$intReturnMoney[1],
+										$RowIdx
+								);
+	$i++;
+}
+$intTotal = $i;
+?>
+<br/>
+<div class="tbl_head02 tbl_wrap">
+<!--
+	<div>
+	자동투자 가능 금액 : <?=number_format($intSetupAmountSum)?> 원 ~  <?=number_format($intSetupAmountSum2)?>
+	</div>
+//-->
+<table class="table-striped table-bordered table-hover finxarea" style="font-size: 13px;" id="top_area">
+	<tbody>
+	<tr>
+		<th rowspan="2" style="background: #969595;width:10%;">NO</th>
+		<th rowspan="2" style="background: #969595;width:9%;">고객번호</th>
+		<th rowspan="2" style="background: #969595;width:9%;">고객명</th>
+		<th rowspan="2" style="background: #969595;width:9%;">투자형태</th>
+		<th rowspan="2" style="background: #969595;width:9%;">설정금액(최소)</th>
+		<th rowspan="2" style="background: #969595;width:9%;">설정금액(최대)</th>
+		<th rowspan="2" style="background: #969595;width:9%;">예치금잔액</th>
+		<th rowspan="2" style="background: #969595;width:9%;">부동산 기투자금액</th>
+		<th rowspan="2" style="background: #969595;width:9%;">부동산외 기투자금액</th>
+		<th colspan="2" style="background: #969595;width:20%;">자동투자 가능금액</th>
+	</tr>
+	<tr>
+		<td style="text-align:center;background: #969595;width:10%;">카테고리 기준</td>
+		<td style="text-align:center;background: #969595;width:10%;">상품 기준</td>
+	</tr>
+	<tr align="center" style="background-color:#FEB323;">
+		<td colspan=4 style="text-align:center;"><?=number_format($intTotal)?>명 합 계</td>
+		<td style="text-align:right;"><?=number_format($intSetupAmountSum)?></td>
+		<td style="text-align:right;"><?=number_format($intSetupAmountSum2)?></td>
+		<td style="text-align:right;"><?=number_format($intMemberPointSum)?></td>
+		<td style="text-align:right;"><?=number_format($intUsePointSum1)?></td>
+		<td style="text-align:right;"><?=number_format($intUsePointSum2)?></td>
+		<td style="text-align:right;"><?=number_format($intCategroySum)?></td>
+		<td style="text-align:right;"><?=number_format($intProductSum)?></td>
+	</tr>
+	</tbody>
+	</table>
+<table class="table-striped table-bordered table-hover" style="font-size: 13px;margin-top:80px;">
+
+
+<?php
+for ($i=0;$i<COUNT($strRetVal);$i++)
+{
+?>
+	<tr align="center">
+		<td style="width:10%;"><?=($i+1)?> (<?=$strRetVal[$i][10]?>)</td>
+		<td style="width:9%;"><?=$strRetVal[$i][0]?></td>
+		<td style="width:9%;"><?=$strRetVal[$i][1]?></td>
+		<td style="width:9%;"><?=$strRetVal[$i][2]?></td>
+		<td style="text-align:right;width:9%;"><?=NUMBER_FORMAT($strRetVal[$i][3])?></td>
+		<td style="text-align:right;width:9%;"><?=NUMBER_FORMAT($strRetVal[$i][4])?></td>
+		<td style="text-align:right;width:9%;"><?=NUMBER_FORMAT($strRetVal[$i][5])?></td>
+		<td style="text-align:right;width:9%;"><?=NUMBER_FORMAT($strRetVal[$i][6])?></td>
+		<td style="text-align:right;width:9%;"><?=NUMBER_FORMAT($strRetVal[$i][7])?></td>
+		<td style="text-align:right;width:10%;"><?=NUMBER_FORMAT($strRetVal[$i][8])?></td>
+		<td style="text-align:right;width:10%;"><?=NUMBER_FORMAT($strRetVal[$i][9])?></td>
+	</tr>
+<?php
+}
+?>
+</tbody></table>
+
+
+</div>

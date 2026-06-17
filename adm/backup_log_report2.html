@@ -1,0 +1,145 @@
+<?
+include_once('./_common.php');
+foreach($_REQUEST as $k=>$v) { $$_REQUEST[$k] = $v; }
+$tmp = explode("-", $ymd);
+$yy = $tmp[0]; $mm = $tmp[1] ; $dd = $tmp[2];
+
+$LIST = array();
+
+
+$sql = "SELECT * FROM cf_backup_file_check WHERE bu_code<>'EH00DB' AND backup_file_datetime like '$ymd%'  ORDER BY bu_code";
+$res = sql_query($sql);
+$cnt = $res->num_rows;
+
+for ($i=0 ; $i<$cnt ; $i++) {
+	$row = sql_fetch_array($res);
+	$LIST[$i] = $row;
+}
+//echo "<pre>"; print_r($LIST); echo "</pre>";
+?>
+<!doctype html>
+<html lang="en" moznomarginboxes mozdisallowselectionprint>
+ <head>
+  <meta charset="UTF-8">
+  <title>백업 관리대장</title>
+ </head>
+	<link rel="stylesheet" href="/default.css?ver=20190226" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font: 12pt "Tahoma";
+        }
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            /* padding: 2cm; */
+            margin: 1cm auto;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .subpage {
+            padding: 1cm;
+            height: 256mm;
+        }
+        @page {
+            size: A4 landscape;
+            margin: 0;
+            size: auto;
+        }
+        @media print {
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+        }
+   </style>
+
+<style>
+	/* td { border:1px black solid; } */
+	td { font-size:12px; height:25px; }
+</style>
+
+
+ <body>
+    <div class="book">
+        <div class="page">
+            <div class="subpage" id="content">
+				<div style="text-align:center;font-size:20px;margin-top:70px;">일자별 백업관리대장</div>
+				<div style="margin-top:10px;text-align:center;"><?=$yy?> 년 <?=$mm?> 월 <?=$dd?> 일</div>
+
+				<table border=1 style="border-collapse:0; border-spacing:0;margin-top:10px;" align="right">
+					<tr>
+						<td style="text-align:center;">담 당</td>
+						<td style="text-align:center;">팀 장</td>
+					</tr>
+					<tr>
+						<td style="height:60px; width:80px;"></td>
+						<td style="height:30px; width:80px;"></td>
+					</tr>
+					<tr>
+						<td style="height:25px; "></td>
+						<td style="height:25px; "></td>
+					</tr>
+				</table>
+<?
+for ($i=0 ; $i<3 ; $i++) {
+	if (strpos($LIST[$i]["backup_file_path"],"BACKUP")) $gg="2 일";
+	else $gg="60 일";
+
+	if (strpos($LIST[$i]["backup_file_name"],"_web_")) $tg="웹 소스<br/>/home/crowdfund/public_html";
+	else $tg="DB";
+	?>
+				<table border=1 style="border-collapse:0; border-spacing:0;margin-top:40px;float:left; width:100%;" align="center">
+					<tr>
+						<th style="text-align:center; width:16%;">백업시각</th>
+						<td style="text-align:center;"><?=$LIST[$i]['backup_file_datetime']?></td>
+
+						<th style="text-align:center; width:16%;">백업용량</th>
+						<td style="text-align:center;"><?=$LIST[$i]['backup_file_size2']?></td>
+
+						<th style="text-align:center; width:16%;">보관기간</th>
+						<td style="text-align:center;"><?=$gg?></td>
+					</tr>
+					<tr>
+						<th style="text-align:center; width:16%;">백업대상</th>
+						<td style="text-align:center;" colspan=5>
+							<div style="margin-top:30px; margin-bottom:30px;">
+							<?=$tg?>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th style="text-align:center; width:16%;">백업파일명</th>
+						<td style="text-align:center;" colspan=5>
+							<div style="margin-top:30px; margin-bottom:30px;">
+							<?=$LIST[$i]['backup_file_path']?><?=$LIST[$i]['backup_file_name']?>
+							</div>
+						</td>
+					</tr>
+				</table>
+	<?
+}
+?>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+function go_print() {
+	window.print();
+}
+go_print();
+</script>
+</html>

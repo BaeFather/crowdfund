@@ -1,0 +1,270 @@
+<?
+include_once('./_common.php');
+
+if ($is_admin != 'super' && $w == '') {
+	alert('최고관리자만 접근 가능합니다.');
+}
+
+include_once (G5_ADMIN_PATH.'/admin.head.nomenu.php');
+?>
+<?
+$s_type = $_REQUEST['s_type'];
+$gr_idx = $_REQUEST['gr_idx'];
+
+$TLIST = get_auto_real_money($s_type, "Y", $gr_idx);
+
+//echo "<pre>";print_r($TLIST["LIST"][0]);echo "</pre>";
+?>
+<br/>
+
+<div class="tbl_head02 tbl_wrap">
+<!--
+	<div>
+	<?=$TLIST['grp_title']?> 자동투자 가능 금액 : <?=number_format($TLIST['total_amount'])?> 원
+	</div>
+<br/>
+//-->
+<table class="table-striped table-bordered table-hover finxarea" style="font-size: 13px;"  id="top_area">
+	<tbody>
+	<tr>
+		<th style="background: #969595;width:9%;" >NO</th>
+		<th style="background: #969595;width:9%;" >고객번호</th>
+		<th style="background: #969595;width:9%;" >고객명</th>
+		<th style="background: #969595;width:9%;" >투자형태</th>
+		<th style="background: #969595;width:9%;" >설정 최소금액</th>
+		<th style="background: #969595;width:9%;" >설정 최대금액</th>
+		<th style="background: #969595;width:9%;" >예치금잔액</th>
+		<th style="background: #969595;width:9%;" >기투자금액</th>
+		<th style="background: #969595;width:9%;" >부동산투자금액</th>
+		<? if ($gr_idx) { ?><th style="background: #969595;width:9%;" >동일차주</th><?}?>
+		<th style="background: #969595;width:10%;" >자동투자 가능금액</th>
+	</tr>
+	<tr align="center" style="background-color:#FEB323;">
+		<td colspan=4 style="text-align:center;"><?=number_format(count($TLIST["LIST"]))?>명 합 계</td>
+		<td style="text-align:right;"><?=number_format($TLIST['setup_amount_total'])?></td>
+		<td style="text-align:right;"><?=number_format($TLIST['setup_amount2_total'])?></td>
+		<td style="text-align:right;"><?=number_format($TLIST['mb_point_total'])?></td>
+		<td style="text-align:right;"><?=number_format($TLIST['n_ed_money'])?></td>
+		<td style="text-align:right;"><?=number_format($TLIST['b_ed_money'])?></td>
+		<? if ($gr_idx) { ?><td style="text-align:right;"><?=number_format($TLIST['dong_cha_money'])?></td><?}?>
+		<td style="text-align:right;"><?=number_format($TLIST['total_amount'])?></td>
+	</tr>
+	</tbody>
+	</table>
+<table class="table-striped table-bordered table-hover" style="font-size: 13px;margin-top:40px;">
+<?
+$tot_cnt = count($TLIST["LIST"]);
+for ($i = 0 ; $i<$tot_cnt ; $i++) {
+	?>
+	<tr align="center">
+		<td style="width:9%;"><?=$i+1?></td>
+		<td style="width:9%;"><?=$TLIST["LIST"][$i]["mem_idx"]?></td>
+		<td style="width:9%;"><?=$TLIST["LIST"][$i]["member_type"]=="2"?$TLIST["LIST"][$i]["mb_co_name"]:$TLIST["LIST"][$i]["mb_name"]?></td>
+		<td style="width:9%;"><?=$TLIST["LIST"][$i]["inv_type_name"]?></td>
+		<td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["setup_amount"])?></td>
+		<td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["setup_amount2"])?></td>
+		<td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["mb_point"])?></td>
+		<td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["n_ed_money"])?></td>
+		<td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["b_ed_money"])?></td>
+		<? if ($gr_idx) { ?><td style="text-align:right;width:9%;"><?=number_format($TLIST["LIST"][$i]["dong_cha_money"])?></td><?}?>
+		<td style="text-align:right;width:10%;"><?=number_format($TLIST["LIST"][$i]["real_money"])?></td>
+	</tr>
+	<?
+}
+?>
+</tbody></table>
+
+</div>
+
+<?
+function get_auto_real_money11($s_type, $ret_list) {
+
+	$RES = array();
+
+	$csql = "select * from cf_auto_invest_config where idx='$s_type'";
+	$cres = sql_query($csql);
+	$crow = sql_fetch_array($cres);
+	$RES['category'] = $crow['category'];
+	$RES['grp_title'] = $crow['grp_title'];
+
+	$sql1 = "
+		select
+			a.*,
+			b.mb_point, b.member_investor_type, b.mb_name, b.member_type
+		from
+			cf_auto_invest_config_user a
+		LEFT join
+			g5_member b  on(a.member_idx = b.mb_no)
+		where
+			ai_grp_idx='$s_type'
+		order by
+			a.idx";
+	$res1 = sql_query($sql1);
+	$cnt1 = sql_num_rows($res1);
+
+	for ($i=0 ; $i<$cnt1 ; $i++) {
+
+		$row1 = sql_fetch_array($res1);
+
+		$RES["LIST"][$i]["mb_point"] = $row1['mb_point'];
+
+		$setup_amount_total += $row1['setup_amount'];
+		$mb_point_total += $row1['mb_point'];
+
+		// 자동투자 설정 금액과 예치금 잔액 비교
+		if ($row1['setup_amount'] <= $row1['mb_point']) $real_money = $row1['setup_amount'];
+		else $real_money = $row1['mb_point'];
+
+		// 이미 투자된 금액 추출해서 비교
+		$ing_sql = "
+			SELECT
+				sum(a.amount) ing_amt,
+				case when b.category='2' then 'b' ELSE 'c' end big_cat
+			FROM
+				cf_product_invest a
+			LEFT JOIN
+				cf_product b  ON(a.product_idx = b.idx)
+			WHERE
+				a.member_idx='$row1[member_idx]'
+				AND a.invest_state='Y'
+				AND b.state='1'
+			GROUP BY
+				case when b.category='2' then 'b' ELSE 'c' end";
+		$ing_res = sql_query($ing_sql);
+		$ing_cnt = sql_num_rows($ing_res);
+
+		//if ($row1['member_idx']=="5713") echo "$ing_sql<br/>";
+
+		$t_ing_money = 0;  // 총 투자중인 금액
+		$b_ing_money = 0;  // 부동산 투자중인 금액
+		$c_ing_money = 0;  // 그외 투자중인 금액
+
+		for ($j=0 ; $j<$ing_cnt ; $j++) {
+
+			$ing_row = sql_fetch_array($ing_res);
+			if ($ing_row['big_cat']=="b") {
+				$b_ing_money = $ing_row['ing_amt'];
+			}
+			else {
+				$c_ing_money = $ing_row['ing_amt'];
+			}
+			$t_ing_money += $ing_row['ing_amt'];
+		}
+
+		$max_b = get_max_inv($row1["member_investor_type"],"b");
+		$max_c = get_max_inv($row1["member_investor_type"],"c");
+		$max_t = get_max_inv($row1["member_investor_type"],"t");
+
+		if ($row1["member_investor_type"]=="2") {
+			$passb_b = $max_t - $t_ing_money;
+			$passb_c = $max_t - $t_ing_money;
+			$passb_t = $max_t - $t_ing_money;
+		}
+		else if ($row1["member_investor_type"]=="3") {  // 전문 투자자
+			$passb_b = 99999999;
+			$passb_c = 99999999;
+			$passb_t = 99999999;
+		}
+		else {  // 일반
+			$passb_b = $max_b - $b_ing_money;
+			$passb_c = $max_c - $c_ing_money;
+			$passb_t = $max_t - $t_ing_money;
+		}
+		/*
+		if ($row1['member_type'] == "2") {
+			$passb_b = 9999999999;
+			$passb_c = 9999999999;
+			$passb_t = 9999999999;
+		}
+		*/
+		if ($crow['category']=="2") {
+			if ($real_money>$passb_b) $real_money = $passb_b;
+		}
+		else {
+			if ($real_money>$passb_c) $real_money = $passb_c;
+		}
+
+		if ($real_money<$row1['setup_amount']) $real_money=0;
+
+
+		$total_setup  += $row1['setup_amount'];
+		$total_point  += $row1['mb_point'];
+		$total_amount += $real_money;
+
+
+		if ($ret_list=="Y") {
+
+			$RES["LIST"][$i]["mem_idx"] = $row1["member_idx"];
+			$RES["LIST"][$i]["mb_name"] = $row1["mb_name"];
+			$RES["LIST"][$i]["inv_type"] = $row1["member_investor_type"];
+
+			if ($row1["member_investor_type"]=="2") $inv_type_name = "소득적격";
+			else if ($row1["member_investor_type"]=="3") $inv_type_name = "전문투자자";
+			else $inv_type_name = "개인";
+
+			$RES["LIST"][$i]["inv_type_name"] = $inv_type_name;
+
+			$RES["LIST"][$i]["setup_amount"] = $row1["setup_amount"];
+
+			$RES["LIST"][$i]["real_money"] = $real_money;
+
+			$RES["LIST"][$i]["b_ed_money"] = $b_ing_money;
+			$RES["LIST"][$i]["b_ps_money"] = $passb_b;
+			$RES["LIST"][$i]["b_mx_money"] = $max_b;
+
+			$RES["LIST"][$i]["c_ed_money"] = $c_ing_money;
+			$RES["LIST"][$i]["c_ps_money"] = $passb_c;
+			$RES["LIST"][$i]["c_mx_money"] = $max_c;
+
+			$RES["LIST"][$i]["t_ed_money"] = $t_ing_money;
+			$RES["LIST"][$i]["t_ps_money"] = $passb_t;
+			$RES["LIST"][$i]["t_mx_money"] = $max_t;
+
+			if ($crow['category']=="2") {
+				$RES["LIST"][$i]["n_ed_money"] = $RES["LIST"][$i]["b_ed_money"];
+				$RES["LIST"][$i]["n_ps_money"] = $RES["LIST"][$i]["b_ps_money"];
+				$RES["LIST"][$i]["n_mx_money"] = $RES["LIST"][$i]["b_mx_money"];
+			} else {
+				$RES["LIST"][$i]["n_ed_money"] = $RES["LIST"][$i]["c_ed_money"];
+				$RES["LIST"][$i]["n_ps_money"] = $RES["LIST"][$i]["c_ps_money"];
+				$RES["LIST"][$i]["n_mx_money"] = $RES["LIST"][$i]["c_mx_money"];
+			}
+			$n_ed_money += $RES["LIST"][$i]["n_ed_money"];
+		}
+	}
+
+	$RES["setup_amount_total"] = $setup_amount_total;
+	$RES["mb_point_total"] = $mb_point_total;
+	$RES["n_ed_money"] = $n_ed_money;
+	$RES["total_amount"] = $total_amount;
+
+	//echo "$total_setup\n$total_point\n$total_amount";
+	return $RES;
+
+}
+
+function get_max_inv11($mem_inv_type, $prd_type) {
+
+	if ($mem_inv_type=="2") {  // 2 소득적격 투자자
+		$max_b = 40000000;
+		$max_c = 40000000;
+		$max_t = 40000000;
+	}
+	else if ($mem_inv_type=="3") {  //  3 전문 투자자
+		$max_b = 99999999999;
+		$max_c = 99999999999;
+		$max_t = 99999999999;
+	}
+	else {  // 1 일반 개인 투자자
+		$max_b = 10000000;
+		$max_c = 20000000;
+		$max_t = 20000000;
+	}
+
+	if ($prd_type=="b")      $ret_val = $max_b;
+	else if ($prd_type=="c") $ret_val = $max_c;
+	else                     $ret_val = $max_t;
+
+	return $ret_val;
+}
+?>

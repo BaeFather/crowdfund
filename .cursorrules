@@ -1,0 +1,8 @@
+## Commit Message Rules
+
+### language
+커밋 메시지는 반드시 한국어로 작성한다. 영어로 작성하지 않는다.
+
+### format
+- 변경 내용을 명확하고 간결하게 설명한다.
+- 필요 시 Conventional Commits 접두사(feat:, fix:, docs:, chore: 등)를 사용할 수 있다.
